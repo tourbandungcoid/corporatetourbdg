@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { WhatsAppFloat } from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,17 +13,6 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   display: "swap",
 });
-
-function normalizeSiteUrl(input: string | undefined): URL {
-  const fallback = "https://corporate.tourbandung.co.id";
-  if (!input) return new URL(fallback);
-  const withProtocol = /^https?:\/\//i.test(input) ? input : `https://${input}`;
-  try {
-    return new URL(withProtocol);
-  } catch {
-    return new URL(fallback);
-  }
-}
 
 export const metadata: Metadata = {
   metadataBase: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
@@ -48,6 +34,17 @@ export const metadata: Metadata = {
   },
 };
 
+function normalizeSiteUrl(input: string | undefined): URL {
+  const fallback = "https://corporate.tourbandung.co.id";
+  if (!input) return new URL(fallback);
+  const withProtocol = /^https?:\/\//i.test(input) ? input : `https://${input}`;
+  try {
+    return new URL(withProtocol);
+  } catch {
+    return new URL(fallback);
+  }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,12 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${fraunces.variable}`}>
-      <body>
-        <Navigation />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
