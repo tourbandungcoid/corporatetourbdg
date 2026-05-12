@@ -95,9 +95,17 @@ export async function submitLead(
 
     if (error) {
       console.error("Lead submission error:", error);
+      // During early launch / debugging, expose specific error to help user diagnose.
+      // After stable, replace with generic message.
+      const detail =
+        error.code === "42P01"
+          ? "Tabel leads belum dibuat. Jalankan migration 05."
+          : error.code === "42501"
+          ? "Permission denied. RLS policy belum mengizinkan insert."
+          : error.message;
       return {
         ok: false,
-        error: "Gagal menyimpan inquiry. Coba lagi atau hubungi via WhatsApp.",
+        error: `Gagal menyimpan inquiry: ${detail}`,
       };
     }
 
