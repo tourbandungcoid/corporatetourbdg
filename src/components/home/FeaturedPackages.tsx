@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "@/components/icons/Icons";
+import { IMAGES } from "@/lib/drive-images";
 
 const PACKAGES = [
   {
@@ -11,7 +13,7 @@ const PACKAGES = [
     vibe: "Relaxed · Nature",
     startingPrice: "Rp 1.8jt",
     featured: false,
-    gradient: "from-forest via-brand-deep to-ink-soft",
+    image: IMAGES.packageGlamping,
   },
   {
     slug: "signature-annual-gathering",
@@ -22,7 +24,7 @@ const PACKAGES = [
     vibe: "Premium · Experiential",
     startingPrice: "Rp 3.5jt",
     featured: true,
-    gradient: "from-brand-deep via-forest to-ink",
+    image: IMAGES.packageAnnualGathering,
   },
   {
     slug: "executive-offsite-premium",
@@ -33,7 +35,7 @@ const PACKAGES = [
     vibe: "Discreet · Luxury",
     startingPrice: "Rp 6.5jt",
     featured: false,
-    gradient: "from-ink via-ink-soft to-forest",
+    image: IMAGES.packageExecutiveOffsite,
   },
 ];
 
@@ -70,19 +72,21 @@ export function FeaturedPackages() {
               ].join(" ")}
             >
               {/* Image area */}
-              <div
-                className={`aspect-[4/3] relative overflow-hidden bg-gradient-to-br ${pkg.gradient}`}
-              >
+              <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
+                <Image
+                  src={pkg.image.src}
+                  alt={pkg.image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 {pkg.featured && (
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink shadow-md">
                     ★ Most Popular
                   </div>
                 )}
-                <div className="absolute inset-0 flex items-end p-6">
-                  <p className="text-paper/30 text-xs font-mono">
-                    [Photo dari Drive: {pkg.title.toLowerCase()}]
-                  </p>
-                </div>
+                {/* Bottom gradient for premium feel */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               </div>
 
               {/* Body */}

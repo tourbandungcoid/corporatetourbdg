@@ -39,7 +39,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <Link href="/" aria-label="Beranda" className="flex-shrink-0">
-            <LogoLockup size={28} />
+            <LogoLockup height={36} />
           </Link>
 
           {/* Desktop nav */}
@@ -93,7 +93,7 @@ export function Navigation() {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup size={28} />
+              <LogoLockup height={36} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

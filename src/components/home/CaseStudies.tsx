@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "@/components/icons/Icons";
+import { IMAGES } from "@/lib/drive-images";
 
 const CASE_STUDIES = [
   {
@@ -10,7 +12,7 @@ const CASE_STUDIES = [
     pax: "800 pax",
     duration: "3D2N",
     location: "Lembang",
-    gradient: "from-brand-deep via-forest to-ink",
+    image: IMAGES.caseStudyLarge,
   },
   {
     slug: "annual-gathering-banking-3depts",
@@ -20,7 +22,7 @@ const CASE_STUDIES = [
     pax: "120 pax",
     duration: "2D1N",
     location: "Ciwidey",
-    gradient: "from-ink via-forest to-brand-deep",
+    image: IMAGES.caseStudyTeamBuilding,
   },
   {
     slug: "quarterly-strategy-offsite-clevel",
@@ -30,7 +32,7 @@ const CASE_STUDIES = [
     pax: "24 pax",
     duration: "1D Workshop",
     location: "Bandung City",
-    gradient: "from-forest via-brand-deep to-ink-soft",
+    image: IMAGES.caseStudyExecutive,
   },
 ];
 
@@ -62,14 +64,15 @@ export function CaseStudies() {
               href={`/case-studies/${cs.slug}`}
               className="card card-hover group overflow-hidden flex flex-col"
             >
-              <div
-                className={`aspect-[4/3] relative overflow-hidden bg-gradient-to-br ${cs.gradient}`}
-              >
-                <div className="absolute inset-0 flex items-end p-6">
-                  <p className="text-paper/30 text-xs font-mono">
-                    [Photo cinematic event]
-                  </p>
-                </div>
+              <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
+                <Image
+                  src={cs.image.src}
+                  alt={cs.image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/10 to-transparent" />
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <p className="eyebrow text-brand-deep">{cs.industry}</p>

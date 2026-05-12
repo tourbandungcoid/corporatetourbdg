@@ -1,4 +1,11 @@
+import Image from "next/image";
 import type { SVGProps } from "react";
+
+// Official logo files in Google Drive (folder must be set to "Anyone with link can view")
+const LOGO_ON_LIGHT_BG =
+  "https://drive.google.com/thumbnail?id=1iUgnxGAJCNl0x0IIvAi-D0M-kwYAgON9&sz=w800";
+const LOGO_ON_DARK_BG =
+  "https://drive.google.com/thumbnail?id=1UPHvGeHBbwehMfTFikRX5xF7KkPLeGRu&sz=w800";
 
 type LogoProps = SVGProps<SVGSVGElement> & {
   size?: number;
@@ -6,8 +13,8 @@ type LogoProps = SVGProps<SVGSVGElement> & {
 };
 
 /**
- * 7Summits Travel mark — abstract triangular play-button.
- * Two-tone green facets evoke a mountain peak refracted through motion.
+ * Inline SVG triangle mark — used as fallback / icon-only contexts.
+ * Approximates the official 7Summits Travel mark.
  */
 export function LogoMark({
   size = 32,
@@ -15,7 +22,11 @@ export function LogoMark({
   ...props
 }: LogoProps) {
   const top =
-    variant === "white" ? "#FFFFFF" : variant === "mono" ? "currentColor" : "#6BA239";
+    variant === "white"
+      ? "#FFFFFF"
+      : variant === "mono"
+      ? "currentColor"
+      : "#6BA239";
   const bottom =
     variant === "white"
       ? "rgba(255,255,255,0.7)"
@@ -30,7 +41,7 @@ export function LogoMark({
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Tour Bandung Corporate"
+      aria-label="7Summits Travel"
       {...props}
     >
       <path d="M8 8 L56 32 L8 32 Z" fill={top} />
@@ -44,42 +55,77 @@ export function LogoMark({
   );
 }
 
+/**
+ * Official logo image (PNG from Drive). Use for nav, footer, hero — anywhere
+ * the full brand lockup should appear.
+ *
+ * Variants:
+ * - "light": colored logo for use on light backgrounds (default)
+ * - "dark": white logo for use on dark backgrounds
+ */
+type LogoImageProps = {
+  variant?: "light" | "dark";
+  height?: number;
+  className?: string;
+  priority?: boolean;
+};
+
+export function LogoImage({
+  variant = "light",
+  height = 40,
+  className,
+  priority = false,
+}: LogoImageProps) {
+  const src = variant === "dark" ? LOGO_ON_DARK_BG : LOGO_ON_LIGHT_BG;
+  // Aspect ratio of source logo ~1:1 (uploaded as square). Adjust if cropped.
+  return (
+    <Image
+      src={src}
+      alt="7Summits Travel — Corporate"
+      width={height}
+      height={height}
+      priority={priority}
+      className={className}
+      unoptimized
+    />
+  );
+}
+
+/**
+ * Brand lockup with sublabel — used in navigation to indicate the
+ * "Corporate" division of 7Summits Travel.
+ */
+type LockupProps = {
+  height?: number;
+  variant?: "light" | "dark";
+  showCorporateLabel?: boolean;
+};
+
 export function LogoLockup({
-  size = 28,
-  showSubline = false,
-  variant = "default",
-}: {
-  size?: number;
-  showSubline?: boolean;
-  variant?: "default" | "white";
-}) {
-  const textColor = variant === "white" ? "#FAFAF7" : "var(--color-ink)";
-  const subColor =
-    variant === "white" ? "rgba(255,255,255,0.6)" : "var(--color-slate)";
+  height = 40,
+  variant = "light",
+  showCorporateLabel = true,
+}: LockupProps) {
+  const labelColor =
+    variant === "dark" ? "rgba(255,255,255,0.65)" : "var(--color-brand-deep)";
 
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <LogoMark size={size} variant={variant === "white" ? "white" : "default"} />
-      <span className="flex flex-col leading-none">
+    <span className="inline-flex items-center gap-3">
+      <LogoImage variant={variant} height={height} />
+      {showCorporateLabel && (
         <span
-          className="font-display tracking-tight"
+          className="hidden sm:inline-block text-[10px] tracking-[0.18em] uppercase font-medium px-2 py-1 rounded border"
           style={{
-            color: textColor,
-            fontSize: `${size * 0.62}px`,
-            letterSpacing: "-0.02em",
+            color: labelColor,
+            borderColor:
+              variant === "dark"
+                ? "rgba(255,255,255,0.18)"
+                : "var(--color-divider)",
           }}
         >
-          TourBandung<span className="font-display-italic"> Corporate</span>
+          Corporate
         </span>
-        {showSubline && (
-          <span
-            className="mt-1 text-[10px] uppercase tracking-[0.16em]"
-            style={{ color: subColor }}
-          >
-            A unit of 7Summits Travel
-          </span>
-        )}
-      </span>
+      )}
     </span>
   );
 }

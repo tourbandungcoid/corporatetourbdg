@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkle } from "@/components/icons/Icons";
 import { STATS, buildWaLink } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 
 export function Hero() {
   return (
@@ -74,28 +76,19 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Right: image placeholder */}
+          {/* Right: hero image */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-deep via-forest to-ink">
-              <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
-                <p className="text-paper/40 text-sm font-mono">
-                  [Hero image dari Drive folder]
-                  <br />
-                  <span className="block mt-2 text-xs">
-                    Recommended: corporate event in Lembang
-                    <br />
-                    cinematic, warm, aspirational
-                  </span>
-                </p>
-              </div>
-              {/* Subtle pattern overlay */}
-              <div
-                className="absolute inset-0 opacity-20"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 60%)",
-                }}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-deep via-forest to-ink shadow-2xl">
+              <Image
+                src={IMAGES.heroMain.src}
+                alt={IMAGES.heroMain.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
               />
+              {/* Subtle vignette overlay for text contrast hint */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
             </div>
 
             {/* Floating WA prompt for desktop */}
