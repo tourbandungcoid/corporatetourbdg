@@ -110,9 +110,19 @@ export function Footer() {
 
             <p className="eyebrow text-[#FAFAF7]/50 mb-3 mt-8">Office</p>
             <p className="text-sm text-cream/85 leading-relaxed">
-              {CONTACT.address}
+              {CONTACT.address.full}
+              <br />
               <br />
               {CONTACT.officeHours}
+              <br />
+              <a
+                href={SITE.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cream/85 hover:text-brand underline-offset-2 hover:underline"
+              >
+                Lihat di Google Maps →
+              </a>
             </p>
           </div>
         </div>
