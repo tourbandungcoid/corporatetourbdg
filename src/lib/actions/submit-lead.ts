@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
+import { notifyNewLead } from "@/lib/email/send";
 
 // ---------------------------------------------------------------------
 // Validation
@@ -226,6 +227,21 @@ export async function submitLeadRequest(
     },
   });
 
-  // 4. Redirect to thank-you with ref code
+  // 4. Fire-and-forget email notifications (await to ensure send completes
+  //    before Vercel function shutdown, but don't fail submission on email errors)
+  const priority =
+    score >= 90 ? "hot" : score >= 70 ? "warm" : score >= 50 ? "medium" : score >= 30 ? "cool" : "cold";
+  await notifyNewLead({
+    refCode: lead.ref_code,
+    fullName: input.full_name,
+    workEmail: input.work_email,
+    whatsapp: input.whatsapp || null,
+    companyName: input.company_name,
+    source: "request_proposal",
+    score,
+    priority,
+  });
+
+  // 5. Redirect to thank-you with ref code
   redirect(`/proposal/thank-you/${lead.ref_code}`);
 }
