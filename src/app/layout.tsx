@@ -17,10 +17,19 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+function normalizeSiteUrl(input: string | undefined): URL {
+  const fallback = "https://corporate.tourbandung.co.id";
+  if (!input) return new URL(fallback);
+  const withProtocol = /^https?:\/\//i.test(input) ? input : `https://${input}`;
+  try {
+    return new URL(withProtocol);
+  } catch {
+    return new URL(fallback);
+  }
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://corporate.tourbandung.co.id"
-  ),
+  metadataBase: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   title: {
     default:
       "TourBandung Corporate — Premium Corporate Outing & Team Building Bandung",
