@@ -83,7 +83,7 @@ export function Phone({ size = 18, ...props }: IconProps) {
   );
 }
 
-/* ─── Service category icons (monoline, custom) ────────────────── */
+/* ─── Service category icons (monoline, custom) ───────────────────── */
 
 export function Compass({ size = 28, ...props }: IconProps) {
   return (
