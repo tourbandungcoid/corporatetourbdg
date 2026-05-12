@@ -36,8 +36,8 @@ export function Navigation() {
       <div className="container-1280 !px-0">
         <div
           className={[
-            "flex items-center justify-between gap-2 h-14",
-            "rounded-full pl-5 pr-2",
+            "flex items-center justify-between gap-2 h-16",
+            "rounded-full pl-6 pr-2",
             "border transition-all duration-300 will-change-[background,border-color]",
             scrolled
               ? "bg-paper/95 backdrop-blur-xl border-border shadow-[0_8px_30px_rgba(15,31,26,0.08)]"
@@ -50,7 +50,7 @@ export function Navigation() {
             aria-label="Beranda"
             className="flex-shrink-0 flex items-center"
           >
-            <LogoLockup height={28} showCorporateLabel={false} />
+            <LogoLockup height={40} showCorporateLabel={false} />
           </Link>
 
           {/* Desktop nav — center anchored */}
@@ -76,7 +76,7 @@ export function Navigation() {
             <Link
               href="/proposal/request"
               className={[
-                "hidden md:inline-flex items-center gap-1.5 rounded-full px-5 h-10 text-sm font-medium transition-colors",
+                "hidden md:inline-flex items-center gap-1.5 rounded-full px-5 h-11 text-sm font-medium transition-colors",
                 scrolled
                   ? "bg-ink text-paper hover:bg-brand-deep"
                   : "bg-paper text-ink hover:bg-brand hover:text-paper",

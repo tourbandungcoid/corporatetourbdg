@@ -18,14 +18,14 @@ const SERVICES = [
     slug: "company-gathering",
     title: "Company Gathering",
     description:
-      "Annual gathering atau quarterly meetup — untuk tim 50 sampai 800 pax.",
+      "Annual gathering atau quarterly meetup untuk tim 50–800 pax.",
     Icon: IconGathering,
   },
   {
     slug: "team-building",
     title: "Team Building",
     description:
-      "Outbound, indoor activities, atau workshop-based — di-design dari objective tim.",
+      "Outbound, indoor, atau workshop-based — di-design dari objective tim.",
     Icon: IconTeamBuilding,
   },
   {
@@ -39,49 +39,49 @@ const SERVICES = [
     slug: "corporate-retreat",
     title: "Corporate Retreat",
     description:
-      "Multi-day retreat untuk deep work, strategic planning, atau cultural reset.",
+      "Multi-day retreat untuk deep work atau cultural reset.",
     Icon: IconRetreat,
   },
   {
     slug: "leadership-camp",
     title: "Leadership Camp",
     description:
-      "Leadership development program untuk middle-to-senior management.",
+      "Leadership development untuk middle-to-senior management.",
     Icon: IconLeadership,
   },
   {
     slug: "executive-offsite",
     title: "Executive Offsite",
     description:
-      "C-level offsite di premium villa atau resort. Discreet, premium, focused.",
+      "C-level offsite di premium villa. Discreet, premium, focused.",
     Icon: IconExecutive,
   },
   {
     slug: "incentive-trip",
     title: "Incentive Trip",
     description:
-      "Reward program untuk top performers — destination experience yang memorable.",
+      "Reward program untuk top performers — destination experience.",
     Icon: IconIncentive,
   },
   {
     slug: "annual-company-trip",
     title: "Annual Company Trip",
     description:
-      "Big annual moment untuk seluruh perusahaan. Logistically complex, kami handle.",
+      "Big annual moment untuk seluruh perusahaan. Kami handle complexity.",
     Icon: IconAnnual,
   },
   {
     slug: "mice",
     title: "MICE",
     description:
-      "Meeting, Incentive, Conference, Exhibition — full-stack event production.",
+      "Meeting, Incentive, Conference, Exhibition — full-stack production.",
     Icon: IconMice,
   },
   {
     slug: "glamping-corporate",
     title: "Glamping Corporate",
     description:
-      "Unique outdoor experience tanpa kompromi kenyamanan. Differentiator buat tim Anda.",
+      "Unique outdoor experience tanpa kompromi kenyamanan.",
     Icon: IconGlamping,
   },
 ];
@@ -91,46 +91,47 @@ export function Services() {
     <section className="section bg-bone" id="services">
       <div className="container-1280">
         {/* Section header */}
-        <div className="max-w-2xl">
-          <p className="eyebrow-brand">Services</p>
-          <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
-            Apa yang Bisa Kami Handle untuk Tim Lo
-          </h2>
-          <p className="mt-6 text-lg text-slate">
-            10 program corporate yang fully customizable — dari intimate retreat
-            sampai mass gathering 2.000 pax.
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="max-w-2xl">
+            <span className="eyebrow-brand">What we do</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink">
+              10 program yang siap di-customize untuk tim lo.
+            </h2>
+          </div>
+          <p className="md:max-w-sm text-base text-slate">
+            Dari intimate retreat sampai mass gathering 2.000 pax — semua
+            di-design dari brief, bukan paket template.
           </p>
         </div>
 
         {/* Services grid */}
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {SERVICES.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="card card-hover group p-6 flex flex-col"
+              className="group relative rounded-2xl border border-border bg-paper p-6 flex flex-col transition-all hover:border-ink-soft hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(15,31,26,0.07)]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-light text-brand-deep">
-                <service.Icon size={22} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-light/70 text-brand-deep">
+                <service.Icon size={20} />
               </div>
-              <h3 className="font-display mt-5 text-xl text-ink">
+              <h3 className="font-display mt-6 text-lg text-ink leading-tight">
                 {service.title}
               </h3>
               <p className="mt-2 flex-1 text-sm text-slate leading-relaxed">
                 {service.description}
               </p>
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-deep">
-                Lihat detail
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-ink/85">
+                Detail
                 <ArrowRight
-                  size={14}
-                  className="arrow transition group-hover:translate-x-1"
+                  size={13}
+                  className="transition-transform group-hover:translate-x-1"
                 />
               </span>
             </Link>
           ))}
         </div>
 
-        {/* Footer link */}
         <div className="mt-12 text-center">
           <Link href="/services" className="link-underline">
             Lihat semua services

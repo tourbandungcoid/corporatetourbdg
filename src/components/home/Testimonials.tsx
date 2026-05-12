@@ -1,4 +1,3 @@
-// Placeholder testimonials — replace with real quotes (with permission) via CMS (Phase 7)
 const TESTIMONIALS = [
   {
     quote:
@@ -45,23 +44,22 @@ const TESTIMONIALS = [
 ];
 
 export function Testimonials() {
-  // Split into 2 rows for marquee
   const row1 = [...TESTIMONIALS.slice(0, 3), ...TESTIMONIALS.slice(0, 3)];
   const row2 = [...TESTIMONIALS.slice(3), ...TESTIMONIALS.slice(3)];
 
   return (
-    <section className="section bg-bone">
-      <div className="container-1280">
-        <div className="max-w-2xl">
-          <p className="eyebrow-brand">Testimonials</p>
-          <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
-            Dengar Langsung dari HR yang Pernah Kerja Bareng Kami
+    <section className="section bg-cream/40 overflow-hidden">
+      <div className="container-1280 mb-14">
+        <div className="max-w-3xl">
+          <span className="eyebrow-brand">Testimonials</span>
+          <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.02]">
+            Dengar langsung dari HR yang pernah kerja bareng kami.
           </h2>
         </div>
       </div>
 
       {/* Row 1 — marquee left */}
-      <div className="mt-12 overflow-hidden">
+      <div className="[mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
         <div className="marquee flex gap-6 whitespace-normal">
           {row1.map((t, i) => (
             <TestimonialCard key={`r1-${i}`} {...t} />
@@ -69,16 +67,11 @@ export function Testimonials() {
         </div>
       </div>
 
-      {/* Row 2 — marquee right (reverse direction) */}
-      <div
-        className="mt-6 overflow-hidden"
-        style={{ transform: "scaleX(-1)" }}
-      >
-        <div className="marquee flex gap-6 whitespace-normal">
+      {/* Row 2 — marquee right (reverse direction via wrap) */}
+      <div className="mt-6 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <div className="marquee flex gap-6 whitespace-normal" style={{ animationDirection: "reverse" }}>
           {row2.map((t, i) => (
-            <div key={`r2-${i}`} style={{ transform: "scaleX(-1)" }}>
-              <TestimonialCard {...t} />
-            </div>
+            <TestimonialCard key={`r2-${i}`} {...t} />
           ))}
         </div>
       </div>
@@ -98,20 +91,25 @@ function TestimonialCard({
   company: string;
 }) {
   return (
-    <div className="card flex-shrink-0 w-[340px] p-7 bg-paper">
-      <div className="flex gap-1 text-warm">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <span key={i} className="text-base">
-            ★
-          </span>
-        ))}
-      </div>
-      <p className="mt-4 text-ink text-base leading-relaxed">&ldquo;{quote}&rdquo;</p>
-      <div className="mt-6 pt-5 border-t border-divider">
-        <p className="font-medium text-ink text-sm">{name}</p>
-        <p className="text-xs text-slate mt-0.5">
-          {role} · {company}
-        </p>
+    <div className="flex-shrink-0 w-[360px] rounded-2xl border border-border bg-paper p-8">
+      <span className="text-3xl text-brand-deep font-display leading-none">&ldquo;</span>
+      <p className="mt-3 text-ink text-[15px] leading-relaxed">
+        {quote}
+      </p>
+      <div className="mt-6 pt-5 border-t border-divider flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-light text-brand-deep font-display text-sm">
+          {name
+            .split(" ")
+            .map((n) => n[0])
+            .join("")
+            .slice(0, 2)}
+        </div>
+        <div>
+          <p className="font-medium text-ink text-sm leading-tight">{name}</p>
+          <p className="text-xs text-slate mt-0.5">
+            {role} · {company}
+          </p>
+        </div>
       </div>
     </div>
   );
