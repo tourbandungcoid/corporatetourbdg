@@ -12,43 +12,52 @@ const NAV_LINKS = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/insights", label: "Insights" },
   { href: "/faq", label: "FAQ" },
-  { href: "/about", label: "About" },
 ];
 
+/**
+ * Floating glass navbar — overlays the hero, becomes more solid on scroll.
+ * Inspired by premium Framer template aesthetic.
+ */
 export function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className={[
-        "sticky top-0 z-40 transition-all duration-200 no-print",
-        scrolled
-          ? "bg-paper/90 backdrop-blur-md border-b border-divider"
-          : "bg-transparent",
-      ].join(" ")}
-    >
-      <div className="container-1280">
-        <div className="flex h-16 items-center justify-between md:h-20">
+    <header className="fixed top-4 inset-x-0 z-50 no-print px-4 md:px-6">
+      <div className="container-1280 !px-0">
+        <div
+          className={[
+            "flex items-center justify-between gap-2",
+            "rounded-full pl-5 pr-2 h-14",
+            "transition-all duration-300 will-change-[background,box-shadow]",
+            scrolled
+              ? "bg-paper/90 backdrop-blur-xl border border-border shadow-[0_8px_30px_rgba(15,31,26,0.12)]"
+              : "bg-paper/55 backdrop-blur-xl border border-paper/40 shadow-[0_4px_24px_rgba(15,31,26,0.08)]",
+          ].join(" ")}
+        >
           {/* Logo */}
-          <Link href="/" aria-label="Beranda" className="flex-shrink-0">
-            <LogoLockup height={36} />
+          <Link
+            href="/"
+            aria-label="Beranda"
+            className="flex-shrink-0 flex items-center"
+          >
+            <LogoLockup height={28} showCorporateLabel={false} />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop nav — center */}
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-ink hover:text-brand transition-colors"
+                className="px-4 py-2 text-sm font-medium text-ink/80 hover:text-ink transition-colors rounded-full hover:bg-ink/[0.04]"
               >
                 {link.label}
               </Link>
@@ -56,33 +65,22 @@ export function Navigation() {
           </nav>
 
           {/* Right cluster */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <Link
               href="/proposal/request"
-              className="hidden md:inline-flex btn btn-primary btn-sm"
+              className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-10 text-sm font-medium hover:bg-brand-deep transition-colors"
             >
               Request Proposal
-              <ArrowRight size={14} className="arrow" />
+              <ArrowRight size={14} />
             </Link>
 
-            <a
-              href={buildWaLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat WhatsApp"
-              className="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white hover:scale-105 transition"
-            >
-              <Whatsapp size={18} />
-            </a>
-
-            {/* Mobile menu trigger */}
             <button
               type="button"
               onClick={() => setOpen(true)}
               aria-label="Buka menu"
-              className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-ink hover:bg-cream transition"
+              className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-ink hover:bg-ink/[0.04] transition"
             >
-              <Menu size={22} />
+              <Menu size={20} />
             </button>
           </div>
         </div>
@@ -93,7 +91,7 @@ export function Navigation() {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={36} />
+              <LogoLockup height={32} showCorporateLabel={false} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -111,7 +109,7 @@ export function Navigation() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-2xl font-display text-ink hover:text-brand transition-colors"
+                className="py-3 text-3xl font-display text-ink hover:text-brand transition-colors"
               >
                 {link.label}
               </Link>
@@ -123,8 +121,15 @@ export function Navigation() {
                 onClick={() => setOpen(false)}
                 className="btn btn-primary btn-lg w-full justify-center"
               >
-                Request Free Proposal
+                Request Proposal
                 <ArrowRight size={16} className="arrow" />
+              </Link>
+              <Link
+                href="/proposal/book-consultation"
+                onClick={() => setOpen(false)}
+                className="btn btn-secondary btn-lg w-full justify-center"
+              >
+                Free Consultation
               </Link>
               <a
                 href={buildWaLink()}
