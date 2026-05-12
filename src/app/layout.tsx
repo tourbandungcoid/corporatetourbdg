@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,15 +23,15 @@ export const metadata: Metadata = {
   ),
   title: {
     default:
-      "Tour Bandung Corporate — Premium Corporate Outing & Team Building Bandung",
-    template: "%s · Tour Bandung Corporate",
+      "TourBandung Corporate — Premium Corporate Outing & Team Building Bandung",
+    template: "%s · TourBandung Corporate",
   },
   description:
     "Vendor specialist corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 400+ events delivered sejak 2018. Free proposal dalam 24 jam.",
   openGraph: {
     type: "website",
     locale: "id_ID",
-    siteName: "Tour Bandung Corporate",
+    siteName: "TourBandung Corporate",
   },
   robots: {
     index: true,
@@ -43,7 +46,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${fraunces.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        {children}
+        <Footer />
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }
