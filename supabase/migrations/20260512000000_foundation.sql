@@ -58,6 +58,15 @@ CREATE TABLE IF NOT EXISTS public.audit_log (
 CREATE INDEX IF NOT EXISTS idx_audit_log_actor ON public.audit_log(actor_id, created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_audit_log_resource ON public.audit_log(resource_type, resource_id, created_at DESC);
 
+-- RLS: audit_log is internal — only super_admin can read via API.
+-- Writes happen via audit_table_changes() trigger (SECURITY DEFINER, bypasses RLS).
+ALTER TABLE public.audit_log ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "audit_log_super_admin_read" ON public.audit_log;
+CREATE POLICY "audit_log_super_admin_read" ON public.audit_log
+  FOR SELECT TO authenticated
+  USING (public.current_user_role() = 'super_admin');
+
 CREATE OR REPLACE FUNCTION public.audit_table_changes()
 RETURNS TRIGGER LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
 BEGIN
