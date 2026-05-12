@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, ArrowUpRight, Check } from "../Icon";
 import { SITE } from "@/lib/site";
+import { submitLead } from "@/lib/actions/leads";
+import { parseBudgetRange } from "@/lib/utils/budget";
 
 const STEPS = [
   { id: 1, label: "Perusahaan" },
@@ -59,6 +61,7 @@ export function ProposalForm() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState<FormState>(INITIAL);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setData((prev) => ({ ...prev, [key]: value }));
@@ -68,9 +71,40 @@ export function ProposalForm() {
 
   const submit = async () => {
     setSubmitting(true);
-    // Stub: in production, POST to API route
-    await new Promise((r) => setTimeout(r, 800));
-    router.push("/proposal/thank-you");
+    setError(null);
+
+    const budget = parseBudgetRange(data.budgetRange);
+
+    const result = await submitLead({
+      source: "rfp_form",
+      contact_name: data.fullName,
+      contact_position: data.position,
+      email: data.email,
+      phone: data.phone,
+      company_name: data.companyName,
+      industry: data.industry,
+      company_size: data.companySize,
+      event_type: data.eventType,
+      objective: data.objective,
+      pax_count: data.paxCount ? parseInt(data.paxCount, 10) : undefined,
+      duration: data.duration,
+      preferred_dates: data.preferredDates,
+      destination: data.destination,
+      custom_needs: data.customNeeds || data.notes,
+      budget_range: data.budgetRange,
+      budget_min_idr: budget.min,
+      budget_max_idr: budget.max,
+      decision_timeline: data.decisionTimeline,
+      raw_payload: data as unknown as Record<string, unknown>,
+    });
+
+    if (!result.ok) {
+      setError(result.error);
+      setSubmitting(false);
+      return;
+    }
+
+    router.push(`/proposal/thank-you?lead=${result.leadNumber}`);
   };
 
   const progress = (step / STEPS.length) * 100;
@@ -402,13 +436,19 @@ export function ProposalForm() {
                       disabled={submitting}
                       className="btn btn-primary"
                     >
-                      {submitting ? "Mengirim..." : "Send My RFP"}
+                      {submitting ? "Mengirim..." : "Kirim Brief"}
                       {!submitting && (
                         <ArrowRight size={14} className="arrow" />
                       )}
                     </button>
                   )}
                 </div>
+
+                {error && (
+                  <div className="mt-5 rounded-md bg-[var(--color-error)]/10 border border-[var(--color-error)]/30 px-4 py-3 text-[13px] text-[var(--color-error)]">
+                    ⚠ {error}
+                  </div>
+                )}
               </div>
             </div>
 

@@ -2,14 +2,35 @@
 
 import { useState, FormEvent } from "react";
 import { ArrowRight, Check } from "../Icon";
+import { submitLead } from "@/lib/actions/leads";
 
 export function LeadMagnet() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+
+    const result = await submitLead({
+      source: "lead_magnet",
+      contact_name: "Budget Calculator Lead",
+      email,
+      company_name: company,
+      raw_payload: { email, company, magnet: "budget_calculator_2026" },
+    });
+
+    setSubmitting(false);
+
+    if (!result.ok) {
+      setError(result.error);
+      return;
+    }
+
     setSubmitted(true);
   };
 
@@ -67,11 +88,17 @@ export function LeadMagnet() {
                 </div>
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="mt-6 w-full btn btn-primary"
                 >
-                  Get the Calculator
-                  <ArrowRight size={16} className="arrow" />
+                  {submitting ? "Mengirim..." : "Get the Calculator"}
+                  {!submitting && <ArrowRight size={16} className="arrow" />}
                 </button>
+                {error && (
+                  <div className="mt-4 rounded-md bg-white/10 border border-white/20 px-4 py-3 text-[13px] text-white/90">
+                    ⚠ {error}
+                  </div>
+                )}
                 <p className="mt-4 text-[12px] text-white/50">
                   🔒 Digunakan hanya untuk mengirim calculator. Tanpa spam, tanpa
                   sales call.

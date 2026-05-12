@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check } from "@/components/Icon";
+import { submitLead } from "@/lib/actions/leads";
 
 const PROPOSAL_INCLUDES = [
   "Strategic narrative & event objective framing",
@@ -16,12 +17,30 @@ const PROPOSAL_INCLUDES = [
 export default function SampleProposalPage() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
-    router.push("/proposal/thank-you?source=sample");
+    setError(null);
+
+    const result = await submitLead({
+      source: "sample_request",
+      contact_name: "Sample Proposal Lead",
+      email,
+      company_name: company,
+      raw_payload: { email, company },
+    });
+
+    if (!result.ok) {
+      setError(result.error);
+      setSubmitting(false);
+      return;
+    }
+
+    router.push(`/proposal/thank-you?source=sample&lead=${result.leadNumber}`);
   };
 
   return (
@@ -29,7 +48,7 @@ export default function SampleProposalPage() {
       <div className="container-1280">
         <div className="grid lg:grid-cols-12 gap-12 max-w-[1080px] mx-auto">
           <div className="lg:col-span-6">
-            <p className="eyebrow-gold mb-5">Sample proposal</p>
+            <p className="eyebrow-brand mb-5">Sample proposal</p>
             <h1 className="font-display text-[40px] lg:text-[56px] leading-[1.05] tracking-[-0.02em] text-[var(--color-ink)]">
               Lihat persis apa yang{" "}
               <span className="font-display-italic">akan Anda terima.</span>
@@ -46,7 +65,7 @@ export default function SampleProposalPage() {
                   <li key={item} className="flex items-start gap-3">
                     <Check
                       size={16}
-                      className="text-[var(--color-gold)] mt-1 flex-shrink-0"
+                      className="text-[var(--color-brand)] mt-1 flex-shrink-0"
                     />
                     <span className="text-[14px] text-[var(--color-ink)]">
                       {item}
@@ -58,11 +77,10 @@ export default function SampleProposalPage() {
           </div>
 
           <div className="lg:col-span-6">
-            {/* Visual proposal preview */}
             <div className="relative mb-8">
               <div className="absolute inset-0 rotate-2 bg-[var(--color-cream)] rounded-sm"></div>
               <div className="relative bg-[var(--color-paper)] border border-[var(--color-border)] rounded-sm p-6 shadow-lg">
-                <div className="text-[10px] uppercase tracking-wider text-[var(--color-gold)] mb-3">
+                <div className="text-[10px] uppercase tracking-wider text-[var(--color-brand)] mb-3">
                   Proposal Document · 28 halaman
                 </div>
                 <div className="font-display text-[20px] text-[var(--color-ink)] mb-4 leading-tight">
@@ -107,16 +125,20 @@ export default function SampleProposalPage() {
                   <input
                     required
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email kantor Anda"
-                    className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-gold)]"
+                    className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-brand)]"
                   />
                 </div>
                 <div>
                   <input
                     required
                     type="text"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
                     placeholder="Nama perusahaan"
-                    className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-gold)]"
+                    className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-brand)]"
                   />
                 </div>
               </div>
@@ -128,6 +150,11 @@ export default function SampleProposalPage() {
                 {submitting ? "Mengirim..." : "Download Sample (PDF)"}
                 {!submitting && <ArrowRight size={14} className="arrow" />}
               </button>
+              {error && (
+                <div className="mt-4 rounded-md bg-white/10 border border-white/20 px-4 py-3 text-[13px] text-white/90">
+                  ⚠ {error}
+                </div>
+              )}
               <p className="text-[12px] text-white/60 mt-4">
                 🔒 PDF dikirim ke email. Tanpa spam, tanpa sales call yang tidak
                 relevan.
