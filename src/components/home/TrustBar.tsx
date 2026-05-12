@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "@/components/icons/Icons";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 // Placeholder client logos — replaced with real logos via CMS in Phase 7
 const PLACEHOLDER_LOGOS = [
@@ -23,11 +24,12 @@ export function TrustBar() {
   return (
     <section className="relative bg-paper py-20 md:py-24 border-b border-divider/60">
       <div className="container-1280">
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex flex-col items-center gap-5 text-center">
           <span className="eyebrow-brand">Trusted By</span>
           <p className="text-base md:text-lg text-slate max-w-md">
             Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka
           </p>
+          <GoogleReviewsBadge variant="compact" className="mt-2" />
         </div>
       </div>
 
