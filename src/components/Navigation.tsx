@@ -15,10 +15,11 @@ const NAV_LINKS = [
 ];
 
 /**
- * Floating navigation matching tourvia.framer.website aesthetic:
- * - Transparent with light border on hero (dark backdrop)
- * - White pill highlight on item hover
- * - On scroll: switches to solid glass with darker text
+ * Tourvia-style nav:
+ * - Logo standalone (no container)
+ * - Center nav pill with border (the only bordered element)
+ * - CTA pill standalone
+ * - All glassmorphism only on the nav pill itself
  */
 export function Navigation() {
   const [open, setOpen] = useState(false);
@@ -34,27 +35,32 @@ export function Navigation() {
   return (
     <header className="fixed top-4 inset-x-0 z-50 no-print px-4 md:px-6">
       <div className="container-1280 !px-0">
-        <div
-          className={[
-            "flex items-center justify-between gap-2 h-16",
-            "rounded-full pl-6 pr-2",
-            "border transition-all duration-300 will-change-[background,border-color]",
-            scrolled
-              ? "bg-paper/95 backdrop-blur-xl border-border shadow-[0_8px_30px_rgba(15,31,26,0.08)]"
-              : "bg-transparent border-paper/25",
-          ].join(" ")}
-        >
-          {/* Logo */}
+        <div className="flex items-center justify-between gap-3 h-16">
+          {/* Logo — standalone */}
           <Link
             href="/"
             aria-label="Beranda"
             className="flex-shrink-0 flex items-center"
           >
-            <LogoLockup height={40} showCorporateLabel={false} />
+            <LogoLockup
+              height={40}
+              variant={scrolled ? "light" : "dark"}
+              showCorporateLabel={false}
+            />
           </Link>
 
-          {/* Desktop nav — center anchored */}
-          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+          {/* Center nav pill — the only bordered element */}
+          <nav
+            className={[
+              "hidden lg:flex items-center gap-1",
+              "absolute left-1/2 -translate-x-1/2",
+              "rounded-full px-2 h-12 border",
+              "transition-all duration-300",
+              scrolled
+                ? "bg-paper/90 backdrop-blur-xl border-border shadow-[0_8px_30px_rgba(15,31,26,0.08)]"
+                : "bg-transparent border-paper/30",
+            ].join(" ")}
+          >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -62,7 +68,7 @@ export function Navigation() {
                 className={[
                   "px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200",
                   scrolled
-                    ? "text-ink/75 hover:bg-paper hover:text-ink"
+                    ? "text-ink/75 hover:bg-ink hover:text-paper"
                     : "text-paper/90 hover:bg-paper hover:text-ink",
                 ].join(" ")}
               >
@@ -71,15 +77,15 @@ export function Navigation() {
             ))}
           </nav>
 
-          {/* Right cluster */}
-          <div className="flex items-center gap-2">
+          {/* Right cluster — standalone */}
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Link
               href="/proposal/request"
               className={[
-                "hidden md:inline-flex items-center gap-1.5 rounded-full px-5 h-11 text-sm font-medium transition-colors",
+                "hidden md:inline-flex items-center gap-1.5 rounded-full px-6 h-12 text-sm font-medium transition-colors border",
                 scrolled
-                  ? "bg-ink text-paper hover:bg-brand-deep"
-                  : "bg-paper text-ink hover:bg-brand hover:text-paper",
+                  ? "bg-ink text-paper border-ink hover:bg-brand-deep hover:border-brand-deep"
+                  : "bg-paper text-ink border-paper hover:bg-brand hover:text-paper hover:border-brand",
               ].join(" ")}
             >
               Request Proposal
@@ -91,10 +97,10 @@ export function Navigation() {
               onClick={() => setOpen(true)}
               aria-label="Buka menu"
               className={[
-                "lg:hidden flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+                "lg:hidden flex h-12 w-12 items-center justify-center rounded-full border transition-colors",
                 scrolled
-                  ? "text-ink hover:bg-ink/[0.06]"
-                  : "text-paper hover:bg-paper/15",
+                  ? "text-ink border-border bg-paper hover:bg-cream"
+                  : "text-paper border-paper/30 bg-transparent hover:bg-paper/10",
               ].join(" ")}
             >
               <Menu size={20} />
@@ -108,7 +114,7 @@ export function Navigation() {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={32} showCorporateLabel={false} />
+              <LogoLockup height={40} showCorporateLabel={false} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
