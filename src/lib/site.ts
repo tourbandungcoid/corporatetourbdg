@@ -7,23 +7,46 @@
 
 export const SITE = {
   name: "TourBandung Corporate",
+  legalName: "7Summits Travel",
   parentBrand: "7Summits Travel",
   tagline: "B2B Corporate Outing & Team Building Bandung",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://corporate.tourbandung.co.id",
+  googleMapsUrl: "https://maps.app.goo.gl/Qppfm6wPUYiKg26i9",
 } as const;
 
 export const CONTACT = {
-  whatsapp: process.env.NEXT_PUBLIC_WA_NUMBER ?? "628000000000",
+  whatsapp: process.env.NEXT_PUBLIC_WA_NUMBER ?? "628112277954",
+  phoneDisplay: "0811 2277 954",
   email: "hello@corporate.tourbandung.co.id",
-  address: "Bandung, Jawa Barat, Indonesia",
-  officeHours: "Senin–Jumat · 09.00–18.00 WIB",
+  address: {
+    street: "Jl. Babakan Priangan I No.11C",
+    sublocality: "Ciseureuh",
+    locality: "Kec. Regol",
+    city: "Kota Bandung",
+    region: "Jawa Barat",
+    postalCode: "40255",
+    country: "ID",
+    full: "Jl. Babakan Priangan I No.11C, Ciseureuh, Kec. Regol, Kota Bandung, Jawa Barat 40255",
+  },
+  officeHours: "Senin–Jumat · 08.00–17.00 WIB",
+  officeHoursStructured: {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+} as const;
+
+export const REVIEWS = {
+  googleRating: 4.9,
+  googleReviewCount: 105,
+  googleMapsUrl: "https://maps.app.goo.gl/Qppfm6wPUYiKg26i9",
 } as const;
 
 export const SOCIAL = {
-  linkedin: "https://www.linkedin.com/company/tour-bandung-corporate",
-  instagram: "https://www.instagram.com/tourbandungcorporate",
-  youtube: "https://www.youtube.com/@tourbandungcorporate",
+  linkedin: "https://www.linkedin.com/company/7summits-travel",
+  instagram: "https://www.instagram.com/7summitstravel",
+  youtube: "https://www.youtube.com/@7summitstravel",
 } as const;
 
 export const STATS = {

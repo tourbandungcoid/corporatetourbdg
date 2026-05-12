@@ -1,4 +1,4 @@
-import { SITE, CONTACT, SOCIAL, STATS } from "./site";
+import { SITE, CONTACT, SOCIAL, STATS, REVIEWS } from "./site";
 
 /**
  * Schema.org JSON-LD helpers for SEO and GEO (LLM citation).
@@ -9,22 +9,20 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: SITE.name,
-    alternateName: ["Tour Bandung Corporate", "7Summits Corporate"],
+    name: SITE.legalName,
+    alternateName: ["TourBandung Corporate", "Tour Bandung Corporate", "7Summits Corporate"],
     url: SITE.url,
     logo: `${SITE.url}/logo/logo.png`,
     description:
-      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. Unit dari 7Summits Travel, beroperasi sejak 2018 dengan 400+ events delivered.",
+      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 7Summits Travel beroperasi sejak 2018 dengan 400+ corporate events delivered.",
     foundingDate: "2018",
-    parentOrganization: {
-      "@type": "Organization",
-      name: SITE.parentBrand,
-    },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Bandung",
-      addressRegion: "Jawa Barat",
-      addressCountry: "ID",
+      streetAddress: CONTACT.address.street,
+      addressLocality: CONTACT.address.city,
+      addressRegion: CONTACT.address.region,
+      postalCode: CONTACT.address.postalCode,
+      addressCountry: CONTACT.address.country,
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -33,41 +31,48 @@ export function organizationSchema() {
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
     },
-    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube],
+    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
 
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: SITE.name,
+    "@type": ["LocalBusiness", "TravelAgency"],
+    "@id": `${SITE.url}#business`,
+    name: SITE.legalName,
+    alternateName: SITE.name,
     image: `${SITE.url}/logo/logo.png`,
     url: SITE.url,
     telephone: `+${CONTACT.whatsapp}`,
     email: CONTACT.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Bandung",
-      addressRegion: "Jawa Barat",
-      addressCountry: "ID",
+      streetAddress: CONTACT.address.street,
+      addressLocality: CONTACT.address.city,
+      addressRegion: CONTACT.address.region,
+      postalCode: CONTACT.address.postalCode,
+      addressCountry: CONTACT.address.country,
     },
-    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Jawa Barat"],
+    hasMap: SITE.googleMapsUrl,
+    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Subang", "Jawa Barat"],
     priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-        ],
-        opens: "09:00",
-        closes: "18:00",
+        dayOfWeek: CONTACT.officeHoursStructured.days,
+        opens: CONTACT.officeHoursStructured.opens,
+        closes: CONTACT.officeHoursStructured.closes,
       },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: REVIEWS.googleRating,
+      reviewCount: REVIEWS.googleReviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
 
