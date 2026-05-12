@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { getAllCaseStudySlugs } from "@/lib/case-studies-data";
+import { getAllInsightSlugs } from "@/lib/insights-data";
 
 const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -57,5 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...baseRoutes, ...serviceRoutes, ...caseStudyRoutes];
+  const insightRoutes = getAllInsightSlugs().map((slug) => ({
+    url: `${SITE.url}/insights/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.65,
+  }));
+
+  return [...baseRoutes, ...serviceRoutes, ...caseStudyRoutes, ...insightRoutes];
 }
