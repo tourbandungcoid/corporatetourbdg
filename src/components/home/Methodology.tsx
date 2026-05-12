@@ -7,17 +7,18 @@ export function Methodology() {
     <section className="section bg-[var(--color-ink)] text-[var(--color-bone)]">
       <div className="container-1280">
         <div className="max-w-[820px] mb-16 lg:mb-24">
-          <p className="eyebrow-gold mb-6">Metodologi</p>
+          <p className="eyebrow-brand mb-6">Metodologi</p>
           <h2 className="font-display text-[36px] lg:text-[56px] leading-[1.05] tracking-[-0.02em]">
-            The 7Summits Corporate{" "}
-            <span className="font-display-italic text-[var(--color-gold)]">
+            The 7Summits{" "}
+            <span className="font-display-italic text-[var(--color-brand)]">
               Experience Framework
             </span>
             <sup className="text-[20px] lg:text-[28px]">™</sup>
           </h2>
           <p className="mt-6 text-[17px] text-white/70 max-w-[560px]">
-            Lima tahap yang membedakan kami dari travel agency biasa. Dari
-            objective bisnis hingga measurement post-event.
+            5 tahap yang bikin kami beda dari travel agency biasa.
+            Dari objective bisnis sampai post-event measurement — semua
+            terdokumentasi.
           </p>
         </div>
 
@@ -27,10 +28,10 @@ export function Methodology() {
             {PROCESS_STEPS.map((step) => (
               <li key={step.number} className="relative md:pl-16">
                 <div className="md:absolute md:left-0 md:top-1 flex items-center gap-4 mb-3 md:mb-0">
-                  <span className="hidden md:flex w-[29px] h-[29px] rounded-full bg-[var(--color-gold)] items-center justify-center text-[11px] font-medium text-[var(--color-ink)] tabular">
+                  <span className="hidden md:flex w-[29px] h-[29px] rounded-full bg-[var(--color-brand)] items-center justify-center text-[11px] font-medium text-white tabular">
                     {step.number}
                   </span>
-                  <span className="md:hidden font-display-italic text-[var(--color-gold)] text-[24px]">
+                  <span className="md:hidden font-display-italic text-[var(--color-brand)] text-[24px]">
                     {step.number}
                   </span>
                 </div>

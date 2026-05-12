@@ -4,12 +4,12 @@
  */
 
 export const SITE = {
-  name: "TourBandung Corporate",
-  legalName: "TourBandung Corporate (a unit of 7Summits Travel)",
+  name: "7Summits Corporate",
+  legalName: "7Summits Travel — Corporate Unit",
   parent: "7Summits Travel",
   tagline:
-    "Indonesia's most trusted partner for high-stakes corporate gatherings, designed with intent.",
-  shortTagline: "Designed corporate experiences for enterprise Indonesia.",
+    "Corporate experience design untuk tim yang fokus hasil. Outing, MICE, retreat — di-handle satu agency.",
+  shortTagline: "Corporate experience design untuk enterprise Indonesia.",
   url: "https://corporate.tourbandung.co.id",
   domain: "corporate.tourbandung.co.id",
   email: "hello@corporate.tourbandung.co.id",
@@ -36,6 +36,11 @@ export const SITE = {
     clients: "180+",
     pax: "50,000+",
     years: "13",
+  },
+  colors: {
+    brand: "#6BA239",
+    brandDeep: "#4E7E2A",
+    forest: "#2E5C3E",
   },
 };
 
@@ -273,7 +278,7 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "Mereka tidak menjual tour. Mereka mendesain experience yang menyatukan tim regional kami dengan cara yang workshop internal tidak pernah bisa lakukan.",
+      "Bukan jualan tour. Mereka beneran mikirin objective kami, terus design experience yang nyatuin tim regional — cara yang workshop internal nggak pernah bisa.",
     author: "Mira A.",
     title: "Head of People & Culture",
     company: "Bank Nasional",
@@ -281,7 +286,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Best offsite our engineering team has ever had. Setiap detail diurus tanpa kami perlu mikir, dan substance program-nya benar-benar berbobot.",
+      "Best offsite engineering team kami selama 7 tahun terakhir. Detail diurus tanpa kami harus pusing, dan agenda-nya substantif — bukan cuma jalan-jalan.",
     author: "Daniel S.",
     title: "VP Engineering",
     company: "Tech Unicorn Indonesia",
@@ -289,7 +294,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Untuk 450 peserta dari 14 kota berbeda, eksekusinya flawless. Procurement kami impressed dengan transparansi pricing dan compliance.",
+      "450 pax dari 14 kota, zero incident. Procurement kami yang biasanya picky, akhirnya stop nanya — semua dokumen, kontrak, transparan dari hari pertama.",
     author: "Rina P.",
     title: "GA Director",
     company: "FMCG Multinational",
@@ -299,28 +304,28 @@ export const TESTIMONIALS = [
 
 export const FAQ_HOME = [
   {
-    q: "Berapa kira-kira budget per orang untuk corporate outing di Bandung?",
-    a: "Range budget per pax: Essential (IDR 750K–1.2M, day program), Premium (IDR 1.5M–2.5M, 2D1N standard), Bespoke (IDR 2.5M+, custom executive). Variabel utama: durasi, akomodasi, dan tingkat customization. Kami menyediakan budget calculator interaktif untuk estimasi cepat.",
+    q: "Berapa budget per orang?",
+    a: "Ada 3 tier: Essential (IDR 750K–1.2M, day program), Premium (IDR 1.5M–2.5M, 2D1N — paling populer), Bespoke (IDR 2.5M+, executive custom). Final number tergantung durasi, akomodasi, dan tingkat custom. Mau angka cepat? Pakai budget calculator kami, hasilnya instan.",
   },
   {
-    q: "Berapa lead time minimum untuk event 300+ pax?",
-    a: "Untuk event 300+ pax, kami merekomendasikan minimum 8 minggu lead time untuk hasil optimal — termasuk venue sourcing, konsep design, vendor coordination. Untuk RFP urgent (4–6 minggu), tetap bisa kami tangani dengan tim core yang lebih intensif.",
+    q: "Lead time buat event 300+ pax?",
+    a: "Sweet spot-nya 8 minggu — cukup buat sourcing venue, design konsep, koordinasi vendor tanpa rush. Tapi kalau timeline-nya cuma 4–6 minggu, masih bisa kami handle dengan tim core yang lebih intensif. Pernah eksekusi 450 pax dalam 5 minggu, zero incident.",
   },
   {
-    q: "Apakah bisa custom tema sesuai company value kami?",
-    a: "Ya, customization adalah core dari metodologi kami. Step 2 dari proses kami adalah Conceive — di mana kami merancang narrative, tema, dan learning arc yang spesifik untuk company value, momen organisasi, dan profile peserta Anda.",
+    q: "Tema bisa di-custom sesuai company value?",
+    a: "Wajib di-custom — itu inti kerjaan kami. Step 2 dari metodologi kami adalah Conceive: kami design narrative, tema, dan learning arc yang nyambung sama company value, momen organisasi, dan personality peserta Anda. Bukan cookie-cutter.",
   },
   {
-    q: "Bagaimana payment term untuk corporate?",
-    a: "Standard: 30% DP saat kontrak, 50% milestone (T-30 hari), 20% pelunasan post-event. Untuk klien enterprise dengan PO/term 30 hari, kami fleksibel sesuai compliance procurement Anda. NPWP, faktur pajak, dan dokumen legal lengkap tersedia.",
+    q: "Payment term-nya gimana?",
+    a: "Default: 30% DP saat kontrak, 50% milestone H-30, 20% pelunasan post-event. Pakai PO term 30 hari? Bisa, fleksibel sesuai compliance procurement Anda. NPWP, faktur pajak, dokumen legal — semua lengkap dan transparan dari awal.",
   },
   {
-    q: "Apakah ada asuransi peserta?",
-    a: "Setiap program kami covered dengan asuransi peserta minimum IDR 1M per orang, plus medic on-site untuk grup di atas 100 pax. Untuk aktivitas outdoor, ada protokol K3 tambahan dan emergency response SOP.",
+    q: "Asuransi peserta ada?",
+    a: "Ada, minimum IDR 1 miliar per pax untuk semua program. Untuk grup 100+ pax atau outdoor activity, ada medic on-site dan protokol K3 tambahan. Risk plan didokumentasikan per event — procurement Anda bisa minta sebelum kontrak.",
   },
   {
-    q: "Bagaimana cancellation policy?",
-    a: "Transparan dan procurement-friendly: Cancellation >60 hari = refund 80%. 30–60 hari = 50%. 7–30 hari = 25%. <7 hari = no refund tapi reschedule available tanpa charge dalam 12 bulan. Force majeure clause mengcover situasi luar kendali.",
+    q: "Cancellation policy?",
+    a: "Procurement-friendly: cancel >60 hari = refund 80%. 30–60 hari = 50%. 7–30 hari = 25%. <7 hari = no refund, tapi bisa reschedule tanpa charge dalam 12 bulan. Force majeure (bencana alam, regulasi pemerintah) di-cover terpisah.",
   },
 ];
 
