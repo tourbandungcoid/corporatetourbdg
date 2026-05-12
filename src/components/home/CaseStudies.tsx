@@ -6,9 +6,9 @@ import { IMAGES } from "@/lib/drive-images";
 const CASE_STUDIES = [
   {
     slug: "post-merger-bonding-800-pax",
-    industry: "TECH UNICORN",
+    industry: "Tech Unicorn",
     headline:
-      "Post-Merger Bonding untuk 800 Tim Baru — Satu Suara dalam 3 Hari",
+      "Post-merger bonding untuk 800 tim baru — satu suara dalam 3 hari.",
     pax: "800 pax",
     duration: "3D2N",
     location: "Lembang",
@@ -16,9 +16,9 @@ const CASE_STUDIES = [
   },
   {
     slug: "annual-gathering-banking-3depts",
-    industry: "BANKING · BUMN",
+    industry: "Banking · BUMN",
     headline:
-      "Annual Gathering 3 Departemen — 92% Tim Vote 'Best Event' Dalam 5 Tahun",
+      "Annual gathering 3 departemen — 92% tim vote 'best event' dalam 5 tahun.",
     pax: "120 pax",
     duration: "2D1N",
     location: "Ciwidey",
@@ -26,9 +26,9 @@ const CASE_STUDIES = [
   },
   {
     slug: "quarterly-strategy-offsite-clevel",
-    industry: "FMCG · C-LEVEL",
+    industry: "FMCG · C-Level",
     headline:
-      "Quarterly Strategy Offsite — 24 Senior Leader, 12 New Initiatives Lahir",
+      "Quarterly strategy offsite — 24 senior leader, 12 new initiatives lahir.",
     pax: "24 pax",
     duration: "1D Workshop",
     location: "Bandung City",
@@ -40,29 +40,29 @@ export function CaseStudies() {
   return (
     <section className="section bg-paper">
       <div className="container-1280">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <p className="eyebrow-brand">Case Studies</p>
-            <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
-              Beberapa Cerita Outing yang Kita Bangga
+            <span className="eyebrow-brand">Case studies</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.02]">
+              Real events.<br />
+              <span className="text-brand-deep">Real outcomes.</span>
             </h2>
-            <p className="mt-6 text-lg text-slate">
-              Real events untuk real companies — outcome yang konkret, bukan
-              testimonial template.
-            </p>
           </div>
-          <Link href="/case-studies" className="link-underline">
-            Lihat all case studies
-            <ArrowRight size={14} className="arrow" />
+          <Link
+            href="/case-studies"
+            className="self-start md:self-end inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 h-11 text-sm font-medium text-ink hover:bg-ink hover:text-paper transition-colors"
+          >
+            All case studies
+            <ArrowRight size={14} />
           </Link>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {CASE_STUDIES.map((cs) => (
             <Link
               key={cs.slug}
               href={`/case-studies/${cs.slug}`}
-              className="card card-hover group overflow-hidden flex flex-col"
+              className="group relative overflow-hidden rounded-2xl bg-paper flex flex-col border border-border hover:border-ink-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(15,31,26,0.08)]"
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
                 <Image
@@ -72,32 +72,32 @@ export function CaseStudies() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center rounded-full bg-paper/90 backdrop-blur px-3 py-1 text-xs font-medium text-ink">
+                    {cs.industry}
+                  </span>
+                </div>
               </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <p className="eyebrow text-brand-deep">{cs.industry}</p>
-                <h3 className="font-display mt-4 text-xl text-ink leading-tight">
+
+              <div className="p-7 flex-1 flex flex-col">
+                <h3 className="font-display text-xl text-ink leading-snug">
                   &ldquo;{cs.headline}&rdquo;
                 </h3>
-                <ul className="mt-5 space-y-1.5 text-sm">
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {cs.pax}
-                  </li>
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {cs.duration}
-                  </li>
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {cs.location}
-                  </li>
-                </ul>
-                <span className="mt-6 pt-5 border-t border-divider text-sm font-medium text-brand-deep inline-flex items-center gap-1">
+
+                <div className="mt-5 pt-5 border-t border-divider flex items-center gap-4 text-xs text-slate">
+                  <span className="tabular">{cs.pax}</span>
+                  <span className="h-1 w-1 rounded-full bg-divider" />
+                  <span>{cs.duration}</span>
+                  <span className="h-1 w-1 rounded-full bg-divider" />
+                  <span>{cs.location}</span>
+                </div>
+
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-ink/85">
                   Read full story
                   <ArrowRight
                     size={14}
-                    className="arrow group-hover:translate-x-1 transition"
+                    className="transition-transform group-hover:translate-x-1"
                   />
                 </span>
               </div>

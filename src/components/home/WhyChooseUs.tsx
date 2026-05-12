@@ -1,69 +1,70 @@
-import { Sparkle } from "@/components/icons/Icons";
-
-// 4 pillars selected for launch (per Phase 2 strategy)
 const PILLARS = [
   {
-    title: "Bukan Vendor Generik, Tapi Strategic Partner",
-    body: "Kami bukan agent yang cuma forward booking ke supplier. Setiap brief lo di-handle senior planner yang ngerti business outcome di balik event. Goal bonding pasca-merger di-design beda dengan goal annual celebration. Ini bedanya structured experience design vs sekedar 'jalan-jalan corporate'.",
-    proof: "100% program di-design custom, 0 paket copy-paste",
+    title: "Strategic partner, bukan agent forward booking.",
+    body: "Setiap brief lo di-handle senior planner yang ngerti business outcome. Goal bonding pasca-merger di-design beda dengan goal annual celebration.",
+    proof: "100% custom-designed, 0 paket copy-paste",
   },
   {
-    title: "Bandung Insider Network sejak 2018",
-    body: "Hubungan langsung dengan 60+ venue: villa private, resort premium, glamping site, outdoor activity ground. Bukan calo, bukan reseller — akses langsung. Tahu kapan musim hujan di mana, mana road yang macet jam berapa, mana tempat yang fotogenik buat IG company.",
+    title: "Bandung insider network sejak 2018.",
+    body: "Akses langsung ke 60+ venue: villa private, resort premium, glamping site, outdoor ground. Bukan calo, bukan reseller. Tahu mana road yang macet jam berapa.",
     proof: "60+ venue partnership di Bandung & Jawa Barat",
   },
   {
-    title: "Pricing Transparan. No Surprise Markup.",
-    body: "Proposal kami detailed breakdown — venue, F&B, logistics, activity, talent, contingency. Lo bisa lihat margin kami berapa. No 'admin fee' tiba-tiba, no 'tax' yang muncul saat invoice. Finance team lo akan love this — approval flow jadi cepet.",
+    title: "Pricing transparan. No surprise markup.",
+    body: "Proposal detailed breakdown — lo bisa lihat exactly margin kami. No admin fee tiba-tiba, no tax muncul mendadak. Finance team lo bakal love this.",
     proof: "0% hidden fees dalam 6 tahun terakhir",
   },
   {
-    title: "Speed Yang Bikin Decision Cepat",
-    body: "Free proposal lengkap dalam 24 jam setelah briefing call. Most vendor butuh 5 hari. Kami investasi di internal database & senior planner availability — lo bisa kasih update ke management dalam 1-2 hari, bukan minggu depan.",
+    title: "Speed yang bikin decision cepat.",
+    body: "Free proposal lengkap dalam 24 jam setelah briefing call. Most vendor butuh 5 hari. Lo bisa update management dalam 1-2 hari, bukan minggu depan.",
     proof: "Avg response time: 6 jam (working hours)",
   },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="section bg-cream/50">
+    <section className="section bg-paper">
       <div className="container-1280">
-        <div className="max-w-2xl">
-          <p className="eyebrow-brand">Why Choose Us</p>
-          <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
-            Kenapa 100+ HR Manager Pilih Kami
-          </h2>
-          <p className="mt-6 text-lg text-slate">
-            4 alasan yang konsisten kami dengar dari client repeat-booker.
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 mb-16">
+          <div className="lg:col-span-5">
+            <span className="eyebrow-brand">Why choose us</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.02]">
+              Kenapa 100+ HR pilih kami.
+            </h2>
+          </div>
+          <p className="lg:col-span-5 lg:col-start-8 text-lg text-slate leading-relaxed self-end">
+            Empat hal yang konsisten kami dengar dari client repeat-booker —
+            why they came back, dan kenapa mereka rekomendasikan ke HR-HR lain
+            di industri mereka.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="grid gap-px bg-divider rounded-3xl overflow-hidden border border-divider">
           {PILLARS.map((pillar, i) => (
             <div
               key={i}
-              className="card p-8 md:p-10 flex flex-col bg-paper"
+              className="bg-paper p-8 md:p-12 grid gap-8 md:grid-cols-12 items-start"
             >
-              <div className="flex items-center gap-3">
-                <span className="font-display text-3xl text-brand-deep tabular">
+              <div className="md:col-span-2">
+                <span className="font-display text-5xl md:text-6xl text-brand-deep tabular leading-none">
                   0{i + 1}
                 </span>
-                <span className="h-px flex-1 bg-divider" />
               </div>
 
-              <h3 className="font-display mt-6 text-2xl text-ink md:text-3xl">
-                {pillar.title}
-              </h3>
+              <div className="md:col-span-7">
+                <h3 className="font-display text-2xl md:text-3xl text-ink leading-tight">
+                  {pillar.title}
+                </h3>
+                <p className="mt-4 text-base text-slate leading-relaxed">
+                  {pillar.body}
+                </p>
+              </div>
 
-              <p className="mt-4 text-base text-slate leading-relaxed">
-                {pillar.body}
-              </p>
-
-              <div className="mt-6 pt-6 border-t border-divider flex items-start gap-2.5">
-                <span className="mt-0.5 text-brand">
-                  <Sparkle size={14} />
-                </span>
-                <p className="text-sm font-medium text-ink">
+              <div className="md:col-span-3 md:pl-6 md:border-l md:border-divider">
+                <p className="text-xs uppercase tracking-[0.18em] text-slate-mute mb-2">
+                  The proof
+                </p>
+                <p className="text-sm font-medium text-ink leading-snug">
                   {pillar.proof}
                 </p>
               </div>

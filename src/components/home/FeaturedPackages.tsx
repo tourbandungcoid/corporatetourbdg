@@ -41,34 +41,35 @@ const PACKAGES = [
 
 export function FeaturedPackages() {
   return (
-    <section className="section bg-bone">
+    <section className="section bg-cream/40">
       <div className="container-1280">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <p className="eyebrow-brand">Featured Programs</p>
-            <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
-              Sample Programs — Tinggal Customize
+            <span className="eyebrow-brand">Featured Programs</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.02]">
+              Sample programs.<br />
+              <span className="text-brand-deep">Tinggal customize.</span>
             </h2>
-            <p className="mt-6 text-lg text-slate">
-              Bukan paket fixed — sample starting point. Setiap proposal yang
-              kami kirim disesuaikan dengan tim, budget, dan objective lo.
-            </p>
           </div>
-          <Link href="/packages" className="link-underline">
-            Lihat all packages
-            <ArrowRight size={14} className="arrow" />
+          <Link
+            href="/packages"
+            className="self-start md:self-end inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 h-11 text-sm font-medium text-ink hover:bg-ink hover:text-paper transition-colors"
+          >
+            All packages
+            <ArrowRight size={14} />
           </Link>
         </div>
 
-        {/* Packages grid */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {PACKAGES.map((pkg) => (
             <Link
               key={pkg.slug}
               href={`/packages/${pkg.slug}`}
               className={[
-                "card card-hover group overflow-hidden flex flex-col",
-                pkg.featured ? "md:scale-105 md:shadow-xl ring-2 ring-brand/30" : "",
+                "group relative overflow-hidden rounded-2xl bg-paper flex flex-col transition-all duration-300",
+                "border border-border hover:border-ink-soft hover:-translate-y-1",
+                "hover:shadow-[0_24px_48px_rgba(15,31,26,0.08)]",
+                pkg.featured ? "md:scale-[1.02] md:shadow-[0_16px_40px_rgba(15,31,26,0.08)]" : "",
               ].join(" ")}
             >
               {/* Image area */}
@@ -81,50 +82,40 @@ export function FeaturedPackages() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {pkg.featured && (
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink shadow-md">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1.5 text-xs font-medium text-ink shadow-md">
                     ★ Most Popular
                   </div>
                 )}
-                {/* Bottom gradient for premium feel */}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
               </div>
 
-              {/* Body */}
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="font-display text-2xl text-ink">{pkg.title}</h3>
+              <div className="p-7 flex-1 flex flex-col">
+                <p className="text-xs uppercase tracking-[0.16em] text-slate-mute">
+                  {pkg.vibe}
+                </p>
+                <h3 className="font-display mt-3 text-2xl text-ink leading-tight">
+                  {pkg.title}
+                </h3>
                 <p className="mt-2 text-sm text-slate">{pkg.subtitle}</p>
 
-                <ul className="mt-5 space-y-1.5 text-sm">
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {pkg.pax}
-                  </li>
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {pkg.duration}
-                  </li>
-                  <li className="flex items-center gap-2 text-slate">
-                    <span className="h-1 w-1 rounded-full bg-brand" />
-                    {pkg.vibe}
-                  </li>
-                </ul>
+                <div className="mt-6 pt-5 border-t border-divider flex items-center gap-6 text-sm text-slate">
+                  <span>{pkg.pax}</span>
+                  <span className="h-1 w-1 rounded-full bg-divider" />
+                  <span>{pkg.duration}</span>
+                </div>
 
-                <div className="mt-6 pt-5 border-t border-divider flex items-end justify-between">
+                <div className="mt-5 flex items-end justify-between">
                   <div>
-                    <p className="text-xs text-slate-mute">Mulai dari</p>
-                    <p className="font-display text-2xl text-ink tabular">
+                    <p className="text-xs text-slate-mute mb-0.5">Mulai dari</p>
+                    <p className="font-display text-2xl text-ink tabular leading-none">
                       {pkg.startingPrice}
-                      <span className="text-sm font-sans text-slate ml-1">
+                      <span className="text-sm font-medium text-slate ml-1.5">
                         /pax
                       </span>
                     </p>
                   </div>
-                  <span className="text-sm font-medium text-brand-deep inline-flex items-center gap-1">
-                    Detail
-                    <ArrowRight
-                      size={14}
-                      className="arrow group-hover:translate-x-1 transition"
-                    />
+                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-border group-hover:bg-ink group-hover:border-ink group-hover:text-paper transition-colors">
+                    <ArrowRight size={16} />
                   </span>
                 </div>
               </div>
