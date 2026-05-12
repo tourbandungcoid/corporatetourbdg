@@ -5,15 +5,15 @@ import { STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 
 /**
- * Premium full-viewport cinematic hero.
- * - 100vh immersive backdrop with hero photograph
- * - Editorial display headline with intentional line breaks
- * - Dual CTAs (primary + free consultation)
- * - Bottom stats strip + scroll indicator
+ * Premium full-viewport cinematic hero — Framer-template grade.
+ * - 100vh immersive backdrop with ken-burns photograph
+ * - Inter Display heavy headline with intentional 3-line composition
+ * - Dual pill CTAs (primary brand + glass-outlined)
+ * - Subtle bottom stats strip
  */
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[720px] w-full overflow-hidden bg-ink">
+    <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-ink">
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
@@ -24,14 +24,13 @@ export function Hero() {
           sizes="100vw"
           className="object-cover ken-burns"
         />
-        {/* Cinematic gradient stack — bottom heavy for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/40 to-ink/85" />
-        {/* Side vignette for editorial framing */}
+        {/* Cinematic gradient stack */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/35 to-ink/85" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/40 via-transparent to-transparent" />
       </div>
 
-      {/* Content — anchored to lower-third */}
-      <div className="relative h-full container-1280 flex flex-col justify-end pb-36 md:pb-44 lg:pb-48 pt-32">
+      {/* Content — vertically balanced, top padding clears the floating navbar */}
+      <div className="relative h-full container-1280 flex flex-col justify-center pb-44 pt-28 md:pt-32">
         <div className="max-w-4xl fade-up">
           {/* Eyebrow trust pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 backdrop-blur px-4 py-1.5">
@@ -41,23 +40,23 @@ export function Hero() {
             </span>
           </div>
 
-          {/* Massive editorial headline */}
-          <h1 className="font-display mt-8 text-paper leading-[0.95] tracking-[-0.02em]">
-            <span className="block text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
+          {/* Heavy editorial headline — Inter Display weight */}
+          <h1 className="font-display mt-8 text-paper">
+            <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
               Corporate outing
             </span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl xl:text-[9rem] font-display-italic text-brand">
+            <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] text-brand">
               untuk tim
             </span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
+            <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
               yang fokus hasil.
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="mt-10 text-base md:text-lg text-paper/75 leading-relaxed max-w-2xl">
+          <p className="mt-8 text-base md:text-lg text-paper/75 leading-relaxed max-w-2xl">
             Custom-designed corporate event di Bandung &amp; Jawa Barat —{" "}
-            <span className="text-paper">
+            <span className="text-paper font-medium">
               company gathering, team building, executive offsite
             </span>
             . Dari startup unicorn sampai BUMN nasional, untuk tim 20 sampai
@@ -65,20 +64,20 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="/proposal/request"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand text-paper px-7 h-14 text-base font-medium hover:bg-brand-deep transition-all hover:shadow-[0_8px_30px_rgba(107,162,57,0.4)]"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand text-paper px-7 h-13 py-3.5 text-[15px] font-medium hover:bg-brand-deep transition-all hover:shadow-[0_8px_30px_rgba(107,162,57,0.35)]"
             >
               Request Proposal
               <ArrowRight
-                size={18}
+                size={16}
                 className="transition-transform group-hover:translate-x-1"
               />
             </Link>
             <Link
               href="/proposal/book-consultation"
-              className="inline-flex items-center gap-2 rounded-full border border-paper/30 bg-paper/5 backdrop-blur text-paper px-7 h-14 text-base font-medium hover:bg-paper hover:text-ink hover:border-paper transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-paper/30 bg-paper/[0.06] backdrop-blur text-paper px-7 py-3.5 text-[15px] font-medium hover:bg-paper hover:text-ink hover:border-paper transition-colors"
             >
               Free Consultation
             </Link>
@@ -86,10 +85,10 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom stats strip — editorial */}
-      <div className="absolute bottom-0 inset-x-0 border-t border-paper/15 bg-ink/30 backdrop-blur-sm">
+      {/* Bottom stats strip — subtle */}
+      <div className="absolute bottom-0 inset-x-0 border-t border-paper/12 bg-ink/40 backdrop-blur-sm">
         <div className="container-1280">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper/10">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             <Stat number={STATS.eventsDelivered} label="Events delivered" />
             <Stat number={STATS.companiesTrusted} label="Companies trusted" />
             <Stat number={STATS.repeatBookingRate} label="Repeat booking" />
@@ -99,9 +98,9 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-32 md:bottom-36 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-paper/50">
-        <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-        <span className="h-8 w-px bg-gradient-to-b from-paper/50 to-transparent" />
+      <div className="absolute bottom-[6.5rem] md:bottom-32 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-paper/45">
+        <span className="text-[10px] tracking-[0.22em] uppercase">Scroll</span>
+        <span className="h-8 w-px bg-gradient-to-b from-paper/45 to-transparent" />
       </div>
     </section>
   );
@@ -109,11 +108,13 @@ export function Hero() {
 
 function Stat({ number, label }: { number: string; label: string }) {
   return (
-    <div className="bg-ink/40 py-6 md:py-7 px-2 text-center md:text-left md:px-4">
-      <p className="font-display text-2xl md:text-4xl text-paper tabular leading-none">
+    <div className="py-5 md:py-6 px-3 md:px-4 border-l border-paper/10 first:border-l-0">
+      <p className="font-display text-xl md:text-2xl text-paper tabular leading-none">
         {number}
       </p>
-      <p className="mt-1.5 text-xs md:text-sm text-paper/60">{label}</p>
+      <p className="mt-1.5 text-[11px] md:text-xs text-paper/55 tracking-wide">
+        {label}
+      </p>
     </div>
   );
 }
