@@ -1,7 +1,16 @@
 /**
  * Site-wide configuration & content constants.
  * Centralized for easy updates (NAP consistency, SEO, schema).
+ *
+ * Canonical URL is env-driven so we can use the Vercel preview URL during
+ * pre-launch testing, then flip to the real domain via Vercel env var.
  */
+
+const CANONICAL_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  "https://corporate.7summitstravel.com";
+
+const CANONICAL_DOMAIN = CANONICAL_URL.replace(/^https?:\/\//, "");
 
 export const SITE = {
   name: "7Summits Corporate",
@@ -10,9 +19,9 @@ export const SITE = {
   tagline:
     "Corporate experience design untuk tim yang fokus hasil. Outing, MICE, retreat — di-handle satu agency.",
   shortTagline: "Corporate experience design untuk enterprise Indonesia.",
-  url: "https://corporate.tourbandung.co.id",
-  domain: "corporate.tourbandung.co.id",
-  email: "hello@corporate.tourbandung.co.id",
+  url: CANONICAL_URL,
+  domain: CANONICAL_DOMAIN,
+  email: "hello@7summitstravel.com",
   phone: "+62 811 2345 678",
   phoneRaw: "+6281123456780",
   whatsapp: "+6281123456780",
@@ -26,9 +35,9 @@ export const SITE = {
     country: "ID",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/tourbandung-corporate",
-    instagram: "https://www.instagram.com/tourbandung.corporate",
-    youtube: "https://www.youtube.com/@tourbandungcorporate",
+    linkedin: "https://www.linkedin.com/company/7summits-travel",
+    instagram: "https://www.instagram.com/7summits.corporate",
+    youtube: "https://www.youtube.com/@7summitstravel",
   },
   established: 2012,
   stats: {
