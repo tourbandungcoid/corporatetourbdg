@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
+import { getAllServiceSlugs } from "@/lib/services-data";
 
 const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -33,10 +34,20 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return PUBLIC_ROUTES.map((r) => ({
+
+  const baseRoutes = PUBLIC_ROUTES.map((r) => ({
     url: `${SITE.url}${r.path}`,
     lastModified: now,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
+
+  const serviceRoutes = getAllServiceSlugs().map((slug) => ({
+    url: `${SITE.url}/services/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...baseRoutes, ...serviceRoutes];
 }
