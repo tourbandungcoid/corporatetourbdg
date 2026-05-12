@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoLockup } from "./Logo";
 import {
   SITE,
   SERVICES,
@@ -31,17 +32,14 @@ export function Footer() {
         {/* Top brand */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="font-display text-[28px] text-[var(--color-gold)]">
-                7S
-              </span>
-              <span className="font-sans font-medium text-[17px]">
-                TourBandung Corporate
-              </span>
+            <div className="mb-6">
+              <LogoLockup size={32} variant="white" showSubline />
             </div>
-            <p className="font-display text-[28px] lg:text-[32px] leading-[1.15] text-[var(--color-bone)] max-w-[480px]">
-              Indonesia&apos;s trusted partner for high-stakes corporate
-              gatherings.
+            <p className="font-display text-[28px] lg:text-[36px] leading-[1.12] text-[var(--color-bone)] max-w-[480px]">
+              Corporate experience design untuk{" "}
+              <span className="font-display-italic text-[var(--color-brand)]">
+                tim yang fokus hasil.
+              </span>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/proposal/request" className="btn btn-on-dark">

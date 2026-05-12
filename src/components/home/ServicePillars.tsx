@@ -20,15 +20,15 @@ export function ServicePillars() {
       <div className="container-1280">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 lg:mb-20">
           <div className="max-w-[680px]">
-            <p className="eyebrow-gold mb-6">Apa yang kami desain</p>
+            <p className="eyebrow-brand mb-6">Format experience yang kami desain</p>
             <h2 className="font-display text-[36px] lg:text-[52px] leading-[1.05] tracking-[-0.02em] text-[var(--color-ink)]">
-              Delapan format experience,{" "}
-              <span className="font-display-italic">tak terbatas kustomisasi.</span>
+              Delapan format,{" "}
+              <span className="font-display-italic">kustomisasi tanpa batas.</span>
             </h2>
           </div>
           <p className="text-[15px] text-[var(--color-slate)] max-w-[320px]">
-            Setiap format adalah titik mulai. Dari sini kami merancang yang
-            spesifik untuk tim Anda — bukan template.
+            Setiap format di sini cuma starting point. Kami yang tweak sesuai
+            tim Anda — bukan Anda yang ngepasin tim ke paket kami.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export function ServicePillars() {
               href={`/services/${s.slug}`}
               className="group bg-[var(--color-paper)] p-7 lg:p-8 hover:bg-[var(--color-bone)] transition-colors duration-300 relative flex flex-col"
             >
-              <div className="text-[var(--color-gold)] mb-6">
+              <div className="text-[var(--color-brand)] mb-6">
                 <ServiceIcon name={ICON_LOOKUP[s.slug]} size={28} />
               </div>
               <h3 className="font-display text-[22px] lg:text-[24px] leading-tight text-[var(--color-ink)] mb-2">
@@ -54,7 +54,7 @@ export function ServicePillars() {
                 </span>
                 <ArrowUpRight
                   size={18}
-                  className="text-[var(--color-ink)] group-hover:text-[var(--color-gold)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  className="text-[var(--color-ink)] group-hover:text-[var(--color-brand)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
                 />
               </div>
             </Link>

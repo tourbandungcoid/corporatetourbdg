@@ -4,21 +4,21 @@ import { ArrowRight } from "../Icon";
 const ITEMS = [
   {
     n: "01",
-    title: "Tanpa objective yang jelas",
+    title: "Outing-nya seru. Dampaknya? Nggak jelas.",
     body:
-      "67% HR yang kami survei tidak bisa mengukur ROI dari outing terakhir mereka. Aktivitas seru, tapi tidak ada dampak yang terukur.",
+      "67% HR yang kami survei nggak bisa ukur ROI outing terakhir mereka. Aktivitas rame, foto-foto bagus — tapi 3 bulan kemudian tim balik ke pola lama.",
   },
   {
     n: "02",
-    title: "Aktivitas generic",
+    title: "Vendor jualan paket. Bukan solusi.",
     body:
-      "Cookie-cutter program yang tidak mencerminkan budaya, value, atau momen organisasi Anda saat ini. Sama untuk semua klien.",
+      "Cookie-cutter program yang sama dipakai semua klien. Nggak mencerminkan budaya kantor, nggak nyambung ke momen organisasi Anda saat ini.",
   },
   {
     n: "03",
-    title: "Logistik yang berantakan",
+    title: "H-1 chaos, HR yang pusing.",
     body:
-      "Last-minute chaos berakhir di meja HR — bukan vendor. Risk plan tidak ada, contingency tidak dipikirkan.",
+      "Bus telat, catering kurang, peserta complain — vendor angkat tangan, HR yang ditegur. Risk plan? Contingency? Nggak ada di proposal mereka.",
   },
 ];
 
@@ -27,19 +27,19 @@ export function ProblemSolution() {
     <section className="section">
       <div className="container-1280">
         <div className="max-w-[820px]">
-          <p className="eyebrow-gold mb-6">
-            Mengapa banyak corporate outing gagal
+          <p className="eyebrow-brand mb-6">
+            Kenapa banyak corporate outing gagal
           </p>
           <h2 className="font-display text-[36px] lg:text-[56px] leading-[1.05] tracking-[-0.02em] text-[var(--color-ink)]">
-            Tim Anda layak mendapatkan lebih dari sekadar{" "}
-            <span className="font-display-italic">outing biasa.</span>
+            Tim Anda capek setahun penuh.{" "}
+            <span className="font-display-italic">Outing-nya jangan asal-asalan.</span>
           </h2>
         </div>
 
         <div className="mt-16 lg:mt-20 grid md:grid-cols-3 gap-8 lg:gap-12">
           {ITEMS.map((item) => (
             <div key={item.n}>
-              <span className="font-display-italic text-[40px] lg:text-[48px] text-[var(--color-gold)] block leading-none mb-5">
+              <span className="font-display-italic text-[40px] lg:text-[48px] text-[var(--color-brand)] block leading-none mb-5">
                 {item.n}
               </span>
               <h3 className="font-display text-[24px] lg:text-[26px] text-[var(--color-ink)] mb-3">
@@ -54,7 +54,7 @@ export function ProblemSolution() {
 
         <div className="mt-16 pt-10 border-t border-[var(--color-divider)]">
           <Link href="/why-us/our-process" className="link-underline">
-            Lihat metodologi kami — bagaimana kami menyelesaikan tiga masalah ini
+            Lihat cara kami menyelesaikan 3 masalah ini
             <ArrowRight size={16} className="arrow" />
           </Link>
         </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X, ArrowRight } from "./Icon";
+import { LogoLockup } from "./Logo";
 import { NAV, SITE } from "@/lib/site";
 
 export function Navigation() {
@@ -36,16 +37,10 @@ export function Navigation() {
         <div className="container-1280 flex items-center justify-between h-[72px]">
           <Link
             href="/"
-            className="flex items-center gap-2 font-display text-[20px] tracking-tight text-[var(--color-ink)]"
+            className="flex items-center"
             aria-label={SITE.name}
           >
-            <span className="font-display text-[var(--color-gold)]">7S</span>
-            <span className="hidden sm:inline font-sans font-medium text-[15px]">
-              TourBandung Corporate
-            </span>
-            <span className="sm:hidden font-sans font-medium text-[14px]">
-              TB Corporate
-            </span>
+            <LogoLockup size={26} />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
