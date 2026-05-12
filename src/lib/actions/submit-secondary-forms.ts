@@ -3,6 +3,15 @@
 import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
+import { notifyNewLead } from "@/lib/email/send";
+
+function priorityFromScore(score: number): "hot" | "warm" | "medium" | "cool" | "cold" {
+  if (score >= 90) return "hot";
+  if (score >= 70) return "warm";
+  if (score >= 50) return "medium";
+  if (score >= 30) return "cool";
+  return "cold";
+}
 
 const PERSONAL_EMAIL_DOMAINS = [
   "gmail.com",
@@ -89,6 +98,16 @@ export async function submitQuickQuote(
     details: { source: "quick_quote" },
   });
 
+  await notifyNewLead({
+    refCode: lead.ref_code,
+    fullName: input.full_name,
+    workEmail: input.work_email,
+    companyName: input.company_name || "Not specified",
+    source: "quick_quote",
+    score,
+    priority: priorityFromScore(score),
+  });
+
   redirect(`/proposal/thank-you/${lead.ref_code}`);
 }
 
@@ -164,6 +183,17 @@ export async function submitConsultation(
     details: { source: "book_consultation", preferred_time: input.preferred_time },
   });
 
+  await notifyNewLead({
+    refCode: lead.ref_code,
+    fullName: input.full_name,
+    workEmail: input.work_email,
+    whatsapp: input.whatsapp,
+    companyName: input.company_name,
+    source: "book_consultation",
+    score,
+    priority: priorityFromScore(score),
+  });
+
   redirect(`/proposal/thank-you/${lead.ref_code}`);
 }
 
@@ -221,6 +251,15 @@ export async function submitLeadMagnet(
     details: { source: "lead_magnet", lead_magnet: "sample-proposal-200pax" },
   });
 
-  // For now, redirect to thank-you. Actual PDF email send is Phase 5b work.
+  await notifyNewLead({
+    refCode: lead.ref_code,
+    fullName: input.full_name,
+    workEmail: input.work_email,
+    companyName: input.company_name,
+    source: "lead_magnet",
+    score,
+    priority: priorityFromScore(score),
+  });
+
   redirect(`/proposal/thank-you/${lead.ref_code}?source=sample`);
 }
