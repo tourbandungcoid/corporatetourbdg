@@ -1,0 +1,42 @@
+import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
+
+const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
+  { path: "/", priority: 1.0, changeFrequency: "weekly" },
+  // SEO money pages (top-level — max ranking power)
+  { path: "/outing-kantor-bandung", priority: 0.95, changeFrequency: "monthly" },
+  { path: "/team-building-bandung", priority: 0.95, changeFrequency: "monthly" },
+  { path: "/corporate-gathering-bandung", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/employee-gathering-bandung", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/outbound-perusahaan-bandung", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/company-retreat-bandung", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/villa-gathering-bandung", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/glamping-corporate-bandung", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/leadership-retreat-jawa-barat", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/executive-offsite-bandung", priority: 0.85, changeFrequency: "monthly" },
+  // Hubs
+  { path: "/services", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/packages", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/case-studies", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
+  // Company
+  { path: "/about", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
+  // Proposal funnel (lower priority — internal CTAs not search-targeted)
+  { path: "/proposal", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/proposal/request", priority: 0.5, changeFrequency: "monthly" },
+  { path: "/proposal/sample", priority: 0.5, changeFrequency: "monthly" },
+  { path: "/proposal/book-consultation", priority: 0.5, changeFrequency: "monthly" },
+  { path: "/proposal/quick-quote", priority: 0.5, changeFrequency: "monthly" },
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+  return PUBLIC_ROUTES.map((r) => ({
+    url: `${SITE.url}${r.path}`,
+    lastModified: now,
+    changeFrequency: r.changeFrequency,
+    priority: r.priority,
+  }));
+}

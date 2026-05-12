@@ -1,0 +1,221 @@
+import { SITE, CONTACT, SOCIAL, STATS } from "./site";
+
+/**
+ * Schema.org JSON-LD helpers for SEO and GEO (LLM citation).
+ * Output via <script type="application/ld+json"> in page heads.
+ */
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    alternateName: ["Tour Bandung Corporate", "7Summits Corporate"],
+    url: SITE.url,
+    logo: `${SITE.url}/logo/logo.png`,
+    description:
+      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. Unit dari 7Summits Travel, beroperasi sejak 2018 dengan 400+ events delivered.",
+    foundingDate: "2018",
+    parentOrganization: {
+      "@type": "Organization",
+      name: SITE.parentBrand,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bandung",
+      addressRegion: "Jawa Barat",
+      addressCountry: "ID",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      telephone: `+${CONTACT.whatsapp}`,
+      email: CONTACT.email,
+      availableLanguage: ["Indonesian", "English"],
+    },
+    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube],
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE.name,
+    image: `${SITE.url}/logo/logo.png`,
+    url: SITE.url,
+    telephone: `+${CONTACT.whatsapp}`,
+    email: CONTACT.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bandung",
+      addressRegion: "Jawa Barat",
+      addressCountry: "ID",
+    },
+    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Jawa Barat"],
+    priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function faqPageSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function articleSchema({
+  headline,
+  description,
+  image,
+  datePublished,
+  dateModified,
+  slug,
+}: {
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified: string;
+  slug: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    image,
+    datePublished,
+    dateModified,
+    author: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}/logo/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE.url}${slug}`,
+    },
+    about: {
+      "@type": "Service",
+      name: "Corporate Outing Bandung",
+      provider: {
+        "@type": "Organization",
+        name: SITE.name,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Bandung",
+      },
+    },
+  };
+}
+
+export function serviceSchema({
+  name,
+  description,
+  priceRange,
+}: {
+  name: string;
+  description: string;
+  priceRange: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    provider: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    areaServed: [
+      { "@type": "City", name: "Bandung" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat" },
+    ],
+    offers: {
+      "@type": "Offer",
+      priceRange,
+      priceCurrency: "IDR",
+    },
+    serviceType: "Corporate Event Planning",
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Corporate B2B",
+    },
+  };
+}
+
+/**
+ * Render multiple schemas as a single @graph for performance + cleanliness.
+ */
+export function combineSchemas(...schemas: object[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": schemas.map((s) => {
+      // Strip nested @context — already in parent
+      const copy = { ...s } as Record<string, unknown>;
+      delete copy["@context"];
+      return copy;
+    }),
+  };
+}
+
+/**
+ * JSON-LD <script> component for App Router server components.
+ */
+export function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+// Re-export stats reference (avoid unused import warning)
+export const _STATS_REF = STATS;
