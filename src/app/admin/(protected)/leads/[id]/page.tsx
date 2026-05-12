@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { PriorityBadge, StatusBadge } from "@/components/admin/LeadBadges";
+import { LeadActionsPanel } from "@/components/admin/LeadActionsPanel";
+import { getAdminUsers } from "@/lib/actions/lead-actions";
 import { buildWaLink } from "@/lib/site";
 import { Whatsapp, ArrowRight } from "@/components/icons/Icons";
 
@@ -34,6 +36,16 @@ const BUDGET_LABEL: Record<string, string> = {
   premium: "Premium (Rp 4.5–7 jt/pax)",
   all_out: "All-Out (Rp 7 jt+/pax)",
   help_me: "Help me figure out",
+};
+
+const ACTIVITY_LABEL: Record<string, string> = {
+  lead_created: "Lead created",
+  status_changed: "Status changed",
+  note_added: "Note added",
+  assigned: "Assigned",
+  email_sent: "Email sent",
+  proposal_sent: "Proposal sent",
+  proposal_viewed: "Proposal viewed",
 };
 
 const URGENCY_LABEL: Record<string, string> = {
@@ -72,7 +84,7 @@ export default async function LeadDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const result = await getLead(id);
+  const [result, adminUsers] = await Promise.all([getLead(id), getAdminUsers()]);
 
   if (!result) notFound();
   const { lead, qual, activities } = result;
@@ -225,6 +237,15 @@ export default async function LeadDetailPage({
 
           {/* Sidebar column */}
           <div className="space-y-6">
+            <Card title="Quick actions">
+              <LeadActionsPanel
+                leadId={lead.id}
+                currentStatus={lead.status}
+                currentAssignedTo={lead.assigned_to}
+                adminUsers={adminUsers}
+              />
+            </Card>
+
             <Card title="Score breakdown">
               {Object.keys(breakdown).length === 0 ? (
                 <p className="text-sm text-slate">No breakdown captured.</p>
@@ -260,27 +281,44 @@ export default async function LeadDetailPage({
               {activities.length === 0 ? (
                 <p className="text-sm text-slate">No activity yet.</p>
               ) : (
-                <ol className="space-y-3 text-sm">
-                  {activities.map((a) => (
-                    <li
-                      key={a.id}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="mt-1 h-2 w-2 rounded-full bg-brand flex-shrink-0" />
-                      <div className="flex-1 min-w-0">
-                        <p className="text-ink">{a.activity_type}</p>
-                        <p className="text-xs text-slate mt-0.5 tabular">
-                          {new Date(a.created_at).toLocaleString("id-ID", {
-                            day: "numeric",
-                            month: "short",
-                            year: "2-digit",
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
+                <ol className="space-y-4 text-sm">
+                  {activities.map((a) => {
+                    const details = (a.details ?? {}) as Record<string, unknown>;
+                    const label = ACTIVITY_LABEL[a.activity_type] ?? a.activity_type.replace(/_/g, " ");
+                    return (
+                      <li key={a.id} className="flex items-start gap-3">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-brand flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-ink font-medium">{label}</p>
+                          {a.activity_type === "note_added" && typeof details.note === "string" && (
+                            <p className="mt-1 text-sm text-slate whitespace-pre-wrap leading-relaxed">
+                              {details.note}
+                            </p>
+                          )}
+                          {a.activity_type === "status_changed" && (
+                            <p className="mt-1 text-xs text-slate">
+                              {String(details.from ?? "—")} → <span className="text-ink">{String(details.to ?? "—")}</span>
+                            </p>
+                          )}
+                          {a.activity_type === "assigned" && (
+                            <p className="mt-1 text-xs text-slate">
+                              {details.to ? "Assigned" : "Unassigned"}
+                            </p>
+                          )}
+                          <p className="text-xs text-slate-mute mt-1 tabular">
+                            {typeof details.by_name === "string" && `${details.by_name} · `}
+                            {new Date(a.created_at).toLocaleString("id-ID", {
+                              day: "numeric",
+                              month: "short",
+                              year: "2-digit",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
+                          </p>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ol>
               )}
             </Card>
