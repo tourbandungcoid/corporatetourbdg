@@ -3,6 +3,7 @@ import { SITE } from "@/lib/site";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { getAllCaseStudySlugs } from "@/lib/case-studies-data";
 import { getAllInsightSlugs } from "@/lib/insights-data";
+import { getAllFaqCategorySlugs } from "@/lib/faq-data";
 
 const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -65,5 +66,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...baseRoutes, ...serviceRoutes, ...caseStudyRoutes, ...insightRoutes];
+  const faqCategoryRoutes = getAllFaqCategorySlugs().map((slug) => ({
+    url: `${SITE.url}/faq/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [
+    ...baseRoutes,
+    ...serviceRoutes,
+    ...caseStudyRoutes,
+    ...insightRoutes,
+    ...faqCategoryRoutes,
+  ];
 }
