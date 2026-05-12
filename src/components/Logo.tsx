@@ -30,14 +30,11 @@ export function LogoMark({
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="7Summits Travel"
+      aria-label="Tour Bandung Corporate"
       {...props}
     >
-      {/* Upper-left facet (top half of triangle) */}
       <path d="M8 8 L56 32 L8 32 Z" fill={top} />
-      {/* Lower-right facet (bottom half, darker) */}
       <path d="M8 32 L56 32 L8 56 Z" fill={bottom} />
-      {/* Inner highlight (subtle vertical edge) */}
       <path
         d="M8 8 L24 24 L24 40 L8 56 Z"
         fill={top}
@@ -47,10 +44,6 @@ export function LogoMark({
   );
 }
 
-/**
- * Combined lockup: mark + wordmark.
- * Default to compact horizontal layout used in nav/footer.
- */
 export function LogoLockup({
   size = 28,
   showSubline = false,
@@ -76,14 +69,14 @@ export function LogoLockup({
             letterSpacing: "-0.02em",
           }}
         >
-          7Summits<span className="font-display-italic"> Corporate</span>
+          TourBandung<span className="font-display-italic"> Corporate</span>
         </span>
         {showSubline && (
           <span
             className="mt-1 text-[10px] uppercase tracking-[0.16em]"
             style={{ color: subColor }}
           >
-            By 7Summits Travel
+            A unit of 7Summits Travel
           </span>
         )}
       </span>

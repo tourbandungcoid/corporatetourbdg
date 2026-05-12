@@ -1,80 +1,42 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
-import "./globals.css";
-import { SITE } from "@/lib/site";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { StickyCTA } from "@/components/StickyCTA";
-import { OrganizationSchema } from "@/components/Schema";
+import { WhatsAppFloat } from "@/components/WhatsAppButton";
+import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
 const fraunces = Fraunces({
-  variable: "--font-fraunces",
   subsets: ["latin"],
+  variable: "--font-fraunces",
   display: "swap",
-  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://corporate.tourbandung.co.id"
+  ),
   title: {
-    default: `${SITE.name} — ${SITE.shortTagline}`,
-    template: `%s | ${SITE.name}`,
+    default:
+      "TourBandung Corporate — Premium Corporate Outing & Team Building Bandung",
+    template: "%s · TourBandung Corporate",
   },
-  description: SITE.tagline,
-  keywords: [
-    "corporate outing bandung",
-    "outing kantor bandung",
-    "team building bandung",
-    "MICE bandung",
-    "corporate retreat indonesia",
-    "executive offsite",
-    "leadership camp",
-    "incentive trip",
-    "company gathering",
-    "annual company trip",
-  ],
-  authors: [{ name: SITE.name }],
+  description:
+    "Vendor specialist corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 400+ events delivered sejak 2018. Free proposal dalam 24 jam.",
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: SITE.url,
-    siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.shortTagline}`,
-    description: SITE.tagline,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE.name,
-    description: SITE.tagline,
+    siteName: "TourBandung Corporate",
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
-  alternates: {
-    canonical: SITE.url,
-    languages: {
-      "id-ID": SITE.url,
-    },
-  },
-};
-
-export const viewport: Viewport = {
-  themeColor: "#FAFAF7",
-  width: "device-width",
-  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -83,19 +45,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body className={`${inter.variable} ${fraunces.variable}`}>
-        <OrganizationSchema />
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[var(--color-ink)] focus:text-[var(--color-bone)] focus:px-4 focus:py-2 focus:rounded"
-        >
-          Lewati ke konten utama
-        </a>
+    <html lang="id" className={`${inter.variable} ${fraunces.variable}`}>
+      <body>
         <Navigation />
-        <main id="main">{children}</main>
+        {children}
         <Footer />
-        <StickyCTA />
+        <WhatsAppFloat />
       </body>
     </html>
   );

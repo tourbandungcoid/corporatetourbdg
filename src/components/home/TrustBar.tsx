@@ -1,28 +1,55 @@
-import { TRUST_LOGOS } from "@/lib/site";
+import Link from "next/link";
+import { ArrowRight } from "@/components/icons/Icons";
+
+// Placeholder logos — replace with real client logos via CMS (Phase 7)
+const PLACEHOLDER_LOGOS = [
+  "TECH UNICORN",
+  "BUMN BANK",
+  "FMCG GLOBAL",
+  "TELCO PROVIDER",
+  "MANUFACTURING",
+  "STARTUP SCALEUP",
+  "HOSPITALITY",
+  "LOGISTICS",
+  "RETAIL CHAIN",
+  "EDUCATION",
+  "HEALTHCARE",
+  "MEDIA HOUSE",
+];
 
 export function TrustBar() {
-  // Duplicate for seamless marquee
-  const items = [...TRUST_LOGOS, ...TRUST_LOGOS];
+  // Double for seamless marquee loop
+  const logos = [...PLACEHOLDER_LOGOS, ...PLACEHOLDER_LOGOS];
+
   return (
-    <section className="py-10 lg:py-12 bg-[var(--color-cream)] border-y border-[var(--color-divider)] overflow-hidden">
+    <section className="section-sm bg-paper border-y border-divider">
       <div className="container-1280">
-        <p className="eyebrow text-center mb-7">
-          Dipercaya oleh enterprise Indonesia
+        <p className="text-center text-sm text-slate">
+          Dipercaya oleh perusahaan terbaik di Indonesia
         </p>
       </div>
-      <div className="relative">
-        <div className="marquee flex gap-12 lg:gap-16 whitespace-nowrap w-fit">
-          {items.map((logo, i) => (
+
+      {/* Marquee strip */}
+      <div className="mt-10 overflow-hidden">
+        <div className="marquee flex items-center gap-12 whitespace-nowrap">
+          {logos.map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center min-w-[140px] h-[40px] text-[13px] lg:text-[14px] font-medium text-[var(--color-slate)] opacity-60 hover:opacity-100 transition-opacity tracking-tight"
+              className="flex items-center justify-center min-w-[160px] h-10 px-6 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition"
             >
-              {logo}
+              <span className="font-display text-base tracking-wide text-slate">
+                {logo}
+              </span>
             </div>
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--color-cream)] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--color-cream)] to-transparent" />
+      </div>
+
+      <div className="container-1280 mt-10 text-center">
+        <Link href="/case-studies" className="link-underline text-sm">
+          Lihat bagaimana kami handle event untuk mereka
+          <ArrowRight size={14} className="arrow" />
+        </Link>
       </div>
     </section>
   );

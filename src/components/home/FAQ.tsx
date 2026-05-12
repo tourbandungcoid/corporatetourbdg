@@ -2,69 +2,95 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown } from "../Icon";
-import { FAQ_HOME } from "@/lib/site";
+import { ArrowRight, ChevronDown } from "@/components/icons/Icons";
+
+const FAQS = [
+  {
+    q: "Berapa estimasi budget outing kantor untuk tim 100 pax di Bandung?",
+    a: "Range Rp 2.5–5jt/pax untuk paket 2D1N standard, sudah include venue, F&B 3x, activity, transportation lokal, dan project management. Variasi tergantung tier venue dan kompleksitas activity. Untuk perbandingan, paket budget conservative kami mulai Rp 1.8jt/pax (1D2N glamping), sementara premium executive bisa Rp 6jt+/pax.",
+  },
+  {
+    q: "Berapa lama proses dari request proposal ke konfirmasi?",
+    a: "Proposal lengkap dengan breakdown & 2 alternative venue dalam 24 jam setelah briefing call. Revision biasanya 1–2 hari. Konfirmasi venue & deposit 30% — siap di-eksekusi 3 minggu kemudian (worst case 4 hari untuk urgent request, tergantung availability venue).",
+  },
+  {
+    q: "Apakah bisa custom itinerary di-luar paket yang ditampilkan di website?",
+    a: "Iya, 100%. Sample packages di website adalah starting point — setiap proposal yang kami kirim sudah disesuaikan dengan objective tim, jumlah pax, budget actual, dan preferences. Tidak ada 'paket fixed'.",
+  },
+  {
+    q: "Bagaimana kalau pax berubah mendekati hari H?",
+    a: "Standard contract kami allow +/- 10% pax tanpa adjustment cost up to 14 hari sebelum hari H. Di luar itu, kami bantu negotiate dengan venue untuk minimum impact. Transparency soal cost adjustment selalu dikomunikasikan tertulis.",
+  },
+  {
+    q: "Apakah ada hidden cost di luar proposal?",
+    a: "Tidak. Proposal kami detailed breakdown — venue, F&B, logistics, talent, equipment, contingency, dan profit margin. Yang muncul di invoice = yang ada di proposal yang Anda approve. Add-on (jika ada) selalu konfirmasi tertulis dulu.",
+  },
+  {
+    q: "Bagaimana penanganan kalau ada force majeure (cuaca buruk, kondisi venue)?",
+    a: "Setiap program kami siapkan Plan A & Plan B (indoor backup activity, alternative venue). Contingency budget 5–8% sudah include. Untuk full cancel due to force majeure, refund/reschedule policy clear di contract — biasanya 70–100% refund tergantung notice period.",
+  },
+  {
+    q: "Apakah Tour Bandung Corporate sama dengan 7Summits Travel?",
+    a: "corporate.tourbandung.co.id adalah unit specialized dari 7Summits Travel yang fokus 100% di market corporate (B2B). Bukan retail leisure. Tim, methodology, dan portfolio sepenuhnya untuk handle complexity B2B corporate.",
+  },
+];
 
 export function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section bg-[var(--color-cream)]">
+    <section className="section bg-paper">
       <div className="container-1280">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <p className="eyebrow-gold mb-6">Anticipated questions</p>
-            <h2 className="font-display text-[36px] lg:text-[48px] leading-[1.05] tracking-[-0.02em] text-[var(--color-ink)]">
-              Yang biasanya HR tanyakan{" "}
-              <span className="font-display-italic">sebelum booking.</span>
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow-brand">FAQ</p>
+            <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl">
+              Yang Sering Ditanyakan HR Sebelum Booking
             </h2>
-            <p className="mt-6 text-[15px] text-[var(--color-slate)]">
-              Tidak menemukan jawaban Anda?{" "}
-              <Link href="/faq" className="link-underline">
-                Lihat 50+ FAQ →
-              </Link>
+            <p className="mt-6 text-lg text-slate">
+              Pertanyaan paling sering muncul di awal conversation. Selengkapnya
+              di halaman FAQ.
             </p>
+            <Link
+              href="/faq"
+              className="mt-8 inline-flex link-underline"
+            >
+              Lihat all FAQ
+              <ArrowRight size={14} className="arrow" />
+            </Link>
           </div>
 
-          <div className="lg:col-span-8">
-            <div className="border-t border-[var(--color-border)]">
-              {FAQ_HOME.map((f, i) => (
-                <div
+          <div className="lg:col-span-7 flex flex-col gap-3">
+            {FAQS.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <button
                   key={i}
-                  className="border-b border-[var(--color-border)]"
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="text-left rounded-lg border border-border bg-bone hover:border-ink-soft transition overflow-hidden"
+                  aria-expanded={isOpen}
                 >
-                  <button
-                    onClick={() => setOpen(open === i ? null : i)}
-                    className="w-full flex items-start justify-between gap-6 py-6 text-left group"
-                    aria-expanded={open === i}
-                  >
-                    <span className="font-display text-[20px] lg:text-[22px] leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">
-                      {f.q}
-                    </span>
+                  <div className="flex items-start justify-between gap-4 p-5">
+                    <h3 className="font-medium text-ink text-base md:text-lg leading-tight">
+                      {faq.q}
+                    </h3>
                     <span
-                      className={`mt-1 text-[var(--color-slate)] transition-transform duration-300 ${
-                        open === i ? "rotate-180" : ""
+                      className={`flex-shrink-0 mt-0.5 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
                       }`}
                     >
                       <ChevronDown size={20} />
                     </span>
-                  </button>
-                  <div
-                    className={`grid transition-all duration-500 ${
-                      open === i
-                        ? "grid-rows-[1fr] opacity-100 pb-6"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="text-[15px] leading-relaxed text-[var(--color-slate)] max-w-[680px]">
-                        {f.a}
-                      </p>
-                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-slate leading-relaxed text-sm md:text-base">
+                      {faq.a}
+                    </div>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

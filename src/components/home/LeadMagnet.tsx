@@ -1,123 +1,91 @@
-"use client";
+import { ArrowRight, Check } from "@/components/icons/Icons";
 
-import { useState, FormEvent } from "react";
-import { ArrowRight, Check } from "../Icon";
-import { submitLead } from "@/lib/actions/leads";
+const ITEMS = [
+  "Real sample proposal (bukan template)",
+  "Detailed cost breakdown — line-item",
+  "Sample itinerary 2D1N untuk 200 pax",
+  "Contract clauses + terms checklist",
+];
 
 export function LeadMagnet() {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  const onSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError(null);
-
-    const result = await submitLead({
-      source: "lead_magnet",
-      contact_name: "Budget Calculator Lead",
-      email,
-      company_name: company,
-      raw_payload: { email, company, magnet: "budget_calculator_2026" },
-    });
-
-    setSubmitting(false);
-
-    if (!result.ok) {
-      setError(result.error);
-      return;
-    }
-
-    setSubmitted(true);
-  };
-
   return (
-    <section className="section-sm bg-[var(--color-ink)] text-[var(--color-bone)]">
+    <section className="section bg-cream/40">
       <div className="container-1280">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-6">
-            <p className="eyebrow-gold mb-6">Free tool</p>
-            <h2 className="font-display text-[32px] lg:text-[44px] leading-[1.1] tracking-[-0.02em]">
-              Budget Calculator untuk{" "}
-              <span className="font-display-italic text-[var(--color-gold)]">
-                Corporate Outing 2026.
+        <div className="card overflow-hidden bg-paper">
+          <div className="grid gap-0 lg:grid-cols-12">
+            {/* Left: content */}
+            <div className="lg:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-light px-3 py-1 text-xs font-medium text-brand-deep">
+                FREE DOWNLOAD
               </span>
-            </h2>
-            <p className="mt-5 text-[16px] text-white/70 max-w-[480px]">
-              Digunakan oleh 1.200+ HR untuk estimasi budget cepat — 30+ format
-              program tercakup. Hasil instan, gratis selamanya.
-            </p>
-          </div>
 
-          <div className="lg:col-span-6">
-            {!submitted ? (
+              <h2 className="font-display mt-6 text-3xl text-ink md:text-4xl lg:text-5xl">
+                Download: Sample Proposal untuk Outing Kantor 200 pax
+              </h2>
+
+              <p className="mt-5 text-base text-slate md:text-lg leading-relaxed">
+                Real proposal yang kami kirim ke klien tech unicorn tahun lalu
+                (data sensitive sudah di-redact). Pakai buat reference internal.
+              </p>
+
+              <ul className="mt-7 space-y-2.5">
+                {ITEMS.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-ink">
+                    <span className="mt-0.5 text-brand">
+                      <Check size={16} />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Form (mock — Phase 5 wires to real submit) */}
               <form
-                onSubmit={onSubmit}
-                className="bg-white/[0.04] border border-white/10 rounded-sm p-7 lg:p-9 backdrop-blur"
+                className="mt-8 flex flex-col sm:flex-row gap-3"
+                action="/proposal/sample"
+                method="get"
               >
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-[13px] font-medium text-white/80 mb-2">
-                      Email kantor
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="anda@perusahaan.com"
-                      className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-gold)] focus:ring-2 focus:ring-[var(--color-gold)]/20 transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[13px] font-medium text-white/80 mb-2">
-                      Nama perusahaan
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      placeholder="PT Contoh Indonesia"
-                      className="w-full h-12 bg-white/[0.06] border border-white/15 rounded-md px-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--color-gold)] focus:ring-2 focus:ring-[var(--color-gold)]/20 transition-all"
-                    />
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="mt-6 w-full btn btn-primary"
-                >
-                  {submitting ? "Mengirim..." : "Get the Calculator"}
-                  {!submitting && <ArrowRight size={16} className="arrow" />}
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email perusahaan lo"
+                  className="input flex-1"
+                  aria-label="Email"
+                />
+                <button type="submit" className="btn btn-primary">
+                  Email Sample ke Saya
+                  <ArrowRight size={14} className="arrow" />
                 </button>
-                {error && (
-                  <div className="mt-4 rounded-md bg-white/10 border border-white/20 px-4 py-3 text-[13px] text-white/90">
-                    ⚠ {error}
-                  </div>
-                )}
-                <p className="mt-4 text-[12px] text-white/50">
-                  🔒 Digunakan hanya untuk mengirim calculator. Tanpa spam, tanpa
-                  sales call.
-                </p>
               </form>
-            ) : (
-              <div className="bg-white/[0.04] border border-[var(--color-gold)]/30 rounded-sm p-7 lg:p-9">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-gold)]/20 flex items-center justify-center mb-4">
-                  <Check size={20} className="text-[var(--color-gold)]" />
+
+              <p className="mt-4 text-xs text-slate">
+                🔒 800+ HR sudah download. No spam — kami kirim sekali + 1
+                follow-up 3 hari kemudian kalau lo tertarik.
+              </p>
+            </div>
+
+            {/* Right: visual */}
+            <div className="lg:col-span-5 relative bg-gradient-to-br from-brand-deep via-forest to-ink min-h-[320px] flex items-center justify-center p-8">
+              <div className="text-center">
+                <div className="inline-block rounded-lg bg-paper p-8 shadow-2xl rotate-3">
+                  <p className="font-mono text-xs text-slate">PDF Preview</p>
+                  <div className="mt-4 space-y-1.5">
+                    <div className="h-2 w-32 rounded bg-divider" />
+                    <div className="h-2 w-40 rounded bg-divider" />
+                    <div className="h-2 w-28 rounded bg-divider" />
+                    <div className="mt-3 h-12 w-40 rounded bg-cream" />
+                    <div className="mt-3 space-y-1">
+                      <div className="h-2 w-40 rounded bg-divider" />
+                      <div className="h-2 w-36 rounded bg-divider" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display text-[24px] mb-2">
-                  Cek inbox Anda dalam 1–2 menit.
-                </h3>
-                <p className="text-[15px] text-white/70">
-                  Calculator dikirim ke <strong>{email}</strong>. Kalau tidak
-                  muncul, cek folder spam atau hubungi kami.
+                <p className="mt-6 text-paper/40 text-xs font-mono">
+                  [Replace with real PDF cover mockup]
                 </p>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

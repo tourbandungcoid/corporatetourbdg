@@ -1,70 +1,105 @@
 import Link from "next/link";
-import { ArrowUpRight } from "../Icon";
-import { PhotoFrame, PHOTOS } from "../PhotoFrame";
-import { CASE_STUDIES_FEATURED } from "@/lib/site";
+import { ArrowRight } from "@/components/icons/Icons";
 
-const CASE_PHOTOS = [PHOTOS.briefing, PHOTOS.workshop, PHOTOS.ceremonyWide];
+const CASE_STUDIES = [
+  {
+    slug: "post-merger-bonding-800-pax",
+    industry: "TECH UNICORN",
+    headline:
+      "Post-Merger Bonding untuk 800 Tim Baru — Satu Suara dalam 3 Hari",
+    pax: "800 pax",
+    duration: "3D2N",
+    location: "Lembang",
+    gradient: "from-brand-deep via-forest to-ink",
+  },
+  {
+    slug: "annual-gathering-banking-3depts",
+    industry: "BANKING · BUMN",
+    headline:
+      "Annual Gathering 3 Departemen — 92% Tim Vote 'Best Event' Dalam 5 Tahun",
+    pax: "120 pax",
+    duration: "2D1N",
+    location: "Ciwidey",
+    gradient: "from-ink via-forest to-brand-deep",
+  },
+  {
+    slug: "quarterly-strategy-offsite-clevel",
+    industry: "FMCG · C-LEVEL",
+    headline:
+      "Quarterly Strategy Offsite — 24 Senior Leader, 12 New Initiatives Lahir",
+    pax: "24 pax",
+    duration: "1D Workshop",
+    location: "Bandung City",
+    gradient: "from-forest via-brand-deep to-ink-soft",
+  },
+];
 
 export function CaseStudies() {
   return (
-    <section className="section">
+    <section className="section bg-paper">
       <div className="container-1280">
-        <div className="max-w-[820px] mb-14 lg:mb-20">
-          <p className="eyebrow-gold mb-6">Proof of work</p>
-          <h2 className="font-display text-[36px] lg:text-[52px] leading-[1.05] tracking-[-0.02em] text-[var(--color-ink)]">
-            Bagaimana enterprise mengukur{" "}
-            <span className="font-display-italic">dampak nyata</span> setelah
-            bekerja sama dengan kami.
-          </h2>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="eyebrow-brand">Case Studies</p>
+            <h2 className="font-display mt-4 text-4xl text-ink md:text-5xl lg:text-6xl">
+              Beberapa Cerita Outing yang Kita Bangga
+            </h2>
+            <p className="mt-6 text-lg text-slate">
+              Real events untuk real companies — outcome yang konkret, bukan
+              testimonial template.
+            </p>
+          </div>
+          <Link href="/case-studies" className="link-underline">
+            Lihat all case studies
+            <ArrowRight size={14} className="arrow" />
+          </Link>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
-          {CASE_STUDIES_FEATURED.map((c, idx) => (
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {CASE_STUDIES.map((cs) => (
             <Link
-              key={c.slug}
-              href={`/case-studies/${c.slug}`}
-              className="group block"
+              key={cs.slug}
+              href={`/case-studies/${cs.slug}`}
+              className="card card-hover group overflow-hidden flex flex-col"
             >
-              <div className="relative overflow-hidden mb-6 aspect-[4/5] rounded-sm bg-[var(--color-cream)]">
-                <PhotoFrame
-                  driveId={CASE_PHOTOS[idx]}
-                  alt={c.headline}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="group-hover:scale-[1.04] transition-transform duration-[700ms] ease-out"
-                />
+              <div
+                className={`aspect-[4/3] relative overflow-hidden bg-gradient-to-br ${cs.gradient}`}
+              >
+                <div className="absolute inset-0 flex items-end p-6">
+                  <p className="text-paper/30 text-xs font-mono">
+                    [Photo cinematic event]
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center gap-3 mb-4 text-[12px] uppercase tracking-wider text-[var(--color-slate)]">
-                <span>{c.industry}</span>
-                <span className="text-[var(--color-slate-mute)]">·</span>
-                <span className="tabular">{c.paxCount} pax</span>
-                <span className="text-[var(--color-slate-mute)]">·</span>
-                <span>{c.duration}</span>
+              <div className="p-6 flex-1 flex flex-col">
+                <p className="eyebrow text-brand-deep">{cs.industry}</p>
+                <h3 className="font-display mt-4 text-xl text-ink leading-tight">
+                  &ldquo;{cs.headline}&rdquo;
+                </h3>
+                <ul className="mt-5 space-y-1.5 text-sm">
+                  <li className="flex items-center gap-2 text-slate">
+                    <span className="h-1 w-1 rounded-full bg-brand" />
+                    {cs.pax}
+                  </li>
+                  <li className="flex items-center gap-2 text-slate">
+                    <span className="h-1 w-1 rounded-full bg-brand" />
+                    {cs.duration}
+                  </li>
+                  <li className="flex items-center gap-2 text-slate">
+                    <span className="h-1 w-1 rounded-full bg-brand" />
+                    {cs.location}
+                  </li>
+                </ul>
+                <span className="mt-6 pt-5 border-t border-divider text-sm font-medium text-brand-deep inline-flex items-center gap-1">
+                  Read full story
+                  <ArrowRight
+                    size={14}
+                    className="arrow group-hover:translate-x-1 transition"
+                  />
+                </span>
               </div>
-              <h3 className="font-display text-[22px] lg:text-[24px] leading-tight text-[var(--color-ink)] mb-4">
-                {c.headline}
-              </h3>
-              <blockquote className="text-[14px] leading-relaxed text-[var(--color-slate)] italic mb-3">
-                &ldquo;{c.quote}&rdquo;
-              </blockquote>
-              <p className="text-[12px] text-[var(--color-slate-mute)] mb-5">
-                — {c.quoteAuthor}, {c.quoteTitle}
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">
-                Read case study
-                <ArrowUpRight
-                  size={14}
-                  className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
-                />
-              </span>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-16 pt-10 border-t border-[var(--color-divider)]">
-          <Link href="/case-studies" className="link-underline">
-            Explore 12+ case studies →
-          </Link>
         </div>
       </div>
     </section>
