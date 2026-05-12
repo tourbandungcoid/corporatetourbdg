@@ -35,7 +35,7 @@ const img = (id: string, alt: string, size: number = 2400): DriveImage => ({
 export const IMAGES = {
   // --- Hero ---
   heroMain: img(
-    "1mZ0Aufrunl-I2oPKYSbxAVsd24o5PXM8",
+    "1zGufb68_WTLYzpXXSakFoqChmT3dREQJ",
     "Corporate outing peserta di lokasi Bandung — momentum bonding tim"
   ),
 
