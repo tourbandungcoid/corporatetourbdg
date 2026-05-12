@@ -40,7 +40,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           {/* Brand column */}
           <div className="md:col-span-4">
-            <LogoLockup size={32} variant="white" showSubline />
+            <LogoLockup height={48} variant="dark" showCorporateLabel={false} />
             <p className="mt-6 text-sm text-[#FAFAF7]/70 max-w-xs leading-relaxed">
               Vendor specialist B2B corporate outing, team building, dan
               executive offsite di Bandung & Jawa Barat. Sejak 2018.
