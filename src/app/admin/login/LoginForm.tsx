@@ -1,33 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { ArrowRight } from "@/components/icons/Icons";
 
 export function LoginForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState<"idle" | "signing" | "error">("idle");
   const [message, setMessage] = useState("");
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("sending");
+    setStatus("signing");
     setMessage("");
 
     const supabase = createClient();
-    const redirectTo =
-      typeof window !== "undefined"
-        ? `${window.location.origin}/auth/callback`
-        : undefined;
-
-    const { error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
-      options: {
-        emailRedirectTo: redirectTo,
-        shouldCreateUser: true,
-      },
+      password,
     });
 
     if (error) {
@@ -36,17 +29,15 @@ export function LoginForm() {
       return;
     }
 
-    setStatus("sent");
-    setMessage(
-      `Magic link sudah dikirim ke ${email}. Cek inbox (atau spam) dan klik link di email.`
-    );
+    router.replace("/admin");
+    router.refresh();
   }
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <div>
         <label className="label" htmlFor="email">
-          Work email
+          Email
         </label>
         <input
           id="email"
@@ -55,41 +46,46 @@ export function LoginForm() {
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="kamu@perusahaan.com"
+          placeholder="admin@7summitstravel.com"
           className="input"
-          disabled={status === "sending" || status === "sent"}
+          disabled={status === "signing"}
         />
-        <p className="helper">
-          Magic link akan dikirim ke email ini. Tidak perlu password.
-        </p>
       </div>
 
-      {status === "sent" && (
-        <div className="rounded-2xl border border-brand/30 bg-brand-light/50 p-4 text-sm text-brand-darker">
-          ✓ {message}
-        </div>
-      )}
+      <div>
+        <label className="label" htmlFor="password">
+          Password
+        </label>
+        <input
+          id="password"
+          type="password"
+          required
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="••••••••"
+          className="input"
+          disabled={status === "signing"}
+        />
+      </div>
 
       {status === "error" && (
         <div className="rounded-2xl border border-error/30 bg-error/5 p-4 text-sm text-error">
-          {message}
+          {message || "Login gagal. Cek email & password."}
         </div>
       )}
 
-      {status !== "sent" && (
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 h-12 text-sm font-medium hover:bg-brand-deep transition disabled:opacity-60 disabled:cursor-not-allowed"
-        >
-          {status === "sending" ? "Sending magic link…" : "Kirim Magic Link"}
-          <ArrowRight size={14} />
-        </button>
-      )}
+      <button
+        type="submit"
+        disabled={status === "signing"}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 h-12 text-sm font-medium hover:bg-brand-deep transition disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {status === "signing" ? "Signing in…" : "Sign in"}
+        <ArrowRight size={14} />
+      </button>
 
       <p className="text-xs text-slate-mute text-center pt-4 border-t border-divider">
-        Admin access only. Hubungi super admin kalau email lo belum punya
-        akses ke dashboard.
+        Admin access only. Lupa password? Hubungi super admin.
       </p>
     </form>
   );

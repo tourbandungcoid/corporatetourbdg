@@ -26,8 +26,7 @@ export default function LoginPage() {
                 Sign in to dashboard.
               </h1>
               <p className="mt-3 text-sm text-slate">
-                Internal team access. Pakai work email lo — kami kirim magic
-                link.
+                Internal team access. Masuk dengan email + password.
               </p>
             </div>
 
