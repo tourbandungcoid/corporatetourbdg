@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import { createAdminClient } from "@/lib/supabase/admin";
 
 export type UserRole =
   | "super_admin"
@@ -19,9 +18,11 @@ export type Profile = {
 
 /**
  * Get the currently signed-in user's profile.
- * Returns null if not signed in or profile missing.
  *
- * Uses admin client to bypass RLS (we still scope to the auth.uid()).
+ * Uses the user-session server client (NOT service_role) so it works
+ * even when SUPABASE_SERVICE_ROLE_KEY is misconfigured. RLS policy
+ * `profiles_select_self_or_admin` lets a user read their own profile
+ * via auth.uid().
  */
 export async function getCurrentProfile(): Promise<Profile | null> {
   const supabase = await createClient();
@@ -31,13 +32,11 @@ export async function getCurrentProfile(): Promise<Profile | null> {
 
   if (!user) return null;
 
-  // Use admin client to fetch profile (sidesteps RLS for own profile)
-  const admin = createAdminClient();
-  const { data, error } = await admin
+  const { data, error } = await supabase
     .from("profiles")
     .select("id, email, full_name, avatar_url, role, is_active")
     .eq("id", user.id)
-    .single();
+    .maybeSingle();
 
   if (error || !data) return null;
   return data as Profile;
