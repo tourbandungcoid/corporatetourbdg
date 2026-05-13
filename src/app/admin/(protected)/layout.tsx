@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentProfile, canAccessAdmin } from "@/lib/auth/getCurrentProfile";
+import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { Sidebar } from "@/components/admin/Sidebar";
 import { TopBar } from "@/components/admin/TopBar";
@@ -14,10 +16,61 @@ export default async function ProtectedAdminLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Check raw auth state first so we can distinguish two failure modes:
+  //   1. No session  → redirect to /admin/login (matches middleware)
+  //   2. Session OK but no profile row → render repair UI (DO NOT redirect,
+  //      otherwise we infinite-loop with middleware's /admin/login → /admin
+  //      redirect which fires whenever the session is valid).
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/admin/login");
+  }
+
   const profile = await getCurrentProfile();
 
   if (!profile) {
-    redirect("/admin/login");
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-bone px-4 py-12">
+        <div className="max-w-lg rounded-3xl border border-warm/30 bg-paper p-10 text-center">
+          <p className="eyebrow text-warm">Profile not found</p>
+          <h1 className="font-display mt-3 text-2xl text-ink">
+            Akun terdaftar, tapi profile belum lengkap.
+          </h1>
+          <p className="mt-4 text-sm text-slate leading-relaxed">
+            Auth user{" "}
+            <span className="font-mono text-ink">{user.email}</span> exists,
+            tapi row di tabel{" "}
+            <code className="font-mono text-xs bg-cream px-1 py-0.5 rounded">
+              public.profiles
+            </code>{" "}
+            kosong. Klik tombol di bawah untuk auto-fix.
+          </p>
+          <form
+            action="/api/admin/repair-superadmin"
+            method="post"
+            className="mt-6 inline-block"
+          >
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-brand text-paper px-6 h-11 text-sm font-medium hover:bg-brand-deep transition"
+            >
+              Repair profile + login
+            </button>
+          </form>
+          <p className="mt-6 text-xs text-slate-mute">
+            Atau sign out + login ulang dari{" "}
+            <Link href="/admin/login" className="underline">
+              /admin/login
+            </Link>
+            .
+          </p>
+        </div>
+      </main>
+    );
   }
 
   if (!canAccessAdmin(profile.role)) {
@@ -29,8 +82,9 @@ export default async function ProtectedAdminLayout({
             Akun lo belum punya akses dashboard.
           </h1>
           <p className="mt-4 text-sm text-slate">
-            Hubungi super admin untuk minta role assignment. Email lo:{" "}
-            <span className="font-mono">{profile.email}</span>
+            Role: <span className="font-mono">{profile.role}</span>. Email:{" "}
+            <span className="font-mono">{profile.email}</span>. Hubungi super
+            admin untuk role assignment.
           </p>
         </div>
       </main>

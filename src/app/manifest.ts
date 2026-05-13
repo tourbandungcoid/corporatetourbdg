@@ -14,19 +14,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#0F1F1A",
     lang: "id-ID",
     categories: ["business", "travel", "events"],
-    icons: [
-      {
-        src: "/icon.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/icon.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any",
-      },
-    ],
+    // Note: icon.tsx + apple-icon.tsx auto-inject <link rel="icon"> tags
+    // for browser tabs / iOS bookmarks. PWA manifest icons would need
+    // static files in public/ which we don't ship — skipping here to
+    // avoid 404 fetch loops.
   };
 }

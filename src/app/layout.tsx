@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import { AnalyticsScripts, GTMNoScript } from "@/components/AnalyticsScripts";
 import { getAppSettings } from "@/lib/app-settings";
-import { getBrandSettings, buildBrandCssVars } from "@/lib/brand-settings";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,17 +52,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [settings, brand] = await Promise.all([
-    getAppSettings(),
-    getBrandSettings(),
-  ]);
+  const settings = await getAppSettings();
   return (
     <html lang="id" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
-        <style
-          id="brand-vars"
-          dangerouslySetInnerHTML={{ __html: buildBrandCssVars(brand) }}
-        />
         <AnalyticsScripts
           ga4Id={settings.analytics.ga4_id}
           metaPixelId={settings.analytics.meta_pixel_id}
