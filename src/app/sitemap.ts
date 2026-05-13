@@ -51,9 +51,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: r.priority,
   }));
 
-  const [caseStudySlugs, insightSlugs] = await Promise.all([
+  const [caseStudySlugs, insightSlugs, faqCategorySlugs] = await Promise.all([
     getAllCaseStudySlugs(),
     getAllInsightSlugs(),
+    getAllFaqCategorySlugs(),
   ]);
 
   const serviceRoutes = getAllServiceSlugs().map((slug) => ({
@@ -77,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.65,
   }));
 
-  const faqCategoryRoutes = getAllFaqCategorySlugs().map((slug) => ({
+  const faqCategoryRoutes = faqCategorySlugs.map((slug) => ({
     url: `${SITE.url}/faq/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

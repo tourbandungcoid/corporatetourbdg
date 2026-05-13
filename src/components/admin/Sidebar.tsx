@@ -11,6 +11,7 @@ const NAV = [
   { href: "/admin/activity", label: "Activity log", group: "overview" },
   { href: "/admin/content/insights", label: "Insights", group: "content" },
   { href: "/admin/content/case-studies", label: "Case studies", group: "content" },
+  { href: "/admin/content/faq", label: "FAQ", group: "content" },
   { href: "/admin/users", label: "Users", group: "settings" },
   { href: "/admin/settings", label: "Settings", group: "settings" },
 ];
@@ -54,7 +55,7 @@ export function Sidebar() {
           />
         ))}
         <p className="mt-2 px-3 text-[10px] text-slate-mute leading-relaxed">
-          Services, packages, FAQ, glossary &amp; team tetap di{" "}
+          Services, packages, glossary &amp; team tetap di{" "}
           <code className="font-mono text-[11px]">src/lib/*-data.ts</code>.
         </p>
 
