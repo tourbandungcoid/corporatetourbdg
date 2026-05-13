@@ -71,10 +71,32 @@ async function getLead(id: string) {
 
   if (leadRes.error || !leadRes.data) return null;
 
+  // Collect all unique actor IDs + assigned_to to resolve to names
+  const actorIds = new Set<string>();
+  (activitiesRes.data ?? []).forEach((a) => {
+    if (a.actor_id) actorIds.add(a.actor_id);
+    const d = (a.details ?? {}) as Record<string, unknown>;
+    if (typeof d.from === "string" && d.from) actorIds.add(d.from);
+    if (typeof d.to === "string" && d.to) actorIds.add(d.to);
+  });
+  if (leadRes.data.assigned_to) actorIds.add(leadRes.data.assigned_to);
+
+  let userMap: Record<string, string> = {};
+  if (actorIds.size > 0) {
+    const { data: profiles } = await sb
+      .from("profiles")
+      .select("id, full_name, email")
+      .in("id", Array.from(actorIds));
+    userMap = Object.fromEntries(
+      (profiles ?? []).map((p) => [p.id, p.full_name ?? p.email])
+    );
+  }
+
   return {
     lead: leadRes.data,
     qual: qualRes.data,
     activities: activitiesRes.data ?? [],
+    userMap,
   };
 }
 
@@ -87,7 +109,7 @@ export default async function LeadDetailPage({
   const [result, adminUsers] = await Promise.all([getLead(id), getAdminUsers()]);
 
   if (!result) notFound();
-  const { lead, qual, activities } = result;
+  const { lead, qual, activities, userMap } = result;
 
   const breakdown =
     (lead.lead_score_breakdown as Record<string, number> | null) ?? {};
@@ -126,6 +148,11 @@ export default async function LeadDetailPage({
               <span className="inline-flex items-center rounded-full border border-border bg-paper px-2.5 py-0.5 text-xs font-medium text-slate">
                 Source: {lead.source}
               </span>
+              {lead.assigned_to && userMap[lead.assigned_to] && (
+                <span className="inline-flex items-center rounded-full border border-brand/30 bg-brand/5 px-2.5 py-0.5 text-xs font-medium text-brand-deep">
+                  Assigned: {userMap[lead.assigned_to]}
+                </span>
+              )}
             </div>
           </div>
 
@@ -302,11 +329,17 @@ export default async function LeadDetailPage({
                           )}
                           {a.activity_type === "assigned" && (
                             <p className="mt-1 text-xs text-slate">
-                              {details.to ? "Assigned" : "Unassigned"}
+                              {details.to
+                                ? `Assigned to ${userMap[String(details.to)] ?? "user"}`
+                                : "Unassigned"}
                             </p>
                           )}
                           <p className="text-xs text-slate-mute mt-1 tabular">
-                            {typeof details.by_name === "string" && `${details.by_name} · `}
+                            {a.actor_id && userMap[a.actor_id]
+                              ? `${userMap[a.actor_id]} · `
+                              : typeof details.by_name === "string"
+                              ? `${details.by_name} · `
+                              : ""}
                             {new Date(a.created_at).toLocaleString("id-ID", {
                               day: "numeric",
                               month: "short",

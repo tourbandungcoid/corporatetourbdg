@@ -57,6 +57,13 @@ export default async function ThankYouPage({ params }: Props) {
               <p className="text-sm text-slate mt-2">
                 Simpan kode ini — pakai untuk track status proposal lo nanti.
               </p>
+              <Link
+                href={`/proposal/track/${refCode}`}
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 h-10 text-sm font-medium hover:bg-brand-deep transition"
+              >
+                Track live status
+                <ArrowRight size={14} />
+              </Link>
             </div>
 
             {/* Timeline */}
