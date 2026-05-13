@@ -3,6 +3,24 @@ import { NextResponse, type NextRequest } from "next/server";
 
 type CookieToSet = { name: string; value: string; options?: CookieOptions };
 
+/**
+ * When middleware needs to redirect, the cookies attached to
+ * `supabaseResponse` (refreshed session tokens) MUST be transferred
+ * to the redirect response — otherwise the next request comes in
+ * without a valid session, middleware redirects again, browser logs
+ * ERR_TOO_MANY_REDIRECTS.
+ */
+function redirectWithSessionCookies(
+  url: URL,
+  fromResponse: NextResponse
+): NextResponse {
+  const redirect = NextResponse.redirect(url);
+  for (const cookie of fromResponse.cookies.getAll()) {
+    redirect.cookies.set(cookie);
+  }
+  return redirect;
+}
+
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
@@ -39,7 +57,7 @@ export async function updateSession(request: NextRequest) {
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
       url.searchParams.set("next", path);
-      return NextResponse.redirect(url);
+      return redirectWithSessionCookies(url, supabaseResponse);
     }
   }
 
@@ -47,7 +65,7 @@ export async function updateSession(request: NextRequest) {
   if (path === "/admin/login" && user) {
     const url = request.nextUrl.clone();
     url.pathname = "/admin";
-    return NextResponse.redirect(url);
+    return redirectWithSessionCookies(url, supabaseResponse);
   }
 
   applySecurityHeaders(supabaseResponse);
