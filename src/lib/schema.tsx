@@ -195,6 +195,38 @@ export function serviceSchema({
   };
 }
 
+export function personSchema({
+  name,
+  jobTitle,
+  description,
+  image,
+  slug,
+  sameAs,
+}: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+  slug: string;
+  sameAs?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle,
+    description,
+    ...(image ? { image } : {}),
+    url: `${SITE.url}${slug}`,
+    worksFor: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      url: SITE.url,
+    },
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
+  };
+}
+
 /**
  * Render multiple schemas as a single @graph for performance + cleanliness.
  */

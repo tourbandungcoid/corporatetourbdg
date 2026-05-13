@@ -412,6 +412,327 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "cross-generational-team-building"],
   },
+
+  "force-majeure-contingency-corporate-outing": {
+    slug: "force-majeure-contingency-corporate-outing",
+    title: "Force Majeure & Contingency Planning untuk Corporate Outing Bandung",
+    excerpt:
+      "Hujan ekstrem, longsor, akses jalan tertutup, atau insiden medis — apa yang terjadi kalau worst case happen di tengah event lo? Framework risk tiering + contingency plan dari 400+ events.",
+    metaDescription:
+      "Framework force majeure + contingency planning untuk corporate outing Bandung. Risk register, backup indoor plan, evacuation protocol, insurance coverage breakdown.",
+    category: "Risk Management",
+    tldr: [
+      "Bandung & Jawa Barat punya risk profile spesifik: hujan ekstrem Oktober–April, longsor di jalur Lembang/Ciwidey, kabut tebal di Pangalengan, dan area-area remote yang medical evacuation 45+ menit.",
+      "Risk tiering 3 level: Likely (rain, traffic delay) — plan indoor backup mandatory. Moderate (sakit peserta, jadwal molor) — protokol standar. Rare-but-critical (kecelakaan, force majeure) — full evacuation + insurance.",
+      "Setiap event 7Summits di-attach risk register + RS partner contact + crisis comm template. Bukan add-on premium — included di setiap tier.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-10",
+    readTimeMin: 9,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Pertanyaan yang HR jarang tanya pre-kontrak, tapi paling regret kalau tidak tanya: \"Kalau hujan deras pas Day 2 morning outbound, plan B apa?\" Vendor yang jawab \"don't worry, nanti kita atur\" — itu red flag besar. Vendor specialist punya contingency plan terdokumentasi sebelum kontrak ditandatangan.",
+          "Setelah 400+ event di Jawa Barat, kami consolidate framework risk management 3-tier yang jadi default semua engagement. Bukan dijual sebagai \"premium add-on\" — risk management adalah baseline.",
+        ],
+      },
+      {
+        heading: "Risk profile Bandung & Jawa Barat",
+        paragraphs: [
+          "Konteks geografis: Bandung & sekitarnya adalah dataran tinggi dengan beberapa karakteristik risk-specific yang harus di-plan, bukan di-deny.",
+        ],
+        bullets: [
+          "Musim hujan Oktober–April: probabilitas hujan deras di Lembang/Ciwidey 60–80% setiap sore. Bukan \"mungkin hujan\" — \"hampir pasti hujan\"",
+          "Jalur Lembang & Ciwidey: longsor occasional di musim hujan, akses bisa terputus 6–24 jam",
+          "Pangalengan & area selatan: kabut tebal pagi (jarak pandang 5–20m), berpengaruh ke jadwal outdoor & transportasi",
+          "Area remote (Cikidang, Rancabali): RS terdekat 30–45 menit. Untuk activity Tier 2 (high ropes, paintball, ATV), medical proximity adalah faktor venue selection",
+        ],
+      },
+      {
+        heading: "Tier 1: Likely risks — mandatory mitigation",
+        paragraphs: [
+          "Risk yang probabilitas terjadi >30% setiap event. Bukan \"if\", tapi \"when\". Mitigasi di-build-in ke design.",
+        ],
+        numbered: [
+          "Hujan deras → setiap outdoor activity HARUS punya indoor backup version yang testable. Outbound games → indoor team building. BBQ dinner → ballroom dinner. Bonfire → indoor reflection circle. Non-negotiable.",
+          "Traffic Jakarta–Bandung Friday & Sunday → ETA dengan buffer +90 menit. Plan tidak boleh assume \"normal traffic\".",
+          "Jadwal molor → buffer 30 menit di transition antar activity. Compressed schedule yang back-to-back = recipe untuk crisis di hari-H.",
+          "Peserta yang fatigue overload → break + opt-out station tersedia di setiap activity. Tidak ada peer pressure.",
+        ],
+        callout: {
+          label: "Red flag",
+          text: "Vendor yang quote outing 2D1N dengan 8+ activity slot tanpa rest buffer — itu unrealistic. Hampir pasti molor & burn-out peserta di Day 2 sore.",
+        },
+      },
+      {
+        heading: "Tier 2: Moderate risks — protokol standar",
+        paragraphs: [
+          "Probabilitas 5–20% per event. Tidak setiap event terjadi, tapi cukup sering sehingga harus punya protokol siap-pakai.",
+        ],
+        bullets: [
+          "Peserta sakit (mual, demam, alergi makanan): first aid kit di setiap venue, P3K-certified field crew, kontak RS partner sudah pre-confirmed",
+          "Vendor lokal terlambat / no-show (catering, MC, equipment): backup vendor stand-by, contract clause yang ada penalty + SLA",
+          "Peserta hilang (di area outdoor luas, terutama di kawasan hutan): protokol headcount per activity, system buddy, radio communication untuk field crew",
+          "Equipment failure (sound system mati, generator down): backup equipment on-site untuk event >100 pax",
+        ],
+      },
+      {
+        heading: "Tier 3: Rare-but-critical — full evacuation protocol",
+        paragraphs: [
+          "Probabilitas <2% per event, tapi impact maksimum kalau terjadi. Untuk Tier 3, ada full evacuation protocol + insurance + crisis comm template yang sudah di-test.",
+        ],
+        bullets: [
+          "Kecelakaan peserta (cedera serius di outbound, jatuh dari high ropes): evacuation ke RS partner dalam <30 menit, tim P3K + ambulance stand-by untuk Tier 2 activity, asuransi event coverage Rp 100–500 jt per peserta",
+          "Force majeure (gempa, longsor besar, banjir bandang): protokol evacuate ke titik kumpul pre-designated, koordinasi BPBD lokal, akomodasi alternative di Bandung kota",
+          "Insiden keamanan (kecelakaan transportasi grup, kebakaran venue): contingency hotel kontrak emergency di Bandung kota, transport backup, asuransi perjalanan grup",
+        ],
+        callout: {
+          label: "Crisis comm",
+          text: "Setiap event punya pre-drafted crisis comm: SMS/WA template ke emergency contact, statement internal untuk management, dan briefing untuk peserta yang tidak terdampak. Bukan improvisasi di tengah krisis.",
+        },
+      },
+      {
+        heading: "Insurance: apa yang biasanya tidak di-cover",
+        paragraphs: [
+          "Insurance event = umumnya cover personal accident + medical untuk peserta. Yang sering tidak di-cover & harus di-cek explicitly:",
+        ],
+        bullets: [
+          "Activity high-risk yang tidak di-declare upfront (extreme outbound, paragliding, scuba) — biasanya excluded",
+          "Pre-existing medical condition peserta — perlu disclosure dan rider tambahan",
+          "Force majeure act of God (gempa, gunung meletus) — kebanyakan polis exclude, perlu coverage khusus",
+          "Loss/damage of personal belongings peserta — biasanya tidak di-cover, harus claim ke asuransi peserta sendiri",
+        ],
+      },
+      {
+        heading: "Cara HR validasi risk readiness vendor",
+        paragraphs: [
+          "Sebelum tandatangan kontrak, minta 4 dokumen ini ke vendor. Vendor yang serius akan kasih dalam 24 jam. Vendor yang generic akan stall atau kasih boilerplate generic.",
+        ],
+        numbered: [
+          "Risk register event lo specific — bukan template universal. Harus mention venue & activity yang akan di-eksekusi.",
+          "RS partner list per area + estimated evac time. Untuk area remote, ini bukan optional.",
+          "Indoor backup plan terdokumentasi untuk setiap outdoor activity, lengkap dengan venue alternate.",
+          "Insurance policy summary + coverage limit per peserta. Pastikan amount cukup vs salary band peserta lo.",
+        ],
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "indoor-vs-outdoor-corporate-outing"],
+  },
+
+  "indoor-vs-outdoor-corporate-outing": {
+    slug: "indoor-vs-outdoor-corporate-outing",
+    title: "Indoor vs Outdoor Corporate Outing: Decision Framework",
+    excerpt:
+      "Kapan indoor lebih tepat dari outdoor? Bukan soal musim atau preference saja — bergantung objective, audience profile, dan risk tolerance. Framework decision dari 400+ events.",
+    metaDescription:
+      "Framework decision indoor vs outdoor corporate outing Bandung. 6 faktor decision: objective, audience fitness, weather window, budget, brand image, risk tolerance.",
+    category: "Format Design",
+    tldr: [
+      "Indoor vs outdoor bukan soal preference HR — soal fit dengan objective + audience + risk profile.",
+      "6 faktor decision: objective type, audience fitness mix, weather window, budget tier, brand image, risk tolerance.",
+      "Hybrid (mixed indoor-outdoor 70:30 atau 30:70) seringkali optimal untuk grup 80+ pax — accommodate diversity tanpa kompromi outcome.",
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-05-09",
+    readTimeMin: 7,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Pertanyaan default HR di briefing pertama: \"Mendingan indoor atau outdoor ya?\" Jawaban honest: tergantung 6 faktor. Indoor cocok untuk objective tertentu, outdoor untuk objective lain. Hybrid seringkali optimal untuk grup besar dengan diversity audience.",
+          "Framework decision yang kami pakai bukan vote preference HR — sequential check 6 faktor yang ujung-nya menghasilkan rekomendasi defensible.",
+        ],
+      },
+      {
+        heading: "Faktor 1: Objective type",
+        paragraphs: [
+          "Outdoor unggul untuk: bonding deep, ice-breaking untuk team baru, energy reset post-burnout, leadership challenge. Outdoor inherently demand collaboration + adaptasi — outcome bonding lebih dalam.",
+          "Indoor unggul untuk: strategic alignment, training/upskilling, awarding & celebration, hybrid working session, multi-stakeholder formal meeting. Indoor kontrol environment 100% — focus tidak teralihkan oleh cuaca.",
+        ],
+        callout: {
+          label: "Rule of thumb",
+          text: "Bonding/emotional outcome → outdoor lean. Cognitive/strategic outcome → indoor lean. Hybrid outcome → mix dengan ratio sesuai weight objective.",
+        },
+      },
+      {
+        heading: "Faktor 2: Audience fitness mix",
+        paragraphs: [
+          "Audience yang 30%+ punya mobility/fitness limitation (umur 45+, pregnant peserta, recent recovery, disability) → pure outdoor adventure jadi exclusion problem. Solusi: indoor primary + optional outdoor track untuk yang interested.",
+          "Audience predominantly muda + fit + first-timer outdoor → outdoor lean, dengan moderation activity Tier 1 (light). Audience executive (umur 40+, mostly desk-bound) → indoor primary dengan light outdoor element (jalan santai, cooking).",
+        ],
+      },
+      {
+        heading: "Faktor 3: Weather window",
+        paragraphs: [
+          "Bandung musim hujan (Oktober–April): probabilitas hujan sore >60%. Outdoor afternoon activity = risk indoor backup hampir pasti aktif. Plan ya indoor-primary atau scheduled morning untuk outdoor.",
+          "Musim kemarau (Mei–September): outdoor full-day feasible. Tapi suhu Bandung kota bisa 32°C+ midday — outdoor heavy di siang hari demand canopy + hydration station.",
+          "Untuk event yang scheduled fixed (annual gathering biasanya Desember atau awal tahun), check probabilitas musim. Tidak masuk akal force outdoor di puncak musim hujan.",
+        ],
+      },
+      {
+        heading: "Faktor 4: Budget tier",
+        paragraphs: [
+          "Foundation tier (Rp 1.5–2.5 jt/pax): outdoor base camp setting jauh lebih affordable dari hotel/ballroom rental. Outdoor lean.",
+          "Elevated (Rp 2.5–4.5 jt/pax): hybrid feasible. Indoor di hotel/resort + outdoor activity di venue terdekat.",
+          "Signature (Rp 4.5–7 jt/pax): premium indoor di hotel berbintang + curated outdoor experience. Hybrid 50:50 atau 70:30 (indoor lean untuk brand image).",
+          "Bespoke (Rp 7 jt+/pax) executive offsite: indoor private heritage villa atau premium eco-lodge. Outdoor element optional & curated (nature walk, sunrise photography).",
+        ],
+      },
+      {
+        heading: "Faktor 5: Brand image & corporate culture",
+        paragraphs: [
+          "Brand premium banking, consulting, tech enterprise → ekspektasi peserta indoor refined. Outdoor adventure heavy bisa under-deliver perception.",
+          "Brand startup, lifestyle, FMCG youth-targeted → outdoor adventure heavy align dengan brand energy. Indoor formal terasa stiff.",
+          "Brand industrial, manufacturing, logistic → mixed reception. Older workforce prefer indoor comfort, younger workforce open ke outdoor.",
+        ],
+        callout: {
+          label: "Insight",
+          text: "Brand image bukan tentang \"yang penting peserta happy\" — tentang reinforcement nilai brand internal. Outing yang mismatch brand justru terasa awkward & costly.",
+        },
+      },
+      {
+        heading: "Faktor 6: Risk tolerance & insurance",
+        paragraphs: [
+          "Outdoor adventure (Tier 2 activity: high ropes, paintball, rafting) demand insurance coverage tinggi + waiver explicit. Untuk perusahaan dengan risk tolerance konservatif (regulated industry: banking, healthcare), indoor lean atau outdoor Tier 1 (light) saja.",
+          "Indoor pure: insurance baseline cukup, waiver standar. Trade-off: kurang \"memorable\" untuk peserta younger generation yang expect Instagram-able moment.",
+        ],
+      },
+      {
+        heading: "Hybrid 70:30 atau 30:70: format optimal untuk grup besar",
+        paragraphs: [
+          "Untuk grup 80+ pax dengan audience diversity tinggi, hybrid jadi default rekomendasi:",
+        ],
+        numbered: [
+          "Hybrid 70:30 (indoor-heavy): Day 1 strategic + awarding di ballroom, Day 2 morning outdoor activity (terbuka opt-out), Day 2 sore networking + closing indoor.",
+          "Hybrid 30:70 (outdoor-heavy): Day 1 ice-breaking + outbound, Day 1 malam bonfire reflection circle, Day 2 morning workshop indoor, Day 2 sore farewell + photo.",
+        ],
+      },
+      {
+        heading: "Cara apply decision framework untuk next event",
+        paragraphs: [
+          "Step-by-step: (1) Articulate objective primary + secondary. (2) Audit audience fitness & mobility profile via survey 3-pertanyaan. (3) Check weather window event date. (4) Confirm budget tier. (5) Validate brand image fit. (6) Set risk tolerance threshold.",
+          "Hasil 6 faktor ini = rekomendasi indoor/outdoor/hybrid dengan ratio defensible. Bukan opinion HR, bukan template generic — keputusan data-driven.",
+        ],
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "force-majeure-contingency-corporate-outing", "corporate-outing-theme-selection"],
+  },
+
+  "corporate-outing-theme-selection": {
+    slug: "corporate-outing-theme-selection",
+    title: "Corporate Outing Theme Selection: Avoiding Cringe, Hitting Brand",
+    excerpt:
+      "Tema generic kaya \"Bali Vibes\" atau \"Olympic Games\" sudah expired. Framework theme selection yang align dengan brand, objective, dan audience — dari 400+ events delivered.",
+    metaDescription:
+      "Framework pemilihan tema corporate outing yang relevant ke brand & objective. 4 jenis tema: narrative, aesthetic, mission, cultural. Plus 5 tema yang harus dihindari di 2026.",
+    category: "Program Design",
+    tldr: [
+      "Tema generic (\"Bali Vibes\", \"Hawaiian Beach\", \"Olympic Games\") sudah expired — peserta perceive sebagai effort minimal vendor.",
+      "4 kategori tema yang masih relevan 2026: narrative-driven, aesthetic-curated, mission-based, cultural-rooted.",
+      "Tema yang work = align dengan brand identity + reinforce objective event + accommodate audience demographic. Bukan tema cantik di Pinterest yang ditempel ke event.",
+    ],
+    heroImage: IMAGES.packageGlamping,
+    publishDate: "2026-05-07",
+    readTimeMin: 8,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "\"Mau tema apa?\" — pertanyaan klasik yang HR sering tidak punya jawaban kuat. Default jadinya tema generic dari Pinterest atau katalog vendor: Bali Vibes, Hawaiian Beach, Olympic Games, Casino Night, Masquerade Ball. Di 2026, tema-tema ini sudah saturated dan perceive peserta sebagai \"effort minimal vendor\".",
+          "Tema yang berhasil punya 3 karakteristik: (1) align dengan brand identity perusahaan, (2) reinforce objective primary event, dan (3) accommodate audience demographic & cultural mix. Tema yang gagal: dipick dari katalog vendor tanpa context.",
+        ],
+      },
+      {
+        heading: "Kategori 1: Narrative-Driven Theme",
+        paragraphs: [
+          "Tema berbentuk story arc yang peserta navigate sepanjang event. Memberikan rasa progress + memorable narrative spine.",
+        ],
+        bullets: [
+          "\"Expedition\": peserta jadi explorer team yang lewatin misi-misi sepanjang event. Awarding malam = celebration \"summit reached\"",
+          "\"Time Capsule\": opening = panggil masa lalu perusahaan (foto founding team, milestones). Day 2 = present focus. Closing = vision masa depan",
+          "\"Detective / Heist\": cocok untuk grup creative & marketing — mystery solving sepanjang event, klimaks malam dengan reveal",
+        ],
+        callout: {
+          label: "Pakai untuk",
+          text: "Objective bonding deep + storytelling brand. Audience predominantly Millennial / Gen-Z yang appreciate narrative.",
+        },
+      },
+      {
+        heading: "Kategori 2: Aesthetic-Curated Theme",
+        paragraphs: [
+          "Tema yang focus visual + experience refinement, bukan story arc. Cocok untuk event premium / awarding dimana visual delivery jadi central piece.",
+        ],
+        bullets: [
+          "\"Modernist Industrial\": estetika minimal + concrete + brushed metal. Match untuk tech / manufacturing brand",
+          "\"Tropical Refined\": bukan cliche Hawaii — modern interpretation tropical (rattan, neutral palette, soft botanical). Premium feel",
+          "\"Heritage Indonesia\": curated by region (Jawa elegant, Bali contemporary, Sumatra textiles). Local pride tanpa stereotype",
+          "\"Garden Soirée\": elegant outdoor dining dengan refined lighting + curated florals. Cocok untuk grup executive premium",
+        ],
+        callout: {
+          label: "Pakai untuk",
+          text: "Brand premium (banking, consulting, professional services) + objective awarding atau celebration. Demand venue + F&B yang match aesthetic.",
+        },
+      },
+      {
+        heading: "Kategori 3: Mission-Based Theme",
+        paragraphs: [
+          "Tema yang attach event ke purpose-driven mission. Beyond bonding — peserta leave dengan rasa kontribusi.",
+        ],
+        bullets: [
+          "\"Plant 1000 trees\": CSR-integrated outing. Peserta plant pohon di hutan rehab Jawa Barat. Sustainability brand alignment",
+          "\"Community impact day\": 50% time outing, 50% volunteer di komunitas lokal (renovasi sekolah, gotong royong)",
+          "\"Skill exchange\": peserta share skill ke komunitas (financial literacy, digital skill workshop)",
+        ],
+        callout: {
+          label: "Pakai untuk",
+          text: "Brand yang punya ESG / sustainability commitment. Audience Millennial / Gen-Z lebih engaged dengan mission-based theme dari generic fun.",
+        },
+      },
+      {
+        heading: "Kategori 4: Cultural-Rooted Theme",
+        paragraphs: [
+          "Tema yang root ke budaya lokal Sunda / Indonesia tanpa stereotype. Demand riset proper, bukan cosplay budaya.",
+        ],
+        bullets: [
+          "\"Sundanese Pasar Malam\": pasar tradisional reimagined dengan curated F&B Sunda authentic + live music traditional + interactive booth kerajinan",
+          "\"Tarian & Cerita\": opening dengan tari Jaipong oleh sanggar lokal + storytelling tentang nilai filosofi Sunda yang connect ke nilai perusahaan",
+          "\"Petualangan Pasundan\": expedition narrative dengan elemen budaya Sunda (peta tradisional, makanan khas, bahasa daerah dalam game)",
+        ],
+        callout: {
+          label: "Penting",
+          text: "Hindari versi karikatur (\"costume Sunda costume\" yang stereotype). Engage konsultan budaya atau sanggar lokal untuk autentisitas. Budaya bukan dekorasi.",
+        },
+      },
+      {
+        heading: "5 tema yang harus dihindari di 2026",
+        paragraphs: [
+          "Tema-tema berikut sudah saturated atau punya implicit problem. Hindari kecuali ada twist signifikan:",
+        ],
+        numbered: [
+          "\"Hawaiian / Bali Beach Vibes\": cliche, peserta perceive low-effort, tidak match Bandung context (dataran tinggi, bukan pantai).",
+          "\"Olympic Games\": kompetisi heavy dengan winner-loser dynamic justru bisa hurt team cohesion. Plus terkesan kekanak-kanakan untuk audience profesional.",
+          "\"Casino Night\": gambling theme problematic dari sisi compliance + brand image untuk banyak industri (regulated, family-oriented brand).",
+          "\"Masquerade Ball\": cliche, costume requirement adds friction, jarang fit brand modern.",
+          "\"Black-tie Gala\" (tanpa context): terlalu formal untuk most outing, costume requirement exclude peserta yang tidak comfortable.",
+        ],
+      },
+      {
+        heading: "Process pilih tema yang work",
+        paragraphs: [
+          "Sequential 5-step yang kami pakai:",
+        ],
+        numbered: [
+          "Confirm objective primary event (bonding / strategic / celebration / mission).",
+          "Audit brand identity — refined? playful? mission-driven? cultural?",
+          "Map audience demographic + cultural mix.",
+          "Shortlist 3 tema dari 4 kategori, evaluate fit dengan 3 faktor di atas.",
+          "Validasi internal stakeholder (HR + brand/marketing) sebelum lock-in. Tema yang HR suka tapi brand reject = friction kemudian.",
+        ],
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "indoor-vs-outdoor-corporate-outing"],
+  },
 };
 
 export function getAllInsightSlugs(): string[] {
