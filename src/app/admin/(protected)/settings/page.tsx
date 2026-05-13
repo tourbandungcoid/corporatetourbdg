@@ -64,6 +64,12 @@ function checkEnv(): EnvCheck[] {
       description: "Token for /api/admin/bootstrap-admin (can remove after setup)",
       required: false,
     },
+    {
+      key: "CRON_SECRET",
+      set: !!process.env.CRON_SECRET,
+      description: "Token for /api/cron/daily-digest (Vercel cron auth)",
+      required: false,
+    },
   ];
 }
 
