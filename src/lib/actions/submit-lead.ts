@@ -163,7 +163,17 @@ export async function submitLeadRequest(
   const input = parsed.data;
   const { score, breakdown } = computeLeadScore("request_proposal", input);
 
-  const supabase = createAdminClient();
+  let supabase;
+  try {
+    supabase = createAdminClient();
+  } catch (e) {
+    console.error("[submitLeadRequest] createAdminClient failed:", e);
+    return {
+      status: "error",
+      message:
+        "Konfigurasi server belum lengkap (SUPABASE_SERVICE_ROLE_KEY). Hubungi admin atau WhatsApp kami langsung.",
+    };
+  }
 
   // 1. Create lead
   const { data: lead, error: leadErr } = await supabase
@@ -186,11 +196,21 @@ export async function submitLeadRequest(
     .single();
 
   if (leadErr || !lead) {
-    console.error("Lead insert failed", leadErr);
+    console.error("[submitLeadRequest] Lead insert failed:", {
+      code: leadErr?.code,
+      message: leadErr?.message,
+      details: leadErr?.details,
+      hint: leadErr?.hint,
+    });
+    // Surface enough detail so admins can debug from the page itself
+    // without needing Vercel log access. Keeps secrets out — only the
+    // Postgres error message + code, not query payload.
+    const detail = leadErr?.message
+      ? ` (${leadErr.code ?? "db"}: ${leadErr.message})`
+      : "";
     return {
       status: "error",
-      message:
-        "Maaf, terjadi error saat submit. Coba lagi atau WhatsApp kami langsung.",
+      message: `Maaf, terjadi error saat submit${detail}. Coba lagi atau WhatsApp kami langsung.`,
     };
   }
 

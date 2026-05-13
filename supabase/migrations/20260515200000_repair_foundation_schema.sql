@@ -159,12 +159,143 @@ CREATE POLICY "audit_log_super_admin_read" ON public.audit_log
   USING (public.current_user_role() = 'super_admin');
 
 -- ---------------------------------------------------------------------
+-- leads — add any columns that may be missing
+-- ---------------------------------------------------------------------
+-- Lead submission failed in prod with the generic "submit error" message,
+-- which happens when `leads` INSERT errors. Most likely cause: same drift
+-- pattern as profiles — an older version of the leads migration was
+-- applied without all the columns the current code expects.
+-- These ADD COLUMN IF NOT EXISTS calls bring the table up to spec.
+-- ---------------------------------------------------------------------
+DO $$ BEGIN
+  CREATE TYPE public.lead_status AS ENUM (
+    'submitted','under_review','drafting','internal_qa','sent',
+    'feedback_requested','revising','approved','declined','archived',
+    'won','lost','no_response','cooled'
+  );
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  CREATE TYPE public.lead_priority AS ENUM ('hot','warm','medium','cool','cold');
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  CREATE TYPE public.lead_source AS ENUM (
+    'request_proposal','quick_quote','book_consultation',
+    'whatsapp_inbound','lead_magnet','newsletter','manual'
+  );
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+ALTER TABLE public.leads
+  ADD COLUMN IF NOT EXISTS ref_code              TEXT,
+  ADD COLUMN IF NOT EXISTS source_url            TEXT,
+  ADD COLUMN IF NOT EXISTS referrer              TEXT,
+  ADD COLUMN IF NOT EXISTS whatsapp              TEXT,
+  ADD COLUMN IF NOT EXISTS whatsapp_preferred    BOOLEAN DEFAULT TRUE,
+  ADD COLUMN IF NOT EXISTS industry              TEXT,
+  ADD COLUMN IF NOT EXISTS company_size          TEXT,
+  ADD COLUMN IF NOT EXISTS job_role              TEXT,
+  ADD COLUMN IF NOT EXISTS lead_score            INT NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS lead_score_breakdown  JSONB DEFAULT '{}'::jsonb,
+  ADD COLUMN IF NOT EXISTS assigned_to           UUID REFERENCES public.profiles(id),
+  ADD COLUMN IF NOT EXISTS assigned_at           TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS deleted_at            TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS created_at            TIMESTAMPTZ DEFAULT NOW(),
+  ADD COLUMN IF NOT EXISTS updated_at            TIMESTAMPTZ DEFAULT NOW();
+
+-- ref_code generator + default (in case the column was added later)
+CREATE OR REPLACE FUNCTION public.generate_ref_code()
+RETURNS TEXT LANGUAGE plpgsql AS $$
+DECLARE
+  chars TEXT := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  result TEXT := '';
+  i INT;
+BEGIN
+  FOR i IN 1..8 LOOP
+    result := result || substr(chars, (random() * length(chars))::int + 1, 1);
+  END LOOP;
+  RETURN result;
+END;
+$$;
+
+-- Backfill ref_code for any existing rows with NULL, then enforce NOT NULL + UNIQUE.
+UPDATE public.leads
+   SET ref_code = public.generate_ref_code()
+ WHERE ref_code IS NULL;
+
+ALTER TABLE public.leads
+  ALTER COLUMN ref_code SET DEFAULT public.generate_ref_code(),
+  ALTER COLUMN ref_code SET NOT NULL;
+
+DO $$ BEGIN
+  ALTER TABLE public.leads ADD CONSTRAINT leads_ref_code_key UNIQUE (ref_code);
+EXCEPTION WHEN duplicate_object THEN NULL;
+WHEN duplicate_table THEN NULL; END $$;
+
+-- Priority compute fn + trigger (in case missing)
+CREATE OR REPLACE FUNCTION public.compute_lead_priority(score INT)
+RETURNS public.lead_priority LANGUAGE sql IMMUTABLE AS $$
+  SELECT CASE
+    WHEN score >= 90 THEN 'hot'::public.lead_priority
+    WHEN score >= 70 THEN 'warm'::public.lead_priority
+    WHEN score >= 50 THEN 'medium'::public.lead_priority
+    WHEN score >= 30 THEN 'cool'::public.lead_priority
+    ELSE 'cold'::public.lead_priority
+  END;
+$$;
+
+CREATE OR REPLACE FUNCTION public.set_lead_priority()
+RETURNS TRIGGER LANGUAGE plpgsql AS $$
+BEGIN
+  NEW.priority := public.compute_lead_priority(NEW.lead_score);
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS set_leads_priority ON public.leads;
+CREATE TRIGGER set_leads_priority BEFORE INSERT OR UPDATE OF lead_score ON public.leads
+  FOR EACH ROW EXECUTE FUNCTION public.set_lead_priority();
+
+DROP TRIGGER IF EXISTS set_leads_updated_at ON public.leads;
+CREATE TRIGGER set_leads_updated_at BEFORE UPDATE ON public.leads
+  FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+-- ---------------------------------------------------------------------
+-- lead_qualifications — add columns if missing
+-- ---------------------------------------------------------------------
+ALTER TABLE public.lead_qualifications
+  ADD COLUMN IF NOT EXISTS event_types                   TEXT[] NOT NULL DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS pax_estimated                 INT,
+  ADD COLUMN IF NOT EXISTS pax_min                       INT,
+  ADD COLUMN IF NOT EXISTS pax_max                       INT,
+  ADD COLUMN IF NOT EXISTS budget_tier                   TEXT,
+  ADD COLUMN IF NOT EXISTS duration_preference           TEXT,
+  ADD COLUMN IF NOT EXISTS location_preferences          TEXT[] DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS target_date_specific          DATE,
+  ADD COLUMN IF NOT EXISTS target_date_flexible_quarter  TEXT,
+  ADD COLUMN IF NOT EXISTS urgency                       TEXT,
+  ADD COLUMN IF NOT EXISTS additional_notes              TEXT,
+  ADD COLUMN IF NOT EXISTS created_at                    TIMESTAMPTZ DEFAULT NOW();
+
+-- ---------------------------------------------------------------------
+-- lead_activities — add columns if missing
+-- ---------------------------------------------------------------------
+ALTER TABLE public.lead_activities
+  ADD COLUMN IF NOT EXISTS activity_type   TEXT,
+  ADD COLUMN IF NOT EXISTS actor_id        UUID REFERENCES public.profiles(id),
+  ADD COLUMN IF NOT EXISTS actor_type      TEXT,
+  ADD COLUMN IF NOT EXISTS details         JSONB DEFAULT '{}'::jsonb,
+  ADD COLUMN IF NOT EXISTS created_at      TIMESTAMPTZ DEFAULT NOW();
+
+-- ---------------------------------------------------------------------
 -- Final sanity GRANTs (in case anything was created above without
 -- inheriting the default privileges from the previous migration)
 -- ---------------------------------------------------------------------
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.profiles TO authenticated;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.audit_log TO authenticated;
-GRANT ALL ON public.profiles, public.audit_log TO service_role;
+GRANT INSERT ON public.leads, public.lead_qualifications, public.lead_activities TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.leads, public.lead_qualifications, public.lead_activities TO authenticated;
+GRANT ALL ON public.profiles, public.audit_log, public.leads, public.lead_qualifications, public.lead_activities TO service_role;
 
 DO $$ BEGIN
   RAISE NOTICE 'Foundation schema repair migration completed.';
