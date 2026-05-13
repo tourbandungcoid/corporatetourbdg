@@ -288,10 +288,10 @@ export function PackagesGrid({ packages }: { packages: Package[] }) {
                       </div>
                       <div className="flex gap-2">
                         <Link
-                          href={`/services/${pkg.serviceSlug}`}
+                          href={`/packages/${pkg.slug}`}
                           className="inline-flex items-center justify-center h-10 px-4 rounded-full border border-border text-xs font-medium text-ink hover:bg-cream transition"
                         >
-                          Detail service
+                          Lihat detail
                         </Link>
                         <Link
                           href="/proposal/request"

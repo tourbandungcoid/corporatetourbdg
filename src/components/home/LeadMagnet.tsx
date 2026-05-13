@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, Check } from "@/components/icons/Icons";
 
 const ITEMS = [
@@ -53,27 +54,18 @@ export function LeadMagnet() {
                 ))}
               </ul>
 
-              <form
-                className="mt-10 flex flex-col sm:flex-row gap-3"
-                action="/proposal/sample"
-                method="get"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Email perusahaan lo"
-                  className="flex-1 rounded-full bg-paper/10 border border-paper/20 px-5 h-12 text-paper placeholder:text-paper/40 focus:outline-none focus:border-brand focus:bg-paper/15 transition"
-                  aria-label="Email"
-                />
-                <button
-                  type="submit"
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/proposal/sample"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-brand text-paper px-7 h-12 text-sm font-medium hover:bg-brand-deep transition-colors"
                 >
                   Email me the sample
                   <ArrowRight size={14} />
-                </button>
-              </form>
+                </Link>
+                <span className="text-xs text-paper/55">
+                  ⚡ 30 detik · langsung ke email
+                </span>
+              </div>
 
               <p className="mt-4 text-xs text-paper/50">
                 🔒 800+ HR sudah download. No spam — kami kirim sekali + 1
