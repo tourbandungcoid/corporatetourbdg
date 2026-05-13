@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import type { Profile } from "@/lib/auth/getCurrentProfile";
 
-type Props = { profile: Profile };
+type Props = { profile: Profile; taskCount?: number };
 
 const ROLE_LABEL: Record<Profile["role"], string> = {
   super_admin: "Super Admin",
@@ -15,7 +16,7 @@ const ROLE_LABEL: Record<Profile["role"], string> = {
   viewer: "Viewer",
 };
 
-export function TopBar({ profile }: Props) {
+export function TopBar({ profile, taskCount = 0 }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -44,6 +45,24 @@ export function TopBar({ profile }: Props) {
 
   return (
     <header className="h-16 border-b border-divider bg-paper flex items-center justify-end px-6 gap-3 relative">
+      <Link
+        href="/admin/tasks"
+        className={`inline-flex items-center gap-2 rounded-full px-3 h-9 text-sm transition ${
+          taskCount > 0
+            ? "bg-warm/10 text-warm hover:bg-warm/20"
+            : "border border-border bg-paper text-slate hover:bg-cream"
+        }`}
+      >
+        <span>Tasks</span>
+        <span
+          className={`inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full text-[11px] font-medium tabular ${
+            taskCount > 0 ? "bg-warm text-paper" : "bg-cream text-slate-mute"
+          }`}
+        >
+          {taskCount}
+        </span>
+      </Link>
+
       <div ref={ref} className="relative">
         <button
           type="button"
