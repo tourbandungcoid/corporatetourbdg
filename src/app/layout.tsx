@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { AnalyticsScripts, GTMNoScript } from "@/components/AnalyticsScripts";
+import { getAppSettings } from "@/lib/app-settings";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,14 +47,27 @@ function normalizeSiteUrl(input: string | undefined): URL {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await getAppSettings();
   return (
     <html lang="id" className={`${inter.variable} ${fraunces.variable}`}>
-      <body>{children}</body>
+      <head>
+        <AnalyticsScripts
+          ga4Id={settings.analytics.ga4_id}
+          metaPixelId={settings.analytics.meta_pixel_id}
+          gtmId={settings.analytics.gtm_id}
+          hotjarId={settings.analytics.hotjar_id}
+          clarityId={settings.analytics.clarity_id}
+        />
+      </head>
+      <body>
+        <GTMNoScript gtmId={settings.analytics.gtm_id} />
+        {children}
+      </body>
     </html>
   );
 }

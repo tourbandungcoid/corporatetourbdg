@@ -102,6 +102,27 @@ export default async function SettingsPage() {
           </h1>
         </div>
 
+        {/* Site-wide editable groups */}
+        <section className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["Contact", "/admin/settings/contact", "WhatsApp · email · address"],
+            ["Social media", "/admin/settings/social", "LinkedIn · Instagram · YouTube · TikTok"],
+            ["Analytics & Pixel", "/admin/settings/analytics", "GA4 · Meta Pixel · GTM · Hotjar · Clarity"],
+            ["SEO defaults", "/admin/settings/seo", "Default title · description"],
+            ["Reviews", "/admin/settings/reviews", "Google rating · review count"],
+            ["Headline stats", "/admin/settings/stats", "400+ events · 92% repeat · etc."],
+          ].map(([title, href, desc]) => (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-2xl border border-border bg-paper p-5 hover:border-ink-soft transition-colors block"
+            >
+              <p className="font-display text-base text-ink">{title}</p>
+              <p className="mt-1 text-xs text-slate">{desc}</p>
+            </Link>
+          ))}
+        </section>
+
         {/* Your account */}
         <section className="rounded-2xl border border-border bg-paper overflow-hidden mb-6">
           <div className="px-6 py-5 border-b border-divider">
