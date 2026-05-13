@@ -30,6 +30,15 @@ function isoNDaysAgo(days: number): string {
   return d.toISOString();
 }
 
+// SLA: response time targets per priority (hours from created_at to first status change away from submitted/under_review)
+const SLA_HOURS: Record<string, number> = {
+  hot: 2,
+  warm: 8,
+  medium: 24,
+  cool: 48,
+  cold: 168, // 1 week
+};
+
 async function getDashboard() {
   const sb = createAdminClient();
 
@@ -55,6 +64,7 @@ async function getDashboard() {
     funnelRes,
     sourcesRes,
     activitiesRes,
+    slaPendingRes,
   ] = await Promise.all([
     baseFilter,
     sb
@@ -116,6 +126,13 @@ async function getDashboard() {
       .select("id, activity_type, created_at, details, lead_id")
       .order("created_at", { ascending: false })
       .limit(10),
+    sb
+      .from("leads")
+      .select("id, ref_code, full_name, company_name, priority, status, created_at")
+      .in("status", ["submitted", "under_review"])
+      .is("deleted_at", null)
+      .order("created_at", { ascending: true })
+      .limit(50),
   ]);
 
   // Funnel aggregation
@@ -146,6 +163,18 @@ async function getDashboard() {
   const trend = prev7 === 0 ? null : ((last7 - prev7) / prev7) * 100;
   const conversionPct = total === 0 ? 0 : (won / total) * 100;
 
+  // SLA breaches: leads still in submitted/under_review past their priority's SLA window
+  const now = Date.now();
+  const slaBreaches = (slaPendingRes.data ?? [])
+    .map((lead) => {
+      const ageHours = (now - new Date(lead.created_at).getTime()) / 36e5;
+      const sla = SLA_HOURS[lead.priority ?? "medium"] ?? 24;
+      return { lead, ageHours, sla, overdueBy: ageHours - sla };
+    })
+    .filter((x) => x.overdueBy > 0)
+    .sort((a, b) => b.overdueBy - a.overdueBy)
+    .slice(0, 8);
+
   return {
     total,
     hot: hotRes.count ?? 0,
@@ -161,6 +190,7 @@ async function getDashboard() {
     funnel,
     sources,
     activities: activitiesRes.data ?? [],
+    slaBreaches,
     queryError: recentLeadsRes.error?.message,
   };
 }
@@ -226,6 +256,64 @@ export default async function DashboardPage() {
             accent="success"
           />
         </div>
+
+        {/* SLA breaches — only show if any */}
+        {stats.slaBreaches.length > 0 && (
+          <section className="mb-10 rounded-2xl border border-error/30 bg-error/5 overflow-hidden">
+            <div className="px-6 py-5 border-b border-error/20 flex items-center justify-between">
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-wider text-error font-medium">
+                  Response SLA breach
+                </p>
+                <h2 className="font-display text-xl text-ink mt-1">
+                  {stats.slaBreaches.length} lead{stats.slaBreaches.length > 1 ? "s" : ""} need immediate attention
+                </h2>
+              </div>
+            </div>
+            <ul className="divide-y divide-error/10">
+              {stats.slaBreaches.map((b) => (
+                <li
+                  key={b.lead.id}
+                  className="px-6 py-3 flex items-center justify-between gap-4 hover:bg-error/5 transition"
+                >
+                  <Link
+                    href={`/admin/leads/${b.lead.id}`}
+                    className="flex-1 min-w-0 flex items-center gap-3"
+                  >
+                    <span className="font-mono text-xs text-slate-mute tabular w-20 flex-shrink-0">
+                      {b.lead.ref_code}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-ink truncate">
+                        {b.lead.full_name}
+                      </p>
+                      <p className="text-xs text-slate truncate">
+                        {b.lead.company_name}
+                      </p>
+                    </div>
+                    <span
+                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ${
+                        b.lead.priority === "hot"
+                          ? "bg-error/20 text-error"
+                          : "bg-warm/20 text-warm"
+                      }`}
+                    >
+                      {b.lead.priority?.toUpperCase() ?? "—"}
+                    </span>
+                  </Link>
+                  <div className="text-right tabular flex-shrink-0">
+                    <p className="text-sm font-medium text-error">
+                      +{b.overdueBy.toFixed(b.overdueBy < 1 ? 1 : 0)}h overdue
+                    </p>
+                    <p className="text-[11px] text-slate-mute">
+                      SLA {b.sla}h · age {b.ageHours.toFixed(b.ageHours < 1 ? 1 : 0)}h
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Funnel + Sources */}
         <div className="grid gap-6 lg:grid-cols-3 mb-10">
