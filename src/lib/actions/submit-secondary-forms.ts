@@ -100,6 +100,7 @@ export async function submitQuickQuote(
 
   await notifyNewLead({
     refCode: lead.ref_code,
+    leadId: lead.id,
     fullName: input.full_name,
     workEmail: input.work_email,
     companyName: input.company_name || "Not specified",
@@ -185,6 +186,7 @@ export async function submitConsultation(
 
   await notifyNewLead({
     refCode: lead.ref_code,
+    leadId: lead.id,
     fullName: input.full_name,
     workEmail: input.work_email,
     whatsapp: input.whatsapp,
@@ -253,6 +255,7 @@ export async function submitLeadMagnet(
 
   await notifyNewLead({
     refCode: lead.ref_code,
+    leadId: lead.id,
     fullName: input.full_name,
     workEmail: input.work_email,
     companyName: input.company_name,

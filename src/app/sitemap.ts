@@ -24,9 +24,14 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/case-studies", priority: 0.8, changeFrequency: "weekly" },
   { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
   { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/methodology", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/glossary", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/specialist-vs-generic-eo", priority: 0.75, changeFrequency: "monthly" },
   // Company
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/team", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/clients", priority: 0.6, changeFrequency: "monthly" },
   // Proposal funnel (lower priority — internal CTAs not search-targeted)
   { path: "/proposal", priority: 0.6, changeFrequency: "monthly" },
   { path: "/proposal/request", priority: 0.5, changeFrequency: "monthly" },

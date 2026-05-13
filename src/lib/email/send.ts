@@ -219,6 +219,7 @@ ${CONTACT.address.full}
 // ---------------------------------------------------------------------
 export async function sendSalesNotification({
   refCode,
+  leadId,
   fullName,
   workEmail,
   whatsapp,
@@ -228,6 +229,7 @@ export async function sendSalesNotification({
   priority,
 }: {
   refCode: string;
+  leadId?: string;
   fullName: string;
   workEmail: string;
   whatsapp?: string | null;
@@ -246,7 +248,9 @@ export async function sendSalesNotification({
   const emoji = priority ? priorityEmoji[priority] ?? "" : "";
 
   const subject = `${emoji} New ${priority?.toUpperCase() ?? "LEAD"} (${score}) — ${companyName} via ${source}`;
-  const adminUrl = `${SITE.url}/admin/leads`;
+  const adminUrl = leadId
+    ? `${SITE.url}/admin/leads/${leadId}`
+    : `${SITE.url}/admin/leads`;
 
   const html = `
 <!DOCTYPE html>
@@ -333,6 +337,7 @@ Open in admin: ${adminUrl}`;
  */
 export async function notifyNewLead({
   refCode,
+  leadId,
   fullName,
   workEmail,
   whatsapp,
@@ -342,6 +347,7 @@ export async function notifyNewLead({
   priority,
 }: {
   refCode: string;
+  leadId?: string;
   fullName: string;
   workEmail: string;
   whatsapp?: string | null;
@@ -354,6 +360,7 @@ export async function notifyNewLead({
     sendLeadConfirmation({ to: workEmail, fullName, refCode, source }),
     sendSalesNotification({
       refCode,
+      leadId,
       fullName,
       workEmail,
       whatsapp,
@@ -363,4 +370,111 @@ export async function notifyNewLead({
       priority,
     }),
   ]);
+}
+
+// ---------------------------------------------------------------------
+// Proposal sent email (to client) — to be triggered manually from admin
+// ---------------------------------------------------------------------
+export async function sendProposalReadyEmail({
+  to,
+  fullName,
+  refCode,
+  senderName,
+}: {
+  to: string;
+  fullName: string;
+  refCode: string;
+  senderName: string;
+}): Promise<SendResult> {
+  const trackUrl = `${SITE.url}/proposal/track/${refCode}`;
+  const subject = `Proposal Anda siap — ${SITE.name} (${refCode})`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<title>${subject}</title>
+</head>
+<body style="margin:0;padding:0;background:#FAFAF7;font-family:'Inter','Segoe UI',sans-serif;color:#0F1F1A;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width:600px;background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(15,31,26,0.05);">
+          <tr>
+            <td style="padding:32px 32px 16px;">
+              <p style="margin:0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#6BA239;font-weight:600;">
+                Proposal ready
+              </p>
+              <h1 style="margin:12px 0 0;font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;">
+                Halo ${fullName}, proposal Anda siap.
+              </h1>
+              <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:#4F5E58;">
+                Tim kami sudah selesai draft proposal lengkap untuk request <strong style="font-family:monospace;">${refCode}</strong>. Dokumen mencakup breakdown line-item, 2 alternative venue, timeline event, dan risk register.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:16px 32px 24px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="background:#0F1F1A;border-radius:999px;">
+                    <a href="${trackUrl}" style="display:inline-block;padding:14px 28px;color:#FFFFFF;text-decoration:none;font-size:14px;font-weight:500;">
+                      Open proposal →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:16px 0 0;font-size:13px;color:#4F5E58;">
+                Ada pertanyaan? Reply email ini atau WhatsApp <a href="https://wa.me/${CONTACT.whatsapp}" style="color:#4E7E2A;font-weight:500;text-decoration:none;">${CONTACT.phoneDisplay}</a> dengan ref <strong>${refCode}</strong>.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:0 32px 24px;">
+              <p style="margin:0;font-size:13px;color:#4F5E58;line-height:1.7;">
+                — ${senderName}<br />
+                <span style="color:#8B9690;">${SITE.name}</span>
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px 32px 32px;border-top:1px solid #EFF0E8;">
+              <p style="margin:0;font-size:12px;color:#8B9690;line-height:1.6;">
+                ${SITE.name} — Specialist B2B corporate outing di Bandung &amp; Jawa Barat sejak 2018.<br />
+                400+ events delivered · 92% repeat booking · ${CONTACT.address.full}
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim();
+
+  const text = `Halo ${fullName},
+
+Proposal lengkap untuk request ${refCode} sudah siap.
+
+Open proposal: ${trackUrl}
+
+Reply email ini atau WhatsApp ${CONTACT.phoneDisplay} dengan ref ${refCode} kalau ada pertanyaan.
+
+— ${senderName}
+${SITE.name}
+${CONTACT.address.full}
+`;
+
+  return send({
+    to,
+    subject,
+    html,
+    text,
+    replyTo: CONTACT.email,
+  });
 }
