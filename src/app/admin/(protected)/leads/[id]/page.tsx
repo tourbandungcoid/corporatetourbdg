@@ -137,14 +137,22 @@ async function getLead(id: string) {
 
 export default async function LeadDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ activity?: string }>;
 }) {
   const { id } = await params;
+  const { activity: activityFilter } = await searchParams;
   const [result, adminUsers] = await Promise.all([getLead(id), getAdminUsers()]);
 
   if (!result) notFound();
-  const { lead, qual, activities, userMap, duplicates } = result;
+  const { lead, qual, activities: allActivities, userMap, duplicates } = result;
+  const activities =
+    activityFilter === "notes"
+      ? allActivities.filter((a) => a.activity_type === "note_added")
+      : allActivities;
+  const noteCount = allActivities.filter((a) => a.activity_type === "note_added").length;
 
   const breakdown =
     (lead.lead_score_breakdown as Record<string, number> | null) ?? {};
@@ -392,6 +400,28 @@ export default async function LeadDetailPage({
             </Card>
 
             <Card title="Activity">
+              <div className="-mt-2 mb-3 flex gap-1.5">
+                <Link
+                  href={`/admin/leads/${lead.id}`}
+                  className={`inline-flex items-center rounded-full px-2.5 h-7 text-[11px] font-medium transition ${
+                    activityFilter !== "notes"
+                      ? "bg-ink text-paper"
+                      : "border border-border bg-paper text-slate hover:bg-cream"
+                  }`}
+                >
+                  All ({allActivities.length})
+                </Link>
+                <Link
+                  href={`/admin/leads/${lead.id}?activity=notes`}
+                  className={`inline-flex items-center rounded-full px-2.5 h-7 text-[11px] font-medium transition ${
+                    activityFilter === "notes"
+                      ? "bg-ink text-paper"
+                      : "border border-border bg-paper text-slate hover:bg-cream"
+                  }`}
+                >
+                  Notes ({noteCount})
+                </Link>
+              </div>
               {activities.length === 0 ? (
                 <p className="text-sm text-slate">No activity yet.</p>
               ) : (
