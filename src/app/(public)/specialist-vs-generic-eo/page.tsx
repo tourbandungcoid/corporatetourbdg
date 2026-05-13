@@ -147,7 +147,7 @@ export default function CompareSpecialistVsGenericPage() {
       headline: "Corporate Specialist vs Generic EO/Travel Agent — 12 Dimensi Comparison",
       description:
         "Comparison detail antara corporate event specialist dan generic EO untuk HR yang mau pick vendor smart.",
-      image: `${SITE.url}/og-default.png`,
+      image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/specialist-vs-generic-eo",

@@ -223,7 +223,7 @@ export default function PricingPage() {
       headline: "Pricing & Transparent Breakdown — Corporate Outing Bandung",
       description:
         "4 tier pricing transparent untuk corporate outing di Bandung dengan line-item breakdown.",
-      image: `${SITE.url}/og-default.png`,
+      image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/pricing",

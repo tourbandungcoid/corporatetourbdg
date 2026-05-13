@@ -109,7 +109,7 @@ export default function MethodologyPage() {
       headline: "Methodology — 3 Named Framework dari 400+ Events",
       description:
         "5-Pillar Corporate Outing Design™, Bandung Outing Tier System™ (BOTS), dan Outcome ROI Framework yang kami pakai untuk setiap engagement.",
-      image: `${SITE.url}/og-default.png`,
+      image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/methodology",

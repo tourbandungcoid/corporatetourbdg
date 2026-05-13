@@ -5,22 +5,16 @@ import { usePathname } from "next/navigation";
 import { LogoLockup } from "@/components/Logo";
 
 const NAV = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/leads", label: "Leads" },
-  { href: "/admin/content/services", label: "Services" },
-  { href: "/admin/content/packages", label: "Packages" },
-  { href: "/admin/content/case-studies", label: "Case Studies" },
-  { href: "/admin/content/insights", label: "Insights" },
-  { href: "/admin/content/faq", label: "FAQ" },
-  { href: "/admin/content/testimonials", label: "Testimonials" },
-  { href: "/admin/content/clients", label: "Clients" },
-  { href: "/admin/media", label: "Media" },
-  { href: "/admin/users", label: "Users" },
-  { href: "/admin/settings", label: "Settings" },
+  { href: "/admin", label: "Dashboard", group: "overview" },
+  { href: "/admin/leads", label: "Leads", group: "overview" },
+  { href: "/admin/users", label: "Users", group: "settings" },
+  { href: "/admin/settings", label: "Settings", group: "settings" },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
+  const overview = NAV.filter((n) => n.group === "overview");
+  const settings = NAV.filter((n) => n.group === "settings");
 
   return (
     <aside className="hidden lg:flex w-60 flex-col border-r border-divider bg-paper">
@@ -34,7 +28,19 @@ export function Sidebar() {
         <p className="px-3 mt-1 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
           Overview
         </p>
-        {NAV.slice(0, 2).map((item) => (
+        {overview.map((item) => (
+          <NavLink
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            active={pathname === item.href || pathname.startsWith(item.href + "/")}
+          />
+        ))}
+
+        <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
+          Settings
+        </p>
+        {settings.map((item) => (
           <NavLink
             key={item.href}
             href={item.href}
@@ -46,26 +52,11 @@ export function Sidebar() {
         <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
           Content
         </p>
-        {NAV.slice(2, 9).map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            label={item.label}
-            active={pathname === item.href || pathname.startsWith(item.href + "/")}
-          />
-        ))}
-
-        <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
-          Library & Settings
-        </p>
-        {NAV.slice(9).map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            label={item.label}
-            active={pathname === item.href || pathname.startsWith(item.href + "/")}
-          />
-        ))}
+        <div className="px-3 py-2 rounded-lg bg-cream/40 text-xs text-slate leading-relaxed">
+          Services, packages, case studies, insights, FAQ &amp; team data
+          managed via repo data files in{" "}
+          <code className="font-mono text-[11px] text-ink">src/lib/*-data.ts</code>.
+        </div>
       </nav>
     </aside>
   );
