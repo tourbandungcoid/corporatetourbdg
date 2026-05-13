@@ -1,22 +1,76 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { getInsightsList } from "@/lib/insights-data";
 import { ArrowRight } from "@/components/icons/Icons";
+import { SITE } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Insights",
   description:
     "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia.",
+  alternates: { canonical: `${SITE.url}/insights` },
+  openGraph: {
+    title: "Insights — TourBandung Corporate",
+    description:
+      "Framework, data, dan editorial soal corporate event design — 8 long-form articles dari 400+ events delivered.",
+    url: `${SITE.url}/insights`,
+    type: "website",
+  },
 };
 
-const CATEGORIES = ["All", "Methodology", "Framework", "HR Tactics", "Team Design", "Strategic Event"];
+type SearchParams = Promise<{ category?: string }>;
 
-export default function InsightsIndexPage() {
-  const articles = getInsightsList();
+export default async function InsightsIndexPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { category } = await searchParams;
+  const all = await getInsightsList();
+  const categories = Array.from(new Set(all.map((a) => a.category)));
+  const articles = category
+    ? all.filter((a) => a.category === category)
+    : all;
+
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Insights", url: `${SITE.url}/insights` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      url: `${SITE.url}/insights`,
+      name: "TourBandung Corporate Insights",
+      inLanguage: "id-ID",
+      blogPost: all.slice(0, 10).map((a) => ({
+        "@type": "BlogPosting",
+        headline: a.title,
+        url: `${SITE.url}/insights/${a.slug}`,
+        datePublished: a.publishDate,
+        dateModified: a.publishDate,
+        author: { "@type": "Organization", name: a.author.role },
+        articleSection: a.category,
+        description: a.excerpt,
+      })),
+    }
+  );
 
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Insights"
         title="Editorial untuk HR & corporate decision makers."
@@ -26,25 +80,47 @@ export default function InsightsIndexPage() {
       <section className="border-b border-divider py-8 bg-paper">
         <div className="container-1280">
           <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <span
-                key={cat}
-                className={[
-                  "inline-flex items-center rounded-full border px-4 py-2 text-sm",
-                  cat === "All"
-                    ? "bg-ink text-paper border-ink"
-                    : "bg-paper text-slate border-border",
-                ].join(" ")}
-              >
-                {cat}
-              </span>
-            ))}
+            <Link
+              href="/insights"
+              className={`inline-flex items-center rounded-full border px-4 py-2 text-sm transition ${
+                !category
+                  ? "bg-ink text-paper border-ink"
+                  : "bg-paper text-slate border-border hover:bg-cream"
+              }`}
+            >
+              All ({all.length})
+            </Link>
+            {categories.map((cat) => {
+              const count = all.filter((a) => a.category === cat).length;
+              const active = category === cat;
+              return (
+                <Link
+                  key={cat}
+                  href={`/insights?category=${encodeURIComponent(cat)}`}
+                  className={`inline-flex items-center rounded-full border px-4 py-2 text-sm transition ${
+                    active
+                      ? "bg-ink text-paper border-ink"
+                      : "bg-paper text-slate border-border hover:bg-cream"
+                  }`}
+                >
+                  {cat} ({count})
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section className="py-16 md:py-20">
         <div className="container-1280">
+          {articles.length === 0 ? (
+            <div className="rounded-2xl border border-border bg-paper p-12 text-center text-sm text-slate">
+              Belum ada artikel di kategori ini.{" "}
+              <Link href="/insights" className="text-brand-deep underline">
+                Lihat semua →
+              </Link>
+            </div>
+          ) : (
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article, i) => (
               <Link
@@ -81,6 +157,7 @@ export default function InsightsIndexPage() {
               </Link>
             ))}
           </div>
+          )}
         </div>
       </section>
 
@@ -95,5 +172,6 @@ export default function InsightsIndexPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -5,21 +5,23 @@ import { usePathname } from "next/navigation";
 import { LogoLockup } from "@/components/Logo";
 
 const NAV = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/leads", label: "Leads" },
-  { href: "/admin/content/services", label: "Services" },
-  { href: "/admin/content/packages", label: "Packages" },
-  { href: "/admin/content/case-studies", label: "Case Studies" },
-  { href: "/admin/content/insights", label: "Insights" },
-  { href: "/admin/content/faq", label: "FAQ" },
-  { href: "/admin/content/testimonials", label: "Testimonials" },
-  { href: "/admin/content/clients", label: "Clients" },
-  { href: "/admin/media", label: "Media" },
-  { href: "/admin/settings", label: "Settings" },
+  { href: "/admin", label: "Dashboard", group: "overview" },
+  { href: "/admin/tasks", label: "Tasks", group: "overview" },
+  { href: "/admin/leads", label: "Leads", group: "overview" },
+  { href: "/admin/activity", label: "Activity log", group: "overview" },
+  { href: "/admin/content/insights", label: "Insights", group: "content" },
+  { href: "/admin/content/case-studies", label: "Case studies", group: "content" },
+  { href: "/admin/content/testimonials", label: "Testimonials", group: "content" },
+  { href: "/admin/content/faq", label: "FAQ", group: "content" },
+  { href: "/admin/users", label: "Users", group: "settings" },
+  { href: "/admin/settings", label: "Settings", group: "settings" },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
+  const overview = NAV.filter((n) => n.group === "overview");
+  const content = NAV.filter((n) => n.group === "content");
+  const settings = NAV.filter((n) => n.group === "settings");
 
   return (
     <aside className="hidden lg:flex w-60 flex-col border-r border-divider bg-paper">
@@ -33,7 +35,7 @@ export function Sidebar() {
         <p className="px-3 mt-1 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
           Overview
         </p>
-        {NAV.slice(0, 2).map((item) => (
+        {overview.map((item) => (
           <NavLink
             key={item.href}
             href={item.href}
@@ -45,7 +47,7 @@ export function Sidebar() {
         <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
           Content
         </p>
-        {NAV.slice(2, 9).map((item) => (
+        {content.map((item) => (
           <NavLink
             key={item.href}
             href={item.href}
@@ -53,11 +55,15 @@ export function Sidebar() {
             active={pathname === item.href || pathname.startsWith(item.href + "/")}
           />
         ))}
+        <p className="mt-2 px-3 text-[10px] text-slate-mute leading-relaxed">
+          Services, packages, glossary &amp; team tetap di{" "}
+          <code className="font-mono text-[11px]">src/lib/*-data.ts</code>.
+        </p>
 
         <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
-          Library & Settings
+          Settings
         </p>
-        {NAV.slice(9).map((item) => (
+        {settings.map((item) => (
           <NavLink
             key={item.href}
             href={item.href}

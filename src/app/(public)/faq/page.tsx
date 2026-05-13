@@ -17,6 +17,13 @@ export const metadata = {
   title: "FAQ",
   description:
     "48+ pertanyaan detail dalam 4 kategori — budget, logistics, comparison, formats. Update 2026. Verified by senior planner.",
+  alternates: { canonical: `${SITE.url}/faq` },
+  openGraph: {
+    title: "FAQ — TourBandung Corporate",
+    description: "48+ pertanyaan paling sering dari HR Indonesia dalam 4 kategori.",
+    url: `${SITE.url}/faq`,
+    type: "website" as const,
+  },
 };
 
 const TOP_FAQS = [
@@ -46,8 +53,8 @@ const TOP_FAQS = [
   },
 ];
 
-export default function FaqIndexPage() {
-  const categories = getFaqCategoriesList();
+export default async function FaqIndexPage() {
+  const categories = await getFaqCategoriesList();
   const totalQuestions = categories.reduce((sum, c) => sum + c.questions.length, 0);
 
   const schema = combineSchemas(

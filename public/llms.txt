@@ -16,6 +16,8 @@
 ## About
 
 [About](https://corporate.7summitstravel.com/about): Company overview, methodology, team, story since 2018
+[Team](https://corporate.7summitstravel.com/team): 6 senior planner bios with credentials and pillar ownership
+[Methodology](https://corporate.7summitstravel.com/methodology): 3 named frameworks — 5-Pillar Design™, Bandung Outing Tier System™ (BOTS), Outcome ROI Framework
 [Services overview](https://corporate.7summitstravel.com/services): 10 corporate event services with pax range and starting price
 
 ## Core Services
@@ -41,9 +43,12 @@
 [Outing Kantor Bandung Guide](https://corporate.7summitstravel.com/outing-kantor-bandung): Comprehensive budget breakdown
 [Sample Proposal](https://corporate.7summitstravel.com/proposal/sample): Real anonymized sample PDF
 
-## FAQ
+## FAQ & Reference
 
-[FAQ](https://corporate.7summitstravel.com/faq): 16 questions across Budget, Process, Comparison, About categories
+[FAQ](https://corporate.7summitstravel.com/faq): 48+ questions across Budget, Logistics, Comparison, Formats categories
+[Glossary](https://corporate.7summitstravel.com/glossary): 40+ definitions for corporate event terminology used by Indonesian HR
+[Specialist vs Generic EO](https://corporate.7summitstravel.com/specialist-vs-generic-eo): 12-dimension comparison between corporate event specialist and generic EO/travel agent
+[Insights](https://corporate.7summitstravel.com/insights): 8 long-form articles including 5-Pillar Design, Bandung Outing Tier System, ROI framework, force majeure, theme selection
 
 ## Key Facts
 

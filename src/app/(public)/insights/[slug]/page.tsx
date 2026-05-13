@@ -19,12 +19,13 @@ import {
 type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
-  return getAllInsightSlugs().map((slug) => ({ slug }));
+  const slugs = await getAllInsightSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getInsight(slug);
+  const article = await getInsight(slug);
   if (!article) return { title: "Article not found" };
   const url = `${SITE.url}/insights/${article.slug}`;
   return {
@@ -37,19 +38,21 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function InsightDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const article = getInsight(slug);
+  const article = await getInsight(slug);
   if (!article) notFound();
 
   const url = `${SITE.url}/insights/${article.slug}`;
-  const allArticles = getInsightsList();
-  const related = (article.relatedSlugs ?? [])
-    .map(getInsight)
-    .filter(Boolean)
-    .slice(0, 2);
+  const allArticles = await getInsightsList();
+  const relatedRaw = await Promise.all(
+    (article.relatedSlugs ?? []).map((s) => getInsight(s))
+  );
+  const related = relatedRaw.filter((x): x is NonNullable<typeof x> => Boolean(x)).slice(0, 2);
   // Fallback fill with most recent if related < 2
   const fillCount = 2 - related.length;
   if (fillCount > 0) {
-    const fallback = allArticles.filter((a) => a.slug !== article.slug && !related.find((r) => r?.slug === a.slug)).slice(0, fillCount);
+    const fallback = allArticles
+      .filter((a) => a.slug !== article.slug && !related.find((r) => r?.slug === a.slug))
+      .slice(0, fillCount);
     related.push(...fallback);
   }
 

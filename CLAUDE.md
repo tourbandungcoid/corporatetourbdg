@@ -8,7 +8,7 @@
 
 - **Frontend:** Next.js 15 (App Router, RSC, Server Actions) + TypeScript + Tailwind v4
 - **Backend / DB:** Supabase (Postgres 17)
-- **Auth:** Supabase Auth (magic link + Google OAuth — Phase 7)
+- **Auth:** Supabase Auth (email + password). Bootstrap admin via `/api/admin/bootstrap-admin?secret=<token>` (env vars: `ADMIN_BOOTSTRAP_SECRET`, `ADMIN_BOOTSTRAP_EMAIL`, `ADMIN_BOOTSTRAP_PASSWORD`). After bootstrap, super_admin can invite additional users via `/admin/users`.
 - **Storage:** Supabase Storage (buckets: `media-public`, `media-private`)
 - **Hosting:** Vercel
 - **Versioning:** GitHub — `tourbandungcoid/corporatetourbdg`
@@ -89,3 +89,43 @@ Avoid: terlalu formal, terlalu textbook, bahasa template agency.
 ## Strategy document
 
 Phase 1-9 strategy lengkap di **`docs/strategy.md`**. Refer to this before making structural/scope decisions.
+
+## Admin dashboard surfaces
+
+- `/admin` — KPI cards, pipeline funnel, source breakdown, SLA breach alert, follow-ups due card, recent leads + cross-lead activity feed.
+- `/admin/tasks` — combined inbox: SLA breaches, follow-ups due, unassigned hot/warm leads, stale proposals (>7d). TopBar shows live task badge.
+- `/admin/leads` — list with search + priority/status/assigned/range filters, pagination (50/page with exact count), bulk select toolbar (status / assign for up to 200 leads), **Quick add lead** (sales call capture), CSV export.
+- `/admin/leads/[id]` — header chips (status/priority/score/source/assigned), Quick actions (status update, assign, follow-up reminder with snooze presets, send 'Proposal Ready' email, add note), Possible duplicates card (matches by email/whatsapp/company), score breakdown, activity feed with resolved actor names.
+- `/admin/activity` — cross-lead audit log with type filter + pagination.
+- `/admin/users` — super_admin only — invite admin (auto-gen temp password shown once), role change, toggle active, reset password.
+- `/admin/settings` — env var presence check, DB record counts, content data-file index, quick links.
+
+## Public surfaces (Phase 2+)
+
+- Money pages: `/outing-kantor-bandung`, `/team-building-bandung`, `/corporate-gathering-bandung`, `/employee-gathering-bandung`, `/outbound-perusahaan-bandung`, `/company-retreat-bandung`, `/villa-gathering-bandung`, `/glamping-corporate-bandung`, `/leadership-retreat-jawa-barat`, `/executive-offsite-bandung`.
+- Hubs: `/services`, `/packages`, `/case-studies` (industry filter), `/insights` (category filter), `/faq` (4 categories).
+- Trust/authority: `/team` (6 senior planner bios + Person schema), `/methodology` (3 named frameworks), `/pricing` (4-tier transparent breakdown), `/specialist-vs-generic-eo`, `/glossary` (40+ terms), `/about`, `/clients`.
+- Funnel: `/proposal/request`, `/proposal/quick-quote`, `/proposal/book-consultation`, `/proposal/sample`, `/proposal/thank-you/[ref]`, `/proposal/track/[ref]` (client-facing live tracker).
+
+## Generated routes (Next metadata)
+
+- `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`
+- `/opengraph-image` (dynamic ImageResponse, 1200×630, brand)
+- `/icon`, `/apple-icon` (dynamic ImageResponse)
+- `/api/health` (shallow) · `/api/health?deep=1` (probes Supabase)
+- `/api/admin/migrate` (auto-applies pending migrations via PG client)
+- `/api/admin/bootstrap-admin` (one-shot admin bootstrap via env vars)
+- `/api/admin/leads/export` (filtered CSV export — auth required)
+
+## Data-driven content
+
+Site content lives in TypeScript files (no CMS). Edit + commit + push to publish.
+- Services: `src/lib/services-data.ts`
+- Case studies: `src/lib/case-studies-data.ts`
+- Insights: `src/lib/insights-data.ts`
+- FAQ: `src/lib/faq-data.ts`
+- Packages: `src/lib/packages-data.ts`
+- Team: `src/lib/team-data.ts`
+- Glossary: `src/lib/glossary-data.ts`
+- Images: `src/lib/drive-images.ts`
+- Site constants + contact: `src/lib/site.ts`

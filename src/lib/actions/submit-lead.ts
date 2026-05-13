@@ -233,6 +233,7 @@ export async function submitLeadRequest(
     score >= 90 ? "hot" : score >= 70 ? "warm" : score >= 50 ? "medium" : score >= 30 ? "cool" : "cold";
   await notifyNewLead({
     refCode: lead.ref_code,
+    leadId: lead.id,
     fullName: input.full_name,
     workEmail: input.work_email,
     whatsapp: input.whatsapp || null,

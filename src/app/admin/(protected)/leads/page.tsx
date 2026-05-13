@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { PriorityBadge, StatusBadge } from "@/components/admin/LeadBadges";
+import { getAdminUsers } from "@/lib/actions/lead-actions";
+import { LeadsTable, type LeadRow } from "@/components/admin/LeadsTable";
+import { QuickAddLead } from "@/components/admin/QuickAddLead";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Leads" };
@@ -9,6 +11,9 @@ type SearchParams = {
   priority?: string;
   status?: string;
   q?: string;
+  assigned?: string;
+  range?: string;
+  page?: string;
 };
 
 const PRIORITY_FILTERS = ["all", "hot", "warm", "medium", "cool", "cold"] as const;
@@ -17,28 +22,68 @@ const STATUS_FILTERS = [
   "submitted",
   "under_review",
   "drafting",
+  "internal_qa",
   "sent",
+  "feedback_requested",
+  "revising",
+  "approved",
   "won",
   "lost",
+  "declined",
   "archived",
+  "no_response",
+  "cooled",
 ] as const;
+const RANGE_FILTERS = [
+  { value: "all", label: "All time" },
+  { value: "7d", label: "Last 7 days" },
+  { value: "30d", label: "Last 30 days" },
+  { value: "90d", label: "Last 90 days" },
+] as const;
+
+const PAGE_SIZE = 50;
+
+function rangeToDate(range: string | undefined): string | null {
+  if (!range || range === "all") return null;
+  const days = range === "7d" ? 7 : range === "30d" ? 30 : range === "90d" ? 90 : 0;
+  if (!days) return null;
+  const d = new Date();
+  d.setDate(d.getDate() - days);
+  return d.toISOString();
+}
 
 async function getLeads(params: SearchParams) {
   const sb = createAdminClient();
+  const page = Math.max(1, Number(params.page ?? 1) || 1);
+  const from = (page - 1) * PAGE_SIZE;
+  const to = from + PAGE_SIZE - 1;
+
   let query = sb
     .from("leads")
     .select(
-      "id, ref_code, full_name, work_email, company_name, status, priority, lead_score, source, created_at"
+      "id, ref_code, full_name, work_email, company_name, status, priority, lead_score, source, assigned_to, created_at",
+      { count: "exact" }
     )
     .is("deleted_at", null)
     .order("created_at", { ascending: false })
-    .limit(100);
+    .range(from, to);
 
   if (params.priority && params.priority !== "all") {
     query = query.eq("priority", params.priority);
   }
   if (params.status && params.status !== "all") {
     query = query.eq("status", params.status);
+  }
+  if (params.assigned && params.assigned !== "all") {
+    if (params.assigned === "unassigned") {
+      query = query.is("assigned_to", null);
+    } else {
+      query = query.eq("assigned_to", params.assigned);
+    }
+  }
+  const sinceIso = rangeToDate(params.range);
+  if (sinceIso) {
+    query = query.gte("created_at", sinceIso);
   }
   if (params.q && params.q.trim().length > 0) {
     const term = `%${params.q.trim()}%`;
@@ -47,8 +92,30 @@ async function getLeads(params: SearchParams) {
     );
   }
 
-  const { data, error } = await query;
-  return { data: data ?? [], error };
+  const { data, error, count } = await query;
+  return { data: data ?? [], error, count: count ?? 0, page };
+}
+
+function buildExportHref(params: SearchParams) {
+  const sp = new URLSearchParams();
+  if (params.q) sp.set("q", params.q);
+  if (params.priority && params.priority !== "all") sp.set("priority", params.priority);
+  if (params.status && params.status !== "all") sp.set("status", params.status);
+  if (params.assigned && params.assigned !== "all") sp.set("assigned", params.assigned);
+  if (params.range && params.range !== "all") sp.set("range", params.range);
+  const qs = sp.toString();
+  return `/api/admin/leads/export${qs ? "?" + qs : ""}`;
+}
+
+function buildPageHref(params: SearchParams, page: number) {
+  const sp = new URLSearchParams();
+  if (params.q) sp.set("q", params.q);
+  if (params.priority && params.priority !== "all") sp.set("priority", params.priority);
+  if (params.status && params.status !== "all") sp.set("status", params.status);
+  if (params.assigned && params.assigned !== "all") sp.set("assigned", params.assigned);
+  if (params.range && params.range !== "all") sp.set("range", params.range);
+  sp.set("page", String(page));
+  return `/admin/leads?${sp.toString()}`;
 }
 
 export default async function LeadsPage({
@@ -57,28 +124,79 @@ export default async function LeadsPage({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  const { data: leads, error } = await getLeads(params);
+  const [{ data: leads, error, count, page }, adminUsers] = await Promise.all([
+    getLeads(params),
+    getAdminUsers(),
+  ]);
+
+  const userMap = Object.fromEntries(
+    adminUsers.map((u) => [u.id, u.fullName ?? u.email])
+  );
+  const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
+  const showingFrom = count === 0 ? 0 : (page - 1) * PAGE_SIZE + 1;
+  const showingTo = Math.min(page * PAGE_SIZE, count);
 
   return (
     <main className="p-6 md:p-10">
       <div className="max-w-7xl">
-        <div className="flex items-end justify-between gap-4 mb-8">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
           <div>
             <p className="eyebrow-brand">Pipeline</p>
             <h1 className="font-display mt-2 text-3xl md:text-4xl text-ink">
-              Leads ({leads.length})
+              Leads <span className="text-slate-mute tabular">({count})</span>
             </h1>
+          </div>
+          <div className="flex items-center gap-2">
+            <QuickAddLead />
+            <a
+              href={buildExportHref(params)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-4 h-10 text-sm text-ink hover:bg-cream transition"
+            >
+              Export CSV
+            </a>
           </div>
         </div>
 
+        {/* Quick filter presets */}
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase tracking-wider text-slate-mute font-medium mr-2">
+            Quick:
+          </span>
+          <PresetLink
+            label="Hot unassigned"
+            params={{ priority: "hot", assigned: "unassigned" }}
+            current={params}
+          />
+          <PresetLink
+            label="In drafting"
+            params={{ status: "drafting" }}
+            current={params}
+          />
+          <PresetLink
+            label="Sent · awaiting feedback"
+            params={{ status: "sent" }}
+            current={params}
+          />
+          <PresetLink
+            label="Won this month"
+            params={{ status: "won", range: "30d" }}
+            current={params}
+          />
+          <PresetLink
+            label="New today"
+            params={{ range: "7d" }}
+            current={params}
+          />
+        </div>
+
         {/* Filters */}
-        <form className="mb-6 grid gap-3 md:grid-cols-3" method="get">
+        <form className="mb-6 grid gap-3 md:grid-cols-6" method="get">
           <input
             type="search"
             name="q"
             defaultValue={params.q ?? ""}
-            placeholder="Search nama, company, email, atau ref…"
-            className="input"
+            placeholder="Search nama, company, email, ref…"
+            className="input md:col-span-2"
           />
           <select name="priority" defaultValue={params.priority ?? "all"} className="select">
             {PRIORITY_FILTERS.map((p) => (
@@ -90,10 +208,40 @@ export default async function LeadsPage({
           <select name="status" defaultValue={params.status ?? "all"} className="select">
             {STATUS_FILTERS.map((s) => (
               <option key={s} value={s}>
-                Status: {s.replace("_", " ")}
+                Status: {s.replace(/_/g, " ")}
               </option>
             ))}
           </select>
+          <select name="assigned" defaultValue={params.assigned ?? "all"} className="select">
+            <option value="all">Assigned: all</option>
+            <option value="unassigned">Unassigned</option>
+            {adminUsers.map((u) => (
+              <option key={u.id} value={u.id}>
+                {u.fullName ?? u.email}
+              </option>
+            ))}
+          </select>
+          <select name="range" defaultValue={params.range ?? "all"} className="select">
+            {RANGE_FILTERS.map((r) => (
+              <option key={r.value} value={r.value}>
+                {r.label}
+              </option>
+            ))}
+          </select>
+          <div className="md:col-span-6 flex gap-2">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-ink text-paper px-5 h-10 text-sm font-medium hover:bg-brand-deep transition"
+            >
+              Apply filters
+            </button>
+            <Link
+              href="/admin/leads"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-paper px-5 h-10 text-sm text-slate hover:bg-cream transition"
+            >
+              Reset
+            </Link>
+          </div>
         </form>
 
         {error && (
@@ -104,76 +252,80 @@ export default async function LeadsPage({
 
         {leads.length === 0 ? (
           <div className="rounded-2xl border border-border bg-paper p-12 text-center text-sm text-slate">
-            {params.q || params.priority || params.status
+            {params.q || params.priority || params.status || params.assigned || params.range
               ? "Tidak ada lead yang match filter ini."
               : "Belum ada lead masuk."}
           </div>
         ) : (
-          <div className="rounded-2xl border border-border bg-paper overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-bone/50">
-                    <th className="px-6 py-3 font-medium">Ref</th>
-                    <th className="px-4 py-3 font-medium">Contact</th>
-                    <th className="px-4 py-3 font-medium">Company</th>
-                    <th className="px-4 py-3 font-medium">Source</th>
-                    <th className="px-4 py-3 font-medium">Status</th>
-                    <th className="px-4 py-3 font-medium">Priority</th>
-                    <th className="px-4 py-3 font-medium tabular text-right">
-                      Score
-                    </th>
-                    <th className="px-4 py-3 font-medium text-right">Created</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leads.map((lead) => (
-                    <tr
-                      key={lead.id}
-                      className="border-b border-divider/60 hover:bg-cream/40 transition"
+          <>
+            <LeadsTable
+              leads={leads as LeadRow[]}
+              userMap={userMap}
+              adminUsers={adminUsers}
+            />
+
+            {/* Pagination */}
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate">
+              <p className="tabular">
+                Showing {showingFrom}–{showingTo} of {count}
+              </p>
+              {totalPages > 1 && (
+                <div className="flex items-center gap-2">
+                  {page > 1 && (
+                    <Link
+                      href={buildPageHref(params, page - 1)}
+                      className="inline-flex items-center justify-center rounded-full border border-border bg-paper px-4 h-9 text-xs text-ink hover:bg-cream transition"
                     >
-                      <td className="px-6 py-4 tabular text-xs">
-                        <Link
-                          href={`/admin/leads/${lead.id}`}
-                          className="font-medium text-ink hover:text-brand-deep"
-                        >
-                          {lead.ref_code}
-                        </Link>
-                      </td>
-                      <td className="px-4 py-4">
-                        <Link href={`/admin/leads/${lead.id}`} className="block">
-                          <p className="font-medium text-ink">{lead.full_name}</p>
-                          <p className="text-xs text-slate">{lead.work_email}</p>
-                        </Link>
-                      </td>
-                      <td className="px-4 py-4 text-slate">{lead.company_name}</td>
-                      <td className="px-4 py-4 text-xs text-slate">
-                        {lead.source}
-                      </td>
-                      <td className="px-4 py-4">
-                        <StatusBadge status={lead.status} />
-                      </td>
-                      <td className="px-4 py-4">
-                        <PriorityBadge priority={lead.priority} />
-                      </td>
-                      <td className="px-4 py-4 tabular text-right font-medium">
-                        {lead.lead_score}
-                      </td>
-                      <td className="px-4 py-4 text-xs text-slate text-right tabular">
-                        {new Date(lead.created_at).toLocaleDateString("id-ID", {
-                          day: "numeric",
-                          month: "short",
-                          year: "2-digit",
-                        })}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      ← Prev
+                    </Link>
+                  )}
+                  <span className="px-3 text-xs text-slate-mute tabular">
+                    Page {page} / {totalPages}
+                  </span>
+                  {page < totalPages && (
+                    <Link
+                      href={buildPageHref(params, page + 1)}
+                      className="inline-flex items-center justify-center rounded-full border border-border bg-paper px-4 h-9 text-xs text-ink hover:bg-cream transition"
+                    >
+                      Next →
+                    </Link>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
+          </>
         )}
       </div>
     </main>
+  );
+}
+
+function PresetLink({
+  label,
+  params,
+  current,
+}: {
+  label: string;
+  params: Partial<SearchParams>;
+  current: SearchParams;
+}) {
+  const active = Object.entries(params).every(
+    ([k, v]) => current[k as keyof SearchParams] === v
+  );
+  const sp = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => {
+    if (v) sp.set(k, String(v));
+  });
+  return (
+    <Link
+      href={`/admin/leads?${sp.toString()}`}
+      className={`inline-flex items-center rounded-full px-3 h-8 text-xs font-medium transition ${
+        active
+          ? "bg-ink text-paper"
+          : "border border-border bg-paper text-slate hover:bg-cream"
+      }`}
+    >
+      {label}
+    </Link>
   );
 }

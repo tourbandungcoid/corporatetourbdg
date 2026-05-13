@@ -20,12 +20,13 @@ import {
 type Params = Promise<{ category: string }>;
 
 export async function generateStaticParams() {
-  return getAllFaqCategorySlugs().map((category) => ({ category }));
+  const slugs = await getAllFaqCategorySlugs();
+  return slugs.map((category) => ({ category }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { category } = await params;
-  const cat = getFaqCategory(category);
+  const cat = await getFaqCategory(category);
   if (!cat) return { title: "FAQ category not found" };
   const url = `${SITE.url}/faq/${cat.slug}`;
   return {
@@ -38,10 +39,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function FaqCategoryPage({ params }: { params: Params }) {
   const { category } = await params;
-  const cat = getFaqCategory(category);
+  const [cat, allCats] = await Promise.all([
+    getFaqCategory(category),
+    getFaqCategoriesList(),
+  ]);
   if (!cat) notFound();
-
-  const allCats = getFaqCategoriesList();
   const otherCats = allCats.filter((c) => c.slug !== cat.slug);
   const url = `${SITE.url}/faq/${cat.slug}`;
 
@@ -51,7 +53,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     articleSchema({
       headline: cat.title,
       description: cat.metaDescription,
-      image: `${SITE.url}/og-default.png`,
+      image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: `/faq/${cat.slug}`,

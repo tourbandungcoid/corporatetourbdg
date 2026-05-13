@@ -24,9 +24,15 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/case-studies", priority: 0.8, changeFrequency: "weekly" },
   { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
   { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/methodology", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/glossary", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/specialist-vs-generic-eo", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/pricing", priority: 0.9, changeFrequency: "monthly" },
   // Company
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/team", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/clients", priority: 0.6, changeFrequency: "monthly" },
   // Proposal funnel (lower priority — internal CTAs not search-targeted)
   { path: "/proposal", priority: 0.6, changeFrequency: "monthly" },
   { path: "/proposal/request", priority: 0.5, changeFrequency: "monthly" },
@@ -35,7 +41,7 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/proposal/quick-quote", priority: 0.5, changeFrequency: "monthly" },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const baseRoutes = PUBLIC_ROUTES.map((r) => ({
@@ -45,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
+  const [caseStudySlugs, insightSlugs, faqCategorySlugs] = await Promise.all([
+    getAllCaseStudySlugs(),
+    getAllInsightSlugs(),
+    getAllFaqCategorySlugs(),
+  ]);
+
   const serviceRoutes = getAllServiceSlugs().map((slug) => ({
     url: `${SITE.url}/services/${slug}`,
     lastModified: now,
@@ -52,21 +64,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  const caseStudyRoutes = getAllCaseStudySlugs().map((slug) => ({
+  const caseStudyRoutes = caseStudySlugs.map((slug) => ({
     url: `${SITE.url}/case-studies/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const insightRoutes = getAllInsightSlugs().map((slug) => ({
+  const insightRoutes = insightSlugs.map((slug) => ({
     url: `${SITE.url}/insights/${slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.65,
   }));
 
-  const faqCategoryRoutes = getAllFaqCategorySlugs().map((slug) => ({
+  const faqCategoryRoutes = faqCategorySlugs.map((slug) => ({
     url: `${SITE.url}/faq/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

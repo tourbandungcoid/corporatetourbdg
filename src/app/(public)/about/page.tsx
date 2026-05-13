@@ -1,14 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Check } from "@/components/icons/Icons";
-import { STATS } from "@/lib/site";
+import { SITE, STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About",
   description:
     "Tour Bandung Corporate — unit specialized dari 7Summits Travel untuk B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat sejak 2018.",
+  alternates: { canonical: `${SITE.url}/about` },
+  openGraph: {
+    title: "About — TourBandung Corporate",
+    description:
+      "7Summits Travel corporate unit. 400+ events delivered since 2018 di Bandung & Jawa Barat.",
+    url: `${SITE.url}/about`,
+    type: "website",
+  },
 };
 
 const PRINCIPLES = [
@@ -31,8 +47,26 @@ const PRINCIPLES = [
 ];
 
 export default function AboutPage() {
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "About", url: `${SITE.url}/about` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      url: `${SITE.url}/about`,
+      inLanguage: "id-ID",
+      about: { "@type": "Organization", name: "7Summits Travel" },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="About"
         title="Specialist corporate event design — sejak 2018."
@@ -204,6 +238,7 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

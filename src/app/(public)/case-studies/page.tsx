@@ -1,22 +1,88 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getCaseStudiesList } from "@/lib/case-studies-data";
 import { ArrowRight } from "@/components/icons/Icons";
-import { STATS } from "@/lib/site";
+import { SITE, STATS } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank.",
+  alternates: { canonical: `${SITE.url}/case-studies` },
+  openGraph: {
+    title: "Case Studies — TourBandung Corporate",
+    description:
+      "6 real corporate event case studies di Bandung — tech unicorn, BUMN bank, FMCG, telco, manufacturing.",
+    url: `${SITE.url}/case-studies`,
+    type: "website",
+  },
 };
 
-export default function CaseStudiesIndexPage() {
-  const studies = getCaseStudiesList();
+type SearchParams = Promise<{ industry?: string }>;
+
+export default async function CaseStudiesIndexPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { industry } = await searchParams;
+  const all = await getCaseStudiesList();
+
+  // Build industry filter chips from data
+  const industries = Array.from(
+    new Map(all.map((cs) => [cs.industry, cs.industryLabel.split(" · ")[0]])).entries()
+  );
+
+  const filtered = industry
+    ? all.filter((cs) => cs.industry === industry)
+    : all;
+
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Case Studies", url: `${SITE.url}/case-studies` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Corporate Event Case Studies",
+      url: `${SITE.url}/case-studies`,
+      inLanguage: "id-ID",
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: all.length,
+        itemListElement: all.map((cs, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Article",
+            headline: cs.outcomeHeadline,
+            url: `${SITE.url}/case-studies/${cs.slug}`,
+            description: cs.shortDescription,
+            author: { "@type": "Organization", name: "7Summits Travel" },
+            about: { "@type": "Thing", name: cs.industryLabel },
+          },
+        })),
+      },
+    }
+  );
 
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Case Studies"
         title="Real events. Real companies. Real outcomes."
@@ -42,33 +108,80 @@ export default function CaseStudiesIndexPage() {
         </div>
       </section>
 
+      {/* Industry filter chips */}
+      <section className="bg-bone/50 border-b border-divider py-6 sticky top-20 z-10 backdrop-blur">
+        <div className="container-1280">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs uppercase tracking-wider text-slate-mute font-medium mr-2">
+              Filter by industry:
+            </span>
+            <Link
+              href="/case-studies"
+              className={`inline-flex items-center rounded-full px-3 h-8 text-xs font-medium transition ${
+                !industry
+                  ? "bg-ink text-paper"
+                  : "border border-border bg-paper text-slate hover:bg-cream"
+              }`}
+            >
+              All ({all.length})
+            </Link>
+            {industries.map(([key, label]) => {
+              const count = all.filter((cs) => cs.industry === key).length;
+              const active = industry === key;
+              return (
+                <Link
+                  key={key}
+                  href={`/case-studies?industry=${key}`}
+                  className={`inline-flex items-center rounded-full px-3 h-8 text-xs font-medium transition ${
+                    active
+                      ? "bg-ink text-paper"
+                      : "border border-border bg-paper text-slate hover:bg-cream"
+                  }`}
+                >
+                  {label} ({count})
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container-1280">
-          <div className="grid gap-6 md:grid-cols-2">
-            {studies.map((cs) => (
-              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="group relative overflow-hidden rounded-3xl bg-paper border border-border hover:border-ink-soft transition-all hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(15,31,26,0.08)]">
-                <div className="aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
-                  <Image src={cs.heroImage.src} alt={cs.heroImage.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
-                  <div className="absolute top-5 left-5">
-                    <span className="inline-flex items-center rounded-full bg-paper/90 backdrop-blur px-3 py-1 text-xs font-medium text-ink">{cs.industryLabel}</span>
-                  </div>
-                </div>
-                <div className="p-7 md:p-8">
-                  <h2 className="font-display text-2xl md:text-3xl text-ink leading-tight">&ldquo;{cs.outcomeHeadline}&rdquo;</h2>
-                  <p className="mt-4 text-sm text-slate leading-relaxed line-clamp-2">{cs.shortDescription}</p>
-                  <div className="mt-5 pt-5 border-t border-divider flex flex-wrap items-center gap-3 text-xs text-slate">
-                    <span className="tabular">{cs.pax}</span>
-                    <span className="h-1 w-1 rounded-full bg-divider" />
-                    <span>{cs.duration}</span>
-                    <span className="h-1 w-1 rounded-full bg-divider" />
-                    <span>{cs.location}</span>
-                  </div>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink/85">Read full story<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
-                </div>
+          {filtered.length === 0 ? (
+            <div className="rounded-2xl border border-border bg-paper p-12 text-center text-sm text-slate">
+              Belum ada case study untuk industry ini.{" "}
+              <Link href="/case-studies" className="text-brand-deep underline">
+                Lihat semua case studies →
               </Link>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="grid gap-6 md:grid-cols-2">
+              {filtered.map((cs) => (
+                <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="group relative overflow-hidden rounded-3xl bg-paper border border-border hover:border-ink-soft transition-all hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(15,31,26,0.08)]">
+                  <div className="aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
+                    <Image src={cs.heroImage.src} alt={cs.heroImage.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
+                    <div className="absolute top-5 left-5">
+                      <span className="inline-flex items-center rounded-full bg-paper/90 backdrop-blur px-3 py-1 text-xs font-medium text-ink">{cs.industryLabel}</span>
+                    </div>
+                  </div>
+                  <div className="p-7 md:p-8">
+                    <h2 className="font-display text-2xl md:text-3xl text-ink leading-tight">&ldquo;{cs.outcomeHeadline}&rdquo;</h2>
+                    <p className="mt-4 text-sm text-slate leading-relaxed line-clamp-2">{cs.shortDescription}</p>
+                    <div className="mt-5 pt-5 border-t border-divider flex flex-wrap items-center gap-3 text-xs text-slate">
+                      <span className="tabular">{cs.pax}</span>
+                      <span className="h-1 w-1 rounded-full bg-divider" />
+                      <span>{cs.duration}</span>
+                      <span className="h-1 w-1 rounded-full bg-divider" />
+                      <span>{cs.location}</span>
+                    </div>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink/85">Read full story<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -83,5 +196,6 @@ export default function CaseStudiesIndexPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
