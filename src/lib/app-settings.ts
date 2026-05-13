@@ -35,6 +35,7 @@ export type AppSettings = {
     gtm_id: string;
     hotjar_id: string;
     clarity_id: string;
+    linkedin_partner_id: string;
   };
   seo: {
     default_title: string;
@@ -84,6 +85,7 @@ const STATIC_FALLBACK: AppSettings = {
     gtm_id: "",
     hotjar_id: "",
     clarity_id: "",
+    linkedin_partner_id: "",
   },
   seo: {
     default_title:

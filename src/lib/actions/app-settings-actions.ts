@@ -42,6 +42,7 @@ const analyticsSchema = z.object({
   gtm_id: z.string().max(40),
   hotjar_id: z.string().max(40),
   clarity_id: z.string().max(40),
+  linkedin_partner_id: z.string().max(40),
 });
 
 const seoSchema = z.object({

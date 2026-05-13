@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
@@ -268,6 +269,12 @@ export default function LeadershipRetreatJawaBaratPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["leadership-camp", "executive-offsite"]}
+          title="Leadership retreat case studies."
+          description="Case studies kami untuk senior cohort, manager development, dan strategic alignment."
+        />
 
         <StickyProposalBar message="Leadership development senior cohort Anda? Free consultation." context="leadership retreat Jawa Barat" />
       </main>

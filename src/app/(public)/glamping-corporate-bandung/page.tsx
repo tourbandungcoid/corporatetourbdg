@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -735,6 +736,11 @@ export default function GlampingCorporateBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["corporate-retreat", "company-gathering"]}
+          title="Glamping & outdoor case studies."
+        />
 
         <StickyProposalBar
           message="Bayangkan tim Anda bonding di bawah bintang. Free glamping proposal."

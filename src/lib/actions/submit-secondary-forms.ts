@@ -266,3 +266,89 @@ export async function submitLeadMagnet(
 
   redirect(`/proposal/thank-you/${lead.ref_code}?source=sample`);
 }
+
+// ---------------------------------------------------------------------
+// Exit-intent capture — minimal (email only)
+// ---------------------------------------------------------------------
+// Fires when an exit-intent modal email is submitted. Inserts a low-
+// score lead so sales can follow up, then returns success so the modal
+// can render an inline "check your email" confirmation without a
+// full page redirect (less disruptive than the other lead flows).
+const exitIntentSchema = z.object({
+  work_email: z.string().email(),
+  source_url: z.string().max(200).optional(),
+});
+
+export type ExitIntentState = {
+  status: "idle" | "error" | "success";
+  message?: string;
+};
+
+export async function submitExitIntent(
+  _prev: ExitIntentState,
+  formData: FormData
+): Promise<ExitIntentState> {
+  const raw = {
+    work_email: formData.get("work_email"),
+    source_url: (formData.get("source_url") as string) || "/exit_intent",
+  };
+  const parsed = exitIntentSchema.safeParse(raw);
+  if (!parsed.success) {
+    return {
+      status: "error",
+      message: "Email belum valid — coba lagi ya.",
+    };
+  }
+  const input = parsed.data;
+  const score = 15;
+
+  try {
+    const sb = createAdminClient();
+    const { data: lead, error } = await sb
+      .from("leads")
+      .insert({
+        source: "lead_magnet",
+        source_url: input.source_url,
+        full_name: "Anonymous (Exit Intent)",
+        work_email: input.work_email,
+        company_name: "Unknown",
+        lead_score: score,
+        lead_score_breakdown: { base: score, channel: "exit_intent" },
+      })
+      .select("id, ref_code")
+      .single();
+
+    if (error || !lead) {
+      console.error("[submitExitIntent] Lead insert failed:", error);
+      return {
+        status: "error",
+        message: "Gagal nge-save email. Coba lagi atau langsung ke /proposal/sample.",
+      };
+    }
+
+    // Fire-and-forget sales notification — no client confirmation (less spammy)
+    notifyNewLead({
+      refCode: lead.ref_code,
+      leadId: lead.id,
+      fullName: "Anonymous (Exit Intent)",
+      workEmail: input.work_email,
+      whatsapp: null,
+      companyName: "Unknown",
+      source: "lead_magnet",
+      score,
+      priority: priorityFromScore(score),
+    }).catch((e) => console.error("[submitExitIntent] notifyNewLead:", e));
+
+    return {
+      status: "success",
+      message:
+        "Thanks! Sample proposal akan kami kirim ke email lo dalam 1×24 jam.",
+    };
+  } catch (e) {
+    console.error("[submitExitIntent] unexpected:", e);
+    return {
+      status: "error",
+      message: "Server error. Coba refresh halaman dulu.",
+    };
+  }
+}

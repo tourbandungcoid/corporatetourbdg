@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -661,6 +662,11 @@ export default function OutboundPerusahaanBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["company-gathering", "leadership-camp"]}
+          title="Outbound case studies — safety-first eksekusi."
+        />
 
         <StickyProposalBar
           message="Cari vendor outbound bersafety standard? Free proposal 24 jam."

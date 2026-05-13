@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
@@ -300,6 +301,12 @@ export default function ExecutiveOffsiteBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["executive-offsite", "leadership-camp"]}
+          title="Executive offsite case studies."
+          description="C-level dan senior leadership offsite — confidentiality handled, methodology mature."
+        />
 
         <StickyProposalBar message="C-suite offsite untuk perusahaan Anda? Confidential consultation." context="executive offsite Bandung" />
       </main>

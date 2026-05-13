@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -604,6 +605,11 @@ export default function EmployeeGatheringBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["company-gathering", "annual-company-trip"]}
+          title="Employee gathering case studies."
+        />
 
         <StickyProposalBar message="Cari vendor employee gathering yang outcome-driven?" context="employee gathering Bandung" />
       </main>

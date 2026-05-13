@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -722,6 +723,12 @@ export default function OutingKantorBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["company-gathering", "annual-company-trip"]}
+          title="Outing kantor yang udah kami eksekusi."
+          description="Lihat bagaimana kami handle outing 800 pax sampai intimate retreat — lengkap dengan brief, scope, hasil."
+        />
 
         {/* Final CTA */}
         <section className="bg-ink text-cream py-20 md:py-28">

@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -664,6 +665,11 @@ export default function VillaGatheringBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["corporate-retreat", "company-gathering"]}
+          title="Villa gathering case studies."
+        />
 
         <StickyProposalBar
           message="Cari villa untuk corporate gathering? Free venue matching service."
