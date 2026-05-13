@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getAdminUsers } from "@/lib/actions/lead-actions";
 import { LeadsTable, type LeadRow } from "@/components/admin/LeadsTable";
+import { QuickAddLead } from "@/components/admin/QuickAddLead";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Leads" };
@@ -145,12 +146,15 @@ export default async function LeadsPage({
               Leads <span className="text-slate-mute tabular">({count})</span>
             </h1>
           </div>
-          <a
-            href={buildExportHref(params)}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-4 h-10 text-sm text-ink hover:bg-cream transition"
-          >
-            Export CSV
-          </a>
+          <div className="flex items-center gap-2">
+            <QuickAddLead />
+            <a
+              href={buildExportHref(params)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-4 h-10 text-sm text-ink hover:bg-cream transition"
+            >
+              Export CSV
+            </a>
+          </div>
         </div>
 
         {/* Filters */}

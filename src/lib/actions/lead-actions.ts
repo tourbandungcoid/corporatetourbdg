@@ -164,6 +164,114 @@ export async function assignLead(formData: FormData): Promise<ActionResult> {
 }
 
 // ---------------------------------------------------------------------
+// Manually create a lead from the admin UI (phone call, walk-in, etc.)
+// ---------------------------------------------------------------------
+const manualLeadSchema = z.object({
+  fullName: z.string().min(2).max(120),
+  workEmail: z.string().email(),
+  whatsapp: z.string().max(20).optional().or(z.literal("")),
+  companyName: z.string().min(1).max(200),
+  source: z.enum([
+    "manual",
+    "whatsapp_inbound",
+    "phone_inbound",
+    "referral",
+    "event_in_person",
+  ]),
+  initialNote: z.string().max(2000).optional().or(z.literal("")),
+});
+
+export async function createManualLead(formData: FormData): Promise<ActionResult & { leadId?: string }> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+  if (!["super_admin", "sales_admin"].includes(profile.role)) {
+    return { ok: false, message: "Only sales_admin / super_admin can create leads" };
+  }
+
+  const parsed = manualLeadSchema.safeParse({
+    fullName: formData.get("fullName"),
+    workEmail: (formData.get("workEmail") as string)?.toLowerCase().trim(),
+    whatsapp: formData.get("whatsapp") ?? "",
+    companyName: formData.get("companyName"),
+    source: formData.get("source") ?? "manual",
+    initialNote: formData.get("initialNote") ?? "",
+  });
+  if (!parsed.success) {
+    return { ok: false, message: "Invalid input" };
+  }
+
+  const sb = createAdminClient();
+
+  const { data: lead, error } = await sb
+    .from("leads")
+    .insert({
+      full_name: parsed.data.fullName,
+      work_email: parsed.data.workEmail,
+      whatsapp: parsed.data.whatsapp || null,
+      company_name: parsed.data.companyName,
+      source: parsed.data.source,
+      status: "submitted",
+      lead_score: 30, // Base score for manually-entered lead
+      priority: "medium",
+      assigned_to: profile.id,
+      assigned_at: new Date().toISOString(),
+    })
+    .select("id, ref_code")
+    .single();
+
+  if (error || !lead) {
+    return { ok: false, message: error?.message ?? "Failed to create lead" };
+  }
+
+  const activities: {
+    lead_id: string;
+    activity_type: string;
+    actor_id: string;
+    actor_type: string;
+    details: Record<string, unknown>;
+  }[] = [
+    {
+      lead_id: lead.id,
+      activity_type: "lead_created",
+      actor_id: profile.id,
+      actor_type: "user",
+      details: { source: parsed.data.source, manual: true },
+    },
+    {
+      lead_id: lead.id,
+      activity_type: "assigned",
+      actor_id: profile.id,
+      actor_type: "user",
+      details: { to: profile.id, auto: true },
+    },
+  ];
+
+  if (parsed.data.initialNote && parsed.data.initialNote.trim().length > 0) {
+    activities.push({
+      lead_id: lead.id,
+      activity_type: "note_added",
+      actor_id: profile.id,
+      actor_type: "user",
+      details: {
+        note: parsed.data.initialNote.trim(),
+        by_name: profile.full_name ?? profile.email,
+      },
+    });
+  }
+
+  await sb.from("lead_activities").insert(activities);
+
+  revalidatePath("/admin/leads");
+  revalidatePath("/admin");
+
+  return {
+    ok: true,
+    message: `Lead created: ${lead.ref_code}`,
+    leadId: lead.id,
+  };
+}
+
+// ---------------------------------------------------------------------
 // Bulk update status / assignment for many leads
 // ---------------------------------------------------------------------
 const BULK_STATUS_VALUES = STATUS_VALUES;
