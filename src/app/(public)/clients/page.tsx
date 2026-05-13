@@ -11,6 +11,7 @@ import {
   organizationSchema,
   localBusinessSchema,
 } from "@/lib/schema";
+import { getTestimonialsList } from "@/lib/testimonials-data";
 
 export const metadata: Metadata = {
   title: "Clients",
@@ -102,14 +103,14 @@ const CLIENTS_BY_INDUSTRY: { industry: string; clients: { name: string; descript
   },
 ];
 
-const TESTIMONIALS = [
-  { quote: "Yang gw appreciate: senior planner dedicated dari briefing sampai event. Bukan rotating freelancer.", name: "Andini Pratama", role: "HR Manager", company: "Tech Unicorn" },
-  { quote: "Banking image-conscious — kami gak mau kelihatan murahan. Vendor ini deliver premium feel tanpa harus jualan ke C-level kami.", name: "Dewi Lestari", role: "HR Director", company: "Private Banking" },
-  { quote: "Manufacturing safety-first. Zero incident untuk 1000 orang dalam 1 hari itu deliverable yang sebenarnya hard. Kami appreciate.", name: "Fitri Hapsari", role: "HR Manager", company: "Manufacturing MNC" },
-];
-
-export default function ClientsPage() {
+export default async function ClientsPage() {
   const totalClients = CLIENTS_BY_INDUSTRY.reduce((sum, group) => sum + group.clients.length, 0);
+  const TESTIMONIALS = (await getTestimonialsList()).slice(0, 3).map((t) => ({
+    quote: t.quote,
+    name: t.clientName,
+    role: t.role ?? "",
+    company: t.company,
+  }));
 
   const schema = combineSchemas(
     organizationSchema(),
