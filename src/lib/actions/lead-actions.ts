@@ -164,6 +164,67 @@ export async function assignLead(formData: FormData): Promise<ActionResult> {
 }
 
 // ---------------------------------------------------------------------
+// Edit lead contact details (fix typos)
+// ---------------------------------------------------------------------
+const editContactSchema = z.object({
+  leadId: z.string().uuid(),
+  fullName: z.string().min(2).max(120),
+  workEmail: z.string().email(),
+  whatsapp: z.string().max(20).optional().or(z.literal("")),
+  companyName: z.string().min(1).max(200),
+  industry: z.string().max(80).optional().or(z.literal("")),
+  jobRole: z.string().max(120).optional().or(z.literal("")),
+});
+
+export async function editLeadContact(formData: FormData): Promise<ActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+  if (!["super_admin", "sales_admin"].includes(profile.role)) {
+    return { ok: false, message: "Only sales_admin / super_admin can edit leads" };
+  }
+
+  const parsed = editContactSchema.safeParse({
+    leadId: formData.get("leadId"),
+    fullName: formData.get("fullName"),
+    workEmail: (formData.get("workEmail") as string)?.toLowerCase().trim(),
+    whatsapp: formData.get("whatsapp") ?? "",
+    companyName: formData.get("companyName"),
+    industry: formData.get("industry") ?? "",
+    jobRole: formData.get("jobRole") ?? "",
+  });
+  if (!parsed.success) return { ok: false, message: "Invalid input" };
+
+  const sb = createAdminClient();
+  const { error } = await sb
+    .from("leads")
+    .update({
+      full_name: parsed.data.fullName,
+      work_email: parsed.data.workEmail,
+      whatsapp: parsed.data.whatsapp || null,
+      company_name: parsed.data.companyName,
+      industry: parsed.data.industry || null,
+      job_role: parsed.data.jobRole || null,
+    })
+    .eq("id", parsed.data.leadId);
+
+  if (error) return { ok: false, message: error.message };
+
+  await sb.from("lead_activities").insert({
+    lead_id: parsed.data.leadId,
+    activity_type: "note_added",
+    actor_id: profile.id,
+    actor_type: "user",
+    details: {
+      kind: "contact_edited",
+      note: `Contact details edited by ${profile.full_name ?? profile.email}`,
+    },
+  });
+
+  revalidatePath(`/admin/leads/${parsed.data.leadId}`);
+  return { ok: true, message: "Contact details updated" };
+}
+
+// ---------------------------------------------------------------------
 // Manually create a lead from the admin UI (phone call, walk-in, etc.)
 // ---------------------------------------------------------------------
 const manualLeadSchema = z.object({

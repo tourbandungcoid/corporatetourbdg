@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { PriorityBadge, StatusBadge } from "@/components/admin/LeadBadges";
 import { LeadActionsPanel } from "@/components/admin/LeadActionsPanel";
+import { EditContactDialog } from "@/components/admin/EditContactDialog";
 import { getAdminUsers } from "@/lib/actions/lead-actions";
 import { buildWaLink } from "@/lib/site";
 import { Whatsapp, ArrowRight } from "@/components/icons/Icons";
@@ -191,6 +192,17 @@ export default async function LeadDetailPage({
           </div>
 
           <div className="flex flex-wrap gap-2">
+            <EditContactDialog
+              leadId={lead.id}
+              initial={{
+                fullName: lead.full_name,
+                workEmail: lead.work_email,
+                whatsapp: lead.whatsapp,
+                companyName: lead.company_name,
+                industry: lead.industry,
+                jobRole: lead.job_role,
+              }}
+            />
             <a
               href={`mailto:${lead.work_email}`}
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-4 h-10 text-sm text-ink hover:bg-cream transition"
