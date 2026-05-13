@@ -164,6 +164,79 @@ export async function assignLead(formData: FormData): Promise<ActionResult> {
 }
 
 // ---------------------------------------------------------------------
+// Bulk update status / assignment for many leads
+// ---------------------------------------------------------------------
+const BULK_STATUS_VALUES = STATUS_VALUES;
+const bulkSchema = z.object({
+  leadIds: z.array(z.string().uuid()).min(1).max(200),
+  status: z.enum(BULK_STATUS_VALUES).optional(),
+  assignTo: z.string().uuid().or(z.literal("")).optional(),
+});
+
+export async function bulkUpdateLeads(input: {
+  leadIds: string[];
+  status?: string;
+  assignTo?: string;
+}): Promise<ActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+
+  const parsed = bulkSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, message: "Invalid input" };
+
+  if (!parsed.data.status && parsed.data.assignTo === undefined) {
+    return { ok: false, message: "Nothing to update" };
+  }
+
+  const sb = createAdminClient();
+  const patch: Record<string, unknown> = {};
+  if (parsed.data.status) patch.status = parsed.data.status;
+  if (parsed.data.assignTo !== undefined) {
+    patch.assigned_to = parsed.data.assignTo || null;
+    patch.assigned_at = parsed.data.assignTo ? new Date().toISOString() : null;
+  }
+
+  const { error } = await sb.from("leads").update(patch).in("id", parsed.data.leadIds);
+  if (error) return { ok: false, message: error.message };
+
+  // Bulk activity log (one row per lead)
+  const activities = parsed.data.leadIds.flatMap((id) => {
+    const rows: Record<string, unknown>[] = [];
+    if (parsed.data.status) {
+      rows.push({
+        lead_id: id,
+        activity_type: "status_changed",
+        actor_id: profile.id,
+        actor_type: "user",
+        details: { to: parsed.data.status, bulk: true },
+      });
+    }
+    if (parsed.data.assignTo !== undefined) {
+      rows.push({
+        lead_id: id,
+        activity_type: "assigned",
+        actor_id: profile.id,
+        actor_type: "user",
+        details: { to: parsed.data.assignTo || null, bulk: true },
+      });
+    }
+    return rows;
+  });
+
+  if (activities.length > 0) {
+    await sb.from("lead_activities").insert(activities);
+  }
+
+  revalidatePath("/admin/leads");
+  revalidatePath("/admin");
+
+  return {
+    ok: true,
+    message: `Updated ${parsed.data.leadIds.length} lead${parsed.data.leadIds.length > 1 ? "s" : ""}`,
+  };
+}
+
+// ---------------------------------------------------------------------
 // Send "Proposal ready" email to the lead
 // ---------------------------------------------------------------------
 const proposalReadySchema = z.object({

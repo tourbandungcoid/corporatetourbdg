@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { PriorityBadge, StatusBadge } from "@/components/admin/LeadBadges";
 import { getAdminUsers } from "@/lib/actions/lead-actions";
+import { LeadsTable, type LeadRow } from "@/components/admin/LeadsTable";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Leads" };
@@ -128,7 +128,9 @@ export default async function LeadsPage({
     getAdminUsers(),
   ]);
 
-  const userMap = new Map(adminUsers.map((u) => [u.id, u.fullName ?? u.email]));
+  const userMap = Object.fromEntries(
+    adminUsers.map((u) => [u.id, u.fullName ?? u.email])
+  );
   const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
   const showingFrom = count === 0 ? 0 : (page - 1) * PAGE_SIZE + 1;
   const showingTo = Math.min(page * PAGE_SIZE, count);
@@ -220,73 +222,11 @@ export default async function LeadsPage({
           </div>
         ) : (
           <>
-            <div className="rounded-2xl border border-border bg-paper overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-bone/50">
-                      <th className="px-6 py-3 font-medium">Ref</th>
-                      <th className="px-4 py-3 font-medium">Contact</th>
-                      <th className="px-4 py-3 font-medium">Company</th>
-                      <th className="px-4 py-3 font-medium">Assigned</th>
-                      <th className="px-4 py-3 font-medium">Source</th>
-                      <th className="px-4 py-3 font-medium">Status</th>
-                      <th className="px-4 py-3 font-medium">Priority</th>
-                      <th className="px-4 py-3 font-medium tabular text-right">
-                        Score
-                      </th>
-                      <th className="px-4 py-3 font-medium text-right">Created</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {leads.map((lead) => (
-                      <tr
-                        key={lead.id}
-                        className="border-b border-divider/60 hover:bg-cream/40 transition"
-                      >
-                        <td className="px-6 py-4 tabular text-xs">
-                          <Link
-                            href={`/admin/leads/${lead.id}`}
-                            className="font-medium text-ink hover:text-brand-deep"
-                          >
-                            {lead.ref_code}
-                          </Link>
-                        </td>
-                        <td className="px-4 py-4">
-                          <Link href={`/admin/leads/${lead.id}`} className="block">
-                            <p className="font-medium text-ink">{lead.full_name}</p>
-                            <p className="text-xs text-slate">{lead.work_email}</p>
-                          </Link>
-                        </td>
-                        <td className="px-4 py-4 text-slate">{lead.company_name}</td>
-                        <td className="px-4 py-4 text-xs text-slate">
-                          {lead.assigned_to
-                            ? userMap.get(lead.assigned_to) ?? "—"
-                            : <span className="text-slate-mute italic">unassigned</span>}
-                        </td>
-                        <td className="px-4 py-4 text-xs text-slate">{lead.source}</td>
-                        <td className="px-4 py-4">
-                          <StatusBadge status={lead.status} />
-                        </td>
-                        <td className="px-4 py-4">
-                          <PriorityBadge priority={lead.priority} />
-                        </td>
-                        <td className="px-4 py-4 tabular text-right font-medium">
-                          {lead.lead_score}
-                        </td>
-                        <td className="px-4 py-4 text-xs text-slate text-right tabular">
-                          {new Date(lead.created_at).toLocaleDateString("id-ID", {
-                            day: "numeric",
-                            month: "short",
-                            year: "2-digit",
-                          })}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            <LeadsTable
+              leads={leads as LeadRow[]}
+              userMap={userMap}
+              adminUsers={adminUsers}
+            />
 
             {/* Pagination */}
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate">
