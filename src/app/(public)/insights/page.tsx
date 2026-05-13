@@ -35,7 +35,7 @@ export default async function InsightsIndexPage({
   searchParams: SearchParams;
 }) {
   const { category } = await searchParams;
-  const all = getInsightsList();
+  const all = await getInsightsList();
   const categories = Array.from(new Set(all.map((a) => a.category)));
   const articles = category
     ? all.filter((a) => a.category === category)

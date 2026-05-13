@@ -20,12 +20,13 @@ import {
 type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
-  return getAllCaseStudySlugs().map((slug) => ({ slug }));
+  const slugs = await getAllCaseStudySlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const cs = getCaseStudy(slug);
+  const cs = await getCaseStudy(slug);
   if (!cs) return { title: "Case study not found" };
   const url = `${SITE.url}/case-studies/${cs.slug}`;
   return {
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function CaseStudyDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const cs = getCaseStudy(slug);
+  const cs = await getCaseStudy(slug);
   if (!cs) notFound();
 
   const url = `${SITE.url}/case-studies/${cs.slug}`;

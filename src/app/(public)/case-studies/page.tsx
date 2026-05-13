@@ -36,7 +36,7 @@ export default async function CaseStudiesIndexPage({
   searchParams: SearchParams;
 }) {
   const { industry } = await searchParams;
-  const all = getCaseStudiesList();
+  const all = await getCaseStudiesList();
 
   // Build industry filter chips from data
   const industries = Array.from(

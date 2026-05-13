@@ -41,7 +41,7 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/proposal/quick-quote", priority: 0.5, changeFrequency: "monthly" },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const baseRoutes = PUBLIC_ROUTES.map((r) => ({
@@ -51,6 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
+  const [caseStudySlugs, insightSlugs] = await Promise.all([
+    getAllCaseStudySlugs(),
+    getAllInsightSlugs(),
+  ]);
+
   const serviceRoutes = getAllServiceSlugs().map((slug) => ({
     url: `${SITE.url}/services/${slug}`,
     lastModified: now,
@@ -58,14 +63,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  const caseStudyRoutes = getAllCaseStudySlugs().map((slug) => ({
+  const caseStudyRoutes = caseStudySlugs.map((slug) => ({
     url: `${SITE.url}/case-studies/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const insightRoutes = getAllInsightSlugs().map((slug) => ({
+  const insightRoutes = insightSlugs.map((slug) => ({
     url: `${SITE.url}/insights/${slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
