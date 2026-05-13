@@ -1,12 +1,28 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { CONTACT, SITE, buildWaLink } from "@/lib/site";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
   description: `Hubungi ${SITE.name} — phone, email, address, dan office hours. Jl. Babakan Priangan I No.11C, Bandung 40255. Google rating 4.9.`,
+  alternates: { canonical: `${SITE.url}/contact` },
+  openGraph: {
+    title: "Contact — TourBandung Corporate",
+    description:
+      "Phone +62 811-2277-954 · hello@corporate.tourbandung.co.id · Jl. Babakan Priangan I No.11C, Bandung 40255 · Senin–Jumat 08:00–17:00 WIB.",
+    url: `${SITE.url}/contact`,
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

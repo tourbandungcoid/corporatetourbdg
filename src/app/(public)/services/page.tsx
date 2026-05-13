@@ -1,5 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { SITE } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 import {
   ArrowRight,
   IconGathering,
@@ -14,10 +23,18 @@ import {
   IconGlamping,
 } from "@/components/icons/Icons";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Services",
   description:
     "10 program corporate event yang siap di-customize — company gathering, team building, executive offsite, dan lainnya di Bandung & Jawa Barat.",
+  alternates: { canonical: `${SITE.url}/services` },
+  openGraph: {
+    title: "Services — TourBandung Corporate",
+    description:
+      "10 corporate event services dengan pax range dan starting price transparent.",
+    url: `${SITE.url}/services`,
+    type: "website",
+  },
 };
 
 const SERVICES = [
@@ -124,8 +141,43 @@ const SERVICES = [
 ];
 
 export default function ServicesPage() {
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Services", url: `${SITE.url}/services` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Corporate Event Services",
+      url: `${SITE.url}/services`,
+      inLanguage: "id-ID",
+      isPartOf: { "@type": "WebSite", url: SITE.url },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: SERVICES.length,
+        itemListElement: SERVICES.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Service",
+            name: s.title,
+            url: `${SITE.url}/services/${s.slug}`,
+            description: s.short,
+            provider: { "@type": "Organization", name: "7Summits Travel" },
+          },
+        })),
+      },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="What we do"
         title="10 program corporate yang siap di-customize."
@@ -203,5 +255,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

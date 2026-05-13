@@ -1,13 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { getInsightsList } from "@/lib/insights-data";
 import { ArrowRight } from "@/components/icons/Icons";
+import { SITE } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Insights",
   description:
     "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia.",
+  alternates: { canonical: `${SITE.url}/insights` },
+  openGraph: {
+    title: "Insights — TourBandung Corporate",
+    description:
+      "Framework, data, dan editorial soal corporate event design — 8 long-form articles dari 400+ events delivered.",
+    url: `${SITE.url}/insights`,
+    type: "website",
+  },
 };
 
 type SearchParams = Promise<{ category?: string }>;
@@ -24,8 +41,36 @@ export default async function InsightsIndexPage({
     ? all.filter((a) => a.category === category)
     : all;
 
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Insights", url: `${SITE.url}/insights` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      url: `${SITE.url}/insights`,
+      name: "TourBandung Corporate Insights",
+      inLanguage: "id-ID",
+      blogPost: all.slice(0, 10).map((a) => ({
+        "@type": "BlogPosting",
+        headline: a.title,
+        url: `${SITE.url}/insights/${a.slug}`,
+        datePublished: a.publishDate,
+        dateModified: a.publishDate,
+        author: { "@type": "Organization", name: a.author.role },
+        articleSection: a.category,
+        description: a.excerpt,
+      })),
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Insights"
         title="Editorial untuk HR & corporate decision makers."
@@ -127,5 +172,6 @@ export default async function InsightsIndexPage({
         </div>
       </section>
     </main>
+    </>
   );
 }

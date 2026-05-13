@@ -1,22 +1,75 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getPackages } from "@/lib/packages-data";
 import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
-import { buildWaLink } from "@/lib/site";
+import { buildWaLink, SITE } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Packages",
   description:
     "8 sample corporate event packages dari TourBandung Corporate — starting point yang bisa di-customize. Range Rp 1.5-6.5 jt/pax. Free proposal dalam 24 jam.",
+  alternates: { canonical: `${SITE.url}/packages` },
+  openGraph: {
+    title: "Packages — TourBandung Corporate",
+    description: "8 sample programs Rp 1.5–6.5 jt/pax dengan customization scope.",
+    url: `${SITE.url}/packages`,
+    type: "website",
+  },
 };
 
 export default function PackagesIndexPage() {
   const packages = getPackages();
 
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Packages", url: `${SITE.url}/packages` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Corporate Event Packages",
+      url: `${SITE.url}/packages`,
+      inLanguage: "id-ID",
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: packages.length,
+        itemListElement: packages.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Product",
+            name: p.title,
+            description: p.subtitle,
+            url: `${SITE.url}/packages`,
+            offers: {
+              "@type": "Offer",
+              price: p.priceNumeric * 1_000_000,
+              priceCurrency: "IDR",
+              availability: "https://schema.org/InStock",
+            },
+          },
+        })),
+      },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Featured Programs"
         title="8 sample programs. Tinggal customize."
@@ -150,5 +203,6 @@ export default function PackagesIndexPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -1,13 +1,29 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { ArrowRight } from "@/components/icons/Icons";
-import { STATS } from "@/lib/site";
+import { SITE, STATS } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Clients",
   description:
     "100+ perusahaan Indonesia memilih TourBandung Corporate untuk corporate event mereka — dari tech unicorn hingga BUMN bank, FMCG global, hingga banking premium.",
+  alternates: { canonical: `${SITE.url}/clients` },
+  openGraph: {
+    title: "Clients — TourBandung Corporate",
+    description:
+      "100+ perusahaan Indonesia, 8+ industries — tech unicorn, banking, BUMN, FMCG, telco, manufacturing.",
+    url: `${SITE.url}/clients`,
+    type: "website",
+  },
 };
 
 // Client logos — masked anonymized per NDA convention.
@@ -95,8 +111,19 @@ const TESTIMONIALS = [
 export default function ClientsPage() {
   const totalClients = CLIENTS_BY_INDUSTRY.reduce((sum, group) => sum + group.clients.length, 0);
 
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Clients", url: `${SITE.url}/clients` },
+    ])
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Our clients"
         title="100+ perusahaan Indonesia memilih kami."
@@ -232,5 +259,6 @@ export default function ClientsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

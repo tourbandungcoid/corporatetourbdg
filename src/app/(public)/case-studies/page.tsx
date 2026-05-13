@@ -1,15 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getCaseStudiesList } from "@/lib/case-studies-data";
 import { ArrowRight } from "@/components/icons/Icons";
-import { STATS } from "@/lib/site";
+import { SITE, STATS } from "@/lib/site";
+import {
+  JsonLd,
+  combineSchemas,
+  breadcrumbSchema,
+  organizationSchema,
+  localBusinessSchema,
+} from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank.",
+  alternates: { canonical: `${SITE.url}/case-studies` },
+  openGraph: {
+    title: "Case Studies — TourBandung Corporate",
+    description:
+      "6 real corporate event case studies di Bandung — tech unicorn, BUMN bank, FMCG, telco, manufacturing.",
+    url: `${SITE.url}/case-studies`,
+    type: "website",
+  },
 };
 
 type SearchParams = Promise<{ industry?: string }>;
@@ -31,8 +47,42 @@ export default async function CaseStudiesIndexPage({
     ? all.filter((cs) => cs.industry === industry)
     : all;
 
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Case Studies", url: `${SITE.url}/case-studies` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Corporate Event Case Studies",
+      url: `${SITE.url}/case-studies`,
+      inLanguage: "id-ID",
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: all.length,
+        itemListElement: all.map((cs, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Article",
+            headline: cs.outcomeHeadline,
+            url: `${SITE.url}/case-studies/${cs.slug}`,
+            description: cs.shortDescription,
+            author: { "@type": "Organization", name: "7Summits Travel" },
+            about: { "@type": "Thing", name: cs.industryLabel },
+          },
+        })),
+      },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Case Studies"
         title="Real events. Real companies. Real outcomes."
@@ -146,5 +196,6 @@ export default async function CaseStudiesIndexPage({
         </div>
       </section>
     </main>
+    </>
   );
 }
