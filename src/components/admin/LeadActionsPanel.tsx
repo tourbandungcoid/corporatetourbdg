@@ -7,6 +7,7 @@ import {
   addLeadNote,
   assignLead,
   sendProposalReady,
+  setLeadFollowUp,
   type AdminUserOption,
 } from "@/lib/actions/lead-actions";
 import { ArrowRight } from "@/components/icons/Icons";
@@ -32,13 +33,22 @@ type Props = {
   leadId: string;
   currentStatus: string;
   currentAssignedTo: string | null;
+  currentFollowUpAt: string | null;
   adminUsers: AdminUserOption[];
 };
+
+function toLocalDatetimeInput(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  const pad = (n: number) => n.toString().padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
 
 export function LeadActionsPanel({
   leadId,
   currentStatus,
   currentAssignedTo,
+  currentFollowUpAt,
   adminUsers,
 }: Props) {
   const [isPending, startTransition] = useTransition();
@@ -85,6 +95,22 @@ export function LeadActionsPanel({
       showMessage(result.ok ? "ok" : "error", result.message ?? "");
       if (result.ok) router.refresh();
     });
+  }
+
+  function handleFollowUp(formData: FormData) {
+    startTransition(async () => {
+      const result = await setLeadFollowUp(formData);
+      showMessage(result.ok ? "ok" : "error", result.message ?? "");
+      if (result.ok) router.refresh();
+    });
+  }
+
+  function handleSnoozePreset(hoursFromNow: number) {
+    const d = new Date(Date.now() + hoursFromNow * 36e5);
+    const fd = new FormData();
+    fd.set("leadId", leadId);
+    fd.set("followUpAt", d.toISOString());
+    handleFollowUp(fd);
   }
 
   return (
@@ -177,6 +203,75 @@ export function LeadActionsPanel({
         <p className="mt-1.5 text-xs text-slate-mute">
           Notifies lead that proposal is ready + auto-bumps status to Sent.
         </p>
+      </form>
+
+      {/* Follow-up reminder */}
+      <form action={handleFollowUp}>
+        <input type="hidden" name="leadId" value={leadId} />
+        <label className="text-xs uppercase tracking-wider text-slate-mute block mb-2">
+          Follow-up reminder
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="datetime-local"
+            name="followUpAt"
+            defaultValue={toLocalDatetimeInput(currentFollowUpAt)}
+            disabled={isPending}
+            className="input flex-1 text-sm"
+          />
+          <button
+            type="submit"
+            disabled={isPending}
+            className="inline-flex items-center justify-center rounded-lg bg-ink text-paper px-4 h-11 text-sm font-medium hover:bg-brand-deep transition disabled:opacity-60"
+          >
+            Set
+          </button>
+        </div>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={() => handleSnoozePreset(2)}
+            disabled={isPending}
+            className="rounded-full border border-border bg-paper px-2.5 py-1 text-[11px] text-slate hover:bg-cream transition disabled:opacity-60"
+          >
+            +2h
+          </button>
+          <button
+            type="button"
+            onClick={() => handleSnoozePreset(24)}
+            disabled={isPending}
+            className="rounded-full border border-border bg-paper px-2.5 py-1 text-[11px] text-slate hover:bg-cream transition disabled:opacity-60"
+          >
+            Tomorrow
+          </button>
+          <button
+            type="button"
+            onClick={() => handleSnoozePreset(24 * 7)}
+            disabled={isPending}
+            className="rounded-full border border-border bg-paper px-2.5 py-1 text-[11px] text-slate hover:bg-cream transition disabled:opacity-60"
+          >
+            +1 week
+          </button>
+          {currentFollowUpAt && (
+            <button
+              type="button"
+              onClick={() => {
+                const fd = new FormData();
+                fd.set("leadId", leadId);
+                handleFollowUp(fd);
+              }}
+              disabled={isPending}
+              className="rounded-full border border-error/30 bg-error/5 px-2.5 py-1 text-[11px] text-error hover:bg-error/10 transition disabled:opacity-60"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+        {currentFollowUpAt && (
+          <p className="mt-2 text-xs text-slate-mute">
+            Currently scheduled: {new Date(currentFollowUpAt).toLocaleString("id-ID")}
+          </p>
+        )}
       </form>
 
       {/* Add note */}

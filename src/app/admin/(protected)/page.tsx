@@ -65,6 +65,7 @@ async function getDashboard() {
     sourcesRes,
     activitiesRes,
     slaPendingRes,
+    followUpsDueRes,
   ] = await Promise.all([
     baseFilter,
     sb
@@ -133,6 +134,16 @@ async function getDashboard() {
       .is("deleted_at", null)
       .order("created_at", { ascending: true })
       .limit(50),
+    sb
+      .from("leads")
+      .select(
+        "id, ref_code, full_name, company_name, status, priority, follow_up_at"
+      )
+      .lte("follow_up_at", new Date().toISOString())
+      .not("follow_up_at", "is", null)
+      .is("deleted_at", null)
+      .order("follow_up_at", { ascending: true })
+      .limit(10),
   ]);
 
   // Funnel aggregation
@@ -191,6 +202,7 @@ async function getDashboard() {
     sources,
     activities: activitiesRes.data ?? [],
     slaBreaches,
+    followUpsDue: followUpsDueRes.data ?? [],
     queryError: recentLeadsRes.error?.message,
   };
 }
@@ -309,6 +321,50 @@ export default async function DashboardPage() {
                       SLA {b.sla}h · age {b.ageHours.toFixed(b.ageHours < 1 ? 1 : 0)}h
                     </p>
                   </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Follow-ups due */}
+        {stats.followUpsDue.length > 0 && (
+          <section className="mb-10 rounded-2xl border border-warm/30 bg-warm/5 overflow-hidden">
+            <div className="px-6 py-5 border-b border-warm/20">
+              <p className="font-mono text-[11px] uppercase tracking-wider text-warm font-medium">
+                Follow-ups due
+              </p>
+              <h2 className="font-display text-xl text-ink mt-1">
+                {stats.followUpsDue.length} reminder{stats.followUpsDue.length > 1 ? "s" : ""} ready
+              </h2>
+            </div>
+            <ul className="divide-y divide-warm/10">
+              {stats.followUpsDue.map((l) => (
+                <li key={l.id} className="px-6 py-3">
+                  <Link
+                    href={`/admin/leads/${l.id}`}
+                    className="flex items-center justify-between gap-4 hover:bg-warm/5 transition rounded -mx-3 px-3 py-1"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="font-mono text-xs text-slate-mute tabular w-20 flex-shrink-0">
+                        {l.ref_code}
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-ink truncate">{l.full_name}</p>
+                        <p className="text-xs text-slate truncate">{l.company_name}</p>
+                      </div>
+                    </div>
+                    <div className="text-right tabular flex-shrink-0">
+                      <p className="text-xs font-medium text-warm">
+                        Due {new Date(l.follow_up_at!).toLocaleString("id-ID", {
+                          day: "numeric",
+                          month: "short",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </p>
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>

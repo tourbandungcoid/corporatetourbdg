@@ -71,6 +71,39 @@ async function getLead(id: string) {
 
   if (leadRes.error || !leadRes.data) return null;
 
+  // Find potential duplicates: same email, same whatsapp, or same company name
+  const lead = leadRes.data;
+  const dupQuery = sb
+    .from("leads")
+    .select(
+      "id, ref_code, full_name, company_name, work_email, whatsapp, status, priority, lead_score, created_at"
+    )
+    .neq("id", lead.id)
+    .is("deleted_at", null)
+    .order("created_at", { ascending: false })
+    .limit(8);
+
+  const orFilters: string[] = [];
+  if (lead.work_email) orFilters.push(`work_email.eq.${lead.work_email}`);
+  if (lead.whatsapp) orFilters.push(`whatsapp.eq.${lead.whatsapp}`);
+  if (lead.company_name) orFilters.push(`company_name.ilike.${lead.company_name.replace(/[%,]/g, "")}`);
+
+  const dupRes =
+    orFilters.length > 0
+      ? await dupQuery.or(orFilters.join(","))
+      : { data: [] as never[], error: null };
+  const duplicates = (dupRes.data ?? []).map((d) => {
+    const matchReasons: string[] = [];
+    if (lead.work_email && d.work_email === lead.work_email) matchReasons.push("email");
+    if (lead.whatsapp && d.whatsapp === lead.whatsapp) matchReasons.push("whatsapp");
+    if (
+      lead.company_name &&
+      d.company_name?.toLowerCase() === lead.company_name.toLowerCase()
+    )
+      matchReasons.push("company");
+    return { ...d, matchReasons };
+  });
+
   // Collect all unique actor IDs + assigned_to to resolve to names
   const actorIds = new Set<string>();
   (activitiesRes.data ?? []).forEach((a) => {
@@ -97,6 +130,7 @@ async function getLead(id: string) {
     qual: qualRes.data,
     activities: activitiesRes.data ?? [],
     userMap,
+    duplicates,
   };
 }
 
@@ -109,7 +143,7 @@ export default async function LeadDetailPage({
   const [result, adminUsers] = await Promise.all([getLead(id), getAdminUsers()]);
 
   if (!result) notFound();
-  const { lead, qual, activities, userMap } = result;
+  const { lead, qual, activities, userMap, duplicates } = result;
 
   const breakdown =
     (lead.lead_score_breakdown as Record<string, number> | null) ?? {};
@@ -269,9 +303,50 @@ export default async function LeadDetailPage({
                 leadId={lead.id}
                 currentStatus={lead.status}
                 currentAssignedTo={lead.assigned_to}
+                currentFollowUpAt={lead.follow_up_at ?? null}
                 adminUsers={adminUsers}
               />
             </Card>
+
+            {duplicates.length > 0 && (
+              <Card title={`Possible duplicates (${duplicates.length})`}>
+                <ul className="space-y-3 text-sm">
+                  {duplicates.map((d) => (
+                    <li key={d.id} className="flex items-start gap-3">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-warm flex-shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <Link
+                          href={`/admin/leads/${d.id}`}
+                          className="font-medium text-ink hover:text-brand-deep"
+                        >
+                          {d.ref_code} · {d.full_name}
+                        </Link>
+                        <p className="text-xs text-slate truncate">
+                          {d.company_name}
+                        </p>
+                        <div className="mt-1 flex flex-wrap gap-1">
+                          {d.matchReasons.map((r) => (
+                            <span
+                              key={r}
+                              className="inline-flex items-center rounded-full bg-warm/10 text-warm px-1.5 py-0.5 text-[10px] font-medium"
+                            >
+                              same {r}
+                            </span>
+                          ))}
+                          <span className="inline-flex items-center text-[10px] text-slate-mute tabular">
+                            {new Date(d.created_at).toLocaleDateString("id-ID", {
+                              day: "numeric",
+                              month: "short",
+                              year: "2-digit",
+                            })}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            )}
 
             <Card title="Score breakdown">
               {Object.keys(breakdown).length === 0 ? (

@@ -10,10 +10,19 @@ export const metadata = {
     "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia.",
 };
 
-const CATEGORIES = ["All", "Methodology", "Framework", "HR Tactics", "Team Design", "Strategic Event"];
+type SearchParams = Promise<{ category?: string }>;
 
-export default function InsightsIndexPage() {
-  const articles = getInsightsList();
+export default async function InsightsIndexPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { category } = await searchParams;
+  const all = getInsightsList();
+  const categories = Array.from(new Set(all.map((a) => a.category)));
+  const articles = category
+    ? all.filter((a) => a.category === category)
+    : all;
 
   return (
     <main>
@@ -26,25 +35,47 @@ export default function InsightsIndexPage() {
       <section className="border-b border-divider py-8 bg-paper">
         <div className="container-1280">
           <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <span
-                key={cat}
-                className={[
-                  "inline-flex items-center rounded-full border px-4 py-2 text-sm",
-                  cat === "All"
-                    ? "bg-ink text-paper border-ink"
-                    : "bg-paper text-slate border-border",
-                ].join(" ")}
-              >
-                {cat}
-              </span>
-            ))}
+            <Link
+              href="/insights"
+              className={`inline-flex items-center rounded-full border px-4 py-2 text-sm transition ${
+                !category
+                  ? "bg-ink text-paper border-ink"
+                  : "bg-paper text-slate border-border hover:bg-cream"
+              }`}
+            >
+              All ({all.length})
+            </Link>
+            {categories.map((cat) => {
+              const count = all.filter((a) => a.category === cat).length;
+              const active = category === cat;
+              return (
+                <Link
+                  key={cat}
+                  href={`/insights?category=${encodeURIComponent(cat)}`}
+                  className={`inline-flex items-center rounded-full border px-4 py-2 text-sm transition ${
+                    active
+                      ? "bg-ink text-paper border-ink"
+                      : "bg-paper text-slate border-border hover:bg-cream"
+                  }`}
+                >
+                  {cat} ({count})
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section className="py-16 md:py-20">
         <div className="container-1280">
+          {articles.length === 0 ? (
+            <div className="rounded-2xl border border-border bg-paper p-12 text-center text-sm text-slate">
+              Belum ada artikel di kategori ini.{" "}
+              <Link href="/insights" className="text-brand-deep underline">
+                Lihat semua →
+              </Link>
+            </div>
+          ) : (
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article, i) => (
               <Link
@@ -81,6 +112,7 @@ export default function InsightsIndexPage() {
               </Link>
             ))}
           </div>
+          )}
         </div>
       </section>
 

@@ -313,6 +313,57 @@ export async function sendProposalReady(formData: FormData): Promise<ActionResul
 }
 
 // ---------------------------------------------------------------------
+// Set / clear follow-up reminder
+// ---------------------------------------------------------------------
+const followUpSchema = z.object({
+  leadId: z.string().uuid(),
+  followUpAt: z.string().optional(),
+});
+
+export async function setLeadFollowUp(formData: FormData): Promise<ActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+
+  const parsed = followUpSchema.safeParse({
+    leadId: formData.get("leadId"),
+    followUpAt: formData.get("followUpAt") ?? undefined,
+  });
+  if (!parsed.success) return { ok: false, message: "Invalid input" };
+
+  const value = parsed.data.followUpAt ? parsed.data.followUpAt : null;
+  let iso: string | null = null;
+  if (value) {
+    const d = new Date(value);
+    if (isNaN(d.getTime())) return { ok: false, message: "Invalid date" };
+    iso = d.toISOString();
+  }
+
+  const sb = createAdminClient();
+  const { error } = await sb
+    .from("leads")
+    .update({ follow_up_at: iso })
+    .eq("id", parsed.data.leadId);
+  if (error) return { ok: false, message: error.message };
+
+  await sb.from("lead_activities").insert({
+    lead_id: parsed.data.leadId,
+    activity_type: "note_added",
+    actor_id: profile.id,
+    actor_type: "user",
+    details: {
+      kind: "follow_up",
+      follow_up_at: iso,
+      note: iso ? `Follow-up scheduled for ${new Date(iso).toLocaleString("id-ID")}` : "Follow-up cleared",
+    },
+  });
+
+  revalidatePath(`/admin/leads/${parsed.data.leadId}`);
+  revalidatePath("/admin/leads");
+  revalidatePath("/admin");
+  return { ok: true, message: iso ? "Follow-up scheduled" : "Follow-up cleared" };
+}
+
+// ---------------------------------------------------------------------
 // Get all admin users (for assign dropdown)
 // ---------------------------------------------------------------------
 export type AdminUserOption = {
