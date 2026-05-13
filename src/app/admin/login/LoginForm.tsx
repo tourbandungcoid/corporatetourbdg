@@ -5,9 +5,20 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { ArrowRight } from "@/components/icons/Icons";
 
+/**
+ * Resolve a login input to a full email. Allows users to log in with
+ * just a username (e.g. "superadmin") — auto-appends "@admin.local"
+ * for internal accounts that don't need real email delivery.
+ */
+function resolveEmail(input: string): string {
+  const trimmed = input.trim();
+  if (trimmed.includes("@")) return trimmed.toLowerCase();
+  return `${trimmed.toLowerCase()}@admin.local`;
+}
+
 export function LoginForm() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState<"idle" | "signing" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -17,6 +28,7 @@ export function LoginForm() {
     setStatus("signing");
     setMessage("");
 
+    const email = resolveEmail(identifier);
     const supabase = createClient();
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -36,20 +48,24 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <div>
-        <label className="label" htmlFor="email">
-          Email
+        <label className="label" htmlFor="identifier">
+          Username or email
         </label>
         <input
-          id="email"
-          type="email"
+          id="identifier"
+          type="text"
           required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="admin@7summitstravel.com"
+          autoComplete="username"
+          value={identifier}
+          onChange={(e) => setIdentifier(e.target.value)}
+          placeholder="superadmin atau kamu@perusahaan.com"
           className="input"
           disabled={status === "signing"}
         />
+        <p className="mt-1 text-xs text-slate-mute">
+          Username pendek (tanpa <code className="font-mono">@</code>) di-resolve sebagai{" "}
+          <code className="font-mono">username@admin.local</code>.
+        </p>
       </div>
 
       <div>
@@ -71,7 +87,7 @@ export function LoginForm() {
 
       {status === "error" && (
         <div className="rounded-2xl border border-error/30 bg-error/5 p-4 text-sm text-error">
-          {message || "Login gagal. Cek email & password."}
+          {message || "Login gagal. Cek username / password."}
         </div>
       )}
 
