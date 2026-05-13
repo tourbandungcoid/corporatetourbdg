@@ -6,6 +6,7 @@ import {
   updateLeadStatus,
   addLeadNote,
   assignLead,
+  sendProposalReady,
   type AdminUserOption,
 } from "@/lib/actions/lead-actions";
 import { ArrowRight } from "@/components/icons/Icons";
@@ -74,6 +75,15 @@ export function LeadActionsPanel({
         setNote("");
         router.refresh();
       }
+    });
+  }
+
+  function handleProposalReady(formData: FormData) {
+    if (!confirm("Send 'Proposal ready' email ke lead ini sekarang?")) return;
+    startTransition(async () => {
+      const result = await sendProposalReady(formData);
+      showMessage(result.ok ? "ok" : "error", result.message ?? "");
+      if (result.ok) router.refresh();
     });
   }
 
@@ -148,6 +158,25 @@ export function LeadActionsPanel({
             Assign
           </button>
         </div>
+      </form>
+
+      {/* Send proposal-ready email */}
+      <form action={handleProposalReady}>
+        <input type="hidden" name="leadId" value={leadId} />
+        <label className="text-xs uppercase tracking-wider text-slate-mute block mb-2">
+          Quick email
+        </label>
+        <button
+          type="submit"
+          disabled={isPending}
+          className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-paper px-4 h-11 text-sm font-medium text-ink hover:bg-cream transition disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          Send &quot;Proposal Ready&quot; email
+          <ArrowRight size={12} />
+        </button>
+        <p className="mt-1.5 text-xs text-slate-mute">
+          Notifies lead that proposal is ready + auto-bumps status to Sent.
+        </p>
       </form>
 
       {/* Add note */}

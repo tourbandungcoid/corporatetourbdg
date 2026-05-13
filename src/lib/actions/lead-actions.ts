@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getCurrentProfile } from "@/lib/auth/getCurrentProfile";
+import { sendProposalReadyEmail } from "@/lib/email/send";
 
 export type ActionResult = {
   ok: boolean;
@@ -160,6 +161,82 @@ export async function assignLead(formData: FormData): Promise<ActionResult> {
   revalidatePath(`/admin/leads/${parsed.data.leadId}`);
   revalidatePath("/admin/leads");
   return { ok: true, message: newAssignee ? "Assigned" : "Unassigned" };
+}
+
+// ---------------------------------------------------------------------
+// Send "Proposal ready" email to the lead
+// ---------------------------------------------------------------------
+const proposalReadySchema = z.object({
+  leadId: z.string().uuid(),
+});
+
+export async function sendProposalReady(formData: FormData): Promise<ActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+
+  const parsed = proposalReadySchema.safeParse({
+    leadId: formData.get("leadId"),
+  });
+  if (!parsed.success) return { ok: false, message: "Invalid input" };
+
+  const sb = createAdminClient();
+
+  const { data: lead, error: leadErr } = await sb
+    .from("leads")
+    .select("ref_code, full_name, work_email, status")
+    .eq("id", parsed.data.leadId)
+    .single();
+
+  if (leadErr || !lead) return { ok: false, message: "Lead not found" };
+
+  const senderName = profile.full_name ?? profile.email;
+  const result = await sendProposalReadyEmail({
+    to: lead.work_email,
+    fullName: lead.full_name,
+    refCode: lead.ref_code,
+    senderName,
+  });
+
+  if (!result.ok && !result.skipped) {
+    return { ok: false, message: result.reason ?? "Email send failed" };
+  }
+
+  // Log activity
+  await sb.from("lead_activities").insert({
+    lead_id: parsed.data.leadId,
+    activity_type: "email_sent",
+    actor_id: profile.id,
+    actor_type: "user",
+    details: {
+      kind: "proposal_ready",
+      to: lead.work_email,
+      sender: senderName,
+      skipped: result.skipped ?? false,
+    },
+  });
+
+  // Auto-bump status to "sent" if currently in earlier stage
+  if (["drafting", "internal_qa", "under_review", "submitted"].includes(lead.status)) {
+    await sb.from("leads").update({ status: "sent" }).eq("id", parsed.data.leadId);
+    await sb.from("lead_activities").insert({
+      lead_id: parsed.data.leadId,
+      activity_type: "status_changed",
+      actor_id: profile.id,
+      actor_type: "user",
+      details: { from: lead.status, to: "sent", auto: true },
+    });
+  }
+
+  revalidatePath(`/admin/leads/${parsed.data.leadId}`);
+  revalidatePath("/admin/leads");
+  revalidatePath("/admin");
+
+  return {
+    ok: true,
+    message: result.skipped
+      ? "Email logged (RESEND_API_KEY not configured — no email actually sent)"
+      : "Proposal-ready email sent",
+  };
 }
 
 // ---------------------------------------------------------------------
