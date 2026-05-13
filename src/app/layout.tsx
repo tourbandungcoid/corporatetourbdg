@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { AnalyticsScripts, GTMNoScript } from "@/components/AnalyticsScripts";
 import { getAppSettings } from "@/lib/app-settings";
 import { getBrandSettings, buildBrandCssVars } from "@/lib/brand-settings";
@@ -75,6 +76,7 @@ export default async function RootLayout({
       <body>
         <GTMNoScript gtmId={settings.analytics.gtm_id} />
         {children}
+        <Analytics />
       </body>
     </html>
   );
