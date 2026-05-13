@@ -157,6 +157,38 @@ export default async function LeadsPage({
           </div>
         </div>
 
+        {/* Quick filter presets */}
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase tracking-wider text-slate-mute font-medium mr-2">
+            Quick:
+          </span>
+          <PresetLink
+            label="Hot unassigned"
+            params={{ priority: "hot", assigned: "unassigned" }}
+            current={params}
+          />
+          <PresetLink
+            label="In drafting"
+            params={{ status: "drafting" }}
+            current={params}
+          />
+          <PresetLink
+            label="Sent · awaiting feedback"
+            params={{ status: "sent" }}
+            current={params}
+          />
+          <PresetLink
+            label="Won this month"
+            params={{ status: "won", range: "30d" }}
+            current={params}
+          />
+          <PresetLink
+            label="New today"
+            params={{ range: "7d" }}
+            current={params}
+          />
+        </div>
+
         {/* Filters */}
         <form className="mb-6 grid gap-3 md:grid-cols-6" method="get">
           <input
@@ -265,5 +297,35 @@ export default async function LeadsPage({
         )}
       </div>
     </main>
+  );
+}
+
+function PresetLink({
+  label,
+  params,
+  current,
+}: {
+  label: string;
+  params: Partial<SearchParams>;
+  current: SearchParams;
+}) {
+  const active = Object.entries(params).every(
+    ([k, v]) => current[k as keyof SearchParams] === v
+  );
+  const sp = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => {
+    if (v) sp.set(k, String(v));
+  });
+  return (
+    <Link
+      href={`/admin/leads?${sp.toString()}`}
+      className={`inline-flex items-center rounded-full px-3 h-8 text-xs font-medium transition ${
+        active
+          ? "bg-ink text-paper"
+          : "border border-border bg-paper text-slate hover:bg-cream"
+      }`}
+    >
+      {label}
+    </Link>
   );
 }
