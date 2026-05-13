@@ -9,6 +9,8 @@ const NAV = [
   { href: "/admin/tasks", label: "Tasks", group: "overview" },
   { href: "/admin/leads", label: "Leads", group: "overview" },
   { href: "/admin/activity", label: "Activity log", group: "overview" },
+  { href: "/admin/content/insights", label: "Insights", group: "content" },
+  { href: "/admin/content/case-studies", label: "Case studies", group: "content" },
   { href: "/admin/users", label: "Users", group: "settings" },
   { href: "/admin/settings", label: "Settings", group: "settings" },
 ];
@@ -16,6 +18,7 @@ const NAV = [
 export function Sidebar() {
   const pathname = usePathname();
   const overview = NAV.filter((n) => n.group === "overview");
+  const content = NAV.filter((n) => n.group === "content");
   const settings = NAV.filter((n) => n.group === "settings");
 
   return (
@@ -40,6 +43,22 @@ export function Sidebar() {
         ))}
 
         <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
+          Content
+        </p>
+        {content.map((item) => (
+          <NavLink
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            active={pathname === item.href || pathname.startsWith(item.href + "/")}
+          />
+        ))}
+        <p className="mt-2 px-3 text-[10px] text-slate-mute leading-relaxed">
+          Services, packages, FAQ, glossary &amp; team tetap di{" "}
+          <code className="font-mono text-[11px]">src/lib/*-data.ts</code>.
+        </p>
+
+        <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
           Settings
         </p>
         {settings.map((item) => (
@@ -50,15 +69,6 @@ export function Sidebar() {
             active={pathname === item.href || pathname.startsWith(item.href + "/")}
           />
         ))}
-
-        <p className="px-3 mt-6 mb-2 text-[10px] tracking-[0.16em] uppercase text-slate-mute">
-          Content
-        </p>
-        <div className="px-3 py-2 rounded-lg bg-cream/40 text-xs text-slate leading-relaxed">
-          Services, packages, case studies, insights, FAQ &amp; team data
-          managed via repo data files in{" "}
-          <code className="font-mono text-[11px] text-ink">src/lib/*-data.ts</code>.
-        </div>
       </nav>
     </aside>
   );
