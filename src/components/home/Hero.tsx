@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight } from "@/components/icons/Icons";
 import { STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
+import { getCopy } from "@/lib/brand-settings";
 
 /**
  * Premium full-viewport cinematic hero — Framer-template grade.
@@ -11,7 +12,25 @@ import { IMAGES } from "@/lib/drive-images";
  * - Dual pill CTAs (primary brand + glass-outlined)
  * - Subtle bottom stats strip
  */
-export function Hero() {
+export async function Hero() {
+  const [
+    eyebrow,
+    line1,
+    line2,
+    line3,
+    sub,
+    ctaPrimary,
+    ctaSecondary,
+  ] = await Promise.all([
+    getCopy("home.hero.eyebrow", `⭐ 4.9/5 Google Reviews · ${STATS.companiesTrusted} perusahaan Indonesia · ${STATS.yearsOperating}`),
+    getCopy("home.hero.line1", "Corporate Outing"),
+    getCopy("home.hero.line2", "& Gathering Bandung"),
+    getCopy("home.hero.line3", "yang benar-benar kerja."),
+    getCopy("home.hero.sub", "Specialist B2B — bukan travel agent, bukan generic EO. Company gathering, team building, executive offsite di Bandung & Jawa Barat. Dari startup unicorn sampai BUMN nasional, untuk tim 20 sampai 2.000 orang."),
+    getCopy("home.hero.cta_primary", "Request Proposal — 24 Jam"),
+    getCopy("home.hero.cta_secondary", "Konsultasi Gratis"),
+  ]);
+
   return (
     <section className="relative min-h-screen md:min-h-[760px] lg:min-h-[800px] w-full overflow-hidden bg-ink">
       {/* Full-bleed background image */}
@@ -36,31 +55,26 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 backdrop-blur px-4 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
             <span className="text-xs font-medium tracking-wide text-paper/90">
-              ⭐ 4.9/5 Google Reviews · {STATS.companiesTrusted} perusahaan Indonesia · {STATS.yearsOperating}
+              {eyebrow}
             </span>
           </div>
 
           {/* Heavy editorial headline — keyword-first for SEO */}
           <h1 className="font-display mt-8 text-paper">
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
-              Corporate Outing
+              {line1}
             </span>
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] text-brand">
-              &amp; Gathering Bandung
+              {line2}
             </span>
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
-              yang benar-benar kerja.
+              {line3}
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="mt-8 text-base md:text-lg text-paper/75 leading-relaxed max-w-2xl">
-            Specialist B2B — bukan travel agent, bukan generic EO.{" "}
-            <span className="text-paper font-medium">
-              Company gathering, team building, executive offsite
-            </span>{" "}
-            di Bandung &amp; Jawa Barat. Dari startup unicorn sampai BUMN
-            nasional, untuk tim 20 sampai 2.000 orang.
+            {sub}
           </p>
 
           {/* CTAs */}
@@ -69,7 +83,7 @@ export function Hero() {
               href="/proposal/request"
               className="group inline-flex items-center gap-2 rounded-full bg-brand text-paper px-7 h-13 py-3.5 text-[15px] font-medium hover:bg-brand-deep transition-all hover:shadow-[0_8px_30px_rgba(107,162,57,0.35)]"
             >
-              Request Proposal — 24 Jam
+              {ctaPrimary}
               <ArrowRight
                 size={16}
                 className="transition-transform group-hover:translate-x-1"
@@ -79,7 +93,7 @@ export function Hero() {
               href="/proposal/book-consultation"
               className="inline-flex items-center gap-2 rounded-full border border-paper/30 bg-paper/[0.06] backdrop-blur text-paper px-7 py-3.5 text-[15px] font-medium hover:bg-paper hover:text-ink hover:border-paper transition-colors"
             >
-              Konsultasi Gratis
+              {ctaSecondary}
             </Link>
           </div>
         </div>
