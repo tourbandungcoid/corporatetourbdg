@@ -53,7 +53,6 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
             <LogoLockup
               height={logoHeight}
               variant={useLightStyle ? "light" : "dark"}
-              showCorporateLabel
             />
           </Link>
 
@@ -122,7 +121,7 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={logoHeight} showCorporateLabel />
+              <LogoLockup height={logoHeight} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
