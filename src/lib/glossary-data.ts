@@ -254,6 +254,90 @@ const ENTRIES: GlossaryEntry[] = [
     short: "SLA komunikasi yang dihitung dalam jam kerja (Senin–Jumat 08.00–17.00 WIB).",
     long: "Industri standar SLA. \"Respond avg 6 jam working hours\" = jika lo kirim brief Jumat 18.00, respon di-deliver Senin 14.00 (akumulasi 6 jam kerja Senin pagi).",
   },
+  {
+    term: "MICE Organizer",
+    short: "Vendor spesialis yang handle Meeting, Incentive, Conference, atau Exhibition secara profesional.",
+    long: "Berbeda dari EO generik — MICE organizer punya capability AV production, hybrid streaming, registration system, dan breakout management. Cocok ketika event punya deliverable bisnis formal (bukan hanya bonding). Sub-segment paling demanding adalah Conference (400+ pax) dan Exhibition.",
+    related: ["MICE", "Event Organizer"],
+  },
+  {
+    term: "Hybrid Event",
+    short: "Event yang berjalan serentak untuk peserta onsite dan remote (virtual).",
+    long: "Format yang makin umum pasca-pandemi. Butuh: dedicated streaming encoder, platform virtual (Zoom, Airmeet, Hopin), moderator hybrid, dan operator teknis minimal 2 orang. Risiko utama: audio-visual sync issue dan engagement gap antara peserta onsite vs remote.",
+    related: ["MICE", "MICE Organizer"],
+  },
+  {
+    term: "President's Club",
+    short: "Tier tertinggi incentive trip — program reward eksklusif untuk top 5–10% performer.",
+    long: "Istilah industri untuk incentive trip tier premium dengan eligibility threshold ketat (biasanya top 5–10% sales quota achievement). Karakteristik: skala kecil (20–50 pax), fully bespoke, personalized recognition ceremony, dan destination premium (international atau private estate domestik). Impact motivasi jauh lebih tinggi dari program incentive generic.",
+    related: ["Incentive Trip", "Bespoke Tier"],
+  },
+  {
+    term: "Incentive Program",
+    short: "Program reward terstruktur yang motivasi karyawan mencapai target melalui experience.",
+    long: "Broader dari incentive trip — bisa berupa trip, merchandise, cash equivalent, atau experience. Incentive trip adalah subset paling premium karena creates shared memory dan social proof internal. ROI incentive program: untuk setiap Rp 1 yang diinvestasikan di incentive, benchmark industri menunjukkan 3–10x revenue lift dari peserta dibanding non-peserta.",
+    related: ["Incentive Trip", "President's Club"],
+  },
+  {
+    term: "Venue Ballroom",
+    short: "Ruang fungsi di hotel dengan kapasitas large-scale — ideal untuk gathering formal.",
+    long: "Venue ballroom hotel di Bandung tipikal berkapasitas 200–800 pax theater style. Kelebihan: built-in AV system, F&B catering terstandard, accommodation dalam satu gedung. Kekurangan: karakteristik corporate 'generic', F&B usually exclusive (tidak bisa bawa catering sendiri). Rekomendasi Bandung: Padma Hotel Lembang, Trans Luxury Hotel, Pullman Grand Central.",
+    related: ["Corporate Gathering", "Venue Curation"],
+  },
+  {
+    term: "Villa Cluster",
+    short: "Konfigurasi beberapa villa berdekatan yang disewa eksklusif untuk satu grup.",
+    long: "Strategi untuk grup 80–300 pax yang butuh venue private tanpa venue ballroom formal. 2–4 villa dengan akses shared ground atau outdoor area. Kelebihan: privacy 100%, vibe lebih casual dan authentic, photogenic. Kekurangan: koordinasi logistik lebih complex, F&B biasanya butuh catering eksternal.",
+    related: ["Venue Curation", "Corporate Outing"],
+  },
+  {
+    term: "Lembang",
+    short: "Destinasi corporate outing terpopuler di Jawa Barat — 30–45 km dari Bandung kota.",
+    long: "Area dataran tinggi di utara Bandung (ketinggian 1.200–1.500 mdpl), hawa 18–24°C. Infrastruktur paling mature untuk corporate event: villa private, resort dengan ballroom, glamping site, hotel butik. Sinyal umumnya baik. Jarak dari Bandung: 45–90 menit. Dari Jakarta: 3–3.5 jam via Tol Cipularang.",
+    related: ["Venue Curation", "Corporate Outing"],
+  },
+  {
+    term: "Ciwidey",
+    short: "Destinasi outing di selatan Bandung — terkenal Kawah Putih dan kebun teh.",
+    long: "Area di selatan Bandung (90–150 menit dari kota). Unique attraction: Kawah Putih (moonscape volcanic crater), Situ Patenggang, kebun teh Malabar, Kawah Rengganis. Cocok untuk grup yang cari nature immersive experience. Venue lebih terbatas dari Lembang — optimal untuk 30–120 pax. Sinyal bisa terbatas di beberapa titik.",
+    related: ["Lembang", "Corporate Outing"],
+  },
+  {
+    term: "Rundown",
+    short: "Timeline eksekusi detail event — jadwal per jam dengan PIC dan catatan logistik.",
+    long: "Dokumen operasional yang jadi 'bible' di hari H. Standar professional rundown berisi: waktu mulai/selesai per sesi, PIC yang bertanggung jawab, location, equipment yang dibutuhkan, dan contingency note. Briefing vendor dengan rundown minimal H-7. Review ulang H-1. On-site morning briefing H-0.",
+    related: ["Contingency Plan"],
+  },
+  {
+    term: "Event Organizer",
+    short: "Vendor yang bertanggung jawab mengelola dan mengeksekusi corporate event end-to-end.",
+    long: "Umbrella term untuk berbagai tipe vendor event. Di konteks B2B corporate: (1) Specialist corporate EO — fokus di segment corporate dengan PM dedicated, methodology, dan post-event report. (2) Generic EO — handle semua jenis event (wedding, festival, corporate). (3) Travel agent yang nyambi corporate. Untuk corporate event yang punya objective bisnis, specialist adalah pilihan optimal.",
+    related: ["Discovery Brief", "MICE Organizer"],
+  },
+  {
+    term: "Certificate of Appreciation",
+    short: "Sertifikat penghargaan yang di-deliver kepada peserta sebagai bagian dari recognition.",
+    long: "Bisa digital atau fisik. Di incentive program dan leadership camp, certificate bukan sekadar formalitas — ini bagian dari recognition ritual yang reinforce achievement. Sertifikat yang well-designed (bukan template online) meningkatkan perceived value program.",
+    related: ["Incentive Trip", "Awarding Night"],
+  },
+  {
+    term: "Breakout Room",
+    short: "Ruang diskusi kecil untuk grup terpisah dalam conference atau workshop.",
+    long: "Di MICE conference: breakout room memungkinkan parallel session dengan topik berbeda untuk sub-grup berbeda. Standar: minimal 40–60% ukuran main hall untuk tiap breakout room. Untuk hybrid: setiap breakout butuh AV dedicated + streaming encoder terpisah. 5 breakout paralel = kompleksitas operasional 5x lebih tinggi dari plenary tunggal.",
+    related: ["MICE", "Hybrid Event"],
+  },
+  {
+    term: "AV Production",
+    short: "Audio-visual production setup untuk event — sound system, lighting, stage, dan display.",
+    long: "Komponen wajib di conference dan gathering premium. Terdiri dari: PA system (public address / sound), stage lighting, LED backdrop atau screen projection, streaming encoder untuk hybrid, dan operator dedicated per area. Budget AV untuk event 200 pax: Rp 30–80 jt. Untuk conference 500+ pax dengan hybrid: Rp 100–300 jt+.",
+    related: ["MICE", "Corporate Gathering"],
+  },
+  {
+    term: "Post-Event Report",
+    short: "Dokumen terstruktur yang dibuat vendor dalam 5–7 hari kerja pasca event.",
+    long: "Standar deliverable vendor profesional. Isi: executive summary, attendance vs target, aktivitas ringkasan, NPS/survey hasil, photo selects, video recap, budget reconciliation, dan recommendations untuk next event. HR butuh ini untuk justify anggaran ke management dan brief vendor tahun berikutnya. Vendor yang tidak deliver ini = tidak akuntabel.",
+    related: ["Working Hours Response", "Discovery Brief"],
+  },
 ];
 
 const SLUGIFY = (s: string) =>

@@ -15,6 +15,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/event-organizer-corporate-bandung";
@@ -146,7 +147,20 @@ export default function EventOrganizerCorporateBandungPage() {
         "Specialist B2B corporate event organizer di Bandung — company gathering, team building, executive offsite, MICE. Bukan generic EO.",
       priceRange: "Rp 1.200.000 - Rp 12.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Bekerja dengan Event Organizer Corporate Bandung — 7 Langkah",
+      description: "Proses kerja dari inquiry pertama hingga post-event report yang TourBandung Corporate jalankan untuk setiap event",
+      steps: [
+        { name: "Inquiry & Initial Response", text: "Kirim inquiry via form, WhatsApp, atau email. Tim kami response dalam 6 jam business hours untuk schedule brief call." },
+        { name: "Discovery Brief Call", text: "20–90 menit brief call dengan senior PM: objective, timeline, pax, budget, dan constraint. Tidak ada quote tanpa tahap ini — ini yang membedakan specialist dari template vendor." },
+        { name: "Proposal & Estimasi Budget", text: "Line-item proposal dengan 2 opsi venue, rundown draft, dan breakdown cost transparan dikirim dalam 24–48 jam setelah brief." },
+        { name: "Revision & Confirmation", text: "1–3 putaran revisi. Setelah approval, DP 30–50% untuk lock venue dan kick off preparation." },
+        { name: "Preparation & Coordination", text: "3–12 minggu prep: vendor coordination, content development, guest manifest, dietary mapping, dan risk register per event." },
+        { name: "Execution On-Site", text: "Senior PM dan crew on-site dari setup H-1. Real-time coordination, contingency plan aktif, dan medical standby untuk event outdoor." },
+        { name: "Post-Event Report", text: "Dalam 5 hari kerja: satisfaction survey, budget realization, video highlight, foto deliverables, dan rekomendasi untuk next event." },
+      ],
+    })
   );
 
   return (

@@ -14,6 +14,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ slug: string }>;
@@ -71,7 +72,8 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       { name: "Home", url: SITE.url },
       { name: "Insights", url: `${SITE.url}/insights` },
       { name: article.title, url },
-    ])
+    ]),
+    ...(article.howTo ? [howToSchema(article.howTo)] : [])
   );
 
   return (

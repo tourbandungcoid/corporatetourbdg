@@ -16,9 +16,9 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Pricing & Transparent Breakdown",
+  title: "Harga Corporate Outing Bandung 2026 — 4 Tier Pricing Transparent dengan Breakdown",
   description:
-    "Pricing transparent untuk corporate outing Bandung — 4 tier (Foundation, Elevated, Signature, Bespoke) dengan line-item breakdown apa yang termasuk + tidak termasuk. Bukan paket murah misterius.",
+    "Pricing transparent corporate outing Bandung — 4 tier (Foundation Rp 1.5jt/pax, Elevated Rp 2.5jt, Signature Rp 4.5jt, Bespoke Rp 7jt+) dengan line-item breakdown lengkap. Bukan paket murah misterius.",
   alternates: { canonical: `${SITE.url}/pricing` },
   openGraph: {
     title: "Pricing — TourBandung Corporate",

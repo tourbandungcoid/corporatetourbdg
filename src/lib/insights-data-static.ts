@@ -28,6 +28,12 @@ export type Insight = {
   };
   sections: InsightSection[];
   relatedSlugs?: string[];
+  /** Optional HowTo schema data — emit HowTo rich result when article is a step-by-step guide */
+  howTo?: {
+    name: string;
+    description: string;
+    steps: { name: string; text: string }[];
+  };
 };
 
 const INSIGHTS: Record<string, Insight> = {
@@ -843,6 +849,18 @@ const INSIGHTS: Record<string, Insight> = {
       },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "indoor-vs-outdoor-corporate-outing"],
+    howTo: {
+      name: "Cara Membuat Rundown Outing Kantor 1 Hari",
+      description: "Langkah-langkah membuat rundown outing kantor 1 hari yang efektif dan profesional",
+      steps: [
+        { name: "Tentukan format outing", text: "Pilih antara 3 format: casual bonding (santai semua demografi), team building fokus (dengan fasilitator), atau premium 1-day experience. Format menentukan kebutuhan SDM dan anggaran." },
+        { name: "Tetapkan waktu mulai dan selesai", text: "Rundown 1 hari terbaik mulai 07.30–08.00 dan selesai maksimal 17.30–18.00. Hindari melebihi 10 jam untuk mencegah kelelahan peserta." },
+        { name: "Susun sesi dengan buffer 15–20 menit", text: "Setiap transisi antar sesi butuh buffer 15–20 menit untuk perpindahan lokasi, keberangkatan yang terlambat, dan F&B. Jangan packing sesi terlalu rapat." },
+        { name: "Assign PIC per sesi", text: "Setiap sesi harus ada nama penanggung jawab yang jelas — bukan hanya 'panitia'. PIC bertanggung jawab atas kesiapan venue, peserta, dan material per sesi." },
+        { name: "Brief vendor minimal H-7", text: "Kirim rundown final ke semua vendor (venue, katering, fasilitator, dokumentasi) minimal 7 hari sebelum event. Review ulang H-1. Briefing pagi on-site H-0." },
+        { name: "Siapkan contingency per sesi outdoor", text: "Setiap sesi outdoor harus punya Plan B indoor. Catat di rundown: 'Jika hujan → pindah ke [lokasi indoor]' dengan PIC yang sama." },
+      ],
+    },
   },
 
   "checklist-vendor-event-organizer-corporate": {
@@ -915,6 +933,19 @@ const INSIGHTS: Record<string, Insight> = {
       },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system"],
+    howTo: {
+      name: "Cara Memilih Event Organizer Corporate yang Tepat",
+      description: "Checklist 12 poin due diligence sebelum hire vendor EO corporate untuk acara perusahaan",
+      steps: [
+        { name: "Verifikasi portofolio event corporate", text: "Minta angka spesifik event corporate (bukan retail/wedding) yang sudah dihandle. Benchmark: 50+ corporate events documented. Minta 2-3 case study konkret dengan brief, approach, dan result." },
+        { name: "Cek referensi klien yang bisa dihubungi", text: "Vendor yang confident akan welcome referral check. Tanyakan industri dan skala pax klien sebelumnya. Vendor yang menghindar memberikan referensi adalah red flag." },
+        { name: "Identifikasi project manager yang akan assigned", text: "Siapa PM yang akan handle event Anda? Senior atau junior? Berapa event paralel yang dia handle? PM yang pegang 5+ event bersamaan tidak bisa memberikan attention cukup." },
+        { name: "Validasi proses discovery brief", text: "Apakah ada intake form atau discovery call sebelum mereka quote? Vendor yang langsung kirim harga tanpa brief sedang memberikan template quote, bukan custom proposal." },
+        { name: "Periksa sistem risk management", text: "Tanyakan apakah ada risk register atau contingency plan per event. Vendor tanpa dokumen ini tidak punya sistem profesional." },
+        { name: "Review kontrak secara menyeluruh", text: "Pastikan kontrak cover force majeure clause, cancellation policy, refund schedule, dan SLA komunikasi. Klausul ambigu = potensi dispute di kemudian hari." },
+        { name: "Konfirmasi deliverable post-event", text: "Apakah ada post-event report dalam 5-7 hari kerja? Report ini dibutuhkan HR untuk justify budget ke management dan brief vendor tahun berikutnya." },
+      ],
+    },
   },
 
   "outing-lembang-vs-ciwidey": {
@@ -1260,6 +1291,20 @@ const INSIGHTS: Record<string, Insight> = {
       },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "outing-lembang-vs-ciwidey", "indoor-vs-outdoor-corporate-outing"],
+    howTo: {
+      name: "Cara Memilih Venue Corporate Gathering Bandung",
+      description: "8 faktor evaluasi venue yang sering diabaikan saat memilih venue gathering perusahaan di Bandung",
+      steps: [
+        { name: "Cek kapasitas real, bukan kapasitas di brosur", text: "Minta floor plan venue dan tanyakan setup event corporate terakhir. Kapasitas tertulis di brosur biasanya 30-40% lebih besar dari kapasitas real untuk setup corporate dengan stage, AV, dan catering island." },
+        { name: "Test akustik ruangan sebelum booking", text: "Kunjungi venue saat event lain berlangsung untuk test akustik. Plafon rendah, dinding keras, dan layout L-shape adalah resep akustik buruk yang baru ketahuan di hari H." },
+        { name: "Periksa akses loading AV dan katering", text: "Cek lebar pintu loading, kapasitas lift barang, dan parkir kendaraan vendor. Akses loading yang sempit bisa membuat setup molor 2-4 jam." },
+        { name: "Klarifikasi kebijakan F&B", text: "Tanyakan apakah boleh bawa katering sendiri atau harus pakai venue (exclusive F&B). Hitung perbandingan biaya total sebelum commit — harga F&B venue sering 30-50% lebih mahal." },
+        { name: "Konfirmasi backup space untuk contingency", text: "Pastikan ada designated indoor backup space dengan kapasitas cukup, dikonfirmasi secara tertulis di kontrak. 'Bisa diatur nanti kalau hujan' bukan jawaban yang acceptable." },
+        { name: "Test sinyal dan bandwidth internet", text: "Test sinyal di dalam ruangan (bukan di luar), terutama untuk event hybrid. Minta dedicated WiFi SSID — bukan shared guest WiFi yang bisa crash saat 200 peserta connect bersamaan." },
+        { name: "Verifikasi waktu setup dan breakdown yang diizinkan", text: "Tanyakan jam berapa vendor boleh masuk untuk setup dan sampai jam berapa harus selesai breakdown. Setup AV butuh 4-6 jam sebelum event." },
+        { name: "Periksa track record event corporate mereka", text: "Tanyakan berapa persen event di venue ini adalah corporate vs wedding/personal. Venue yang dominan wedding butuh brief lebih intensif untuk deliver corporate vibe yang proper." },
+      ],
+    },
   },
 };
 

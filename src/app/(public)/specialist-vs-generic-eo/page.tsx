@@ -16,7 +16,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Corporate Specialist vs Generic EO/Travel Agent",
+  title: "EO Corporate Bandung: Specialist vs Generic — 12 Dimensi Perbandingan",
   description:
     "Apa bedanya corporate event specialist vs generic EO atau travel agent? 12 dimensi comparison: discovery process, accountability, risk management, pricing transparency, post-event reporting. Untuk HR yang mau pick smart.",
   alternates: { canonical: `${SITE.url}/specialist-vs-generic-eo` },
