@@ -6,7 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
-import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
 
 const SLUG = "/executive-offsite-bandung";
 const URL = `${SITE.url}${SLUG}`;
@@ -104,7 +104,18 @@ export default function ExecutiveOffsiteBandungPage() {
       description: "Discreet C-suite executive offsite untuk strategy session di Bandung & Jawa Barat. Premium venue + certified facilitator.",
       priceRange: "Rp 6.500.000 - Rp 12.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Plan Executive Offsite C-Suite yang Efektif di Bandung",
+      description: "5 langkah untuk merencanakan executive offsite yang produktif dan discreet — dari brief kerahasiaan hingga action items pasca-sesi.",
+      steps: [
+        { name: "Establish NDA & Brief Kerahasiaan", text: "Sebelum briefing apapun, tandatangani NDA dengan vendor. Tentukan scope kerahasiaan: nama peserta, topik strategis, venue, dan output sesi. Vendor specialist siap untuk requirement ini dari hari pertama." },
+        { name: "Definisikan Tujuan Strategis Sesi", text: "Articulate deliverable konkret dari sesi: strategic decision yang harus diambil, alignment issue yang harus diselesaikan, atau leadership agenda yang perlu di-calibrate. Tujuan yang jelas menentukan agenda, fasilitator, dan durasi optimal." },
+        { name: "Seleksi Venue Private yang Sesuai", text: "Executive offsite butuh venue yang menjamin privasi: private mountain estate, heritage villa eksklusif, atau resort premium dengan dedicated meeting space. Kapasitas ideal 8-25 pax, dengan ruang breakout terpisah untuk sub-session." },
+        { name: "Siapkan Fasilitator Strategy Senior", text: "Fasilitator untuk C-suite bukan event MC biasa — butuh background konsultansi strategis atau coaching senior (ICF PCC/MCC). Mereka harus mampu hold conversation di level Board dan navigate political dynamic antar pemimpin." },
+        { name: "Conduct Sesi + Capture Action Items", text: "Selama sesi: capture keputusan dan action items secara real-time. Post-sesi: vendor kirim summary tertulis (anonymous/coded sesuai NDA) dan action item tracker. Follow-up 30 hari kemudian untuk check progress implementation." },
+      ],
+    })
   );
 
   return (

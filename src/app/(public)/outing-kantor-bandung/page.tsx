@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/outing-kantor-bandung";
@@ -226,7 +227,18 @@ export default function OutingKantorBandungPage() {
         "Custom-designed corporate outing untuk perusahaan di Bandung & Jawa Barat — annual gathering, team building, employee bonding.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merencanakan Outing Kantor di Bandung",
+      description: "5 langkah dari awal brief hingga eksekusi outing kantor yang outcome-driven di Bandung.",
+      steps: [
+        { name: "Tentukan Objective & Skala Pax", text: "Artikulasikan tujuan event: bonding casual, engagement boost, cultural reinforcement, atau strategic alignment. Hitung estimasi jumlah peserta — ini menentukan venue capacity dan format yang tersedia." },
+        { name: "Pilih Tier Budget yang Sesuai", text: "Match budget ke tier yang fit: Foundation Rp 1.5–2.5 jt/pax (casual refresh 30-80 pax), Elevated Rp 2.5–4.5 jt/pax (annual outing 100-300 pax), Signature Rp 4.5–7 jt/pax (marquee event), Bespoke Rp 7 jt+ (C-suite/executive)." },
+        { name: "Seleksi Venue & Lock Tanggal", text: "Pilih venue berdasarkan objective dan audience. Lembang untuk intimate bonding 50-300 pax, Ciwidey untuk adventure, Bandung kota untuk hybrid/MICE. Booking venue minimal 4-6 minggu sebelum tanggal pelaksanaan." },
+        { name: "Rancang Program & Rundown", text: "Desain activity mix yang seimbang — tidak back-to-back high intensity, accommodate kebutuhan dietary dan religi, sertakan buffer time. Rundown harus include waktu registrasi, makan, ibadah, dan wrap-up." },
+        { name: "Brief Vendor + Finalkan Proposal", text: "Minta proposal dengan line-item breakdown dari vendor. Konfirmasi: dedicated senior planner, risk register, dan post-event report. Deposit 30-50% setelah tanda tangan kontrak untuk lock date dan vendor." },
+      ],
+    })
   );
 
   return (
