@@ -6,6 +6,7 @@ import {
   updateServicesCopy,
   updateWhyCopy,
   updateTrustCopy,
+  updateYouTubeCopy,
   updateLeadCopy,
   updateCtaCopy,
 } from "@/lib/actions/homepage-copy-actions";
@@ -206,6 +207,29 @@ export default async function HomepageCopyPage() {
               name: "home.trust.sub",
               label: "Sub-teks",
               default: g("home.trust.sub", "Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka"),
+            },
+          ]}
+        />
+
+        <AppSettingsForm
+          title="YouTube section"
+          description="Section video dari channel YouTube (hanya muncul jika ada video aktif di admin Videos)."
+          action={updateYouTubeCopy}
+          fields={[
+            {
+              name: "home.youtube.eyebrow",
+              label: "Eyebrow label",
+              default: g("home.youtube.eyebrow", "Konten terbaru"),
+            },
+            {
+              name: "home.youtube.headline",
+              label: "Headline",
+              default: g("home.youtube.headline", "Dari channel kami."),
+            },
+            {
+              name: "home.youtube.channel_label",
+              label: "Label tombol channel",
+              default: g("home.youtube.channel_label", "@7summitstravel"),
             },
           ]}
         />
