@@ -14,13 +14,14 @@ import {
   localBusinessSchema,
   articleSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const PATH = "/b2b-corporate-event-specialist-bandung";
 const URL = `${SITE.url}${PATH}`;
-const TITLE = "B2B Corporate Event Specialist Bandung";
+const TITLE = "B2B Corporate Event Specialist Bandung 2026 — 7 Kriteria Vendor untuk HR Procurement";
 const DESCRIPTION =
-  "Specialist B2B corporate event di Bandung — fokus eksekusi outing, team building, dan executive offsite untuk perusahaan, bukan event personal. 7 kriteria seleksi vendor untuk HR procurement.";
+  "Pilih vendor B2B corporate event Bandung yang benar: 7 kriteria wajib untuk HR procurement — discovery brief, line-item proposal, risk register, legal entity, dedicated PM, post-event report, NDA-ready. TourBandung Corporate, 400+ events sejak 2018.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -124,7 +125,20 @@ export default function B2BSpecialistPage() {
       dateModified: "2026-05-15",
       slug: PATH,
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Vendor B2B Corporate Event Bandung yang Tepat",
+      description: "7 kriteria yang harus dicek HR/procurement sebelum sign kontrak vendor corporate event — dari discovery brief hingga NDA-readiness.",
+      steps: [
+        { name: "Pastikan Ada Discovery Brief Minimum 60 Menit", text: "Vendor B2B specialist mulai dengan briefing call mendalam untuk menggali objective bisnis — bukan langsung kirim paket dari katalog. Kalau quote keluar tanpa discovery, itu travel agent bukan corporate planner." },
+        { name: "Minta Line-Item Cost Breakdown", text: "Proposal harus merinci per komponen: venue, F&B, transport, activity, PM fee, contingency. Lump-sum quote tidak bisa di-justify ke finance dan berisiko hidden cost." },
+        { name: "Verifikasi Risk Register + Safety SOP", text: "Untuk grup 50+ pax, vendor wajib punya risk register (medical emergency, cuaca, transport) dan safety SOP per activity. Tanpa ini, perusahaan yang menanggung risiko jika ada insiden." },
+        { name: "Cek Legal Entity + NPWP Vendor", text: "B2B procurement butuh invoice resmi dengan NPWP untuk proses PO ke finance. Vendor freelance atau individu tidak bisa di-PO oleh perusahaan besar — cek status legal sebelum lanjut." },
+        { name: "Konfirmasi Dedicated Senior Planner", text: "Briefing sampai eksekusi harus dipegang 1 senior planner yang sama — bukan briefing dengan sales A lalu eksekusi dengan crew B yang tidak tahu konteks. Ini sumber #1 miscommunication di event corporate." },
+        { name: "Minta Post-Event Report Template", text: "Vendor specialist kirim post-event report: attendance, NPS, satisfaction survey, foto/video bank, cost reconciliation. Ini yang dibutuhkan saat report ke C-level atau Board." },
+        { name: "Pastikan Siap Tanda Tangan NDA", text: "Untuk executive offsite atau strategic retreat, vendor harus siap NDA. Komunikasi tim event tidak boleh leak materi confidential. Vendor generik biasanya tidak terbiasa dengan requirement ini." },
+      ],
+    })
   );
 
   return (
@@ -177,6 +191,38 @@ export default function B2BSpecialistPage() {
                 contract — supaya event-nya lancar, accountable, dan nggak
                 ada surprise budget waktu rekonsiliasi.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Red flags */}
+        <section className="py-12 md:py-16 border-b border-divider bg-paper">
+          <div className="container-1280">
+            <div className="max-w-3xl">
+              <span className="eyebrow-brand">Red flags — hindari vendor ini</span>
+              <h2 className="font-display mt-4 text-2xl md:text-3xl text-ink leading-tight">
+                8 tanda vendor bukan B2B specialist.
+              </h2>
+              <p className="mt-4 text-base text-slate leading-relaxed">
+                Vendor yang tidak cocok untuk corporate procurement biasanya menunjukkan pola ini sejak interaksi pertama:
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Quote keluar dalam 5 menit tanpa discovery call",
+                  "Proposal lump-sum tanpa breakdown per komponen",
+                  "Tidak punya NPWP / legal entity terdaftar",
+                  "PM berganti-ganti antara briefing dan eksekusi",
+                  "Tidak bisa kirim referensi klien korporat sebelumnya",
+                  "Tidak punya risk register atau safety SOP tertulis",
+                  "Tidak siap tanda tangan NDA untuk executive event",
+                  "Post-event hanya kirim foto — tanpa laporan metrics",
+                ].map((flag) => (
+                  <li key={flag} className="flex items-start gap-2.5 rounded-xl border border-red-100 bg-red-50/50 px-4 py-3 text-sm text-ink leading-relaxed">
+                    <span className="text-red-500 mt-0.5 flex-shrink-0">✕</span>
+                    <span>{flag}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

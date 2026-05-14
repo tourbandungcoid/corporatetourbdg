@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/team-building-bandung";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Team Building Bandung 2026: Methodology, 50+ Activity, Vendor Recommended",
   description:
-    "Team building Bandung yang outcome-driven — bukan sekadar games. Methodology (Tuckman, DiSC, Belbin), 50+ activity catalog, range budget Rp 1,2–4 jt/pax, dan format outbound vs indoor vs hybrid. Free proposal 24 jam.",
+    "Team building Bandung outcome-driven — Tuckman, DiSC, Belbin methodology, 50+ activity catalog, Rp 1,2–4 jt/pax. Outbound vs indoor vs hybrid. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Team Building Bandung — Methodology + Activity Catalog 2026",
@@ -201,7 +202,18 @@ export default function TeamBuildingBandungPage() {
         "Outcome-driven team building dengan methodology framework (Tuckman, DiSC, Belbin) untuk perusahaan di Bandung & Jawa Barat.",
       priceRange: "Rp 1.200.000 - Rp 4.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Program Team Building yang Tepat di Bandung",
+      description: "5 langkah untuk mendesain program team building yang outcome-driven — dari diagnosa kebutuhan tim hingga pengukuran hasil.",
+      steps: [
+        { name: "Diagnosa Kebutuhan Tim", text: "Identifikasi gap tim saat ini: communication breakdown, trust deficit, cross-department friction, atau leadership alignment. Output diagnosa ini menentukan framework dan aktivitas yang relevan." },
+        { name: "Pilih Methodology Framework", text: "Match framework ke tujuan: Tuckman model untuk tim baru (Forming→Storming→Norming→Performing), DiSC untuk personality awareness, Belbin untuk role optimization, atau custom hybrid untuk kebutuhan spesifik." },
+        { name: "Tentukan Format & Durasi", text: "Format bergantung pada objective: Half-day (3-4 jam) untuk departemen kecil, Full-day untuk annual outing dengan team building element, 2-3 hari untuk deep immersion cohort. Outdoor untuk energy tinggi, indoor untuk strategic workshop." },
+        { name: "Seleksi Vendor dengan Sertifikasi Fasilitator", text: "Pastikan vendor punya certified facilitator (minimal ICF ACC atau setara) — bukan crew outbound tanpa background organizational psychology. Minta portfolio case study dengan outcome metrics yang konkret." },
+        { name: "Ukur Outcome dengan Survey Pre & Post", text: "Kirim baseline survey 1 minggu sebelum event (eNPS, communication index, trust score). Ulangi 1 minggu setelah event. Compare delta — ini data yang bisa di-present ke C-level sebagai bukti ROI program." },
+      ],
+    })
   );
 
   return (
@@ -665,9 +677,9 @@ export default function TeamBuildingBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — bukan generic EO"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
-                ["/glamping-corporate-bandung", "Glamping Corporate", "Unique outdoor experience"],
-                ["/villa-gathering-bandung", "Villa Gathering", "12 villa premium 50-300 pax"],
+                ["/mice-organizer-bandung", "MICE Organizer Bandung", "Meeting, conference, hybrid event"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

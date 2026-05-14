@@ -6,7 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
-import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
 
 const SLUG = "/company-retreat-bandung";
 const URL = `${SITE.url}${SLUG}`;
@@ -14,7 +14,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Company Retreat Bandung 2026: Strategic Multi-Day untuk Deep Work & Cultural Reset",
   description:
-    "Company retreat Bandung untuk strategic planning, cultural reset, atau post-merger integration. 2D1N–5D4N premium retreat dengan venue private + facilitator senior. Range Rp 3,5–8 jt/pax. Free proposal 24 jam.",
+    "Company retreat Bandung — strategic planning, cultural reset, post-merger integration. Venue private exclusive, facilitator senior bersertifikat. Rp 3,5–8 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Company Retreat Bandung — Strategic Multi-Day Premium Retreat",
@@ -103,7 +103,18 @@ export default function CompanyRetreatBandungPage() {
       description: "Premium multi-day strategic retreat untuk perusahaan di Bandung & Jawa Barat.",
       priceRange: "Rp 3.500.000 - Rp 8.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merencanakan Company Retreat di Bandung",
+      description: "5 langkah untuk merancang company retreat multi-hari yang produktif dan impactful di Bandung & Jawa Barat.",
+      steps: [
+        { name: "Tentukan Tujuan & Format Retreat", text: "Definisikan apakah retreat ini untuk strategic planning, cultural reset, leadership development, atau team cohesion. Format menentukan segalanya: 2D1N focus sprint vs 3D2N immersive retreat punya struktur program yang sangat berbeda." },
+        { name: "Pilih Venue yang Mendukung Deep Work", text: "Retreat butuh venue yang mengisolasi peserta dari distraksi kantor: no-signal area atau quiet zone policy. Pilihan Bandung: eco-lodge Pangalengan, heritage villa Lembang, atau private resort Ciwidey. Pastikan ada ruang pleno + ruang breakout terpisah." },
+        { name: "Rancang Agenda Kerja yang Seimbang", text: "Mix sesi strategis (60-70% waktu) dengan active recovery (20%) dan social bonding (10-20%). Hindari agenda meeting biasa yang dipindahkan ke luar kota — retreat harus punya format yang berbeda dari meeting rutin." },
+        { name: "Siapkan Fasilitator untuk Sesi Kritis", text: "Sesi yang perlu keputusan penting atau membahas konflik tim butuh fasilitator eksternal yang netral — bukan pemimpin internal yang juga peserta diskusi. Fasilitator certified membantu navigate dynamic antar pemimpin lebih efektif." },
+        { name: "Capture Output & Assign Action Items", text: "Setiap sesi harus berakhir dengan documented decisions dan assigned action items dengan owner + deadline. Post-retreat, kirim summary dalam 48 jam dan jadwalkan follow-up review 30 hari kemudian untuk track implementasi." },
+      ],
+    })
   );
 
   return (
@@ -293,7 +304,7 @@ export default function CompanyRetreatBandungPage() {
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {[["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"], ["/leadership-retreat-jawa-barat", "Leadership Retreat", "Senior leadership development"], ["/corporate-gathering-bandung", "Corporate Gathering", "Annual formal event"]].map(([href, title, desc]) => (
+              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk retreat perusahaan"], ["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"]].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
               ))}
             </div>

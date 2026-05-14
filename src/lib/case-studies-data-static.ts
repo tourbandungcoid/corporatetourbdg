@@ -379,6 +379,122 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
     },
     relatedServiceSlugs: ["leadership-camp", "executive-offsite", "corporate-retreat"],
   },
+
+  "mice-conference-fintech-500pax": {
+    slug: "mice-conference-fintech-500pax",
+    industry: "fintech",
+    industryLabel: "Fintech · MICE Conference",
+    outcomeHeadline:
+      "Annual dealer conference 500 pax fintech — full hybrid production, zero technical glitch.",
+    shortDescription:
+      "Fintech platform Indonesia annual dealer & partner conference 500 pax. 2D1N full hybrid — live streaming ke 800 remote attendees, 5 breakout, awarding gala.",
+    metaDescription:
+      "Case study MICE conference fintech 500 pax Bandung — hybrid production, live streaming 800 remote attendees, 5 breakout room, awarding gala. Zero technical issue.",
+    heroImage: IMAGES.caseStudyLarge,
+    gallery: [IMAGES.caseStudyLarge, IMAGES.heroMain],
+    pax: "500 pax onsite + 800 remote",
+    duration: "2D1N",
+    location: "Padma Hotel Lembang",
+    budgetTier: "Premium",
+    serviceSlug: "mice",
+    challenge: [
+      "Fintech yang berkembang pesat perlu annual dealer conference untuk align 500 dealer onsite + 800 remote attendees di 12 kota. Format conference hybrid pertama kali mereka — belum ada template internal.",
+      "Demand teknis tinggi: 5 track breakout paralel, live streaming multi-channel (YouTube + Zoom + in-house platform), simultaneous translation untuk 1 sesi dengan pembicara asing.",
+      "Awarding gala malam hari untuk 150 dealer terpilih — recognition ceremony yang harus premium, bukan sekadar foto panggung.",
+      "Timeline 8 minggu dari brief ke event. Budget tight relative ke scope.",
+    ],
+    approach: [
+      "Dedicated technical director assigned untuk scope seluruh AV + streaming infrastructure. Pre-event site survey 2x di Padma Hotel untuk map WiFi coverage + backup fiber planning.",
+      "Design 5 breakout room setup yang bisa streaming independent — masing-masing dengan encoder, mic system, dan operator dedicated.",
+      "Hybrid platform recommendation: custom Airmeet setup untuk remote attendees dengan Q&A, polling, dan networking feature. Training remote attendees H-3.",
+      "Awarding night design: custom LED backdrop dengan fintech branding, trophy design 150 pcs custom, MC bilingual (Indonesia + English), plus video bumper per kategori award (12 kategori).",
+    ],
+    execution: [
+      "D-1 (setup day): tim 22 orang — AV, dekorasi, catering coordination, streaming test, dan rehearsal MC. Full run-through 19.00-21.00 malam.",
+      "Day 1 pagi: Registration onsite + remote login check. Keynote opening CEO — live ke semua channel simultaneously. Q1 zero technical issue.",
+      "Day 1 siang: 5 track parallel breakout (Dealer Growth, Product Update, Risk Management, Operations Excellence, Partner Ecosystem). 100 pax per track onsite + remote.",
+      "Day 1 malam: Awarding gala dinner. 150 dealer terpilih + seluruh peserta onsite. Ceremonial hybrid — remote attendees bisa lihat live + react via platform.",
+      "Day 2: Plenary session — Q&A live + product roadmap. Closing. Networking lunch. Checkout.",
+    ],
+    outcome: [
+      "Streaming reliability: 99.1% uptime selama 14 jam streaming — zero major technical glitch meski WiFi venue di-stress test 1.300 concurrent device.",
+      "Remote attendance rate: 88% dari 800 registered remote attendees aktif sepanjang conference (benchmark industri: 60-70%).",
+      "Awarding completion: 150 award di-deliver on-time dengan ceremony rata-rata 2 menit/pemenang — smooth, tidak bertele-tele.",
+      "Client NPS: 9.2/10 dari post-event survey internal client. Immediate re-book untuk conference tahun berikutnya.",
+    ],
+    metrics: [
+      { label: "Onsite pax", value: "500" },
+      { label: "Remote attendees", value: "800" },
+      { label: "Streaming uptime", value: "99.1%" },
+      { label: "Client NPS", value: "9.2/10" },
+    ],
+    testimonial: {
+      quote:
+        "Ini pertama kali kami hybrid conference skala ini. Yang bikin tenang: ada technical director dedicated yang bisa kami telpon kapan saja. Tidak ada 'akan kami cek dulu' — semua ada jawaban.",
+      name: "Rangga Putra",
+      role: "Head of Dealer Engagement",
+      company: "Fintech Platform Indonesia",
+    },
+    relatedServiceSlugs: ["mice", "annual-company-trip", "company-gathering"],
+  },
+
+  "incentive-trip-telco-bali-80pax": {
+    slug: "incentive-trip-telco-bali-80pax",
+    industry: "telco",
+    industryLabel: "Telco · Incentive Trip",
+    outcomeHeadline:
+      "President's Club incentive trip Bali 80 top performer — repeat quota 94% tahun berikutnya.",
+    shortDescription:
+      "Telco nasional annual President's Club program untuk 80 top performer sales. 4D3N fully bespoke Bali — private villa, recognition ceremony, curated experience, concierge service.",
+    metaDescription:
+      "Case study incentive trip Bali 80 top performer telco — 4D3N President's Club program. Private villa, recognition ceremony, curated experience. Repeat quota 94% tahun berikutnya.",
+    heroImage: IMAGES.packageGlamping,
+    gallery: [IMAGES.packageGlamping, IMAGES.caseStudyExecutive],
+    pax: "80 pax",
+    duration: "4D3N",
+    location: "Bali (private villa cluster)",
+    budgetTier: "Bespoke",
+    serviceSlug: "incentive-trip",
+    challenge: [
+      "Telco terbesar Indonesia punya President's Club program sejak 2019 — tapi 2 tahun terakhir satisfaction peserta turun. Feedback: 'terasa seperti tour biasa, tidak ada yang special.'",
+      "Target 80 top performer paling high-value di organisasi. Mereka bisa compare dengan program competitor. Kalau tidak memorable, attrition risk ke telco lain tinggi.",
+      "Budget ada, tapi harus terasa exclusive dan personalised — bukan sekadar 4D3N Bali generic.",
+      "Recognition ceremony harus meaningful, bukan sekedar foto naik panggung.",
+    ],
+    approach: [
+      "Pre-trip profiling: 80 peserta diminta mengisi micro-survey (adventure preference, dietary, personal interest, dan 1 aspiration experience yang belum pernah dicoba). Data ini jadi basis personalisasi.",
+      "Venue: private villa cluster di Canggu — 8 villa yang connected, exclusive untuk grup ini saja. Zero shared space dengan tamu lain.",
+      "Experience design: bukan paket Bali generic (Tanah Lot, Uluwatu, Ubud). Setiap hari punya curated experience: hari 1 welcome ceremony sunset Jimbaran, hari 2 private cooking class dengan chef Bali Aga, hari 3 optional track (surf lesson / private golf / wellness retreat).",
+      "Recognition ceremony: malam day 3 — formal awards dengan storytelling per pemenang (bukan sekadar bacain nama). Video tribute 90 detik per winner kategori. Trophy custom dengan nama + personal achievement.",
+    ],
+    execution: [
+      "Airport meet-and-greet dengan concierge dedicated — tidak ada queue atau uncertainty untuk peserta.",
+      "Day 1: Check-in private villa, welcome cocktail sunset di Jimbaran private beach, dinner seafood premium, opening ceremony informal oleh CEO yang hadir langsung.",
+      "Day 2: Morning yoga (opt-in), breakfast di villa, private cooking class Balinese cuisine, afternoon leisure, spa optional.",
+      "Day 3: Optional tracks pagi (surfing di Canggu, private golf di Nirwana, atau wellness program). Siang: leisure + persiapan gala malam. Malam: President's Club Recognition Ceremony — awarding formal, standing ovation tradition, photo book per winner.",
+      "Day 4: Breakfast farewell di villa, personalized gift box per peserta (curated based on pre-trip profiling), airport transfer.",
+    ],
+    outcome: [
+      "Post-trip satisfaction: 97/100 average score — tertinggi sepanjang history President's Club program.",
+      "Repeat quota achievement: tahun berikutnya, 94% dari 80 peserta achieve quota untuk qualify ke program lagi (vs 71% rate sebelum program ini).",
+      "Internal referral: 12 peserta actively recruit talent yang mereka tahu ke perusahaan dengan menyebut 'President's Club' sebagai benefit nyata.",
+      "CEO endorsement: CEO perusahaan minta program ini di-replicate untuk regional dealer incentive program.",
+    ],
+    metrics: [
+      { label: "Peserta", value: "80" },
+      { label: "Satisfaction score", value: "97/100" },
+      { label: "Repeat quota rate", value: "94%" },
+      { label: "Internal referral", value: "12" },
+    ],
+    testimonial: {
+      quote:
+        "Tahun lalu peserta saya bilang 'ya seru lah Bali'. Tahun ini mereka bilang 'itu program terbaik yang pernah aku dapat dari perusahaan manapun.' Itu perbedaannya.",
+      name: "Hendra Kurniawan",
+      role: "VP Sales Excellence",
+      company: "Telco Nasional Indonesia",
+    },
+    relatedServiceSlugs: ["incentive-trip", "executive-offsite", "company-gathering"],
+  },
 };
 
 export function getAllCaseStudySlugsStatic(): string[] {

@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/employee-gathering-bandung";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Employee Gathering Bandung 2026: Engagement & Retention Event untuk HR",
   description:
-    "Employee gathering Bandung yang impact ke engagement & retention — bukan refresh casual biasa. Range Rp 1,5–3,5 jt/pax. Cross-generational design, ROI measurement framework, dan 5 format yang terbukti efektif untuk Indonesia B2B.",
+    "Employee gathering Bandung untuk engagement & retention — bukan refresh biasa. Rp 1,5–3,5 jt/pax, cross-generational design, ROI framework. ⭐ 4.9/5 · 400+ events · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:
@@ -168,7 +169,18 @@ export default function EmployeeGatheringBandungPage() {
         "Employee gathering corporate untuk engagement, bonding, dan retention impact di Bandung & Jawa Barat.",
       priceRange: "Rp 1.500.000 - Rp 3.500.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Organise Employee Gathering yang Inklusif di Bandung",
+      description: "5 langkah untuk merencanakan employee gathering yang engaging dan inklusif — dari mapping kebutuhan hingga measurement post-event.",
+      steps: [
+        { name: "Mapping Kebutuhan & Profil Peserta", text: "Kumpulkan data demografis: rentang usia, kebutuhan dietary, mobilitas, peserta yang bawa keluarga (family day), dan first-timer vs veteran. Employee gathering sering mencakup diverse audience yang butuh parallel track atau activity dengan difficulty level berbeda." },
+        { name: "Tentukan Format: Company Day vs Multi-Hari", text: "1-Day gathering (08:00-21:00) cocok untuk 200-1.000 pax dengan agenda padat. 2D1N gathering cocok untuk bonding yang lebih dalam dengan overnight stay. Family day format perlu kid-friendly activities dan family-safe venue." },
+        { name: "Desain Program yang Representatif", text: "Program harus inklusif lintas divisi dan level: game yang leveling hierarchy (semua setara), activity yang tidak diskriminatif secara fisik, dan recognition moment yang menyentuh semua kontributor — bukan hanya top performer." },
+        { name: "Koordinasi Logistik Skala Besar", text: "Untuk 200+ pax: transport shuttle dengan departure cluster per area domisili, registration system dengan barcode, dedicated F&B station berlabel dietary (halal, vegetarian, alergen), dan medical standby onsite." },
+        { name: "Survey Post-Event untuk Data HR", text: "Kirim engagement survey dalam 3 hari setelah gathering — capture: kepuasan keseluruhan (NPS), program favorit, saran perbaikan, dan retention intent. Data ini menjadi baseline untuk justify budget gathering tahun berikutnya ke manajemen." },
+      ],
+    })
   );
 
   return (
@@ -569,9 +581,9 @@ export default function EmployeeGatheringBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — apa bedanya untuk employee event"],
+                ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performer perusahaan"],
                 ["/corporate-gathering-bandung", "Corporate Gathering", "Formal annual event production"],
-                ["/outing-kantor-bandung", "Outing Kantor", "Generic outing format"],
-                ["/team-building-bandung", "Team Building", "Outcome-driven activity catalog"],
               ].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5">
                   <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>

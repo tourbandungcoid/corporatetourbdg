@@ -6,7 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
-import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
 
 const SLUG = "/executive-offsite-bandung";
 const URL = `${SITE.url}${SLUG}`;
@@ -14,7 +14,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Executive Offsite Bandung 2026: Discreet C-Suite Strategy Session",
   description:
-    "Executive offsite Bandung untuk C-suite strategy session — discreet, premium, focused. 1D-2D1N format dengan venue private exclusive, NDA-bound staff, dan dedicated strategy facilitator. Range Rp 6,5-12 jt/pax untuk C-level 8-20 pax.",
+    "Executive offsite Bandung untuk C-suite strategy session — discreet, venue private exclusive, NDA-bound. Rp 6,5–12 jt/pax, 8–20 pax. ⭐ 4.9/5 · Proposal konfidensial dalam 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Executive Offsite Bandung — Premium C-Suite Strategy Session",
@@ -104,7 +104,18 @@ export default function ExecutiveOffsiteBandungPage() {
       description: "Discreet C-suite executive offsite untuk strategy session di Bandung & Jawa Barat. Premium venue + certified facilitator.",
       priceRange: "Rp 6.500.000 - Rp 12.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Plan Executive Offsite C-Suite yang Efektif di Bandung",
+      description: "5 langkah untuk merencanakan executive offsite yang produktif dan discreet — dari brief kerahasiaan hingga action items pasca-sesi.",
+      steps: [
+        { name: "Establish NDA & Brief Kerahasiaan", text: "Sebelum briefing apapun, tandatangani NDA dengan vendor. Tentukan scope kerahasiaan: nama peserta, topik strategis, venue, dan output sesi. Vendor specialist siap untuk requirement ini dari hari pertama." },
+        { name: "Definisikan Tujuan Strategis Sesi", text: "Articulate deliverable konkret dari sesi: strategic decision yang harus diambil, alignment issue yang harus diselesaikan, atau leadership agenda yang perlu di-calibrate. Tujuan yang jelas menentukan agenda, fasilitator, dan durasi optimal." },
+        { name: "Seleksi Venue Private yang Sesuai", text: "Executive offsite butuh venue yang menjamin privasi: private mountain estate, heritage villa eksklusif, atau resort premium dengan dedicated meeting space. Kapasitas ideal 8-25 pax, dengan ruang breakout terpisah untuk sub-session." },
+        { name: "Siapkan Fasilitator Strategy Senior", text: "Fasilitator untuk C-suite bukan event MC biasa — butuh background konsultansi strategis atau coaching senior (ICF PCC/MCC). Mereka harus mampu hold conversation di level Board dan navigate political dynamic antar pemimpin." },
+        { name: "Conduct Sesi + Capture Action Items", text: "Selama sesi: capture keputusan dan action items secara real-time. Post-sesi: vendor kirim summary tertulis (anonymous/coded sesuai NDA) dan action item tracker. Follow-up 30 hari kemudian untuk check progress implementation." },
+      ],
+    })
   );
 
   return (
@@ -284,7 +295,7 @@ export default function ExecutiveOffsiteBandungPage() {
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {[["/leadership-retreat-jawa-barat", "Leadership Retreat", "Development cohort 12-30 pax"], ["/company-retreat-bandung", "Company Retreat", "Strategic multi-day for broader team"], ["/corporate-gathering-bandung", "Corporate Gathering", "Annual formal event"]].map(([href, title, desc]) => (
+              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — key differentiator"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"], ["/leadership-retreat-jawa-barat", "Leadership Retreat", "Development cohort 12-30 pax"]].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
               ))}
             </div>

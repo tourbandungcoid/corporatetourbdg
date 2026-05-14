@@ -13,13 +13,13 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Hubungi ${SITE.name} — phone, email, address, dan office hours. Jl. Babakan Priangan I No.11C, Bandung 40255. Google rating 4.9.`,
+  title: "Hubungi TourBandung Corporate — Konsultasi & Brief Corporate Event Bandung",
+  description: `Hubungi ${SITE.name} untuk konsultasi corporate event Bandung — brief gratis 15 menit, proposal dalam 24 jam. WhatsApp, email, atau kunjungi kantor kami di Jl. Babakan Priangan I No.11C, Bandung 40255. Response avg 6 jam.`,
   alternates: { canonical: `${SITE.url}/contact` },
   openGraph: {
-    title: "Contact — TourBandung Corporate",
+    title: "Hubungi TourBandung Corporate — Brief & Konsultasi Corporate Event",
     description:
-      "Phone +62 811-2277-954 · hello@corporate.tourbandung.co.id · Jl. Babakan Priangan I No.11C, Bandung 40255 · Senin–Jumat 08:00–17:00 WIB.",
+      "WhatsApp +62 811-2277-954 · hello@corporate.tourbandung.co.id · Jl. Babakan Priangan I No.11C, Bandung 40255 · Senin–Jumat 08:00–17:00 WIB. Proposal dalam 24 jam.",
     url: `${SITE.url}/contact`,
     type: "website",
   },

@@ -2,9 +2,9 @@ import { PageHero } from "@/components/PageHero";
 import { RequestProposalForm } from "@/components/proposal/RequestProposalForm";
 
 export const metadata = {
-  title: "Request Proposal",
+  title: "Request Proposal Gratis — Corporate Outing & Gathering Bandung | TourBandung Corporate",
   description:
-    "Free custom corporate event proposal. 10 fields, 3 step — proposal lengkap di-email dalam 24 jam.",
+    "Request proposal gratis dalam 24 jam. 3 step, 5 menit — senior planner kami kirim custom proposal lengkap dengan breakdown line-item, venue rekomendasi, dan sample itinerary. No commitment.",
 };
 
 export default function RequestProposalPage() {

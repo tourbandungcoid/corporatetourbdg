@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/glamping-corporate-bandung";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Glamping Corporate Bandung 2026: Premium Outdoor Experience untuk Tim yang Beda",
   description:
-    "Glamping corporate Bandung — premium outdoor experience tanpa kompromi kenyamanan. Range Rp 2,5–5,5 jt/pax untuk 1D2N. Tenda safari premium, bonfire dinner, sunrise session. Untuk tim 30-80 pax yang mau differentiator dari hotel/villa.",
+    "Glamping corporate Bandung — tenda safari premium, bonfire dinner, sunrise reflection. Rp 2,5–5,5 jt/pax, 30–80 pax. Outdoor experience paling memorable untuk team bonding. ⭐ 4.9/5 · Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Glamping Corporate Bandung — Unique Outdoor Experience",
@@ -183,7 +184,18 @@ export default function GlampingCorporateBandungPage() {
         "Premium glamping corporate untuk team bonding intimate di Bandung & Lembang. Unique outdoor experience tanpa kompromi kenyamanan.",
       priceRange: "Rp 2.500.000 - Rp 6.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merencanakan Glamping Corporate di Bandung",
+      description: "5 langkah untuk mengorganisir glamping corporate yang premium dan memorable di Bandung & Lembang.",
+      steps: [
+        { name: "Pilih Site Glamping yang Tepat", text: "Site glamping corporate di Bandung tersedia di Lembang (view gunung, sejuk, 1.5-2 jam dari Jakarta), Pangalengan (lebih remote, danau, glamping tent premium), dan Ciwidey (dekat kawah putih, adventure feel). Pilih berdasarkan vibe yang ingin dibangun: cozy vs adventurous." },
+        { name: "Konfirmasi Standar Kenyamanan", text: "Glamping bukan camping — pastikan tent/cabin punya: kasur proper dengan bedding quality, listrik + charging port, kamar mandi private atau semi-private, dan Wi-Fi basic. Untuk C-suite atau premium event, pilih glamping dengan butler service dan gourmet catering." },
+        { name: "Rancang Program Malam Hari", text: "Malam hari adalah kekuatan unik glamping: bonfire session, stargazing (di area minim light pollution), outdoor dinner dengan live music acoustic, atau storytelling corporate values dalam suasana informal. Program malam sering jadi momen bonding terkuat dalam seluruh trip." },
+        { name: "Siapkan Contingency Cuaca", text: "Bandung area sangat rentan hujan — terutama Oktober-Maret. Pastikan venue punya backup area indoor (gazebo besar atau tent marquee) yang cukup menampung seluruh peserta. Vendor profesional akan sertakan weather contingency plan dalam proposal." },
+        { name: "Koordinasi Transport & Logistik Remote", text: "Site glamping sering di area yang tidak ramah kendaraan pribadi dalam jumlah banyak. Koordinasi shuttle dari titik kumpul (Jakarta atau Bandung kota) lebih efisien. Minta vendor sertakan logistics plan: parkir, baggage handling, dan medical access dari lokasi remote." },
+      ],
+    })
   );
 
   return (
@@ -680,9 +692,9 @@ export default function GlampingCorporateBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
-                ["/team-building-bandung", "Team Building", "Methodology + activity catalog"],
-                ["/villa-gathering-bandung", "Villa Gathering", "12 villa premium 50-300 pax"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk event outdoor"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

@@ -6,7 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
-import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
 
 const SLUG = "/leadership-retreat-jawa-barat";
 const URL = `${SITE.url}${SLUG}`;
@@ -14,7 +14,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Leadership Retreat Jawa Barat 2026: Senior Leadership Development Program",
   description:
-    "Leadership retreat Jawa Barat untuk senior management & C-suite development. 5 leadership framework (Servant, Adaptive, Situational, Transformational, Authentic), certified executive coach, dan venue private. Range Rp 5–9 jt/pax untuk 3D2N.",
+    "Leadership retreat Jawa Barat — 5 framework (Servant, Adaptive, Situational, Transformational, Authentic), certified executive coach, venue private. Rp 5–9 jt/pax. ⭐ 4.9/5 · Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Leadership Retreat Jawa Barat — Senior Leadership Development",
@@ -103,7 +103,18 @@ export default function LeadershipRetreatJawaBaratPage() {
       description: "Premium leadership development retreat untuk senior management dengan 5 framework dan certified executive coach.",
       priceRange: "Rp 5.000.000 - Rp 9.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merancang Leadership Retreat yang Impactful di Jawa Barat",
+      description: "5 langkah untuk mendesain leadership retreat yang menghasilkan keputusan strategis nyata dan alignment antar pemimpin senior.",
+      steps: [
+        { name: "Diagnosa Leadership Gap yang Ingin Diselesaikan", text: "Leadership retreat yang efektif dimulai dari diagnosa: apakah masalahnya alignment antar C-level, succession planning, culture gap pasca-merger, capability building untuk first-time manager, atau strategic direction yang belum tuntas? Setiap gap membutuhkan desain program yang berbeda." },
+        { name: "Pilih Venue yang Mendukung Deep Thinking", text: "Senior leader perlu environment yang benar-benar memutus mereka dari operasional harian. Pilih venue terpencil dengan sinyal terbatas: private estate pegunungan Jawa Barat, heritage villa eksklusif Lembang, atau eco-lodge Pangalengan. Venue yang tenang dan indah mendukung kualitas thinking yang lebih dalam." },
+        { name: "Rancang Agenda Kerja Substantif", text: "Leadership retreat bukan liburan senior — minimal 60% waktu harus diisi kerja substantif: strategic workshop, peer coaching session, atau decision-making facilitation. Sisanya social bonding dan recovery. Hindari agenda yang terlalu padat sehingga tidak ada ruang untuk diskusi organik yang sering paling produktif." },
+        { name: "Gunakan Fasilitator Eksternal yang Credible", text: "Fasilitator untuk grup senior management harus punya kredibilitas di hadapan mereka — biasanya berlatar konsultan strategi senior (BCG/McKinsey alumni), executive coach ICF PCC/MCC, atau praktisi industri yang respected. Facilitator internal tidak efektif karena political dynamic menghambat keterbukaan." },
+        { name: "Formalkan Output sebagai Komitmen Tertulis", text: "Setiap sesi harus berakhir dengan written commitments: keputusan yang diambil, action items dengan owner dan deadline, dan escalation path jika ada hambatan. Retreat yang berakhir tanpa dokumen komitmen formal berisiko menjadi 'nice conversation' tanpa follow-through." },
+      ],
+    })
   );
 
   return (
@@ -252,7 +263,7 @@ export default function LeadershipRetreatJawaBaratPage() {
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {[["/executive-offsite-bandung", "Executive Offsite", "C-suite strategic offsite"], ["/company-retreat-bandung", "Company Retreat", "Strategic multi-day deep work"], ["/team-building-bandung", "Team Building", "Methodology + activity catalog"]].map(([href, title, desc]) => (
+              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk leadership event"], ["/executive-offsite-bandung", "Executive Offsite", "C-suite strategic offsite"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"]].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
               ))}
             </div>

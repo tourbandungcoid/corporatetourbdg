@@ -21,14 +21,26 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  title:
+    "Corporate Outing & Gathering Bandung | TourBandung Corporate — 7Summits Travel",
+  description:
+    "Specialist B2B corporate outing, team building & executive offsite di Bandung. ⭐ 4.9/5 (105 Google Reviews) · 400+ events delivered · Proposal gratis dalam 24 jam. Hubungi kami sekarang.",
   alternates: { canonical: SITE.url },
   openGraph: {
     title:
-      "TourBandung Corporate — Premium Corporate Outing & Team Building Bandung",
+      "TourBandung Corporate — Corporate Outing & Gathering Bandung Specialist",
     description:
-      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 400+ events delivered. Free proposal dalam 24 jam.",
+      "400+ corporate events. 100+ perusahaan Indonesia. Specialist B2B — bukan generic EO. Proposal gratis dalam 24 jam.",
     url: SITE.url,
     type: "website",
+    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TourBandung Corporate — Corporate Outing & Gathering Bandung",
+    description:
+      "Specialist B2B corporate outing & team building Bandung. 400+ events · 4.9 ⭐ Google · Proposal 24 jam.",
+    images: [`${SITE.url}/opengraph-image`],
   },
 };
 

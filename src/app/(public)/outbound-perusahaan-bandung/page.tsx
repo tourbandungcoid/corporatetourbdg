@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/outbound-perusahaan-bandung";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Outbound Perusahaan Bandung 2026: 3 Tier Adventure, Safety Standards, dan Lokasi Outdoor Terbaik",
   description:
-    "Outbound perusahaan Bandung dengan 3-tier classification (Light/Medium/Extreme), safety standards lengkap (insurance, certified instructor, medical standby), dan 8 lokasi outdoor recommended. Range Rp 1,5-3,5 jt/pax. Free proposal 24 jam.",
+    "Outbound perusahaan Bandung — 3 tier adventure (Light/Medium/Extreme), safety certified, 8 lokasi outdoor, insurance peserta included. Rp 1,5–3,5 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Outbound Perusahaan Bandung — Adventure dengan Safety Standards",
@@ -172,7 +173,18 @@ export default function OutboundPerusahaanBandungPage() {
         "Outbound adventure outdoor untuk corporate dengan safety standards profesional di Bandung & Jawa Barat. 3-tier classification.",
       priceRange: "Rp 1.500.000 - Rp 4.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Program Outbound Perusahaan yang Aman di Bandung",
+      description: "5 langkah untuk memilih dan menjalankan outbound perusahaan yang fun sekaligus aman dan sesuai kondisi tim.",
+      steps: [
+        { name: "Klasifikasi Kondisi Fisik Peserta", text: "Minta peserta isi pre-event health form: kondisi kesehatan, keterbatasan fisik, obat rutin, dan riwayat cedera. Dari data ini, tentukan tier aktivitas yang appropriate — Tier 1 Light untuk mix audience, Tier 2 Medium untuk tim aktif, Tier 3 Intense untuk voluntary." },
+        { name: "Pilih Tier Outbound yang Sesuai", text: "Tier 1 Light (low-risk: flying fox pendek, water game, trekking ringan) untuk semua audience. Tier 2 Medium (rafting Grade 2-3, paintball, high ropes) untuk peserta sehat tanpa kontraindikasi. Tier 3 Intense (canyoning, extreme challenge) hanya untuk program khusus adventure." },
+        { name: "Verifikasi Safety SOP Vendor", text: "Minta vendor show: (1) sertifikasi instruktur per aktivitas, (2) rasio instruktur per peserta (minimal 1:10), (3) medical standby onsite, (4) protokol evakuasi, (5) checklist peralatan safety. Vendor tanpa dokumentasi ini adalah risiko liability bagi perusahaan." },
+        { name: "Rancang Rundown dengan Buffer Safety", text: "Jangan padatkan jadwal. Buffer 15-20 menit antar aktivitas untuk transisi, hydration stop, dan briefing safety. Peak energy activities (high intensity) di pagi hari; bonding reflective di sore hari setelah makan siang." },
+        { name: "Debrief & Capture Learning", text: "Setiap sesi outbound harus diakhiri dengan debrief 15-20 menit — hubungkan pengalaman lapangan dengan pesan team building yang relevan. Fasilitator harus bisa bridge: 'Gimana ini relate ke kerja kita sehari-hari?' Ini yang membedakan outbound meaningfully dari sekedar olahraga bersama." },
+      ],
+    })
   );
 
   return (
@@ -610,9 +622,9 @@ export default function OutboundPerusahaanBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — benefit vs generic EO"],
                 ["/team-building-bandung", "Team Building Bandung", "Indoor + outdoor methodology"],
-                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Casual format alternative"],
-                ["/glamping-corporate-bandung", "Glamping Corporate", "2D1N outdoor + accommodation"],
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "Lokasi terbaik untuk outbound + gathering"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

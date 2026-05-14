@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/corporate-gathering-bandung";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Corporate Gathering Bandung 2026: Annual Event Production untuk Perusahaan 100-800 Pax",
   description:
-    "Corporate gathering Bandung untuk annual event formal — awarding night, opening ceremony, dan multi-day program. Range Rp 3,5-7 jt/pax untuk 2D1N premium. Hotel ballroom rekomendasi, sample rundown, dan production checklist.",
+    "Corporate gathering Bandung 100–800 pax — awarding night, opening ceremony, gala dinner, Rp 3,5–7 jt/pax. 8 hotel ballroom rekomendasi, sample rundown 2D1N, production checklist. ⭐ 4.9/5 · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Corporate Gathering Bandung — Annual Event Production 2026",
@@ -156,7 +157,18 @@ export default function CorporateGatheringBandungPage() {
         "Premium annual corporate gathering dengan awarding ceremony, gala dinner, dan multi-day program di Bandung & Jawa Barat.",
       priceRange: "Rp 3.000.000 - Rp 7.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Organise Corporate Gathering di Bandung",
+      description: "5 langkah perencanaan corporate gathering skala besar di Bandung — dari penentuan skala event hingga post-event report.",
+      steps: [
+        { name: "Tentukan Skala & Format Event", text: "Definisikan: jumlah pax (50-2.000), format (gala dinner, awarding night, annual meeting + gathering, atau hybrid), dan elemen wajib (production, awarding, entertainment). Skala dan format ini menentukan venue type dan budget tier." },
+        { name: "Lock Venue & Tanggal", text: "Untuk 200+ pax, booking venue minimal 3-6 bulan sebelumnya. Hotel ballroom Bandung untuk indoor premium (kapasitas 200-1.500 pax). Villa cluster atau resort untuk format outdoor yang lebih intimate. Peak season (Q4, Lebaran) — booking 6 bulan ke depan." },
+        { name: "Rancang Rundown & Program", text: "Rundown gathering tipikal: registrasi + welcome coffee, opening ceremony, sesi pleno (company update, awarding), entertainment break, gala dinner, closing. Durasi 8-10 jam untuk 1-day full event, atau 3D2N untuk format multi-hari." },
+        { name: "Setup AV Production & Awarding Ceremony", text: "Untuk 200+ pax, AV production adalah investasi wajib: LED screen, sound system, lighting, MC professional. Awarding ceremony butuh rundown terpisah — trophies, certificate design, photography & videography coverage." },
+        { name: "Eksekusi + Post-Event Report", text: "On-site: dedicated event coordinator per 50 pax. Post-event: vendor specialist kirim report lengkap (attendance, NPS survey, foto/video bank, cost reconciliation, recommendation untuk event berikutnya) dalam 5-7 hari kerja." },
+      ],
+    })
   );
 
   return (
@@ -652,9 +664,9 @@ export default function CorporateGatheringBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
-                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Casual alternative untuk refresh"],
-                ["/villa-gathering-bandung", "Villa Gathering", "Private villa untuk gathering 50-300 pax"],
-                ["/team-building-bandung", "Team Building", "Activity catalog + methodology"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — kenapa ini matter untuk gathering"],
+                ["/mice-organizer-bandung", "MICE Organizer Bandung", "Conference, exhibition, hybrid event"],
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel & resort ballroom terbaik"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}
