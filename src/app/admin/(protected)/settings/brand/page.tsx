@@ -122,6 +122,14 @@ export default async function BrandSettingsPage() {
               default: b.logo_favicon_url ?? "",
               hint: "Browser tab icon (256x256 PNG/SVG)",
             },
+            {
+              name: "logo_height_nav",
+              label: "Logo height di navbar (px)",
+              type: "number",
+              default: String(b.logo_height_nav),
+              hint: "Ukuran tinggi logo di navbar. Min 24, max 120. Default: 48.",
+              placeholder: "48",
+            },
           ]}
         />
 

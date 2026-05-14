@@ -28,6 +28,7 @@ export type BrandSettings = {
   logo_primary_url: string | null;
   logo_dark_url: string | null;
   logo_favicon_url: string | null;
+  logo_height_nav: number;
   copy_overrides: Record<string, string>;
 };
 
@@ -47,6 +48,7 @@ const FALLBACK: BrandSettings = {
   logo_primary_url: null,
   logo_dark_url: null,
   logo_favicon_url: null,
+  logo_height_nav: 48,
   copy_overrides: {},
 };
 
@@ -75,6 +77,7 @@ export const getBrandSettings = cache(async (): Promise<BrandSettings> => {
       logo_primary_url: data.logo_primary_url ?? null,
       logo_dark_url: data.logo_dark_url ?? null,
       logo_favicon_url: data.logo_favicon_url ?? null,
+      logo_height_nav: typeof data.logo_height_nav === "number" ? data.logo_height_nav : 48,
       copy_overrides:
         (data.copy_overrides as Record<string, string> | null) ?? {},
     };

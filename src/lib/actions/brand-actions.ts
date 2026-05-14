@@ -38,6 +38,7 @@ const logoSchema = z.object({
   logo_primary_url: z.string().url().or(z.literal("")),
   logo_dark_url: z.string().url().or(z.literal("")),
   logo_favicon_url: z.string().url().or(z.literal("")),
+  logo_height_nav: z.coerce.number().int().min(24).max(120).default(48),
 });
 
 const copySchema = z.object({
@@ -113,12 +114,12 @@ export async function updateBrandLogos(formData: FormData): Promise<BrandActionR
       message: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; "),
     };
   }
-  // Convert empty strings → null so fallback kicks in
   return updateBrandRow(
     {
       logo_primary_url: parsed.data.logo_primary_url || null,
       logo_dark_url: parsed.data.logo_dark_url || null,
       logo_favicon_url: parsed.data.logo_favicon_url || null,
+      logo_height_nav: parsed.data.logo_height_nav,
     },
     profile.id
   );
