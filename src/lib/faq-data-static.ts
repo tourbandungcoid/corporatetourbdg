@@ -230,6 +230,16 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Vendor lokal Bandung: akses langsung venue (60+ partnership direct, no calo), pricing leverage, local knowledge (cuaca, traffic, dietary). Vendor luar kota nyambi Bandung: lebih dependent pada local supplier, less leverage. Untuk corporate outing di Bandung specifically, vendor specialist Bandung biasanya optimal.",
       },
+      {
+        question: "Apa tanda-tanda vendor EO corporate yang tidak profesional?",
+        answer:
+          "5 red flag: (1) Quote langsung tanpa discovery brief — tidak tahu kebutuhan Anda tapi sudah kasih harga. (2) Proposal tanpa breakdown line-item — hanya total harga. (3) Tidak ada PM dedicated — Anda deal dengan 3 orang berbeda. (4) Tidak bisa kasih referensi klien corporate. (5) Tidak ada kontrak force majeure atau cancellation policy yang jelas.",
+      },
+      {
+        question: "Event organizer corporate vs travel agent — bedanya apa untuk outing kantor?",
+        answer:
+          "Travel agent: strong di ticketing, hotel booking, package tour retail. Lemah di: facilitation team building, custom program design, AV production, post-event report. EO corporate specialist: kuat di program design, facilitation, logistics coordination, pada-site execution, akuntabilitas. Untuk corporate outing dengan objective lebih dari 'pergi dan senang', gunakan EO specialist.",
+      },
     ],
   },
 
@@ -301,6 +311,26 @@ const CATEGORIES: Record<string, FaqCategory> = {
         question: "Format incentive trip untuk top sales performers?",
         answer:
           "2D1N atau 3D2N premium tier. Premium accommodation (villa private atau resort 5-star), F&B fine-dining, exclusive activities (private tour, premium adventure), personal recognition speech per peserta, custom branded merchandise, photographer profesional untuk memorable capture. Cost Rp 4.5-7 jt/pax.",
+      },
+      {
+        question: "Apa itu MICE dan kapan perusahaan butuh MICE organizer?",
+        answer:
+          "MICE = Meeting, Incentive, Conference, Exhibition. Perusahaan butuh MICE organizer (bukan EO biasa) ketika ada: (1) sesi formal dengan presentasi + AV production, (2) hybrid event dengan remote attendees, (3) conference dengan multiple speaker + breakout room, atau (4) exhibition dengan booth setup. Budget biasanya lebih tinggi dari outing karena AV production cost.",
+      },
+      {
+        question: "Berapa pax ideal untuk incentive trip yang impactful?",
+        answer:
+          "Sweet spot incentive trip yang masih terasa 'exclusive' adalah 15-80 pax. Di bawah 15 pax: sangat intimate, cost per pax tinggi tapi impact high. Di atas 100 pax: logistik kompleks, rasa exclusivity menurun. Untuk President's Club tier, 20-50 pax adalah optimal untuk personalisasi maximum.",
+      },
+      {
+        question: "Bagaimana contoh rundown corporate gathering 3D2N?",
+        answer:
+          "Day 1: 14:00 arrival + check-in, 16:00 opening ceremony, 19:00 welcome dinner. Day 2: 09:00 parallel activity tracks, 12:00 makan siang, 14:00 leisure + persiapan awarding, 19:00 awarding gala + entertainment. Day 3: 08:00 breakfast, 10:00 refleksi + foto grup, 12:00 makan siang, 13:30 keberangkatan.",
+      },
+      {
+        question: "Apa beda corporate outing dengan family day?",
+        answer:
+          "Corporate outing = employees only, fokus team bonding + professional development. Family day = employees + keluarga (pasangan, anak), fokus celebration + appreciation. Family day butuh pertimbangan khusus: area bermain anak, safety extra, food variety lebih luas, dan activity yang inclusive untuk semua umur. Budget family day biasanya 1.3-1.5x outing standar per kepala.",
       },
     ],
   },

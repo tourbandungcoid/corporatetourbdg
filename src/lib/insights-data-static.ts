@@ -733,6 +733,534 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "indoor-vs-outdoor-corporate-outing"],
   },
+
+  "contoh-rundown-outing-kantor-1-hari": {
+    slug: "contoh-rundown-outing-kantor-1-hari",
+    title: "Contoh Rundown Outing Kantor 1 Hari — Template Siap Pakai 2026",
+    excerpt:
+      "3 template rundown outing kantor 1 hari lengkap: casual bonding, team building fokus, dan premium 1-day experience. Dengan breakdown waktu, PIC, dan catatan logistik.",
+    metaDescription:
+      "Contoh rundown outing kantor 1 hari yang bisa langsung dipakai — 3 format: casual bonding, team building, premium experience. Lengkap dengan timing, logistik, dan tips vendor.",
+    category: "Planning Guide",
+    tldr: [
+      "Rundown 1-hari terbaik mulai 08.00 dan selesai maksimal 18.00 — hindari kelelahan dan kesan tidak profesional.",
+      "3 format: casual bonding (santai, cocok semua demografi), team building fokus (dengan facilitator), premium 1-day (makan siang fine dining + dokumentasi).",
+      "Buffer waktu 15-20 menit antar sesi adalah wajib — corporate outing selalu ada delay kecil di registration, F&B, dan perpindahan lokasi.",
+      "Brief vendor tentang rundown minimal H-7. Brief ulang H-1. On-site briefing H-0 pagi.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-13",
+    readTimeMin: 8,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Outing kantor 1 hari adalah format paling sering di-request HR dan GA Indonesia — cukup untuk recharge tim, tidak memakan budget besar, dan tidak butuh izin menginap dari management. Tapi tanpa rundown yang solid, 1 hari bisa terasa chaotic atau terlalu padat.",
+          "Kami share 3 template rundown yang kami pakai dari 400+ events — bisa langsung dipakai sebagai starting point atau dikustom sesuai kebutuhan.",
+        ],
+      },
+      {
+        heading: "Format A: Casual Bonding 1 Hari (Cocok untuk semua demografi)",
+        paragraphs: [
+          "Format paling flexible, cocok untuk departmental outing atau grup dengan demografi campuran. Emphasis pada koneksi informal, bukan structured activity.",
+        ],
+        numbered: [
+          "07.30 — Kumpul + keberangkatan dari titik meeting (bis chartered atau konvoi)",
+          "09.00 — Arrival venue, registrasi, welcome snack",
+          "09.30 — Ice breaker + welcome session (MC opens, quick intro games, energy setting)",
+          "10.15 — Activity sesi 1: outdoor game light atau indoor creative challenge (sesuai venue)",
+          "12.00 — Makan siang (Indonesian buffet, dietary accommodation)",
+          "13.00 — Break + free time (kolam renang, hammock area, foto)",
+          "14.00 — Activity sesi 2: team challenge atau bonding workshop (lebih substantive dari sesi 1)",
+          "15.30 — Coffee break + doorprize / games kecil",
+          "16.00 — Sharing & reflection circle (tiap tim share 1 highlight hari ini)",
+          "16.30 — Closing ceremony, foto grup, ucapan terima kasih dari pimpinan",
+          "17.00 — Persiapan pulang, loading bis",
+          "17.30 — Keberangkatan kembali",
+        ],
+        callout: {
+          label: "Tips",
+          text: "Jaga 'dead time' minimal. Transisi antar sesi harus smooth — MC atau fasilitator selalu on-stage untuk fill gap. Silent gap lebih dari 5 menit = peserta mulai buka HP.",
+        },
+      },
+      {
+        heading: "Format B: Team Building Fokus 1 Hari (dengan Certified Facilitator)",
+        paragraphs: [
+          "Format untuk objective spesifik — membangun trust, improve komunikasi antar departemen, atau post-merger alignment. Butuh certified facilitator, bukan MC biasa.",
+        ],
+        numbered: [
+          "07.30 — Kumpul + keberangkatan",
+          "09.00 — Arrival, welcome coffee, setup",
+          "09.30 — Opening facilitation: kontrak belajar, objective sharing (fasilitator lead)",
+          "10.00 — Modul 1: Trust-building exercise (blind walk, fall-and-catch, atau collaborative art)",
+          "11.00 — Debrief Modul 1: fasilitator extract insight, connect ke workplace reality",
+          "11.30 — Modul 2: Communication challenge (broken telephone advanced, atau LEGO® serious play)",
+          "12.30 — Makan siang",
+          "13.30 — Energizer post-lunch (high energy, 15 menit)",
+          "13.45 — Modul 3: Problem-solving challenge atau leadership simulation",
+          "15.00 — Debrief akhir: action commitment dari tiap tim",
+          "15.45 — Coffee break",
+          "16.00 — Closing: commitment wall, closing ritual, foto",
+          "16.30 — Persiapan pulang",
+        ],
+        callout: {
+          label: "Penting",
+          text: "Format ini tidak bisa dijalankan oleh MC biasa atau panitia internal. Butuh certified facilitator (ICF ACC minimum) yang bisa run debrief session yang meaningful. Tanpa ini, modul team building jadi game yang menyenangkan tapi tidak ada transfer ke workplace.",
+        },
+      },
+      {
+        heading: "Format C: Premium 1-Day Experience (Corporate + Fine Dining)",
+        paragraphs: [
+          "Format untuk perusahaan yang mau kesan premium dalam 1 hari — biasanya untuk tim kecil (20-60 pax) atau departemen senior. Budget Rp 3-5 jt/pax.",
+        ],
+        numbered: [
+          "08.00 — Penjemputan dengan transport premium (minibus executive atau convoy sedan)",
+          "10.00 — Arrival di private villa atau heritage property",
+          "10.15 — Welcome drink + property tour + photo moment",
+          "10.45 — Activity eksklusif: private cooking class, wine/coffee tasting, atau collaborative art session",
+          "12.30 — Fine dining lunch (4-5 course set menu atau premium live cooking buffet)",
+          "14.00 — Leisure time: kolam renang, nature walk, atau spa session add-on",
+          "15.30 — Afternoon tea + sharing session informal (dipimpin senior leader / CEO)",
+          "16.30 — Foto grup profesional (fotografer dedicated)",
+          "17.00 — Persiapan pulang, souvenir premium per peserta",
+          "17.30 — Keberangkatan dengan transport yang sama",
+        ],
+        callout: {
+          label: "Cocok untuk",
+          text: "Departemen C-suite atau senior manager, client appreciation event internal, atau milestone celebration tim kecil. Format ini tentang exclusivity dan curated experience — bukan tentang activity volume.",
+        },
+      },
+      {
+        heading: "Logistik yang sering terlupakan",
+        paragraphs: ["5 detail logistik yang panitia sering skip dan jadi masalah di hari H:"],
+        bullets: [
+          "Titik kumpul yang jelas dengan koordinat Maps + petugas standby untuk guide peserta yang nyasar",
+          "Handling peserta telat — siapa yang tunggu, berapa lama, kapan bis berangkat tanpa menunggu",
+          "Medical kit on-site + nama kontak darurat + puskesmas / klinik terdekat dari venue",
+          "Checkpoint dietary restriction — minta list dari HR H-7, serahkan ke catering H-3",
+          "Power bank komunal + charging station untuk peserta yang perlu dokumentasi / live story",
+        ],
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "indoor-vs-outdoor-corporate-outing"],
+  },
+
+  "checklist-vendor-event-organizer-corporate": {
+    slug: "checklist-vendor-event-organizer-corporate",
+    title: "Checklist 12 Poin Pilih Vendor EO Corporate — Jangan Sampai Salah Pilih",
+    excerpt:
+      "12 pertanyaan yang harus ditanyakan sebelum hire EO corporate. Dari portofolio sampai kontrak, dari team structure sampai contingency plan. Panduan untuk HR & GA.",
+    metaDescription:
+      "Checklist 12 poin untuk memilih vendor event organizer corporate yang tepat. Pertanyaan untuk portfolio, contract, team, contingency, dan post-event accountability. Untuk HR & GA Indonesia.",
+    category: "Vendor Selection",
+    tldr: [
+      "70% masalah event bukan dari force majeure — tapi dari vendor yang tidak punya sistem. Checklist ini bantu HR/GA screen vendor sebelum commit.",
+      "Red flag terbesar: vendor yang tidak mau discovery call atau langsung quote tanpa brief. Vendor profesional selalu demand brief dulu.",
+      "Kontrak harus cover: force majeure clause, payment schedule, cancellation policy, dan accountability post-event. Tanpa ini, Anda tidak punya proteksi.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-12",
+    readTimeMin: 7,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Pilih vendor EO corporate yang salah bisa sangat mahal — bukan hanya dari sisi budget, tapi juga dari sisi reputasi internal HR/GA yang responsible. Setelah handle 400+ events dan sering di-brief oleh perusahaan yang pernah kecewa dengan vendor sebelumnya, kami kompilasi 12 pertanyaan ini sebagai due diligence framework.",
+          "Gunakan checklist ini sebagai panduan saat Anda shortlist 2-3 vendor dan masuk ke discovery call.",
+        ],
+      },
+      {
+        heading: "Kategori 1: Portofolio & Pengalaman (4 poin)",
+        paragraphs: [],
+        numbered: [
+          "Berapa event corporate (bukan retail/wedding) yang sudah dihandle? Minta angka spesifik — bukan 'sudah banyak'. Benchmark: vendor yang serius punya 50+ corporate events documented.",
+          "Pernah handle event dengan skala dan industri yang mirip perusahaan Anda? Minta 2-3 case study konkret — bukan katalog foto. Case study harus include brief, approach, dan result.",
+          "Siapa klien korporat mereka? Tidak perlu nama perusahaan (NDA wajar), tapi industri dan skala pax bisa di-share. Vendor yang tidak bisa share industri klien = red flag.",
+          "Apakah ada referensi yang bisa dihubungi langsung? Vendor confident akan welcome ini. Vendor yang menghindar = meragukan.",
+        ],
+      },
+      {
+        heading: "Kategori 2: Tim & Struktur (3 poin)",
+        paragraphs: [],
+        numbered: [
+          "Siapa project manager yang akan assigned ke event Anda? Apakah PM ini experienced atau junior? Vendor besar sering pitch dengan senior account tapi execute dengan tim junior.",
+          "Berapa event yang dihandle PM Anda secara paralel? PM yang handle 5+ event bersamaan tidak bisa memberikan attention yang cukup untuk event Anda.",
+          "Apakah fasilitator / MC internal atau freelance? Freelance tidak selalu buruk, tapi pastikan ada SLA dan hubungan kerja yang jelas — bukan asal subkon last minute.",
+        ],
+        callout: {
+          label: "Green flag",
+          text: "Vendor yang upfront soal tim structure dan tidak oversell — 'PM kami handle 2-3 event sekaligus tapi briefing kami intensive' lebih honest dari 'Anda dapat full attention kami'.",
+        },
+      },
+      {
+        heading: "Kategori 3: Proses & Sistem (3 poin)",
+        paragraphs: [],
+        numbered: [
+          "Apakah ada discovery brief / intake form sebelum mereka quote? Vendor profesional tidak akan quote tanpa brief. Kalau vendor langsung kirim harga tanpa tanya objective, audience, dan constraints — itu template quote, bukan custom proposal.",
+          "Bagaimana sistem komunikasi mereka? Ada project management tool (Notion, Trello, ClickUp)? Ada designated contact di luar jam kerja untuk urgency on-site? Verbal commitment saja tidak cukup.",
+          "Apakah ada risk register atau contingency plan per event? Setiap event punya Plan A dan Plan B minimum. Kalau vendor belum pernah dengar istilah ini, itu signal mereka tidak punya sistem.",
+        ],
+      },
+      {
+        heading: "Kategori 4: Kontrak & Post-Event (2 poin)",
+        paragraphs: [],
+        numbered: [
+          "Apakah kontrak cover force majeure, cancellation policy, dan refund terms secara eksplisit? Baca kontrak sebelum tanda tangan. Klausul 'force majeure' harus define trigger yang jelas, bukan open-ended.",
+          "Apakah ada post-event report? Vendor profesional deliver post-event report dalam 5-7 hari kerja: execution summary, dokumentasi, feedback compilation, dan lessons learned. Ini penting untuk justify budget ke management dan brief vendor next year.",
+        ],
+        callout: {
+          label: "Red flags dalam kontrak",
+          text: "Non-refundable deposit 100% untuk semua skenario cancel. Klausul 'perubahan sewaktu-waktu tanpa pemberitahuan'. Tidak ada service level agreement yang tertulis. Tidak ada mekanisme dispute resolution.",
+        },
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system"],
+  },
+
+  "outing-lembang-vs-ciwidey": {
+    slug: "outing-lembang-vs-ciwidey",
+    title: "Outing Lembang vs Ciwidey — Mana yang Cocok untuk Tim Anda?",
+    excerpt:
+      "Dua destinasi outing terpopuler Bandung — Lembang dan Ciwidey — punya karakter sangat berbeda. Panduan komparasi venue, akses, aktivitas, dan harga per area.",
+    metaDescription:
+      "Lembang vs Ciwidey untuk outing kantor — perbandingan jarak, venue, aktivitas, dan harga. Panduan lengkap untuk HR & GA yang sedang memilih lokasi outing Bandung.",
+    category: "Destination Guide",
+    tldr: [
+      "Lembang: akses termudah dari Bandung kota (45-90 menit), venue paling beragam (villa, resort, hotel), cocok untuk grup campuran dan first-timer.",
+      "Ciwidey: lebih jauh (90-150 menit dari kota), tapi punya unique attraction (Kawah Putih, Situ Patenggang, kebun teh), cocok untuk grup yang cari experience berbeda.",
+      "Lembang = everyday corporate outing. Ciwidey = nature immersive experience. Pangalengan = quiet escape untuk retreat atau leadership.",
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-05-11",
+    readTimeMin: 9,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Dua destinasi yang paling sering di-shortlist HR dan GA untuk outing kantor Bandung: Lembang dan Ciwidey. Keduanya di Jawa Barat, keduanya dataran tinggi berhawa sejuk, tapi karakter event-nya sangat berbeda.",
+          "Artikel ini adalah comparative guide berdasarkan ratusan event yang sudah kami deliver di kedua area. Bukan untuk memenangkan satu area atas yang lain — tapi untuk membantu Anda match lokasi ke kebutuhan tim.",
+        ],
+      },
+      {
+        heading: "Lembang — Accessible Corporate Outing Hub",
+        paragraphs: [
+          "Lembang adalah destinasi default untuk corporate outing Bandung — bukan karena kurang inspiratif, tapi karena infrastrukturnya paling mature untuk corporate event.",
+        ],
+        bullets: [
+          "Jarak dari Bandung kota: 30-45 km, 45-90 menit (tergantung traffic). Bisa dijangkau dari Jakarta dalam 3-3.5 jam",
+          "Tipe venue: paling beragam di semua area Bandung — villa private, resort dengan ballroom, glamping farm, hotel butik, outdoor camp",
+          "Aktivitas: outbound, team building, flying fox, ATV, paintball, cooking class, glamping, cycling, berkuda",
+          "Kapasitas venue: dari 20 pax (villa intimate) sampai 500+ pax (resort ballroom)",
+          "Sinyal komunikasi: umumnya baik — penting untuk event yang butuh live streaming atau hybrid",
+          "Budget: paling flexible — dari Rp 1.5 jt/pax sampai Rp 7 jt+/pax tergantung venue",
+        ],
+        callout: {
+          label: "Best for",
+          text: "Annual outing standar 100-300 pax, team building 1 hari, gathering department, outing yang ada peserta dengan mobility issue (akses lebih mudah).",
+        },
+      },
+      {
+        heading: "Ciwidey — Nature Immersive Experience",
+        paragraphs: [
+          "Ciwidey menawarkan sesuatu yang Lembang tidak bisa replikasi: natural landmark yang dramatic — Kawah Putih (kawah belerang dengan pemandangan moonscape), Situ Patenggang (danau eksotis), kebun teh Malabar.",
+        ],
+        bullets: [
+          "Jarak dari Bandung kota: 45-65 km, 90-150 menit (akses lebih challenging, terutama dari Jakarta — 4+ jam)",
+          "Tipe venue: lebih terbatas — sebagian besar villa dan resort outdoor, glamping camp, eco-lodge. Ballroom besar jarang ada",
+          "Aktivitas: trekking ke Kawah Putih, camping, glamping, outbound alam, perahu Situ Patenggang, petik teh, offroad",
+          "Kapasitas venue: umumnya lebih kecil — optimal 30-150 pax. Di atas 200 pax logistik lebih kompleks",
+          "Sinyal komunikasi: bisa terbatas di beberapa titik — consider ini untuk event hybrid",
+          "Budget: mirip Lembang di range bawah, tapi opsi premium lebih terbatas",
+        ],
+        callout: {
+          label: "Best for",
+          text: "Tim yang sudah pernah outing ke Lembang dan mau experience berbeda. Grup 30-120 pax. Event dengan focus pada nature + adventure. Tim yang appreciate uniqueness atas convenience.",
+        },
+      },
+      {
+        heading: "Tabel Komparasi Cepat",
+        paragraphs: [
+          "Faktor-faktor decision utama side by side:",
+        ],
+        bullets: [
+          "Akses: Lembang lebih mudah ✓ | Ciwidey lebih jauh",
+          "Venue variety: Lembang lebih banyak ✓ | Ciwidey terbatas",
+          "Natural drama: Lembang standar | Ciwidey lebih memorable ✓",
+          "Grup besar (200+ pax): Lembang lebih feasible ✓ | Ciwidey challenging",
+          "Hybrid event: Lembang lebih aman ✓ | Ciwidey sinyal terbatas",
+          "Novelty factor: Lembang familiar | Ciwidey lebih fresh ✓",
+          "First-timer group: Lembang lebih safe ✓ | Ciwidey learning curve",
+        ],
+      },
+      {
+        heading: "Area lain yang perlu dipertimbangkan",
+        paragraphs: ["Dua area yang juga layak di-shortlist tergantung kebutuhan:"],
+        bullets: [
+          "Pangalengan: lebih remote dari Ciwidey, hawa dingin ekstrem, kebun teh Malabar. Cocok untuk retreat reflektif / leadership deep work. Bukan untuk grup yang cari fun aktif.",
+          "Subang: arah berbeda dari Bandung (utara), akses lebih mudah dari Jakarta Timur / Bekasi. Geothermal landscape unik (Tangkuban Perahu area). Cocok untuk mix sightseeing + outbound.",
+        ],
+      },
+      {
+        heading: "Decision framework — pilih berdasarkan ini",
+        paragraphs: ["3 pertanyaan untuk arrive di keputusan yang tepat:"],
+        numbered: [
+          "Berapa pax dan apakah ada peserta dengan keterbatasan mobilitas? → Lembang lebih safe untuk grup besar dan mobility issue.",
+          "Apakah tim sudah pernah outing ke Lembang dan mau sesuatu berbeda? → Ciwidey atau Pangalengan untuk novelty.",
+          "Apakah ada konten hybrid / live streaming yang penting? → Pilih Lembang — sinyal lebih reliable.",
+        ],
+      },
+    ],
+    relatedSlugs: ["bandung-outing-tier-system", "contoh-rundown-outing-kantor-1-hari", "indoor-vs-outdoor-corporate-outing"],
+  },
+
+  "mice-vs-corporate-outing-perbedaan": {
+    slug: "mice-vs-corporate-outing-perbedaan",
+    title: "MICE vs Corporate Outing — Beda Definisi, Beda Vendor, Beda Budget",
+    excerpt:
+      "Banyak perusahaan salah pilih format karena tidak tahu beda MICE dan corporate outing. Panduan definitif untuk HR & GA yang sedang brief vendor.",
+    metaDescription:
+      "Perbedaan MICE dan corporate outing — definisi, format, vendor capability, budget, dan kapan pilih mana. Panduan untuk HR, GA, dan procurement Indonesia.",
+    category: "Format Design",
+    tldr: [
+      "MICE = Meeting, Incentive, Conference, Exhibition. Format yang lebih structured, butuh AV production lebih kompleks, dan biasanya ada deliverable bisnis spesifik.",
+      "Corporate Outing = format yang focus pada team bonding, refresh, dan employee engagement. Lebih relaxed, tidak harus ada formal presentation atau stage.",
+      "Salah pilih format = budget terbuang. Hire EO yang strong di outing untuk MICE = mismatch. Hire travel agent untuk corporate gathering = disaster.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-10",
+    readTimeMin: 7,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Kami sering terima brief yang blur: 'Kami mau gathering tapi ada sesi presentation juga dan malam ada awarding.' Itu bukan outing biasa — itu hybrid MICE-Gathering yang butuh capability spesifik.",
+          "Artikel ini untuk HR dan GA yang sedang dalam proses brief vendor dan perlu tahu format apa yang sesuai dengan kebutuhan perusahaan mereka.",
+        ],
+      },
+      {
+        heading: "MICE — Meeting, Incentive, Conference, Exhibition",
+        paragraphs: [
+          "MICE adalah kategori umbrella untuk 4 format corporate event yang punya satu kesamaan: ada deliverable bisnis yang terukur, bukan semata-mata employee experience.",
+        ],
+        bullets: [
+          "Meeting: sesi kerja terstruktur — kick-off, strategy review, all-hands. Butuh AV profesional, breakout room, dan dokumentasi minuted.",
+          "Incentive: program reward untuk top performer — trip atau experience sebagai motivasi. Butuh 'wow factor' dan exclusive feel.",
+          "Conference: seminar, congress, atau gathering industri dengan speakers dan agenda formal. Butuh registration system, stage production, dan live streaming capability.",
+          "Exhibition: showcase produk, trade show internal atau eksternal. Butuh booth design, floor plan management, dan operational support.",
+        ],
+        callout: {
+          label: "Vendor yang Anda butuhkan",
+          text: "EO dengan track record corporate conference dan AV production capability. Bukan semua travel agent atau event organizer bisa deliver MICE dengan kualitas yang expected.",
+        },
+      },
+      {
+        heading: "Corporate Outing — Employee Experience First",
+        paragraphs: [
+          "Corporate outing focus pada employee engagement: bonding, refresh, celebrate milestone, atau align culture. Output-nya tidak terukur lewat profit margin — tapi lewat employee satisfaction, engagement score, dan retention.",
+        ],
+        bullets: [
+          "Company gathering: annual event celebration + awarding night + entertainment",
+          "Team building: structured activity dengan facilitator untuk specific team outcome",
+          "Employee outing: casual refresh 1-2 hari untuk bonding",
+          "Glamping / villa retreat: experience-based program untuk small to medium group",
+          "Leadership retreat: development-focused untuk senior cohort",
+        ],
+        callout: {
+          label: "Vendor yang Anda butuhkan",
+          text: "Specialist corporate outing yang paham adult learning principles, facilitation, dan experience design. Travel agent retail tidak punya ini.",
+        },
+      },
+      {
+        heading: "Kapan pilih MICE, kapan pilih outing?",
+        paragraphs: ["Framework sederhana: tanya satu pertanyaan utama:"],
+        bullets: [
+          "Ada agenda formal / presentation / speaker / deliverable bisnis? → MICE format",
+          "Focus pada bonding, refresh, celebration, atau team development? → Corporate outing",
+          "Keduanya? → Hybrid format (gathering + conference) — butuh vendor yang bisa handle keduanya",
+        ],
+      },
+      {
+        heading: "Budget implication",
+        paragraphs: [
+          "MICE event umumnya lebih mahal per pax bukan karena mark-up vendor, tapi karena cost structure berbeda:",
+        ],
+        bullets: [
+          "MICE: AV production (renting stage, sound, LED backdrop, live stream encoder) Rp 50-300 jt tergantung skala",
+          "MICE: Speaker fee atau moderator profesional Rp 10-80 jt/session",
+          "MICE: Registration system + badge + event app Rp 15-50 jt untuk conference formal",
+          "Corporate outing: cost terbesar di venue + F&B + fasilitator + dokumentasi — predictable dan lebih linear dengan pax",
+        ],
+      },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "checklist-vendor-event-organizer-corporate", "bandung-outing-tier-system"],
+  },
+
+  "annual-company-trip-vs-incentive-trip": {
+    slug: "annual-company-trip-vs-incentive-trip",
+    title: "Annual Company Trip vs Incentive Trip — Mana yang Perusahaan Anda Butuhkan?",
+    excerpt:
+      "Annual company trip untuk semua karyawan, incentive trip untuk top performers — terdengar simple, tapi banyak perusahaan salah mixing keduanya. Panduan untuk HR.",
+    metaDescription:
+      "Perbedaan annual company trip dan incentive trip — objective, eligibility, format, budget, dan vendor requirement. Panduan untuk HR Indonesia merencanakan program reward.",
+    category: "Program Design",
+    tldr: [
+      "Annual company trip = untuk semua karyawan, objective bonding + celebration + culture reinforcement. Tidak ada threshold performance.",
+      "Incentive trip = untuk top performers terseleksi, objective motivasi + reward + recognition. Ada threshold performance yang jelas.",
+      "Mixing keduanya tanpa clear eligibility criteria bisa hurt morale — peserta yang tidak lolos threshold merasa unfair, peserta yang lolos tidak merasa exclusive.",
+    ],
+    heroImage: IMAGES.packageGlamping,
+    publishDate: "2026-05-09",
+    readTimeMin: 6,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Dua format yang sering di-brief bersamaan tapi punya logic yang sangat berbeda. Kami pernah handle perusahaan yang 'annual company trip'-nya hanya untuk tim sales dengan quota achieved — itu bukan annual trip, itu incentive trip yang kurang tepat naming-nya. Dan itu matter karena implikasi morale-nya berbeda.",
+        ],
+      },
+      {
+        heading: "Annual Company Trip — Inclusive Celebration",
+        paragraphs: [
+          "Format: semua karyawan eligible (atau semua karyawan dengan masa kerja tertentu). Objective primary adalah culture reinforcement, celebration milestone perusahaan, dan cross-departmental bonding yang tidak terjadi di hari kerja biasa.",
+        ],
+        bullets: [
+          "Eligibility: semua karyawan (atau min masa kerja, misal 3 bulan / 6 bulan)",
+          "Objective: team bonding, celebration, culture alignment, refresh",
+          "Scale: bisa besar (50-2000 pax) — butuh logistik yang solid",
+          "Experience: inklusif tapi bisa ada tier (departemen berbeda, kelas transportasi berbeda)",
+          "Budget range: Rp 2-5 jt/pax untuk 2D1N standard",
+          "Frequency: annual atau semi-annual",
+        ],
+        callout: {
+          label: "Red flag",
+          text: "Annual company trip yang tidak melibatkan semua divisi secara inklusif — sering memunculkan persepsi favoritism dan hurt cross-team collaboration.",
+        },
+      },
+      {
+        heading: "Incentive Trip — Exclusive Recognition",
+        paragraphs: [
+          "Format: hanya untuk peserta yang mencapai threshold tertentu (biasanya performance metric: sales quota, project delivery, atau behavioral target). Objective adalah motivasi top performers dan sinyal ke seluruh organisasi bahwa performance dihargai.",
+        ],
+        bullets: [
+          "Eligibility: threshold yang jelas (misal: top 20% sales, atau semua yang achieve 110% quota)",
+          "Objective: reward, recognition, exclusive experience, recharge untuk top performers",
+          "Scale: kecil dan intimate lebih baik (15-80 pax) — exclusivity adalah fitur, bukan bug",
+          "Experience: premium, personalized, bukan generic. Peserta harus feel 'ini special'",
+          "Budget range: Rp 3.5-9 jt/pax (standard sampai president's club)",
+          "Frequency: annual atau per-cycle (Q4 atau setelah sales cycle selesai)",
+        ],
+      },
+      {
+        heading: "Decision matrix — pilih yang mana?",
+        paragraphs: [],
+        numbered: [
+          "Semua karyawan harus merasakan benefitnya? → Annual company trip",
+          "Hanya top performer yang eligible? → Incentive trip",
+          "Mau reward sekaligus bonding seluruh perusahaan? → Dua program terpisah dengan budget terpisah",
+          "Budget terbatas tapi mau reward high achiever? → Incentive trip dengan skala kecil, tapi premium — lebih impactful dari annual trip biasa",
+        ],
+      },
+      {
+        heading: "Mengapa tidak disarankan di-mix?",
+        paragraphs: [
+          "Mixing — annual trip yang sebenarnya hanya untuk tim tertentu, atau incentive trip yang terlalu inklusif — menciptakan ambiguity yang justru hurt morale:",
+        ],
+        bullets: [
+          "Karyawan yang tidak diundang ke 'annual trip' merasa excluded — meski alasannya performance",
+          "Karyawan yang diundang ke incentive trip yang terlalu besar tidak merasa special",
+          "Management sulit justify budget ke Finance karena narrative program tidak jelas",
+        ],
+      },
+    ],
+    relatedSlugs: ["bandung-outing-tier-system", "mice-vs-corporate-outing-perbedaan", "justify-outing-budget-to-finance"],
+  },
+
+  "cara-pilih-venue-corporate-gathering-bandung": {
+    slug: "cara-pilih-venue-corporate-gathering-bandung",
+    title: "Cara Pilih Venue Corporate Gathering Bandung — 8 Faktor yang Sering Diabaikan",
+    excerpt:
+      "Venue yang salah bisa ruin event yang planning-nya sempurna. 8 faktor evaluasi yang HR & GA sering abaikan saat pilih venue gathering Bandung.",
+    metaDescription:
+      "8 faktor penting pilih venue corporate gathering Bandung yang sering diabaikan — kapasitas real vs paper, akustik, akses, backup option, dan F&B flexibility. Panduan untuk HR & GA.",
+    category: "Venue Guide",
+    tldr: [
+      "Kapasitas tertulis di brosur venue selalu lebih besar dari kapasitas realnya untuk setup corporate (dengan stage, AV, catering island). Minta floor plan.",
+      "Akustik buruk adalah deal-breaker untuk sesi formal — tapi sering baru ketahuan di hari H. Kunjungi venue saat event lain berlangsung untuk test.",
+      "F&B flexibility (bawa catering sendiri vs harus pakai venue) bisa ngaruh signifikan ke budget. Tanyakan dulu sebelum site visit.",
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-05-08",
+    readTimeMin: 8,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Venue adalah keputusan yang paling irreversible dalam planning corporate event — begitu deposit terkunci 3 bulan sebelum event, sangat susah pivot. Tapi banyak HR dan GA terburu-buru lock venue hanya berdasarkan foto Instagram atau rekomendasi rekan kerja tanpa site visit yang proper.",
+          "8 faktor ini adalah yang paling sering terlewat dalam evaluasi — dan paling sering jadi masalah di hari H.",
+        ],
+      },
+      {
+        heading: "1. Kapasitas real, bukan kapasitas di brosur",
+        paragraphs: [
+          "Brosur venue sering tulis '300 pax standing'. Tapi untuk setup corporate (theater style dengan stage, AV rack, catering island, registrasi counter) kapasitas real bisa turun 30-40%. Venue 300 pax standing = 180-220 pax theater style corporate.",
+          "Selalu minta floor plan + tanyakan setup apa yang pernah dilakukan untuk event corporate terakhir mereka.",
+        ],
+      },
+      {
+        heading: "2. Akustik dan noise pollution",
+        paragraphs: [
+          "Plafon rendah, dinding keras, dan layout L-shape adalah resep akustik buruk. Speech dari podium terdengar echoey, peserta di belakang tidak jelas dengar.",
+          "Test: kunjungi venue saat event lain (conference atau gathering) sedang berlangsung. Kalau tidak bisa, bawa mic portable dan test di tengah ruangan saat venue kosong.",
+        ],
+      },
+      {
+        heading: "3. Akses loading untuk vendor AV dan catering",
+        paragraphs: [
+          "Vendor AV membawa equipment besar (speaker, LED panel, truss). Catering membawa puluhan box dan peralatan. Kalau loading area sempit atau lift kecil, waktu setup bisa molor 2-4 jam.",
+          "Cek: lebar pintu loading, kapasitas lift barang, dan parking untuk kendaraan vendor.",
+        ],
+      },
+      {
+        heading: "4. F&B policy — exclusive atau flexible?",
+        paragraphs: [
+          "Venue exclusive F&B artinya Anda wajib pakai catering mereka (tidak bisa bawa dari luar). Ini tidak selalu buruk — tapi harga F&B venue sering 30-50% lebih mahal dari catering eksternal dengan kualitas setara.",
+          "Tanyakan dulu: apakah boleh bawa catering sendiri? Kalau ya, ada corkage fee? Berapa? Hitung total cost comparison sebelum commit.",
+        ],
+      },
+      {
+        heading: "5. Backup space untuk cuaca / contingency",
+        paragraphs: [
+          "Event yang ada outdoor component butuh backup indoor yang jelas. Bukan sekadar 'bisa pindah ke lobby kalau hujan' — tapi designated backup space dengan kapasitas yang cukup dan sudah disepakati di kontrak.",
+        ],
+        callout: {
+          label: "Penting",
+          text: "Minta venue untuk confirm backup space secara tertulis di contract. 'Kita bisa atur nanti kalau hujan' adalah jawaban yang tidak acceptable.",
+        },
+      },
+      {
+        heading: "6. Sinyal dan konektivitas internet",
+        paragraphs: [
+          "Untuk event dengan hybrid component, live streaming, atau heavy documentation — test sinyal di dalam ruangan, bukan di luar. Gedung dengan dinding tebal atau basement sering mati sinyal.",
+          "Minta dedicated WiFi SSID + password untuk event Anda (bukan shared guest WiFi). Bandwidth shared bisa crash saat 200 peserta connect bersamaan.",
+        ],
+      },
+      {
+        heading: "7. Waktu setup dan breakdown yang diizinkan",
+        paragraphs: [
+          "Setup AV + catering butuh 4-6 jam sebelum event. Breakdown butuh 2-3 jam. Tanyakan: mulai jam berapa vendor boleh masuk? Sampai jam berapa harus keluar? Ada overtime charge kalau melebihi waktu?",
+          "Venue yang tight dengan waktu setup sering bikin event mulai terlambat atau tanpa sound check proper.",
+        ],
+      },
+      {
+        heading: "8. Track record corporate event, bukan wedding",
+        paragraphs: [
+          "Venue yang populer untuk wedding punya sensibility yang berbeda dari corporate event — dekorasi, lighting default, F&B presentation, dan service style. Tanyakan berapa persen event mereka adalah corporate vs wedding/personal.",
+          "Venue dengan 80% wedding bisa deliver corporate gathering dengan baik — tapi perlu brief yang lebih intensif untuk ensure corporate vibe yang proper.",
+        ],
+      },
+    ],
+    relatedSlugs: ["bandung-outing-tier-system", "outing-lembang-vs-ciwidey", "indoor-vs-outdoor-corporate-outing"],
+  },
 };
 
 export function getAllInsightSlugsStatic(): string[] {

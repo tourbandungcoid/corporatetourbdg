@@ -17,7 +17,7 @@ const PILLARS = [
   {
     title: "Speed yang bikin decision cepat.",
     body: "Free proposal lengkap dalam 24 jam setelah briefing call. Most vendor butuh 5 hari. Lo bisa update management dalam 1-2 hari, bukan minggu depan.",
-    proof: "Avg response time: 6 jam (working hours)",
+    proof: "Proposal dalam 24 jam · Response awal avg 6 jam",
   },
 ];
 
