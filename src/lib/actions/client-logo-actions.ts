@@ -129,7 +129,7 @@ export async function upsertClientLogo(
       .select("logo_url, logo_path")
       .eq("id", parsed.data.id)
       .maybeSingle();
-    existing = (data as typeof existing) ?? null;
+    existing = (data as unknown as { logo_url: string; logo_path: string | null }) ?? null;
     if (!existing) return { ok: false, message: "Logo not found" };
   }
 

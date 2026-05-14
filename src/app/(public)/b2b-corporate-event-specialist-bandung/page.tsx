@@ -119,6 +119,7 @@ export default function B2BSpecialistPage() {
     articleSchema({
       headline: TITLE,
       description: DESCRIPTION,
+      image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-15",
       dateModified: "2026-05-15",
       slug: PATH,
