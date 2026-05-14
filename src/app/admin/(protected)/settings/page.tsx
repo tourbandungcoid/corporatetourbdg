@@ -106,6 +106,7 @@ export default async function SettingsPage() {
         <section className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             ["Brand visual", "/admin/settings/brand", "Colors · fonts · logo · copy overrides"],
+            ["Homepage copy", "/admin/settings/homepage", "Hero · Services · Why us · CTA · semua teks"],
             ["Contact", "/admin/settings/contact", "WhatsApp · email · address"],
             ["Social media", "/admin/settings/social", "LinkedIn · Instagram · YouTube · TikTok"],
             ["Analytics & Pixel", "/admin/settings/analytics", "GA4 · Meta Pixel · GTM · Hotjar · Clarity"],

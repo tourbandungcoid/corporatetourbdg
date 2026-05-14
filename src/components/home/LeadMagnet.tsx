@@ -1,14 +1,27 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "@/components/icons/Icons";
+import { getCopy } from "@/lib/brand-settings";
 
-const ITEMS = [
-  "Real sample proposal (bukan template)",
-  "Detailed cost breakdown — line-item",
-  "Sample itinerary 2D1N untuk 200 pax",
-  "Contract clauses + terms checklist",
-];
+export async function LeadMagnet() {
+  const [
+    badge, headline1, headline2, sub,
+    item1, item2, item3, item4,
+    cta, socialProof,
+  ] = await Promise.all([
+    getCopy("home.lead.badge", "Free download"),
+    getCopy("home.lead.headline1", "Sample proposal untuk"),
+    getCopy("home.lead.headline2", "outing kantor 200 pax."),
+    getCopy("home.lead.sub", "Real proposal yang kami kirim ke klien tech unicorn tahun lalu (data sensitive sudah di-redact). Pakai buat reference internal."),
+    getCopy("home.lead.item1", "Real sample proposal (bukan template)"),
+    getCopy("home.lead.item2", "Detailed cost breakdown — line-item"),
+    getCopy("home.lead.item3", "Sample itinerary 2D1N untuk 200 pax"),
+    getCopy("home.lead.item4", "Contract clauses + terms checklist"),
+    getCopy("home.lead.cta", "Email me the sample"),
+    getCopy("home.lead.social_proof", "🔒 800+ HR sudah download. No spam — kami kirim sekali + 1 follow-up 3 hari kemudian."),
+  ]);
 
-export function LeadMagnet() {
+  const items = [item1, item2, item3, item4];
+
   return (
     <section className="section bg-bone">
       <div className="container-1280">
@@ -26,22 +39,21 @@ export function LeadMagnet() {
             {/* Left: content */}
             <div className="lg:col-span-7 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
               <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand/15 border border-brand/30 px-3 py-1.5 text-xs font-medium text-brand backdrop-blur">
-                Free download
+                {badge}
               </span>
 
               <h2 className="font-display mt-7 text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.04]">
-                Sample proposal untuk
+                {headline1}
                 <br />
-                <span className="text-brand">outing kantor 200 pax.</span>
+                <span className="text-brand">{headline2}</span>
               </h2>
 
               <p className="mt-6 text-base md:text-lg text-paper/70 leading-relaxed max-w-xl">
-                Real proposal yang kami kirim ke klien tech unicorn tahun lalu
-                (data sensitive sudah di-redact). Pakai buat reference internal.
+                {sub}
               </p>
 
               <ul className="mt-8 grid sm:grid-cols-2 gap-3">
-                {ITEMS.map((item, i) => (
+                {items.map((item, i) => (
                   <li
                     key={i}
                     className="flex items-start gap-2.5 text-sm text-paper/85"
@@ -59,7 +71,7 @@ export function LeadMagnet() {
                   href="/proposal/sample"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-brand text-paper px-7 h-12 text-sm font-medium hover:bg-brand-deep transition-colors"
                 >
-                  Email me the sample
+                  {cta}
                   <ArrowRight size={14} />
                 </Link>
                 <span className="text-xs text-paper/55">
@@ -68,8 +80,7 @@ export function LeadMagnet() {
               </div>
 
               <p className="mt-4 text-xs text-paper/50">
-                🔒 800+ HR sudah download. No spam — kami kirim sekali + 1
-                follow-up 3 hari kemudian.
+                {socialProof}
               </p>
             </div>
 
