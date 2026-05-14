@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { youtubeWatchUrl } from "@/lib/utils/youtube";
 import { Play } from "@/components/icons/Icons";
+import { getCopy } from "@/lib/brand-settings";
 
 type VideoRow = {
   id: string;
@@ -27,7 +28,13 @@ async function getVideos(): Promise<VideoRow[]> {
 }
 
 export async function YouTubeVideos() {
-  const videos = await getVideos();
+  const [videos, eyebrow, headline, channelLabel] = await Promise.all([
+    getVideos(),
+    getCopy("home.youtube.eyebrow", "Konten terbaru"),
+    getCopy("home.youtube.headline", "Dari channel kami."),
+    getCopy("home.youtube.channel_label", "@7summitstravel"),
+  ]);
+
   if (videos.length === 0) return null;
 
   return (
@@ -35,9 +42,9 @@ export async function YouTubeVideos() {
       <div className="container-1280">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="eyebrow-brand">Konten terbaru</span>
+            <span className="eyebrow-brand">{eyebrow}</span>
             <h2 className="font-display mt-4 text-4xl md:text-5xl text-ink">
-              Dari channel kami.
+              {headline}
             </h2>
           </div>
           <Link
@@ -47,7 +54,7 @@ export async function YouTubeVideos() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:border-ink-soft hover:bg-cream transition self-start md:self-auto"
           >
             <Play size={14} />
-            @7summitstravel
+            {channelLabel}
           </Link>
         </div>
 
@@ -68,15 +75,12 @@ export async function YouTubeVideos() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              {/* Gradient overlay for legibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/10 to-transparent" />
-              {/* Play button */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-paper/95 text-ink shadow-[0_8px_24px_rgba(15,31,26,0.25)] transition-transform group-hover:scale-110">
                   <Play size={22} />
                 </span>
               </div>
-              {/* Title */}
               {v.title && (
                 <div className="absolute left-0 right-0 bottom-0 p-5">
                   <p className="text-paper font-medium text-sm leading-snug line-clamp-2">

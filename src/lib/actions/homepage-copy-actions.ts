@@ -80,3 +80,9 @@ export async function updateCtaCopy(fd: FormData) {
     "home.cta.sub", "home.cta.primary", "home.cta.whatsapp",
   ], fd);
 }
+
+export async function updateYouTubeCopy(fd: FormData) {
+  return mergeKeys([
+    "home.youtube.eyebrow", "home.youtube.headline", "home.youtube.channel_label",
+  ], fd);
+}
