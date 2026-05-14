@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LogoLockup } from "./Logo";
 import { CONTACT, SITE, SOCIAL, buildWaLink } from "@/lib/site";
-import { Whatsapp } from "./icons/Icons";
+import { Whatsapp, LinkedIn, Instagram, YouTube } from "./icons/Icons";
 
 const SERVICES = [
   { href: "/services/company-gathering", label: "Company Gathering" },
@@ -140,24 +140,27 @@ export function Footer() {
               href={SOCIAL.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-brand transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-brand transition-colors"
             >
+              <LinkedIn size={15} />
               LinkedIn
             </a>
             <a
               href={SOCIAL.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-brand transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-brand transition-colors"
             >
+              <Instagram size={15} />
               Instagram
             </a>
             <a
               href={SOCIAL.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-brand transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-brand transition-colors"
             >
+              <YouTube size={15} />
               YouTube
             </a>
           </div>
