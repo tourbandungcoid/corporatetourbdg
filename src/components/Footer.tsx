@@ -22,6 +22,9 @@ const RESOURCES = [
   { href: "/faq", label: "FAQ" },
   { href: "/proposal/sample", label: "Sample Proposal" },
   { href: "/packages", label: "Featured Packages" },
+  { href: "/methodology", label: "Our Methodology" },
+  { href: "/b2b-corporate-event-specialist-bandung", label: "B2B Specialist Guide" },
+  { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO" },
 ];
 
 const COMPANY = [

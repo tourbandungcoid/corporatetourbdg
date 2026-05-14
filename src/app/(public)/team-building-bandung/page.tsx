@@ -8,6 +8,7 @@ import {
   Whatsapp,
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -689,6 +690,12 @@ export default function TeamBuildingBandungPage() {
             </div>
           </div>
         </section>
+
+        <RelatedCaseStudies
+          serviceSlugs={["company-gathering", "leadership-camp"]}
+          title="Team building yang ngasih hasil nyata."
+          description="Case studies pendekatan team building outcome-driven — dengan metrics outcome di tim, bukan cuma testimoni."
+        />
 
         {/* Final CTA */}
         <section className="bg-ink text-cream py-20 md:py-28">

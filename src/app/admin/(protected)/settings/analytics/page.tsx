@@ -73,6 +73,13 @@ export default async function AnalyticsSettingsPage() {
               placeholder: "abcdefghij",
               default: a.clarity_id,
             },
+            {
+              name: "linkedin_partner_id",
+              label: "LinkedIn Insight Tag (Partner ID)",
+              placeholder: "1234567",
+              hint: "Dari LinkedIn Campaign Manager → Account Assets → Insight Tag. Wajib untuk B2B retargeting + lookalike audience.",
+              default: a.linkedin_partner_id,
+            },
           ]}
         />
       </div>

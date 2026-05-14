@@ -18,6 +18,7 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/glamping-corporate-bandung", priority: 0.85, changeFrequency: "monthly" },
   { path: "/leadership-retreat-jawa-barat", priority: 0.8, changeFrequency: "monthly" },
   { path: "/executive-offsite-bandung", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/b2b-corporate-event-specialist-bandung", priority: 0.9, changeFrequency: "monthly" },
   // Hubs
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/packages", priority: 0.8, changeFrequency: "monthly" },

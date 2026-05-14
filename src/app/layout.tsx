@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
-import { AnalyticsScripts, GTMNoScript } from "@/components/AnalyticsScripts";
+import {
+  AnalyticsScripts,
+  GTMNoScript,
+  LinkedInNoScript,
+} from "@/components/AnalyticsScripts";
+import { ExitIntentModal } from "@/components/ExitIntentModal";
 import { getAppSettings } from "@/lib/app-settings";
 import "./globals.css";
 
@@ -62,11 +67,16 @@ export default async function RootLayout({
           gtmId={settings.analytics.gtm_id}
           hotjarId={settings.analytics.hotjar_id}
           clarityId={settings.analytics.clarity_id}
+          linkedinPartnerId={settings.analytics.linkedin_partner_id}
         />
       </head>
       <body>
         <GTMNoScript gtmId={settings.analytics.gtm_id} />
+        <LinkedInNoScript
+          linkedinPartnerId={settings.analytics.linkedin_partner_id}
+        />
         {children}
+        <ExitIntentModal />
       </body>
     </html>
   );

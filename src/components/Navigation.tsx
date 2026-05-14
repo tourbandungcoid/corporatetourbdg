@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { LogoLockup } from "./Logo";
 import { Whatsapp, Menu, Close, ArrowRight } from "./icons/Icons";
@@ -22,6 +23,8 @@ const NAV_LINKS = [
  * - All glassmorphism only on the nav pill itself
  */
 export function Navigation() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,6 +34,11 @@ export function Navigation() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Inner pages have light backgrounds (bg-bone) so we always use the
+  // light/inverted nav style there. Only the homepage hero is dark enough
+  // to support the transparent-on-dark variant at the top of the page.
+  const useLightStyle = !isHome || scrolled;
 
   return (
     <header className="fixed top-4 inset-x-0 z-50 no-print px-4 md:px-6">
@@ -44,7 +52,7 @@ export function Navigation() {
           >
             <LogoLockup
               height={40}
-              variant={scrolled ? "light" : "dark"}
+              variant={useLightStyle ? "light" : "dark"}
               showCorporateLabel={false}
             />
           </Link>
@@ -56,7 +64,7 @@ export function Navigation() {
               "absolute left-1/2 -translate-x-1/2",
               "rounded-full px-2 h-12 border",
               "transition-all duration-300",
-              scrolled
+              useLightStyle
                 ? "bg-paper/90 backdrop-blur-xl border-border shadow-[0_8px_30px_rgba(15,31,26,0.08)]"
                 : "bg-transparent border-paper/30",
             ].join(" ")}
@@ -67,7 +75,7 @@ export function Navigation() {
                 href={link.href}
                 className={[
                   "px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200",
-                  scrolled
+                  useLightStyle
                     ? "text-ink/75 hover:bg-ink hover:text-paper"
                     : "text-paper/90 hover:bg-paper hover:text-ink",
                 ].join(" ")}
@@ -83,7 +91,7 @@ export function Navigation() {
               href="/proposal/request"
               className={[
                 "hidden md:inline-flex items-center gap-1.5 rounded-full px-6 h-12 text-sm font-medium transition-colors border",
-                scrolled
+                useLightStyle
                   ? "bg-ink text-paper border-ink hover:bg-brand-deep hover:border-brand-deep"
                   : "bg-paper text-ink border-paper hover:bg-brand hover:text-paper hover:border-brand",
               ].join(" ")}
@@ -98,7 +106,7 @@ export function Navigation() {
               aria-label="Buka menu"
               className={[
                 "lg:hidden flex h-12 w-12 items-center justify-center rounded-full border transition-colors",
-                scrolled
+                useLightStyle
                   ? "text-ink border-border bg-paper hover:bg-cream"
                   : "text-paper border-paper/30 bg-transparent hover:bg-paper/10",
               ].join(" ")}

@@ -6,6 +6,7 @@ type Props = {
   gtmId?: string;
   hotjarId?: string;
   clarityId?: string;
+  linkedinPartnerId?: string;
 };
 
 /**
@@ -21,6 +22,7 @@ export function AnalyticsScripts({
   gtmId,
   hotjarId,
   clarityId,
+  linkedinPartnerId,
 }: Props) {
   if (process.env.NODE_ENV !== "production") return null;
 
@@ -95,7 +97,48 @@ export function AnalyticsScripts({
           })(window, document, "clarity", "script", "${clarityId}");
         `}</Script>
       )}
+
+      {/* LinkedIn Insight Tag — B2B audience tracking + retargeting */}
+      {linkedinPartnerId && (
+        <Script id="linkedin-insight" strategy="afterInteractive">{`
+          _linkedin_partner_id = "${linkedinPartnerId}";
+          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          (function(l) {
+          if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+          window.lintrk.q=[]}
+          var s = document.getElementsByTagName("script")[0];
+          var b = document.createElement("script");
+          b.type = "text/javascript";b.async = true;
+          b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+          s.parentNode.insertBefore(b, s);})(window.lintrk);
+        `}</Script>
+      )}
     </>
+  );
+}
+
+/**
+ * <noscript> pixel fallback for LinkedIn Insight Tag (best-practice from LinkedIn).
+ * Inject inside <body>.
+ */
+export function LinkedInNoScript({
+  linkedinPartnerId,
+}: {
+  linkedinPartnerId?: string;
+}) {
+  if (!linkedinPartnerId || process.env.NODE_ENV !== "production") return null;
+  return (
+    <noscript>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        height="1"
+        width="1"
+        style={{ display: "none" }}
+        alt=""
+        src={`https://px.ads.linkedin.com/collect/?pid=${linkedinPartnerId}&fmt=gif`}
+      />
+    </noscript>
   );
 }
 

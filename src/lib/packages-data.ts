@@ -212,3 +212,11 @@ export function getPackages(): Package[] {
 export function getFeaturedPackages(): Package[] {
   return PACKAGES.filter((p) => p.featured);
 }
+
+export function getPackageBySlug(slug: string): Package | null {
+  return PACKAGES.find((p) => p.slug === slug) ?? null;
+}
+
+export function getPackageSlugs(): string[] {
+  return PACKAGES.map((p) => p.slug);
+}

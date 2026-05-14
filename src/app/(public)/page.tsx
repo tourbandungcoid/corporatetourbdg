@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
+import { YouTubeVideos } from "@/components/home/YouTubeVideos";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { FeaturedPackages } from "@/components/home/FeaturedPackages";
 import { CaseStudies } from "@/components/home/CaseStudies";
@@ -87,6 +88,7 @@ export default function HomePage() {
         <Hero />
         <TrustBar />
         <Services />
+        <YouTubeVideos />
         <WhyChooseUs />
         <FeaturedPackages />
         <CaseStudies />

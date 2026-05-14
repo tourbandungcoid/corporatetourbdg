@@ -13,7 +13,7 @@ import { IMAGES } from "@/lib/drive-images";
  */
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-ink">
+    <section className="relative min-h-screen md:min-h-[760px] lg:min-h-[800px] w-full overflow-hidden bg-ink">
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
@@ -30,7 +30,7 @@ export function Hero() {
       </div>
 
       {/* Content — vertically balanced, top padding clears the floating navbar */}
-      <div className="relative h-full container-1280 flex flex-col justify-center pb-44 pt-28 md:pt-32">
+      <div className="relative h-full container-1280 flex flex-col justify-center pb-56 md:pb-52 lg:pb-44 pt-28 md:pt-32">
         <div className="max-w-4xl fade-up">
           {/* Eyebrow trust pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 backdrop-blur px-4 py-1.5">

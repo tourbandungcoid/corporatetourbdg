@@ -62,6 +62,19 @@ export const ChevronDown = ({ size = 16, ...rest }: IconProps) => (
   </svg>
 );
 
+export const Play = ({ size = 16, ...rest }: IconProps) => (
+  <svg {...baseProps(size)} aria-hidden="true" {...rest}>
+    <path d="M6 4.5v15l13-7.5-13-7.5z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+export const Search = ({ size = 16, ...rest }: IconProps) => (
+  <svg {...baseProps(size)} aria-hidden="true" {...rest}>
+    <circle cx="11" cy="11" r="7" />
+    <path d="m20 20-3.5-3.5" />
+  </svg>
+);
+
 // Service icons (simple geometric, custom — not from generic library)
 export const IconGathering = ({ size = 24, ...rest }: IconProps) => (
   <svg {...baseProps(size)} aria-hidden="true" {...rest}>

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { PackagesGrid } from "@/components/PackagesGrid";
 import { getPackages } from "@/lib/packages-data";
-import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -90,97 +90,8 @@ export default function PackagesIndexPage() {
         </div>
       </section>
 
-      {/* Packages grid */}
-      <section className="py-16 md:py-20">
-        <div className="container-1280">
-          <div className="grid gap-6 md:grid-cols-2">
-            {packages.map((pkg) => (
-              <div
-                key={pkg.slug}
-                className={[
-                  "group relative overflow-hidden rounded-3xl bg-paper border transition-all hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(15,31,26,0.08)]",
-                  pkg.featured
-                    ? "border-brand md:scale-[1.01] ring-2 ring-brand/30"
-                    : "border-border hover:border-ink-soft",
-                ].join(" ")}
-              >
-                <div className="aspect-[16/9] relative overflow-hidden bg-gradient-to-br from-forest to-ink">
-                  <Image
-                    src={pkg.image.src}
-                    alt={pkg.image.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
-                  {pkg.featured && (
-                    <div className="absolute top-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1.5 text-xs font-medium text-ink shadow-md">
-                      ★ Most Popular
-                    </div>
-                  )}
-                  <div className="absolute bottom-5 left-5 flex flex-wrap gap-1.5">
-                    {pkg.vibeTags.map((v) => (
-                      <span key={v} className="inline-flex items-center rounded-full bg-paper/90 backdrop-blur px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-medium text-ink">
-                        {v}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-7 md:p-8">
-                  <h2 className="font-display text-2xl md:text-3xl text-ink leading-tight">{pkg.title}</h2>
-                  <p className="mt-2 text-sm text-slate">{pkg.subtitle}</p>
-                  <p className="mt-4 text-sm text-slate leading-relaxed">{pkg.description}</p>
-
-                  <div className="mt-6 pt-5 border-t border-divider flex items-center gap-6 text-sm text-slate">
-                    <span>{pkg.paxRange}</span>
-                    <span className="h-1 w-1 rounded-full bg-divider" />
-                    <span>{pkg.duration}</span>
-                  </div>
-
-                  <details className="mt-5 group/details">
-                    <summary className="cursor-pointer text-sm font-medium text-ink hover:text-brand-deep flex items-center gap-1.5">
-                      <span>Yang sudah include</span>
-                      <span className="text-xs text-slate-mute transition-transform group-open/details:rotate-180">↓</span>
-                    </summary>
-                    <ul className="mt-4 space-y-2">
-                      {pkg.inclusions.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-slate">
-                          <span className="mt-0.5 text-brand flex-shrink-0"><Check size={14} /></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-
-                  <div className="mt-6 pt-5 border-t border-divider flex items-end justify-between">
-                    <div>
-                      <p className="text-xs text-slate-mute mb-0.5">Mulai dari</p>
-                      <p className="font-display text-2xl text-ink tabular leading-none">
-                        {pkg.startingPrice}
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Link
-                        href={`/services/${pkg.serviceSlug}`}
-                        className="inline-flex items-center justify-center h-10 px-4 rounded-full border border-border text-xs font-medium text-ink hover:bg-cream transition"
-                      >
-                        Detail service
-                      </Link>
-                      <Link
-                        href="/proposal/request"
-                        className="inline-flex items-center justify-center gap-1 h-10 px-4 rounded-full bg-ink text-paper text-xs font-medium hover:bg-brand-deep transition"
-                      >
-                        Request<ArrowRight size={12} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Filter bar + Packages grid */}
+      <PackagesGrid packages={packages} />
 
       {/* Final CTA */}
       <section className="bg-ink text-cream py-20 md:py-28">
