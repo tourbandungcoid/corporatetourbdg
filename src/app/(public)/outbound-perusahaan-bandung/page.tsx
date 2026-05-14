@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/outbound-perusahaan-bandung";
@@ -172,7 +173,18 @@ export default function OutboundPerusahaanBandungPage() {
         "Outbound adventure outdoor untuk corporate dengan safety standards profesional di Bandung & Jawa Barat. 3-tier classification.",
       priceRange: "Rp 1.500.000 - Rp 4.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Program Outbound Perusahaan yang Aman di Bandung",
+      description: "5 langkah untuk memilih dan menjalankan outbound perusahaan yang fun sekaligus aman dan sesuai kondisi tim.",
+      steps: [
+        { name: "Klasifikasi Kondisi Fisik Peserta", text: "Minta peserta isi pre-event health form: kondisi kesehatan, keterbatasan fisik, obat rutin, dan riwayat cedera. Dari data ini, tentukan tier aktivitas yang appropriate — Tier 1 Light untuk mix audience, Tier 2 Medium untuk tim aktif, Tier 3 Intense untuk voluntary." },
+        { name: "Pilih Tier Outbound yang Sesuai", text: "Tier 1 Light (low-risk: flying fox pendek, water game, trekking ringan) untuk semua audience. Tier 2 Medium (rafting Grade 2-3, paintball, high ropes) untuk peserta sehat tanpa kontraindikasi. Tier 3 Intense (canyoning, extreme challenge) hanya untuk program khusus adventure." },
+        { name: "Verifikasi Safety SOP Vendor", text: "Minta vendor show: (1) sertifikasi instruktur per aktivitas, (2) rasio instruktur per peserta (minimal 1:10), (3) medical standby onsite, (4) protokol evakuasi, (5) checklist peralatan safety. Vendor tanpa dokumentasi ini adalah risiko liability bagi perusahaan." },
+        { name: "Rancang Rundown dengan Buffer Safety", text: "Jangan padatkan jadwal. Buffer 15-20 menit antar aktivitas untuk transisi, hydration stop, dan briefing safety. Peak energy activities (high intensity) di pagi hari; bonding reflective di sore hari setelah makan siang." },
+        { name: "Debrief & Capture Learning", text: "Setiap sesi outbound harus diakhiri dengan debrief 15-20 menit — hubungkan pengalaman lapangan dengan pesan team building yang relevan. Fasilitator harus bisa bridge: 'Gimana ini relate ke kerja kita sehari-hari?' Ini yang membedakan outbound meaningfully dari sekedar olahraga bersama." },
+      ],
+    })
   );
 
   return (

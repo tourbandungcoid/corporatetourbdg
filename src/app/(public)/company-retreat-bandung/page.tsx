@@ -6,7 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
-import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
 
 const SLUG = "/company-retreat-bandung";
 const URL = `${SITE.url}${SLUG}`;
@@ -103,7 +103,18 @@ export default function CompanyRetreatBandungPage() {
       description: "Premium multi-day strategic retreat untuk perusahaan di Bandung & Jawa Barat.",
       priceRange: "Rp 3.500.000 - Rp 8.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merencanakan Company Retreat di Bandung",
+      description: "5 langkah untuk merancang company retreat multi-hari yang produktif dan impactful di Bandung & Jawa Barat.",
+      steps: [
+        { name: "Tentukan Tujuan & Format Retreat", text: "Definisikan apakah retreat ini untuk strategic planning, cultural reset, leadership development, atau team cohesion. Format menentukan segalanya: 2D1N focus sprint vs 3D2N immersive retreat punya struktur program yang sangat berbeda." },
+        { name: "Pilih Venue yang Mendukung Deep Work", text: "Retreat butuh venue yang mengisolasi peserta dari distraksi kantor: no-signal area atau quiet zone policy. Pilihan Bandung: eco-lodge Pangalengan, heritage villa Lembang, atau private resort Ciwidey. Pastikan ada ruang pleno + ruang breakout terpisah." },
+        { name: "Rancang Agenda Kerja yang Seimbang", text: "Mix sesi strategis (60-70% waktu) dengan active recovery (20%) dan social bonding (10-20%). Hindari agenda meeting biasa yang dipindahkan ke luar kota — retreat harus punya format yang berbeda dari meeting rutin." },
+        { name: "Siapkan Fasilitator untuk Sesi Kritis", text: "Sesi yang perlu keputusan penting atau membahas konflik tim butuh fasilitator eksternal yang netral — bukan pemimpin internal yang juga peserta diskusi. Fasilitator certified membantu navigate dynamic antar pemimpin lebih efektif." },
+        { name: "Capture Output & Assign Action Items", text: "Setiap sesi harus berakhir dengan documented decisions dan assigned action items dengan owner + deadline. Post-retreat, kirim summary dalam 48 jam dan jadwalkan follow-up review 30 hari kemudian untuk track implementasi." },
+      ],
+    })
   );
 
   return (

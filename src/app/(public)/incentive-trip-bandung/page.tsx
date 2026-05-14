@@ -15,6 +15,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/incentive-trip-bandung";
@@ -154,7 +155,18 @@ export default function IncentiveTripBandungPage() {
         "Program reward premium untuk top performers di Bandung & Indonesia — exclusive experience, recognition ceremony, dan dokumentasi professional.",
       priceRange: "Rp 3.500.000 - Rp 9.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Merancang Incentive Trip yang Efektif untuk Top Performer",
+      description: "5 langkah untuk mendesain incentive trip yang bermakna, memorable, dan berdampak pada retensi top performer.",
+      steps: [
+        { name: "Tentukan Kriteria & Kuota Penerima", text: "Incentive trip harus punya eligibility criteria yang jelas dan transparan: top 10% sales, achievement 120%+ quota, atau kombinasi KPI tertentu. Kuota penerima yang terlalu banyak menurunkan eksklusivitas; terlalu sedikit mengurangi motivational impact." },
+        { name: "Desain Experience yang Eksklusif", text: "Incentive bukan liburan biasa — experience harus terasa istimewa dan berbeda dari apa yang bisa dilakukan sendiri. Contoh: private dinner di venue eksklusif, behind-the-scene tour, meet-and-greet dengan tokoh inspiratif, atau aktivitas premium yang tidak tersedia untuk umum." },
+        { name: "Sertakan Recognition Ceremony yang Bermartabat", text: "Momen penghargaan harus didesain dengan dignity: personalized trophy atau plakat, welcoming speech dari C-level langsung, dan dokumentasi profesional (foto & video) yang bisa dibagikan peserta. Recognition ceremony adalah inti dari incentive — jangan sampai terasa generik." },
+        { name: "Koordinasi Logistik VIP-Level", text: "Top performers ekspektasinya tinggi. Logistik harus seamless: penjemputan personal dari rumah/kantor, hotel upgrade, itinerary printed personal (bukan hanya digital), dan concierge yang available 24 jam selama program. Detail kecil ini yang membedakan excellent dari average." },
+        { name: "Ukur Dampak & Rencanakan Siklus Berikutnya", text: "Post-trip: survey kepuasan (NPS peserta), track apakah attrition peserta incentive lebih rendah vs non-peserta dalam 6-12 bulan ke depan, dan dokumen retention impact untuk justify budget ke CFO. Data ini juga digunakan untuk improve program incentive siklus berikutnya." },
+      ],
+    })
   );
 
   return (

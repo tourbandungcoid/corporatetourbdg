@@ -15,6 +15,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/mice-organizer-bandung";
@@ -180,7 +181,18 @@ export default function MiceOrganizerBandungPage() {
         "Full-stack MICE event production di Bandung — meeting, incentive, conference, exhibition. Stage AV setup profesional, multi-session coordination, hybrid capability.",
       priceRange: "Rp 3.000.000 - Rp 6.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih MICE Organizer Bandung yang Tepat",
+      description: "5 langkah untuk memilih dan bekerja dengan MICE organizer Bandung yang capable untuk event skala besar.",
+      steps: [
+        { name: "Definisikan Scope MICE Event", text: "MICE mencakup 4 kategori: Meeting (boardroom hingga 500 pax), Incentive (reward trip untuk top performer), Conference (multi-session dengan speaker), Exhibition (booth display + visitor management). Scope yang jelas menentukan vendor kapabilitas yang dibutuhkan." },
+        { name: "Verifikasi Kapabilitas Teknis Venue & AV", text: "MICE skala medium-besar butuh: LED wall atau screen besar, sound system multi-zone, live streaming capability untuk hybrid, simultaneous interpretation booth (untuk conference internasional), dan back-of-house logistik untuk speaker + VIP." },
+        { name: "Cek Track Record Skala Serupa", text: "Minta case study eksplisit: vendor pernah handle berapa pax maksimum, venue apa, format apa. Vendor yang hanya biasa handle 100 pax akan struggle di MICE 500 pax. Track record di angka pax dan kompleksitas serupa adalah indikator terkuat." },
+        { name: "Pastikan Ada Dedicated Event Manager", text: "MICE dengan banyak sesi paralel butuh event manager per zone — bukan 1 orang yang handle semuanya. Minta vendor tunjukkan struktur tim onsite: berapa event manager, berapa crew lapangan, dan siapa yang jadi single point of contact untuk klien." },
+        { name: "Plan Hybrid & Streaming dari Awal", text: "Jika ada peserta remote, hybrid setup harus di-plan dari design stage — bukan ditambahkan last-minute. Butuh: dedicated streaming crew, platform yang stable (Zoom Webinar, Microsoft Teams Live, atau custom streaming), dan pre-event tech rehearsal dengan speaker remote." },
+      ],
+    })
   );
 
   return (

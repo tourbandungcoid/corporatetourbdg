@@ -20,6 +20,7 @@ import {
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/villa-gathering-bandung";
@@ -158,7 +159,18 @@ export default function VillaGatheringBandungPage() {
         "Corporate gathering di villa private premium di Bandung & Lembang dengan capacity 30-300 pax.",
       priceRange: "Rp 2.200.000 - Rp 6.000.000 per pax",
     }),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Villa untuk Corporate Gathering di Bandung",
+      description: "5 langkah untuk menemukan dan memesan villa yang tepat untuk gathering perusahaan di Bandung & Lembang.",
+      steps: [
+        { name: "Tentukan Kapasitas & Kebutuhan Ruang", text: "Hitung kebutuhan: jumlah kamar tidur (1 kamar per 2-3 peserta untuk overnight), kapasitas ruang makan (harus bisa duduk semua bersamaan), dan area outdoor untuk aktivitas. Villa cluster Lembang biasanya tersedia untuk 30-80 pax; resort villa untuk 100-300 pax." },
+        { name: "Verifikasi Fasilitas Wajib", text: "Checklist minimum villa corporate: ruang meeting dengan proyektor + screen, sound system outdoor, F&B service (in-house catering atau partnership dengan katering halal bersertifikat), pool/BBQ area untuk bonding, dan parkir memadai atau akses shuttle." },
+        { name: "Cek Aksesibilitas & Waktu Tempuh", text: "Dari Jakarta: Lembang via tol Cipularang 2.5-3 jam (peak Jumat bisa 4+ jam). Ciwidey 3-3.5 jam. Pertimbangkan departure time: Jumat sore vs Sabtu pagi sangat mempengaruhi arrival condition peserta. Vendor berpengalaman akan sarankan departure timing optimal." },
+        { name: "Konfirmasi Kapasitas Ekslusif", text: "Untuk corporate event, pastikan villa di-booking secara eksklusif — tidak shared dengan tamu lain. Booking eksklusif memastikan privasi, fleksibilitas schedule, dan tidak ada gangguan kebisingan dari pihak luar selama program berlangsung." },
+        { name: "Book Jauh di Muka untuk Peak Season", text: "Villa premium Lembang dan Ciwidey sold out 2-4 bulan sebelum peak season (Lebaran, akhir tahun, April-Mei). Untuk event Q4 (Oktober-Desember): mulai survey dan booking dari Juli-Agustus. Deposit 30-50% untuk lock exclusive booking." },
+      ],
+    })
   );
 
   return (
