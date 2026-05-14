@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getCopy } from "@/lib/brand-settings";
 import {
   ArrowRight,
   IconGathering,
@@ -86,21 +87,26 @@ const SERVICES = [
   },
 ];
 
-export function Services() {
+export async function Services() {
+  const [eyebrow, headline, sub] = await Promise.all([
+    getCopy("home.services.eyebrow", "What we do"),
+    getCopy("home.services.headline", "10 program yang siap di-customize untuk tim lo."),
+    getCopy("home.services.sub", "Dari intimate retreat sampai mass gathering 2.000 pax — semua di-design dari brief, bukan paket template."),
+  ]);
+
   return (
     <section className="section bg-bone" id="services">
       <div className="container-1280">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div className="max-w-2xl">
-            <span className="eyebrow-brand">What we do</span>
+            <span className="eyebrow-brand">{eyebrow}</span>
             <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl text-ink">
-              10 program yang siap di-customize untuk tim lo.
+              {headline}
             </h2>
           </div>
           <p className="md:max-w-sm text-base text-slate">
-            Dari intimate retreat sampai mass gathering 2.000 pax — semua
-            di-design dari brief, bukan paket template.
+            {sub}
           </p>
         </div>
 
