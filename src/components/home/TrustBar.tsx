@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "@/components/icons/Icons";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getCopy } from "@/lib/brand-settings";
 
 type ClientLogoRow = {
   id: string;
@@ -42,7 +43,11 @@ async function getClientLogos(): Promise<ClientLogoRow[]> {
 }
 
 export async function TrustBar() {
-  const dbLogos = await getClientLogos();
+  const [dbLogos, eyebrow, sub] = await Promise.all([
+    getClientLogos(),
+    getCopy("home.trust.eyebrow", "Trusted By"),
+    getCopy("home.trust.sub", "Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka"),
+  ]);
   const hasLogos = dbLogos.length > 0;
 
   // Duplicate the array so the marquee loops seamlessly.
@@ -53,9 +58,9 @@ export async function TrustBar() {
     <section className="relative bg-paper py-20 md:py-24 border-b border-divider/60">
       <div className="container-1280">
         <div className="flex flex-col items-center gap-5 text-center">
-          <span className="eyebrow-brand">Trusted By</span>
+          <span className="eyebrow-brand">{eyebrow}</span>
           <p className="text-base md:text-lg text-slate max-w-md">
-            Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka
+            {sub}
           </p>
           <GoogleReviewsBadge variant="compact" className="mt-2" />
         </div>
