@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Employee Gathering Bandung 2026: Engagement & Retention Event untuk HR",
   description:
-    "Employee gathering Bandung yang impact ke engagement & retention — bukan refresh casual biasa. Range Rp 1,5–3,5 jt/pax. Cross-generational design, ROI measurement framework, dan 5 format yang terbukti efektif untuk Indonesia B2B.",
+    "Employee gathering Bandung untuk engagement & retention — bukan refresh biasa. Rp 1,5–3,5 jt/pax, cross-generational design, ROI framework. ⭐ 4.9/5 · 400+ events · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:
@@ -569,9 +569,9 @@ export default function EmployeeGatheringBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — apa bedanya untuk employee event"],
+                ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performer perusahaan"],
                 ["/corporate-gathering-bandung", "Corporate Gathering", "Formal annual event production"],
-                ["/outing-kantor-bandung", "Outing Kantor", "Generic outing format"],
-                ["/team-building-bandung", "Team Building", "Outcome-driven activity catalog"],
               ].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5">
                   <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>

@@ -14,7 +14,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Leadership Retreat Jawa Barat 2026: Senior Leadership Development Program",
   description:
-    "Leadership retreat Jawa Barat untuk senior management & C-suite development. 5 leadership framework (Servant, Adaptive, Situational, Transformational, Authentic), certified executive coach, dan venue private. Range Rp 5–9 jt/pax untuk 3D2N.",
+    "Leadership retreat Jawa Barat — 5 framework (Servant, Adaptive, Situational, Transformational, Authentic), certified executive coach, venue private. Rp 5–9 jt/pax. ⭐ 4.9/5 · Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Leadership Retreat Jawa Barat — Senior Leadership Development",
@@ -252,7 +252,7 @@ export default function LeadershipRetreatJawaBaratPage() {
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {[["/executive-offsite-bandung", "Executive Offsite", "C-suite strategic offsite"], ["/company-retreat-bandung", "Company Retreat", "Strategic multi-day deep work"], ["/team-building-bandung", "Team Building", "Methodology + activity catalog"]].map(([href, title, desc]) => (
+              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk leadership event"], ["/executive-offsite-bandung", "Executive Offsite", "C-suite strategic offsite"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"]].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
               ))}
             </div>

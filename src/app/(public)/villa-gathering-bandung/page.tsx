@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Villa Gathering Bandung 2026: 12 Villa Premium untuk Outing 50–300 Pax",
   description:
-    "Villa gathering Bandung untuk corporate outing private — 12 villa premium dari capacity 30 sampai 300 pax. Estimasi sewa Rp 25–80 jt/2D1N, plus F&B + activity. Multi-villa setup tersedia untuk grup besar.",
+    "Villa gathering Bandung — 12 villa premium capacity 30–300 pax, Rp 25–80 jt/2D1N. Private exclusive, direct partnership (tanpa reseller). ⭐ 4.9/5 · Proposal + rekomendasi villa dalam 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Villa Gathering Bandung — 12 Villa Premium 2026",
@@ -610,9 +610,9 @@ export default function VillaGatheringBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
-                ["/glamping-corporate-bandung", "Glamping Corporate", "Unique outdoor alternative"],
-                ["/team-building-bandung", "Team Building", "Methodology + activity catalog"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — why it matters"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

@@ -14,7 +14,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Company Retreat Bandung 2026: Strategic Multi-Day untuk Deep Work & Cultural Reset",
   description:
-    "Company retreat Bandung untuk strategic planning, cultural reset, atau post-merger integration. 2D1N–5D4N premium retreat dengan venue private + facilitator senior. Range Rp 3,5–8 jt/pax. Free proposal 24 jam.",
+    "Company retreat Bandung — strategic planning, cultural reset, post-merger integration. Venue private exclusive, facilitator senior bersertifikat. Rp 3,5–8 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Company Retreat Bandung — Strategic Multi-Day Premium Retreat",
@@ -293,7 +293,7 @@ export default function CompanyRetreatBandungPage() {
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {[["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"], ["/leadership-retreat-jawa-barat", "Leadership Retreat", "Senior leadership development"], ["/corporate-gathering-bandung", "Corporate Gathering", "Annual formal event"]].map(([href, title, desc]) => (
+              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk retreat perusahaan"], ["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"]].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
               ))}
             </div>

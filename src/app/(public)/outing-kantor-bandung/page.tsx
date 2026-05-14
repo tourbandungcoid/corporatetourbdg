@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Outing Kantor Bandung 2026: Panduan Budget, Itinerary & Vendor Recommended",
   description:
-    "Range biaya outing kantor Bandung Rp 2,5–5 jt/pax untuk 2D1N standar. Lihat estimasi budget per pax, sample itinerary, 5 lokasi favorit (Lembang, Ciwidey, Pangalengan), dan vendor checklist 7-poin. Free proposal dalam 24 jam.",
+    "Outing kantor Bandung Rp 2,5–5 jt/pax untuk 2D1N. Budget breakdown, sample itinerary, 5 lokasi top, checklist vendor 7-poin. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam — hubungi kami sekarang.",
   alternates: { canonical: URL },
   openGraph: {
     title:
@@ -687,19 +687,19 @@ export default function OutingKantorBandungPage() {
             <div className="grid gap-4 md:grid-cols-3">
               {[
                 [
+                  "/event-organizer-corporate-bandung",
+                  "Event Organizer Corporate Bandung",
+                  "Specialist B2B vs generic EO — beda hasilnya",
+                ],
+                [
                   "/team-building-bandung",
                   "Team Building Bandung",
                   "Outbound, indoor, methodology framework",
                 ],
                 [
-                  "/villa-gathering-bandung",
-                  "Villa Gathering Bandung",
-                  "12 villa premium untuk grup 50–300 pax",
-                ],
-                [
-                  "/glamping-corporate-bandung",
-                  "Glamping Corporate Bandung",
-                  "Unique outdoor experience untuk tim",
+                  "/venue-gathering-bandung",
+                  "Venue Gathering Bandung",
+                  "20 rekomendasi hotel, villa & resort terbaik",
                 ],
               ].map(([href, title, desc]) => (
                 <Link

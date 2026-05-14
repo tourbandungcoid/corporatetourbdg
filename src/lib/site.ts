@@ -62,12 +62,38 @@ export const STATS = {
 
 /**
  * Build a WhatsApp pre-fill link.
+ * context: human-readable event type (e.g. "corporate gathering 200 pax")
+ * refCode: optional tracking ref
+ * details: optional structured details for pre-qualified leads
  */
-export function buildWaLink(context?: string, refCode?: string): string {
-  const baseMsg = context
-    ? `Halo, saya tertarik dengan ${context} untuk tim saya.`
-    : "Halo, saya tertarik dengan layanan corporate outing/gathering. Bisa info lebih lanjut?";
+export function buildWaLink(
+  context?: string,
+  refCode?: string,
+  details?: { pax?: string; timeline?: string; budget?: string }
+): string {
   const refSuffix = refCode ? ` (Ref: ${refCode})` : "";
-  const fullMsg = `${baseMsg}${refSuffix}\n\n[Dari: ${SITE.url}]`;
+
+  let fullMsg: string;
+  if (details && (details.pax || details.timeline || details.budget)) {
+    const lines = [
+      `Halo, saya mau tanya tentang *${context ?? "corporate outing/gathering"}* untuk perusahaan kami.`,
+      "",
+      "Detail kebutuhan:",
+      details.pax ? `• Jumlah peserta: *${details.pax}*` : "",
+      details.timeline ? `• Target waktu: *${details.timeline}*` : "",
+      details.budget ? `• Budget range: *${details.budget}*` : "",
+      "",
+      "Bisa bantu kirimkan proposal / estimasi budget awal?",
+      "",
+      `[Dari: ${SITE.url}${refSuffix}]`,
+    ].filter((l) => l !== undefined);
+    fullMsg = lines.join("\n");
+  } else {
+    const baseMsg = context
+      ? `Halo, saya tertarik dengan *${context}* untuk tim kami. Bisa tolong kirimkan proposal / estimasi budget?`
+      : "Halo, saya tertarik dengan layanan corporate outing/gathering TourBandung. Bisa info lebih lanjut?";
+    fullMsg = `${baseMsg}\n\n[Dari: ${SITE.url}${refSuffix}]`;
+  }
+
   return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(fullMsg)}`;
 }

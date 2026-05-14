@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Glamping Corporate Bandung 2026: Premium Outdoor Experience untuk Tim yang Beda",
   description:
-    "Glamping corporate Bandung — premium outdoor experience tanpa kompromi kenyamanan. Range Rp 2,5–5,5 jt/pax untuk 1D2N. Tenda safari premium, bonfire dinner, sunrise session. Untuk tim 30-80 pax yang mau differentiator dari hotel/villa.",
+    "Glamping corporate Bandung — tenda safari premium, bonfire dinner, sunrise reflection. Rp 2,5–5,5 jt/pax, 30–80 pax. Outdoor experience paling memorable untuk team bonding. ⭐ 4.9/5 · Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Glamping Corporate Bandung — Unique Outdoor Experience",
@@ -680,9 +680,9 @@ export default function GlampingCorporateBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
-                ["/team-building-bandung", "Team Building", "Methodology + activity catalog"],
-                ["/villa-gathering-bandung", "Villa Gathering", "12 villa premium 50-300 pax"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk event outdoor"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

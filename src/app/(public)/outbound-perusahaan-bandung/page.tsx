@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Outbound Perusahaan Bandung 2026: 3 Tier Adventure, Safety Standards, dan Lokasi Outdoor Terbaik",
   description:
-    "Outbound perusahaan Bandung dengan 3-tier classification (Light/Medium/Extreme), safety standards lengkap (insurance, certified instructor, medical standby), dan 8 lokasi outdoor recommended. Range Rp 1,5-3,5 jt/pax. Free proposal 24 jam.",
+    "Outbound perusahaan Bandung — 3 tier adventure (Light/Medium/Extreme), safety certified, 8 lokasi outdoor, insurance peserta included. Rp 1,5–3,5 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Outbound Perusahaan Bandung — Adventure dengan Safety Standards",
@@ -610,9 +610,9 @@ export default function OutboundPerusahaanBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — benefit vs generic EO"],
                 ["/team-building-bandung", "Team Building Bandung", "Indoor + outdoor methodology"],
-                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Casual format alternative"],
-                ["/glamping-corporate-bandung", "Glamping Corporate", "2D1N outdoor + accommodation"],
+                ["/venue-gathering-bandung", "Venue Gathering Bandung", "Lokasi terbaik untuk outbound + gathering"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

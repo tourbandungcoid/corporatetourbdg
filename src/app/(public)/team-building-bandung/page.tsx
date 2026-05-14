@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Team Building Bandung 2026: Methodology, 50+ Activity, Vendor Recommended",
   description:
-    "Team building Bandung yang outcome-driven — bukan sekadar games. Methodology (Tuckman, DiSC, Belbin), 50+ activity catalog, range budget Rp 1,2–4 jt/pax, dan format outbound vs indoor vs hybrid. Free proposal 24 jam.",
+    "Team building Bandung outcome-driven — Tuckman, DiSC, Belbin methodology, 50+ activity catalog, Rp 1,2–4 jt/pax. Outbound vs indoor vs hybrid. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Team Building Bandung — Methodology + Activity Catalog 2026",
@@ -665,9 +665,9 @@ export default function TeamBuildingBandungPage() {
             <p className="eyebrow-brand mb-6">Related guides</p>
             <div className="grid gap-4 md:grid-cols-3">
               {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — bukan generic EO"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
-                ["/glamping-corporate-bandung", "Glamping Corporate", "Unique outdoor experience"],
-                ["/villa-gathering-bandung", "Villa Gathering", "12 villa premium 50-300 pax"],
+                ["/mice-organizer-bandung", "MICE Organizer Bandung", "Meeting, conference, hybrid event"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

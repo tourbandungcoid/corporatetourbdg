@@ -36,31 +36,31 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 backdrop-blur px-4 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
             <span className="text-xs font-medium tracking-wide text-paper/90">
-              Trusted by {STATS.companiesTrusted} Indonesian companies · {STATS.yearsOperating}
+              ⭐ 4.9/5 Google Reviews · {STATS.companiesTrusted} perusahaan Indonesia · {STATS.yearsOperating}
             </span>
           </div>
 
-          {/* Heavy editorial headline — Inter Display weight */}
+          {/* Heavy editorial headline — keyword-first for SEO */}
           <h1 className="font-display mt-8 text-paper">
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
-              Corporate outing
+              Corporate Outing
             </span>
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] text-brand">
-              untuk tim
+              &amp; Gathering Bandung
             </span>
             <span className="block text-[2.75rem] leading-[1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]">
-              yang fokus hasil.
+              yang benar-benar kerja.
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="mt-8 text-base md:text-lg text-paper/75 leading-relaxed max-w-2xl">
-            Custom-designed corporate event di Bandung &amp; Jawa Barat —{" "}
+            Specialist B2B — bukan travel agent, bukan generic EO.{" "}
             <span className="text-paper font-medium">
-              company gathering, team building, executive offsite
-            </span>
-            . Dari startup unicorn sampai BUMN nasional, untuk tim 20 sampai
-            2.000 orang.
+              Company gathering, team building, executive offsite
+            </span>{" "}
+            di Bandung &amp; Jawa Barat. Dari startup unicorn sampai BUMN
+            nasional, untuk tim 20 sampai 2.000 orang.
           </p>
 
           {/* CTAs */}
@@ -69,7 +69,7 @@ export function Hero() {
               href="/proposal/request"
               className="group inline-flex items-center gap-2 rounded-full bg-brand text-paper px-7 h-13 py-3.5 text-[15px] font-medium hover:bg-brand-deep transition-all hover:shadow-[0_8px_30px_rgba(107,162,57,0.35)]"
             >
-              Request Proposal
+              Request Proposal — 24 Jam
               <ArrowRight
                 size={16}
                 className="transition-transform group-hover:translate-x-1"
@@ -79,7 +79,7 @@ export function Hero() {
               href="/proposal/book-consultation"
               className="inline-flex items-center gap-2 rounded-full border border-paper/30 bg-paper/[0.06] backdrop-blur text-paper px-7 py-3.5 text-[15px] font-medium hover:bg-paper hover:text-ink hover:border-paper transition-colors"
             >
-              Free Consultation
+              Konsultasi Gratis
             </Link>
           </div>
         </div>
@@ -90,9 +90,9 @@ export function Hero() {
         <div className="container-1280">
           <div className="grid grid-cols-2 md:grid-cols-4">
             <Stat number={STATS.eventsDelivered} label="Events delivered" />
-            <Stat number={STATS.companiesTrusted} label="Companies trusted" />
+            <Stat number={STATS.companiesTrusted} label="Perusahaan Indonesia" />
             <Stat number={STATS.repeatBookingRate} label="Repeat booking" />
-            <Stat number={STATS.avgResponseTime} label="Avg response" />
+            <Stat number="4.9 ★" label="Google Reviews" />
           </div>
         </div>
       </div>
