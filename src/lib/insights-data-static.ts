@@ -28,6 +28,8 @@ export type Insight = {
   };
   sections: InsightSection[];
   relatedSlugs?: string[];
+  /** Contextual links to money/service pages — rendered as "Layanan terkait" widget in article body */
+  internalLinks?: { href: string; label: string; description: string }[];
   /** Optional HowTo schema data — emit HowTo rich result when article is a step-by-step guide */
   howTo?: {
     name: string;
@@ -120,6 +122,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Apply 5-pillar framework ke outing kantor — dari planning hingga eksekusi." },
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program team building dengan methodology outcome-driven untuk tim Anda." },
+      { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "Framework 5-pillar untuk C-suite strategic session yang high-impact." },
+    ],
     relatedSlugs: ["bandung-outing-tier-system", "justify-outing-budget-to-finance"],
     howTo: {
       name: "Cara Menerapkan 5-Pillar Corporate Outing Design™",
@@ -197,6 +204,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Match jawaban ini ke tier. Tier yang fit, bukan tier yang highest, adalah pilihan optimal. Vendor profesional akan honest soal tier yang fit kebutuhan Anda — kalau vendor selalu push tier tertinggi tanpa diagnosis, that's a red flag.",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Pilih tier yang tepat untuk outing kantor — Foundation hingga Bespoke." },
+      { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "Tier 4 Bespoke: pilihan optimal untuk C-suite offsite 8-25 pax." },
+      { href: "/company-retreat-bandung", label: "Company Retreat Bandung", description: "Tier 3–4 untuk multi-day strategic retreat dengan premium venue." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "justify-outing-budget-to-finance"],
     howTo: {
@@ -284,6 +296,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Hitung ROI outing kantor dengan breakdown budget per pax yang transparan." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Annual gathering dengan post-event report lengkap — data siap untuk Finance." },
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program team building dengan measurement framework pre & post event." },
+    ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "cross-generational-team-building"],
   },
 
@@ -354,6 +371,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Cross-generational design adalah investment kecil di planning yang berdampak besar di outcome. Most company yang implementasi ini consistently lihat engagement metric improvement 15-25% vs single-stream format mereka sebelumnya.",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program team building untuk lintas generasi — Gen-Z, Millennial, Gen-X dalam satu format." },
+      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Gathering inklusif yang accommodate semua profil demografis karyawan." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing dengan parallel activity track untuk cross-generational team." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "post-merger-cultural-bonding"],
   },
@@ -436,6 +458,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Sweet spot: 30-90 hari setelah deal close. Sebelum 30 hari, operational integration masih chaos — peserta tidak punya bandwidth untuk cultural work. Setelah 90 hari, friksi early signal sudah jadi resistance entrenched — much harder to address.",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program cultural integration post-merger dengan certified facilitator dan Tuckman framework." },
+      { href: "/company-retreat-bandung", label: "Company Retreat Bandung", description: "Multi-day immersive retreat untuk alignment pasca-merger dalam setting terpencil." },
+      { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "C-suite alignment session pasca-merger — discreet, NDA-ready, strategic facilitator." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "cross-generational-team-building"],
   },
@@ -544,6 +571,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Vendor outing dengan risk register & safety SOP terdokumentasi — siap untuk procurement." },
+      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "Event organizer dengan protokol force majeure dan contingency plan tersertifikasi." },
+      { href: "/b2b-corporate-event-specialist-bandung", label: "B2B Event Specialist", description: "7 kriteria vendor B2B termasuk verifikasi risk management dan liability coverage." },
+    ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "indoor-vs-outdoor-corporate-outing"],
   },
 
@@ -642,6 +674,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Hasil 6 faktor ini = rekomendasi indoor/outdoor/hybrid dengan ratio defensible. Bukan opinion HR, bukan template generic — keputusan data-driven.",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Indoor & outdoor outing dengan venue fleksibel — ballroom hingga private villa Lembang." },
+      { href: "/outbound-perusahaan-bandung", label: "Outbound Perusahaan Bandung", description: "Program outdoor adventure dengan safety-certified instructor untuk tim Anda." },
+      { href: "/villa-gathering-bandung", label: "Villa Gathering Bandung", description: "Gathering di villa private — semi-outdoor dengan privasi penuh." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "force-majeure-contingency-corporate-outing", "corporate-outing-theme-selection"],
   },
@@ -758,6 +795,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Eksekusi tema outing yang on-brand dengan vendor specialist Bandung." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Annual gathering dengan awarding ceremony — tema premium, production grade." },
+      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Tema gathering yang inklusif untuk semua level karyawan." },
+    ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "indoor-vs-outdoor-corporate-outing"],
   },
 
@@ -869,6 +911,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Gunakan rundown ini sebagai template dan serahkan eksekusinya ke kami." },
+      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "EO yang bisa eksekusi rundown 1 hari dari A-Z dengan dedicated PM." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Template rundown 3D2N untuk event skala lebih besar." },
+    ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "indoor-vs-outdoor-corporate-outing"],
     howTo: {
       name: "Cara Membuat Rundown Outing Kantor 1 Hari",
@@ -952,6 +999,11 @@ const INSIGHTS: Record<string, Insight> = {
           text: "Non-refundable deposit 100% untuk semua skenario cancel. Klausul 'perubahan sewaktu-waktu tanpa pemberitahuan'. Tidak ada service level agreement yang tertulis. Tidak ada mekanisme dispute resolution.",
         },
       },
+    ],
+    internalLinks: [
+      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "EO corporate Bandung yang memenuhi semua 12 poin checklist — NPWP, dedicated PM, post-event report." },
+      { href: "/b2b-corporate-event-specialist-bandung", label: "B2B Event Specialist", description: "Panduan lengkap 7 kriteria vendor B2B untuk procurement perusahaan besar." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Brief vendor outing Anda dengan checklist ini untuk mendapatkan proposal terbaik." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system"],
     howTo: {
@@ -1062,6 +1114,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Eksplorasi venue Lembang & Ciwidey dengan dukungan 60+ vendor partnership langsung." },
+      { href: "/villa-gathering-bandung", label: "Villa Gathering Bandung", description: "Villa private premium Lembang — eksklusif, 30-300 pax, non-shared." },
+      { href: "/glamping-corporate-bandung", label: "Glamping Corporate Bandung", description: "Glamping di Lembang atau Ciwidey — outdoor premium untuk team bonding unik." },
+    ],
     relatedSlugs: ["bandung-outing-tier-system", "contoh-rundown-outing-kantor-1-hari", "indoor-vs-outdoor-corporate-outing"],
   },
 
@@ -1144,6 +1201,11 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    internalLinks: [
+      { href: "/mice-organizer-bandung", label: "MICE Organizer Bandung", description: "Full-stack MICE production — meeting, incentive, conference, exhibition di Bandung." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Corporate gathering dengan format annual event production — bukan sekadar outing." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing kantor sebagai alternatif MICE yang lebih kasual namun tetap impactful." },
+    ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "checklist-vendor-event-organizer-corporate", "bandung-outing-tier-system"],
   },
 
@@ -1223,6 +1285,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Management sulit justify budget ke Finance karena narrative program tidak jelas",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/incentive-trip-bandung", label: "Incentive Trip Bandung", description: "Rancang incentive trip yang eksklusif dan bermakna untuk top performer Anda." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Annual company trip format casual — bonding inklusif untuk semua karyawan." },
+      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Employee gathering sebagai alternatif company trip yang lebih inklusif dan scalable." },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "mice-vs-corporate-outing-perbedaan", "justify-outing-budget-to-finance"],
   },
@@ -1310,6 +1377,11 @@ const INSIGHTS: Record<string, Insight> = {
           "Venue dengan 80% wedding bisa deliver corporate gathering dengan baik — tapi perlu brief yang lebih intensif untuk ensure corporate vibe yang proper.",
         ],
       },
+    ],
+    internalLinks: [
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Annual corporate gathering dengan kurasi venue sesuai 8 faktor di artikel ini." },
+      { href: "/villa-gathering-bandung", label: "Villa Gathering Bandung", description: "Villa private Lembang & Bandung — venue gathering eksklusif dengan kapasitas fleksibel." },
+      { href: "/venue-gathering-bandung", label: "Venue Gathering Bandung", description: "Direktori venue gathering Bandung — hotel ballroom, villa cluster, resort premium." },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "outing-lembang-vs-ciwidey", "indoor-vs-outdoor-corporate-outing"],
     howTo: {

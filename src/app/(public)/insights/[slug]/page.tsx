@@ -182,6 +182,24 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
                   )}
                 </div>
               ))}
+
+              {/* Internal links to related service pages */}
+              {article.internalLinks && article.internalLinks.length > 0 && (
+                <div className="rounded-2xl border border-brand/25 bg-brand-light/20 p-6">
+                  <p className="text-xs uppercase tracking-[0.18em] text-brand-deep font-medium mb-4">Layanan terkait</p>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {article.internalLinks.map((link) => (
+                      <Link key={link.href} href={link.href} className="group flex items-start gap-2.5 rounded-xl border border-border bg-paper px-4 py-3 hover:border-brand/40 hover:shadow-sm transition">
+                        <ArrowRight size={12} className="mt-1 text-brand flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                        <div>
+                          <p className="text-sm font-medium text-ink group-hover:text-brand-deep transition-colors leading-snug">{link.label}</p>
+                          <p className="text-xs text-slate-mute mt-0.5">{link.description}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
