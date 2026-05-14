@@ -121,6 +121,17 @@ const INSIGHTS: Record<string, Insight> = {
       },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "justify-outing-budget-to-finance"],
+    howTo: {
+      name: "Cara Menerapkan 5-Pillar Corporate Outing Design™",
+      description: "Framework sequential untuk merancang corporate outing yang outcome-driven — dari objective hingga measurement.",
+      steps: [
+        { name: "Tentukan Objective", text: "Artikulasikan team outcome spesifik yang ingin dicapai: bonding pasca-merger, engagement boost, cultural reinforcement, strategic alignment, atau leadership development. Hindari objective generik seperti 'refreshing' atau 'bonding casual'." },
+        { name: "Peta Audience", text: "Analisis demografi peserta: umur range, generational split, fitness level, kebutuhan dietary dan religi, serta pengalaman outing sebelumnya. Cross-generational group butuh parallel activity track." },
+        { name: "Kurasi Venue & Logistik", text: "Pilih venue berdasarkan objective dan audience — bukan harga. Bonding intimate: villa private. Award night premium: hotel ballroom. Adventure outbound: outdoor camp. Pastikan kapasitas, aksesibilitas, dan kedekatan layanan medis terpenuhi." },
+        { name: "Rancang Activity Architecture", text: "Frame setiap activity untuk hit specific team outcome. Desain energy curve yang seimbang (tidak back-to-back high intensity). Gunakan framework Tuckman, DiSC, atau Belbin yang sesuai goal dan maturitas tim." },
+        { name: "Tetapkan Outcome Measurement", text: "Kirim pre-event baseline survey (eNPS, retention intent, communication index) 1 minggu sebelum event. Ulangi 1 minggu setelah event. Track attrition peserta vs non-peserta 6 bulan kemudian untuk membuktikan ROI ke Finance." },
+      ],
+    },
   },
 
   "bandung-outing-tier-system": {
@@ -188,6 +199,16 @@ const INSIGHTS: Record<string, Insight> = {
       },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "justify-outing-budget-to-finance"],
+    howTo: {
+      name: "Cara Memilih Tier Corporate Outing yang Tepat dengan BOTS",
+      description: "4 langkah untuk menentukan tier corporate outing Bandung yang optimal berdasarkan use case, skala, dan investment yang tersedia.",
+      steps: [
+        { name: "Identifikasi Use Case Event", text: "Tentukan kategori event: bonding casual (quarterly refresh), annual celebration, strategic work session, atau leadership development. Setiap use case punya tier yang ideal — Foundation untuk casual, Bespoke untuk leadership development intensif." },
+        { name: "Hitung Jumlah Peserta", text: "Pax count sangat mempengaruhi tier realistis. Foundation (30–80 pax), Elevated (100–300 pax), Signature (50–200 pax untuk marquee event), Bespoke (5–25 pax). Grup 300+ pax butuh multi-venue setup yang hanya tersedia di Elevated ke atas." },
+        { name: "Tentukan Perceived Value yang Ingin Diproyeksikan", text: "Tanyakan: apa sinyal yang ingin dikirim ke peserta? Annual gathering yang ingin proyeksikan 'company is growing premium' butuh minimal Tier 2 Elevated. C-suite offsite yang perlu privasi dan eksklusivitas butuh Tier 4 Bespoke." },
+        { name: "Match ke Tier dan Alokasikan Budget", text: "Cocokkan tiga jawaban di atas ke tier yang fit. Foundation: Rp 1.5–2.5 jt/pax. Elevated: Rp 2.5–4.5 jt/pax. Signature: Rp 4.5–7 jt/pax. Bespoke: Rp 7 jt+/pax. Tier yang fit kebutuhan — bukan tier tertinggi — adalah pilihan optimal." },
+      ],
+    },
   },
 
   "justify-outing-budget-to-finance": {

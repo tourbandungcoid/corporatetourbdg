@@ -18,9 +18,9 @@ import {
 
 const PATH = "/b2b-corporate-event-specialist-bandung";
 const URL = `${SITE.url}${PATH}`;
-const TITLE = "B2B Corporate Event Specialist Bandung";
+const TITLE = "B2B Corporate Event Specialist Bandung 2026 — 7 Kriteria Vendor untuk HR Procurement";
 const DESCRIPTION =
-  "Specialist B2B corporate event di Bandung — fokus eksekusi outing, team building, dan executive offsite untuk perusahaan, bukan event personal. 7 kriteria seleksi vendor untuk HR procurement.";
+  "Pilih vendor B2B corporate event Bandung yang benar: 7 kriteria wajib untuk HR procurement — discovery brief, line-item proposal, risk register, legal entity, dedicated PM, post-event report, NDA-ready. TourBandung Corporate, 400+ events sejak 2018.";
 
 export const metadata: Metadata = {
   title: TITLE,

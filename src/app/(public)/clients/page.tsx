@@ -14,14 +14,14 @@ import {
 import { getTestimonialsList } from "@/lib/testimonials-data";
 
 export const metadata: Metadata = {
-  title: "Clients",
+  title: "Klien TourBandung Corporate — 100+ Perusahaan Indonesia dari BUMN hingga MNC",
   description:
-    "100+ perusahaan Indonesia memilih TourBandung Corporate untuk corporate event mereka — dari tech unicorn hingga BUMN bank, FMCG global, hingga banking premium.",
+    "100+ perusahaan Indonesia memilih TourBandung Corporate — dari tech unicorn, BUMN bank, FMCG global, telco, manufacturing, hingga banking premium. Confidentiality protocol aktif per NDA convention.",
   alternates: { canonical: `${SITE.url}/clients` },
   openGraph: {
-    title: "Clients — TourBandung Corporate",
+    title: "Klien TourBandung Corporate — 100+ Perusahaan, 8+ Industri",
     description:
-      "100+ perusahaan Indonesia, 8+ industries — tech unicorn, banking, BUMN, FMCG, telco, manufacturing.",
+      "Tech unicorn · BUMN banking · FMCG global · Telco · Manufacturing MNC — corporate event di Bandung & Jawa Barat. Confidentiality protocol aktif.",
     url: `${SITE.url}/clients`,
     type: "website",
   },
