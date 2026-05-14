@@ -51,9 +51,9 @@ export function Navigation() {
             className="flex-shrink-0 flex items-center"
           >
             <LogoLockup
-              height={40}
+              height={48}
               variant={useLightStyle ? "light" : "dark"}
-              showCorporateLabel={false}
+              showCorporateLabel
             />
           </Link>
 
@@ -122,7 +122,7 @@ export function Navigation() {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={40} showCorporateLabel={false} />
+              <LogoLockup height={48} showCorporateLabel />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
