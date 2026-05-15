@@ -192,6 +192,13 @@ export function serviceSchema({
       "@type": "BusinessAudience",
       audienceType: "Corporate B2B",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: REVIEWS.googleRating,
+      reviewCount: REVIEWS.googleReviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
   };
 }
 
