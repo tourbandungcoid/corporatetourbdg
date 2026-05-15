@@ -13,6 +13,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/venue-gathering-bandung";
@@ -252,7 +253,37 @@ export default function VenueGatheringBandungPage() {
       { name: "Home", url: SITE.url },
       { name: "Venue Gathering Bandung", url: URL },
     ]),
-    faqPageSchema(FAQS)
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Venue Gathering di Bandung",
+      description: "Panduan langkah-demi-langkah untuk memilih venue corporate gathering Bandung yang tepat sesuai pax, budget, dan objective event.",
+      steps: [
+        {
+          name: "Tentukan objective dan vibe event",
+          text: "Formal annual gathering dengan awarding night membutuhkan hotel ballroom; team building outbound aktif butuh outdoor ground luas; executive retreat butuh villa private dengan exclusivity tinggi. Tentukan vibe terlebih dahulu sebelum shortlist venue.",
+        },
+        {
+          name: "Hitung kapasitas aktual yang dibutuhkan",
+          text: "Kapasitas marketing venue sering lebih tinggi dari kapasitas aktual. Cek kapasitas untuk layout yang dibutuhkan: theater, classroom, atau round table. Tambahkan 15–20% buffer untuk AV setup, stage, dan area gerak peserta.",
+        },
+        {
+          name: "Pilih area berdasarkan jarak dan aksesibilitas",
+          text: "Untuk peserta dari Jakarta, prioritaskan venue dekat tol Pasteur (Trans Luxury, Pullman). Untuk nature vibe: Lembang (30–60 mnt, paling banyak pilihan), Ciwidey (75–110 mnt, outbound), Pangalengan (100–130 mnt, quiet retreat).",
+        },
+        {
+          name: "Survey venue dan cek 12 checklist teknis",
+          text: "Wajib dicek: kapasitas aktual, ceiling height, loading dock, kualitas AC, parking, backup power, bandwidth internet, kebijakan vendor luar, noise level, aksesibilitas difabel, cancellation policy, dan ketersediaan exclusive booking.",
+        },
+        {
+          name: "Minta penawaran dan bandingkan breakdown biaya",
+          text: "Minta quotation dengan breakdown terpisah: biaya sewa venue, F&B per pax, AV, dekorasi, akomodasi (untuk overnight). Bandingkan minimal 2–3 venue sebelum memutuskan. Perhatikan hidden fees seperti admin charge dan pajak.",
+        },
+        {
+          name: "Lock venue sesuai lead time yang direkomendasikan",
+          text: "50–100 pax: minimal 4–6 minggu. 100–300 pax: minimal 8 minggu. 300–500 pax: minimal 10–12 minggu. Peak season Q4 (Okt–Des) dan Q1 (Mar–Mei): tambah 4–6 minggu. Lock venue adalah langkah pertama sebelum apapun.",
+        },
+      ],
+    })
   );
 
   return (
