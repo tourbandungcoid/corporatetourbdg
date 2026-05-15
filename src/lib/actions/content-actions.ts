@@ -12,29 +12,7 @@ export type ContentActionResult = {
   id?: string;
 };
 
-/**
- * Converts any Google Drive URL to a thumbnail URL.
- * Accepts sharing links, open links, and existing thumbnail URLs.
- * Non-Drive URLs are returned as-is.
- */
-function normalizeDriveUrl(url: string): string {
-  if (!url) return url;
-  try {
-    const u = new URL(url);
-    if (!u.hostname.endsWith("drive.google.com")) return url;
-    // Already a thumbnail URL
-    if (u.pathname === "/thumbnail" && u.searchParams.has("id")) return url;
-    // /file/d/FILE_ID/view
-    const fileMatch = u.pathname.match(/\/file\/d\/([^/]+)/);
-    if (fileMatch) return `https://drive.google.com/thumbnail?id=${fileMatch[1]}&sz=w2400`;
-    // ?id=FILE_ID (open link, uc link)
-    const id = u.searchParams.get("id");
-    if (id) return `https://drive.google.com/thumbnail?id=${id}&sz=w2400`;
-  } catch {
-    // malformed URL — return as-is
-  }
-  return url;
-}
+import { normalizeDriveUrl } from "@/lib/utils/drive";
 
 const STATUS_VALUES = ["draft", "published", "archived"] as const;
 const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;

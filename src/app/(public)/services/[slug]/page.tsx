@@ -6,6 +6,7 @@ import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getAllServiceSlugs, getService } from "@/lib/services-data";
+import { getServiceDB } from "@/lib/services-data-db";
 import { buildWaLink, SITE, STATS } from "@/lib/site";
 import {
   JsonLd,
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function ServiceDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const service = getService(slug);
+  const service = await getServiceDB(slug);
   if (!service) notFound();
 
   const url = `${SITE.url}/services/${service.slug}`;
