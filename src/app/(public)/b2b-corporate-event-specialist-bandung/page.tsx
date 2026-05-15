@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
-import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -169,6 +169,51 @@ export default function B2BSpecialistPage() {
           </div>
         </section>
 
+        {/* Quick Answer Box */}
+        <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                <strong>B2B corporate event specialist</strong> berbeda dari generic EO atau travel agent karena fokus pada outcome bisnis, bukan sekadar booking venue. Vendor specialist punya{" "}
+                <strong>legal entity + NPWP</strong> (bisa di-PO finance), dedicated senior planner dari briefing sampai eksekusi, line-item proposal transparan, dan post-event report dengan metrics. Untuk perusahaan di Bandung & sekitarnya, <strong>TourBandung Corporate</strong> telah mengeksekusi{" "}
+                <strong>400+ corporate events sejak 2018</strong> — dari executive offsite 8 pax hingga annual gathering 1.200 pax.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs">
+                {[
+                  "Legal entity + NPWP",
+                  "Dedicated senior PM",
+                  "Line-item proposal",
+                  "Post-event report",
+                  "NDA-ready",
+                ].map((tag) => (
+                  <span key={tag} className="inline-flex items-center rounded-full bg-cream/60 border border-border px-3 py-1 text-slate">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
+                <Link
+                  href="/proposal/request"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-11 text-sm font-medium hover:bg-brand-deep transition"
+                >
+                  Request RFP-ready proposal
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  href="#criteria"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition"
+                >
+                  Lihat 7 kriteria vendor
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why B2B specialist */}
         <section className="py-16 md:py-24 bg-bone">
           <div className="container-1280">
@@ -228,7 +273,7 @@ export default function B2BSpecialistPage() {
         </section>
 
         {/* 7 Criteria */}
-        <section className="py-16 md:py-24 bg-paper">
+        <section id="criteria" className="py-16 md:py-24 bg-paper">
           <div className="container-1280">
             <div className="max-w-2xl mb-12">
               <span className="eyebrow-brand">Checklist seleksi vendor</span>

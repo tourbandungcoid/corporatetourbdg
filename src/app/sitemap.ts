@@ -23,6 +23,8 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/mice-organizer-bandung", priority: 0.9, changeFrequency: "monthly" },
   { path: "/incentive-trip-bandung", priority: 0.9, changeFrequency: "monthly" },
   { path: "/venue-gathering-bandung", priority: 0.85, changeFrequency: "monthly" },
+  // Hub / topical authority
+  { path: "/panduan-corporate-outing-bandung", priority: 0.95, changeFrequency: "monthly" },
   // Hubs
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/packages", priority: 0.8, changeFrequency: "monthly" },
