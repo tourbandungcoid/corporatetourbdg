@@ -13,6 +13,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  serviceSchema,
   faqPageSchema,
   howToSchema,
 } from "@/lib/schema";
@@ -124,6 +125,12 @@ export default function B2BSpecialistPage() {
       datePublished: "2026-05-15",
       dateModified: "2026-05-15",
       slug: PATH,
+    }),
+    serviceSchema({
+      name: "B2B Corporate Event Specialist Bandung",
+      description:
+        "Layanan corporate event B2B specialist di Bandung — procurement-compliant dengan legal entity, line-item proposal, dedicated senior planner, dan post-event report.",
+      priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
     }),
     faqPageSchema(FAQS),
     howToSchema({

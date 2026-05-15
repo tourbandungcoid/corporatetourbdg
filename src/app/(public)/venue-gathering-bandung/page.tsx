@@ -11,8 +11,10 @@ import {
   articleSchema,
   faqPageSchema,
   breadcrumbSchema,
+  serviceSchema,
   organizationSchema,
   localBusinessSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 const SLUG = "/venue-gathering-bandung";
@@ -252,7 +254,40 @@ export default function VenueGatheringBandungPage() {
       { name: "Home", url: SITE.url },
       { name: "Venue Gathering Bandung", url: URL },
     ]),
-    faqPageSchema(FAQS)
+    serviceSchema({
+      name: "Venue Gathering Bandung",
+      description:
+        "Konsultasi dan rekomendasi venue gathering korporat di Bandung — hotel ballroom, villa private, resort, dan outdoor ground untuk 30–2.000 pax.",
+      priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+    }),
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Memilih Venue Gathering di Bandung",
+      description:
+        "5 langkah memilih venue gathering korporat di Bandung yang sesuai budget, kapasitas, dan format event.",
+      steps: [
+        {
+          name: "Tentukan Format dan Kapasitas Peserta",
+          text: "Putuskan format event terlebih dahulu: indoor (ballroom hotel), outdoor (villa/resort/glamping), atau hybrid. Hitung peserta realistis — kapasitas aktual venue biasanya 70–80% dari angka marketing.",
+        },
+        {
+          name: "Pilih Area Berdasarkan Prioritas",
+          text: "Lembang untuk nuansa sejuk dan venue premium (60–90 menit dari kota). Ciwidey untuk adventure dan outbound. Bandung kota untuk hybrid MICE dan aksesibilitas mudah dari Jakarta via tol.",
+        },
+        {
+          name: "Survey Venue dengan 10-Point Checklist",
+          text: "Cek: kapasitas aktual, kualitas AC + audio, backup power, parking, akses loading, kebijakan vendor luar (boleh bawa catering sendiri atau tidak), cancellation policy, dan kontrak force majeure.",
+        },
+        {
+          name: "Bandingkan 2–3 Shortlist dengan Harga Transparan",
+          text: "Minta breakdown per komponen dari setiap venue: sewa venue, F&B package, setup, AV, dan dekorasi terpisah. Lump-sum quote mempersulit perbandingan dan menyembunyikan markup.",
+        },
+        {
+          name: "Lock Tanggal dengan Deposit",
+          text: "Setelah memilih venue, lock tanggal dengan deposit 30–50% sesegera mungkin. Venue Bandung peak season (Oktober–Desember, Maret–Mei) cepat penuh — delay 1–2 minggu bisa kehilangan slot.",
+        },
+      ],
+    })
   );
 
   return (
@@ -607,6 +642,8 @@ export default function VenueGatheringBandungPage() {
             </div>
             <p className="mt-6 text-xs text-paper/40">
               Lihat juga:{" "}
+              <Link href="/panduan-corporate-outing-bandung" className="underline hover:text-paper/70">Panduan Corporate Outing</Link>
+              {" · "}
               <Link href="/corporate-gathering-bandung" className="underline hover:text-paper/70">Corporate Gathering</Link>
               {" · "}
               <Link href="/outing-kantor-bandung" className="underline hover:text-paper/70">Outing Kantor</Link>

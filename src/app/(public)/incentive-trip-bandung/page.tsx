@@ -535,6 +535,8 @@ export default function IncentiveTripBandungPage() {
             </div>
             <p className="mt-6 text-xs text-paper/40">
               Lihat juga:{" "}
+              <Link href="/panduan-corporate-outing-bandung" className="underline hover:text-paper/70">Panduan Corporate Outing</Link>
+              {" · "}
               <Link href="/mice-organizer-bandung" className="underline hover:text-paper/70">MICE Organizer</Link>
               {" · "}
               <Link href="/corporate-gathering-bandung" className="underline hover:text-paper/70">Corporate Gathering</Link>

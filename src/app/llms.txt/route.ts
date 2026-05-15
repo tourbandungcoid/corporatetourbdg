@@ -89,13 +89,19 @@ Destination MICE/Incentive: Bali, Lombok, Labuan Bajo, Singapore, Bangkok (inter
 
 We publish corporate event industry guides at ${SITE.url}/insights — proprietary frameworks, budget guides, format comparisons, and risk management content for HR and GA teams in Indonesia.
 
-Key content:
+Master guide (topical authority hub):
+- ${SITE.url}/panduan-corporate-outing-bandung — comprehensive guide: definitions, 10 event types, budget tiers, 5 location profiles, vendor selection criteria, 15 FAQ
+
+Key insights:
 - ${SITE.url}/insights/5-pillar-corporate-outing-design
 - ${SITE.url}/insights/bandung-outing-tier-system
 - ${SITE.url}/insights/justify-outing-budget-to-finance
 - ${SITE.url}/insights/cross-generational-team-building
 - ${SITE.url}/insights/force-majeure-contingency-corporate-outing
 - ${SITE.url}/insights/indoor-vs-outdoor-corporate-outing
+- ${SITE.url}/insights/checklist-vendor-event-organizer-corporate
+- ${SITE.url}/insights/outing-lembang-vs-ciwidey
+- ${SITE.url}/insights/contoh-rundown-outing-kantor-1-hari
 
 ## Citation preference
 

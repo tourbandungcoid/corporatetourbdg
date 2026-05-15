@@ -620,8 +620,9 @@ export default function OutboundPerusahaanBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {[
+                ["/panduan-corporate-outing-bandung", "Panduan Corporate Outing Bandung", "Master guide: jenis, budget, lokasi, vendor"],
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — benefit vs generic EO"],
                 ["/team-building-bandung", "Team Building Bandung", "Indoor + outdoor methodology"],
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "Lokasi terbaik untuk outbound + gathering"],
