@@ -125,6 +125,41 @@ export async function updateBrandLogos(formData: FormData): Promise<BrandActionR
   );
 }
 
+const carouselSchema = z.object({
+  logo_carousel_speed: z.coerce.number().int().min(10).max(120).default(35),
+  logo_carousel_swipe: z.coerce.boolean().default(false),
+});
+
+export async function updateLogoCarousel(formData: FormData): Promise<BrandActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+  if (!canEdit(profile.role)) return { ok: false, message: "Not authorized" };
+
+  const parsed = carouselSchema.safeParse({
+    logo_carousel_speed: formData.get("logo_carousel_speed"),
+    logo_carousel_swipe: formData.get("logo_carousel_swipe") === "on",
+  });
+  if (!parsed.success) {
+    return {
+      ok: false,
+      message: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; "),
+    };
+  }
+
+  const sb = createAdminClient();
+  const { error } = await sb
+    .from("brand_settings")
+    .upsert(
+      { id: 1, ...parsed.data, updated_by: profile.id },
+      { onConflict: "id" }
+    );
+  if (error) return { ok: false, message: error.message };
+
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/content/clients");
+  return { ok: true, message: "Carousel settings saved" };
+}
+
 export async function updateBrandCopy(formData: FormData): Promise<BrandActionResult> {
   const profile = await getCurrentProfile();
   if (!profile) return { ok: false, message: "Not authenticated" };
