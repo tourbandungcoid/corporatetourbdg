@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getBrandSettings } from "@/lib/brand-settings";
+import { LogoCarouselSettingsForm } from "@/components/admin/LogoCarouselSettingsForm";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Client logos" };
@@ -14,12 +16,15 @@ async function getLogos() {
 }
 
 export default async function AdminClientLogosPage() {
-  const { rows, error } = await getLogos();
+  const [{ rows, error }, brand] = await Promise.all([
+    getLogos(),
+    getBrandSettings(),
+  ]);
 
   return (
     <main className="p-6 md:p-10">
-      <div className="max-w-6xl">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+      <div className="max-w-4xl space-y-6">
+        <div className="mb-2 flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="eyebrow-brand">Content</p>
             <h1 className="font-display mt-2 text-3xl md:text-4xl text-ink">
@@ -38,6 +43,12 @@ export default async function AdminClientLogosPage() {
             + Upload logo
           </Link>
         </div>
+
+        {/* Carousel display settings */}
+        <LogoCarouselSettingsForm
+          speed={brand.logo_carousel_speed}
+          swipe={brand.logo_carousel_swipe}
+        />
 
         {error && (
           <div className="mb-6 rounded-2xl border border-error/30 bg-error/5 p-4 text-sm text-error">
