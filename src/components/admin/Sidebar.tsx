@@ -9,6 +9,8 @@ const NAV = [
   { href: "/admin/tasks", label: "Tasks", group: "overview" },
   { href: "/admin/leads", label: "Leads", group: "overview" },
   { href: "/admin/activity", label: "Activity log", group: "overview" },
+  { href: "/admin/content/packages", label: "Packages", group: "content" },
+  { href: "/admin/content/services", label: "Services", group: "content" },
   { href: "/admin/content/insights", label: "Insights", group: "content" },
   { href: "/admin/content/case-studies", label: "Case studies", group: "content" },
   { href: "/admin/content/testimonials", label: "Testimonials", group: "content" },
