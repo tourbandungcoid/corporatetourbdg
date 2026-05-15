@@ -169,7 +169,7 @@ export function InsightForm({ initial }: { initial: InsightFormInitial }) {
 
       <Section title="Hero image">
         <div className="grid gap-4 md:grid-cols-2">
-          <Field label="Image URL" hint="Google Drive: https://drive.google.com/thumbnail?id=FILE_ID&sz=w2400 · Supabase Storage URL juga didukung">
+          <Field label="Image URL" hint="Paste link Google Drive biasa atau Supabase Storage URL — otomatis dikonversi">
             <input
               type="url"
               name="heroImageUrl"
