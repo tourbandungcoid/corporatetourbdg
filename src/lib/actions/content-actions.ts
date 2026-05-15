@@ -12,6 +12,30 @@ export type ContentActionResult = {
   id?: string;
 };
 
+/**
+ * Converts any Google Drive URL to a thumbnail URL.
+ * Accepts sharing links, open links, and existing thumbnail URLs.
+ * Non-Drive URLs are returned as-is.
+ */
+function normalizeDriveUrl(url: string): string {
+  if (!url) return url;
+  try {
+    const u = new URL(url);
+    if (!u.hostname.endsWith("drive.google.com")) return url;
+    // Already a thumbnail URL
+    if (u.pathname === "/thumbnail" && u.searchParams.has("id")) return url;
+    // /file/d/FILE_ID/view
+    const fileMatch = u.pathname.match(/\/file\/d\/([^/]+)/);
+    if (fileMatch) return `https://drive.google.com/thumbnail?id=${fileMatch[1]}&sz=w2400`;
+    // ?id=FILE_ID (open link, uc link)
+    const id = u.searchParams.get("id");
+    if (id) return `https://drive.google.com/thumbnail?id=${id}&sz=w2400`;
+  } catch {
+    // malformed URL — return as-is
+  }
+  return url;
+}
+
 const STATUS_VALUES = ["draft", "published", "archived"] as const;
 const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -71,7 +95,7 @@ export async function upsertInsight(formData: FormData): Promise<ContentActionRe
     excerpt: formData.get("excerpt"),
     category: formData.get("category"),
     metaDescription: formData.get("metaDescription"),
-    heroImageUrl: (formData.get("heroImageUrl") as string) || "",
+    heroImageUrl: normalizeDriveUrl((formData.get("heroImageUrl") as string) || ""),
     heroImageAlt: (formData.get("heroImageAlt") as string) || "",
     publishDate: formData.get("publishDate"),
     readTimeMin: formData.get("readTimeMin"),
@@ -209,7 +233,7 @@ export async function upsertCaseStudy(formData: FormData): Promise<ContentAction
     outcomeHeadline: formData.get("outcomeHeadline"),
     shortDescription: formData.get("shortDescription"),
     metaDescription: formData.get("metaDescription"),
-    heroImageUrl: (formData.get("heroImageUrl") as string) || "",
+    heroImageUrl: normalizeDriveUrl((formData.get("heroImageUrl") as string) || ""),
     heroImageAlt: (formData.get("heroImageAlt") as string) || "",
     pax: formData.get("pax"),
     duration: formData.get("duration"),

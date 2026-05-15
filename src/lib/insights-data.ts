@@ -47,8 +47,8 @@ function rowToInsight(r: Row): Insight {
     metaDescription: r.meta_description,
     heroImage: {
       id: "",
-      src: r.hero_image_url ?? "",
-      alt: r.hero_image_alt ?? r.title,
+      src: r.hero_image_url || "",
+      alt: r.hero_image_alt || r.title,
     } as Insight["heroImage"],
     publishDate: r.publish_date,
     readTimeMin: r.read_time_min,

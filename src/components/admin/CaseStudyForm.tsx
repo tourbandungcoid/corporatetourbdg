@@ -177,7 +177,7 @@ export function CaseStudyForm({ initial }: { initial: CaseStudyFormInitial }) {
 
       <Section title="Hero image">
         <div className="grid gap-4 md:grid-cols-2">
-          <Field label="Image URL">
+          <Field label="Image URL" hint="Paste link Google Drive biasa atau Supabase Storage URL — otomatis dikonversi">
             <input
               type="url"
               name="heroImageUrl"
