@@ -296,18 +296,22 @@ export function serviceSchema({
   name,
   description,
   priceRange,
+  url,
 }: {
   name: string;
   description: string;
   priceRange: string;
+  url?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    ...(url ? { "@id": `${url}#service`, url } : {}),
     name,
     description,
     provider: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.name,
       url: SITE.url,
     },
@@ -400,6 +404,7 @@ export function howToSchema({
     "@type": "HowTo",
     name,
     description,
+    inLanguage: "id-ID",
     step: steps.map((s, i) => ({
       "@type": "HowToStep",
       position: i + 1,
@@ -408,6 +413,7 @@ export function howToSchema({
     })),
     author: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.name,
       url: SITE.url,
     },
@@ -443,7 +449,9 @@ export function videoObjectSchema({
     ...(duration ? { duration } : {}),
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.name,
+      url: SITE.url,
       logo: { "@type": "ImageObject", url: `${SITE.url}/logo/logo.png` },
     },
   };
@@ -478,11 +486,13 @@ export function itemListSchema({
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": `${url}#itemlist`,
     name,
     description,
     url,
     numberOfItems: items.length,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
+    isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -513,7 +523,7 @@ export function definedTermSetSchema({
     description,
     url,
     inLanguage: "id-ID",
-    publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
+    publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url },
     hasDefinedTerm: terms.map((t) => ({
       "@type": "DefinedTerm",
       name: t.name,

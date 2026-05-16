@@ -4,6 +4,7 @@ import { getAllServiceSlugs } from "@/lib/services-data";
 import { getAllCaseStudySlugs } from "@/lib/case-studies-data";
 import { getAllInsightSlugs } from "@/lib/insights-data";
 import { getAllFaqCategorySlugs } from "@/lib/faq-data";
+import { getPackageSlugs } from "@/lib/packages-data";
 
 const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -72,6 +73,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75,
   }));
 
+  const packageRoutes = getPackageSlugs().map((slug) => ({
+    url: `${SITE.url}/packages/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const caseStudyRoutes = caseStudySlugs.map((slug) => ({
     url: `${SITE.url}/case-studies/${slug}`,
     lastModified: now,
@@ -96,6 +104,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...baseRoutes,
     ...serviceRoutes,
+    ...packageRoutes,
     ...caseStudyRoutes,
     ...insightRoutes,
     ...faqCategoryRoutes,

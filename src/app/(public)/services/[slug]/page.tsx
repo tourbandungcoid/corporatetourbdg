@@ -62,6 +62,19 @@ const SERVICE_AUTHORS: Record<string, { name: string; role: string }> = {
   "glamping-corporate": { name: "Amelia Chandra", role: "Senior Program Designer" },
 };
 
+const SERVICE_KEYWORDS: Record<string, string[]> = {
+  "company-gathering":    ["company gathering bandung", "annual gathering perusahaan bandung", "jasa company gathering jawa barat", "vendor company gathering 50-800 pax bandung"],
+  "team-building":        ["team building bandung", "program team building perusahaan bandung", "fasilitator team building jawa barat", "outbound team building corporate bandung"],
+  "employee-gathering":   ["employee gathering bandung", "gathering karyawan bandung", "jasa employee gathering jawa barat", "program employee gathering corporate"],
+  "corporate-retreat":    ["corporate retreat bandung", "retreat perusahaan jawa barat", "strategic retreat corporate bandung", "program retreat eksekutif bandung"],
+  "leadership-camp":      ["leadership camp bandung", "leadership development corporate jawa barat", "program leadership senior management bandung", "executive coach corporate bandung"],
+  "executive-offsite":    ["executive offsite bandung", "c-suite offsite jawa barat", "program strategy alignment eksekutif bandung", "private executive event bandung"],
+  "incentive-trip":       ["incentive trip bandung", "incentive program karyawan bandung", "reward trip top performer jawa barat", "incentive travel corporate indonesia"],
+  "annual-company-trip":  ["annual company trip bandung", "company trip tahunan perusahaan", "corporate trip massal bandung jawa barat", "program company trip 100-2000 pax"],
+  "mice":                 ["mice organizer bandung", "conference corporate bandung", "event mice jawa barat", "meeting incentive conference exhibition bandung"],
+  "glamping-corporate":   ["glamping corporate bandung", "corporate glamping jawa barat", "glamping team building perusahaan ciwidey", "premium glamping outing kantor bandung"],
+};
+
 export default async function ServiceDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
   const service = getService(slug);
@@ -81,6 +94,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       slug: `/services/${service.slug}`,
       aboutService: `${service.title} Bandung`,
       author: SERVICE_AUTHORS[service.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: SERVICE_KEYWORDS[service.slug] ?? [`${service.title.toLowerCase()} bandung`, "corporate event jawa barat", "vendor event perusahaan bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
@@ -91,6 +105,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       name: `${service.title} Bandung`,
       description: service.heroDescription,
       priceRange: `${service.priceFrom} - up`,
+      url,
     }),
     faqPageSchema(service.faqs)
   );
