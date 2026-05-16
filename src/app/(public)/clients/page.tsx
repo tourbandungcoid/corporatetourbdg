@@ -4,12 +4,14 @@ import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { ArrowRight } from "@/components/icons/Icons";
 import { SITE, STATS } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  articleSchema,
 } from "@/lib/schema";
 import { getTestimonialsList } from "@/lib/testimonials-data";
 
@@ -118,7 +120,16 @@ export default async function ClientsPage() {
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
       { name: "Clients", url: `${SITE.url}/clients` },
-    ])
+    ]),
+    articleSchema({
+      headline: "Klien TourBandung Corporate — 100+ Perusahaan Indonesia dari BUMN hingga MNC",
+      description: "100+ perusahaan Indonesia memilih TourBandung Corporate untuk corporate event di Bandung & Jawa Barat sejak 2018 — tech unicorn, BUMN bank, FMCG global, telco, manufacturing.",
+      image: IMAGES.caseStudyLarge.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-12",
+      slug: "/clients",
+      aboutService: "B2B Corporate Event Specialist Bandung",
+    })
   );
 
   return (

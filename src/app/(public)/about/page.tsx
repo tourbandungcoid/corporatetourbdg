@@ -11,6 +11,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -54,6 +55,15 @@ export default function AboutPage() {
       { name: "Home", url: SITE.url },
       { name: "About", url: `${SITE.url}/about` },
     ]),
+    articleSchema({
+      headline: "Tentang TourBandung Corporate — B2B Corporate Event Specialist Bandung Sejak 2018",
+      description: "TourBandung Corporate adalah unit B2B corporate event specialist dari 7Summits Travel. 400+ events delivered di Bandung & Jawa Barat sejak 2018.",
+      image: IMAGES.heroMain.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-12",
+      slug: "/about",
+      aboutService: "B2B Corporate Event Specialist Bandung",
+    }),
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
