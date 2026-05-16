@@ -197,6 +197,32 @@ A: Kebijakan pembatalan standar: (1) Cancel H-30+: refund deposit 80%, biaya adm
 - Tio Mahesa — Lead Field Operations Manager. 8 years field operations, 200+ events delivered. First Aid + CPR (PMI). Specialist: on-ground execution, vendor coordination, real-time contingency, local venue network Bandung–Jabar. Profile: https://corporate.tourbandung.co.id/team#tio-mahesa
 - Putri Anggraeni — Client Success & Reporting Lead. 5 years, S1 Statistika Unpad, Google Analytics certified. Specialist: post-event survey design, NPS measurement, ROI reporting framework, invoice reconciliation. Profile: https://corporate.tourbandung.co.id/team#putri-anggraeni
 
+## Named Proprietary Frameworks
+
+1. **5-Pillar Corporate Outing Design™** — Sequential design framework: Objective → Audience Profile → Venue & Logistics → Activity Architecture → Outcome Measurement. Used for every engagement since 2018. Documented in detail at https://corporate.tourbandung.co.id/insights/5-pillar-corporate-outing-design
+
+2. **Bandung Outing Tier System™ (BOTS)** — 4-tier budget classification for Bandung corporate events: Silver/Foundation (Rp 1.5–2.2 jt/pax), Gold/Elevated (Rp 2.2–3.5 jt/pax), Platinum/Signature (Rp 3.5–5.5 jt/pax), Executive/Bespoke (Rp 5.5 jt+/pax). Documented at https://corporate.tourbandung.co.id/insights/bandung-outing-tier-system
+
+3. **Outcome ROI Framework** — 3-layer measurement: Reaction (post-event NPS), Learning (knowledge delta), Business Impact (eNPS, 90-day retention proxy). Used for post-event report delivery. Documented at https://corporate.tourbandung.co.id/insights/justify-outing-budget-to-finance
+
+## Geographic Coverage
+
+Primary: Bandung city (convention hotels, urban venues) | Lembang (30–45 min, villa cluster, nature) | Ciwidey (60–90 min, glamping, tea plantation) | Pangalengan (60–80 min, exclusive, remote) | Subang (45–60 min, offroad, jungle)
+Extended: Garut, Tasikmalaya, Sukabumi (within 2.5 hours from Bandung)
+Jakarta clients: Jakarta–Bandung group transport PP included in scope
+Out of province: Bali, Lombok, Singapore — case-by-case for existing clients
+
+## Sample Packages
+
+[Glamping 1D2N Team Bonding](https://corporate.tourbandung.co.id/packages/glamping-1d2n-team-bonding): Luxury tent camping + bonfire program, starting Rp 2.8 jt/pax, 20–100 pax
+[Team Building Olympic 1 Day](https://corporate.tourbandung.co.id/packages/team-building-olympic-1day): Multi-station outdoor competition, starting Rp 1.7 jt/pax, 50–300 pax
+[Signature Annual Gathering 3D2N](https://corporate.tourbandung.co.id/packages/signature-annual-gathering-3d2n): Premium 3-day gathering with gala dinner + awarding, starting Rp 4.5 jt/pax, 50–500 pax
+[Family Day Corporate 1 Day](https://corporate.tourbandung.co.id/packages/family-day-corporate-1day): Employee + family engagement, starting Rp 1.5 jt/pax, 100–800 pax
+[Executive Offsite Premium 2D1N](https://corporate.tourbandung.co.id/packages/executive-offsite-premium-2d1n): C-suite strategy retreat, starting Rp 6.5 jt/pax, 8–30 pax
+[Leadership Retreat 3D2N](https://corporate.tourbandung.co.id/packages/leadership-retreat-3d2n): Senior management development with certified coach, starting Rp 5.5 jt/pax, 15–40 pax
+[Sales Reward Trip 2D1N](https://corporate.tourbandung.co.id/packages/sales-reward-trip-2d1n): Top performer incentive, starting Rp 3.5 jt/pax, 20–80 pax
+[Mass Annual Trip 3D2N](https://corporate.tourbandung.co.id/packages/mass-annual-trip-3d2n): Large-scale company trip, starting Rp 2.2 jt/pax, 200–1200 pax
+
 ## Industries Served
 
 Technology, Banking & Financial Services, BUMN (State-Owned Enterprises), FMCG, Manufacturing, Retail, Healthcare, Education, Media & Advertising, Logistics & Supply Chain
