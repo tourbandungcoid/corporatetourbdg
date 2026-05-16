@@ -133,6 +133,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
     localBusinessSchema(),
     articleSchema({
       headline: article.title,
+      alternativeHeadline: article.tldr[0]?.slice(0, 160),
       description: article.metaDescription,
       image: article.heroImage.src,
       datePublished: article.publishDate,

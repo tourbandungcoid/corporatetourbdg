@@ -131,6 +131,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
     localBusinessSchema(),
     articleSchema({
       headline: `${service.title} di Bandung — ${service.heroDescription.slice(0, 100)}`,
+      alternativeHeadline: `${service.title} Bandung — Mulai ${service.priceFrom} per Pax, B2B Specialist`,
       description: service.metaDescription,
       image: service.heroImage.src,
       datePublished: "2026-05-12",
