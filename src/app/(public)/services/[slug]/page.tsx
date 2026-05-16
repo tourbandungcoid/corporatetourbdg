@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: `${service.title} Bandung`,
     description: service.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: `${service.title} — TourBandung Corporate`, description: service.metaDescription, url, type: "article" },
+    openGraph: {
+      title: `${service.title} — TourBandung Corporate`,
+      description: service.metaDescription,
+      url,
+      type: "article",
+      images: [{ url: service.heroImage.src, width: 1200, height: 630, alt: service.heroImage.alt }],
+    },
   };
 }
 
@@ -54,6 +60,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: `/services/${service.slug}`,
+      aboutService: `${service.title} Bandung`,
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

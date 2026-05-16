@@ -26,8 +26,27 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Contact", url: `${SITE.url}/contact` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      url: `${SITE.url}/contact`,
+      name: "Hubungi TourBandung Corporate",
+      inLanguage: "id-ID",
+      about: { "@type": "Organization", name: SITE.legalName },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Contact"
         title="Mulai dari briefing call 15 menit."
@@ -163,6 +182,7 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

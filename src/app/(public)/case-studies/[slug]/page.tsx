@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: cs.outcomeHeadline,
     description: cs.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: cs.outcomeHeadline, description: cs.metaDescription, url, type: "article" },
+    openGraph: {
+      title: cs.outcomeHeadline,
+      description: cs.metaDescription,
+      url,
+      type: "article",
+      images: [{ url: cs.heroImage.src, width: 1200, height: 630, alt: cs.heroImage.alt }],
+    },
   };
 }
 
