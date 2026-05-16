@@ -15,6 +15,8 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ slug: string }>;
@@ -135,6 +137,35 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       { name: "Case Studies", url: `${SITE.url}/case-studies` },
       { name: cs.outcomeHeadline, url },
     ]),
+    faqPageSchema([
+      {
+        question: `Apa tantangan utama yang dihadapi dalam event ${cs.industryLabel} ${cs.pax} ini?`,
+        answer: cs.challenge.slice(0, 2).join(" "),
+      },
+      {
+        question: `Pendekatan apa yang digunakan TourBandung Corporate untuk menyelesaikan event ini?`,
+        answer: cs.approach.slice(0, 2).join(" "),
+      },
+      {
+        question: `Apa hasil terukur dari event corporate ${cs.industryLabel} ${cs.duration} ini?`,
+        answer: cs.outcome.slice(0, 2).join(" "),
+      },
+      ...(cs.testimonial?.quote
+        ? [{
+            question: `Apa yang dikatakan klien tentang event ini?`,
+            answer: `"${cs.testimonial.quote}" — ${cs.testimonial.name}, ${cs.testimonial.role}`,
+          }]
+        : []),
+    ], url),
+    howToSchema({
+      pageUrl: url,
+      name: `Cara TourBandung Corporate Mengelola Event ${cs.pax} untuk ${cs.industryLabel}`,
+      description: `Pendekatan step-by-step yang digunakan tim TourBandung Corporate untuk mengeksekusi ${cs.outcomeHeadline}.`,
+      steps: cs.approach.map((step, i) => ({
+        name: `Langkah ${i + 1}`,
+        text: step,
+      })),
+    }),
     {
       "@context": "https://schema.org",
       "@type": "Event",
