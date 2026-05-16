@@ -280,9 +280,11 @@ export function localBusinessSchema() {
 }
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  const pageUrl = items[items.length - 1]?.url;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(pageUrl ? { "@id": `${pageUrl}#breadcrumb` } : {}),
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -297,6 +299,8 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
     "@context": "https://schema.org",
     "@type": "FAQPage",
     ...(pageUrl ? { "@id": `${pageUrl}#faqpage`, url: pageUrl, isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url } } : {}),
+    inLanguage: "id-ID",
+    publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url },
     mainEntity: items.map((item, i) => ({
       "@type": "Question",
       ...(pageUrl ? { "@id": `${pageUrl}#faq-${i + 1}` } : {}),
@@ -304,6 +308,7 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
       acceptedAnswer: {
         "@type": "Answer",
         text: item.answer,
+        inLanguage: "id-ID",
       },
     })),
   };

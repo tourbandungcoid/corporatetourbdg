@@ -90,6 +90,16 @@ const FAQS: { question: string; answer: string }[] = [
     answer:
       "Framework yang bekerja: (1) Hitung cost per winner vs rata-rata revenue contribution per winner selama setahun — ROI biasanya 5–20x. (2) Bandingkan cost turnover satu high performer (rekrutmen Rp 50–200 jt, 3–6 bulan onboarding) vs cost incentive trip. (3) Gunakan data survey: 78% karyawan menyatakan recognition program mempengaruhi keputusan stay. (4) Benchmark industri: perusahaan Fortune 500 mengalokasikan 1–3% dari payroll untuk incentive reward. Kami bantu buat business case document kalau diperlukan.",
   },
+  {
+    question: "Apa perbedaan incentive trip dan annual gathering dari sisi HR design?",
+    answer:
+      "Incentive trip = reward program untuk top performer yang spesifik (biasanya sales, atau departemen dengan KPI terukur). Sifatnya exclusive — 15–20% teratas dari populasi yang memenuhi kriteria. Annual gathering = celebration event untuk seluruh karyawan atau seluruh departemen, tidak ada qualification threshold. Design yang berbeda: incentive trip harus terasa 'earned' dan eksklusif (villa private, chef table, curated experience). Annual gathering harus inklusif dan celebrate semua orang. Mencampur keduanya — misalnya gathering yang sekaligus reward top performer — seringkali justru mengurangi perceived value keduanya.",
+  },
+  {
+    question: "Berapa lama lead time yang dibutuhkan untuk incentive trip Bandung?",
+    answer:
+      "Lead time ideal incentive trip berdasarkan scale: 10–30 pax (villa private, curated experience): 4–6 minggu. 30–80 pax (resort eksklusif, custom program): 6–10 minggu. 80–150 pax (multi-room hotel, multi-track activity): 10–14 minggu. Faktor penentu lead time: ketersediaan villa atau resort eksklusif (cepat fully booked), ketersediaan executive chef atau special experience provider, custom production items (branded gifts, merchandise, plaque). Booking H-3 bulan ke atas untuk event yang jatuh di Q4 (Oktober–Desember, peak incentive trip season).",
+  },
 ];
 
 const TIERS = [

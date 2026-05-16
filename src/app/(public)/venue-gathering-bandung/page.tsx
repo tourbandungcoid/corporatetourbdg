@@ -79,6 +79,21 @@ const FAQS: { question: string; answer: string }[] = [
     answer:
       "Indoor venue (hotel ballroom): Cuaca tidak jadi risiko, AV setup lebih mudah, AC terkontrol, lebih formal. Cocok untuk: annual gathering, gala dinner, conference. Biaya lebih pasti. Outdoor venue (resort, villa garden, glamping): Atmosphere lebih natural dan memorable, lebih fleksibel untuk team building aktif, foto lebih estetik. Cocok untuk: team building, employee gathering, incentive trip. Risiko cuaca — butuh Plan B yang solid. Hybrid venue (indoor + outdoor): Best of both worlds. Ballroom untuk ceremony/dinner, outdoor untuk activity. Ideal untuk 2D1N atau 3D2N.",
   },
+  {
+    question: "Apa saja venue gathering outdoor di Lembang yang bisa untuk 100 pax?",
+    answer:
+      "Venue outdoor Lembang untuk 100 pax: (1) The Lodge Maribaya — outdoor activity park, flying fox, kapasitas 500 pax, cocok untuk team building aktif. (2) Orchid Forest Cikole — pine forest atmosphere, semi-outdoor gazebo, ideal untuk gathering semi-formal dengan nuansa alam. (3) Farm House Susu Lembang — Instagram-worthy, kapasitas 1.000 pax, cocok untuk family day atau large gathering. (4) Dusun Bambu — premium eco-resort, floating market dan glamping, kapasitas 200+ pax, terbaik untuk gathering yang butuh wow factor. Semua venue Lembang dalam radius 30–45 menit dari pusat kota Bandung.",
+  },
+  {
+    question: "Bagaimana TourBandung Corporate membantu memilih venue yang tepat?",
+    answer:
+      "Proses venue selection kami: (1) Discovery brief — pahami objective, jumlah pax, format event, budget, dan tanggal. (2) Venue shortlisting — dari 60+ partner kami, pilih 2–3 opsi yang sesuai brief (bukan katalog template). (3) Availability check — langsung konfirmasi ketersediaan ke venue, bukan hanya estimasi. (4) Site visit (opsional) — accompany klien survey venue sebelum booking untuk verifikasi langsung. (5) Negotiation — sebagai mitra rutin venue, kami bisa negotiate harga lebih baik dari booking langsung. (6) Contract review — bantu review venue contract untuk pastikan cancellation clause dan force majeure wajar. Tidak ada biaya tambahan untuk venue consultation — ini bagian dari scope kerja kami.",
+  },
+  {
+    question: "Apakah venue di Ciwidey cocok untuk corporate gathering besar 200 pax?",
+    answer:
+      "Ciwidey kurang ideal untuk gathering 200 pax karena: (1) Akses — 60–90 menit dari kota, kurang practical untuk event yang butuh peserta dari berbagai kota. (2) Kapasitas ballroom — venue Ciwidey umumnya tidak punya ballroom besar untuk 200 pax plenary. Ciwidey lebih optimal untuk: 30–80 pax glamping/retreat yang fokus nature immersion, kelompok kecil leadership atau executive yang mau jauh dari hiruk-pikuk. Untuk 200 pax dengan kebutuhan ballroom, Lembang (Padma Hotel, Dusun Bambu) atau Bandung kota (Pullman, Trans Luxury) jauh lebih practical.",
+  },
 ];
 
 const VENUE_CATEGORIES = [
