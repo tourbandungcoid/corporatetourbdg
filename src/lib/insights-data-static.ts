@@ -129,7 +129,7 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/formats", label: "FAQ Format & Programs", description: "88+ jawaban soal format corporate event — outdoor, indoor, hybrid, multi-day." },
       { href: "/faq/outcome", label: "FAQ Outcome & ROI", description: "Cara mengukur ROI outing dan justifikasi ke Finance + C-level." },
     ],
-    relatedSlugs: ["bandung-outing-tier-system", "justify-outing-budget-to-finance"],
+    relatedSlugs: ["bandung-outing-tier-system", "justify-outing-budget-to-finance", "cara-membuat-brief-event-organizer"],
     howTo: {
       name: "Cara Menerapkan 5-Pillar Corporate Outing Design™",
       description: "Framework sequential untuk merancang corporate outing yang outcome-driven — dari objective hingga measurement.",
@@ -1114,7 +1114,7 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/vendor", label: "FAQ Vendor Selection", description: "12 pertanyaan kritis untuk ditanyakan ke calon vendor EO corporate." },
       { href: "/faq/logistics", label: "FAQ Process & Logistics", description: "Proses kerja vendor specialist — dari brief hingga post-event report." },
     ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system"],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "cara-membuat-brief-event-organizer"],
     howTo: {
       name: "Cara Memilih Event Organizer Corporate yang Tepat",
       description: "Checklist 12 poin due diligence sebelum hire vendor EO corporate untuk acara perusahaan",
