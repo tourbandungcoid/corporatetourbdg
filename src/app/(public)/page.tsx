@@ -81,6 +81,7 @@ export default function HomePage() {
       "@id": `${SITE.url}#website`,
       url: SITE.url,
       name: "TourBandung Corporate",
+      description: "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. Unit dari 7Summits Travel sejak 2018.",
       inLanguage: "id-ID",
       publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "7Summits Travel" },
       potentialAction: {
@@ -91,6 +92,20 @@ export default function HomePage() {
         },
         "query-input": "required name=search_term_string",
       },
+      hasPart: [
+        { "@type": "WebPage", name: "Services", url: `${SITE.url}/services` },
+        { "@type": "WebPage", name: "Packages", url: `${SITE.url}/packages` },
+        { "@type": "WebPage", name: "Case Studies", url: `${SITE.url}/case-studies` },
+        { "@type": "WebPage", name: "Insights", url: `${SITE.url}/insights` },
+        { "@type": "WebPage", name: "FAQ", url: `${SITE.url}/faq` },
+        { "@type": "WebPage", name: "Pricing", url: `${SITE.url}/pricing` },
+        { "@type": "WebPage", name: "Team", url: `${SITE.url}/team` },
+        { "@type": "WebPage", name: "About", url: `${SITE.url}/about` },
+        { "@type": "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
+        { "@type": "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { "@type": "WebPage", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` },
+        { "@type": "WebPage", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+      ],
     },
     faqPageSchema(TOP_FAQS)
   );
