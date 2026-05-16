@@ -17,6 +17,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ slug: string }>;
@@ -72,6 +73,28 @@ export default async function PackageDetailPage({
     .filter((p) => p.slug !== pkg.slug)
     .slice(0, 3);
 
+  const PACKAGE_AUTHORS: Record<string, { name: string; role: string }> = {
+    "glamping-1d2n-team-bonding":      { name: "Amelia Chandra", role: "Senior Program Designer" },
+    "team-building-olympic-1day":      { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    "signature-annual-gathering-3d2n": { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "family-day-corporate-1day":       { name: "Amelia Chandra", role: "Senior Program Designer" },
+    "executive-offsite-premium-2d1n":  { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "leadership-retreat-3d2n":         { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    "sales-reward-trip-2d1n":          { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "mass-annual-trip-3d2n":           { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
+  };
+
+  const PACKAGE_KEYWORDS: Record<string, string[]> = {
+    "glamping-1d2n-team-bonding":      ["paket glamping corporate bandung", "harga glamping team bonding 2d1n", "program glamping outing kantor ciwidey"],
+    "team-building-olympic-1day":      ["paket team building bandung 1 hari", "harga team building olympic corporate", "program outbound perusahaan full day bandung"],
+    "signature-annual-gathering-3d2n": ["paket annual gathering 3d2n bandung", "harga signature corporate gathering premium", "program gathering perusahaan 3 hari 2 malam"],
+    "family-day-corporate-1day":       ["paket family day corporate bandung", "harga family day perusahaan 1 hari", "program family gathering karyawan bandung"],
+    "executive-offsite-premium-2d1n":  ["paket executive offsite bandung 2d1n", "harga c-suite strategy session bandung", "program leadership offsite premium jawa barat"],
+    "leadership-retreat-3d2n":         ["paket leadership retreat bandung 3d2n", "harga senior management retreat jawa barat", "program leadership development retreat bandung"],
+    "sales-reward-trip-2d1n":          ["paket incentive trip top performer bandung", "harga sales reward trip 2d1n", "program reward karyawan terbaik bandung"],
+    "mass-annual-trip-3d2n":           ["paket annual trip perusahaan besar bandung", "harga mass corporate trip 500 pax", "program company trip tahunan massal bandung"],
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -80,6 +103,17 @@ export default async function PackageDetailPage({
       { name: "Packages", url: `${SITE.url}/packages` },
       { name: pkg.title, url },
     ]),
+    articleSchema({
+      headline: `${pkg.title} — ${pkg.startingPrice}`,
+      description: `${pkg.subtitle}. ${pkg.paxRange} · ${pkg.duration}. Starting ${pkg.startingPrice}.`,
+      image: pkg.image.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: `/packages/${pkg.slug}`,
+      aboutService: `${pkg.title} Bandung`,
+      author: PACKAGE_AUTHORS[pkg.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: PACKAGE_KEYWORDS[pkg.slug] ?? [`paket ${pkg.title.toLowerCase()} bandung`, "program corporate event jawa barat", "harga outing kantor bandung"],
+    }),
     {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -97,7 +131,7 @@ export default async function PackageDetailPage({
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         url,
-        seller: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
+        seller: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.legalName, url: SITE.url },
         areaServed: [{ "@type": "City", name: "Bandung" }, { "@type": "AdministrativeArea", name: "Jawa Barat" }],
       },
     }
