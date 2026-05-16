@@ -446,6 +446,56 @@ const ENTRIES: GlossaryEntry[] = [
     related: ["Team Building", "Corporate Retreat", "Post-Event Survey"],
     seeAlso: [{ label: "Post-Merger Cultural Bonding", href: "/insights/post-merger-cultural-bonding" }],
   },
+  {
+    term: "Site Visit",
+    short: "Kunjungan survei ke venue sebelum event untuk validasi fasilitas, kapasitas, dan akses.",
+    long: "Site visit adalah inspeksi langsung ke venue yang dilakukan sebelum kontrak ditandatangani. Tujuan: memvalidasi kondisi aktual (yang mungkin berbeda dari foto brochure), mengecek kapasitas nyata, kondisi AV dan listrik, akses bus/kendaraan, area parkir, toilet ratio, dan kondisi kamar jika ada overnight. Untuk event 100+ pax, site visit hampir selalu wajib — terutama untuk venue yang belum pernah dipakai. TourBandung Corporate melakukan site visit untuk setiap proyek di atas 80 pax dan menyertakan laporan survei venue sebagai bagian dari proposal.",
+    related: ["Venue Curation", "Proposal", "Risk Register"],
+  },
+  {
+    term: "MC",
+    short: "Master of Ceremonies — pemandu acara yang mengelola flow dan energi seluruh program corporate event.",
+    long: "MC (Master of Ceremonies) atau emcee adalah figure sentral yang memandu jalannya acara dari pembukaan hingga penutupan. Untuk corporate event, MC berfungsi lebih dari sekadar pembaca rundown: ia mengelola energi ruangan, memastikan transisi antar sesi berjalan mulus, dan menjaga engagement audiens. Pemilihan MC yang tepat sangat bergantung pada tone event: event formal BUMN membutuhkan MC profesional berpengalaman; event annual gathering startup lebih cocok dengan MC yang energik dan humoris. TourBandung Corporate menyediakan referensi MC untuk berbagai tone event dari database partner talent.",
+    related: ["Rundown", "Gala Dinner", "Awarding Night"],
+  },
+  {
+    term: "NDA",
+    short: "Non-Disclosure Agreement — perjanjian kerahasiaan yang melindungi informasi sensitif dalam event corporate.",
+    long: "NDA (Non-Disclosure Agreement) atau perjanjian kerahasiaan adalah kontrak yang melarang salah satu atau kedua pihak untuk mengungkapkan informasi rahasia kepada pihak ketiga. Dalam konteks corporate event, NDA relevan untuk: executive offsite yang membahas strategi perusahaan, leadership retreat dengan agenda succession planning, event pasca-akuisisi atau M&A, dan klien BUMN atau perusahaan publik yang memerlukan proteksi data. NDA biasanya bilateral — vendor juga terikat. TourBandung Corporate menyediakan template NDA standar dan mampu menyesuaikan dengan format NDA milik klien.",
+    related: ["Executive Offsite", "Leadership Camp", "PKS"],
+    seeAlso: [{ label: "Executive Offsite Bandung", href: "/executive-offsite-bandung" }],
+  },
+  {
+    term: "PKS",
+    short: "Perjanjian Kerja Sama — kontrak resmi antara klien perusahaan dan vendor event yang mengatur scope, harga, dan kewajiban.",
+    long: "PKS (Perjanjian Kerja Sama) adalah dokumen kontrak yang mengikat secara hukum antara perusahaan klien dan vendor event organizer. Klausul penting dalam PKS corporate event: scope of work secara detail, schedule pembayaran (DP, pelunasan), force majeure clause, SLA response time, confidentiality/NDA, penalty clause jika ada pembatalan, dan ketentuan post-event report. Untuk procurement BUMN atau perusahaan publik, PKS biasanya diajukan menggunakan template baku dari bagian legal klien. TourBandung Corporate memiliki tim legal yang familiar dengan berbagai format PKS procurement Indonesia.",
+    related: ["Proposal", "NDA", "RAB"],
+  },
+  {
+    term: "Breakout Session",
+    short: "Sesi diskusi atau aktivitas kelompok kecil yang berjalan paralel dalam event berskala besar.",
+    long: "Breakout session adalah format sesi di mana peserta besar dibagi ke dalam kelompok-kelompok kecil (biasanya 8–20 orang) untuk diskusi mendalam, problem-solving, atau aktivitas spesifik — sebelum kembali ke sesi plenary. Berbeda dari Breakout Room (fasilitas fisik), Breakout Session adalah format program. Manfaat: lebih intimate, mendorong partisipasi aktif semua peserta (bukan hanya yang vokal), dan memungkinkan eksplorasi topik yang beragam secara paralel. Sering dipakai dalam leadership retreat, strategic planning session, dan conference dengan agenda multi-topik.",
+    related: ["Breakout Room", "Reflection Circle", "Discovery Brief"],
+  },
+  {
+    term: "Goodie Bag",
+    short: "Paket souvenir atau gift yang diberikan kepada peserta event corporate sebagai apresiasi kehadiran.",
+    long: "Goodie bag (atau souvenir pack) adalah kumpulan item yang diberikan kepada peserta event — bisa saat registrasi, setelah makan, atau di akhir acara. Untuk corporate event, goodie bag juga berfungsi sebagai employer branding touchpoint. Item umum: merchandise berlogo perusahaan, snack/minuman premium, stationery, notebook, tumbler, atau voucher. Budget goodie bag corporate biasanya Rp 50–300 ribu per pax. TourBandung Corporate dapat membantu kuratasi goodie bag sesuai tema event dan budget.",
+    related: ["Pax", "Family Day", "Employee Gathering"],
+  },
+  {
+    term: "Venue Survey",
+    short: "Proses evaluasi sistematis terhadap beberapa opsi venue sebelum keputusan booking — lebih komprehensif dari site visit.",
+    long: "Venue survey adalah proses evaluasi komparatif terhadap 2–5 opsi venue, biasanya dilakukan menggunakan scoring matrix: kapasitas, harga, akses, fasilitas AV, kualitas F&B, kebersihan, dan track record. Hasilnya berupa rekomendasi tertulis kepada klien. Venue survey dilakukan sebelum site visit terpilih. TourBandung Corporate melakukan venue survey sebagai bagian standar dari proses proposal — klien menerima perbandingan 2–3 opsi venue dengan pro/con analysis sebelum membuat keputusan.",
+    related: ["Site Visit", "Venue Curation", "Proposal"],
+    seeAlso: [{ label: "Rekomendasi Venue Gathering Bandung", href: "/venue-gathering-bandung" }],
+  },
+  {
+    term: "Emcee",
+    short: "Ejaan alternatif dari MC (Master of Ceremonies) — pemandu acara corporate event.",
+    long: "Emcee adalah ejaan fonetik dari MC (Master of Ceremonies) yang sering digunakan di Indonesia. Dalam konteks corporate event, emcee professional dibedakan berdasarkan spesialisasi: emcee corporate formal (cocok untuk BUMN, banking, peluncuran produk), emcee entertainment (cocok untuk family day, company gathering, annual party), dan bilingual emcee (Indonesia + Inggris, cocok untuk MNC atau event dengan peserta internasional). Rate emcee professional corporate Bandung berkisar Rp 3–15 juta per hari bergantung portofolio dan kompleksitas acara.",
+    related: ["MC", "Rundown", "Gala Dinner"],
+  },
 ];
 
 const SLUGIFY = (s: string) =>

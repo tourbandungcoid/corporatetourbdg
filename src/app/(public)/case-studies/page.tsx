@@ -65,12 +65,14 @@ export default async function CaseStudiesIndexPage({
     ]),
     articleSchema({
       headline: "Case Studies Corporate Event Bandung — 6 Real Company, Outcome Terukur",
+      alternativeHeadline: "Portfolio Event Organizer Corporate Bandung: Tech Unicorn, BUMN Bank, FMCG MNC",
       description: "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank di Bandung & Jawa Barat.",
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/case-studies",
       aboutService: "B2B Corporate Event Specialist Bandung",
+      aboutServiceUrl: `${SITE.url}/corporate-gathering-bandung`,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         "case study corporate event bandung",

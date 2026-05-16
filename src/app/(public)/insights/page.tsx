@@ -69,12 +69,14 @@ export default async function InsightsIndexPage({
     ]),
     articleSchema({
       headline: "Insights & Panduan Corporate Event Bandung — 14 Long-Form Guides",
+      alternativeHeadline: "Framework, Data & Panduan Mendalam Corporate Outing Bandung dari 400+ Events Delivered",
       description: "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia dari 400+ events delivered.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/insights",
       aboutService: "Corporate Event Design & Thought Leadership",
+      aboutServiceUrl: `${SITE.url}/outing-kantor-bandung`,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         "panduan corporate event bandung",

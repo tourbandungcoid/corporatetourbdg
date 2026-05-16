@@ -87,6 +87,18 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Tips: (1) Brief detail di awal — vendor bisa rekomendasi venue/activity yang fit budget. (2) Flexible date (off-peak = cheaper). (3) Tanya breakdown line-item — identify mana yang bisa di-adjust. (4) Multi-event annual contract dapat better pricing. Avoid: pressure tactic atau race-to-bottom — quality drops.",
       },
+      {
+        question: "Apakah ada biaya tersembunyi (hidden cost) yang sering muncul di luar penawaran awal?",
+        answer:
+          "Hidden cost yang paling sering: (1) Biaya overtime venue jika event melebihi jadwal. (2) Extra charge untuk pax tambahan di luar kontrak. (3) Biaya parkir atau akomodasi supir bus (sering dilupakan). (4) Biaya setup/dekorasi tambahan di luar paket. (5) Charge untuk dokumentasi profesional jika tidak termasuk paket. Vendor transparan akan menyertakan semua ini di proposal. TourBandung Corporate policy: proposal harus mencantumkan semua contingency charge di muka — 0% hidden cost dalam 6 tahun.",
+        detail:
+          "Cara proteksi: Minta itemized breakdown lengkap sebelum tandatangan kontrak. Tanyakan secara eksplisit: 'Apa yang tidak termasuk dalam paket ini?' dan 'Apa yang bisa menyebabkan biaya tambahan?'. Kontrak yang baik mencantumkan rate untuk setiap potensi tambahan.",
+      },
+      {
+        question: "Berapa perbedaan harga outing kantor Bandung weekday vs weekend?",
+        answer:
+          "Weekday (Senin–Kamis): 10–20% lebih murah untuk venue, hotel, dan bus charter dibanding weekend. Jumat–Minggu: peak booking, venue dan transportasi penuh — harga premium. Untuk grup 100+ pax, selisih harga weekday vs weekend bisa Rp 30–80 ribu per pax. Rekomendasi: jika jadwal kerja memungkinkan, lock mid-week (Selasa–Rabu) untuk savings optimal. Plus: venue lebih lengang, service lebih fokus ke tim Anda.",
+      },
     ],
     relatedPages: [
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Budget breakdown per tier dan estimasi real untuk outing 1D / 2D1N di Bandung." },
@@ -655,6 +667,18 @@ const CATEGORIES: Record<string, FaqCategory> = {
           "Riset menunjukkan 'post-event glow' berlangsung 4–8 minggu. Dampak yang lebih lasting (trust, komunikasi lebih terbuka) terasa 3–6 bulan jika event dirancang dengan debrief dan follow-up konkret. Tanpa tindak lanjut, dampak outing menurun di bulan ke-3. Tip: jadwalkan outing sebelum quarter penting (sebelum Q4 push, sebelum project besar).",
         detail:
           "Cara memperpanjang dampak: (1) Capture dan share foto/video highlight dalam 1 minggu pasca event. (2) Team leader minta 1 team agreement hasil dari outing (ex: 'kita sepakat untuk lebih direct dalam feedback'). (3) Reference outing saat team meeting dalam 30 hari pertama. (4) Follow-up dengan tim 30 hari dan 90 hari pasca event untuk track perubahan.",
+      },
+      {
+        question: "Apa saja deliverables post-event yang harus diminta dari vendor EO?",
+        answer:
+          "Minimum 5 deliverables post-event yang harus diminta: (1) Laporan event lengkap — dokumentasi eksekusi vs rencana, timeline aktual, pax hadir. (2) Foto & video highlight (raw + edited) dalam 5–7 hari kerja. (3) Post-event satisfaction survey hasil (NPS peserta, breakdown per aspek). (4) Financial reconciliation — realisasi pengeluaran vs RAB, kembalikan sisa jika ada. (5) Evaluasi PM + rekomendasi untuk event berikutnya. Vendor yang tidak mau memberikan ini adalah red flag.",
+        detail:
+          "TourBandung Corporate menyertakan post-event report sebagai standar dalam setiap PKS — bukan opsional. Format laporan bisa disesuaikan untuk kebutuhan reporting ke board atau direksi.",
+      },
+      {
+        question: "Apakah ada template laporan pasca-event untuk reporting ke board atau direksi?",
+        answer:
+          "Template laporan post-event ke direksi: (1) Executive summary satu halaman — apa yang terjadi, berapa pax, highlight outcome. (2) Budget realisasi vs rencana. (3) Satisfaction score (NPS peserta + breakdown aspek). (4) 3 moment highlight dengan foto. (5) Business case follow-up — rekomendasi action item pasca event (team charter, agreement tim). TourBandung Corporate menyediakan template laporan yang sudah dipakai klien untuk reporting ke C-level dan board. Request saat briefing atau lihat di proposal.",
       },
     ],
     relatedPages: [

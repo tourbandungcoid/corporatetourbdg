@@ -61,12 +61,14 @@ export default function GlossaryPage() {
     ]),
     articleSchema({
       headline: "Glossary Corporate Event Bandung — 40+ Istilah untuk HR & Procurement",
+      alternativeHeadline: "Kamus Istilah Corporate Outing Indonesia: Annual Gathering, MICE, Outbound, BOTS, Executive Offsite",
       description: "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/glossary",
       aboutService: "Corporate Event Education & Terminology",
+      aboutServiceUrl: `${SITE.url}/event-organizer-corporate-bandung`,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         "istilah corporate event indonesia",

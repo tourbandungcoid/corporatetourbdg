@@ -48,12 +48,14 @@ export default function PackagesIndexPage() {
     ]),
     articleSchema({
       headline: "Paket Corporate Outing Bandung — 8 Sample Program Rp 1,5–6,5 Jt/Pax",
+      alternativeHeadline: "Contoh Paket Outing Kantor Bandung: Glamping, Gathering, 1D, 2D1N, 3D2N",
       description: "8 sample corporate event packages dari TourBandung Corporate — starting point yang bisa di-customize. Range Rp 1.5–6.5 jt/pax. Free proposal dalam 24 jam.",
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/packages",
       aboutService: "Corporate Event Packages Bandung",
+      aboutServiceUrl: `${SITE.url}/outing-kantor-bandung`,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         "paket corporate outing bandung",
