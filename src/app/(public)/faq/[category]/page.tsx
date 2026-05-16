@@ -90,16 +90,38 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     outcome:    [{ type: "WebPage", name: "Cara Justify Budget ke Finance", url: `${SITE.url}/insights/justify-outing-budget-to-finance` }, { type: "WebPage", name: "Methodology — Outcome ROI Framework", url: `${SITE.url}/methodology` }],
   };
 
+  const FAQ_ALTERNATIVE_HEADLINES: Record<string, string> = {
+    budget:     "Estimasi Biaya Corporate Outing Bandung: Rp 1.5–7 jt per Pax dalam 4 Tier",
+    logistics:  "Timeline dan Proses Persiapan Outing Kantor Bandung — Dari Brief ke Eksekusi",
+    comparison: "Beda Outing Kantor, Gathering, dan Team Building — Panduan Pilihan Format untuk HR",
+    formats:    "6 Format Program Corporate Outing Bandung: 1D, Glamping, Gathering, Family Day",
+    location:   "Lokasi Corporate Outing Bandung: Lembang, Ciwidey, Bandung Kota — Perbandingan Lengkap",
+    vendor:     "12 Checklist Pilih Vendor EO Corporate Bandung — Panduan HR dan Procurement",
+    outcome:    "ROI Corporate Outing: Framework 3-Layer untuk Justifikasi Budget ke CFO",
+  };
+
+  const FAQ_ABOUT_SERVICE_URLS: Record<string, string> = {
+    budget:     `${SITE.url}/pricing`,
+    logistics:  `${SITE.url}/outing-kantor-bandung`,
+    comparison: `${SITE.url}/corporate-gathering-bandung`,
+    formats:    `${SITE.url}/team-building-bandung`,
+    location:   `${SITE.url}/venue-gathering-bandung`,
+    vendor:     `${SITE.url}/event-organizer-corporate-bandung`,
+    outcome:    `${SITE.url}/methodology`,
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
     articleSchema({
       headline: cat.title,
+      alternativeHeadline: FAQ_ALTERNATIVE_HEADLINES[cat.slug],
       description: cat.metaDescription,
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: `/faq/${cat.slug}`,
+      aboutServiceUrl: FAQ_ABOUT_SERVICE_URLS[cat.slug],
       author: FAQ_AUTHORS[cat.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: FAQ_KEYWORDS[cat.slug] ?? ["faq corporate event bandung", "pertanyaan outing kantor", "corporate outing bandung"],
       mentions: [

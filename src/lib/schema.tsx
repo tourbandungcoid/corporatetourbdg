@@ -397,11 +397,10 @@ export function articleSchema({
         "@id": `${SITE.url}#organization`,
         name: SITE.name,
       },
-      areaServed: {
-        "@type": "City",
-        name: "Bandung",
-        sameAs: "https://www.wikidata.org/wiki/Q1440",
-      },
+      areaServed: [
+        { "@type": "City", name: "Bandung", sameAs: "https://www.wikidata.org/wiki/Q1440" },
+        { "@type": "AdministrativeArea", name: "Jawa Barat", sameAs: "https://www.wikidata.org/wiki/Q3812" },
+      ],
     },
     speakable: {
       "@type": "SpeakableSpecification",
