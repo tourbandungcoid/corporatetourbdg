@@ -176,6 +176,7 @@ export default function MiceOrganizerBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: TITLE,
+      alternativeHeadline: "MICE Organizer Bandung: Vendor Event Meeting, Conference & Exhibition Terpercaya",
       description: DESCRIPTION,
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-14",

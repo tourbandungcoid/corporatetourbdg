@@ -103,6 +103,7 @@ export default function CompanyRetreatBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: "Company Retreat Bandung 2026: Strategic Multi-Day Premium Retreat",
+      alternativeHeadline: "Company Retreat Bandung: Lokasi, Agenda Strategis, dan Estimasi Biaya",
       description: "Multi-day company retreat untuk strategic planning, cultural reset, atau leadership development di Bandung.",
       image: IMAGES.packageExecutiveOffsite.src,
       datePublished: "2026-05-12",

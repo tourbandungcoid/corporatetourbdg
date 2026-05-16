@@ -104,6 +104,7 @@ export default function ExecutiveOffsiteBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: "Executive Offsite Bandung 2026: Discreet C-Suite Strategy Session",
+      alternativeHeadline: "Executive Offsite Bandung: Venue Private C-Level, Agenda, dan Estimasi Biaya",
       description: "Premium executive offsite untuk C-suite strategy session di Bandung — discreet, focused, dengan facilitator certified.",
       image: IMAGES.packageExecutiveOffsite.src,
       datePublished: "2026-05-12",

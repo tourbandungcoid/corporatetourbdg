@@ -160,6 +160,7 @@ export default function IncentiveTripBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: TITLE,
+      alternativeHeadline: "Incentive Trip Bandung untuk Sales Top Performers: Paket, Destinasi, dan Harga",
       description: DESCRIPTION,
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-14",

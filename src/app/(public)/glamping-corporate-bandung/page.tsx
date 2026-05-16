@@ -179,6 +179,7 @@ export default function GlampingCorporateBandungPage() {
     articleSchema({
       headline:
         "Glamping Corporate Bandung 2026: Premium Outdoor Experience untuk Tim yang Beda",
+      alternativeHeadline: "Glamping Corporate Bandung: Paket, Venue, dan Harga untuk Tim 20–80 Pax",
       description:
         "Glamping untuk corporate event di Bandung — tenda safari premium, bonfire dinner, sunrise activity, dan vibe unique yang impossible di hotel/villa.",
       image: IMAGES.packageGlamping.src,

@@ -270,6 +270,7 @@ export default function VenueGatheringBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: TITLE,
+      alternativeHeadline: "Rekomendasi Venue Gathering Perusahaan di Bandung: Hotel, Villa, Resort, Outdoor",
       description: DESCRIPTION,
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-14",

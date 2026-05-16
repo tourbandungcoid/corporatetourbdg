@@ -103,6 +103,7 @@ export default function LeadershipRetreatJawaBaratPage() {
     localBusinessSchema(),
     articleSchema({
       headline: "Leadership Retreat Jawa Barat 2026: Senior Leadership Development Program",
+      alternativeHeadline: "Leadership Retreat Jawa Barat: Program, Fasilitator, dan Venue Eksklusif",
       description: "Multi-day leadership development retreat untuk senior management di Jawa Barat. 5 framework, certified coach, premium venue.",
       image: IMAGES.caseStudyExecutive.src,
       datePublished: "2026-05-12",

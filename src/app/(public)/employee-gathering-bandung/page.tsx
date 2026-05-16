@@ -164,6 +164,7 @@ export default function EmployeeGatheringBandungPage() {
     articleSchema({
       headline:
         "Employee Gathering Bandung 2026: Engagement & Retention Event untuk HR",
+      alternativeHeadline: "Paket Employee Gathering Bandung: Venue, Rundown, Biaya per Pax 2026",
       description:
         "Employee gathering Bandung yang outcome-driven — measurable impact ke engagement, retention, dan cultural reinforcement.",
       image: IMAGES.caseStudyExecutive.src,

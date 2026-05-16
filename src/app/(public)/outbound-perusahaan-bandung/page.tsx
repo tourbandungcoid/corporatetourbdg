@@ -168,6 +168,7 @@ export default function OutboundPerusahaanBandungPage() {
     articleSchema({
       headline:
         "Outbound Perusahaan Bandung 2026: 3 Tier Adventure, Safety Standards, dan Lokasi Outdoor Terbaik",
+      alternativeHeadline: "Jasa Outbound Perusahaan Bandung: Aktivitas, Lokasi, dan Harga per Pax",
       description:
         "Outdoor adventure outbound untuk corporate Indonesia dengan 3-tier classification, safety standards, dan lokasi recommended di Bandung.",
       image: IMAGES.offroad1.src,

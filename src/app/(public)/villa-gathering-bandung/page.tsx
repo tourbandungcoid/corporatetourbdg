@@ -154,6 +154,7 @@ export default function VillaGatheringBandungPage() {
     articleSchema({
       headline:
         "Villa Gathering Bandung 2026: 12 Villa Premium untuk Outing 50-300 Pax",
+      alternativeHeadline: "Sewa Villa Gathering Corporate Bandung Lembang — Pilihan 30–300 Pax",
       description:
         "Villa private setting untuk corporate gathering di Bandung & Lembang — capacity, fasilitas, dan estimasi sewa.",
       image: IMAGES.packageGlamping.src,
