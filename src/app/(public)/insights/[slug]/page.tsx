@@ -141,7 +141,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
         {article.tldr && article.tldr.length > 0 && (
           <section className="py-12 md:py-16 border-b border-divider bg-cream/40">
             <div className="container-1280">
-              <div className="max-w-3xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="tldr-box max-w-3xl rounded-3xl bg-paper border border-border p-7 md:p-9">
                 <p className="eyebrow-brand mb-5">TL;DR</p>
                 <ul className="space-y-3">
                   {article.tldr.map((point, i) => (

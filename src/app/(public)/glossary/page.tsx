@@ -18,6 +18,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   faqPageSchema,
+  definedTermSetSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -57,7 +58,17 @@ export default function GlossaryPage() {
         question: `Apa itu ${e.term}?`,
         answer: e.long,
       }))
-    )
+    ),
+    definedTermSetSchema({
+      name: "Glossary Istilah Corporate Event Indonesia",
+      description: "Definisi resmi istilah corporate event yang dipakai HR, procurement, dan event planner di Indonesia — disusun oleh senior planner TourBandung Corporate dari 400+ event delivered.",
+      url: `${SITE.url}/glossary`,
+      terms: all.map((e) => ({
+        name: e.term,
+        description: e.long,
+        slug: getEntrySlug(e),
+      })),
+    })
   );
 
   return (

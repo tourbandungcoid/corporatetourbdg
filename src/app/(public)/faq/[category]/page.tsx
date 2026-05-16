@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     description: cat.metaDescription,
     alternates: { canonical: url },
     openGraph: { title: cat.title, description: cat.metaDescription, url, type: "article", images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }] },
+    twitter: { card: "summary_large_image", title: cat.title, description: cat.metaDescription, images: [IMAGES.heroMain.src] },
   };
 }
 
@@ -130,7 +131,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
                     {q.detail && <p className="text-sm md:text-base">{q.detail}</p>}
                   </div>
                   <div className="pl-10 mt-4 pt-3 border-t border-divider/60 text-xs text-slate-mute">
-                    Last verified: 12 May 2026 · senior planner team
+                    Last verified: 16 May 2026 · senior planner team
                   </div>
                 </article>
               ))}

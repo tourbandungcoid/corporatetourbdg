@@ -150,7 +150,7 @@ export default function ExecutiveOffsiteBandungPage() {
 
         <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
           <div className="container-1280">
-            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
               <div className="flex items-center gap-2 mb-4"><Sparkle size={16} className="text-brand" /><p className="eyebrow-brand">Quick Answer</p></div>
               <p className="text-base md:text-lg text-ink leading-relaxed">
                 Executive offsite di Bandung untuk C-suite <strong>2D1N range Rp 6,5-12 juta/pax</strong>. 1D intensive Rp 5-7 jt/pax. Termasuk venue private exclusive (heritage villa atau private estate), F&amp;B fine-dining, NDA-bound staff, dan AV setup. Strategy consultant senior tambah <strong>Rp 50-150 jt flat fee</strong>. Sweet spot pax <strong>8-15</strong>. Min prep <strong>4-6 minggu</strong>. Format paling sering: annual strategic planning, quarterly alignment, atau post-merger integration.

@@ -149,7 +149,7 @@ export default function LeadershipRetreatJawaBaratPage() {
 
         <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
           <div className="container-1280">
-            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
               <div className="flex items-center gap-2 mb-4"><Sparkle size={16} className="text-brand" /><p className="eyebrow-brand">Quick Answer</p></div>
               <p className="text-base md:text-lg text-ink leading-relaxed">
                 Leadership retreat di Jawa Barat untuk <strong>3D2N range Rp 5-9 juta/pax</strong>. Termasuk venue private premium, certified executive coach (Rp 50-150 jt flat fee), 360-feedback assessment optional (Rp 4-8 jt/peserta), F&amp;B premium, dan material. Sweet spot pax <strong>12-25</strong>. 5 framework: Servant, Adaptive, Situational, Transformational, Authentic. Min prep <strong>10-12 minggu</strong>.

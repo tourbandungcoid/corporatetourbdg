@@ -155,7 +155,7 @@ export default function CompanyRetreatBandungPage() {
 
         <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
           <div className="container-1280">
-            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
               <div className="flex items-center gap-2 mb-4"><Sparkle size={16} className="text-brand" /><p className="eyebrow-brand">Quick Answer</p></div>
               <p className="text-base md:text-lg text-ink leading-relaxed">
                 Company retreat di Bandung untuk <strong>2D1N range Rp 3,5–4,5 jt/pax</strong>, <strong>3D2N Rp 5–6 jt/pax</strong>, dan <strong>5D4N immersive Rp 7–10 jt/pax</strong>. Sudah include venue private (villa/resort eksklusif), F&amp;B premium, facilitator senior, dan materials. Sweet spot pax <strong>10-40 orang</strong> untuk substantive depth. Min prep <strong>8-10 minggu</strong>. Cocok untuk strategic planning, post-merger integration, cultural reset, atau leadership development.

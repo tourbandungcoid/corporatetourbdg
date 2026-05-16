@@ -241,7 +241,7 @@ export function articleSchema({
     },
     speakable: {
       "@type": "SpeakableSpecification",
-      cssSelector: ["h1", ".quick-answer", ".tldr-box", "h2:first-of-type"],
+      cssSelector: ["h1", ".quick-answer", ".tldr-box"],
     },
   };
 }
@@ -437,6 +437,36 @@ export function itemListSchema({
       name: item.name,
       ...(item.description ? { description: item.description } : {}),
       ...(item.image ? { image: item.image } : {}),
+    })),
+  };
+}
+
+export function definedTermSetSchema({
+  name,
+  description,
+  url,
+  terms,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  terms: { name: string; description: string; slug: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${url}#termset`,
+    name,
+    description,
+    url,
+    inLanguage: "id-ID",
+    publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
+    hasDefinedTerm: terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.name,
+      description: t.description,
+      url: `${url}#${t.slug}`,
+      inDefinedTermSet: `${url}#termset`,
     })),
   };
 }
