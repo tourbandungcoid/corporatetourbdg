@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PackagesGrid } from "@/components/PackagesGrid";
 import { getPackages } from "@/lib/packages-data";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 import {
@@ -148,6 +148,20 @@ export default function PackagesIndexPage() {
         title="8 sample programs. Tinggal customize."
         description="Bukan paket fixed — sample starting point dengan pricing transparent. Setiap proposal yang kami kirim disesuaikan dengan tim, budget, dan objective lo."
       />
+
+      <section className="py-8 border-b border-divider bg-cream/30">
+        <div className="container-1280">
+          <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkle size={16} className="text-brand" />
+              <p className="eyebrow-brand">Quick Answer</p>
+            </div>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              TourBandung Corporate menawarkan <strong>8 sample paket corporate outing di Bandung</strong> dengan range <strong>Rp 1,5–6,5 jt/pax</strong> — Foundation (1-day), Standard (2D1N villa), Premium (glamping/resort), dan Executive. Bukan paket fixed — semua bisa di-customize. <strong>Free proposal dalam 24 jam</strong> setelah briefing call 15 menit.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Featured strip */}
       <section className="border-b border-divider py-8 bg-paper">

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getCaseStudiesList } from "@/lib/case-studies-data";
-import { ArrowRight } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle } from "@/components/icons/Icons";
 import { SITE, STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 import {
@@ -152,6 +152,20 @@ export default async function CaseStudiesIndexPage({
         title="Real events. Real companies. Real outcomes."
         description="Cerita lengkap event yang kami handle untuk corporate client — dari tech unicorn pasca-merger sampai BUMN bank annual gathering. Challenge, approach, dan hasil terukur."
       />
+
+      <section className="py-8 border-b border-divider bg-cream/30">
+        <div className="container-1280">
+          <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkle size={16} className="text-brand" />
+              <p className="eyebrow-brand">Quick Answer</p>
+            </div>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              TourBandung Corporate telah menghandle <strong>400+ corporate events</strong> dari 8+ industri — tech unicorn (800 pax post-merger), BUMN bank (120 pax annual gathering), FMCG MNC (180 pax regional), telco (250 pax), dan manufacturing. <strong>Repeat booking rate 92%</strong>. Semua case study mencantumkan challenge, approach, dan outcome terukur.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-paper border-b border-divider py-12">
         <div className="container-1280">

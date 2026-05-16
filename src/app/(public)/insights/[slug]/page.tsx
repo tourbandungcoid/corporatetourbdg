@@ -15,6 +15,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ slug: string }>;
@@ -160,7 +161,27 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       { name: "Insights", url: `${SITE.url}/insights` },
       { name: article.title, url },
     ]),
-    ...(article.howTo ? [howToSchema({ ...article.howTo, pageUrl: url })] : [])
+    ...(article.howTo ? [howToSchema({ ...article.howTo, pageUrl: url })] : []),
+    faqPageSchema([
+      {
+        question: `Apa intisari dari "${article.title}"?`,
+        answer: article.excerpt,
+      },
+      {
+        question: `Apa key takeaway utama dari panduan ini untuk HR manager dan corporate decision-maker?`,
+        answer: article.tldr.slice(0, 2).join(" "),
+      },
+      ...(article.tldr.length > 2
+        ? [{
+            question: `Bagaimana cara menerapkan insight ini dalam perencanaan corporate event?`,
+            answer: article.tldr.slice(2).join(" "),
+          }]
+        : []),
+      {
+        question: `Siapa yang menulis panduan "${article.title}"?`,
+        answer: `${article.author.name} — ${article.author.role} di TourBandung Corporate, dengan pengalaman langsung menghandle 400+ corporate events di Bandung dan Jawa Barat.`,
+      },
+    ], url)
   );
 
   return (

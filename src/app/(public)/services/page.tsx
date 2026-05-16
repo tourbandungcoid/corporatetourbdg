@@ -14,6 +14,7 @@ import {
 } from "@/lib/schema";
 import {
   ArrowRight,
+  Sparkle,
   IconGathering,
   IconTeamBuilding,
   IconEmployee,
@@ -223,6 +224,20 @@ export default function ServicesPage() {
         title="10 program corporate yang siap di-customize."
         description="Dari intimate retreat 8 pax sampai mass gathering 2.000 pax — semua di-design dari brief tim lo, bukan paket template. Lihat scope, target tim, dan starting price untuk masing-masing program."
       />
+
+      <section className="py-8 border-b border-divider bg-cream/30">
+        <div className="container-1280">
+          <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkle size={16} className="text-brand" />
+              <p className="eyebrow-brand">Quick Answer</p>
+            </div>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              TourBandung Corporate menyediakan <strong>10 program corporate event di Bandung</strong> — dari <strong>team building (mulai Rp 1,5 jt/pax)</strong> hingga <strong>executive offsite (Rp 5 jt+/pax)</strong>. Semua dapat di-customize berdasarkan pax, budget, dan objective tim. Spesialisasi B2B murni dengan dedicated project manager di setiap event.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="container-1280">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getFaqCategoriesList } from "@/lib/faq-data";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 import {
@@ -158,6 +158,20 @@ export default async function FaqIndexPage() {
           title="Jawaban detail untuk pertanyaan paling sering ditanyakan HR."
           description={`${totalQuestions}+ pertanyaan dalam ${categories.length} kategori. Jika pertanyaan lo belum di sini, langsung chat — kami respond avg 6 jam working hours.`}
         />
+
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                FAQ ini mencakup <strong>{totalQuestions} pertanyaan dalam {categories.length} kategori</strong> — budget (Rp 1,5–12 jt/pax), vendor selection, lokasi (Lembang, Ciwidey, Bandung Kota), format event, logistik, comparison, dan ROI. Update <strong>2026</strong>. Diverifikasi oleh senior planner TourBandung Corporate.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-paper border-b border-divider py-8">
           <div className="container-1280 flex flex-wrap items-center justify-between gap-4">

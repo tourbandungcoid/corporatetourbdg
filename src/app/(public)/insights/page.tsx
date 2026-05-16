@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { getInsightsList } from "@/lib/insights-data";
-import { ArrowRight } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle } from "@/components/icons/Icons";
 import { SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 import {
@@ -171,6 +171,20 @@ export default async function InsightsIndexPage({
         title="Editorial untuk HR & corporate decision makers."
         description="Framework, data, dan insight soal corporate event design — dari TourBandung Corporate methodology lab. Built from 400+ events delivered."
       />
+
+      <section className="py-8 border-b border-divider bg-cream/30">
+        <div className="container-1280">
+          <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkle size={16} className="text-brand" />
+              <p className="eyebrow-brand">Quick Answer</p>
+            </div>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              TourBandung Corporate Insights menyediakan <strong>14 long-form guides</strong> tentang corporate event design — framework, data, dan insight dari <strong>400+ events delivered</strong>. Ditulis oleh senior planner berpengalaman, bukan content writer generalis. Semua konten <strong>100% gratis</strong>, tanpa paywall.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="border-b border-divider py-8 bg-paper">
         <div className="container-1280">
