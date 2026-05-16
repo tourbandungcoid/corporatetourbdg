@@ -277,7 +277,7 @@ export function articleSchema({
   author?: { name: string; role: string };
   aboutService?: string;
   keywords?: string[];
-  mentions?: { type: string; name: string; url?: string; id?: string }[];
+  mentions?: { type: string; name: string; url?: string; id?: string | undefined }[];
 }) {
   const AUTHOR_SLUGS: Record<string, string> = {
     "Andre Pratama": "andre-pratama",

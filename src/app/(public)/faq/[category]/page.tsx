@@ -69,6 +69,16 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     outcome:    ["roi corporate outing", "cara mengukur hasil team building", "impact outing kantor pada produktivitas", "justifikasi budget gathering ke cfo"],
   };
 
+  const FAQ_MENTIONS: Record<string, { type: string; name: string; url?: string; id?: string }[]> = {
+    budget:     [{ type: "WebPage", name: "Pricing & Transparent Breakdown", url: `${SITE.url}/pricing` }, { type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` }],
+    logistics:  [{ type: "WebPage", name: "Request Proposal — Free 24 Jam", url: `${SITE.url}/proposal/request` }],
+    comparison: [{ type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` }, { type: "WebPage", name: "Glossary Istilah Corporate Event", url: `${SITE.url}/glossary` }],
+    formats:    [{ type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` }, { type: "Service", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` }],
+    location:   [{ type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` }, { type: "Place", name: "Lembang, Kabupaten Bandung Barat" }],
+    vendor:     [{ type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` }, { type: "WebPage", name: "Checklist Pilih Vendor EO Corporate", url: `${SITE.url}/insights/checklist-vendor-event-organizer-corporate` }],
+    outcome:    [{ type: "WebPage", name: "Cara Justify Budget ke Finance", url: `${SITE.url}/insights/justify-outing-budget-to-finance` }, { type: "WebPage", name: "Methodology — Outcome ROI Framework", url: `${SITE.url}/methodology` }],
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -81,6 +91,10 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
       slug: `/faq/${cat.slug}`,
       author: FAQ_AUTHORS[cat.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: FAQ_KEYWORDS[cat.slug] ?? ["faq corporate event bandung", "pertanyaan outing kantor", "corporate outing bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        ...(FAQ_MENTIONS[cat.slug] ?? []),
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
