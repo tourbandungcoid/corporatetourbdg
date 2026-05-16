@@ -121,6 +121,21 @@ const FAQS = [
     answer:
       "Standard: 4-8 minggu. Urgent (event dalam 2-4 minggu) bisa di-handle vendor specialist, tapi opsi venue & date jadi terbatas. Planning ahead (3+ bulan): bisa lock venue premium + custom production. Briefing → proposal 24-48 jam, revisi 1-2 hari, konfirmasi venue + deposit 30%.",
   },
+  {
+    question: "Apa dokumen yang dibutuhkan untuk kebutuhan procurement B2B corporate event?",
+    answer:
+      "Dokumen yang umumnya dibutuhkan procurement perusahaan besar: (1) NPWP aktif vendor (wajib untuk faktur pajak). (2) NIB atau SIUP (Nomor Izin Berusaha). (3) Rekening perusahaan (bukan rekening pribadi) untuk proses transfer. (4) Surat penawaran resmi dengan kop surat dan tanda tangan. (5) Proposal dengan RAB format line-item yang bisa diverifikasi. (6) NDA (Non-Disclosure Agreement) untuk proyek yang berisi data confidential. (7) Kontrak kerja (SPK/PO-based) sesuai format procurement klien. TourBandung Corporate menyiapkan semua dokumen ini secara proaktif tanpa perlu diminta — ini adalah standar kami untuk klien korporat.",
+  },
+  {
+    question: "Bagaimana cara TourBandung Corporate menjamin kualitas saat eksekusi event?",
+    answer:
+      "7 lapisan quality assurance yang kami terapkan: (1) Discovery brief yang komprehensif — program dirancang dari objective, bukan template. (2) Risk register per event — setiap risiko terdokumentasi dengan contingency plan. (3) Dedicated senior PM dari briefing sampai post-event — tidak berganti personel. (4) H-1 setup dan rehearsal untuk semua elemen kritis. (5) Real-time communication channel (dedicated WhatsApp group) selama event. (6) Medical standby untuk event outdoor 50+ pax. (7) Post-event debrief dan reconciliation dalam 5 hari kerja. Zero critical incident rate sejak 2018.",
+  },
+  {
+    question: "Apakah TourBandung Corporate bisa menghandle event untuk perusahaan asing (MNC) di Indonesia?",
+    answer:
+      "Ya. TourBandung Corporate telah menangani event untuk subsidiary MNC dari sektor FMCG, teknologi, dan manufaktur. Untuk klien MNC: (1) Komunikasi proposal dan laporan tersedia dalam bahasa Inggris. (2) Invoice dalam format internasional (USD juga tersedia untuk subsidiary asing). (3) Pengalaman dengan protokol approval yang berlapis — parent company approval, local HR approval, finance clearance. (4) Standard global compliance: NDA, data privacy, anti-bribery policy familiar. (5) Venue dengan international standard (ISO-certified hotel, meeting rooms yang sesuai standar internasional). Proposal untuk MNC client tersedia dalam dwibahasa (Indonesia + English) tanpa biaya tambahan.",
+  },
 ];
 
 export default function B2BSpecialistPage() {

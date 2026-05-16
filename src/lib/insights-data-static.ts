@@ -308,6 +308,16 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/outcome", label: "FAQ Outcome & ROI", description: "Metrik yang bisa diukur dari corporate outing — NPS, engagement, retention correlation." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "cross-generational-team-building"],
+    howTo: {
+      name: "Cara Justify Budget Corporate Outing ke Finance dengan ROI Framework",
+      description: "4 langkah mengukur dan mempresentasikan ROI corporate event ke Finance team — dari baseline survey hingga financial calculation.",
+      steps: [
+        { name: "Siapkan pre-event baseline survey", text: "1 minggu sebelum event, kirim 10 pertanyaan ke peserta: eNPS, retention intent ('how likely you'd stay 12 months'), communication quality, leadership trust. Ini adalah baseline yang dibutuhkan untuk show improvement post-event ke Finance." },
+        { name: "Kirim post-event survey (1 minggu setelah event)", text: "Ulangi 10 pertanyaan baseline + 5 reflection question. Compare delta — typical improvement 15–30% pada engagement metric, 10–20% pada retention intent. Screenshot delta ini untuk presentasi ke Finance." },
+        { name: "Track 6-month retention", text: "Bandingkan voluntary attrition peserta event vs non-peserta dalam role/department serupa. Structured event biasanya hasilkan 5–15% penurunan attrition peserta vs non-peserta dalam 6–12 bulan setelahnya." },
+        { name: "Translate ke financial impact", text: "Formula: Retention saving = Attrition reduction × Jumlah peserta × Salary rata-rata × Turnover multiplier (6–9 bulan). Contoh: 10% attrition reduction × 10 orang × Rp 8 jt × 9 bulan = Rp 720 juta saving dari event budget Rp 250 juta. ROI = 2.9x." },
+      ],
+    },
   },
 
   "cross-generational-team-building": {
@@ -695,6 +705,16 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/location", label: "FAQ Lokasi & Venue", description: "Venue mana yang terbaik — hotel ballroom, villa, resort, atau outdoor ground?" },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "force-majeure-contingency-corporate-outing", "corporate-outing-theme-selection"],
+    howTo: {
+      name: "Cara Memilih Format Indoor vs Outdoor untuk Corporate Outing",
+      description: "Framework 4 langkah memilih antara format indoor dan outdoor berdasarkan objective, audience, cuaca, dan risk tolerance.",
+      steps: [
+        { name: "Evaluasi objective event", text: "Outdoor cocok jika objective adalah adventure, physical challenge, atau nature immersion. Indoor cocok jika objective adalah strategic alignment, knowledge sharing, atau award ceremony. Event yang fokus bonding bisa kedua-duanya — pertimbangkan format hybrid (indoor meeting, outdoor activity)." },
+        { name: "Profil audience", text: "Periksa distribusi usia dan kondisi fisik peserta. Untuk tim yang ada peserta 50+ atau kondisi fisik tertentu, outdoor high-intensity bukan pilihan optimal. Untuk Gen-Z yang dominan, outdoor activity lebih engaging. Untuk diverse generasi, format hybrid (indoor ceremony + outdoor fun activity) biasanya paling inklusif." },
+        { name: "Cek kondisi cuaca dan musim", text: "Bandung hujan Oktober–April. Untuk event di musim hujan dengan format outdoor, backup indoor wajib sudah di-book dan siap. Budget untuk backup biasanya tambah Rp 5–20 jt. Peak dry season Juli–September adalah waktu terbaik untuk outdoor event Bandung." },
+        { name: "Kalkulasi biaya dan risiko", text: "Outdoor event: lebih memorable dan fotogenik, biaya logistics lebih tinggi (transport ke venue, setup lapangan, weather risk), tidak bisa diprediksi 100%. Indoor event: lebih terkontrol, AV lebih baik, lebih mudah untuk presentasi atau plenary — tapi atmosphere lebih formal. Hybrid: best of both, tapi butuh venue yang support keduanya dan logistik lebih kompleks." },
+      ],
+    },
   },
 
   "corporate-outing-theme-selection": {
@@ -1142,6 +1162,16 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/comparison", label: "FAQ Comparison & Decision", description: "Pertimbangan memilih lokasi: jarak, fasilitas, kapasitas, dan budget." },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "contoh-rundown-outing-kantor-1-hari", "indoor-vs-outdoor-corporate-outing"],
+    howTo: {
+      name: "Cara Memilih antara Lembang vs Ciwidey untuk Corporate Outing",
+      description: "4 langkah memilih destinasi outing yang tepat — Lembang atau Ciwidey — berdasarkan objective, pax, durasi, dan budget perusahaan.",
+      steps: [
+        { name: "Tentukan objective dan format event", text: "Lembang cocok untuk team building aktif (outdoor activity park seperti The Lodge Maribaya), glamping casual, atau annual gathering hotel premium (Padma Hotel Lembang). Ciwidey cocok untuk glamping alam terbuka yang lebih immersive, nature-based retreat, atau executive offsite yang butuh ketenangan lebih jauh dari keramaian." },
+        { name: "Cek waktu perjalanan dan logistics peserta", text: "Lembang: 30–45 menit dari pusat kota Bandung, paling mudah diakses dari Jakarta (2–2.5 jam). Ciwidey: 60–90 menit dari pusat kota, kurang ideal untuk peserta dari Jakarta yang ingin efisiensi waktu. Untuk grup dari Jakarta yang hanya 2D1N, Lembang lebih disarankan." },
+        { name: "Sesuaikan dengan kapasitas grup", text: "Lembang memiliki lebih banyak pilihan venue berskala besar (50–800 pax) — cocok untuk company gathering, annual event, atau family day. Ciwidey lebih optimal untuk grup kecil-menengah (20–80 pax) yang butuh ekslusivitas dan ketenangan alam." },
+        { name: "Pertimbangkan cuaca dan backup plan", text: "Kedua destinasi berada di area pegunungan dengan cuaca yang dapat berubah — rain plan wajib ada. Ciwidey lebih rentan kabut tebal di musim hujan (Oktober–April) yang bisa mengganggu aktivitas outdoor. Lembang memiliki lebih banyak venue dengan indoor backup option yang layak." },
+      ],
+    },
   },
 
   "mice-vs-corporate-outing-perbedaan": {
