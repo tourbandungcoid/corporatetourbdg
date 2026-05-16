@@ -445,8 +445,8 @@ export function serviceSchema({
       url: SITE.url,
     },
     areaServed: [
-      { "@type": "City", name: "Bandung" },
-      { "@type": "AdministrativeArea", name: "Jawa Barat" },
+      { "@type": "City", name: "Bandung", sameAs: "https://www.wikidata.org/wiki/Q1440" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat", sameAs: "https://www.wikidata.org/wiki/Q3812" },
     ],
     offers: {
       "@type": "Offer",

@@ -144,7 +144,10 @@ export default async function PackageDetailPage({
         availability: "https://schema.org/InStock",
         url,
         seller: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.legalName, url: SITE.url },
-        areaServed: [{ "@type": "City", name: "Bandung" }, { "@type": "AdministrativeArea", name: "Jawa Barat" }],
+        areaServed: [
+          { "@type": "City", name: "Bandung", sameAs: "https://www.wikidata.org/wiki/Q1440" },
+          { "@type": "AdministrativeArea", name: "Jawa Barat", sameAs: "https://www.wikidata.org/wiki/Q3812" },
+        ],
       },
     }
   );
