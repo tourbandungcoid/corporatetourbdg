@@ -75,9 +75,20 @@ export default function AboutPage() {
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
+      "@id": `${SITE.url}/about#webpage`,
       url: `${SITE.url}/about`,
+      name: "Tentang TourBandung Corporate",
       inLanguage: "id-ID",
-      about: { "@type": "Organization", name: "7Summits Travel" },
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
+      about: {
+        "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
+        name: "7Summits Travel",
+        url: SITE.url,
+        foundingDate: "2018",
+        numberOfEmployees: { "@type": "QuantitativeValue", value: 6, minValue: 6, maxValue: 15 },
+      },
+      primaryImageOfPage: { "@type": "ImageObject", url: IMAGES.heroMain.src, width: 1200, height: 630 },
     }
   );
 

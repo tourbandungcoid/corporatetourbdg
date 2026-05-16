@@ -44,10 +44,27 @@ export default function ContactPage() {
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
+      "@id": `${SITE.url}/contact#webpage`,
       url: `${SITE.url}/contact`,
       name: "Hubungi TourBandung Corporate",
       inLanguage: "id-ID",
-      about: { "@type": "Organization", name: SITE.legalName },
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
+      about: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.legalName, url: SITE.url },
+      mainEntity: {
+        "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
+        name: SITE.legalName,
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "Sales",
+            telephone: `+${CONTACT.whatsapp}`,
+            email: CONTACT.email,
+            availableLanguage: ["Indonesian", "English"],
+            hoursAvailable: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "17:00" },
+          },
+        ],
+      },
     }
   );
 
