@@ -17,21 +17,21 @@ import {
 } from "@/lib/schema";
 
 export const metadata = {
-  title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
+  title: "FAQ Corporate Outing Bandung — 111 Pertanyaan dalam 7 Kategori",
   description:
-    "100+ pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
+    "111 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
   alternates: { canonical: `${SITE.url}/faq` },
   openGraph: {
-    title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
-    description: "100+ pertanyaan paling sering dari HR Indonesia dalam 7 kategori — budget, vendor, lokasi, ROI, dan lebih.",
+    title: "FAQ Corporate Outing Bandung — 111 Pertanyaan dalam 7 Kategori",
+    description: "111 pertanyaan paling sering dari HR Indonesia dalam 7 kategori — budget, vendor, lokasi, ROI, dan lebih.",
     url: `${SITE.url}/faq`,
     type: "website" as const,
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {
     card: "summary_large_image" as const,
-    title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
-    description: "100+ pertanyaan HR Indonesia: budget, vendor, lokasi, ROI, format. Update 2026. Verified senior planner.",
+    title: "FAQ Corporate Outing Bandung — 111 Pertanyaan dalam 7 Kategori",
+    description: "111 pertanyaan HR Indonesia: budget, vendor, lokasi, ROI, format. Update 2026. Verified senior planner.",
     images: [IMAGES.heroMain.src],
   },
 };
@@ -93,8 +93,8 @@ export default async function FaqIndexPage() {
       { name: "FAQ", url: `${SITE.url}/faq` },
     ]),
     articleSchema({
-      headline: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
-      description: "100+ pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
+      headline: "FAQ Corporate Outing Bandung — 111 Pertanyaan dalam 7 Kategori",
+      description: "111 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",

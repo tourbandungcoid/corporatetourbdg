@@ -23,7 +23,7 @@ const CATEGORIES: Record<string, FaqCategory> = {
     intro:
       "Pertanyaan paling sering soal pricing — range, tier, payment terms, breakdown, ROI, dan hidden cost. Update 2026 dengan range pricing terkini.",
     metaDescription:
-      "12 jawaban detail soal budget corporate outing di Bandung — dari paket 1-day Rp 1.5jt/pax sampai executive offsite premium Rp 12jt+/pax. Update 2026.",
+      "15 jawaban detail soal budget corporate outing di Bandung — dari paket 1-day Rp 1.5jt/pax sampai executive offsite premium Rp 12jt+/pax. Update 2026.",
     questions: [
       {
         question: "Berapa estimasi budget outing kantor untuk tim 100 pax di Bandung?",
@@ -517,7 +517,7 @@ const CATEGORIES: Record<string, FaqCategory> = {
     intro:
       "Pertanyaan HR dan procurement soal evaluasi vendor, red flags, proposal comparison, kontrak, dan cara menghindari salah pilih vendor EO corporate. Berdasarkan pengalaman 400+ events.",
     metaDescription:
-      "Cara pilih vendor EO corporate Bandung: 12 pertanyaan wajib sebelum sign kontrak — verifikasi legal, evaluasi proposal, red flags, referensi klien, dan contract terms.",
+      "Cara pilih vendor EO corporate Bandung: 17 pertanyaan wajib sebelum sign kontrak — verifikasi legal, evaluasi proposal, red flags, referensi klien, dan contract terms.",
     questions: [
       {
         question: "Bagaimana cara pilih vendor corporate outing yang terpercaya?",
