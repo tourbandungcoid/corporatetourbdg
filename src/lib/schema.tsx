@@ -62,6 +62,11 @@ export function organizationSchema() {
       { "@type": "WebPage", url: `${SITE.url}/methodology`, name: "3 Named Framework Corporate Outing Design" },
       { "@type": "WebPage", url: `${SITE.url}/specialist-vs-generic-eo`, name: "Specialist vs Generic EO — 12 Dimensi Comparison" },
       { "@type": "WebPage", url: `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Lengkap Corporate Outing Bandung" },
+      { "@type": "WebPage", url: `${SITE.url}/about`, name: "Tentang TourBandung Corporate — Sejak 2018" },
+      { "@type": "WebPage", url: `${SITE.url}/team`, name: "Senior Planner Team — 6 Specialist Corporate Event" },
+      { "@type": "WebPage", url: `${SITE.url}/pricing`, name: "Pricing Transparent 4-Tier Corporate Outing Bandung" },
+      { "@type": "WebPage", url: `${SITE.url}/case-studies`, name: "Case Studies — Real Events, Real Outcomes" },
+      { "@type": "WebPage", url: `${SITE.url}/glossary`, name: "Glossary Istilah Corporate Event Indonesia" },
     ],
     foundingLocation: {
       "@type": "Place",

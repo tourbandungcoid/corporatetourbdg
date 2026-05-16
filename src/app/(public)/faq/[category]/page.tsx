@@ -49,6 +49,16 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
   const otherCats = allCats.filter((c) => c.slug !== cat.slug);
   const url = `${SITE.url}/faq/${cat.slug}`;
 
+  const FAQ_AUTHORS: Record<string, { name: string; role: string }> = {
+    budget:     { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    logistics:  { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
+    comparison: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    formats:    { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    location:   { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
+    vendor:     { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    outcome:    { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -59,6 +69,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: `/faq/${cat.slug}`,
+      author: FAQ_AUTHORS[cat.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
