@@ -72,6 +72,12 @@ export default function GlossaryPage() {
         "apa itu outbound perusahaan",
         "bots corporate event artinya",
       ],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "FAQ Corporate Outing Bandung", url: `${SITE.url}/faq` },
+        { type: "WebPage", name: "Methodology — 3 Named Framework", url: `${SITE.url}/methodology` },
+        { type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` },
+      ],
     }),
     faqPageSchema(
       all.slice(0, 30).map((e) => ({

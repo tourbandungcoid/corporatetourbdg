@@ -35,15 +35,17 @@ export async function YouTubeVideos() {
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": `${SITE.url}#video-list`,
     name: "Video Corporate Event dari TourBandung Corporate",
     description: "Konten YouTube dari 7Summits Travel — behind the scenes corporate outing, team building, dan executive offsite di Bandung & Jawa Barat.",
     url: `${SITE.url}#videos`,
+    isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
     itemListElement: videos.slice(0, 3).map((v, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {
-        "@context": "https://schema.org",
         "@type": "VideoObject",
+        "@id": `https://www.youtube.com/watch?v=${v.youtube_id}`,
         name: v.title ?? `Corporate Event Video ${i + 1} — TourBandung`,
         description: v.title ?? "Corporate outing, team building & executive offsite video dari 7Summits Travel Bandung.",
         thumbnailUrl: `https://i.ytimg.com/vi/${v.youtube_id}/hqdefault.jpg`,
@@ -52,6 +54,7 @@ export async function YouTubeVideos() {
         uploadDate: "2026-01-01",
         publisher: {
           "@type": "Organization",
+          "@id": `${SITE.url}#organization`,
           name: "7Summits Travel",
           url: SITE.url,
           logo: { "@type": "ImageObject", url: `${SITE.url}/logo/logo.png` },

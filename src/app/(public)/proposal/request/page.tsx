@@ -40,12 +40,15 @@ export default function RequestProposalPage() {
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
+      "@id": `${SITE.url}/proposal/request#webpage`,
       name: "Request Proposal Corporate Event Bandung",
       description,
       url: `${SITE.url}/proposal/request`,
       inLanguage: "id-ID",
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       mainEntity: {
         "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
         name: SITE.legalName,
         url: SITE.url,
         contactPoint: {

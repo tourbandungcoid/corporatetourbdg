@@ -240,6 +240,12 @@ export default function PricingPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Pricing Corporate Outing Bandung",
       keywords: ["harga corporate outing bandung", "biaya outing kantor bandung", "pricing event organizer corporate bandung", "tarif corporate gathering bandung", "budget corporate event per pax"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
+        { type: "WebPage", name: "Bandung Outing Tier System™", url: `${SITE.url}/insights/bandung-outing-tier-system` },
+      ],
     }),
     serviceSchema({
       name: "Corporate Outing Bandung — Transparent Pricing",
