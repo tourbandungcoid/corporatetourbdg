@@ -1570,6 +1570,110 @@ const INSIGHTS: Record<string, Insight> = {
       ],
     },
   },
+  "cara-membuat-brief-event-organizer": {
+    slug: "cara-membuat-brief-event-organizer",
+    title: "Cara Membuat Brief Event Organizer Corporate — Template & 10 Poin Wajib",
+    excerpt:
+      "Brief yang buruk = proposal yang salah = event yang generic. Panduan lengkap membuat brief EO corporate yang efektif — 10 poin wajib, template siap pakai, dan kesalahan fatal yang harus dihindari HR.",
+    metaDescription:
+      "Template brief event organizer corporate Indonesia — 10 poin wajib yang harus ada: objective, pax, budget, constraint, output. Panduan untuk HR manager dan procurement.",
+    category: "Planning Guide",
+    tldr: [
+      "80% brief yang masuk ke EO profesional tidak punya clear objective — hasilnya proposal generic yang tidak address real need.",
+      "10 poin wajib dalam brief: objective, pax + demografi, tanggal + durasi, budget range, lokasi preferensi, constraint kritis, format preferensi, output yang diharapkan, PIC kontak, deadline proposal.",
+      "Brief yang baik menghemat 2-3 putaran revisi dan mempercepat approval internal karena proposal langsung on-target.",
+      "15 menit briefing call dengan planner yang right akan menghasilkan proposal yang lebih akurat dari 2 halaman brief tertulis.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-16",
+    readTimeMin: 8,
+    author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy", initials: "SR" },
+    sections: [
+      {
+        paragraphs: [
+          "Dari ratusan proposal yang tim kami buat untuk corporate client, pola ini konsisten: brief yang detail dan clear → proposal langsung on-target → approval cepat → event outcome-driven. Brief yang vague atau tidak lengkap → proposal generic → revisi 2-3 putaran → timeline mepet → event yang 'yah begitu aja'.",
+          "Brief bukan formalitas. Brief adalah dokumen pertama yang menentukan apakah EO yang Anda ajak kerja sama benar-benar memahami kebutuhan Anda — atau hanya akan kirim template paket standar.",
+        ],
+      },
+      {
+        heading: "10 Poin Wajib dalam Brief EO Corporate",
+        paragraphs: [
+          "Berikut 10 poin yang harus ada di setiap brief corporate event. Jika salah satu tidak bisa dijawab saat menulis brief, itu sinyal bahwa scope internal belum final — dan lebih baik diselesaikan dulu sebelum brief ke EO.",
+        ],
+        numbered: [
+          "Objective event: Apa yang ingin dicapai? Annual bonding? Post-merger cultural integration? Leadership alignment? Reward program? Semakin spesifik, semakin tepat design eventnya. 'Refreshing bareng' bukan objective.",
+          "Jumlah peserta (pax) + demografi: Berapa orang, kisaran usia, gender split, generasi dominan (Gen-Z, Millennial, Gen-X)? Ada peserta dengan keterbatasan mobilitas? Ini menentukan format aktivitas.",
+          "Tanggal event + durasi: Tanggal preferred dan alternatif. 1 hari, 2D1N, atau 3D2N? Ada tanggal yang tidak bisa (hari besar, sprint period, event internal lain)?",
+          "Budget range (bukan angka pasti): Cantumkan range yang realistis — misal Rp 1,5–2,5 jt/pax all-in. EO yang profesional tidak akan pitching di luar range Anda. Range lebih jujur dari 'budget sesuai proposal terbaik'.",
+          "Lokasi preferensi: Bandung kota, Lembang, Ciwidey, atau terbuka? Apakah transport dari Jakarta perlu di-include? Jauh dekat venue dari kantor memengaruhi cost dan kehadiran.",
+          "Constraint kritis: Dietary restrictions (halal-only, vegetarian), mobilitas (ada peserta wheelchair), kebutuhan khusus (silent room untuk ibadah, nursing room), atau policy company (tidak boleh ada alkohol, tidak boleh overnight).",
+          "Format preferensi: Indoor atau outdoor? Hotel ballroom, villa private, atau resort? Full outbound atau semi-formal? Apakah ada agenda ceremony (awarding, kick-off, sambutan direksi)?",
+          "Output/deliverable yang diharapkan: Apa yang Anda terima dari EO? Sekadar execute, atau include documentation (foto/video), post-event report, feedback survey, dan ROI measurement?",
+          "PIC dari sisi klien: Siapa decision maker (approval budget)? Siapa contact person teknis sehari-hari? Siapa reviewer proposal? Kejelasan ini mempercepat iterasi.",
+          "Deadline proposal: Kapan paling lambat proposal harus di-tangan untuk review? Mundur dari approval timeline internal Anda — jangan minta proposal hari ini untuk approval besok.",
+        ],
+      },
+      {
+        heading: "Template Brief — Copy & Pakai",
+        paragraphs: [
+          "Tidak perlu format yang fancy. Isi poin berikut dan kirim via WhatsApp atau email — EO yang profesional bisa langsung kerja dari sini:",
+        ],
+        callout: {
+          label: "Template",
+          text: "Perusahaan: [nama] | Industri: [industri] | PIC: [nama, jabatan, kontak] | Objective: [apa yang ingin dicapai] | Pax: [jumlah] | Demografi: [usia range, gender split] | Tanggal: [preferred + alternatif] | Durasi: [1 hari / 2D1N / 3D2N] | Lokasi: [Bandung / Lembang / Ciwidey / terbuka] | Budget: [Rp X – Y jt / pax] | Format: [outdoor / indoor / villa / hotel] | Constraint: [dietary, mobilitas, policy] | Output: [execute only / include dokumentasi / post-event report] | Deadline proposal: [tanggal]",
+        },
+      },
+      {
+        heading: "3 Kesalahan Fatal yang Sering Terjadi",
+        paragraphs: [
+          "Setelah ratusan brief masuk ke inbox kami, tiga kesalahan ini paling sering muncul:",
+        ],
+        bullets: [
+          "Brief tanpa objective — 'Kami mau outing' bukan objective. EO yang bagus akan tanya balik, tapi yang generic langsung kirim paket katalog. Hasil? Event yang tidak address real need tim Anda.",
+          "Budget 'sesuai proposal terbaik' — EO tidak tahu harus design di range mana. Hasilnya 2 proposal: satu super premium (yang pasti di-reject) dan satu super budget (yang bikin EO rugi jika di-approve). Cantumkan range nyata.",
+          "PIC tidak clear — brief dari HR staff, approval dari HR Director yang berbeda view, konfirmasi dari GA Manager. Tanpa decision chain yang clear, revisi bisa muter-muter 2 minggu.",
+        ],
+      },
+      {
+        heading: "Brief via Call vs Brief Tertulis",
+        paragraphs: [
+          "Brief tertulis bagus untuk mendokumentasikan scope dan alignment internal. Tapi untuk event yang kompleks (200+ pax, multi-day, cross-department), brief tertulis alone tidak cukup.",
+          "15–30 menit discovery call dengan senior planner yang experienced jauh lebih efektif dari 2 halaman brief tertulis. Di call itu, planner yang tepat akan ask the right questions — hal-hal yang Anda sendiri belum kepikiran untuk dicantumkan di brief.",
+          "Rekomendasi kami: kirim brief tertulis sebagai starting point, lalu follow up dengan discovery call sebelum EO mengerjakan proposal. Ini standar kerja kami untuk semua client — bukan luxury, tapi prerequisite untuk proposal yang on-target.",
+        ],
+        callout: {
+          label: "Waktu investasi",
+          text: "15 menit briefing call awal menghemat 2-3 putaran revisi proposal dan rata-rata 1-2 minggu timeline. Untuk event Rp 200-500 jt, itu worth it.",
+        },
+      },
+      {
+        heading: "Kapan Brief Boleh Singkat?",
+        paragraphs: [
+          "Brief super singkat oke jika: (1) Anda sudah pernah event dengan EO yang sama dan hanya butuh recurring event dengan minor adjustment, atau (2) event simple — family gathering 1 hari, < 50 pax, satu lokasi, satu aktivitas utama, budget sudah fix.",
+          "Selain dua kondisi itu, investasikan waktu untuk brief yang proper. Event corporate Rp 100-500 jt+ tidak layak dapat brief 3 baris.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Start dari brief yang tepat untuk outing kantor yang outcome-driven." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Brief corporate gathering annual — objective, pax, format, output." },
+      { href: "/proposal/request", label: "Request Proposal", description: "Kirim brief Anda — kami respond dalam 24 jam dengan proposal yang relevant." },
+      { href: "/faq/budget", label: "FAQ Budget & Pricing", description: "Panduan budget range realistic untuk berbagai format corporate event." },
+      { href: "/methodology", label: "Methodology Kami", description: "Discovery Brief adalah step pertama dari 3 framework kami — sebelum design dan execute." },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "checklist-vendor-event-organizer-corporate", "justify-outing-budget-to-finance"],
+    howTo: {
+      name: "Cara Membuat Brief Event Organizer Corporate yang Efektif",
+      description: "5 langkah membuat brief EO corporate yang menghasilkan proposal on-target dan meminimalkan revisi.",
+      steps: [
+        { name: "Tentukan objective event terlebih dahulu", text: "Sebelum menulis brief, jawab pertanyaan ini: apa perubahan nyata yang ingin Anda lihat pada tim setelah event? Bonding pasca-merger, alignment strategi, engagement boost, atau reward? Objective yang specific menghasilkan design yang specific." },
+        { name: "Isi 10 poin wajib brief", text: "Lengkapi 10 poin: objective, pax + demografi, tanggal + durasi, budget range, lokasi, constraint kritis (dietary, mobilitas, policy), format preferensi, output yang diharapkan, PIC decision chain, dan deadline proposal. Jangan kirim brief yang bolong salah satu poin ini." },
+        { name: "Validasi brief dengan stakeholder internal", text: "Sebelum kirim ke EO, align dengan HR Director dan Finance untuk budget range dan approval criteria. Brief yang belum di-approve internal akan menyebabkan scope creep di tengah proses yang membuang waktu semua pihak." },
+        { name: "Kirim brief dan jadwalkan discovery call", text: "Kirim brief tertulis sebagai starting point, lalu minta jadwal discovery call 15–30 menit dengan senior planner EO. Call ini bukan sales pitch — ini sesi untuk planner mengajukan pertanyaan yang lebih dalam tentang kebutuhan Anda." },
+        { name: "Evaluasi proposal berdasarkan brief, bukan harga saja", text: "Saat proposal masuk, cek dulu: apakah proposal menjawab objective di brief Anda? Apakah design activity address audience Anda? Proposal termurah yang tidak address objective Anda lebih mahal dari proposal premium yang on-target." },
+      ],
+    },
+  },
 };
 
 export function getAllInsightSlugsStatic(): string[] {
