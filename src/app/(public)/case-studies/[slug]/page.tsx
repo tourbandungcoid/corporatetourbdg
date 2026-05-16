@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getAllCaseStudySlugs, getCaseStudy } from "@/lib/case-studies-data";
@@ -249,6 +249,23 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
                   <p className="mt-2 text-sm text-slate">{m.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quick answer — speakable summary */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                Event <strong>{cs.industryLabel}</strong> {cs.pax} peserta di {cs.location} ({cs.duration}).{" "}
+                {cs.shortDescription}{" "}
+                Outcome kunci: {cs.metrics.map((m) => `${m.label} ${m.value}`).join(", ")}.
+              </p>
             </div>
           </div>
         </section>

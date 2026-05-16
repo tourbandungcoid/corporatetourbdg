@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Check, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getAllServiceSlugs, getService } from "@/lib/services-data";
@@ -218,6 +218,22 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
                   <Whatsapp size={14} />WhatsApp
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick answer — speakable summary */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                <strong>{service.title}</strong> — {service.paxRange}, mulai <strong>{service.priceFrom}</strong>.{" "}
+                {service.heroDescription.slice(0, 200)}{service.heroDescription.length > 200 ? "…" : ""}
+              </p>
             </div>
           </div>
         </section>
