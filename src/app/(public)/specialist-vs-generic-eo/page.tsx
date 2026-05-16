@@ -145,6 +145,26 @@ const FAQS = [
     answer:
       "4 tes cepat: (a) minta sample post-event report dari client sebelumnya — generic vendor biasanya gak punya; (b) minta risk register template — generic vendor bilang \"nanti kita buat\"; (c) check apakah mereka kasih breakdown line-item — generic vendor refuse; (d) check apakah mereka demand discovery call sebelum quote — generic vendor langsung kirim 3 paket.",
   },
+  {
+    question: "Bagaimana cara membandingkan proposal dari specialist dan generic EO secara apple-to-apple?",
+    answer:
+      "Buat comparison matrix: (1) Breakdown venue — apakah venue yang sama atau setara? (2) F&B — nasi kotak vs set-menu buffet? (3) Activity facilitation — free-play atau ada fasilitator terlatih? (4) PM coverage — berapa jam on-site? (5) Post-event deliverable — ada report atau tidak? Generic EO sering menang di total angka karena scope yang berbeda, bukan efisiensi nyata.",
+  },
+  {
+    question: "Apakah specialist bisa handle event dadakan dalam 2–3 minggu?",
+    answer:
+      "Bisa, dengan caveat: venue premium biasanya sudah penuh di weekends peak. Lead time ideal adalah 4–8 minggu untuk hasil terbaik. Untuk last-minute dalam 2 minggu, kami akan shortlist venue yang tersedia dan prioritaskan scope yang dapat dieksekusi dengan kualitas terjaga — bukan memaksakan scope penuh dengan risiko eksekusi buruk.",
+  },
+  {
+    question: "Apa pertanyaan terbaik untuk ditanyakan ke vendor di first meeting?",
+    answer:
+      "5 pertanyaan yang membedakan: (1) 'Boleh lihat contoh post-event report dari klien sebelumnya?' (2) 'Siapa PM yang akan handle dari briefing sampai hari-H?' (3) 'Bagaimana contingency plan jika hujan deras di hari outbound?' (4) 'Berapa markup Anda atas vendor lokal (catering, venue)?' (5) 'Boleh hubungi 2 klien korporat sebelumnya untuk referensi?' Vendor yang tidak bisa jawab 3 dari 5 ini dengan konkret — evaluasi ulang.",
+  },
+  {
+    question: "Apakah TourBandung Corporate hanya untuk perusahaan besar?",
+    answer:
+      "Tidak. Kami handle event mulai 30 pax (Foundation tier) hingga 1.000+ pax (Bespoke/custom). Yang terpenting bukan skala — tapi apakah perusahaan Anda butuh vendor yang accountable dengan deliverable yang terdokumentasi. Startup 40 orang yang mau quarterly bonding serius sama kami layaninya sama seperti korporat 500 pax.",
+  },
 ];
 
 export default function CompareSpecialistVsGenericPage() {

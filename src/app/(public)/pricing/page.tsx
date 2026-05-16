@@ -224,6 +224,21 @@ const FAQS = [
     answer:
       "Kami tidak operate dengan model discount karena pricing kami sudah transparent line-item — discount berarti potong service tertentu, bukan markup misterius. Kalau lo butuh efisiensi, ambil tier yang lebih fit (misal Elevated daripada Signature) atau kompres scope.",
   },
+  {
+    question: "Apa saja yang mempengaruhi posisi harga dalam satu tier?",
+    answer:
+      "4 faktor utama: (1) Pax size — lebih banyak pax biasanya lebih murah per pax karena fixed cost terdistribusi. (2) Venue spesifik — villa A di Lembang bisa 30% lebih mahal dari villa B di tier yang sama. (3) Duration — 3D2N lebih mahal per hari dari 2D1N. (4) Seasonality — peak season (long weekend, akhir tahun) venue rate naik 15–30%. Setelah discovery brief, kami quote titik spesifik dalam range dengan justifikasi per faktor.",
+  },
+  {
+    question: "Bagaimana cara HR mengajukan budget corporate outing ke Finance?",
+    answer:
+      "Framework yang work: (1) Frame sebagai investment, bukan expense — hitung cost of turnover (replace 1 karyawan ≈ 1× annual salary). (2) Bandingkan dengan benchmark: 0.5–1.5% total annual payroll adalah range normal perusahaan Indonesia. (3) Proposal 1-slide: cost outing vs. estimated avoided cost disengagement. Kami punya template ROI 1-slide yang bisa langsung dipakai untuk presentasi ke CFO.",
+  },
+  {
+    question: "Apakah ada opsi cicilan atau termin pembayaran?",
+    answer:
+      "Ya. Struktur standar: DP 30–40% saat konfirmasi, progress payment 40% 2 minggu sebelum event, pelunasan 20–30% maksimal H-3. Untuk kontrak >Rp 200 jt, kami flexible dengan termin custom yang disepakati bersama. Invoice ter-breakdown per line-item sehingga mudah di-proses oleh finance.",
+  },
 ];
 
 export default function PricingPage() {

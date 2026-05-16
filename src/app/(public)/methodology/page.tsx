@@ -14,6 +14,7 @@ import {
   localBusinessSchema,
   articleSchema,
   howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -111,6 +112,39 @@ const TIERS = [
   },
 ];
 
+const FAQS = [
+  {
+    question: "Apakah framework 5-Pillar ini bisa dipakai untuk event kecil seperti quarterly bonding 40 pax?",
+    answer:
+      "Ya. Framework 5-Pillar berskala — untuk event 40 pax, discovery brief lebih pendek (30 menit) dan outcome measurement bisa simplified (post-event NPS survey saja). Yang tidak berubah: kami tidak akan design program tanpa objective alignment dulu. Event kecil yang outcome-driven jauh lebih impactful dari event besar yang generic.",
+  },
+  {
+    question: "Berapa lama proses dari first meeting ke proposal siap?",
+    answer:
+      "Tipikal: discovery call 60–90 menit → internal design 2–3 hari kerja → proposal dengan breakdown line-item dalam 5 hari kerja. Untuk last-minute (event dalam <3 minggu), kami compressed ke 48–72 jam dengan caveat opsi venue terbatas.",
+  },
+  {
+    question: "Apa output nyata dari Outcome ROI Framework setelah event?",
+    answer:
+      "Post-event report yang mencakup: NPS peserta + delta pre/post event, attendance actual vs planned, cost reconciliation vs budget, incident log (jika ada), top 3 feedback verbatim, dan rekomendasi untuk event berikutnya. Dikirim dalam 5–7 hari kerja. Report ini yang HR pakai untuk justify budget ke finance tahun berikutnya.",
+  },
+  {
+    question: "Kenapa vendor lain tidak pakai framework seperti ini?",
+    answer:
+      "Discovery-first approach membutuhkan investasi waktu dari kedua pihak sebelum ada kontrak. Vendor yang volume-oriented lebih profitable dengan kirim 3 paket dari katalog dalam 24 jam. Framework ini adalah deliberate trade-off: kami pilih qualified clients yang mau co-invest dalam discovery, bukan volume klien yang butuh event generik.",
+  },
+  {
+    question: "Apakah Bandung Outing Tier System (BOTS) bisa dikustomisasi?",
+    answer:
+      "Ya — tier adalah starting point, bukan straight-jacket. Upgrade satu komponen di dalam tier (misal venue ke level lebih tinggi) adalah hal normal. Yang tidak bisa: mengharapkan Signature output dengan Foundation budget — scope dikurangi secara eksplisit dan terdokumentasi kalau budget tidak match tier.",
+  },
+  {
+    question: "Bagaimana cara mulai engagement dengan TourBandung Corporate?",
+    answer:
+      "2 jalur: (1) Request proposal via form — tim kami follow up dalam 24 jam untuk jadwal discovery call. (2) WhatsApp langsung — untuk brief cepat sebelum memutuskan formal proposal. Keduanya free, tidak ada commitment sebelum proposal disetujui.",
+  },
+];
+
 export default function MethodologyPage() {
   const schema = combineSchemas(
     organizationSchema(),
@@ -158,7 +192,8 @@ export default function MethodologyPage() {
           text: "3-layer ROI: Employee Retention (biaya rekrutmen yang dihindari), Productivity (engagement correlation), dan Collaboration (NPS internal pre/post). Output: post-event report dengan data siap dibawa ke CFO.",
         },
       ],
-    })
+    }),
+    faqPageSchema(FAQS, `${SITE.url}/methodology`)
   );
 
   return (
@@ -364,6 +399,48 @@ export default function MethodologyPage() {
                 Vendor lain biasa skip Pillar 1 (objective) dan langsung ke Pillar 3 (venue) karena venue adalah yang HR tanya pertama. Hasilnya: venue cantik, activity random, outcome zero. Kami menolak design event tanpa briefing objective dulu — walaupun client urgent.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-20 border-b border-divider">
+          <div className="container-1280">
+            <div className="max-w-2xl mb-10">
+              <span className="eyebrow-brand">Methodology FAQ</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl text-ink leading-tight">
+                Pertanyaan paling sering soal framework kami.
+              </h2>
+            </div>
+            <div className="max-w-4xl space-y-3">
+              {FAQS.map((q, i) => (
+                <details
+                  key={i}
+                  className="group rounded-2xl border border-border bg-paper open:border-ink-soft transition-colors"
+                >
+                  <summary className="cursor-pointer list-none p-6 flex items-start justify-between gap-4">
+                    <h3 className="font-display text-lg md:text-xl text-ink leading-snug">
+                      {q.question}
+                    </h3>
+                    <span className="flex-shrink-0 mt-1 text-slate transition-transform group-open:rotate-45">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14M5 12h14" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <p className="text-slate leading-relaxed">{q.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-slate">
+              Lihat juga:{" "}
+              <Link href="/faq/formats" className="text-brand-deep hover:underline">FAQ Format & Programs</Link>
+              {" · "}
+              <Link href="/faq/outcome" className="text-brand-deep hover:underline">FAQ ROI & Outcome</Link>
+              {" · "}
+              <Link href="/faq/vendor" className="text-brand-deep hover:underline">FAQ Vendor Selection</Link>
+            </p>
           </div>
         </section>
 
