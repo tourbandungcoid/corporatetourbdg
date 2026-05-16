@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Check, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import {
@@ -258,6 +258,22 @@ export default async function PackageDetailPage({
               <Fact label="Duration" value={pkg.duration} />
               <Fact label="Starting price" value={pkg.startingPrice} />
               <Fact label="Tipe" value={pkg.vibeTags.join(" · ") || "Custom"} />
+            </div>
+          </div>
+        </section>
+
+        {/* Quick answer — speakable summary */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                <strong>{pkg.title}</strong> — {pkg.subtitle}. {pkg.paxRange}, mulai <strong>{pkg.startingPrice}</strong>.{" "}
+                {pkg.description.slice(0, 220)}{pkg.description.length > 220 ? "…" : ""}
+              </p>
             </div>
           </div>
         </section>
