@@ -39,6 +39,11 @@ export const metadata: Metadata = {
       "Custom-designed corporate outing untuk perusahaan Indonesia. 400+ events delivered sejak 2018.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Corporate Outing Bandung",
+    tags: ["outing kantor bandung", "corporate outing", "team building bandung", "jawa barat"],
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {

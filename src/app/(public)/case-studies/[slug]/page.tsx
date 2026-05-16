@@ -38,6 +38,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       description: cs.metaDescription,
       url,
       type: "article",
+      publishedTime: "2026-05-12",
+      modifiedTime: "2026-05-16",
+      authors: [`${SITE.url}/team`],
+      section: cs.industryLabel,
+      tags: ["case study corporate event bandung", cs.industryLabel.toLowerCase(), "corporate outing bandung"],
       images: [{ url: cs.heroImage.src, width: 1200, height: 630, alt: cs.heroImage.alt }],
     },
     twitter: {
