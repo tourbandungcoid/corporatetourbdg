@@ -289,7 +289,7 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: item.url,
+      item: { "@type": "Thing", "@id": item.url, name: item.name, url: item.url },
     })),
   };
 }
@@ -300,6 +300,8 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
     "@type": "FAQPage",
     ...(pageUrl ? { "@id": `${pageUrl}#faqpage`, url: pageUrl, isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url } } : {}),
     inLanguage: "id-ID",
+    dateModified: "2026-05-16",
+    datePublished: "2026-05-12",
     publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url },
     mainEntity: items.map((item, i) => ({
       "@type": "Question",
@@ -406,6 +408,11 @@ export function articleSchema({
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".quick-answer", ".tldr-box"],
     },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "B2B Corporate — HR Manager, Procurement, C-Level Indonesia",
+      geographicArea: { "@type": "AdministrativeArea", name: "Indonesia", sameAs: "https://www.wikidata.org/wiki/Q252" },
+    },
     ...(keywords && keywords.length > 0 ? { keywords: keywords.join(", ") } : {}),
     ...(mentions && mentions.length > 0
       ? {
@@ -455,7 +462,8 @@ export function serviceSchema({
     serviceType: "Corporate Event Planning",
     audience: {
       "@type": "BusinessAudience",
-      audienceType: "Corporate B2B",
+      audienceType: "B2B Corporate — HR Manager, Procurement, C-Level Indonesia",
+      geographicArea: { "@type": "AdministrativeArea", name: "Indonesia", sameAs: "https://www.wikidata.org/wiki/Q252" },
     },
     aggregateRating: {
       "@type": "AggregateRating",
