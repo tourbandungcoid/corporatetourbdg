@@ -396,6 +396,16 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/comparison", label: "FAQ Comparison & Decision", description: "Outbound vs indoor vs hybrid — panduan memilih format berdasarkan profil peserta." },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "post-merger-cultural-bonding"],
+    howTo: {
+      name: "Cara Merancang Team Building untuk Cross-Generational Workforce",
+      description: "4 langkah merancang program team building yang mengakomodasi kebutuhan Gen-Z, Millennial, dan Gen-X sekaligus.",
+      steps: [
+        { name: "Diagnosis generational composition", text: "Hitung proporsi Gen-Z (lahir 1997+), Millennial (1981–1996), dan Gen-X (1965–1980) dalam tim. Proporsi ini menentukan format yang dominan. Tim dengan 60%+ Gen-Z butuh high-stimulation, technology-integrated activity. Tim dengan banyak Gen-X butuh structured facilitation dan output yang clear." },
+        { name: "Rancang parallel activity tracks", text: "Jangan force seluruh peserta ke satu format yang sama. Desain parallel tracks: High-intensity outdoor untuk yang mau (Gen-Z/Millennial), moderat untuk middle ground, low-intensity collaborative untuk senior atau kondisi fisik tertentu. Semua tracks harus contribute ke objective yang sama — bisa diukur." },
+        { name: "Brief facilitator dengan generational context", text: "Facilitator harus dibrief tentang composition tim dan specific inter-generational tension yang ingin di-address. Hindari script yang menganggap semua peserta homogen. Structured debrief setelah setiap session harus include perspektif dari generasi berbeda." },
+        { name: "Ukur cross-generational collaboration post-event", text: "Pre-event: survey cross-generational communication quality score dan collaboration frequency. Post-event (1 minggu dan 3 bulan): ulangi survey. Success metric: peningkatan informal cross-generational interaction, berkurangnya silos generasional dalam project team assignment." },
+      ],
+    },
   },
 
   "post-merger-cultural-bonding": {
@@ -485,6 +495,17 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/outcome", label: "FAQ Outcome & ROI", description: "Outcome apa yang realistis dari cultural integration event pasca-merger?" },
     ],
     relatedSlugs: ["5-pillar-corporate-outing-design", "cross-generational-team-building"],
+    howTo: {
+      name: "Cara Merancang Cultural Bonding Event untuk Tim Pasca-Merger atau Reorganisasi",
+      description: "5 langkah dari diagnosis budaya hingga eksekusi event yang mengintegrasikan dua entitas yang sebelumnya terpisah.",
+      steps: [
+        { name: "Lakukan cultural diagnosis sebelum design program", text: "Survey dual-entity: ukur tingkat trust, language gap (terminologi berbeda antar organisasi), hierarchy perception, dan values alignment. Hasil ini jadi design brief untuk facilitator — bukan asumsi. Interview 5–10 orang dari masing-masing entitas untuk uncover specific tension points." },
+        { name: "Design small-group mixed sessions", text: "Cross-entity small groups (8–12 orang) adalah unit terbaik untuk trust building. Avoid segregasi entitas lama — mix secara intentional. Gunakan collaborative challenge (bukan kompetisi antar-entitas) untuk ciptakan shared memory. Facilitated dialogue sessions dengan safe space protocol lebih efektif dari lecture tentang 'visi bersama'." },
+        { name: "Address leadership alignment terpisah", text: "Senior management dari kedua entitas butuh sesi khusus (half-day atau 1 hari penuh) untuk align narrative perubahan sebelum cascading ke seluruh tim. Inkonsistensi pesan dari leadership adalah killer #1 dari cultural integration — harus diselesaikan di level ini dulu." },
+        { name: "Ukur dan follow up", text: "Post-event survey: ukur perceived trust antar-entitas, willingness to collaborate, dan shared identity index. 90-day check-in: tanya manager apakah ada behavioral change dalam cross-entity collaboration. Cultural integration adalah marathon bukan sprint — 1 event tidak cukup, tapi jadi foundation yang critical." },
+        { name: "Rancang seri follow-up lightweight touchpoints", text: "Setelah main bonding event, rancang 2–3 lightweight touchpoint dalam 6 bulan (quarterly informal gathering, cross-entity project pairing, joint recognition program). Continuity adalah kunci — bonding event yang tidak di-follow up kehilangan 60–70% efektivitasnya dalam 3 bulan." },
+      ],
+    },
   },
 
   "force-majeure-contingency-corporate-outing": {
