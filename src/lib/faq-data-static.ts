@@ -99,6 +99,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Weekday (Senin–Kamis): 10–20% lebih murah untuk venue, hotel, dan bus charter dibanding weekend. Jumat–Minggu: peak booking, venue dan transportasi penuh — harga premium. Untuk grup 100+ pax, selisih harga weekday vs weekend bisa Rp 30–80 ribu per pax. Rekomendasi: jika jadwal kerja memungkinkan, lock mid-week (Selasa–Rabu) untuk savings optimal. Plus: venue lebih lengang, service lebih fokus ke tim Anda.",
       },
+      {
+        question: "Berapa budget minimum yang realistis untuk corporate outing 1 hari di Bandung?",
+        answer:
+          "Budget minimum realistis untuk 1-day outing Bandung: Rp 1.5–2.2 juta per pax (Foundation tier) untuk 50+ pax. Ini mencakup: transportasi PP dari titik kumpul (Jakarta atau Bandung), venue halfday, F&B 2x (snack + makan siang), 1 aktivitas utama, dan koordinasi lapangan. Di bawah Rp 1.5 jt/pax untuk group 50+ pax, akan ada kompromi serius di kualitas venue, F&B, atau tidak ada PM dedicated. Untuk 30 pax ke bawah, cost per pax naik karena fixed cost transport dan venue yang tidak terbagi banyak.",
+      },
     ],
     relatedPages: [
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Budget breakdown per tier dan estimasi real untuk outing 1D / 2D1N di Bandung." },
@@ -598,6 +603,16 @@ const CATEGORIES: Record<string, FaqCategory> = {
         question: "Bagaimana cara melakukan tender atau beauty contest untuk memilih EO corporate?",
         answer:
           "Best practice tender EO corporate: (1) Pre-qualify 3–5 vendor dengan cek legal entity, portfolio, dan referensi klien. (2) Kirim RFP yang sama ke semua vendor — brief identik untuk comparison fair. (3) Evaluasi proposal dengan scoring matrix: 40% capability (portfolio, PM track record), 30% proposal quality (detail, objective alignment), 20% pricing (value for money, bukan yang termurah), 10% cultural fit. (4) Shortlist 2 vendor untuk presentation + Q&A session. (5) Due diligence referensi 2 klien sebelumnya sebelum final decision.",
+      },
+      {
+        question: "Apa perbedaan management fee dan service fee dalam proposal vendor EO corporate?",
+        answer:
+          "Management fee (atau PM fee): biaya untuk jasa perencanaan, koordinasi, dan project management — dibayar ke vendor EO sebagai imbalan keahlian dan tenaga tim. Service fee: biaya layanan administrasi untuk transaksi atau procurement tertentu. Dalam proposal EO yang transparan, management fee dicantumkan terpisah (biasanya 10–20% dari total biaya) — ini bukan markup tersembunyi, tapi biaya yang legitimate. Vendor yang tidak mencantumkan management fee secara eksplisit kemungkinan menyembunyikannya di markup komponen lain.",
+      },
+      {
+        question: "Bagaimana cara memastikan vendor EO corporate tidak fly-by-night atau project-based only?",
+        answer:
+          "3 cara cek legitimasi vendor: (1) Verifikasi legal — minta akta pendirian PT/CV, NPWP aktif, dan rekening perusahaan. Cek NIB/SIUP di OSS.go.id. (2) Physical office — minta alamat kantor dan kunjungi atau verifikasi via Google Street View. EO serius punya kantor tetap, bukan hanya WA number. (3) Longevity check — berapa tahun beroperasi? Cek year registered di akta. Vendor yang berdiri 3+ tahun lebih reliable. TourBandung Corporate beroperasi sejak 2018, kantor di Jl. Babakan Priangan I No.11C Bandung, PT dengan NPWP aktif dan PKP.",
       },
     ],
     relatedPages: [
