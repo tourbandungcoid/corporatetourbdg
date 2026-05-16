@@ -16,7 +16,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Methodology",
+  title: "Methodology — 3 Framework Corporate Outing Design TourBandung",
   description:
     "3 named framework yang kami pakai untuk design corporate outing outcome-driven: 5-Pillar Design™, Bandung Outing Tier System™ (BOTS), dan Outcome ROI Framework. Sequential, transparent, measurable.",
   alternates: { canonical: `${SITE.url}/methodology` },

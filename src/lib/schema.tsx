@@ -244,6 +244,7 @@ export function personSchema({
   image,
   slug,
   sameAs,
+  knowsAbout,
 }: {
   name: string;
   jobTitle: string;
@@ -251,6 +252,7 @@ export function personSchema({
   image?: string;
   slug: string;
   sameAs?: string[];
+  knowsAbout?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -266,6 +268,7 @@ export function personSchema({
       url: SITE.url,
     },
     ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
+    ...(knowsAbout && knowsAbout.length > 0 ? { knowsAbout } : {}),
   };
 }
 

@@ -20,7 +20,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Glossary",
+  title: "Glossary Corporate Event Bandung — 40+ Istilah untuk HR & Procurement",
   description:
     "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
   alternates: { canonical: `${SITE.url}/glossary` },

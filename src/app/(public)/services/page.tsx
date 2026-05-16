@@ -24,7 +24,7 @@ import {
 } from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Corporate Event Services Bandung — Team Building, Gathering & Retreat",
   description:
     "10 program corporate event yang siap di-customize — company gathering, team building, executive offsite, dan lainnya di Bandung & Jawa Barat.",
   alternates: { canonical: `${SITE.url}/services` },

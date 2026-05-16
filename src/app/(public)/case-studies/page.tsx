@@ -15,7 +15,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Case Studies Corporate Event Bandung — 6 Real Company, Outcome Terukur",
   description:
     "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank.",
   alternates: { canonical: `${SITE.url}/case-studies` },

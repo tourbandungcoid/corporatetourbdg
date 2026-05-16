@@ -15,7 +15,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Packages",
+  title: "Paket Corporate Outing Bandung — 8 Sample Program Rp 1,5–6,5 Jt/Pax",
   description:
     "8 sample corporate event packages dari TourBandung Corporate — starting point yang bisa di-customize. Range Rp 1.5-6.5 jt/pax. Free proposal dalam 24 jam.",
   alternates: { canonical: `${SITE.url}/packages` },

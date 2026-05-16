@@ -14,7 +14,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Insights",
+  title: "Insights & Panduan Corporate Event Bandung — 14 Long-Form Guides",
   description:
     "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia.",
   alternates: { canonical: `${SITE.url}/insights` },

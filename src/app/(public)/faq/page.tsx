@@ -14,7 +14,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata = {
-  title: "FAQ",
+  title: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
   description:
     "88 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
   alternates: { canonical: `${SITE.url}/faq` },

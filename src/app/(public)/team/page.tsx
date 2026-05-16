@@ -16,12 +16,12 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Team",
+  title: "Senior Planner Team — 6 Specialist Corporate Event Bandung",
   description:
     "Senior planner team 7Summits Travel — 6 specialist dengan total 50+ tahun pengalaman corporate event di Bandung & Jawa Barat. Real people, real credentials, real accountability.",
   alternates: { canonical: `${SITE.url}/team` },
   openGraph: {
-    title: "Team — TourBandung Corporate",
+    title: "Senior Planner Team TourBandung Corporate",
     description:
       "Senior planner team dengan 50+ tahun gabungan pengalaman corporate event Bandung.",
     url: `${SITE.url}/team`,
@@ -45,6 +45,7 @@ export default function TeamPage() {
         jobTitle: m.jobTitle,
         description: m.bioLong,
         slug: `/team#${m.slug}`,
+        knowsAbout: m.specialties,
       })
     )
   );
