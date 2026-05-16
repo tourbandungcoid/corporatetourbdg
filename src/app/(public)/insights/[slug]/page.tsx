@@ -33,7 +33,19 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: article.title,
     description: article.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: article.title, description: article.metaDescription, url, type: "article" },
+    openGraph: {
+      title: article.title,
+      description: article.metaDescription,
+      url,
+      type: "article",
+      images: [{ url: article.heroImage.src, width: 1200, height: 630, alt: article.heroImage.alt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.metaDescription,
+      images: [article.heroImage.src],
+    },
   };
 }
 
@@ -65,9 +77,10 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       description: article.metaDescription,
       image: article.heroImage.src,
       datePublished: article.publishDate,
-      dateModified: article.publishDate,
+      dateModified: "2026-05-16",
       slug: `/insights/${article.slug}`,
       author: { name: article.author.name, role: article.author.role },
+      aboutService: article.internalLinks?.[0]?.label ?? "Corporate Event Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

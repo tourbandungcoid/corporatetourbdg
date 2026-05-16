@@ -40,6 +40,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       type: "article",
       images: [{ url: cs.heroImage.src, width: 1200, height: 630, alt: cs.heroImage.alt }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: cs.outcomeHeadline,
+      description: cs.metaDescription,
+      images: [cs.heroImage.src],
+    },
   };
 }
 
@@ -59,14 +65,43 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       description: cs.metaDescription,
       image: cs.heroImage.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: `/case-studies/${cs.slug}`,
+      aboutService: relatedService?.title ?? "Corporate Event Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
       { name: "Case Studies", url: `${SITE.url}/case-studies` },
       { name: cs.outcomeHeadline, url },
-    ])
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: cs.outcomeHeadline,
+      description: cs.shortDescription,
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      location: {
+        "@type": "Place",
+        name: cs.location,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bandung",
+          addressRegion: "Jawa Barat",
+          addressCountry: "ID",
+        },
+      },
+      organizer: {
+        "@type": "Organization",
+        name: SITE.legalName,
+        url: SITE.url,
+      },
+      typicalAgeRange: "22-55",
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: cs.industryLabel,
+      },
+    }
   );
 
   return (

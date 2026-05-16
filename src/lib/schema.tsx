@@ -350,6 +350,36 @@ export function combineSchemas(...schemas: object[]) {
   };
 }
 
+export function itemListSchema({
+  name,
+  description,
+  url,
+  items,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string; description?: string; image?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    description,
+    url,
+    numberOfItems: items.length,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: item.url,
+      name: item.name,
+      ...(item.description ? { description: item.description } : {}),
+      ...(item.image ? { image: item.image } : {}),
+    })),
+  };
+}
+
 /**
  * JSON-LD <script> component for App Router server components.
  */

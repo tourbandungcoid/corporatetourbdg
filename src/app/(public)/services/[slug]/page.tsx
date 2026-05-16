@@ -40,6 +40,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       type: "article",
       images: [{ url: service.heroImage.src, width: 1200, height: 630, alt: service.heroImage.alt }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} — TourBandung Corporate`,
+      description: service.metaDescription,
+      images: [service.heroImage.src],
+    },
   };
 }
 
