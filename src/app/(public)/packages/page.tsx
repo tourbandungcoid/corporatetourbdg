@@ -14,6 +14,8 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -70,6 +72,35 @@ export default function PackagesIndexPage() {
         { type: "WebPage", name: "Pricing & Transparent Breakdown", url: `${SITE.url}/pricing` },
         { type: "WebPage", name: "Services Overview", url: `${SITE.url}/services` },
         { type: "WebPage", name: "Request Proposal Gratis", url: `${SITE.url}/proposal/request` },
+      ],
+    }),
+    faqPageSchema([
+      { question: "Apakah paket corporate outing di TourBandung bisa di-customize?", answer: "Ya — semua paket di halaman ini adalah sample starting point, bukan paket fixed. Setiap proposal yang kami kirim disesuaikan dengan jumlah pax, budget aktual, format event, dan objective spesifik perusahaan Anda. Customization mencakup venue, aktivitas, F&B, transport, dan rundown." },
+      { question: "Berapa rentang harga paket corporate outing di Bandung?", answer: "Range harga sample paket TourBandung Corporate: Foundation (Rp 1,5 jt/pax untuk 1-day event 50–100 pax), Standard (Rp 2,5–3,5 jt/pax untuk 2D1N), Premium (Rp 3,5–5 jt/pax dengan venue premium), dan Executive (Rp 5–6,5 jt/pax untuk executive offsite). Semua harga bisa disesuaikan berdasarkan skala grup dan periode booking." },
+      { question: "Apa yang sudah termasuk dalam paket corporate outing TourBandung?", answer: "Setiap paket umumnya mencakup: venue/villa/resort, F&B sesuai durasi (makan 2–6x), aktivitas utama (outbound/indoor games/workshop), transportasi lokal, project manager dedicated, dokumentasi dasar, dan post-event report. Komponen bisa ditambah (MC, photobooth, live band) atau dikurangi sesuai kebutuhan." },
+      { question: "Berapa lama proses konfirmasi dan eksekusi setelah memilih paket?", answer: "Timeline standar: briefing call 15 menit → proposal lengkap dalam 24 jam → revisi 1–2 hari → konfirmasi + DP 30% → ready to execute 3 minggu kemudian. Untuk event urgent (< 2 minggu), kami punya express track dengan availability tergantung slot vendor dan venue." },
+    ], `${SITE.url}/packages`),
+    howToSchema({
+      pageUrl: `${SITE.url}/packages`,
+      name: "Cara Memilih dan Memesan Paket Corporate Outing di TourBandung Corporate",
+      description: "4 langkah praktis dari eksplorasi paket hingga konfirmasi booking corporate outing Bandung.",
+      steps: [
+        {
+          name: "Pilih Sample Paket yang Paling Mendekati Kebutuhan",
+          text: "Browse 8 sample paket berdasarkan format event (1-day, 2D1N, glamping, gathering) dan estimasi budget per pax. Tidak harus perfect match — ini adalah starting point untuk diskusi customization.",
+        },
+        {
+          name: "Hubungi via WhatsApp atau Request Proposal",
+          text: "Setelah menemukan sample yang mendekati, klik 'Request Custom Proposal' atau chat WhatsApp dengan mention sample paket pilihan dan jumlah pax. Senior planner akan merespons dalam 6 jam working hours.",
+        },
+        {
+          name: "Ikuti Briefing Call 15 Menit",
+          text: "Senior planner akan jadwalkan briefing call 15 menit untuk menggali objective event, pax, budget range, dan tanggal yang diinginkan. Dari sini proposal custom dibuat dalam 24 jam.",
+        },
+        {
+          name: "Review Proposal dan Konfirmasi",
+          text: "Proposal lengkap dengan breakdown line-item dikirim dalam 24 jam setelah briefing. Setelah review dan revisi (biasanya 1–2 hari), konfirmasi dengan DP 30% untuk lock venue dan vendor.",
+        },
       ],
     }),
     {

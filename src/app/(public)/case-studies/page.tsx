@@ -15,6 +15,7 @@ import {
   localBusinessSchema,
   articleSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -111,6 +112,29 @@ export default async function CaseStudiesIndexPage({
         })),
       },
     },
+    howToSchema({
+      pageUrl: `${SITE.url}/case-studies`,
+      name: "Cara Menggunakan Case Study Ini untuk Evaluasi Vendor dan Justifikasi Budget",
+      description: "4 langkah memanfaatkan case study nyata TourBandung Corporate untuk kebutuhan procurement, vendor selection, dan presentasi budget ke manajemen.",
+      steps: [
+        {
+          name: "Filter Case Study Berdasarkan Industri",
+          text: "Gunakan filter industri di bagian atas halaman untuk melihat case study yang paling relevan dengan perusahaan Anda — tech & startup, BUMN banking, FMCG, telco, atau manufacturing. Ini mempercepat validasi bahwa kami familiar dengan kultur dan kebutuhan industri Anda.",
+        },
+        {
+          name: "Perhatikan Challenge yang Mirip dengan Situasi Tim Anda",
+          text: "Setiap case study mencantumkan challenge spesifik — misalnya team fragmentation pasca-merger, burn-out post-peak-season, atau bonding multi-generasi. Identifikasi case yang challenge-nya paling mirip dengan kondisi tim Anda sekarang.",
+        },
+        {
+          name: "Gunakan Data Outcome sebagai Referensi Justifikasi Budget",
+          text: "Setiap case study mencantumkan outcome terukur (engagement score, NPS internal, retention metric). Kutip data ini saat mempresentasikan justifikasi budget ke manajemen atau CFO — data nyata lebih persuasif dari estimasi generik.",
+        },
+        {
+          name: "Minta Referensi Klien dari Industri Sama",
+          text: "Setelah membaca case study yang relevan, hubungi kami lewat WhatsApp untuk meminta referensi klien yang bersedia dihubungi dari industri yang sama. Konfirmasi langsung dari klien existing lebih kuat dari portfolio apapun.",
+        },
+      ],
+    }),
     faqPageSchema([
       { question: "Apakah case study TourBandung Corporate menggunakan nama perusahaan klien yang sebenarnya?", answer: "Sebagian besar case study menggunakan deskripsi industri dan skala (bukan nama perusahaan) untuk menjaga NDA klien. Klien dari industri tech unicorn, BUMN bank, FMCG MNC, dan manufacturing MNC bisa dikonfirmasi melalui briefing call — kami bisa connect Anda dengan reference klien yang bersedia untuk dikontak." },
       { question: "Industri apa saja yang sudah pernah di-handle TourBandung Corporate?", answer: "8+ industri aktif: tech & startup (unicorn level), perbankan (BUMN dan swasta), FMCG (global brand), telekomunikasi, manufacturing (MNC), healthcare & farmasi, agribisnis, dan consultancy. Repeat booking rate 92% — artinya klien dari masing-masing industri ini kembali untuk event berikutnya." },

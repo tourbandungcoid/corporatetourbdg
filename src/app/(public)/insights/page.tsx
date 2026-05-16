@@ -15,6 +15,7 @@ import {
   itemListSchema,
   articleSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -129,6 +130,29 @@ export default async function InsightsIndexPage({
         description: a.excerpt,
         image: a.heroImage.src,
       })),
+    }),
+    howToSchema({
+      pageUrl: `${SITE.url}/insights`,
+      name: "Cara Memanfaatkan Insights TourBandung Corporate untuk Perencanaan Event",
+      description: "4 langkah menggunakan artikel dan framework di Insights untuk merencanakan corporate event yang lebih efektif dan terukur.",
+      steps: [
+        {
+          name: "Mulai dengan Artikel Sesuai Tahap Perencanaan",
+          text: "Filter artikel berdasarkan kategori (Budget Planning, Format Design, Vendor Selection, ROI & Outcome) sesuai tahap perencanaan yang sedang Anda jalani. Jika masih di tahap awal, mulai dari artikel budget dan format untuk membangun baseline pengetahuan.",
+        },
+        {
+          name: "Terapkan Framework Langsung ke Konteks Tim Anda",
+          text: "Setiap artikel memiliki framework yang actionable — bukan teori abstrak. Ambil satu framework (misalnya 5-Pillar Design™ atau BOTS Method) dan coba aplikasikan ke situasi tim Anda dengan mengisi variabel yang relevan: pax, budget, objective.",
+        },
+        {
+          name: "Gunakan Data dan Referensi untuk Presentasi Internal",
+          text: "Artikel-artikel di Insights mencantumkan data Gallup, industry benchmark, dan contoh nyata dari event yang sudah didelivered. Kutip data ini untuk memperkuat presentasi budget atau proposal event ke manajemen — referensi berbasis data lebih mudah disetujui.",
+        },
+        {
+          name: "Konsultasikan Framework ke Senior Planner",
+          text: "Setelah membaca panduan yang relevan, request briefing call gratis 15 menit untuk mendiskusikan bagaimana framework tersebut diterapkan secara spesifik ke event Anda — termasuk penyesuaian budget, lokasi, dan timeline.",
+        },
+      ],
     }),
     faqPageSchema([
       { question: "Apakah panduan di Insights bisa diterapkan untuk semua skala perusahaan?", answer: "Ya — semua panduan di TourBandung Corporate Insights ditulis berdasarkan real experience dari 100+ corporate events di berbagai skala (30–800 pax) dan industri (tech, banking, BUMN, FMCG). Framework seperti 5-Pillar Design™ dan BOTS scalable untuk annual gathering 30 pax maupun 500 pax." },

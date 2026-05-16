@@ -9,6 +9,7 @@ import {
   JsonLd,
   combineSchemas,
   faqPageSchema,
+  howToSchema,
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
@@ -94,6 +95,7 @@ export default async function FaqIndexPage() {
     ]),
     articleSchema({
       headline: "FAQ Corporate Outing Bandung — 111 Pertanyaan dalam 7 Kategori",
+      alternativeHeadline: "Pertanyaan HR tentang Budget, Vendor, Lokasi, dan ROI Corporate Outing di Bandung",
       description: "111 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
@@ -121,6 +123,29 @@ export default async function FaqIndexPage() {
         url: `${SITE.url}/faq/${c.slug}`,
         description: c.intro,
       })),
+    }),
+    howToSchema({
+      pageUrl: `${SITE.url}/faq`,
+      name: "Cara Menggunakan FAQ Ini untuk Evaluasi dan Perencanaan Corporate Outing Bandung",
+      description: "4 langkah untuk memanfaatkan 111 pertanyaan dalam FAQ ini secara efektif — dari riset awal budget hingga justifikasi ROI ke CFO.",
+      steps: [
+        {
+          name: "Mulai dari Kategori Budget",
+          text: "Buka kategori Budget & Pricing untuk memahami range biaya per pax berdasarkan format event dan skala tim. Ini adalah starting point yang membantu Anda menetapkan ballpark figure sebelum meminta proposal resmi.",
+        },
+        {
+          name: "Validasi Vendor dengan Kategori Vendor Selection",
+          text: "Gunakan 12-poin checklist di kategori Vendor & EO Selection untuk mengevaluasi setiap vendor yang masuk shortlist. Fokus pada legalitas, track record B2B, dan struktur fee yang transparan.",
+        },
+        {
+          name: "Cek Lokasi dan Format Sesuai Kebutuhan Tim",
+          text: "Baca kategori Location & Venue dan Event Format untuk memilih area Bandung (Lembang, Ciwidey, kota) dan format event (1D, 2D1N, glamping, family day) yang sesuai dengan jumlah pax dan objective perusahaan.",
+        },
+        {
+          name: "Gunakan Framework ROI untuk Justifikasi ke CFO",
+          text: "Kategori Outcome & ROI menyediakan 3-layer ROI framework yang bisa langsung dimasukkan ke presentasi budget ke manajemen — dari employee retention savings hingga productivity multiplier berdasarkan data Gallup.",
+        },
+      ],
     })
   );
 
