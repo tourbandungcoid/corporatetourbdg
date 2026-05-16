@@ -185,6 +185,7 @@ export default function CompareSpecialistVsGenericPage() {
     }),
     faqPageSchema(FAQS, `${SITE.url}/specialist-vs-generic-eo`),
     howToSchema({
+      pageUrl: `${SITE.url}/specialist-vs-generic-eo`,
       name: "Cara Membedakan Corporate Event Specialist vs Generic EO",
       description:
         "4 tes cepat untuk validasi apakah vendor yang Anda pertimbangkan adalah specialist B2B atau generic EO yang nyambi corporate.",

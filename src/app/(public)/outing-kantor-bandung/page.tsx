@@ -222,6 +222,7 @@ export default function OutingKantorBandungPage() {
     articleSchema({
       headline:
         "Outing Kantor Bandung 2026: Panduan Lengkap, Estimasi Budget, dan Vendor Recommended",
+      alternativeHeadline: "Jasa Outing Kantor Bandung: Harga, Lokasi, Paket Terlengkap 2026",
       description:
         "Comprehensive guide outing kantor di Bandung — budget per pax, sample itinerary, 5 lokasi favorit, dan vendor selection checklist.",
       image: IMAGES.heroMain.src,

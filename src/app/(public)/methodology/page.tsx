@@ -140,6 +140,7 @@ export default function MethodologyPage() {
       ],
     }),
     howToSchema({
+      pageUrl: `${SITE.url}/methodology`,
       name: "Cara merancang corporate outing yang outcome-driven dengan 3 framework TourBandung",
       description:
         "3-framework approach yang kami pakai untuk setiap engagement corporate: dari objective alignment hingga ROI measurement post-event.",

@@ -152,6 +152,7 @@ export default function CorporateGatheringBandungPage() {
     articleSchema({
       headline:
         "Corporate Gathering Bandung 2026: Annual Event Production untuk Perusahaan 100-800 Pax",
+      alternativeHeadline: "Company Gathering Bandung: Venue, Rundown, Budget Annual Event",
       description:
         "Comprehensive guide corporate gathering — komponen wajib, sample rundown, hotel ballroom rekomendasi, dan budget breakdown.",
       image: IMAGES.packageAnnualGathering.src,

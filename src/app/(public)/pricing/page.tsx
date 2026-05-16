@@ -261,6 +261,7 @@ export default function PricingPage() {
     }),
     faqPageSchema(FAQS, `${SITE.url}/pricing`),
     howToSchema({
+      pageUrl: `${SITE.url}/pricing`,
       name: "Cara Menentukan Budget Corporate Outing yang Tepat",
       description:
         "4 langkah untuk memilih tier budget corporate outing yang sesuai dengan skala, objective, dan kapasitas finansial perusahaan.",

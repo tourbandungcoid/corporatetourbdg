@@ -133,6 +133,7 @@ export default function B2BSpecialistPage() {
     ]),
     articleSchema({
       headline: TITLE,
+      alternativeHeadline: "Cara Memilih Vendor Corporate Event B2B Bandung — Checklist HR Procurement",
       description: DESCRIPTION,
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-15",
@@ -158,6 +159,7 @@ export default function B2BSpecialistPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih Vendor B2B Corporate Event Bandung yang Tepat",
       description: "7 kriteria yang harus dicek HR/procurement sebelum sign kontrak vendor corporate event — dari discovery brief hingga NDA-readiness.",
       steps: [

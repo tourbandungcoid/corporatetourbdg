@@ -148,7 +148,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       { name: "Insights", url: `${SITE.url}/insights` },
       { name: article.title, url },
     ]),
-    ...(article.howTo ? [howToSchema(article.howTo)] : [])
+    ...(article.howTo ? [howToSchema({ ...article.howTo, pageUrl: url })] : [])
   );
 
   return (

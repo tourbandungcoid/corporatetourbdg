@@ -197,6 +197,7 @@ export default function TeamBuildingBandungPage() {
     articleSchema({
       headline:
         "Team Building Bandung 2026: Methodology, 50+ Activity, dan Vendor Recommended",
+      alternativeHeadline: "Vendor Team Building Bandung: Aktivitas, Harga, Fasilitator Bersertifikat",
       description:
         "Structured team building untuk perusahaan Indonesia — methodology framework, activity catalog, dan vendor selection guide.",
       image: IMAGES.caseStudyTeamBuilding.src,

@@ -142,6 +142,7 @@ export default function EventOrganizerCorporateBandungPage() {
     localBusinessSchema(),
     articleSchema({
       headline: TITLE,
+      alternativeHeadline: "Rekomendasi Event Organizer Corporate Bandung Terpercaya — B2B Specialist",
       description: DESCRIPTION,
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-14",
@@ -171,6 +172,7 @@ export default function EventOrganizerCorporateBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Bekerja dengan Event Organizer Corporate Bandung — 7 Langkah",
       description: "Proses kerja dari inquiry pertama hingga post-event report yang TourBandung Corporate jalankan untuk setiap event",
       steps: [

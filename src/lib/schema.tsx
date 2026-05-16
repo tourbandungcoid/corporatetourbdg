@@ -304,6 +304,7 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
 
 export function articleSchema({
   headline,
+  alternativeHeadline,
   description,
   image,
   datePublished,
@@ -315,6 +316,7 @@ export function articleSchema({
   mentions,
 }: {
   headline: string;
+  alternativeHeadline?: string;
   description: string;
   image: string;
   datePublished: string;
@@ -349,6 +351,7 @@ export function articleSchema({
     "@type": "Article",
     "@id": `${SITE.url}${slug}#article`,
     headline,
+    ...(alternativeHeadline ? { alternativeHeadline } : {}),
     description,
     image,
     datePublished,

@@ -198,6 +198,7 @@ export default function PanduanCorporateOutingPage() {
     articleSchema({
       headline:
         "Panduan Lengkap Corporate Outing Bandung 2026 — Budget, Jenis, Vendor & Lokasi",
+      alternativeHeadline: "Corporate Outing Bandung: Estimasi Biaya, Pilihan Lokasi, dan Tips Vendor 2026",
       description:
         "Panduan komprehensif corporate outing di Bandung: definisi, 10 jenis event, estimasi budget, lokasi top, cara pilih vendor, dan FAQ.",
       image: IMAGES.heroMain.src,
@@ -232,6 +233,7 @@ export default function PanduanCorporateOutingPage() {
     }),
     faqPageSchema(FAQS, PAGE_URL),
     howToSchema({
+      pageUrl: PAGE_URL,
       name: "Cara Merencanakan Corporate Outing di Bandung",
       description:
         "6 langkah dari brief awal hingga post-event report untuk corporate outing yang outcome-driven di Bandung.",
