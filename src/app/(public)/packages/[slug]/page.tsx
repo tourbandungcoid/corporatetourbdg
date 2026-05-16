@@ -113,10 +113,17 @@ export default async function PackageDetailPage({
       aboutService: `${pkg.title} Bandung`,
       author: PACKAGE_AUTHORS[pkg.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: PACKAGE_KEYWORDS[pkg.slug] ?? [`paket ${pkg.title.toLowerCase()} bandung`, "program corporate event jawa barat", "harga outing kantor bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Packages Overview", url: `${SITE.url}/packages` },
+        { type: "WebPage", name: "Pricing Transparent", url: `${SITE.url}/pricing` },
+        { type: "WebPage", name: "Request Proposal Gratis", url: `${SITE.url}/proposal/request` },
+      ],
     }),
     {
       "@context": "https://schema.org",
       "@type": "Product",
+      "@id": `${url}#product`,
       name: pkg.title,
       description: pkg.subtitle,
       url,
