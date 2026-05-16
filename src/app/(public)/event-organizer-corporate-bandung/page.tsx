@@ -155,6 +155,7 @@ export default function EventOrganizerCorporateBandungPage() {
       description:
         "Specialist B2B corporate event organizer di Bandung — company gathering, team building, executive offsite, MICE. Bukan generic EO.",
       priceRange: "Rp 1.200.000 - Rp 12.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

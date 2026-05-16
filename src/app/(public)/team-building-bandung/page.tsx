@@ -211,6 +211,7 @@ export default function TeamBuildingBandungPage() {
       description:
         "Outcome-driven team building dengan methodology framework (Tuckman, DiSC, Belbin) untuk perusahaan di Bandung & Jawa Barat.",
       priceRange: "Rp 1.200.000 - Rp 4.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

@@ -193,6 +193,7 @@ export default function GlampingCorporateBandungPage() {
       description:
         "Premium glamping corporate untuk team bonding intimate di Bandung & Lembang. Unique outdoor experience tanpa kompromi kenyamanan.",
       priceRange: "Rp 2.500.000 - Rp 6.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

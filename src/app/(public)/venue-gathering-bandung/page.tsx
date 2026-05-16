@@ -268,6 +268,7 @@ export default function VenueGatheringBandungPage() {
       description:
         "Konsultasi dan rekomendasi venue gathering korporat di Bandung — hotel ballroom, villa private, resort, dan outdoor ground untuk 30–2.000 pax.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

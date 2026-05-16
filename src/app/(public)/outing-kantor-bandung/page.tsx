@@ -236,6 +236,7 @@ export default function OutingKantorBandungPage() {
       description:
         "Custom-designed corporate outing untuk perusahaan di Bandung & Jawa Barat — annual gathering, team building, employee bonding.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

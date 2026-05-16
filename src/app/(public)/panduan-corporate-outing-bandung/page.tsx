@@ -212,6 +212,7 @@ export default function PanduanCorporateOutingPage() {
       description:
         "Layanan corporate outing, team building, dan executive offsite di Bandung & Jawa Barat — dirancang untuk outcome bisnis, bukan sekadar refreshing.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+      url: PAGE_URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

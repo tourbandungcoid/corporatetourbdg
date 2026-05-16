@@ -246,6 +246,7 @@ export default function PricingPage() {
       description:
         "Layanan corporate outing di Bandung dengan 4 tier pricing transparan dan line-item breakdown per komponen. Foundation Rp 1,5–2,5 jt/pax hingga Bespoke Rp 7 jt+/pax.",
       priceRange: "Rp 1.500.000 - Rp 15.000.000 per pax",
+      url: `${SITE.url}/pricing`,
     }),
     faqPageSchema(FAQS),
     howToSchema({

@@ -163,6 +163,7 @@ export default function IncentiveTripBandungPage() {
       description:
         "Program reward premium untuk top performers di Bandung & Indonesia — exclusive experience, recognition ceremony, dan dokumentasi professional.",
       priceRange: "Rp 3.500.000 - Rp 9.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

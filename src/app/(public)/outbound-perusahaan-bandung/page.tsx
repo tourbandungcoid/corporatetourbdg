@@ -182,6 +182,7 @@ export default function OutboundPerusahaanBandungPage() {
       description:
         "Outbound adventure outdoor untuk corporate dengan safety standards profesional di Bandung & Jawa Barat. 3-tier classification.",
       priceRange: "Rp 1.500.000 - Rp 4.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

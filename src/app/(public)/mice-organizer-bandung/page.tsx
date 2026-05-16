@@ -189,6 +189,7 @@ export default function MiceOrganizerBandungPage() {
       description:
         "Full-stack MICE event production di Bandung — meeting, incentive, conference, exhibition. Stage AV setup profesional, multi-session coordination, hybrid capability.",
       priceRange: "Rp 3.000.000 - Rp 6.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

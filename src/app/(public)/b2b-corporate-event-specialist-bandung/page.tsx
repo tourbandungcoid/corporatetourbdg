@@ -142,6 +142,7 @@ export default function B2BSpecialistPage() {
       description:
         "Layanan corporate event B2B specialist di Bandung — procurement-compliant dengan legal entity, line-item proposal, dedicated senior planner, dan post-event report.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

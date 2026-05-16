@@ -71,6 +71,19 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
     "glamping-corporate":  { name: "Amelia Chandra", role: "Senior Program Designer" },
   };
 
+  const SERVICE_KEYWORDS: Record<string, string[]> = {
+    "company-gathering":   ["case study company gathering bandung", "contoh annual gathering perusahaan bandung", "referensi company gathering corporate"],
+    "team-building":       ["case study team building bandung", "contoh program team building perusahaan", "hasil team building corporate bandung"],
+    "employee-gathering":  ["case study employee gathering bandung", "contoh employee gathering karyawan", "program employee gathering berhasil"],
+    "corporate-retreat":   ["case study corporate retreat bandung", "contoh strategic retreat perusahaan", "referensi corporate retreat jawa barat"],
+    "leadership-camp":     ["case study leadership camp bandung", "contoh program leadership development corporate", "referensi leadership retreat jawa barat"],
+    "executive-offsite":   ["case study executive offsite bandung", "contoh c-suite offsite event", "referensi executive strategy session"],
+    "incentive-trip":      ["case study incentive trip bandung", "contoh incentive travel top performer", "referensi incentive program corporate"],
+    "annual-company-trip": ["case study annual company trip", "contoh outing kantor perusahaan besar", "referensi corporate outing massal bandung"],
+    "mice":                ["case study mice corporate bandung", "contoh conference perusahaan bandung", "referensi mice event organizer bandung"],
+    "glamping-corporate":  ["case study glamping corporate bandung", "contoh glamping team building", "referensi glamping outing kantor ciwidey"],
+  };
+
   // Map service slugs → primary money page
   const SERVICE_TO_MONEY_PAGE: Record<string, { href: string; label: string }> = {
     "company-gathering":  { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung" },
@@ -98,6 +111,11 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       slug: `/case-studies/${cs.slug}`,
       aboutService: relatedService?.title ?? "Corporate Event Bandung",
       author: SERVICE_AUTHORS[cs.serviceSlug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        ...(SERVICE_KEYWORDS[cs.serviceSlug] ?? ["case study corporate event bandung", "referensi event perusahaan bandung"]),
+        `corporate event ${cs.industry.toLowerCase()} bandung`,
+        `${cs.pax} pax corporate event jawa barat`,
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
@@ -125,6 +143,7 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       },
       organizer: {
         "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
         name: SITE.legalName,
         url: SITE.url,
       },

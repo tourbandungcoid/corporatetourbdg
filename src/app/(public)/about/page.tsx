@@ -71,6 +71,7 @@ export default function AboutPage() {
       slug: "/about",
       aboutService: "B2B Corporate Event Specialist Bandung",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: ["tentang TourBandung Corporate", "7summits travel corporate", "vendor corporate event bandung sejak 2018", "profil perusahaan event organizer corporate bandung"],
     }),
     {
       "@context": "https://schema.org",

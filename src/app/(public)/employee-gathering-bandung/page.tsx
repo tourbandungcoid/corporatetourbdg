@@ -178,6 +178,7 @@ export default function EmployeeGatheringBandungPage() {
       description:
         "Employee gathering corporate untuk engagement, bonding, dan retention impact di Bandung & Jawa Barat.",
       priceRange: "Rp 1.500.000 - Rp 3.500.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

@@ -168,6 +168,7 @@ export default function VillaGatheringBandungPage() {
       description:
         "Corporate gathering di villa private premium di Bandung & Lembang dengan capacity 30-300 pax.",
       priceRange: "Rp 2.200.000 - Rp 6.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

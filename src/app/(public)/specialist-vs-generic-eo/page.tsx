@@ -170,6 +170,7 @@ export default function CompareSpecialistVsGenericPage() {
       description:
         "Layanan corporate event specialist B2B di Bandung — discovery-first approach, line-item proposal transparan, dedicated senior PM, dan post-event report. Berbeda dari generic EO.",
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+      url: `${SITE.url}/specialist-vs-generic-eo`,
     }),
     faqPageSchema(FAQS),
     howToSchema({

@@ -91,6 +91,13 @@ export function organizationSchema() {
       { "@type": "Person", name: "Putri Anggraeni", jobTitle: "Post-Event Closure & Reporting Lead", url: `${SITE.url}/team#putri-anggraeni` },
     ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: REVIEWS.googleRating,
+      reviewCount: REVIEWS.googleReviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
   };
 }
 

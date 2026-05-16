@@ -113,6 +113,7 @@ export default function ExecutiveOffsiteBandungPage() {
       name: "Executive Offsite Bandung",
       description: "Discreet C-suite executive offsite untuk strategy session di Bandung & Jawa Barat. Premium venue + certified facilitator.",
       priceRange: "Rp 6.500.000 - Rp 12.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

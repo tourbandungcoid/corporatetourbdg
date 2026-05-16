@@ -112,6 +112,7 @@ export default function LeadershipRetreatJawaBaratPage() {
       name: "Leadership Retreat Jawa Barat",
       description: "Premium leadership development retreat untuk senior management dengan 5 framework dan certified executive coach.",
       priceRange: "Rp 5.000.000 - Rp 9.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({

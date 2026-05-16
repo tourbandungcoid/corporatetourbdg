@@ -166,6 +166,7 @@ export default function CorporateGatheringBandungPage() {
       description:
         "Premium annual corporate gathering dengan awarding ceremony, gala dinner, dan multi-day program di Bandung & Jawa Barat.",
       priceRange: "Rp 3.000.000 - Rp 7.000.000 per pax",
+      url: URL,
     }),
     faqPageSchema(FAQS),
     howToSchema({
