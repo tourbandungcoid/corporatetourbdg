@@ -41,6 +41,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Outing Kantor Bandung 2026 — Budget, Itinerary & Vendor",
+    description: "Custom-designed corporate outing Bandung. 400+ events delivered sejak 2018. Proposal gratis 24 jam.",
+    images: [IMAGES.heroMain.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

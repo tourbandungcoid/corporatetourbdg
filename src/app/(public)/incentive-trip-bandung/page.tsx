@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Incentive Trip Bandung — Premium Reward Top Performers 2026",
+    description: "Incentive trip memorable Bandung. Premium accommodation, exclusive activities, recognition ceremony.",
+    images: [IMAGES.packageGlamping.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

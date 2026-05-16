@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "MICE Organizer Bandung — Meeting, Incentive, Conference, Exhibition",
+    description: "Full-stack MICE production Bandung. Stage AV, multi-session, hybrid. Rp 3–6 jt/pax. 400+ events.",
+    images: [IMAGES.packageAnnualGathering.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

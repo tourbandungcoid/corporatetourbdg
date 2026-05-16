@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Glamping Corporate Bandung — Premium Outdoor Experience 2026",
+    description: "Glamping corporate Bandung. Tenda safari premium, bonfire dinner, sunrise. Rp 2,5–5,5 jt/pax.",
+    images: [IMAGES.packageGlamping.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

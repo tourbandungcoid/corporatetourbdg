@@ -5,6 +5,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { ArrowRight, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -23,11 +24,18 @@ export const metadata: Metadata = {
     "Pricing transparent corporate outing Bandung — 4 tier (Foundation Rp 1.5jt/pax, Elevated Rp 2.5jt, Signature Rp 4.5jt, Bespoke Rp 7jt+) dengan line-item breakdown lengkap. Bukan paket murah misterius.",
   alternates: { canonical: `${SITE.url}/pricing` },
   openGraph: {
-    title: "Pricing — TourBandung Corporate",
+    title: "Harga Corporate Outing Bandung 2026 — 4 Tier Pricing Transparent",
     description:
       "4 tier pricing transparent untuk corporate outing Bandung. Line-item breakdown.",
     url: `${SITE.url}/pricing`,
     type: "article",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing Corporate Outing Bandung 2026 — 4 Tier Transparent",
+    description: "4 tier pricing corporate outing Bandung dengan line-item breakdown. Foundation Rp 1,5 jt — Bespoke Rp 7 jt+.",
+    images: [IMAGES.heroMain.src],
   },
 };
 
@@ -225,7 +233,7 @@ export default function PricingPage() {
       headline: "Pricing & Transparent Breakdown — Corporate Outing Bandung",
       description:
         "4 tier pricing transparent untuk corporate outing di Bandung dengan line-item breakdown.",
-      image: `${SITE.url}/opengraph-image`,
+      image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/pricing",

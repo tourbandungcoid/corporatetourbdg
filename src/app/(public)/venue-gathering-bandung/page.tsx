@@ -35,6 +35,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "20 Venue Gathering Bandung Terbaik 2026 — Hotel, Villa & Outdoor",
+    description: "Panduan venue gathering korporat Bandung. Hotel ballroom, villa private, resort, outdoor. Budget & kapasitas.",
+    images: [IMAGES.packageAnnualGathering.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

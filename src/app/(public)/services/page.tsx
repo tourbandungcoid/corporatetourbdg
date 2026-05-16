@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -29,11 +30,18 @@ export const metadata: Metadata = {
     "10 program corporate event yang siap di-customize — company gathering, team building, executive offsite, dan lainnya di Bandung & Jawa Barat.",
   alternates: { canonical: `${SITE.url}/services` },
   openGraph: {
-    title: "Services — TourBandung Corporate",
+    title: "Corporate Event Services Bandung — Team Building, Gathering & Retreat",
     description:
       "10 corporate event services dengan pax range dan starting price transparent.",
     url: `${SITE.url}/services`,
     type: "website",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Event Services Bandung — Team Building, Gathering & Retreat",
+    description: "10 program corporate event Bandung — gathering, team building, executive offsite. Specialist B2B.",
+    images: [IMAGES.heroMain.src],
   },
 };
 

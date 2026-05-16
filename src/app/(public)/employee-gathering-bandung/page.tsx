@@ -41,6 +41,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Employee Gathering Bandung — Engagement & Retention Event",
+    description: "Employee gathering outcome-driven Bandung. Cross-generational design, ROI framework. 400+ events.",
+    images: [IMAGES.caseStudyExecutive.src],
+  },
 };
 
 const FAQS = [

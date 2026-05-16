@@ -6,6 +6,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { getCaseStudiesList } from "@/lib/case-studies-data";
 import { ArrowRight } from "@/components/icons/Icons";
 import { SITE, STATS } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -20,11 +21,18 @@ export const metadata: Metadata = {
     "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank.",
   alternates: { canonical: `${SITE.url}/case-studies` },
   openGraph: {
-    title: "Case Studies — TourBandung Corporate",
+    title: "Case Studies Corporate Event Bandung — 6 Real Company, Outcome Terukur",
     description:
       "6 real corporate event case studies di Bandung — tech unicorn, BUMN bank, FMCG, telco, manufacturing.",
     url: `${SITE.url}/case-studies`,
     type: "website",
+    images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies Corporate Event Bandung — 6 Real Company",
+    description: "6 real case studies: tech unicorn, BUMN bank, FMCG, telco. Challenge, approach & outcome terukur.",
+    images: [IMAGES.caseStudyLarge.src],
   },
 };
 

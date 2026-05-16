@@ -6,6 +6,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { TEAM } from "@/lib/team-data";
 import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -26,6 +27,13 @@ export const metadata: Metadata = {
       "Senior planner team dengan 50+ tahun gabungan pengalaman corporate event Bandung.",
     url: `${SITE.url}/team`,
     type: "website",
+    images: [{ url: IMAGES.groupShot1.src, width: 1200, height: 630, alt: IMAGES.groupShot1.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Senior Planner Team — 6 Specialist Corporate Event Bandung",
+    description: "6 senior planner TourBandung. 50+ tahun gabungan pengalaman corporate event Bandung & Jawa Barat.",
+    images: [IMAGES.groupShot1.src],
   },
 };
 

@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.offroad1.src, width: 1200, height: 630, alt: IMAGES.offroad1.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Outbound Perusahaan Bandung — 3 Tier Adventure 2026",
+    description: "Outdoor adventure outbound corporate Bandung. Safety certified, 8 lokasi outdoor. Rp 1,5–3,5 jt/pax.",
+    images: [IMAGES.offroad1.src],
+  },
 };
 
 const FAQS = [

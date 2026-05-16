@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { IMAGES } from "@/lib/drive-images";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -26,6 +27,13 @@ export const metadata: Metadata = {
       "Framework yang kami pakai untuk design corporate outing outcome-driven. 5-Pillar Design™ + Bandung Outing Tier System™ + ROI Framework.",
     url: `${SITE.url}/methodology`,
     type: "article",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Methodology — 3 Framework Corporate Outing Design TourBandung",
+    description: "5-Pillar Design™, BOTS, dan ROI Framework. Sequential, transparent, measurable. TourBandung Corporate.",
+    images: [IMAGES.heroMain.src],
   },
 };
 
@@ -110,7 +118,7 @@ export default function MethodologyPage() {
       headline: "Methodology — 3 Named Framework dari 400+ Events",
       description:
         "5-Pillar Corporate Outing Design™, Bandung Outing Tier System™ (BOTS), dan Outcome ROI Framework yang kami pakai untuk setiap engagement.",
-      image: `${SITE.url}/opengraph-image`,
+      image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/methodology",

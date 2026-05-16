@@ -5,6 +5,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { ArrowRight, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
       "12 dimensi comparison corporate event specialist vs generic EO untuk HR yang mau pick vendor.",
     url: `${SITE.url}/specialist-vs-generic-eo`,
     type: "article",
+    images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Specialist vs Generic EO — 12 Dimensi Comparison",
+    description: "12 dimensi membedakan specialist B2B vs generic EO. Discovery, transparency, accountability, post-event.",
+    images: [IMAGES.caseStudyLarge.src],
   },
 };
 
@@ -149,7 +157,7 @@ export default function CompareSpecialistVsGenericPage() {
       headline: "Corporate Specialist vs Generic EO/Travel Agent — 12 Dimensi Comparison",
       description:
         "Comparison detail antara corporate event specialist dan generic EO untuk HR yang mau pick vendor smart.",
-      image: `${SITE.url}/opengraph-image`,
+      image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/specialist-vs-generic-eo",

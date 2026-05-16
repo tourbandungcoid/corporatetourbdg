@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Company Retreat Bandung — Strategic Multi-Day Premium Retreat",
+    description: "Multi-day company retreat Bandung. Strategic planning, cultural reset, post-merger. Rp 3,5–8 jt/pax.",
+    images: [IMAGES.packageExecutiveOffsite.src],
+  },
 };
 
 const FAQS = [

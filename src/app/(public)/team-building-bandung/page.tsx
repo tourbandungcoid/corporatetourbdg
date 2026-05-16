@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.caseStudyTeamBuilding.src, width: 1200, height: 630, alt: IMAGES.caseStudyTeamBuilding.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Team Building Bandung — Methodology + Activity Catalog 2026",
+    description: "Structured team building Bandung. 50+ activity, outcome-driven. 400+ events · 4.9 ⭐ Google.",
+    images: [IMAGES.caseStudyTeamBuilding.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

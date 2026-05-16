@@ -25,6 +25,13 @@ export const metadata: Metadata = {
       "400+ corporate events delivered sejak 2018. Unit B2B dari 7Summits Travel — fokus outing, team building & executive offsite di Bandung & Jawa Barat.",
     url: `${SITE.url}/about`,
     type: "website",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tentang TourBandung Corporate — B2B Specialist Sejak 2018",
+    description: "Unit B2B dari 7Summits Travel. 400+ corporate events delivered di Bandung & Jawa Barat sejak 2018.",
+    images: [IMAGES.heroMain.src],
   },
 };
 

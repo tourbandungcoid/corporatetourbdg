@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Gathering Bandung — Annual Event Production 2026",
+    description: "Premium annual gathering Bandung. Awarding ceremony, gala dinner, multi-day. 100–800 pax.",
+    images: [IMAGES.packageAnnualGathering.src],
+  },
 };
 
 const FAQS = [

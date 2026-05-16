@@ -7,6 +7,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { getAllFaqCategorySlugs, getFaqCategory, getFaqCategoriesList } from "@/lib/faq-data";
 import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: cat.title,
     description: cat.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: cat.title, description: cat.metaDescription, url, type: "article" },
+    openGraph: { title: cat.title, description: cat.metaDescription, url, type: "article", images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }] },
   };
 }
 
@@ -53,7 +54,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     articleSchema({
       headline: cat.title,
       description: cat.metaDescription,
-      image: `${SITE.url}/opengraph-image`,
+      image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: `/faq/${cat.slug}`,

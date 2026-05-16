@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { FAQ } from "@/components/home/FAQ";
 import { LeadMagnet } from "@/components/home/LeadMagnet";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { IMAGES } from "@/lib/drive-images";
 import { SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -33,14 +34,14 @@ export const metadata: Metadata = {
       "400+ corporate events. 100+ perusahaan Indonesia. Specialist B2B — bukan generic EO. Proposal gratis dalam 24 jam.",
     url: SITE.url,
     type: "website",
-    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TourBandung Corporate — Corporate Outing & Gathering Bandung",
     description:
       "Specialist B2B corporate outing & team building Bandung. 400+ events · 4.9 ⭐ Google · Proposal 24 jam.",
-    images: [`${SITE.url}/opengraph-image`],
+    images: [IMAGES.heroMain.src],
   },
 };
 

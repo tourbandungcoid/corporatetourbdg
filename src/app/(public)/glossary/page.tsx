@@ -10,6 +10,7 @@ import {
   getEntrySlug,
 } from "@/lib/glossary-data";
 import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import {
   JsonLd,
   combineSchemas,
@@ -30,6 +31,13 @@ export const metadata: Metadata = {
       "Glossary 40+ istilah corporate event yang sering dipakai HR Indonesia.",
     url: `${SITE.url}/glossary`,
     type: "article",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Glossary Corporate Event: 40+ Istilah MICE & Outing",
+    description: "40+ istilah corporate event yang sering dipakai HR Indonesia. Definitif, dipakai senior planner.",
+    images: [IMAGES.heroMain.src],
   },
 };
 

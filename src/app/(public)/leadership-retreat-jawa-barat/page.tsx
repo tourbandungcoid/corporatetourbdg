@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leadership Retreat Jawa Barat — Senior Leadership Development",
+    description: "Premium leadership development Jawa Barat. 5 framework, certified executive coach. Rp 5–9 jt/pax.",
+    images: [IMAGES.caseStudyExecutive.src],
+  },
 };
 
 const FAQS = [

@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "B2B Corporate Event Specialist Bandung — 7 Kriteria Vendor HR",
+    description: "7 kriteria wajib vendor B2B corporate event Bandung untuk HR procurement. TourBandung, 400+ events.",
+    images: [IMAGES.caseStudyLarge.src],
+  },
 };
 
 const CRITERIA = [

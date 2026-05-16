@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Villa Gathering Bandung — 12 Villa Premium 2026",
+    description: "Private villa corporate outing 30-300 pax di Bandung. Direct partnership, no reseller markup.",
+    images: [IMAGES.packageGlamping.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

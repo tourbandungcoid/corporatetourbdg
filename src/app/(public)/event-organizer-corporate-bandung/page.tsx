@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Event Organizer Corporate Bandung — Specialist B2B 2026",
+    description: "Specialist B2B corporate event Bandung. Bukan generic EO. 400+ events, 100+ perusahaan. Proposal 24 jam.",
+    images: [IMAGES.caseStudyLarge.src],
+  },
 };
 
 const FAQS: { question: string; answer: string }[] = [

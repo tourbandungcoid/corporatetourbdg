@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     type: "article",
     images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Executive Offsite Bandung — Premium C-Suite Strategy Session",
+    description: "Discreet executive offsite C-suite Bandung. Venue private, NDA-bound. Rp 6,5–12 jt/pax.",
+    images: [IMAGES.packageExecutiveOffsite.src],
+  },
 };
 
 const FAQS = [

@@ -26,6 +26,13 @@ export const metadata: Metadata = {
       "Tech unicorn · BUMN banking · FMCG global · Telco · Manufacturing MNC — corporate event di Bandung & Jawa Barat. Confidentiality protocol aktif.",
     url: `${SITE.url}/clients`,
     type: "website",
+    images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Klien TourBandung Corporate — 100+ Perusahaan Indonesia",
+    description: "Tech unicorn · BUMN · FMCG global · Telco · Manufacturing MNC. Confidentiality protocol aktif.",
+    images: [IMAGES.caseStudyLarge.src],
   },
 };
 
