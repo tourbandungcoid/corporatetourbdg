@@ -47,12 +47,13 @@ export async function generateMetadata({
       description,
       url,
       type: "article",
-      images: [
-        {
-          url: pkg.image.src,
-          alt: pkg.image.alt,
-        },
-      ],
+      images: [{ url: pkg.image.src, width: 1200, height: 630, alt: pkg.image.alt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${pkg.title} — TourBandung Corporate`,
+      description,
+      images: [pkg.image.src],
     },
   };
 }

@@ -63,6 +63,20 @@ export function organizationSchema() {
       { "@type": "WebPage", url: `${SITE.url}/specialist-vs-generic-eo`, name: "Specialist vs Generic EO — 12 Dimensi Comparison" },
       { "@type": "WebPage", url: `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Lengkap Corporate Outing Bandung" },
     ],
+    foundingLocation: {
+      "@type": "Place",
+      name: "Bandung, Jawa Barat, Indonesia",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: CONTACT.address.city,
+        addressRegion: CONTACT.address.region,
+        addressCountry: CONTACT.address.country,
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Bandung" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat" },
+    ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
@@ -87,6 +101,11 @@ export function localBusinessSchema() {
       addressCountry: CONTACT.address.country,
     },
     hasMap: SITE.googleMapsUrl,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -6.936249,
+      longitude: 107.626469,
+    },
     areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Subang", "Jawa Barat"],
     priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
     openingHoursSpecification: [
