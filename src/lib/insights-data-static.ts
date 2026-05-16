@@ -612,6 +612,28 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    howTo: {
+      name: "Cara Memvalidasi Risk Readiness Vendor Corporate Outing",
+      description: "4 dokumen yang harus diminta ke vendor sebelum menandatangani kontrak — untuk memastikan vendor punya contingency plan yang terdokumentasi, bukan improvisasi.",
+      steps: [
+        {
+          name: "Minta risk register spesifik event Anda",
+          text: "Vendor yang profesional akan memberikan risk register yang mention venue dan activity spesifik event Anda, bukan template universal. Jika vendor memberikan boilerplate generik, itu red flag.",
+        },
+        {
+          name: "Verifikasi RS partner list per area",
+          text: "Minta daftar rumah sakit partner beserta estimasi waktu evakuasi. Untuk area remote seperti Cikidang atau Rancabali, RS terdekat bisa 30–45 menit — ini bukan optional, khususnya untuk activity high-risk.",
+        },
+        {
+          name: "Review indoor backup plan terdokumentasi",
+          text: "Setiap outdoor activity harus punya indoor backup version yang testable. Tanyakan versi indoor dari setiap sesi: outbound → indoor team building, BBQ → ballroom dinner. Jika vendor tidak bisa menjawab, evaluasi ulang.",
+        },
+        {
+          name: "Periksa ringkasan polis asuransi + coverage limit per peserta",
+          text: "Minta policy summary dengan coverage limit yang jelas per peserta. Pastikan jumlah coverage cukup vs salary band peserta, dan cek apakah activity high-risk (high ropes, ATV) di-cover atau di-exclude.",
+        },
+      ],
+    },
     internalLinks: [
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Vendor outing dengan risk register & safety SOP terdokumentasi — siap untuk procurement." },
       { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "Event organizer dengan protokol force majeure dan contingency plan tersertifikasi." },
@@ -850,6 +872,32 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    howTo: {
+      name: "Cara Memilih Tema Corporate Outing yang On-Brand dan Relevan",
+      description: "5 langkah sequential untuk memilih tema outing yang align dengan brand identity, reinforce objective, dan sesuai audience — bukan sekadar memilih dari katalog vendor.",
+      steps: [
+        {
+          name: "Konfirmasi objective primary event",
+          text: "Tentukan apakah event ini untuk bonding, strategic alignment, celebration milestone, atau mission-based activity. Objective ini menjadi filter utama untuk memilih kategori tema yang sesuai.",
+        },
+        {
+          name: "Audit brand identity perusahaan",
+          text: "Tanyakan: apakah brand tone perusahaan refined dan premium, playful dan energetic, mission-driven, atau culture-rooted? Tema yang dipilih harus mencerminkan karakter brand — bukan kontradiksi.",
+        },
+        {
+          name: "Peta audience demographic dan cultural mix",
+          text: "Pahami komposisi peserta: dominan Gen-Z dan Millennial, atau campuran dengan Gen-X? Ada keberagaman budaya yang perlu diakomodasi? Tema yang berhasil accommodate semua peserta tanpa ada yang merasa excluded.",
+        },
+        {
+          name: "Shortlist 3 tema dari 4 kategori dan evaluasi fit",
+          text: "Buat shortlist dari 4 kategori: narrative-driven, aesthetic-curated, mission-based, dan cultural-rooted. Evaluasi masing-masing dengan 3 filter: align dengan brand? reinforce objective? accommodate audience? Eliminasi yang tidak pass ketiga filter.",
+        },
+        {
+          name: "Validasi dengan internal stakeholder sebelum lock-in",
+          text: "Presentasi shortlist ke HR dan tim brand/marketing. Tema yang disukai HR tapi ditolak brand akan menciptakan friction di eksekusi. Aligned decision di awal jauh lebih efisien dari revisi di tengah jalan.",
+        },
+      ],
+    },
     internalLinks: [
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Eksekusi tema outing yang on-brand dengan vendor specialist Bandung." },
       { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Annual gathering dengan awarding ceremony — tema premium, production grade." },
@@ -1274,6 +1322,28 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    howTo: {
+      name: "Cara Menentukan Format Event: MICE atau Corporate Outing",
+      description: "4 langkah untuk memilih format event yang tepat — MICE, corporate outing, atau hybrid — sebelum brief vendor agar tidak terjadi mismatch capability dan anggaran.",
+      steps: [
+        {
+          name: "Identifikasi apakah ada deliverable bisnis yang terukur",
+          text: "Tanyakan: apakah event ini harus menghasilkan sesuatu yang bisa dilaporkan ke manajemen — keputusan bisnis, presentasi strategi, launch produk, atau penandatanganan kontrak? Jika ya, ini masuk format MICE. Jika tidak ada deliverable formal, ini corporate outing.",
+        },
+        {
+          name: "Evaluasi kebutuhan AV production dan staging",
+          text: "MICE membutuhkan AV profesional — stage, LED backdrop, live stream encoder, sound system conference-grade. Corporate outing tidak perlu ini. Jika brief Anda menyebutkan 'stage besar' dan 'keynote speaker', budget dan vendor capability MICE yang dibutuhkan.",
+        },
+        {
+          name: "Tentukan apakah format hybrid diperlukan",
+          text: "Jika event menggabungkan sesi presentasi formal dan bonding activities, itu hybrid format. Contoh: annual gathering dengan all-hands meeting + malam awarding + outbound Day 2. Hybrid membutuhkan vendor yang bisa handle keduanya, bukan spesialis satu format saja.",
+        },
+        {
+          name: "Sesuaikan pilihan vendor dengan format yang dipilih",
+          text: "MICE: butuh EO dengan track record conference production dan AV capability. Corporate outing: butuh specialist outing dengan facilitation skill dan experience design. Hiring travel agent retail untuk MICE, atau EO yang biasa handle conference untuk outing — keduanya mismatch yang berujung eksekusi di bawah ekspektasi.",
+        },
+      ],
+    },
     internalLinks: [
       { href: "/mice-organizer-bandung", label: "MICE Organizer Bandung", description: "Full-stack MICE production — meeting, incentive, conference, exhibition di Bandung." },
       { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Corporate gathering dengan format annual event production — bukan sekadar outing." },
@@ -1361,6 +1431,28 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
     ],
+    howTo: {
+      name: "Cara Memilih antara Annual Company Trip dan Incentive Trip",
+      description: "4 langkah untuk HR menentukan format program perjalanan karyawan yang tepat — agar tidak terjadi mixing yang hurt morale dan menyulitkan justifikasi budget ke Finance.",
+      steps: [
+        {
+          name: "Tentukan kriteria eligibilitas peserta",
+          text: "Tanyakan: apakah semua karyawan (atau semua dengan masa kerja tertentu) berhak hadir? Jika ya, ini annual company trip. Jika hanya karyawan yang mencapai threshold performance tertentu (misal top 20% sales atau 110% quota achieved), ini incentive trip. Eligibilitas yang jelas adalah fondasi seluruh program.",
+        },
+        {
+          name: "Definisikan objective primary program",
+          text: "Annual company trip: culture reinforcement, celebration, cross-departmental bonding. Incentive trip: reward, recognition, exclusive experience yang membuat top performer merasa dihargai. Satu program tidak bisa serve kedua objective sekaligus tanpa tradeoff.",
+        },
+        {
+          name: "Tetapkan skala, budget, dan experience level",
+          text: "Annual trip: inklusif dan scalable (50–2000 pax), budget Rp 2–5 jt/pax. Incentive trip: eksklusif dan intimate (15–80 pax), budget Rp 3.5–9 jt/pax. Exclusivity adalah fitur incentive trip — menurunkan standar pengalaman demi skala besar mengalahkan tujuan programnya.",
+        },
+        {
+          name: "Jika butuh keduanya, rancang sebagai dua program terpisah",
+          text: "Jika perusahaan ingin reward top performer sekaligus bonding semua karyawan, buat dua program dengan budget terpisah dan narrative yang jelas. Satu program hybrid yang mencoba melayani keduanya umumnya tidak efektif untuk keduanya.",
+        },
+      ],
+    },
     internalLinks: [
       { href: "/incentive-trip-bandung", label: "Incentive Trip Bandung", description: "Rancang incentive trip yang eksklusif dan bermakna untuk top performer Anda." },
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Annual company trip format casual — bonding inklusif untuk semua karyawan." },
