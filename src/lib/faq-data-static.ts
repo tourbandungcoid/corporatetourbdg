@@ -430,6 +430,21 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Top picks untuk outbound korporat: Maribaya Nature Heritage (Lembang, outbound terstruktur, area luas), Kampung Cai Ranca Upas (Ciwidey, outbound + glamping, 50–300 pax), Galunggung Adventure Camp (Subang, physical challenge), dan lokasi rafting Cilayu (Subang). Pilihan tergantung skala pax dan intensity program.",
       },
+      {
+        question: "Apa perbedaan venue di Lembang Atas vs Lembang Bawah untuk corporate event?",
+        answer:
+          "Lembang Bawah (dekat Cihanjuang/Setiabudi): akses mudah dari kota, 30–45 menit dari tol Pasteur, cocok untuk event 1-hari atau yang peserta-nya banyak dari Jakarta tanpa mau menghabiskan waktu di jalan. Lembang Atas (Cikole, Jayagiri, Gunung Putri): pemandangan lebih dramatic, suhu lebih sejuk (16–20°C), cocok untuk 2D1N retreat dan glamping. Trade-off: Lembang Atas butuh 15–25 menit tambahan di jalan berkelok.",
+      },
+      {
+        question: "Berapa kapasitas maksimum untuk corporate outing outdoor di satu lokasi Bandung?",
+        answer:
+          "Tergantung lokasi. Villa cluster Lembang: biasanya 50–200 pax di satu properti. Eco-lodge Ciwidey: 80–300 pax. Outdoor camp Subang: bisa sampai 500 pax dengan setup tenda tambahan. Untuk event 300+ pax, kami biasanya kombinasikan venue utama dengan area camping ekstensi atau split between dua property yang berdekatan.",
+      },
+      {
+        question: "Apakah ada rekomendasi hotel bintang 4–5 di Bandung untuk corporate gathering besar?",
+        answer:
+          "Untuk corporate gathering formal dengan ballroom: The Trans Luxury Hotel (1.200 pax capacity, Pasteur), Pullman Bandung Grand Central (600 pax, sentral), Four Points by Sheraton (500 pax, Dago). Untuk hybrid outdoor+ballroom: Padma Hotel Bandung (Ciumbuleuit, 400 pax + outdoor area), Grand Mercure (Setiabudi, 350 pax). Untuk event 200+ pax dengan overnight stay, hotel bintang 4 di Lembang seperti Grand Sunshine Resort lebih cocok karena combined capacity akomodasi + venue.",
+      },
     ],
     relatedPages: [
       { href: "/venue-gathering-bandung", label: "20 Venue Gathering Bandung", description: "Panduan venue gathering korporat — hotel ballroom, villa private, resort, outdoor." },
@@ -516,6 +531,21 @@ const CATEGORIES: Record<string, FaqCategory> = {
         question: "Bagaimana cara membandingkan proposal dari beberapa vendor secara apple-to-apple?",
         answer:
           "Buat comparison matrix: baris = komponen (venue, F&B, activity, transport, PM fee, contingency, dokumentasi), kolom = setiap vendor. Pastikan scope persis sama — venue tier serupa, jumlah peserta sama, durasi identik. Harga total yang beda signifikan biasanya karena ada komponen yang dihilangkan, bukan efisiensi vendor.",
+      },
+      {
+        question: "Apakah vendor EO corporate Bandung bisa handle event untuk peserta dari luar Jawa?",
+        answer:
+          "Ya. Untuk peserta dari luar Jawa, EO corporate specialist mengkoordinasikan transportasi grup (charter penerbangan, kereta, atau bus) sebagai add-on. Kami biasa handle peserta dari Surabaya, Medan, Makassar yang fly ke Bandung untuk gathering tahunan. Briefing satu kali dengan HR head office — koordinasi transportasi masing-masing regional kami handle.",
+      },
+      {
+        question: "Apakah vendor EO corporate wajib memiliki NPWP untuk bisa masuk vendor list perusahaan kami?",
+        answer:
+          "Ya — dan ini bukan sekadar formalitas. NPWP adalah syarat dasar untuk invoicing formal dengan PPN, yang dibutuhkan untuk reimbursement dan audit perusahaan. Selain NPWP, minimal harus ada: akta pendirian perusahaan (PT atau CV), SIUP/NIB, dan rekening perusahaan (bukan pribadi). Vendor yang tidak bisa provide ketiganya bukan vendor B2B yang proper.",
+      },
+      {
+        question: "Bagaimana cara melakukan tender atau beauty contest untuk memilih EO corporate?",
+        answer:
+          "Best practice tender EO corporate: (1) Pre-qualify 3–5 vendor dengan cek legal entity, portfolio, dan referensi klien. (2) Kirim RFP yang sama ke semua vendor — brief identik untuk comparison fair. (3) Evaluasi proposal dengan scoring matrix: 40% capability (portfolio, PM track record), 30% proposal quality (detail, objective alignment), 20% pricing (value for money, bukan yang termurah), 10% cultural fit. (4) Shortlist 2 vendor untuk presentation + Q&A session. (5) Due diligence referensi 2 klien sebelumnya sebelum final decision.",
       },
     ],
     relatedPages: [

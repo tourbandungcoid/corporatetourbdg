@@ -90,6 +90,21 @@ const FAQS: { question: string; answer: string }[] = [
     answer:
       "Iya, semua proyek menggunakan kontrak resmi yang mencakup: scope of work detail, timeline milestone, payment schedule (biasanya DP 30-50% konfirmasi, pelunasan 7 hari sebelum event), force majeure clause, change order procedure (perubahan scope selalu konfirmasi tertulis), cancellation policy, dan liability limitation. Untuk event dengan komponen confidential (executive offsite, strategy session), kontrak juga include NDA clause.",
   },
+  {
+    question: "Apa yang harus disiapkan HR sebelum briefing EO corporate?",
+    answer:
+      "4 hal yang mempercepat proses briefing: (1) Objective event — kenapa event ini diadakan dan apa yang ingin dicapai? (2) Pax estimate — total peserta dan komposisi (semua karyawan, leaders only, atau campuran). (3) Budget range — tidak perlu angka pasti, cukup range untuk kami suggest tier yang sesuai. (4) Date window — 2–3 opsi tanggal sehingga kami bisa cek availability venue. Dengan 4 informasi ini, proposal dapat disiapkan dalam 3–5 hari kerja.",
+  },
+  {
+    question: "Bagaimana proses revisi jika proposal pertama tidak sesuai ekspektasi?",
+    answer:
+      "Revisi proposal adalah bagian dari proses, bukan pengecualian. Setelah proposal diterima, kami lakukan review call 30 menit untuk align ekspektasi. Revisi pertama bebas biaya — kami adjust venue, activity, atau komponen sesuai feedback. Jika setelah revisi kedua masih ada gap signifikan, kami lakukan re-brief lebih mendalam untuk memastikan kami benar-benar paham objective Anda.",
+  },
+  {
+    question: "Apakah EO corporate Bandung bisa handle multi-city gathering serentak?",
+    answer:
+      "Bisa, dengan koordinasi terpusat. Untuk perusahaan dengan divisi regional (misal: gathering kantor Jakarta dan kantor Bandung di tanggal sama), kami bisa serve sebagai master organizer dengan partner lokal di kota lain. Konsistensi program, tema, dan rundown dijaga dari satu central PM — tidak ada fragmentasi eksekusi. Brief awal cukup satu kali.",
+  },
 ];
 
 const SERVICES_LIST = [
