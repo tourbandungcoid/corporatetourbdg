@@ -130,6 +130,7 @@ export default async function ClientsPage() {
     ]),
     articleSchema({
       headline: "Klien TourBandung Corporate — 100+ Perusahaan Indonesia dari BUMN hingga MNC",
+      alternativeHeadline: "Referensi Klien Corporate Event Bandung: Teknologi, Perbankan, BUMN, FMCG",
       description: "100+ perusahaan Indonesia memilih TourBandung Corporate untuk corporate event di Bandung & Jawa Barat sejak 2018 — tech unicorn, BUMN bank, FMCG global, telco, manufacturing.",
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-12",

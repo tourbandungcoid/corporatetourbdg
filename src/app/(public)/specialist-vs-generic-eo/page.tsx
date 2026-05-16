@@ -180,6 +180,7 @@ export default function CompareSpecialistVsGenericPage() {
     ]),
     articleSchema({
       headline: "Corporate Specialist vs Generic EO/Travel Agent — 12 Dimensi Comparison",
+      alternativeHeadline: "Perbedaan EO Corporate Specialist dan Generic EO — Panduan untuk HR",
       description:
         "Comparison detail antara corporate event specialist dan generic EO untuk HR yang mau pick vendor smart.",
       image: IMAGES.caseStudyLarge.src,

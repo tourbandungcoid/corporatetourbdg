@@ -155,6 +155,7 @@ export default function MethodologyPage() {
     ]),
     articleSchema({
       headline: "Methodology — 3 Named Framework dari 400+ Events",
+      alternativeHeadline: "5-Pillar Design™, BOTS, dan ROI Framework — Cara TourBandung Merancang Corporate Event",
       description:
         "5-Pillar Corporate Outing Design™, Bandung Outing Tier System™ (BOTS), dan Outcome ROI Framework yang kami pakai untuk setiap engagement.",
       image: IMAGES.heroMain.src,

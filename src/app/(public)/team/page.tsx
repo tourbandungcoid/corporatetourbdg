@@ -50,6 +50,7 @@ export default function TeamPage() {
     ]),
     articleSchema({
       headline: "Senior Planner Team — 6 Specialist Corporate Event Bandung",
+      alternativeHeadline: "Tim Event Organizer Corporate Bandung: 6 Senior Planner Full-Time 7Summits Travel",
       description: "Senior planner team 7Summits Travel — 6 specialist dengan total 50+ tahun pengalaman corporate event di Bandung & Jawa Barat. Real people, real credentials, real accountability.",
       image: IMAGES.groupShot1.src,
       datePublished: "2026-05-12",

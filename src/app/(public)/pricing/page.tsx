@@ -251,6 +251,7 @@ export default function PricingPage() {
     ]),
     articleSchema({
       headline: "Pricing & Transparent Breakdown — Corporate Outing Bandung",
+      alternativeHeadline: "Estimasi Biaya Corporate Outing Bandung: Rp 1.5 jt–7 jt per Pax, 4 Tier",
       description:
         "4 tier pricing transparent untuk corporate outing di Bandung dengan line-item breakdown.",
       image: IMAGES.heroMain.src,
