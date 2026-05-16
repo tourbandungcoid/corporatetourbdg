@@ -12,6 +12,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  itemListSchema,
 } from "@/lib/schema";
 
 export const metadata = {
@@ -90,7 +91,17 @@ export default async function FaqIndexPage() {
       { name: "Home", url: SITE.url },
       { name: "FAQ", url: `${SITE.url}/faq` },
     ]),
-    faqPageSchema(TOP_FAQS.map((q) => ({ question: q.question, answer: q.answer })))
+    faqPageSchema(TOP_FAQS.map((q) => ({ question: q.question, answer: q.answer }))),
+    itemListSchema({
+      name: "FAQ Corporate Outing Bandung — Kategori",
+      description: `${totalQuestions} pertanyaan dalam ${categories.length} kategori untuk HR dan procurement perusahaan Indonesia.`,
+      url: `${SITE.url}/faq`,
+      items: categories.map((c) => ({
+        name: c.title,
+        url: `${SITE.url}/faq/${c.slug}`,
+        description: c.intro,
+      })),
+    })
   );
 
   return (

@@ -12,6 +12,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  itemListSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -77,7 +78,18 @@ export default async function InsightsIndexPage({
         articleSection: a.category,
         description: a.excerpt,
       })),
-    }
+    },
+    itemListSchema({
+      name: "TourBandung Corporate Insights — Long-Form Corporate Event Guides",
+      description: "Editorial dan thought leadership untuk HR + corporate decision-makers. Framework, data, dan insight dari 400+ corporate events delivered di Bandung.",
+      url: `${SITE.url}/insights`,
+      items: all.map((a) => ({
+        name: a.title,
+        url: `${SITE.url}/insights/${a.slug}`,
+        description: a.excerpt,
+        image: a.heroImage.src,
+      })),
+    })
   );
 
   return (
