@@ -140,8 +140,19 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       slug: `/insights/${article.slug}`,
       author: { name: article.author.name, role: article.author.role },
       aboutService: article.internalLinks?.[0]?.label ?? "Corporate Event Bandung",
+      aboutServiceUrl: article.internalLinks?.[0]?.href
+        ? `${SITE.url}${article.internalLinks[0].href}`
+        : undefined,
       keywords: categoryKeywords,
-      mentions: categoryMentions,
+      mentions: [
+        ...categoryMentions,
+        {
+          type: "Person",
+          name: article.author.name,
+          id: `${SITE.url}/team#${INSIGHT_AUTHOR_ID_MAP[article.author.name]?.split("#")[1] ?? "andre-pratama"}`,
+          url: INSIGHT_AUTHOR_ID_MAP[article.author.name] ?? `${SITE.url}/team`,
+        },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
