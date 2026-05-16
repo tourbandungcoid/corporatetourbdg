@@ -57,6 +57,20 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
   const url = `${SITE.url}/case-studies/${cs.slug}`;
   const relatedService = getService(cs.serviceSlug);
 
+  // Map service slugs → author
+  const SERVICE_AUTHORS: Record<string, { name: string; role: string }> = {
+    "company-gathering":   { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "team-building":       { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    "employee-gathering":  { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    "corporate-retreat":   { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+    "leadership-camp":     { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "executive-offsite":   { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "incentive-trip":      { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    "annual-company-trip": { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
+    "mice":                { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
+    "glamping-corporate":  { name: "Amelia Chandra", role: "Senior Program Designer" },
+  };
+
   // Map service slugs → primary money page
   const SERVICE_TO_MONEY_PAGE: Record<string, { href: string; label: string }> = {
     "company-gathering":  { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung" },
@@ -83,6 +97,7 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       dateModified: "2026-05-16",
       slug: `/case-studies/${cs.slug}`,
       aboutService: relatedService?.title ?? "Corporate Event Bandung",
+      author: SERVICE_AUTHORS[cs.serviceSlug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
@@ -94,7 +109,9 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
       "@type": "Event",
       name: cs.outcomeHeadline,
       description: cs.shortDescription,
-      eventStatus: "https://schema.org/EventScheduled",
+      startDate: "2025-01-01",
+      endDate: "2025-12-31",
+      eventStatus: "https://schema.org/EventCompleted",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: {
         "@type": "Place",
