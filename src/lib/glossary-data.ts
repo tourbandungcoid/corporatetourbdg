@@ -3,6 +3,7 @@ export type GlossaryEntry = {
   short: string;
   long: string;
   related?: string[];
+  seeAlso?: { label: string; href: string }[];
   /** Optional anchor slug — defaults to slugify(term) */
   slug?: string;
 };
@@ -24,6 +25,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Pertemuan tahunan formal yang menggabungkan awarding, business review, dan team building.",
     long: "Event tahunan dengan agenda terstruktur — CEO speech, business review tahun lalu, awarding karyawan, dan elemen team building. Skala biasanya 100–500 pax di hotel berbintang atau resort premium. Berbeda dengan annual company trip yang fokus refreshing, annual employee gathering punya bobot formal lebih tinggi.",
     related: ["Corporate Gathering", "Awarding Night"],
+    seeAlso: [
+      { label: "Employee Gathering Bandung", href: "/employee-gathering-bandung" },
+      { label: "Corporate Gathering Bandung", href: "/corporate-gathering-bandung" },
+    ],
   },
   {
     term: "Awarding Night",
@@ -36,6 +41,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Bandung Outing Tier System™ — framework 4-tier pricing & quality.",
     long: "Sistem klasifikasi 4-tier untuk corporate outing di Bandung yang kami develop dari 400+ events. Foundation (Rp 1.5–2.5 jt/pax), Elevated (Rp 2.5–4.5 jt/pax), Signature (Rp 4.5–7 jt/pax), Bespoke (Rp 7 jt+/pax). Setiap tier punya use case spesifik — bukan ladder. Detail: /methodology.",
     related: ["5-Pillar Design", "Foundation Tier", "Signature Tier"],
+    seeAlso: [
+      { label: "Deep guide: BOTS Framework", href: "/insights/bandung-outing-tier-system" },
+      { label: "Pricing Breakdown Transparan", href: "/pricing" },
+    ],
   },
   {
     term: "Bonding Activity",
@@ -53,6 +62,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Format gathering eksekutif untuk strategic planning + leadership bonding.",
     long: "Format 2D1N atau 3D2N untuk grup eksekutif (8–25 pax), biasanya C-suite atau senior leadership. Fokus strategic alignment + leadership development, bukan refreshing umum. Venue tipikal: heritage villa private atau eco-lodge eksklusif. Investment Rp 7 jt+/pax (Bespoke tier).",
     related: ["Executive Offsite", "Leadership Camp"],
+    seeAlso: [
+      { label: "Company Retreat Bandung", href: "/company-retreat-bandung" },
+      { label: "Executive Offsite Bandung", href: "/executive-offsite-bandung" },
+    ],
   },
   {
     term: "Contingency Plan",
@@ -65,12 +78,20 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Term payung untuk semua event grup perusahaan yang punya elemen formal.",
     long: "Umbrella term yang mencakup annual gathering, kick-off meeting, anniversary celebration, atau product launch internal. Karakteristik: ada speech eksekutif, awarding, atau business segment. Beda dengan corporate outing yang lebih casual / refreshing-focused.",
     related: ["Annual Employee Gathering", "Kick-Off Meeting"],
+    seeAlso: [
+      { label: "Corporate Gathering Bandung", href: "/corporate-gathering-bandung" },
+      { label: "Employee Gathering Bandung", href: "/employee-gathering-bandung" },
+    ],
   },
   {
     term: "Corporate Outing",
     short: "Aktivitas grup karyawan untuk bonding + refreshing di luar kantor.",
     long: "Format paling umum (1-day s/d 3D2N) untuk grup 30–300 pax dengan agenda predominantly refreshing + bonding informal. Bukan ceremony formal. Investment range luas tergantung tier (Foundation s/d Signature).",
     related: ["Annual Company Trip", "Team Building"],
+    seeAlso: [
+      { label: "Outing Kantor Bandung", href: "/outing-kantor-bandung" },
+      { label: "Panduan Lengkap Corporate Outing", href: "/panduan-corporate-outing-bandung" },
+    ],
   },
   {
     term: "Discovery Brief",
@@ -83,6 +104,9 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Variasi annual gathering dengan fokus seluruh employee populasi.",
     long: "Format gathering yang inklusif untuk semua level karyawan (operasional, staff, supervisor, manajer). Berbeda dengan executive offsite yang khusus eksekutif. Demand venue dengan kapasitas besar + agenda yang accommodate diverse audience.",
     related: ["Annual Employee Gathering"],
+    seeAlso: [
+      { label: "Employee Gathering Bandung", href: "/employee-gathering-bandung" },
+    ],
   },
   {
     term: "Energy Curve",
@@ -95,6 +119,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Retreat strategis untuk C-suite atau senior leadership.",
     long: "Format premium 2D1N–3D2N untuk grup kecil (8–25 pax) dengan fokus strategic planning, leadership development, atau crisis alignment. Venue tipikal: private villa heritage, eco-lodge eksklusif. Investment Bespoke tier (Rp 7 jt+/pax). Demand white-glove service + privacy guarantee.",
     related: ["Company Retreat", "Leadership Camp"],
+    seeAlso: [
+      { label: "Executive Offsite Bandung", href: "/executive-offsite-bandung" },
+      { label: "Leadership Retreat Jawa Barat", href: "/leadership-retreat-jawa-barat" },
+    ],
   },
   {
     term: "5-Pillar Design™",
@@ -102,6 +130,10 @@ const ENTRIES: GlossaryEntry[] = [
     long: "5-Pillar Corporate Outing Design™ adalah framework yang kami develop dari 400+ events. Sequential, bukan parallel: Pillar 1 Objective → Pillar 2 Audience → Pillar 3 Venue & Logistics → Pillar 4 Activity Architecture → Pillar 5 Outcome Measurement. Detail: /methodology.",
     related: ["BOTS", "Discovery Brief"],
     slug: "5-pillar-design",
+    seeAlso: [
+      { label: "Framework Detail: Methodology", href: "/methodology" },
+      { label: "Insight: 5-Pillar Framework", href: "/insights/5-pillar-corporate-outing-design" },
+    ],
   },
   {
     term: "Force Majeure",
@@ -125,6 +157,10 @@ const ENTRIES: GlossaryEntry[] = [
     term: "Glamping",
     short: "Glamorous camping — outdoor menginap dengan kenyamanan hotel.",
     long: "Format outdoor menginap di tenda mewah atau pondok kayu dengan fasilitas hotel (bed proper, kamar mandi en-suite, electricity, AC kadang). Cocok untuk bonding intimate 30–80 pax di area Lembang, Ciwidey, atau Pangalengan. Premium di Elevated–Signature tier.",
+    seeAlso: [
+      { label: "Glamping Corporate Bandung", href: "/glamping-corporate-bandung" },
+      { label: "Villa Gathering Bandung", href: "/villa-gathering-bandung" },
+    ],
   },
   {
     term: "Ice Breaker",
@@ -136,6 +172,9 @@ const ENTRIES: GlossaryEntry[] = [
     term: "Incentive Trip",
     short: "Trip reward untuk top performer atau sales achiever.",
     long: "Format gathering exclusive untuk peserta yang qualify quota / achievement target. Demand venue premium (luar negeri atau Bali untuk Indonesia context) + experience yang \"memorable\". Investment top tier per-pax. Beda dengan annual gathering yang inklusif — incentive trip sengaja exclusive sebagai reward.",
+    seeAlso: [
+      { label: "Incentive Trip Bandung", href: "/incentive-trip-bandung" },
+    ],
   },
   {
     term: "Internal QA",
@@ -154,6 +193,9 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Camp intensive untuk leadership development melalui experience challenge.",
     long: "Format 3D2N atau lebih untuk senior leadership team dengan agenda outdoor challenge + reflective workshop + strategic planning. Methodology biasanya pakai Belbin, DiSC, atau Tuckman framework. Venue: outdoor camp atau eco-lodge dengan ruang workshop.",
     related: ["Executive Offsite", "Company Retreat"],
+    seeAlso: [
+      { label: "Leadership Retreat Jawa Barat", href: "/leadership-retreat-jawa-barat" },
+    ],
   },
   {
     term: "Lead Score",
@@ -165,6 +207,10 @@ const ENTRIES: GlossaryEntry[] = [
     term: "MICE",
     short: "Meetings, Incentives, Conferences, Exhibitions — kategori industri event B2B.",
     long: "Umbrella term industri untuk corporate event B2B yang demand venue + service profesional. Kami specialist di sub-segment Incentive + Meeting (offsite/retreat), bukan Exhibition/Trade Show.",
+    seeAlso: [
+      { label: "MICE Organizer Bandung", href: "/mice-organizer-bandung" },
+      { label: "Event Organizer Corporate Bandung", href: "/event-organizer-corporate-bandung" },
+    ],
   },
   {
     term: "Objective Alignment",
@@ -177,6 +223,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Activity outdoor adventure yang fokus team challenge fisik.",
     long: "Format activity outdoor (flying fox, high ropes, paintball, rafting, ATV) untuk team building. Tier 1 (light: trust fall, low ropes) cocok untuk semua audience. Tier 2 (high ropes, paintball) demand fitness moderate + waiver. Tier 3 (extreme: rafting jeram tinggi) demand pre-screening.",
     related: ["Team Building"],
+    seeAlso: [
+      { label: "Outbound Perusahaan Bandung", href: "/outbound-perusahaan-bandung" },
+      { label: "Team Building Bandung", href: "/team-building-bandung" },
+    ],
   },
   {
     term: "Outcome ROI Framework",
@@ -236,6 +286,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Activity terstruktur untuk improve team dynamics + collaboration skills.",
     long: "Berbeda dengan bonding activity (emotional connection), team building fokus skill-building: communication, problem-solving, leadership, collaboration. Methodology populer: Tuckman model, DiSC, Belbin team roles. Demand fasilitator certified untuk extract learning.",
     related: ["Outbound", "Bonding Activity"],
+    seeAlso: [
+      { label: "Team Building Bandung", href: "/team-building-bandung" },
+      { label: "Panduan: Cross-Generational Team Building", href: "/insights/cross-generational-team-building" },
+    ],
   },
   {
     term: "Tuckman Model",
@@ -259,6 +313,9 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Vendor spesialis yang handle Meeting, Incentive, Conference, atau Exhibition secara profesional.",
     long: "Berbeda dari EO generik — MICE organizer punya capability AV production, hybrid streaming, registration system, dan breakout management. Cocok ketika event punya deliverable bisnis formal (bukan hanya bonding). Sub-segment paling demanding adalah Conference (400+ pax) dan Exhibition.",
     related: ["MICE", "Event Organizer"],
+    seeAlso: [
+      { label: "MICE Organizer Bandung", href: "/mice-organizer-bandung" },
+    ],
   },
   {
     term: "Hybrid Event",
@@ -289,6 +346,10 @@ const ENTRIES: GlossaryEntry[] = [
     short: "Konfigurasi beberapa villa berdekatan yang disewa eksklusif untuk satu grup.",
     long: "Strategi untuk grup 80–300 pax yang butuh venue private tanpa venue ballroom formal. 2–4 villa dengan akses shared ground atau outdoor area. Kelebihan: privacy 100%, vibe lebih casual dan authentic, photogenic. Kekurangan: koordinasi logistik lebih complex, F&B biasanya butuh catering eksternal.",
     related: ["Venue Curation", "Corporate Outing"],
+    seeAlso: [
+      { label: "Villa Gathering Bandung", href: "/villa-gathering-bandung" },
+      { label: "20 Venue Gathering Bandung", href: "/venue-gathering-bandung" },
+    ],
   },
   {
     term: "Lembang",

@@ -120,6 +120,15 @@ export default function GlossaryPage() {
                                 ))}
                               </p>
                             )}
+                            {e.seeAlso && e.seeAlso.length > 0 && (
+                              <div className="flex flex-wrap gap-2 pt-1">
+                                {e.seeAlso.map((s) => (
+                                  <Link key={s.href} href={s.href} className="inline-flex items-center gap-1 rounded-full bg-cream/60 border border-border px-3 py-1 text-xs text-brand-deep hover:bg-brand-light/30 transition-colors">
+                                    {s.label} <ArrowRight size={10} />
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
                           </dd>
                         </div>
                       );
