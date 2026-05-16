@@ -221,7 +221,7 @@ export default function OutingKantorBandungPage() {
         "Comprehensive guide outing kantor di Bandung — budget per pax, sample itinerary, 5 lokasi favorit, dan vendor selection checklist.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Outing Kantor Bandung",
     }),

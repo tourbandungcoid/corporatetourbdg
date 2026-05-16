@@ -163,7 +163,7 @@ export default function EmployeeGatheringBandungPage() {
         "Employee gathering Bandung yang outcome-driven — measurable impact ke engagement, retention, dan cultural reinforcement.",
       image: IMAGES.caseStudyExecutive.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Employee Gathering Bandung",
     }),

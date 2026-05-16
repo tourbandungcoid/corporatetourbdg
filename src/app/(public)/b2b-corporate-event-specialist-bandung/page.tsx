@@ -131,7 +131,7 @@ export default function B2BSpecialistPage() {
       description: DESCRIPTION,
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-15",
-      dateModified: "2026-05-15",
+      dateModified: "2026-05-16",
       slug: PATH,
       aboutService: "B2B Corporate Event Specialist Bandung",
     }),

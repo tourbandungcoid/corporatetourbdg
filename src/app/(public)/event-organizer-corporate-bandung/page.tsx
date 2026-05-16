@@ -140,7 +140,7 @@ export default function EventOrganizerCorporateBandungPage() {
       description: DESCRIPTION,
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-14",
-      dateModified: "2026-05-14",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Event Organizer Corporate Bandung",
     }),

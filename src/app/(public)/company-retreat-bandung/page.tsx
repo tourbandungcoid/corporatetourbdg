@@ -101,7 +101,7 @@ export default function CompanyRetreatBandungPage() {
       description: "Multi-day company retreat untuk strategic planning, cultural reset, atau leadership development di Bandung.",
       image: IMAGES.packageExecutiveOffsite.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Company Retreat Bandung",
     }),

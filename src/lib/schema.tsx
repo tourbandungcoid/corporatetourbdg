@@ -225,6 +225,7 @@ export function articleSchema({
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE.url}${slug}`,
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url, name: SITE.name },
     },
     about: {
       "@type": "Service",

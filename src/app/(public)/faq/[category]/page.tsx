@@ -56,7 +56,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
       description: cat.metaDescription,
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: `/faq/${cat.slug}`,
     }),
     breadcrumbSchema([

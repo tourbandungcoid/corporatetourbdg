@@ -1,10 +1,30 @@
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { RequestProposalForm } from "@/components/proposal/RequestProposalForm";
+import { SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 
-export const metadata = {
-  title: "Request Proposal Gratis — Corporate Outing & Gathering Bandung | TourBandung Corporate",
-  description:
-    "Request proposal gratis dalam 24 jam. 3 step, 5 menit — senior planner kami kirim custom proposal lengkap dengan breakdown line-item, venue rekomendasi, dan sample itinerary. No commitment.",
+const title = "Request Proposal Gratis — Corporate Outing & Gathering Bandung | TourBandung Corporate";
+const description =
+  "Request proposal gratis dalam 24 jam. 3 step, 5 menit — senior planner kami kirim custom proposal lengkap dengan breakdown line-item, venue rekomendasi, dan sample itinerary. No commitment.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: `${SITE.url}/proposal/request` },
+  openGraph: {
+    title: "Request Proposal Gratis — TourBandung Corporate",
+    description,
+    url: `${SITE.url}/proposal/request`,
+    type: "website",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Request Proposal Gratis — TourBandung Corporate",
+    description: "3 step, 5 menit. Custom proposal lengkap dalam 24 jam. No commitment.",
+    images: [IMAGES.heroMain.src],
+  },
 };
 
 export default function RequestProposalPage() {

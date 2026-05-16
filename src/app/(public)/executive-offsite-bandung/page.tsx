@@ -102,7 +102,7 @@ export default function ExecutiveOffsiteBandungPage() {
       description: "Premium executive offsite untuk C-suite strategy session di Bandung — discreet, focused, dengan facilitator certified.",
       image: IMAGES.packageExecutiveOffsite.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Executive Offsite Bandung",
     }),

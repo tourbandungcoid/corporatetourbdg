@@ -148,7 +148,7 @@ export default function IncentiveTripBandungPage() {
       description: DESCRIPTION,
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-14",
-      dateModified: "2026-05-14",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Incentive Trip Bandung",
     }),

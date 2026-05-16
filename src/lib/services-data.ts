@@ -389,6 +389,7 @@ const SERVICES: Record<string, ServiceDetail> = {
       { question: "Beda dari corporate gathering?", answer: "Incentive trip = exclusive untuk top performer, premium tier vibe. Corporate gathering = whole company, festive vibe. Incentive trip biasanya 1.5-2x budget per pax dari standard gathering." },
       { question: "Sweet spot durasi?", answer: "3D2N adalah sweet spot — meaningful experience, recovery time included, photo moments banyak. 2D1N kalau budget constrained, 4D3N untuk President's Club premium." },
     ],
+    relatedMoneyPage: { href: "/incentive-trip-bandung", label: "Lihat panduan incentive trip Bandung — reward program" },
     relatedSlugs: ["annual-company-trip", "executive-offsite", "glamping-corporate"],
   },
 
@@ -434,6 +435,7 @@ const SERVICES: Record<string, ServiceDetail> = {
       { question: "Berapa lama prep untuk 500+ pax?", answer: "Minimum 10-12 minggu. Peak season lock 16+ minggu. Multi-venue lock paling penting — booking confirmation harus solid 8 minggu sebelumnya." },
       { question: "F&B logistics untuk 1000+ peserta?", answer: "Multi-station buffet di multiple location (kalau venue split), atau central kitchen dengan deliver-to-table system. Dietary mapping mandatory pre-event." },
     ],
+    relatedMoneyPage: { href: "/outing-kantor-bandung", label: "Lihat panduan outing kantor Bandung — annual company trip" },
     relatedSlugs: ["company-gathering", "incentive-trip", "mice"],
   },
 
@@ -479,6 +481,7 @@ const SERVICES: Record<string, ServiceDetail> = {
       { question: "Simultaneous translation support?", answer: "Iya, kalau ada peserta international. Translator profesional, AV setup khusus dengan booth + audio routing. Tambah Rp 30-80 jt/event tergantung language pair." },
       { question: "Bisa kombinasi dengan corporate gathering format?", answer: "Iya. Hybrid MICE + gathering — conference di pagi/siang, gala dinner + awarding di malam. Single venue 2D1N atau 3D2N." },
     ],
+    relatedMoneyPage: { href: "/mice-organizer-bandung", label: "Lihat panduan MICE organizer Bandung — conference production" },
     relatedSlugs: ["corporate-retreat", "annual-company-trip", "company-gathering"],
   },
 

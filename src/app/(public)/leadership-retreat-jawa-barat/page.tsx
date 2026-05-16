@@ -101,7 +101,7 @@ export default function LeadershipRetreatJawaBaratPage() {
       description: "Multi-day leadership development retreat untuk senior management di Jawa Barat. 5 framework, certified coach, premium venue.",
       image: IMAGES.caseStudyExecutive.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Leadership Retreat Jawa Barat",
     }),

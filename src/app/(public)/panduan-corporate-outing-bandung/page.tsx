@@ -197,7 +197,7 @@ export default function PanduanCorporateOutingPage() {
         "Panduan komprehensif corporate outing di Bandung: definisi, 10 jenis event, estimasi budget, lokasi top, cara pilih vendor, dan FAQ.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-15",
-      dateModified: "2026-05-15",
+      dateModified: "2026-05-16",
       slug: SLUG,
     }),
     breadcrumbSchema([

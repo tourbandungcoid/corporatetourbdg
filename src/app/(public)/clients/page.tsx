@@ -133,7 +133,7 @@ export default async function ClientsPage() {
       description: "100+ perusahaan Indonesia memilih TourBandung Corporate untuk corporate event di Bandung & Jawa Barat sejak 2018 — tech unicorn, BUMN bank, FMCG global, telco, manufacturing.",
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: "/clients",
       aboutService: "B2B Corporate Event Specialist Bandung",
     })

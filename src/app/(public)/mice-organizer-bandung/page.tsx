@@ -174,7 +174,7 @@ export default function MiceOrganizerBandungPage() {
       description: DESCRIPTION,
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-14",
-      dateModified: "2026-05-14",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "MICE Organizer Bandung",
     }),

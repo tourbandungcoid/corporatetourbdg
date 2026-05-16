@@ -120,7 +120,7 @@ export default function MethodologyPage() {
         "5-Pillar Corporate Outing Design™, Bandung Outing Tier System™ (BOTS), dan Outcome ROI Framework yang kami pakai untuk setiap engagement.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: "/methodology",
     }),
     howToSchema({

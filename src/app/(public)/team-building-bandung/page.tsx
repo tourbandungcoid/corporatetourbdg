@@ -196,7 +196,7 @@ export default function TeamBuildingBandungPage() {
         "Structured team building untuk perusahaan Indonesia — methodology framework, activity catalog, dan vendor selection guide.",
       image: IMAGES.caseStudyTeamBuilding.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Team Building Bandung",
     }),

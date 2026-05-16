@@ -178,7 +178,7 @@ export default function GlampingCorporateBandungPage() {
         "Glamping untuk corporate event di Bandung — tenda safari premium, bonfire dinner, sunrise activity, dan vibe unique yang impossible di hotel/villa.",
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Glamping Corporate Bandung",
     }),

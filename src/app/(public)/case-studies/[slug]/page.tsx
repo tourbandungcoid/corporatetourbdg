@@ -57,6 +57,21 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
   const url = `${SITE.url}/case-studies/${cs.slug}`;
   const relatedService = getService(cs.serviceSlug);
 
+  // Map service slugs → primary money page
+  const SERVICE_TO_MONEY_PAGE: Record<string, { href: string; label: string }> = {
+    "company-gathering":  { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung" },
+    "team-building":      { href: "/team-building-bandung", label: "Team Building Bandung" },
+    "employee-gathering": { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung" },
+    "corporate-retreat":  { href: "/company-retreat-bandung", label: "Company Retreat Bandung" },
+    "leadership-camp":    { href: "/leadership-retreat-jawa-barat", label: "Leadership Retreat Jawa Barat" },
+    "executive-offsite":  { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung" },
+    "incentive-trip":     { href: "/incentive-trip-bandung", label: "Incentive Trip Bandung" },
+    "annual-company-trip":{ href: "/outing-kantor-bandung", label: "Outing Kantor Bandung" },
+    "mice":               { href: "/mice-organizer-bandung", label: "MICE Organizer Bandung" },
+    "glamping-corporate": { href: "/glamping-corporate-bandung", label: "Glamping Corporate Bandung" },
+  };
+  const moneyPage = SERVICE_TO_MONEY_PAGE[cs.serviceSlug] ?? null;
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -210,6 +225,15 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
                   Lihat detail<ArrowRight size={14} />
                 </span>
               </Link>
+              {moneyPage && (
+                <p className="mt-4 text-sm text-slate">
+                  Lihat juga:{" "}
+                  <Link href={moneyPage.href} className="text-brand-deep hover:underline font-medium">
+                    {moneyPage.label}
+                  </Link>
+                  {" "}— panduan lengkap, paket, dan harga.
+                </p>
+              )}
             </div>
           </section>
         )}

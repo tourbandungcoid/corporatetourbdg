@@ -67,7 +67,7 @@ export default function AboutPage() {
       description: "TourBandung Corporate adalah unit B2B corporate event specialist dari 7Summits Travel. 400+ events delivered di Bandung & Jawa Barat sejak 2018.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: "/about",
       aboutService: "B2B Corporate Event Specialist Bandung",
     }),

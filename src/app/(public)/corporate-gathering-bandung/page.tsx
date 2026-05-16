@@ -151,7 +151,7 @@ export default function CorporateGatheringBandungPage() {
         "Comprehensive guide corporate gathering — komponen wajib, sample rundown, hotel ballroom rekomendasi, dan budget breakdown.",
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Corporate Gathering Bandung",
     }),

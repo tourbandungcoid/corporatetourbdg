@@ -1,12 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
-import { buildWaLink } from "@/lib/site";
+import { buildWaLink, SITE } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 
-export const metadata = {
-  title: "Request Proposal",
-  description:
-    "Pilih cara lo dapat custom corporate event proposal — full request, quick quote, atau briefing call. Free, dalam 24 jam.",
+const description = "Pilih cara lo dapat custom corporate event proposal — full request, quick quote, atau briefing call. Free, dalam 24 jam.";
+
+export const metadata: Metadata = {
+  title: "Request Proposal Corporate Event Bandung — Gratis, 24 Jam | TourBandung Corporate",
+  description,
+  alternates: { canonical: `${SITE.url}/proposal` },
+  openGraph: {
+    title: "Request Proposal Corporate Event Bandung — Gratis, 24 Jam",
+    description,
+    url: `${SITE.url}/proposal`,
+    type: "website",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Request Proposal Corporate Event Bandung — Gratis, 24 Jam",
+    description: "Full request, quick quote, atau briefing call. Custom proposal gratis dalam 24 jam.",
+    images: [IMAGES.heroMain.src],
+  },
 };
 
 const PATHS = [

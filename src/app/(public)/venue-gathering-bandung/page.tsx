@@ -253,7 +253,7 @@ export default function VenueGatheringBandungPage() {
       description: DESCRIPTION,
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-14",
-      dateModified: "2026-05-14",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Venue Gathering Bandung",
     }),

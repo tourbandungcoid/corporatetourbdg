@@ -78,10 +78,11 @@ export default function HomePage() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": `${SITE.url}#website`,
       url: SITE.url,
       name: "TourBandung Corporate",
       inLanguage: "id-ID",
-      publisher: { "@type": "Organization", name: "7Summits Travel" },
+      publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "7Summits Travel" },
       potentialAction: {
         "@type": "SearchAction",
         target: {

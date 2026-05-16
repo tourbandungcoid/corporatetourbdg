@@ -167,7 +167,7 @@ export default function OutboundPerusahaanBandungPage() {
         "Outdoor adventure outbound untuk corporate Indonesia dengan 3-tier classification, safety standards, dan lokasi recommended di Bandung.",
       image: IMAGES.offroad1.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Outbound Perusahaan Bandung",
     }),

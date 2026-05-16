@@ -153,7 +153,7 @@ export default function VillaGatheringBandungPage() {
         "Villa private setting untuk corporate gathering di Bandung & Lembang — capacity, fasilitas, dan estimasi sewa.",
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: SLUG,
       aboutService: "Villa Gathering Bandung",
     }),

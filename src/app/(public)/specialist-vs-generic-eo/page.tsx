@@ -159,7 +159,7 @@ export default function CompareSpecialistVsGenericPage() {
         "Comparison detail antara corporate event specialist dan generic EO untuk HR yang mau pick vendor smart.",
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: "/specialist-vs-generic-eo",
     }),
     serviceSchema({

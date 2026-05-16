@@ -64,7 +64,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       description: service.metaDescription,
       image: service.heroImage.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: `/services/${service.slug}`,
       aboutService: `${service.title} Bandung`,
     }),

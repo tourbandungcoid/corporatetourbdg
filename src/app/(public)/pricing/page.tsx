@@ -235,7 +235,7 @@ export default function PricingPage() {
         "4 tier pricing transparent untuk corporate outing di Bandung dengan line-item breakdown.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
-      dateModified: "2026-05-12",
+      dateModified: "2026-05-16",
       slug: "/pricing",
     }),
     serviceSchema({
