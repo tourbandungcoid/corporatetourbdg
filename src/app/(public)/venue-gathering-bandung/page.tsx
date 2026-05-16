@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { IMAGES } from "@/lib/drive-images";
 import { buildWaLink, SITE } from "@/lib/site";
