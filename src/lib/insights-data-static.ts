@@ -1023,7 +1023,7 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/faq/logistics", label: "FAQ Process & Logistics", description: "Pertanyaan seputar timeline planning, koordinasi vendor hari-H, dan contingency." },
       { href: "/faq/formats", label: "FAQ Format & Programs", description: "Format rundown per jenis event — 1D, 2D1N, 3D2N, hingga multi-venue." },
     ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "indoor-vs-outdoor-corporate-outing"],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system", "contoh-rundown-outing-kantor-2d1n"],
     howTo: {
       name: "Cara Membuat Rundown Outing Kantor 1 Hari",
       description: "Langkah-langkah membuat rundown outing kantor 1 hari yang efektif dan profesional",
@@ -1671,6 +1671,129 @@ const INSIGHTS: Record<string, Insight> = {
         { name: "Validasi brief dengan stakeholder internal", text: "Sebelum kirim ke EO, align dengan HR Director dan Finance untuk budget range dan approval criteria. Brief yang belum di-approve internal akan menyebabkan scope creep di tengah proses yang membuang waktu semua pihak." },
         { name: "Kirim brief dan jadwalkan discovery call", text: "Kirim brief tertulis sebagai starting point, lalu minta jadwal discovery call 15–30 menit dengan senior planner EO. Call ini bukan sales pitch — ini sesi untuk planner mengajukan pertanyaan yang lebih dalam tentang kebutuhan Anda." },
         { name: "Evaluasi proposal berdasarkan brief, bukan harga saja", text: "Saat proposal masuk, cek dulu: apakah proposal menjawab objective di brief Anda? Apakah design activity address audience Anda? Proposal termurah yang tidak address objective Anda lebih mahal dari proposal premium yang on-target." },
+      ],
+    },
+  },
+  "contoh-rundown-outing-kantor-2d1n": {
+    slug: "contoh-rundown-outing-kantor-2d1n",
+    title: "Contoh Rundown Outing Kantor 2D1N — Template + Tips Logistik Menginap",
+    excerpt:
+      "3 template rundown outing kantor 2 hari 1 malam — standard outdoor, bonding deep dengan fasilitasi malam, dan premium villa. Lengkap dengan breakdown waktu, tips overnight, dan checklist H-1.",
+    metaDescription:
+      "Contoh rundown outing kantor 2D1N siap pakai 2026 — 3 format: standard, bonding deep, premium villa. Jadwal lengkap dengan timing, overnight logistics, dan tips hari H untuk HR.",
+    category: "Planning Guide",
+    tldr: [
+      "2D1N adalah format terpopuler corporate outing Indonesia — cukup dalam untuk impact, tidak terlalu panjang untuk approval management.",
+      "3 template: standard outdoor (80-200 pax, resort/hotel), bonding deep (dengan sesi fasilitasi malam), dan premium villa (40-80 pax, private).",
+      "Overnight logistics yang sering terlupakan: rooming list, check-in timing, late arrival procedure, dan overnight emergency contact.",
+      "Hari 2 dimulai lebih lambat dari hari 1 — peserta perlu recovery time setelah aktivitas hari pertama. Jadwal padat di hari 2 adalah kesalahan umum.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-16",
+    readTimeMin: 10,
+    author: { name: "Tio Mahesa", role: "Lead Field Operations Manager", initials: "TM" },
+    sections: [
+      {
+        paragraphs: [
+          "2 hari 1 malam adalah format paling banyak di-request untuk corporate outing di Indonesia. Lebih panjang dari 1 hari sehingga bisa deliver experience yang lebih meaningful. Tidak butuh 2 malam penginapan yang bikin persetujuan internal lebih rumit. Sweet spot antara impact dan practical.",
+          "3 template ini kami design dari ratusan event 2D1N yang kami kelola — dari resort populer di Lembang hingga villa private di Ciwidey. Setiap format bisa dikustomisasi ke kebutuhan spesifik tim Anda.",
+        ],
+      },
+      {
+        heading: "Format A: Standard Outdoor 2D1N (80–200 pax, Resort/Hotel)",
+        paragraphs: [
+          "Format paling populer untuk medium-size corporate group. Cocok untuk departemen besar atau multi-departemen. Venue: resort atau hotel dengan fasilitas outdoor.",
+        ],
+        callout: {
+          label: "Hari 1",
+          text: "07.30 Kumpul + keberangkatan konvoi | 10.00 Arrival venue, registrasi, welcome lunch | 13.00 Opening ceremony + ice breaker | 14.00 Outbound sesi 1 (outdoor challenge multi-station) | 16.00 Coffee break + mini games | 16.30 Free time (check-in, kolam renang) | 19.00 Gala dinner + awarding + hiburan | 21.00 Malam bebas (api unggun, bonding informal)",
+        },
+      },
+      {
+        paragraphs: [""],
+        callout: {
+          label: "Hari 2",
+          text: "07.00 Sarapan | 08.30 Senam pagi + energizer | 09.30 Outbound sesi 2 (team challenge, lebih kompetitif dari sesi 1) | 11.30 Sharing & closing ceremony | 12.00 Makan siang | 13.00 Check-out + loading | 14.00 Keberangkatan kembali",
+        },
+      },
+      {
+        heading: "Format B: Bonding Deep 2D1N (dengan Sesi Malam Terfasilitasi)",
+        paragraphs: [
+          "Format untuk objective yang lebih dalam — post-merger integration, trust building lintas divisi, atau nilai-nilai perusahaan. Menggunakan malam hari untuk sesi fasilitasi yang lebih intimate dibanding suasana siang.",
+        ],
+        callout: {
+          label: "Hari 1",
+          text: "07.30 Keberangkatan | 09.30 Arrival + welcome brief | 10.00 Modul 1: Appreciative inquiry (tiap peserta share strength rekan) | 12.00 Makan siang | 13.00 Energizer post-lunch | 13.30 Modul 2: Challenge outdoor berbasis kerja tim | 15.30 Break + check-in kamar | 19.30 Sesi malam: facilitated values dialogue (kecil, 8–12 orang per kelompok) | 21.00 Informal networking + snack malam",
+        },
+      },
+      {
+        paragraphs: [""],
+        callout: {
+          label: "Hari 2",
+          text: "07.00 Sarapan bebas | 08.30 Morning reflection (15 menit, tiap kelompok share 1 insight dari kemarin) | 09.00 Modul 3: Co-design session (tiap tim design 1 practical action untuk 30 hari ke depan) | 11.00 Plenary debrief + commitment board | 12.00 Makan siang | 13.00 Check-out + keberangkatan",
+        },
+      },
+      {
+        heading: "Format C: Premium Villa 2D1N (40–80 pax, Private)",
+        paragraphs: [
+          "Format untuk tim kecil atau senior leadership yang prioritasnya intimacy dan exclusivity. Budget lebih tinggi (Rp 3.5–6 jt/pax) tapi experience-nya jauh lebih personal.",
+        ],
+        callout: {
+          label: "Hari 1",
+          text: "09.00 Keberangkatan dengan transport premium | 11.00 Arrival villa private + property tour + welcome drink | 12.00 Makan siang fine dining | 13.30 Activity eksklusif (cooking class, wine tasting, atau collaborative art) | 16.00 Free time (kolam renang, spa add-on) | 19.30 Private gala dinner di villa + CEO sharing session informal | 21.30 Malam bebas",
+        },
+      },
+      {
+        paragraphs: [""],
+        callout: {
+          label: "Hari 2",
+          text: "07.30 Sarapan santai + morning walk | 09.30 Strategic reflection session (facilitated atau self-led) | 11.00 Leisure time terakhir | 12.00 Makan siang | 13.00 Foto grup profesional + farewell | 13.30 Keberangkatan",
+        },
+      },
+      {
+        heading: "Logistik Overnight yang Sering Terlupakan",
+        paragraphs: [
+          "Perbedaan utama 2D1N vs 1D bukan hanya waktu — tapi logistik overnight yang kalau tidak disiapkan bisa jadi masalah di hari H:",
+        ],
+        bullets: [
+          "Rooming list final — siapa sekamar dengan siapa, preferensi smoking/non-smoking, request twin bed vs double. Kirim ke venue H-5, konfirmasi ulang H-1.",
+          "Check-in timing coordination — pastikan kamar ready saat peserta tiba. Kalau tidak bisa check-in awal, siapkan designated area untuk titip tas.",
+          "Late arrival procedure — ada peserta yang tidak bisa berangkat pagi (tugas mendadak, kondisi keluarga). SOP late arrival: kontak PIC, pickup point alternatif, atau langsung ke venue.",
+          "Overnight emergency contact — nomor PIC vendor yang bisa dihubungi malam hari. Bukan hotline kantor yang tutup jam 17.00.",
+          "Checkout logistics — siapkan area pengumpulan tas sebelum breakfast. Checkout standar hotel jam 12.00, tapi event selesai jam 13.00 — negosiasikan late checkout atau luggage storage.",
+          "Valuables reminder — brief peserta untuk tidak membawa barang berharga berlebihan. Peserta bawa laptop untuk bekerja malam = security risk di venue sharing.",
+        ],
+      },
+      {
+        heading: "Kesalahan Umum Rundown 2D1N",
+        paragraphs: ["Lima kesalahan yang paling sering kami lihat:"],
+        bullets: [
+          "Hari 2 sepadat hari 1 — peserta fisik kelelahan setelah outbound hari 1. Hari 2 harus lebih ringan dari hari 1, bukan sebaliknya.",
+          "Tidak ada buffer antar sesi — 2D1N punya lebih banyak transisi (outdoor ke indoor, makan ke aktivitas). Setiap transisi butuh buffer 15-20 menit.",
+          "Gala dinner terlalu panjang — awarding + hiburan yang molor sampai jam 23.00 membuat peserta kelelahan untuk hari 2. Cap dinner + acara malam di jam 21.30.",
+          "Tidak ada free time — peserta butuh waktu untuk check-in, ganti baju, dan personal recovery. Free time bukan 'wasted time'.",
+          "Foto grup setelah check-out — logistik check-out (loading koper, loading bus) berebutan dengan foto grup. Jadwalkan foto grup sebelum check-out, bukan sesudahnya.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Panduan lengkap corporate outing Bandung — dari planning hingga eksekusi 2D1N." },
+      { href: "/villa-gathering-bandung", label: "Villa Gathering Bandung", description: "Villa private Lembang & Bandung untuk format premium 2D1N." },
+      { href: "/company-retreat-bandung", label: "Company Retreat Bandung", description: "Program retreat 2D1N atau 3D2N dengan fokus strategic planning." },
+      { href: "/insights/contoh-rundown-outing-kantor-1-hari", label: "Rundown 1 Hari", description: "Template rundown outing kantor format 1 hari jika budget lebih terbatas." },
+      { href: "/faq/logistics", label: "FAQ Logistik", description: "Pertanyaan seputar koordinasi vendor, transport, dan overnight logistics." },
+    ],
+    relatedSlugs: ["contoh-rundown-outing-kantor-1-hari", "5-pillar-corporate-outing-design", "outing-lembang-vs-ciwidey"],
+    howTo: {
+      name: "Cara Membuat Rundown Outing Kantor 2D1N yang Efektif",
+      description: "6 langkah membuat rundown outing kantor 2 hari 1 malam yang profesional dan tereksekusi lancar",
+      steps: [
+        { name: "Tentukan format 2D1N sesuai objective", text: "Pilih dari 3 format: standard outdoor (80-200 pax), bonding deep (dengan sesi fasilitasi malam), atau premium villa (40-80 pax). Format menentukan venue, vendor, dan budget yang dibutuhkan." },
+        { name: "Design Hari 1 lebih padat dari Hari 2", text: "Hari 1 adalah energy peak — jadwalkan main activity dan gala dinner di hari pertama. Hari 2 harus lebih ringan: morning activity sedang, closing session, dan checkout yang tidak terburu-buru." },
+        { name: "Kelola overnight logistics", text: "Siapkan rooming list H-5, konfirmasi H-1. Buat SOP late arrival dan overnight emergency contact. Negosiasikan late checkout atau luggage storage untuk hari 2." },
+        { name: "Jadwalkan buffer antar semua sesi", text: "2D1N memiliki lebih banyak transisi dibanding 1D — setiap transisi butuh buffer 15-20 menit. Sesi outdoor ke indoor, makan ke aktivitas, dan checkout ke keberangkatan semua perlu waktu transisi." },
+        { name: "Brief semua vendor H-7 dan H-1", text: "Kirim rundown final ke venue, katering, fasilitator, dan dokumentasi H-7. Brief ulang H-1. On-site briefing H-0 pagi sebelum peserta tiba." },
+        { name: "Siapkan contingency per sesi outdoor", text: "Setiap sesi outdoor harus ada Plan B indoor yang sudah dikonfirmasi dengan venue. Catat di rundown: 'Jika hujan → sesi X dipindah ke [indoor space], PIC: [nama]'." },
       ],
     },
   },
