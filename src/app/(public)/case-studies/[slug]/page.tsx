@@ -109,12 +109,14 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
     localBusinessSchema(),
     articleSchema({
       headline: cs.outcomeHeadline,
+      alternativeHeadline: `Case Study ${cs.pax} Pax ${cs.industryLabel} — ${relatedService?.title ?? "Corporate Event"} Bandung, Outcome Terukur`,
       description: cs.metaDescription,
       image: cs.heroImage.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: `/case-studies/${cs.slug}`,
       aboutService: relatedService?.title ?? "Corporate Event Bandung",
+      aboutServiceUrl: moneyPage ? `${SITE.url}${moneyPage.href}` : undefined,
       author: SERVICE_AUTHORS[cs.serviceSlug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         ...(SERVICE_KEYWORDS[cs.serviceSlug] ?? ["case study corporate event bandung", "referensi event perusahaan bandung"]),

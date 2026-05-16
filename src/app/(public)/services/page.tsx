@@ -159,12 +159,14 @@ export default function ServicesPage() {
     ]),
     articleSchema({
       headline: "Corporate Event Services Bandung — Team Building, Gathering & Retreat",
+      alternativeHeadline: "10 Layanan Corporate Event Bandung: Outing, Team Building, MICE, Glamping, Executive Offsite",
       description: "10 program corporate event yang siap di-customize — company gathering, team building, executive offsite, dan lainnya di Bandung & Jawa Barat. Specialist B2B sejak 2018.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/services",
       aboutService: "Corporate Event Services Bandung",
+      aboutServiceUrl: `${SITE.url}/outing-kantor-bandung`,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: [
         "jasa corporate event bandung",

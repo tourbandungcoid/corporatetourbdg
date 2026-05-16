@@ -17,21 +17,21 @@ import {
 } from "@/lib/schema";
 
 export const metadata = {
-  title: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
+  title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
   description:
-    "88 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
+    "100+ pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
   alternates: { canonical: `${SITE.url}/faq` },
   openGraph: {
-    title: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
-    description: "88 pertanyaan paling sering dari HR Indonesia dalam 7 kategori — budget, vendor, lokasi, ROI, dan lebih.",
+    title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
+    description: "100+ pertanyaan paling sering dari HR Indonesia dalam 7 kategori — budget, vendor, lokasi, ROI, dan lebih.",
     url: `${SITE.url}/faq`,
     type: "website" as const,
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {
     card: "summary_large_image" as const,
-    title: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
-    description: "88 pertanyaan HR Indonesia: budget, vendor, lokasi, ROI, format. Update 2026. Verified senior planner.",
+    title: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
+    description: "100+ pertanyaan HR Indonesia: budget, vendor, lokasi, ROI, format. Update 2026. Verified senior planner.",
     images: [IMAGES.heroMain.src],
   },
 };
