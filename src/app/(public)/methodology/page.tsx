@@ -12,6 +12,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -113,6 +114,25 @@ export default function MethodologyPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: "/methodology",
+    }),
+    howToSchema({
+      name: "Cara merancang corporate outing yang outcome-driven dengan 3 framework TourBandung",
+      description:
+        "3-framework approach yang kami pakai untuk setiap engagement corporate: dari objective alignment hingga ROI measurement post-event.",
+      steps: [
+        {
+          name: "Framework 1 — 5-Pillar Corporate Outing Design™: Define objective",
+          text: "Mulai dari objective alignment (bukan venue atau activity). 5 pilar sequential: Objective → Audience Profile → Venue & Logistics → Activity Architecture → Outcome Measurement. Tanpa objective yang clear, 4 pillar lain hanya opinion.",
+        },
+        {
+          name: "Framework 2 — Bandung Outing Tier System™ (BOTS): Pilih tier budget",
+          text: "4 tier pricing transparan: Foundation (Rp 1.5–2.5 jt/pax), Standard (Rp 2.5–4 jt/pax), Premium (Rp 4–6.5 jt/pax), Bespoke (Rp 6.5 jt+/pax). Setiap tier punya venue, F&B, activity, dan support level yang terdefinisi — bukan angka random.",
+        },
+        {
+          name: "Framework 3 — Outcome ROI Framework: Measure dan justify investment",
+          text: "3-layer ROI: Employee Retention (biaya rekrutmen yang dihindari), Productivity (engagement correlation), dan Collaboration (NPS internal pre/post). Output: post-event report dengan data siap dibawa ke CFO.",
+        },
+      ],
     })
   );
 
