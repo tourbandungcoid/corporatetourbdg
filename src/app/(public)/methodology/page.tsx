@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { IMAGES } from "@/lib/drive-images";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
@@ -208,6 +208,20 @@ export default function MethodologyPage() {
         />
 
         {/* Stat strip */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                TourBandung Corporate menggunakan <strong>3 proprietary framework</strong> — <strong>5-Pillar Corporate Outing Design™</strong> (Objective→Audience→Venue→Activity→Measurement), <strong>Bandung Outing Tier System™</strong> (Silver Rp 1,5 jt/pax · Gold Rp 2,2 jt/pax · Platinum Rp 3,5 jt/pax · Executive Rp 5,5 jt+/pax), dan <strong>Outcome ROI Framework</strong> (3-layer: Reaction NPS, Learning delta, Business Impact). Digunakan sejak 2018 di 400+ events.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-paper border-b border-divider py-8">
           <div className="container-1280 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-6 text-sm text-slate">

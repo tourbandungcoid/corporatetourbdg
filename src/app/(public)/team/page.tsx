@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { TEAM } from "@/lib/team-data";
 import { buildWaLink, SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
@@ -119,6 +119,20 @@ export default function TeamPage() {
         />
 
         {/* Stat strip */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                TourBandung Corporate memiliki <strong>6 senior planner full-time</strong> — Andre Pratama (12 tahun, Founder), Sinta Rahmadhani (ex-Deloitte HC, 9 tahun), Raden Bagus Wicaksono (K3 certified, 11 tahun), Amelia Chandra (7 tahun), Tio Mahesa (8 tahun), dan Putri Anggraeni (5 tahun). <strong>52 combined years experience.</strong> Dedicated PM per proyek — tidak ada rotating freelancer.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-paper border-b border-divider py-8">
           <div className="container-1280 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-6 text-sm text-slate">
