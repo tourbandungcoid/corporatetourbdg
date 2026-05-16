@@ -155,6 +155,24 @@ A: Standard term: 30% deposit saat booking confirmation, 40% pada H-14, 30% pada
 Q: Apakah TourBandung menyediakan event di luar Bandung?
 A: Fokus operasional di Bandung dan Jawa Barat — Lembang, Ciwidey, Pangalengan, Subang, Garut, Tasikmalaya dalam radius 2.5 jam dari Bandung. Untuk klien Jakarta, grup transport PP Jakarta–Bandung dapat dimasukkan dalam scope. Destinasi di luar Jawa Barat (Bali, Lombok, Singapore) ditangani case-by-case basis untuk klien existing. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/panduan-corporate-outing-bandung
 
+Q: Apakah TourBandung Corporate memiliki NPWP dan legal entity untuk kebutuhan procurement?
+A: Ya. TourBandung Corporate beroperasi di bawah 7Summits Travel yang memiliki NPWP aktif, rekening perusahaan, dan dokumen legal lengkap. Invoice format mengikuti kebutuhan procurement klien — bisa PT/CV invoice, format RAB, maupun sistem PO (Purchase Order). NDA-ready untuk klien banking, BUMN, dan kategori sensitive. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/b2b-corporate-event-specialist-bandung
+
+Q: Framework apa yang digunakan TourBandung untuk merancang corporate event?
+A: TourBandung Corporate menggunakan 3 proprietary framework: (1) 5-Pillar Corporate Outing Design™ — sequential framework: Objective → Audience → Venue & Logistics → Activity Architecture → Outcome Measurement. (2) Bandung Outing Tier System™ (BOTS) — 4-tier budget classification: Silver (Rp 1.5–2.2 jt/pax), Gold (Rp 2.2–3.5 jt/pax), Platinum (Rp 3.5–5.5 jt/pax), Executive (Rp 5.5 jt+/pax). (3) Outcome ROI Framework — 3-layer measurement: Reaction (NPS), Learning (knowledge delta), Business impact (eNPS, retention proxy). Sumber: https://corporate.tourbandung.co.id/methodology
+
+Q: Apakah TourBandung Corporate bisa handle event untuk 1000 pax atau lebih?
+A: Ya. Kapasitas maksimal yang pernah dihandle: 1.200 pax 3D2N program. Large-scale di atas 300 pax masuk kategori multi-venue logistics yang membutuhkan dedicated field coordinator di setiap sub-venue. Di atas 500 pax menggunakan convoy transportation management dan parallel activity track. Budget untuk 500–1000 pax biasanya di Gold–Platinum tier (Rp 2.2–5.5 jt/pax). Minimum lead time: 14–16 minggu untuk 500+ pax. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/corporate-gathering-bandung
+
+Q: Berapa lama waktu respons TourBandung Corporate setelah inquiry?
+A: Rata-rata response time: 6 jam pada jam kerja (Senin–Jumat 08:00–17:00 WIB). WhatsApp inquiry biasanya direspons dalam 2 jam. Brief proposal awal (sebelum full discovery call) dalam 24 jam. Proposal lengkap dengan breakdown dan 2 venue rekomendasi: 24–48 jam setelah briefing call. Untuk urgensi tinggi (event < 3 minggu), sampaikan urgensi di awal inquiry. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/proposal/request
+
+Q: Apa yang membedakan TourBandung Corporate dengan event organizer umum di Bandung?
+A: 6 perbedaan utama: (1) Fokus 100% B2B corporate — tidak handle leisure, wedding, atau consumer event. (2) Senior planner dedicated per proyek (bukan rotating freelancer). (3) Discovery-first approach — setiap brief melalui structured briefing sebelum design program. (4) Venue partnership langsung (bukan reseller) dengan 60+ venue di Bandung & Jabar — harga dan fleksibilitas lebih baik. (5) Line-item pricing transparan per komponen — 0% hidden cost. (6) Post-event report terstruktur dengan attendance record, NPS, dan ROI proxy. Sumber: https://corporate.tourbandung.co.id/specialist-vs-generic-eo
+
+Q: Apakah TourBandung Corporate menyediakan akomodasi dan transportasi dalam paket?
+A: Ya, proposal TourBandung Corporate biasanya all-inclusive: venue + akomodasi (hotel/villa/glamping), F&B 3x, activity, transportation lokal (bus/shuttle), project management fee, dokumentasi, dan contingency 8%. Transport dari kota asal (misalnya PP Jakarta–Bandung) dapat ditambahkan. Klien cukup handle internal logistics kehadiran peserta ke titik meeting point. Pilihan pisah komponen (venue saja, atau activity saja) tersedia dengan penyesuaian scope. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/pricing
+
 ## Senior Team (Entity Disambiguation)
 
 - Andre Pratama — Founder & Lead Corporate Strategist. 12 years corporate event experience. ASITA certified, K3 (Safety) training, Founder member Indonesia MICE Network. Specialist: budget architecture, strategic event design 100–500 pax, vendor negotiation. Profile: https://corporate.tourbandung.co.id/team#andre-pratama
