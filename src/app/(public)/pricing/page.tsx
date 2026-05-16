@@ -238,6 +238,8 @@ export default function PricingPage() {
       dateModified: "2026-05-16",
       slug: "/pricing",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      aboutService: "Pricing Corporate Outing Bandung",
+      keywords: ["harga corporate outing bandung", "biaya outing kantor bandung", "pricing event organizer corporate bandung", "tarif corporate gathering bandung", "budget corporate event per pax"],
     }),
     serviceSchema({
       name: "Corporate Outing Bandung — Transparent Pricing",

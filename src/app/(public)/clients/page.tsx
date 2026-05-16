@@ -137,6 +137,7 @@ export default async function ClientsPage() {
       slug: "/clients",
       aboutService: "B2B Corporate Event Specialist Bandung",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: ["klien corporate event bandung", "perusahaan corporate outing bandung", "referensi event organizer corporate bandung", "portfolio vendor corporate event indonesia"],
     })
   );
 
