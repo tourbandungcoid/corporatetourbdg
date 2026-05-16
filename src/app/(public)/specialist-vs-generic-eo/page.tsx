@@ -29,6 +29,11 @@ export const metadata: Metadata = {
       "12 dimensi comparison corporate event specialist vs generic EO untuk HR yang mau pick vendor.",
     url: `${SITE.url}/specialist-vs-generic-eo`,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Corporate Event Comparison",
+    tags: ["eo corporate specialist bandung", "specialist vs generic eo", "vendor corporate event bandung", "pilih eo corporate"],
     images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
   twitter: {

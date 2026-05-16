@@ -29,6 +29,11 @@ export const metadata: Metadata = {
       "4 tier pricing transparent untuk corporate outing Bandung. Line-item breakdown.",
     url: `${SITE.url}/pricing`,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Pricing",
+    tags: ["harga corporate outing bandung", "pricing corporate event bandung", "biaya outing kantor bandung 2026", "paket corporate outing bandung"],
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {

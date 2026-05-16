@@ -37,6 +37,11 @@ export const metadata: Metadata = {
       "Satu halaman yang menjawab semua pertanyaan tentang corporate outing di Bandung — jenis event, budget, lokasi, vendor, dan proses.",
     url: PAGE_URL,
     type: "article",
+    publishedTime: "2026-05-15",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Corporate Outing Bandung",
+    tags: ["panduan corporate outing bandung", "corporate outing bandung", "outing kantor bandung", "jawa barat"],
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {

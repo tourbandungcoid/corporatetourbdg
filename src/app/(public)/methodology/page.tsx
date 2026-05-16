@@ -27,6 +27,11 @@ export const metadata: Metadata = {
       "Framework yang kami pakai untuk design corporate outing outcome-driven. 5-Pillar Design™ + Bandung Outing Tier System™ + ROI Framework.",
     url: `${SITE.url}/methodology`,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Methodology",
+    tags: ["methodology corporate outing bandung", "5-pillar design framework", "outcome-driven corporate event", "bots bandung outing tier system"],
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {
