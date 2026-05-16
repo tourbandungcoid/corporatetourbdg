@@ -304,27 +304,31 @@ export default function VenueGatheringBandungPage() {
       pageUrl: URL,
       name: "Cara Memilih Venue Gathering di Bandung",
       description:
-        "5 langkah memilih venue gathering korporat di Bandung yang sesuai budget, kapasitas, dan format event.",
+        "6 langkah memilih venue gathering korporat di Bandung yang sesuai budget, kapasitas, dan format event.",
       steps: [
         {
-          name: "Tentukan Format dan Kapasitas Peserta",
-          text: "Putuskan format event terlebih dahulu: indoor (ballroom hotel), outdoor (villa/resort/glamping), atau hybrid. Hitung peserta realistis — kapasitas aktual venue biasanya 70–80% dari angka marketing.",
+          name: "Tentukan objective dan vibe event",
+          text: "Formal annual gathering dengan awarding night membutuhkan hotel ballroom; team building outbound aktif butuh outdoor ground luas; executive retreat butuh villa private dengan exclusivity tinggi. Tentukan vibe terlebih dahulu sebelum shortlist venue.",
         },
         {
-          name: "Pilih Area Berdasarkan Prioritas",
-          text: "Lembang untuk nuansa sejuk dan venue premium (60–90 menit dari kota). Ciwidey untuk adventure dan outbound. Bandung kota untuk hybrid MICE dan aksesibilitas mudah dari Jakarta via tol.",
+          name: "Hitung kapasitas aktual yang dibutuhkan",
+          text: "Kapasitas marketing venue sering lebih tinggi dari kapasitas aktual. Cek kapasitas untuk layout yang dibutuhkan: theater, classroom, atau round table. Tambahkan 15–20% buffer untuk AV setup, stage, dan area gerak peserta.",
         },
         {
-          name: "Survey Venue dengan 10-Point Checklist",
-          text: "Cek: kapasitas aktual, kualitas AC + audio, backup power, parking, akses loading, kebijakan vendor luar (boleh bawa catering sendiri atau tidak), cancellation policy, dan kontrak force majeure.",
+          name: "Pilih area berdasarkan jarak dan aksesibilitas",
+          text: "Untuk peserta dari Jakarta, prioritaskan venue dekat tol Pasteur (Trans Luxury, Pullman). Untuk nature vibe: Lembang (30–60 mnt, paling banyak pilihan), Ciwidey (75–110 mnt, outbound), Pangalengan (100–130 mnt, quiet retreat).",
         },
         {
-          name: "Bandingkan 2–3 Shortlist dengan Harga Transparan",
-          text: "Minta breakdown per komponen dari setiap venue: sewa venue, F&B package, setup, AV, dan dekorasi terpisah. Lump-sum quote mempersulit perbandingan dan menyembunyikan markup.",
+          name: "Survey venue dan cek 12 checklist teknis",
+          text: "Wajib dicek: kapasitas aktual, ceiling height, loading dock, kualitas AC, parking, backup power, bandwidth internet, kebijakan vendor luar, noise level, aksesibilitas difabel, cancellation policy, dan ketersediaan exclusive booking.",
         },
         {
-          name: "Lock Tanggal dengan Deposit",
-          text: "Setelah memilih venue, lock tanggal dengan deposit 30–50% sesegera mungkin. Venue Bandung peak season (Oktober–Desember, Maret–Mei) cepat penuh — delay 1–2 minggu bisa kehilangan slot.",
+          name: "Minta penawaran dan bandingkan breakdown biaya",
+          text: "Minta quotation dengan breakdown terpisah: biaya sewa venue, F&B per pax, AV, dekorasi, akomodasi (untuk overnight). Bandingkan minimal 2–3 venue sebelum memutuskan. Perhatikan hidden fees seperti admin charge dan pajak.",
+        },
+        {
+          name: "Lock venue sesuai lead time yang direkomendasikan",
+          text: "50–100 pax: minimal 4–6 minggu. 100–300 pax: minimal 8 minggu. 300–500 pax: minimal 10–12 minggu. Peak season Q4 (Okt–Des) dan Q1 (Mar–Mei): tambah 4–6 minggu. Lock venue adalah langkah pertama sebelum apapun.",
         },
       ],
     })
