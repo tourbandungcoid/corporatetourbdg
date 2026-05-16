@@ -582,6 +582,14 @@ export default function MiceOrganizerBandungPage() {
                   </div>
                 ))}
               </div>
+              <p className="mt-6 text-sm text-slate">
+                Lihat juga:{" "}
+                <Link href="/faq/logistics" className="text-brand-deep hover:underline">FAQ Logistik</Link>
+                {" · "}
+                <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+                {" · "}
+                <Link href="/faq/comparison" className="text-brand-deep hover:underline">FAQ Specialist vs Generic EO</Link>
+              </p>
             </div>
           </div>
         </section>

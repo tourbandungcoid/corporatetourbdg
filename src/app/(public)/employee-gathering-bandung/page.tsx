@@ -574,6 +574,14 @@ export default function EmployeeGatheringBandungPage() {
               </details>
             ))}
           </div>
+          <p className="mt-6 text-sm text-slate">
+            Lihat juga:{" "}
+            <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+            {" · "}
+            <Link href="/faq/formats" className="text-brand-deep hover:underline">FAQ Format & Aktivitas</Link>
+            {" · "}
+            <Link href="/faq/logistics" className="text-brand-deep hover:underline">FAQ Logistik</Link>
+          </p>
         </Section>
 
         <section className="py-14 bg-bone border-t border-divider">

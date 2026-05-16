@@ -289,6 +289,14 @@ export default function ExecutiveOffsiteBandungPage() {
               </details>
             ))}
           </div>
+          <p className="mt-6 text-sm text-slate">
+            Lihat juga:{" "}
+            <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+            {" · "}
+            <Link href="/faq/outcome" className="text-brand-deep hover:underline">FAQ ROI & Outcome</Link>
+            {" · "}
+            <Link href="/faq/comparison" className="text-brand-deep hover:underline">FAQ Specialist vs Generic EO</Link>
+          </p>
         </Section>
 
         <section className="py-14 bg-bone border-t border-divider">

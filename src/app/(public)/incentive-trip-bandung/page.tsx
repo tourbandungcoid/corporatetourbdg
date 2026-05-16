@@ -501,6 +501,14 @@ export default function IncentiveTripBandungPage() {
                   </div>
                 ))}
               </div>
+              <p className="mt-6 text-sm text-slate">
+                Lihat juga:{" "}
+                <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+                {" · "}
+                <Link href="/faq/location" className="text-brand-deep hover:underline">FAQ Lokasi & Venue</Link>
+                {" · "}
+                <Link href="/faq/logistics" className="text-brand-deep hover:underline">FAQ Logistik</Link>
+              </p>
             </div>
           </div>
         </section>
