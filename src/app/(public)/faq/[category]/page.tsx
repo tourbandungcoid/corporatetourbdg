@@ -137,6 +137,31 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
           </div>
         </section>
 
+        {/* Related service pages */}
+        {cat.relatedPages && cat.relatedPages.length > 0 && (
+          <section className="py-12 border-t border-divider">
+            <div className="container-1280">
+              <p className="eyebrow text-slate mb-4">Layanan terkait</p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {cat.relatedPages.map((page) => (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className="group rounded-2xl border border-border bg-paper p-5 hover:border-ink-soft transition-all hover:-translate-y-0.5"
+                  >
+                    <p className="font-medium text-sm text-ink group-hover:text-brand-deep transition-colors leading-snug">{page.label}</p>
+                    <p className="mt-1.5 text-xs text-slate leading-relaxed">{page.description}</p>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-ink/70">
+                      Selengkapnya
+                      <ArrowRight size={11} className="transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Related FAQ categories */}
         <section className="py-14 bg-cream/40 border-t border-divider">
           <div className="container-1280">

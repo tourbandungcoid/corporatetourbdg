@@ -12,6 +12,7 @@ export type FaqCategory = {
   metaDescription: string;
   eyebrow: string;
   questions: FaqQ[];
+  relatedPages?: { href: string; label: string; description: string }[];
 };
 
 const CATEGORIES: Record<string, FaqCategory> = {
@@ -87,6 +88,12 @@ const CATEGORIES: Record<string, FaqCategory> = {
           "Tips: (1) Brief detail di awal — vendor bisa rekomendasi venue/activity yang fit budget. (2) Flexible date (off-peak = cheaper). (3) Tanya breakdown line-item — identify mana yang bisa di-adjust. (4) Multi-event annual contract dapat better pricing. Avoid: pressure tactic atau race-to-bottom — quality drops.",
       },
     ],
+    relatedPages: [
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Budget breakdown per tier dan estimasi real untuk outing 1D / 2D1N di Bandung." },
+      { href: "/pricing", label: "Transparent Pricing", description: "4 tier pricing dengan line-item breakdown — Foundation hingga Bespoke." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Estimasi budget gathering 100–800 pax termasuk gala dinner dan awarding production." },
+      { href: "/panduan-corporate-outing-bandung", label: "Panduan Lengkap", description: "Master guide: semua yang perlu HR tahu soal budget, vendor, dan lokasi." },
+    ],
   },
 
   logistics: {
@@ -158,6 +165,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Iya, standar include untuk corporate gathering tier Standard+. Decoration design custom sesuai theme: stage backdrop, photo wall, signage. Custom branding (banner, t-shirt, merchandise) optional dengan cost tambahan. Production lead time 2-3 minggu.",
       },
+    ],
+    relatedPages: [
+      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "Proses lengkap dari request proposal hingga eksekusi dan post-event report." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Timeline dan step-by-step proses perencanaan outing kantor di Bandung." },
+      { href: "/proposal/request", label: "Request Proposal", description: "Start proses sekarang — brief call 15 menit, proposal dalam 24 jam kerja." },
     ],
   },
 
@@ -240,6 +252,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Travel agent: strong di ticketing, hotel booking, package tour retail. Lemah di: facilitation team building, custom program design, AV production, post-event report. EO corporate specialist: kuat di program design, facilitation, logistics coordination, pada-site execution, akuntabilitas. Untuk corporate outing dengan objective lebih dari 'pergi dan senang', gunakan EO specialist.",
       },
+    ],
+    relatedPages: [
+      { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO", description: "Panduan perbandingan lengkap: 5 perbedaan utama specialist B2B vs generic EO." },
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Team building vs outing — format, methodology, dan kapan masing-masing tepat." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Gathering vs outing — perbedaan budget, format, dan expectation management." },
     ],
   },
 
@@ -333,6 +350,12 @@ const CATEGORIES: Record<string, FaqCategory> = {
           "Corporate outing = employees only, fokus team bonding + professional development. Family day = employees + keluarga (pasangan, anak), fokus celebration + appreciation. Family day butuh pertimbangan khusus: area bermain anak, safety extra, food variety lebih luas, dan activity yang inclusive untuk semua umur. Budget family day biasanya 1.3-1.5x outing standar per kepala.",
       },
     ],
+    relatedPages: [
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "50+ activity catalog team building — outbound, indoor, hybrid, dan cultural." },
+      { href: "/outbound-perusahaan-bandung", label: "Outbound Perusahaan Bandung", description: "Format outbound adventure outdoor untuk perusahaan — activity, safety, dan venue." },
+      { href: "/glamping-corporate-bandung", label: "Glamping Corporate Bandung", description: "Format glamping — premium outdoor experience tanpa kompromi kenyamanan." },
+      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Format gathering refreshing — pilihan program untuk bonding tim yang inklusif." },
+    ],
   },
 
   location: {
@@ -407,6 +430,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Top picks untuk outbound korporat: Maribaya Nature Heritage (Lembang, outbound terstruktur, area luas), Kampung Cai Ranca Upas (Ciwidey, outbound + glamping, 50–300 pax), Galunggung Adventure Camp (Subang, physical challenge), dan lokasi rafting Cilayu (Subang). Pilihan tergantung skala pax dan intensity program.",
       },
+    ],
+    relatedPages: [
+      { href: "/venue-gathering-bandung", label: "20 Venue Gathering Bandung", description: "Panduan venue gathering korporat — hotel ballroom, villa private, resort, outdoor." },
+      { href: "/glamping-corporate-bandung", label: "Glamping Corporate Bandung", description: "Glamping site rekomendasi di Bandung dan sekitarnya untuk corporate event." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Pilihan lokasi dan area untuk outing kantor 1D / 2D1N di Bandung." },
     ],
   },
 
@@ -490,6 +518,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
           "Buat comparison matrix: baris = komponen (venue, F&B, activity, transport, PM fee, contingency, dokumentasi), kolom = setiap vendor. Pastikan scope persis sama — venue tier serupa, jumlah peserta sama, durasi identik. Harga total yang beda signifikan biasanya karena ada komponen yang dihilangkan, bukan efisiensi vendor.",
       },
     ],
+    relatedPages: [
+      { href: "/b2b-corporate-event-specialist-bandung", label: "B2B Event Specialist", description: "7 kriteria vendor B2B specialist — checklist lengkap untuk procurement perusahaan." },
+      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "Cara pilih EO corporate yang aman — legal, portfolio, dan accountability." },
+      { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO", description: "Perbandingan head-to-head: kenapa specialist B2B lebih accountable dari generic EO." },
+    ],
   },
 
   outcome: {
@@ -563,6 +596,11 @@ const CATEGORIES: Record<string, FaqCategory> = {
         detail:
           "Cara memperpanjang dampak: (1) Capture dan share foto/video highlight dalam 1 minggu pasca event. (2) Team leader minta 1 team agreement hasil dari outing (ex: 'kita sepakat untuk lebih direct dalam feedback'). (3) Reference outing saat team meeting dalam 30 hari pertama. (4) Follow-up dengan tim 30 hari dan 90 hari pasca event untuk track perubahan.",
       },
+    ],
+    relatedPages: [
+      { href: "/methodology", label: "Methodology & Frameworks", description: "3 named framework untuk design event outcome-driven: 5-Pillar, BOTS, dan ROI Framework." },
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program team building dengan measurement framework pre & post event." },
+      { href: "/pricing", label: "Transparent Pricing", description: "ROI justification template dan cara menghitung value vs cost corporate outing." },
     ],
   },
 };
