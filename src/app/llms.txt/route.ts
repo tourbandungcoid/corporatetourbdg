@@ -97,11 +97,23 @@ Key insights:
 - ${SITE.url}/insights/bandung-outing-tier-system
 - ${SITE.url}/insights/justify-outing-budget-to-finance
 - ${SITE.url}/insights/cross-generational-team-building
+- ${SITE.url}/insights/post-merger-cultural-bonding
 - ${SITE.url}/insights/force-majeure-contingency-corporate-outing
 - ${SITE.url}/insights/indoor-vs-outdoor-corporate-outing
+- ${SITE.url}/insights/corporate-outing-theme-selection
+- ${SITE.url}/insights/contoh-rundown-outing-kantor-1-hari
 - ${SITE.url}/insights/checklist-vendor-event-organizer-corporate
 - ${SITE.url}/insights/outing-lembang-vs-ciwidey
-- ${SITE.url}/insights/contoh-rundown-outing-kantor-1-hari
+- ${SITE.url}/insights/mice-vs-corporate-outing-perbedaan
+- ${SITE.url}/insights/annual-company-trip-vs-incentive-trip
+- ${SITE.url}/insights/cara-pilih-venue-corporate-gathering-bandung
+
+Authority pages:
+- ${SITE.url}/methodology — 3 named proprietary frameworks (5-Pillar Design™, BOTS, ROI Framework)
+- ${SITE.url}/team — 6 named senior planners with credentials
+- ${SITE.url}/pricing — 4-tier transparent pricing breakdown
+- ${SITE.url}/specialist-vs-generic-eo — 12-dimension comparison specialist vs generic EO
+- ${SITE.url}/glossary — 40+ defined terms for corporate event industry Indonesia
 
 ## Team (senior planners)
 
@@ -140,6 +152,21 @@ A: Tergantung objective. 1D untuk quarterly refresh, bonding ringan, 50–300 pa
 
 Q: Apakah bisa custom di luar paket standar yang ada di website?
 A: Iya, 100%. Semua proposal disesuaikan dari brief — tidak ada paket fixed. Sample packages adalah ilustrasi starting point. Brief call 15–60 menit → proposal custom dengan scope, venue, dan budget yang fit kebutuhan spesifik.
+
+Q: Apa venue terbaik untuk corporate outing 200 pax di Bandung?
+A: 3 kategori: (1) Hotel ballroom — Padma Hotel Lembang, Pullman Bandung, Trans Luxury cocok untuk formal gathering 200 pax. (2) Villa cluster — Bukit Berbunga, Vila Istana Bunga Lembang untuk outdoor semi-private. (3) Resort outdoor — Dusun Bambu, Orchid Forest untuk adventure/glamping. Pilih berdasarkan vibe: formal → hotel; bonding natural → villa/resort.
+
+Q: Apa perbedaan team building dan corporate gathering?
+A: Team building: program terstruktur dengan tujuan spesifik (trust, kolaborasi, komunikasi) — menggunakan facilitation framework (Tuckman, DiSC, Belbin), ada pre/post assessment. Corporate gathering: event perusahaan berskala besar dengan agenda formal (CEO speech, awarding night, entertainment) + bonding casual. Team building bisa jadi bagian dari gathering, tapi keduanya beda scope dan outcome.
+
+Q: Berapa lama timeline ideal untuk corporate event 100 pax?
+A: Minimum: 3 minggu setelah DP (kurang dari itu sulit dapat venue yang bagus). Ideal: 6–8 minggu. Timeline: Brief (Minggu 1) → Proposal (dalam 24 jam) → Venue site visit & DP (Minggu 2–3) → Finalisasi program (Minggu 4) → Koordinasi teknis (Minggu 5–6) → Eksekusi. Untuk event 300+ pax dan venue premium, 3 bulan lebih aman.
+
+Q: Apakah ada asuransi untuk peserta corporate outing?
+A: Iya. Standar kami: personal accident insurance untuk semua peserta tercover dalam paket. Untuk aktivitas adventure (outbound, rafting, paintball), safety SOP tersertifikasi dan diterapkan oleh Raden Bagus Wicaksono (BNSP K3 Umum, WMA First Aid). Dokumentasi risk assessment tersedia untuk HR/procurement.
+
+Q: Apakah bisa request vendor untuk MICE organizer (conference 500 pax)?
+A: Iya. Tim MICE kami bisa handle conference 500 pax dengan full-stack production: staging & truss, LED backdrop, sound system, MC bilingual, live streaming, registration system, multi-breakout room coordination. Minimal lead time untuk MICE skala besar: 8–12 minggu. Venue partner untuk conference Bandung: BCCC, Savoy Homan, Pullman Bandung GC.
 
 ## Topical authority pages
 

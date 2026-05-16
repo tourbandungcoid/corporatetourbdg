@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
   alternates: { canonical: `${SITE.url}/glossary` },
   openGraph: {
-    title: "Glossary — TourBandung Corporate",
+    title: "Glossary Corporate Event: 40+ Istilah MICE & Outing — TourBandung",
     description:
       "Glossary 40+ istilah corporate event yang sering dipakai HR Indonesia.",
     url: `${SITE.url}/glossary`,
@@ -45,7 +45,7 @@ export default function GlossaryPage() {
       { name: "Glossary", url: `${SITE.url}/glossary` },
     ]),
     faqPageSchema(
-      all.slice(0, 15).map((e) => ({
+      all.slice(0, 30).map((e) => ({
         question: `Apa itu ${e.term}?`,
         answer: e.long,
       }))
