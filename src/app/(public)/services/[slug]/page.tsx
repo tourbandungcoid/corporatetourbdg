@@ -75,6 +75,19 @@ const SERVICE_KEYWORDS: Record<string, string[]> = {
   "glamping-corporate":   ["glamping corporate bandung", "corporate glamping jawa barat", "glamping team building perusahaan ciwidey", "premium glamping outing kantor bandung"],
 };
 
+const SERVICE_MONEY_PAGES: Record<string, string> = {
+  "company-gathering":  "/corporate-gathering-bandung",
+  "team-building":      "/team-building-bandung",
+  "employee-gathering": "/employee-gathering-bandung",
+  "corporate-retreat":  "/company-retreat-bandung",
+  "leadership-camp":    "/leadership-retreat-jawa-barat",
+  "executive-offsite":  "/executive-offsite-bandung",
+  "incentive-trip":     "/incentive-trip-bandung",
+  "annual-company-trip":"/outing-kantor-bandung",
+  "mice":               "/mice-organizer-bandung",
+  "glamping-corporate": "/glamping-corporate-bandung",
+};
+
 export default async function ServiceDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
   const service = getService(slug);
@@ -95,6 +108,11 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       aboutService: `${service.title} Bandung`,
       author: SERVICE_AUTHORS[service.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: SERVICE_KEYWORDS[service.slug] ?? [`${service.title.toLowerCase()} bandung`, "corporate event jawa barat", "vendor event perusahaan bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        ...(SERVICE_MONEY_PAGES[service.slug] ? [{ type: "WebPage", name: service.title, url: `${SITE.url}${SERVICE_MONEY_PAGES[service.slug]}` }] : []),
+        { type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
