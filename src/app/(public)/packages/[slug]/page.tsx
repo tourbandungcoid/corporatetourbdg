@@ -48,6 +48,11 @@ export async function generateMetadata({
       description,
       url,
       type: "article",
+      publishedTime: "2026-05-12",
+      modifiedTime: "2026-05-16",
+      authors: [`${SITE.url}/team#andre-pratama`],
+      section: "Corporate Packages",
+      tags: ["paket corporate outing bandung", "sample program corporate event", pkg.title.toLowerCase()],
       images: [{ url: pkg.image.src, width: 1200, height: 630, alt: pkg.image.alt }],
     },
     twitter: {

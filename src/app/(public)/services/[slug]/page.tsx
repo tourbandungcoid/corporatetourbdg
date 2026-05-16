@@ -24,6 +24,32 @@ export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({ slug }));
 }
 
+const SERVICE_OG_TAGS: Record<string, string[]> = {
+  "company-gathering":    ["company gathering bandung", "annual gathering perusahaan", "jasa company gathering bandung"],
+  "team-building":        ["team building bandung", "outbound team building corporate bandung", "program team building perusahaan"],
+  "employee-gathering":   ["employee gathering bandung", "gathering karyawan bandung", "hr event employee gathering"],
+  "corporate-retreat":    ["corporate retreat bandung", "retreat perusahaan jawa barat", "strategic retreat corporate"],
+  "leadership-camp":      ["leadership camp bandung", "leadership development senior management", "executive leadership jawa barat"],
+  "executive-offsite":    ["executive offsite bandung", "c-suite offsite bandung", "strategy session direksi bandung"],
+  "incentive-trip":       ["incentive trip bandung", "reward trip top performer bandung", "incentive program karyawan"],
+  "annual-company-trip":  ["annual company trip bandung", "company trip tahunan perusahaan", "corporate trip massal jawa barat"],
+  "mice":                 ["mice organizer bandung", "conference corporate bandung", "meeting incentive conference exhibition"],
+  "glamping-corporate":   ["glamping corporate bandung", "glamping lembang corporate", "outdoor corporate event glamping"],
+};
+
+const SERVICE_AUTHOR_IDS: Record<string, string> = {
+  "company-gathering":  `${SITE.url}/team#andre-pratama`,
+  "team-building":      `${SITE.url}/team#sinta-rahmadhani`,
+  "employee-gathering": `${SITE.url}/team#sinta-rahmadhani`,
+  "corporate-retreat":  `${SITE.url}/team#sinta-rahmadhani`,
+  "leadership-camp":    `${SITE.url}/team#andre-pratama`,
+  "executive-offsite":  `${SITE.url}/team#andre-pratama`,
+  "incentive-trip":     `${SITE.url}/team#andre-pratama`,
+  "annual-company-trip":`${SITE.url}/team#tio-mahesa`,
+  "mice":               `${SITE.url}/team#raden-bagus-wicaksono`,
+  "glamping-corporate": `${SITE.url}/team#amelia-chandra`,
+};
+
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
@@ -38,6 +64,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       description: service.metaDescription,
       url,
       type: "article",
+      publishedTime: "2026-05-12",
+      modifiedTime: "2026-05-16",
+      authors: [SERVICE_AUTHOR_IDS[slug] ?? `${SITE.url}/team#andre-pratama`],
+      section: service.title,
+      tags: SERVICE_OG_TAGS[slug] ?? ["corporate event bandung", "jawa barat"],
       images: [{ url: service.heroImage.src, width: 1200, height: 630, alt: service.heroImage.alt }],
     },
     twitter: {
