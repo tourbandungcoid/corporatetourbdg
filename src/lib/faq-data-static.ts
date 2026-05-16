@@ -252,6 +252,21 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Travel agent: strong di ticketing, hotel booking, package tour retail. Lemah di: facilitation team building, custom program design, AV production, post-event report. EO corporate specialist: kuat di program design, facilitation, logistics coordination, pada-site execution, akuntabilitas. Untuk corporate outing dengan objective lebih dari 'pergi dan senang', gunakan EO specialist.",
       },
+      {
+        question: "Lebih baik 1 corporate event besar per tahun atau beberapa event kecil?",
+        answer:
+          "Keduanya punya peran berbeda dan idealnya dikombinasikan. 1 annual event besar (company gathering): menciptakan milestone tahunan, merayakan pencapaian bersama, mempertemukan semua divisi. 2–3 event kecil per tahun (quarterly outing atau departmental bonding): menjaga engagement di antara annual event, lebih targeted per tim. Best practice: annual flagship + 2 quarterly dengan total budget 1.5–2x annual-only. Impact engagement bertahan jauh lebih lama dibanding event sporadis.",
+      },
+      {
+        question: "Apakah corporate retreat sama dengan leadership retreat?",
+        answer:
+          "Tidak persis sama. Corporate retreat: bisa untuk semua level (30–200 pax), campuran bonding dan strategic review, format lebih beragam. Leadership retreat: spesifik untuk senior management atau C-suite (10–40 pax), fokus development, coaching, dan succession planning. Budget leadership retreat biasanya 1.5–2x lebih tinggi per pax karena scope lebih intensif dan venue eksklusif. TourBandung Corporate menyediakan keduanya di jalur terpisah.",
+      },
+      {
+        question: "Family day vs employee gathering — mana yang lebih cocok untuk employee retention?",
+        answer:
+          "Keduanya efektif namun mekanismenya berbeda. Employee gathering: membangun cohesion antar karyawan, lebih impactful untuk internal trust dan cross-team collaboration. Family day: membangun perasaan 'perusahaan menghargai saya sebagai manusia seutuhnya' — efektif untuk long-term loyalty dan kebanggaan karyawan. Penelitian menunjukkan employee dengan keseimbangan kerja-keluarga yang positif 27% lebih mungkin stay. Untuk retention yang kuat, kombinasikan keduanya.",
+      },
     ],
     relatedPages: [
       { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO", description: "Panduan perbandingan lengkap: 5 perbedaan utama specialist B2B vs generic EO." },
@@ -348,6 +363,21 @@ const CATEGORIES: Record<string, FaqCategory> = {
         question: "Apa beda corporate outing dengan family day?",
         answer:
           "Corporate outing = employees only, fokus team bonding + professional development. Family day = employees + keluarga (pasangan, anak), fokus celebration + appreciation. Family day butuh pertimbangan khusus: area bermain anak, safety extra, food variety lebih luas, dan activity yang inclusive untuk semua umur. Budget family day biasanya 1.3-1.5x outing standar per kepala.",
+      },
+      {
+        question: "Apakah bisa gabungkan strategic meeting dengan corporate outing dalam satu event?",
+        answer:
+          "Bisa — ini yang disebut hybrid format atau MICE-gathering. Format populer: Day 1 pagi strategic session (kick-off, strategy review, departement update) → sore/malam bonding activity + dinner. Day 2 outing/team building penuh. Kunci: jangan kompres schedule — tiap sesi butuh buffer 15–30 menit. Venue harus support dual function (meeting room + outdoor activity area atau ballroom yang bisa dialih fungsi). TourBandung Corporate mendesain 'work + play' format untuk klien yang butuh keduanya.",
+      },
+      {
+        question: "Bagaimana format event yang tepat untuk onboarding batch karyawan baru?",
+        answer:
+          "Untuk onboarding batch 20–100 karyawan baru: (1) Half-day atau 1-day format lebih efektif dari overnight — energi dan focus lebih tinggi. (2) Mixed activity: karyawan baru + buddy karyawan lama dalam satu tim kecil — forced interaction yang natural. (3) Company storytelling: company history tour, pengenalan tim leadership secara informal. (4) 'Pledge' atau team agreement: sesi komitmen sederhana yang menciptakan psychological ownership lebih awal. Hindari terlalu banyak informational briefing — onboarding event harus experiential, bukan lecture.",
+      },
+      {
+        question: "Apa format terbaik untuk corporate event yang harus menutupi peserta dari berbagai kota sekaligus?",
+        answer:
+          "Untuk event multi-kota serentak (misal: kantor Jakarta, Surabaya, dan Bandung di hari yang sama), ada 3 opsi: (1) Hub gathering — pilih satu lokasi central, semua hadir di sana (Bandung/Jakarta paling sering). (2) Parallel events — eksekusi simultan di masing-masing kota dengan rundown sama, briefing material unified. (3) Hybrid — peserta yang tidak bisa hadir fisik join via live streaming di sesi plenary, hadir fisik hanya di sesi bonding lokal. TourBandung Corporate dapat serve sebagai master organizer untuk parallel event dengan partner di kota lain.",
       },
     ],
     relatedPages: [
