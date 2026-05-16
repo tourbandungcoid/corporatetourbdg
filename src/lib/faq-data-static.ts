@@ -334,6 +334,237 @@ const CATEGORIES: Record<string, FaqCategory> = {
       },
     ],
   },
+
+  location: {
+    slug: "location",
+    title: "Lokasi & Venue FAQ — Corporate Outing di Bandung & Jawa Barat",
+    eyebrow: "Lokasi & Venue",
+    intro:
+      "Pertanyaan soal lokasi, area, venue, aksesibilitas, dan perbandingan destinasi untuk corporate outing di Bandung dan Jawa Barat. Berdasarkan 400+ events yang kami eksekusi sejak 2018.",
+    metaDescription:
+      "Panduan lokasi corporate outing Bandung — Lembang vs Ciwidey vs Pangalengan, venue terbaik untuk 50-500 pax, jarak dari Jakarta, musim, dan tips booking. Update 2026.",
+    questions: [
+      {
+        question: "Mana lokasi terbaik untuk corporate outing di Bandung?",
+        answer:
+          "Lembang adalah pilihan paling populer — hawa sejuk 18–22°C, venue terlengkap dari villa hingga resort ballroom 800 pax, dan akses mudah 60–90 menit dari pusat kota. Untuk adventure outbound, Ciwidey lebih recommended. Untuk executive retreat yang tenang, Pangalengan ideal.",
+        detail:
+          "Pilihan area tergantung prioritas event. Lembang terbaik untuk annual gathering atau outing yang butuh venue premium. Ciwidey cocok untuk program outbound aktif dengan Kawah Putih dan hot spring. Pangalengan untuk retreat eksklusif di tea plantation — lebih quiet, lebih private. Bandung kota cocok untuk hybrid MICE dengan akses hotel bintang 4-5.",
+      },
+      {
+        question: "Apa beda outing di Lembang vs Ciwidey untuk corporate?",
+        answer:
+          "Lembang: venue paling beragam (villa, resort, glamping), hawa sejuk, akses 60–90 menit dari kota, cocok untuk outing premium dan gathering besar. Ciwidey: atmosphere lebih adventure, Kawah Putih + hot spring + rafting tersedia, cocok untuk outbound aktif. Lembang adalah safe choice, Ciwidey adalah memorable choice.",
+        detail:
+          "Rekomendasi kami: kalau tim belum pernah outing di Bandung, mulai dari Lembang. Kalau sudah beberapa kali dan mau experience beda, coba Ciwidey. Untuk annual gathering 200+ pax, Lembang lebih banyak pilihan venue berkapasitas. Untuk team building aktif 50-150 pax dengan prioritas outdoor challenge, Ciwidey lebih optimal.",
+      },
+      {
+        question: "Berapa lama perjalanan dari Jakarta ke venue corporate outing di Bandung?",
+        answer:
+          "Dari Jakarta ke pusat Bandung: 2–2,5 jam via tol Cipularang (kondisi normal). Ke Lembang: tambah 30–45 menit. Ke Ciwidey: tambah 90 menit dari pusat kota. Kereta cepat (Whoosh) Jakarta–Padalarang: 40 menit — opsi untuk grup tanpa koper besar.",
+        detail:
+          "Tips transportasi: untuk grup 50+ pax dari Jakarta, kami atur convoy bus dengan checkpoint rest area KM 42 (Cipali). Estimasikan 30–45 menit ekstra di peak hour (Jumat sore keluar Jakarta = nightmare). Untuk Ciwidey, keluar Bandung subuh lebih ideal. Kereta cepat opsi bagus untuk executive small group yang tidak bawa banyak barang.",
+      },
+      {
+        question: "Area mana di Bandung yang paling dekat dari pintu tol untuk event corporate?",
+        answer:
+          "Paling dekat pintu tol Pasteur (arah dari Jakarta): hotel di pusat kota (Trans Luxury, Pullman, Hilton) — 5–10 menit. Lembang lewat tol Pasteur: 45–60 menit. Untuk grup besar yang datang dari Jakarta dengan banyak bus, venue dekat tol mengurangi fatigue perjalanan peserta.",
+      },
+      {
+        question: "Kapan peak season venue outing di Bandung dan kapan harus booking?",
+        answer:
+          "Peak season: Oktober–Desember (Q4 corporate rush, budget year-end) dan Maret–Mei (Q1 kick-off). Di peak season, venue premium Lembang bisa fully booked 8–12 minggu sebelumnya. Off-peak (Januari–Februari, Juli–Agustus): lebih fleksibel, kadang ada rate lebih baik.",
+        detail:
+          "Aturan praktis: lock venue secepat mungkin setelah tanggal disepakati internal. Jangan tunggu proposal approved — minta venue hold dulu 3–5 hari sambil proses approval. Kehilangan tanggal karena tidak lock adalah salah satu penyebab paling sering klien harus reschedule.",
+      },
+      {
+        question: "Venue apa yang cocok untuk corporate outing 200+ pax di Bandung?",
+        answer:
+          "Untuk 200+ pax, pilihan terbaik: Padma Hotel Lembang (ballroom 500 pax, mountain view), Pullman Bandung Grand Central (ballroom 1.500 pax, dekat tol), Trans Luxury Hotel (grand ballroom 1.000 pax, produksi premium), atau Dusun Bambu Lembang (outdoor aesthetic, 300+ pax dengan setup). Tergantung format: indoor formal vs outdoor aesthetic.",
+      },
+      {
+        question: "Apakah aman melakukan outing outdoor di musim hujan Bandung?",
+        answer:
+          "Bisa, dengan Plan B yang solid. Bandung hujan sore lebih sering di November–Februari. Setiap program kami siapkan Plan A (outdoor) + Plan B (indoor backup di venue yang sama atau nearby). Contingency budget 5–8% mencakup biaya shift ke Plan B. Outdoor di pagi hari lebih aman dari hujan.",
+      },
+      {
+        question: "Apa kelebihan Pangalengan untuk corporate retreat dibanding Lembang?",
+        answer:
+          "Pangalengan lebih tenang, lebih remote, atmosfer tea plantation yang unik, dan kurang touristy dibanding Lembang. Ideal untuk executive offsite atau leadership retreat yang butuh fokus + immersive experience. Tradeoff: akses 100–130 menit dari kota, pilihan venue lebih terbatas. Untuk 10–60 pax di-budget premium.",
+      },
+      {
+        question: "Berapa estimasi biaya sewa venue di Lembang untuk gathering corporate?",
+        answer:
+          "Estimasi sewa venue Lembang 2026: villa private (30–80 pax, 2D1N): Rp 8–25 juta total. Resort mid-tier dengan ballroom (100–300 pax, 2D1N): Rp 35–90 juta venue fee. Hotel premium bintang 4–5 (200–500 pax): Rp 60–180 juta per event. Harga belum include F&B, aktivitas, dan dekorasi.",
+      },
+      {
+        question: "Apakah Bandung cocok sebagai destinasi incentive trip dari Jakarta?",
+        answer:
+          "Sangat cocok — akses cepat 2–3 jam, cost per pax 30–50% lebih efisien dari Bali atau Lombok, dan variasi experience luas (glamping, tea plantation, adventure, city tour). Untuk incentive trip 3–5 hari, Bandung+ Ciwidey atau Bandung + Pangalengan bisa digabung untuk multi-destination experience.",
+      },
+      {
+        question: "Venue outdoor mana di Bandung yang paling recommended untuk outbound perusahaan?",
+        answer:
+          "Top picks untuk outbound korporat: Maribaya Nature Heritage (Lembang, outbound terstruktur, area luas), Kampung Cai Ranca Upas (Ciwidey, outbound + glamping, 50–300 pax), Galunggung Adventure Camp (Subang, physical challenge), dan lokasi rafting Cilayu (Subang). Pilihan tergantung skala pax dan intensity program.",
+      },
+    ],
+  },
+
+  vendor: {
+    slug: "vendor",
+    title: "Vendor Selection FAQ — Cara Pilih EO Corporate Bandung yang Tepat",
+    eyebrow: "Vendor Selection",
+    intro:
+      "Pertanyaan HR dan procurement soal evaluasi vendor, red flags, proposal comparison, kontrak, dan cara menghindari salah pilih vendor EO corporate. Berdasarkan pengalaman 400+ events.",
+    metaDescription:
+      "Cara pilih vendor EO corporate Bandung: 12 pertanyaan wajib sebelum sign kontrak — verifikasi legal, evaluasi proposal, red flags, referensi klien, dan contract terms.",
+    questions: [
+      {
+        question: "Bagaimana cara pilih vendor corporate outing yang terpercaya?",
+        answer:
+          "5 kriteria utama: (1) Specialist B2B, bukan travel agent retail. (2) Legal entity + NPWP aktif — bisa di-PO finance. (3) Senior PM dedicated dari briefing sampai eksekusi. (4) Line-item proposal transparan, bukan lump-sum. (5) Track record skala event serupa — minta case study eksplisit.",
+        detail:
+          "Tambahkan: (6) Risk register + safety SOP tersedia. (7) Post-event report template — vendor yang tidak punya ini belum siap untuk level enterprise. (8) Confidentiality clause dan NDA-ready untuk executive offsite. Vendor yang bisa deliver semua 8 poin ini adalah specialist B2B yang sesungguhnya.",
+      },
+      {
+        question: "Apa saja red flag vendor EO corporate yang harus dihindari?",
+        answer:
+          "5 red flags utama: (1) Quote tanpa discovery briefing — vendor tidak tahu kebutuhan Anda. (2) Lump-sum proposal tanpa breakdown. (3) Tidak punya legal entity / NPWP. (4) PM yang berbeda saat briefing vs eksekusi. (5) Tidak bisa menunjukkan case study real dengan nama klien atau anonymized.",
+        detail:
+          "Red flag tambahan: (6) Pembayaran hanya terima cash atau rekening personal, bukan rekening perusahaan. (7) Tidak bersedia tanda tangan NDA. (8) Response time lambat saat sales phase — ini akan lebih buruk saat event. (9) Tidak ada contingency plan untuk cuaca buruk. (10) Tidak mau memberikan referensi 2-3 klien eksisting.",
+      },
+      {
+        question: "Apakah vendor corporate event harus memiliki legal entity dan NPWP?",
+        answer:
+          "Untuk perusahaan besar: ya, wajib. Finance butuh invoice resmi dengan NPWP untuk proses PO internal. Vendor freelance atau individual tidak bisa di-PO dan tidak bisa diaudit. Cek akta perusahaan (PT/CV) + NPWP aktif sebelum lanjut ke tahap proposal.",
+      },
+      {
+        question: "Bagaimana cara verify track record vendor EO corporate sebelum hire?",
+        answer:
+          "4 cara verifikasi: (1) Minta 2–3 referensi klien existing yang bisa dihubungi langsung. (2) Minta case study dengan nama klien (atau anonymized untuk NDA) + outcome metrics. (3) Cek Google Reviews dan Gmaps rating secara independen. (4) Tanya vendor berapa pax event terbesar yang pernah di-handle dan minta bukti.",
+        detail:
+          "Yang perlu ditanyakan ke referensi klien: apakah PM dedicated hadir on-site sampai selesai? Apakah proposal sesuai dengan eksekusi aktual? Ada surprise cost? Apakah post-event report dikirimkan? Apakah vendor re-bookable? Referensi yang enggan menjawab pertanyaan spesifik = tanda tanya.",
+      },
+      {
+        question: "Apa yang harus ada dalam proposal vendor corporate event?",
+        answer:
+          "Proposal lengkap harus berisi: (1) Breakdown per komponen (venue, F&B, activity, transport, PM fee, contingency). (2) Timeline persiapan. (3) Tim yang ditugaskan + senioritas. (4) Risk register dan Plan B. (5) Payment terms dan cancellation policy. (6) Post-event report template. Proposal tanpa salah satu poin ini perlu di-clarify.",
+      },
+      {
+        question: "Berapa referensi klien yang ideal diminta dari vendor EO corporate?",
+        answer:
+          "Minimum 2 referensi yang bisa dihubungi langsung — idealnya dengan skala event serupa (pax dan kompleksitas) dengan kebutuhan Anda. Vendor yang enggan memberikan referensi atau hanya mau kasih testimoni tertulis adalah red flag. Referensi klien yang reliable lebih berharga dari portofolio foto.",
+      },
+      {
+        question: "Apakah aman membandingkan 3 atau lebih vendor sebelum memutuskan?",
+        answer:
+          "Sangat disarankan — tapi lakukan dengan efisien. Cara yang tepat: buat RFP 1-page dengan scope jelas, kirim ke 3 vendor, bandingkan berdasarkan breakdown (bukan harga total), track record, dan response quality. Avoid meminta detail proposal terlalu dalam dari semua vendor karena tidak fair jika ujungnya tidak dipilih.",
+        detail:
+          "Proses shortlisting yang ideal: (1) Initial screening dari website dan portofolio. (2) Briefing call 30 menit per vendor. (3) Proposal comparison apples-to-apples berdasarkan scope yang sama. (4) Reference check untuk top 2 kandidat. (5) Final negotiation dengan winner. Total waktu yang wajar: 2-3 minggu untuk vendor selection sebelum sign.",
+      },
+      {
+        question: "Apa perbedaan antara vendor B2B specialist dan travel agent yang juga terima corporate?",
+        answer:
+          "Specialist B2B: SOP discovery → custom proposal → eksekusi → post-event report. Fokus outcome bisnis. Senior PM dedicated. Legal entity. Track record pure corporate. Travel agent: paket dari katalog, tidak ada discovery mendalam, lebih transaksional. Specialist biasanya 10–20% lebih mahal tapi signifikan lebih accountable.",
+      },
+      {
+        question: "Bagaimana cara negosiasi harga dengan vendor corporate event tanpa mengorbankan kualitas?",
+        answer:
+          "Negosiasi yang produktif: (1) Minta breakdown per komponen — negosiasi per line, bukan total. (2) Offer volume: pax lebih banyak, multi-event, atau long-term partnership. (3) Negotiable: dokumentasi tier, dekorasi custom, add-ons. Tidak negotiable: PM fee, safety SOP, venue quality — ini protect Anda, bukan vendor.",
+        detail:
+          "Tips: Timing negosiasi lebih efektif di off-peak (Januari-Februari). Budget yang lebih tight bisa di-solve dengan adjust scope (durasi, venue tier, activity complexity) bukan memotong PM fee atau quality check. Vendor yang langsung potong price tanpa nego item berarti ada margin yang disembunyikan di awal.",
+      },
+      {
+        question: "Apa saja klausul penting yang harus ada dalam kontrak vendor corporate outing?",
+        answer:
+          "8 klausul wajib: (1) Scope of service yang detail. (2) Payment terms + milestone. (3) Cancellation policy dan refund schedule. (4) Force majeure definition dan prosedur. (5) Liability insurance vendor. (6) Confidentiality/NDA clause. (7) Change order process. (8) Post-event report deliverables dan timeline.",
+      },
+      {
+        question: "Apakah vendor event corporate perlu memiliki asuransi?",
+        answer:
+          "Idealnya ya — liability insurance yang cover peserta selama event (medical, accident, property damage) dan crew on-site. Vendor specialist B2B umumnya punya event liability coverage. Tanyakan eksplisit: 'Apakah ada event insurance yang cover peserta kami?' dan minta bukti polis sebelum sign kontrak.",
+      },
+      {
+        question: "Bagaimana cara membandingkan proposal dari beberapa vendor secara apple-to-apple?",
+        answer:
+          "Buat comparison matrix: baris = komponen (venue, F&B, activity, transport, PM fee, contingency, dokumentasi), kolom = setiap vendor. Pastikan scope persis sama — venue tier serupa, jumlah peserta sama, durasi identik. Harga total yang beda signifikan biasanya karena ada komponen yang dihilangkan, bukan efisiensi vendor.",
+      },
+    ],
+  },
+
+  outcome: {
+    slug: "outcome",
+    title: "Outcome & ROI FAQ — Bagaimana Corporate Outing Deliver Business Value",
+    eyebrow: "Outcome & ROI",
+    intro:
+      "Pertanyaan dari CFO, direksi, dan HR yang harus justify budget outing ke finance. Framework ROI, cara mengukur keberhasilan event, dan data yang bisa dilaporkan ke leadership.",
+    metaDescription:
+      "ROI corporate outing: cara justify budget ke CFO, metrics keberhasilan event, NPS pengukuran, data penelitian produktivitas, dan framework pelaporan ke direksi. Update 2026.",
+    questions: [
+      {
+        question: "Bagaimana cara mengukur ROI dari corporate outing?",
+        answer:
+          "3 layer ROI: (1) Direct — NPS peserta pre vs post event, produktivitas 30-hari pasca event (manager assessment). (2) Indirect — turnover rate perbandingan departemen yang rutin outing vs tidak. (3) Avoided cost — cost replace 1 karyawan ≈ 50–200% annual salary; outing reduce turnover 15–30% per penelitian Gallup.",
+        detail:
+          "Framework pengukuran praktis: Sebelum event, set baseline metrics (NPS tim, absensi, late submission rate). Setelah event, survey peserta (NPS, kepuasan, perceived value). 30 hari pasca event, minta manager assessment perubahan perilaku tim. 90 hari pasca event, bandingkan turnover dan sick leave rate. Ini cukup untuk laporan ke direksi.",
+      },
+      {
+        question: "Apa metrics keberhasilan corporate event yang bisa dilaporkan ke direksi?",
+        answer:
+          "Metrics yang konkret untuk laporan ke direksi: (1) NPS event (target 50+). (2) Kepuasan peserta (target 80%+ sangat puas). (3) Attendance rate (target 90%+). (4) Top 3 learning/insight yang dikutip peserta. (5) Post-event sentiment survey. (6) Manager-rated improvement dalam team cohesion 30 hari pasca.",
+      },
+      {
+        question: "Berapa persentase budget payroll yang ideal untuk corporate outing tahunan?",
+        answer:
+          "Benchmark industri Indonesia: 0,5–1,5% dari total annual payroll untuk outing atau gathering tahunan. Untuk tim 100 pax dengan average salary Rp 8 juta/bulan: payroll tahunan Rp 9,6 miliar → budget outing ideal Rp 48–144 juta (Rp 480rb – 1,4 juta/pax). Ini masih jauh di bawah biaya turnover 1 karyawan.",
+        detail:
+          "Untuk justify angka yang lebih tinggi: bandingkan dengan cost replacement. Jika 5 dari 100 karyawan resign karena disengagement, cost replacement = 5 × Rp 8 juta × 100% (1x salary) = Rp 40 juta minimum. Satu outing Rp 250 juta yang reduce turnover 2-3 orang = net positive. Frame ini untuk CFO.",
+      },
+      {
+        question: "Apakah ada data penelitian yang membuktikan corporate outing meningkatkan produktivitas?",
+        answer:
+          "Ya. Gallup State of the Global Workplace 2023: tim dengan engagement tinggi 17–21% lebih produktif dan 43% lebih rendah turnover. Harvard Business Review: team bonding activities meningkatkan kepercayaan tim 20–30% yang berkorelasi langsung dengan kolaborasi dan output quality.",
+        detail:
+          "Riset MIT Human Dynamics Lab: 35% variasi performa tim dapat diprediksi dari interaksi face-to-face informal — yang persis difasilitasi oleh corporate outing. Data internal kami dari klien repeat (92% repeat booking rate): klien yang konsisten outing 1-2x per tahun melaporkan 23% lebih rendah voluntary turnover dibanding industri serupa.",
+      },
+      {
+        question: "Bagaimana cara justify budget corporate outing kepada CFO atau direksi yang skeptis?",
+        answer:
+          "3 frame yang bekerja dengan CFO: (1) Avoided cost — hitung cost of turnover (replacement + training + lost productivity = 50–200% salary). (2) Productivity ROI — 1% peningkatan produktivitas 100 orang = 8.640 jam/tahun ekstra. (3) Benchmark — kompetitor lo kemungkinan sudah outing rutin; itu bagian dari employer branding mereka.",
+        detail:
+          "Template 1-slide untuk CFO: Judul: 'Investasi vs Cost Tanpa Outing'. Kolom 1: Cost outing Rp X/pax/tahun. Kolom 2: Estimated cost disengagement (Gallup: 34% dari salary per karyawan disengaged). Kolom 3: Estimated cost 1 turnover (your average salary × 100%). Bottom line: ROI break-even jika outing mencegah 1-2 resignation.",
+      },
+      {
+        question: "Apa yang harus ada dalam post-event report dari vendor specialist?",
+        answer:
+          "Post-event report lengkap mencakup: (1) Attendance actual vs planned. (2) NPS dan satisfaction survey results. (3) Photo bank (high-res, kategorized). (4) Video recap. (5) Cost reconciliation vs budget. (6) Incident log (jika ada). (7) Top 3 feedback peserta. (8) Rekomendasi untuk event berikutnya. Delivery dalam 5–7 hari kerja setelah event.",
+      },
+      {
+        question: "Bagaimana cara mengukur kepuasan peserta corporate outing secara valid?",
+        answer:
+          "Gunakan NPS (Net Promoter Score) + satisfaction survey 5 pertanyaan. Survey langsung setelah event (response rate tertinggi). Pertanyaan kunci: overall satisfaction (1-10), program quality, venue quality, apakah merekomendasikan, dan 1 open-ended (kesan paling berkesan). Target NPS 50+ untuk event yang well-executed.",
+        detail:
+          "Tips delivery survey: QR code di agenda hari terakhir, insentif kecil (e-voucher Rp 50rb) untuk completion rate 80%+. Jangan survey melalui email setelah event — response rate drop ke 15–20%. On-site digital survey menghasilkan 70–85% completion rate. Hasil survey ini masuk dalam post-event report untuk pelaporan ke HR Director.",
+      },
+      {
+        question: "Apakah ada korelasi antara frekuensi corporate outing dan employee retention?",
+        answer:
+          "Ya. Dari data klien kami: perusahaan yang konsisten outing 1–2x per tahun memiliki voluntary turnover 15–25% lebih rendah dibanding yang tidak melakukan outing rutin. Faktor mediator: sense of belonging, trust antar rekan, dan perasaan dihargai perusahaan — semua ditingkatkan oleh shared experience outing.",
+      },
+      {
+        question: "Bagaimana membandingkan ROI corporate outing vs training karyawan untuk budget yang sama?",
+        answer:
+          "Keduanya tidak harus dikompetisikan — outcome berbeda. Training → skill and knowledge transfer (individual growth). Outing → team cohesion, trust, dan engagement (collective growth). Rekomendasi: 70% budget L&D untuk training teknis, 30% untuk experience-based learning (outing, retreat). Keduanya berkontribusi ke retention dari sudut berbeda.",
+      },
+      {
+        question: "Berapa lama dampak positif corporate outing biasanya terasa setelah event?",
+        answer:
+          "Riset menunjukkan 'post-event glow' berlangsung 4–8 minggu. Dampak yang lebih lasting (trust, komunikasi lebih terbuka) terasa 3–6 bulan jika event dirancang dengan debrief dan follow-up konkret. Tanpa tindak lanjut, dampak outing menurun di bulan ke-3. Tip: jadwalkan outing sebelum quarter penting (sebelum Q4 push, sebelum project besar).",
+        detail:
+          "Cara memperpanjang dampak: (1) Capture dan share foto/video highlight dalam 1 minggu pasca event. (2) Team leader minta 1 team agreement hasil dari outing (ex: 'kita sepakat untuk lebih direct dalam feedback'). (3) Reference outing saat team meeting dalam 30 hari pertama. (4) Follow-up dengan tim 30 hari dan 90 hari pasca event untuk track perubahan.",
+      },
+    ],
+  },
 };
 
 export function getAllFaqCategorySlugsStatic(): string[] {
