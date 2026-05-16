@@ -399,6 +399,53 @@ const ENTRIES: GlossaryEntry[] = [
     long: "Standar deliverable vendor profesional. Isi: executive summary, attendance vs target, aktivitas ringkasan, NPS/survey hasil, photo selects, video recap, budget reconciliation, dan recommendations untuk next event. HR butuh ini untuk justify anggaran ke management dan brief vendor tahun berikutnya. Vendor yang tidak deliver ini = tidak akuntabel.",
     related: ["Working Hours Response", "Discovery Brief"],
   },
+  {
+    term: "RAB",
+    short: "Rencana Anggaran Biaya — format budget breakdown yang dibutuhkan oleh finance dan procurement perusahaan.",
+    long: "RAB (Rencana Anggaran Biaya) adalah dokumen perencanaan anggaran yang merinci setiap komponen biaya secara terpisah — berbeda dari total 'lump sum'. Format RAB corporate event standar mencakup: venue + akomodasi, F&B per sesi, activity + fasilitator, transport, dokumentasi, project management fee, dan contingency. TourBandung Corporate menyediakan RAB dalam format yang langsung dapat diajukan ke procurement atau finance perusahaan, termasuk format PO-ready untuk BUMN.",
+    related: ["Proposal", "MICE Organizer"],
+    seeAlso: [{ label: "Transparent Pricing", href: "/pricing" }],
+  },
+  {
+    term: "Debrief",
+    short: "Sesi refleksi terfasilitasi setelah aktivitas untuk mengekstrak learning dan implikasi ke pekerjaan.",
+    long: "Debrief adalah elemen krusial yang membedakan team building dari sekadar bermain. Fasilitator terlatih membimbing peserta melalui 3 level pertanyaan: (1) Apa yang terjadi? — observasi faktual. (2) Kenapa itu terjadi? — refleksi pola. (3) Apa implikasinya ke pekerjaan nyata? — transfer learning. Tanpa debrief yang terstruktur, aktivitas team building tidak menghasilkan behavioral change — hanya kenangan satu hari. Durasi ideal: 20–40% dari total waktu aktivitas.",
+    related: ["Team Building", "5-Pillar Design™", "Outcome ROI Framework"],
+  },
+  {
+    term: "Family Day",
+    short: "Event corporate yang mengundang keluarga karyawan, bukan hanya karyawan itu sendiri.",
+    long: "Family Day adalah format gathering inklusif di mana peserta adalah karyawan beserta pasangan dan anak-anak. Fokus: fun, engagement, dan mempererat ikatan antara perusahaan dan keluarga karyawan. Format umumnya 1 hari dengan area khusus anak-anak (games, bouncy castle, face painting) dan area dewasa (activity, F&B). Budget per kepala biasanya lebih rendah dari outing reguler karena proporsi anak-anak tinggi (Rp 1.5–2.5 jt/orang). Berbeda dari company gathering yang pesertanya karyawan saja.",
+    related: ["Employee Gathering", "Corporate Gathering"],
+    seeAlso: [{ label: "Employee Gathering Bandung", href: "/employee-gathering-bandung" }],
+  },
+  {
+    term: "Pangalengan",
+    short: "Kawasan premium di selatan Bandung (60–80 menit), terkenal untuk corporate retreat eksklusif dan glamping.",
+    long: "Pangalengan adalah kawasan perkebunan teh di Kabupaten Bandung, 60–80 menit dari Bandung kota. Ciri khas: pemandangan danau (Situ Cileunca) dan kebun teh PTPN, suhu sejuk 15–19°C, relative sepi (tidak seramai Lembang). Ideal untuk executive retreat, glamping premium, dan corporate event yang butuh 'feel exclusive and remote'. Akses: lebih sulit dari Lembang, namun untuk grup yang mau isolasi dan premium nature experience, trade-off worthwhile.",
+    related: ["Lembang", "Ciwidey", "Executive Offsite"],
+    seeAlso: [{ label: "Venue Gathering Bandung", href: "/venue-gathering-bandung" }],
+  },
+  {
+    term: "Subang",
+    short: "Kawasan selatan Karawang (45–60 menit), cocok untuk outbound adventure dan rafting korporat.",
+    long: "Subang dalam konteks corporate event merujuk pada kawasan adventure di area Subang dan Ciater — bukan kota Subang itu sendiri. Dikenal untuk: hot spring (Ciater Highland Resort), ATV dan offroad, rafting, dan jungle trekking. Aksesnya mudah dari Karawang dan Jakarta Timur (45–60 menit), sehingga cocok untuk perusahaan di kawasan industri Karawang. TourBandung Corporate mengoperasikan event di kawasan Subang untuk tim yang menginginkan physical challenge lebih tinggi dari Lembang atau Ciwidey.",
+    related: ["Lembang", "Ciwidey", "Pangalengan"],
+    seeAlso: [{ label: "Outbound Perusahaan Bandung", href: "/outbound-perusahaan-bandung" }],
+  },
+  {
+    term: "Facilitator",
+    short: "Profesional terlatih yang memandu proses learning dan refleksi dalam team building atau retreat.",
+    long: "Fasilitator event corporate berbeda dari MC atau instruktur biasa. Tugas utama: menciptakan kondisi psikologis yang aman untuk sharing, memandu dialog yang produktif, dan membantu peserta mengekstrak insight dari pengalaman ke aplikasi kerja. Fasilitator terlatih harus familiar dengan adult learning principles, group dynamics, dan debrief techniques. TourBandung Corporate menggunakan fasilitator bersertifikat (MBTI, DiSC, DDI Targeted Selection) — bukan instruktur outbound biasa yang 'merangkap' fasilitasi.",
+    related: ["Team Building", "Debrief", "Leadership Camp"],
+  },
+  {
+    term: "Cultural Bonding",
+    short: "Program team building khusus untuk mengintegrasikan dua kelompok karyawan yang berbeda budaya kerja.",
+    long: "Cultural bonding event dirancang untuk situasi di mana dua atau lebih kelompok yang sebelumnya terpisah harus berfungsi sebagai satu tim — pasca merger, reorganisasi, atau akuisisi. Berbeda dari team building biasa: program ini secara eksplisit mengakui adanya dua identitas yang berbeda dan memfasilitasi proses pembentukan identitas baru bersama. Elemen kunci: safe space untuk ekspresi perbedaan, collaborative challenge yang tidak bisa diselesaikan oleh salah satu kelompok saja, dan ritual simbolik untuk menandai 'era baru'. TourBandung Corporate menangani beberapa kasus post-merger bonding, termasuk 800-pax tech company.",
+    related: ["Team Building", "Corporate Retreat", "Post-Event Survey"],
+    seeAlso: [{ label: "Post-Merger Cultural Bonding", href: "/insights/post-merger-cultural-bonding" }],
+  },
 ];
 
 const SLUGIFY = (s: string) =>
