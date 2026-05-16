@@ -155,6 +155,7 @@ export default function VillaGatheringBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Villa Gathering Bandung",
     }),
     breadcrumbSchema([

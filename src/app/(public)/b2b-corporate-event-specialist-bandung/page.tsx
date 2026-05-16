@@ -133,6 +133,7 @@ export default function B2BSpecialistPage() {
       datePublished: "2026-05-15",
       dateModified: "2026-05-16",
       slug: PATH,
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "B2B Corporate Event Specialist Bandung",
     }),
     serviceSchema({

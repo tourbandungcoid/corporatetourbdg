@@ -153,6 +153,7 @@ export default function CorporateGatheringBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Gathering Bandung",
     }),
     breadcrumbSchema([

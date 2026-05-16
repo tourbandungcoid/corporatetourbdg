@@ -142,6 +142,7 @@ export default function EventOrganizerCorporateBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Event Organizer Corporate Bandung",
     }),
     breadcrumbSchema([

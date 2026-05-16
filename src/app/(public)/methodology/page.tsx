@@ -122,6 +122,7 @@ export default function MethodologyPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/methodology",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     howToSchema({
       name: "Cara merancang corporate outing yang outcome-driven dengan 3 framework TourBandung",

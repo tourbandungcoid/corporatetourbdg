@@ -237,6 +237,7 @@ export default function PricingPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/pricing",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     serviceSchema({
       name: "Corporate Outing Bandung — Transparent Pricing",

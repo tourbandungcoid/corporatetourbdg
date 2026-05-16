@@ -169,6 +169,7 @@ export default function OutboundPerusahaanBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
       aboutService: "Outbound Perusahaan Bandung",
     }),
     breadcrumbSchema([

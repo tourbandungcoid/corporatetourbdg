@@ -161,6 +161,7 @@ export default function CompareSpecialistVsGenericPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: "/specialist-vs-generic-eo",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     serviceSchema({
       name: "Corporate Event Specialist B2B Bandung",

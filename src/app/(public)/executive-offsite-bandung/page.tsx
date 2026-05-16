@@ -104,6 +104,7 @@ export default function ExecutiveOffsiteBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Executive Offsite Bandung",
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Executive Offsite Bandung", url: URL }]),

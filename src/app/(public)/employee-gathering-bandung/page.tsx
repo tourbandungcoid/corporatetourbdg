@@ -165,6 +165,7 @@ export default function EmployeeGatheringBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Employee Gathering Bandung",
     }),
     breadcrumbSchema([

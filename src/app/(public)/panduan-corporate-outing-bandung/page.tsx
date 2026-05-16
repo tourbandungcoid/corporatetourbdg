@@ -199,6 +199,7 @@ export default function PanduanCorporateOutingPage() {
       datePublished: "2026-05-15",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

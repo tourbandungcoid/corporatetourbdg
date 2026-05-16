@@ -176,6 +176,7 @@ export default function MiceOrganizerBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-16",
       slug: SLUG,
+      author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
       aboutService: "MICE Organizer Bandung",
     }),
     breadcrumbSchema([
