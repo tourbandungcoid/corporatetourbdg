@@ -176,6 +176,7 @@ export default function OutboundPerusahaanBandungPage() {
       slug: SLUG,
       author: { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
       aboutService: "Outbound Perusahaan Bandung",
+      aboutServiceUrl: URL,
       keywords: ["outbound perusahaan bandung", "outbound kantor bandung", "outbound corporate bandung", "paket outbound bandung", "vendor outbound perusahaan bandung", "outbound team building lembang"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

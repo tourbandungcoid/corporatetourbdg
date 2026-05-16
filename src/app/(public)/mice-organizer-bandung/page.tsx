@@ -183,6 +183,7 @@ export default function MiceOrganizerBandungPage() {
       slug: SLUG,
       author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
       aboutService: "MICE Organizer Bandung",
+      aboutServiceUrl: URL,
       keywords: ["mice organizer bandung", "event organizer mice bandung", "paket mice bandung", "konferensi perusahaan bandung", "incentive meeting conference exhibition bandung", "vendor mice bandung"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

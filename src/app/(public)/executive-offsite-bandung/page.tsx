@@ -111,6 +111,7 @@ export default function ExecutiveOffsiteBandungPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Executive Offsite Bandung",
+      aboutServiceUrl: URL,
       keywords: ["executive offsite bandung", "c-suite offsite bandung", "strategy offsite direksi bandung", "strategic retreat eksekutif bandung", "private offsite executive jawa barat"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

@@ -207,6 +207,7 @@ export default function PanduanCorporateOutingPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Outing Bandung",
+      aboutServiceUrl: PAGE_URL,
       keywords: ["panduan corporate outing bandung", "cara buat outing kantor bandung", "jenis corporate outing bandung", "budget corporate outing bandung", "tips pilih vendor corporate outing", "corporate outing bandung 2026"],
       mentions: [
         { type: "Service", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung`, id: `${SITE.url}/outing-kantor-bandung#service` },

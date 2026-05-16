@@ -187,6 +187,7 @@ export default function GlampingCorporateBandungPage() {
       slug: SLUG,
       author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Glamping Corporate Bandung",
+      aboutServiceUrl: URL,
       keywords: ["glamping corporate bandung", "glamping perusahaan bandung", "glamping outing kantor bandung", "sewa glamping corporate ciwidey", "glamping team building bandung"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

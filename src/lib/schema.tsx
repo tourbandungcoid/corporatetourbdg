@@ -211,7 +211,14 @@ export function localBusinessSchema() {
       latitude: -6.936249,
       longitude: 107.626469,
     },
-    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Subang", "Jawa Barat"],
+    areaServed: [
+      { "@type": "City", name: "Bandung", sameAs: "https://www.wikidata.org/wiki/Q1440" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat", sameAs: "https://www.wikidata.org/wiki/Q3812" },
+      { "@type": "City", name: "Lembang" },
+      { "@type": "City", name: "Ciwidey" },
+      { "@type": "City", name: "Pangalengan" },
+      { "@type": "City", name: "Subang" },
+    ],
     priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
     openingHoursSpecification: [
       {
@@ -312,6 +319,7 @@ export function articleSchema({
   slug,
   author,
   aboutService,
+  aboutServiceUrl,
   keywords,
   mentions,
 }: {
@@ -324,6 +332,7 @@ export function articleSchema({
   slug: string;
   author?: { name: string; role: string };
   aboutService?: string;
+  aboutServiceUrl?: string;
   keywords?: string[];
   mentions?: { type: string; name: string; url?: string; id?: string | undefined }[];
 }) {
@@ -376,6 +385,7 @@ export function articleSchema({
     },
     about: {
       "@type": "Service",
+      ...(aboutServiceUrl ? { "@id": `${aboutServiceUrl}#service`, url: aboutServiceUrl } : {}),
       name: aboutService ?? "Corporate Outing Bandung",
       provider: {
         "@type": "Organization",
@@ -385,6 +395,7 @@ export function articleSchema({
       areaServed: {
         "@type": "City",
         name: "Bandung",
+        sameAs: "https://www.wikidata.org/wiki/Q1440",
       },
     },
     speakable: {

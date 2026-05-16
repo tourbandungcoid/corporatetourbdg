@@ -150,6 +150,7 @@ export default function EventOrganizerCorporateBandungPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Event Organizer Corporate Bandung",
+      aboutServiceUrl: URL,
       keywords: ["event organizer corporate bandung", "EO corporate bandung", "vendor corporate event bandung", "jasa event organizer perusahaan bandung", "EO perusahaan bandung terpercaya"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

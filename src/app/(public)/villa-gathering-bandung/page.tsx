@@ -162,6 +162,7 @@ export default function VillaGatheringBandungPage() {
       slug: SLUG,
       author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Villa Gathering Bandung",
+      aboutServiceUrl: URL,
       keywords: ["villa gathering bandung", "sewa villa corporate bandung", "villa outbound bandung", "villa gathering lembang", "villa private gathering perusahaan bandung", "paket villa gathering bandung"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

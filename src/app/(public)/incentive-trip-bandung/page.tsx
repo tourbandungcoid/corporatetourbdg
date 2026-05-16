@@ -157,6 +157,7 @@ export default function IncentiveTripBandungPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Incentive Trip Bandung",
+      aboutServiceUrl: URL,
       keywords: ["incentive trip bandung", "paket incentive trip bandung", "program insentif karyawan bandung", "reward trip top performer bandung", "incentive travel program bandung"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },

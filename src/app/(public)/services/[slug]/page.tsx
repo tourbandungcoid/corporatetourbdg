@@ -137,6 +137,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       dateModified: "2026-05-16",
       slug: `/services/${service.slug}`,
       aboutService: `${service.title} Bandung`,
+      aboutServiceUrl: url,
       author: SERVICE_AUTHORS[service.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: SERVICE_KEYWORDS[service.slug] ?? [`${service.title.toLowerCase()} bandung`, "corporate event jawa barat", "vendor event perusahaan bandung"],
       mentions: [

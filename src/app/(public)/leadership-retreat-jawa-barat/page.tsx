@@ -110,6 +110,7 @@ export default function LeadershipRetreatJawaBaratPage() {
       slug: SLUG,
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Leadership Retreat Jawa Barat",
+      aboutServiceUrl: URL,
       keywords: ["leadership retreat jawa barat", "leadership retreat bandung", "program leadership perusahaan jawa barat", "executive leadership camp bandung", "senior management retreat jawa barat"],
       mentions: [
         { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
