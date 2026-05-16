@@ -121,6 +121,29 @@ export function localBusinessSchema() {
       { "@type": "LocationFeatureSpecification", name: "Post-Event Report", value: true },
       { "@type": "LocationFeatureSpecification", name: "NDA-Ready Confidentiality Protocol", value: true },
     ],
+    review: [
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+        author: { "@type": "Person", name: "Andini Pratama" },
+        reviewBody: "Senior planner dedicated dari briefing sampai event — bukan rotating freelancer. Komunikasi clean, accountability ada nama. Ini yang gw cari dari corporate event vendor.",
+        datePublished: "2026-04-15",
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+        author: { "@type": "Person", name: "Bagas Wicaksono" },
+        reviewBody: "Proposal detailed breakdown — finance team gw approval cepet karena gak ada hidden cost yang muncul belakangan. Transparent pricing is rare di vendor corporate event.",
+        datePublished: "2026-03-22",
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+        author: { "@type": "Person", name: "Citra Sari" },
+        reviewBody: "Custom 100%. Brief soal cross-team bonding pasca-merger, mereka kasih program yang bener-bener address itu — bukan template outing biasa.",
+        datePublished: "2026-02-10",
+      },
+    ],
   };
 }
 
