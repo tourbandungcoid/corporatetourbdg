@@ -179,12 +179,14 @@ export default function ServicesPage() {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
+      "@id": `${SITE.url}/services#webpage`,
       name: "Corporate Event Services",
       url: `${SITE.url}/services`,
       inLanguage: "id-ID",
       isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       mainEntity: {
         "@type": "ItemList",
+        "@id": `${SITE.url}/services#itemlist`,
         itemListOrder: "https://schema.org/ItemListOrderDescending",
         numberOfItems: SERVICES.length,
         itemListElement: SERVICES.map((s, i) => ({
@@ -192,6 +194,7 @@ export default function ServicesPage() {
           position: i + 1,
           item: {
             "@type": "Service",
+            "@id": `${SITE.url}/services/${s.slug}#service`,
             name: s.title,
             url: `${SITE.url}/services/${s.slug}`,
             description: s.short,
