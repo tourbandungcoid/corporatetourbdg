@@ -177,6 +177,16 @@ const CATEGORIES: Record<string, FaqCategory> = {
         answer:
           "Iya, standar include untuk corporate gathering tier Standard+. Decoration design custom sesuai theme: stage backdrop, photo wall, signage. Custom branding (banner, t-shirt, merchandise) optional dengan cost tambahan. Production lead time 2-3 minggu.",
       },
+      {
+        question: "Apakah ada site visit sebelum hari H dan siapa yang melakukannya?",
+        answer:
+          "Site visit wajib dilakukan 2 kali: H-14 (senior planner + field ops manager — check kapasitas, akses bus, layout outdoor, sound & AV, titik darurat) dan H-3 (field ops coordination — konfirmasi setup, equipment on-site, briefing vendor lokal). Untuk event 300+ pax, tambahan H-1 rehearsal. Klien tidak wajib hadir kecuali ingin verify sendiri — foto site visit selalu dikirim sebagai progress update.",
+      },
+      {
+        question: "Bagaimana cara TourBandung Corporate handle contingency dan force majeure?",
+        answer:
+          "Setiap event punya risk register (likelihood × impact matrix) yang dibuat sejak proposal. Contingency 5–8% budget disisihkan. Indoor backup program selalu disiapkan untuk outdoor event. Backup vendor tier-2 untuk transportasi dan catering bisa diaktivasi dalam 2 jam. Weather check dilakukan dari H-7, final switch decision H-2. Force majeure clause di PKS melindungi klien dari penalty jika event dibatalkan karena bencana alam atau kahar.",
+      },
     ],
     relatedPages: [
       { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "Proses lengkap dari request proposal hingga eksekusi dan post-event report." },
@@ -679,6 +689,18 @@ const CATEGORIES: Record<string, FaqCategory> = {
         question: "Apakah ada template laporan pasca-event untuk reporting ke board atau direksi?",
         answer:
           "Template laporan post-event ke direksi: (1) Executive summary satu halaman — apa yang terjadi, berapa pax, highlight outcome. (2) Budget realisasi vs rencana. (3) Satisfaction score (NPS peserta + breakdown aspek). (4) 3 moment highlight dengan foto. (5) Business case follow-up — rekomendasi action item pasca event (team charter, agreement tim). TourBandung Corporate menyediakan template laporan yang sudah dipakai klien untuk reporting ke C-level dan board. Request saat briefing atau lihat di proposal.",
+      },
+      {
+        question: "Bagaimana cara menjustifikasi anggaran corporate outing kepada CFO atau finance?",
+        answer:
+          "Justifikasi ROI ke CFO: gunakan cost per pax per hari (bukan total lump sum) sebagai frame. Bandingkan dengan cost alternatif: training eksternal per orang (Rp 3–8 jt/orang), town hall produksi (Rp 50–200 jt sekali), atau cost of low engagement (Gallup: karyawan tidak engaged costs 34% dari annual salary dalam lost productivity). Tambahkan angka retensi: replacing 1 karyawan bisa cost 50–150% annual salary. Outing yang meningkatkan engagement 10 poin = potensi reduce 1–2 turnover per 50 pax.",
+        detail:
+          "TourBandung Corporate menyediakan ROI framework template yang bisa disesuaikan dengan data internal perusahaan. Request saat briefing call — template sudah dipakai klien perbankan dan BUMN untuk budget approval.",
+      },
+      {
+        question: "Apa perbedaan antara satisfaction score dan ROI dalam konteks corporate outing?",
+        answer:
+          "Satisfaction score (NPS, post-event survey) adalah leading indicator — mengukur persepsi peserta segera setelah event. ROI adalah lagging indicator — mengukur dampak nyata 30–90 hari setelah event (team performance, retention, collaboration metric). Keduanya penting tapi tidak sama: satisfaction score tinggi tidak otomatis berarti ROI tinggi jika tidak ada follow-up dan reinforcement. Event yang dirancang dengan outcome-driven methodology (5-Pillar Design™ dari TourBandung Corporate) memaksimalkan keduanya.",
       },
     ],
     relatedPages: [

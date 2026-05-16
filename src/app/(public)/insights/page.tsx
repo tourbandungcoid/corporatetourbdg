@@ -14,6 +14,7 @@ import {
   localBusinessSchema,
   itemListSchema,
   articleSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -128,7 +129,13 @@ export default async function InsightsIndexPage({
         description: a.excerpt,
         image: a.heroImage.src,
       })),
-    })
+    }),
+    faqPageSchema([
+      { question: "Apakah panduan di Insights bisa diterapkan untuk semua skala perusahaan?", answer: "Ya — semua panduan di TourBandung Corporate Insights ditulis berdasarkan real experience dari 100+ corporate events di berbagai skala (30–800 pax) dan industri (tech, banking, BUMN, FMCG). Framework seperti 5-Pillar Design™ dan BOTS scalable untuk annual gathering 30 pax maupun 500 pax." },
+      { question: "Siapa yang menulis konten di TourBandung Corporate Insights?", answer: "Semua artikel ditulis oleh senior planner dengan pengalaman langsung: Andre Pratama (12 tahun, 400+ events), Sinta Rahmadhani (ex-Deloitte HC, 9 tahun), Raden Bagus Wicaksono (11 tahun outdoor ops), dan Amelia Chandra (7 tahun program design). Bukan content writer generalis — semua penulis pegang proyek nyata." },
+      { question: "Berapa lama waktu yang dibutuhkan untuk membaca satu panduan?", answer: "Rata-rata 8–15 menit per artikel — semua ditulis sebagai long-form guide dengan data, framework, dan contoh konkret dari event nyata. Setiap artikel memiliki TL;DR di awal untuk pembaca yang ingin summary cepat sebelum memutuskan membaca full article." },
+      { question: "Apakah framework di Insights gratis atau ada yang behind paywall?", answer: "Semua konten di TourBandung Corporate Insights 100% gratis dan bisa diakses langsung — tidak ada paywall, tidak ada email gate. Ini adalah editorial terbuka untuk HR manager, procurement, dan decision-maker corporate di Indonesia." },
+    ], `${SITE.url}/insights`)
   );
 
   return (

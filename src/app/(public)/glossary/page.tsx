@@ -18,6 +18,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   faqPageSchema,
+  howToSchema,
   definedTermSetSchema,
   articleSchema,
 } from "@/lib/schema";
@@ -84,6 +85,17 @@ export default function GlossaryPage() {
         { type: "WebPage", name: "FAQ Corporate Outing Bandung", url: `${SITE.url}/faq` },
         { type: "WebPage", name: "Methodology — 3 Named Framework", url: `${SITE.url}/methodology` },
         { type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` },
+      ],
+    }),
+    howToSchema({
+      pageUrl: `${SITE.url}/glossary`,
+      name: "Cara Menggunakan Glossary Ini untuk Evaluasi Vendor Corporate Event",
+      description: "4 langkah praktis memanfaatkan glossary corporate event untuk negosiasi, evaluasi proposal, dan due diligence vendor.",
+      steps: [
+        { name: "Pelajari Istilah di Proposal Vendor", text: "Saat Anda menerima proposal dari EO, tandai semua istilah teknis yang tidak familiar — RAB, BOTS, site visit, PKS, MCO. Cari di glossary ini untuk memahami konteks dan implikasi biaya setiap item sebelum sign-off." },
+        { name: "Gunakan Definisi untuk Evaluasi Pembanding", text: "Saat membandingkan 2–3 vendor, pastikan mereka menggunakan istilah dengan definisi yang konsisten. Misal: 'full-board' di satu vendor bisa berbeda dengan yang lain — clarify scope sebelum membandingkan harga." },
+        { name: "Pahami Framework Sebelum Briefing", text: "Sebelum briefing call dengan senior planner, pelajari term seperti 'Discovery Brief', '5-Pillar Design', 'BOTS', dan 'ROI Framework'. Briefing yang terinformasi menghasilkan proposal yang lebih akurat dan relevan untuk kebutuhan spesifik Anda." },
+        { name: "Gunakan Sebagai Checklist Due Diligence", text: "Term seperti NDA, PKS, Risk Register, dan Post-Event Report adalah deliverable standar yang harus ada di setiap proposal vendor serius. Jika vendor tidak familiar dengan term ini, itu red flag. Gunakan glossary ini sebagai checklist minimum saat evaluasi vendor." },
       ],
     }),
     faqPageSchema(

@@ -14,6 +14,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -109,7 +110,13 @@ export default async function CaseStudiesIndexPage({
           },
         })),
       },
-    }
+    },
+    faqPageSchema([
+      { question: "Apakah case study TourBandung Corporate menggunakan nama perusahaan klien yang sebenarnya?", answer: "Sebagian besar case study menggunakan deskripsi industri dan skala (bukan nama perusahaan) untuk menjaga NDA klien. Klien dari industri tech unicorn, BUMN bank, FMCG MNC, dan manufacturing MNC bisa dikonfirmasi melalui briefing call — kami bisa connect Anda dengan reference klien yang bersedia untuk dikontak." },
+      { question: "Industri apa saja yang sudah pernah di-handle TourBandung Corporate?", answer: "8+ industri aktif: tech & startup (unicorn level), perbankan (BUMN dan swasta), FMCG (global brand), telekomunikasi, manufacturing (MNC), healthcare & farmasi, agribisnis, dan consultancy. Repeat booking rate 92% — artinya klien dari masing-masing industri ini kembali untuk event berikutnya." },
+      { question: "Apakah format case study ini bisa dijadikan referensi untuk justifikasi budget ke manajemen?", answer: "Ya — setiap case study mencantumkan skala (pax), durasi, lokasi, challenge spesifik, approach yang digunakan, dan outcome terukur. Format ini dirancang agar HR manager dan procurement bisa menggunakannya sebagai referensi data saat mengajukan budget atau vendor approval ke manajemen atau CFO." },
+      { question: "Bisakah kami melihat case study dari industri atau skala yang spesifik sebelum briefing?", answer: "Ya — gunakan filter industri di halaman case studies untuk melihat yang paling relevan dengan bisnis Anda. Jika industri Anda belum ada di filter, hubungi kami lewat WhatsApp atau briefing call — senior planner bisa share referensi yang lebih spesifik dari portfolio internal yang tidak semua dipublikasikan." },
+    ], `${SITE.url}/case-studies`)
   );
 
   return (
