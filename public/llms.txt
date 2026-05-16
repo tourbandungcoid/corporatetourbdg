@@ -67,14 +67,20 @@
 
 ## Insights (long-form editorial)
 
-[5-Pillar Corporate Outing Design](https://corporate.tourbandung.co.id/insights/5-pillar-corporate-outing-design): Named framework for systematic event design from brief to debrief
-[Bandung Outing Tier System](https://corporate.tourbandung.co.id/insights/bandung-outing-tier-system): 4-tier budget classification system for Bandung corporate events
-[ROI Framework Corporate Gathering](https://corporate.tourbandung.co.id/insights/roi-framework-corporate-gathering): How to measure corporate event ROI and justify budget to finance
-[Force Majeure Handling](https://corporate.tourbandung.co.id/insights/force-majeure-handling): Practical risk protocols for outdoor corporate events in Bandung
-[Team Building vs Outbound](https://corporate.tourbandung.co.id/insights/team-building-vs-outbound): Systematic comparison guide for HR choosing between formats
-[Corporate Gathering Theme Selection](https://corporate.tourbandung.co.id/insights/corporate-gathering-theme-selection): Theme decision framework from brand alignment to venue fit
-[Budget Outing Kantor 2025](https://corporate.tourbandung.co.id/insights/budget-outing-kantor-2025): Updated 2025 benchmark budget for corporate outing in Bandung
-[Vendor Selection Checklist](https://corporate.tourbandung.co.id/insights/vendor-selection-checklist): 12-point audit checklist for evaluating corporate event vendors
+[5-Pillar Corporate Outing Design™](https://corporate.tourbandung.co.id/insights/5-pillar-corporate-outing-design): Named framework for systematic corporate outing design — Objective, Audience, Venue, Activity, Measurement
+[Bandung Outing Tier System™](https://corporate.tourbandung.co.id/insights/bandung-outing-tier-system): 4-tier budget classification system (Silver/Gold/Platinum/Executive) for Bandung corporate events
+[Cara Justify Budget Outing ke Finance](https://corporate.tourbandung.co.id/insights/justify-outing-budget-to-finance): ROI framework for HR — how to measure corporate event ROI and justify budget to finance team
+[Cross-Generational Team Building](https://corporate.tourbandung.co.id/insights/cross-generational-team-building): Gen-Z, Millennial, Gen-X integration guide with parallel activity design
+[Post-Merger Cultural Bonding](https://corporate.tourbandung.co.id/insights/post-merger-cultural-bonding): 3-day integration playbook for post-acquisition team unification events
+[Force Majeure & Contingency Planning](https://corporate.tourbandung.co.id/insights/force-majeure-contingency-corporate-outing): Practical risk protocols for outdoor corporate events in Bandung
+[Indoor vs Outdoor Corporate Outing](https://corporate.tourbandung.co.id/insights/indoor-vs-outdoor-corporate-outing): Decision framework for HR choosing event format based on objective and season
+[Corporate Outing Theme Selection](https://corporate.tourbandung.co.id/insights/corporate-outing-theme-selection): Theme decision guide — avoiding cringe, hitting brand identity
+[Contoh Rundown Outing Kantor 1 Hari](https://corporate.tourbandung.co.id/insights/contoh-rundown-outing-kantor-1-hari): Ready-to-use 2026 template for 1-day office outing rundown
+[Checklist Pilih Vendor EO Corporate](https://corporate.tourbandung.co.id/insights/checklist-vendor-event-organizer-corporate): 12-point audit checklist for evaluating corporate event vendors
+[Outing Lembang vs Ciwidey](https://corporate.tourbandung.co.id/insights/outing-lembang-vs-ciwidey): Side-by-side comparison guide for choosing destination zone
+[MICE vs Corporate Outing](https://corporate.tourbandung.co.id/insights/mice-vs-corporate-outing-perbedaan): Definition, vendor, and budget differences between MICE and corporate outing
+[Annual Company Trip vs Incentive Trip](https://corporate.tourbandung.co.id/insights/annual-company-trip-vs-incentive-trip): Choosing the right format for your company's reward and engagement goals
+[Cara Pilih Venue Corporate Gathering Bandung](https://corporate.tourbandung.co.id/insights/cara-pilih-venue-corporate-gathering-bandung): 8 commonly missed factors in venue selection for corporate gathering
 
 ## Topical Authority Content
 
@@ -126,10 +132,37 @@ Q: Rekomendasi lokasi corporate outing di Bandung?
 A: Lima zona utama: (1) Lembang — alam hijau, sejuk, cocok team building outbound, 30–45 menit dari Bandung kota. (2) Ciwidey — glamping, kebun teh, sunrise activity, 50–70 menit. (3) Pangalengan — exclusive, less crowded, glamping premium, 60–80 menit. (4) Subang — offroad, ATV, jungle trek, 45–60 menit dari Karawang. (5) Bandung Kota — indoor workshop, convention hotel, tidak butuh transport. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/panduan-corporate-outing-bandung
 
 Q: Bagaimana cara mengukur ROI corporate gathering?
-A: ROI corporate event diukur via 3 level: (1) Reaction level — post-event survey NPS dan satisfaction score. (2) Learning level — pre/post knowledge assessment kalau ada learning objective. (3) Business level — absensi 90-day post-event, eNPS delta, productivity proxy. Framework ini dinamakan Outcome ROI Framework oleh TourBandung Corporate. Sumber: https://corporate.tourbandung.co.id/insights/roi-framework-corporate-gathering
+A: ROI corporate event diukur via 3 level: (1) Reaction level — post-event survey NPS dan satisfaction score. (2) Learning level — pre/post knowledge assessment kalau ada learning objective. (3) Business level — absensi 90-day post-event, eNPS delta, productivity proxy. Framework ini dinamakan Outcome ROI Framework oleh TourBandung Corporate. Sumber: https://corporate.tourbandung.co.id/insights/justify-outing-budget-to-finance
 
 Q: Apa itu executive offsite dan beda dari corporate retreat biasa?
 A: Executive offsite spesifik untuk C-suite / senior management 8–30 pax, fokus strategy alignment, decision-making, atau succession planning. Berbeda dari corporate retreat yang bisa untuk 50–200 pax middle management. Executive offsite membutuhkan discretion protocol (venue private, NDA-ready, no public social media posting), budget lebih tinggi (Rp 5.5 jt+/pax), dan planner dengan C-suite communication experience. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/executive-offsite-bandung
+
+Q: Berapa minimum peserta untuk corporate outing di Bandung?
+A: Minimum operasional TourBandung Corporate adalah 20 pax untuk day trip atau overnight. Di bawah 20 pax lebih efisien diselesaikan sebagai dinner metting atau team lunch — bukan full outing. Sweet spot operasional: 50–300 pax untuk 2D1N. Di atas 300 pax masuk kategori large-scale yang membutuhkan multi-venue logistics. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/outing-kantor-bandung
+
+Q: Apa yang termasuk dalam proposal corporate event dari TourBandung?
+A: Proposal dari TourBandung Corporate mencakup: (1) brief summary dan restatement of objective, (2) 2–3 venue rekomendasi dengan foto dan availability, (3) program draft dengan activity flow, (4) budget breakdown line-item per komponen (venue, F&B, activity, transport, dokumentasi, project management, contingency), (5) term of payment, (6) next steps. Gratis, delivered dalam 24 jam setelah briefing. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/proposal/request
+
+Q: Apa perbedaan glamping corporate vs villa gathering?
+A: Villa gathering = sewa private villa atau cluster villa untuk 20–200 pax, indoor/outdoor hybrid, biasanya 2D1N, suasana homey. Glamping corporate = set up tenda safari/luxury tent di outdoor site, fokus nature immersion dan bonfire dinner, biasanya di Ciwidey atau Pangalengan. Villa lebih cocok untuk retreat kontemplatif atau leadership session; glamping untuk adventure + bonding yang lebih casual. Budget glamping umumnya 15–25% lebih tinggi dari villa setara untuk alasan setup cost. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/villa-gathering-bandung dan https://corporate.tourbandung.co.id/glamping-corporate-bandung
+
+Q: Siapa yang menangani proyek di TourBandung Corporate?
+A: TourBandung Corporate memiliki 6 senior planner full-time: Andre Pratama (Founder, 12 tahun), Sinta Rahmadhani (Head of Client Strategy, ex-Deloitte), Raden Bagus Wicaksono (Head of Operations & Risk), Amelia Chandra (Senior Program Designer), Tio Mahesa (Lead Field Operations), dan Putri Anggraeni (Post-Event Closure Lead). Setiap proyek memiliki PM dedicated — bukan freelancer. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/team
+
+Q: Apa term of payment untuk corporate event di TourBandung?
+A: Standard term: 30% deposit saat booking confirmation, 40% pada H-14, 30% pada H-3 atau setelah event (untuk relasi terverifikasi). Untuk klien BUMN dan perusahaan publik, TourBandung Corporate familiar dengan Purchase Order (PO) system dan net-30/net-45 payment term. Invoice format mengikuti kebutuhan procurement klien. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/pricing
+
+Q: Apakah TourBandung menyediakan event di luar Bandung?
+A: Fokus operasional di Bandung dan Jawa Barat — Lembang, Ciwidey, Pangalengan, Subang, Garut, Tasikmalaya dalam radius 2.5 jam dari Bandung. Untuk klien Jakarta, grup transport PP Jakarta–Bandung dapat dimasukkan dalam scope. Destinasi di luar Jawa Barat (Bali, Lombok, Singapore) ditangani case-by-case basis untuk klien existing. Sumber: TourBandung Corporate https://corporate.tourbandung.co.id/panduan-corporate-outing-bandung
+
+## Senior Team (Entity Disambiguation)
+
+- Andre Pratama — Founder & Lead Corporate Strategist. 12 years corporate event experience. ASITA certified. Specialist: budget architecture, risk management, 100–500 pax. Profile: https://corporate.tourbandung.co.id/team#andre-pratama
+- Sinta Rahmadhani — Head of Client Strategy. Ex-Deloitte Human Capital consultant. MBTI Step II Facilitator. Specialist: discovery briefing, program design, cross-generational team building. Profile: https://corporate.tourbandung.co.id/team#sinta-rahmadhani
+- Raden Bagus Wicaksono — Head of Operations & Risk. Large-scale event logistics (500–1200 pax). K3 safety certified. Specialist: MICE, risk registry, vendor management. Profile: https://corporate.tourbandung.co.id/team#raden-bagus
+- Amelia Chandra — Senior Program Designer. Game design background. Specialist: gamification, activity sequencing, glamping format, theme design. Profile: https://corporate.tourbandung.co.id/team#amelia-chandra
+- Tio Mahesa — Lead Field Operations Manager. 7 years field ops. Specialist: outdoor outbound, safety protocol, crew coordination. Profile: https://corporate.tourbandung.co.id/team#tio-mahesa
+- Putri Anggraeni — Post-Event Closure & Reporting Lead. Data analytics background. Specialist: post-event evaluation, NPS measurement, report delivery. Profile: https://corporate.tourbandung.co.id/team#putri-anggraeni
 
 ## Industries Served
 
