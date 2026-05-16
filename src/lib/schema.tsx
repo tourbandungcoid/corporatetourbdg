@@ -111,6 +111,7 @@ export function articleSchema({
   datePublished,
   dateModified,
   slug,
+  author,
 }: {
   headline: string;
   description: string;
@@ -118,7 +119,18 @@ export function articleSchema({
   datePublished: string;
   dateModified: string;
   slug: string;
+  author?: { name: string; role: string };
 }) {
+  const authorEntity = author
+    ? {
+        "@type": "Person",
+        name: author.name,
+        jobTitle: author.role,
+        worksFor: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
+        url: `${SITE.url}/team`,
+      }
+    : { "@type": "Organization", name: SITE.name, url: SITE.url };
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -127,11 +139,7 @@ export function articleSchema({
     image,
     datePublished,
     dateModified,
-    author: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE.url,
-    },
+    author: authorEntity,
     publisher: {
       "@type": "Organization",
       name: SITE.name,

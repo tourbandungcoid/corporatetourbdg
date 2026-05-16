@@ -57,7 +57,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-10",
     readTimeMin: 9,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist", initials: "AP" },
     sections: [
       {
         paragraphs: [
@@ -157,7 +157,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageGlamping,
     publishDate: "2026-05-08",
     readTimeMin: 7,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy", initials: "SR" },
     sections: [
       {
         paragraphs: [
@@ -240,7 +240,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.caseStudyExecutive,
     publishDate: "2026-05-05",
     readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy", initials: "SR" },
     sections: [
       {
         paragraphs: [
@@ -320,7 +320,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.caseStudyTeamBuilding,
     publishDate: "2026-05-03",
     readTimeMin: 6,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Amelia Chandra", role: "Senior Program Designer", initials: "AC" },
     sections: [
       {
         paragraphs: [
@@ -396,7 +396,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.caseStudyLarge,
     publishDate: "2026-04-30",
     readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist", initials: "AP" },
     sections: [
       {
         paragraphs: [
@@ -483,7 +483,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-10",
     readTimeMin: 9,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk", initials: "RB" },
     sections: [
       {
         paragraphs: [
@@ -595,7 +595,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageAnnualGathering,
     publishDate: "2026-05-09",
     readTimeMin: 7,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Amelia Chandra", role: "Senior Program Designer", initials: "AC" },
     sections: [
       {
         paragraphs: [
@@ -699,7 +699,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageGlamping,
     publishDate: "2026-05-07",
     readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Amelia Chandra", role: "Senior Program Designer", initials: "AC" },
     sections: [
       {
         paragraphs: [
@@ -820,7 +820,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-13",
     readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Tio Mahesa", role: "Lead Field Operations Manager", initials: "TM" },
     sections: [
       {
         paragraphs: [
@@ -947,7 +947,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-12",
     readTimeMin: 7,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy", initials: "SR" },
     sections: [
       {
         paragraphs: [
@@ -1037,7 +1037,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageAnnualGathering,
     publishDate: "2026-05-11",
     readTimeMin: 9,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Tio Mahesa", role: "Lead Field Operations Manager", initials: "TM" },
     sections: [
       {
         paragraphs: [
@@ -1138,7 +1138,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-10",
     readTimeMin: 7,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy", initials: "SR" },
     sections: [
       {
         paragraphs: [
@@ -1225,7 +1225,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageGlamping,
     publishDate: "2026-05-09",
     readTimeMin: 6,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Putri Anggraeni", role: "Client Success & Reporting Lead", initials: "PA" },
     sections: [
       {
         paragraphs: [
@@ -1310,7 +1310,7 @@ const INSIGHTS: Record<string, Insight> = {
     heroImage: IMAGES.packageAnnualGathering,
     publishDate: "2026-05-08",
     readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    author: { name: "Tio Mahesa", role: "Lead Field Operations Manager", initials: "TM" },
     sections: [
       {
         paragraphs: [

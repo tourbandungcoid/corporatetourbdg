@@ -67,6 +67,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       datePublished: article.publishDate,
       dateModified: article.publishDate,
       slug: `/insights/${article.slug}`,
+      author: { name: article.author.name, role: article.author.role },
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

@@ -132,9 +132,13 @@ export function Services() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
           <Link href="/services" className="link-underline">
             Lihat semua services
+            <ArrowRight size={14} className="arrow" />
+          </Link>
+          <Link href="/panduan-corporate-outing-bandung" className="link-underline">
+            Panduan lengkap corporate outing Bandung
             <ArrowRight size={14} className="arrow" />
           </Link>
         </div>
