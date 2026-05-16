@@ -19,6 +19,7 @@ import {
   localBusinessSchema,
   faqPageSchema,
   definedTermSetSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -53,6 +54,25 @@ export default function GlossaryPage() {
       { name: "Home", url: SITE.url },
       { name: "Glossary", url: `${SITE.url}/glossary` },
     ]),
+    articleSchema({
+      headline: "Glossary Corporate Event Bandung — 40+ Istilah untuk HR & Procurement",
+      description: "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
+      image: IMAGES.heroMain.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/glossary",
+      aboutService: "Corporate Event Education & Terminology",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "istilah corporate event indonesia",
+        "glossary event organizer bandung",
+        "definisi outing kantor team building mice",
+        "arti annual gathering executive offsite",
+        "terminologi event corporate hr procurement",
+        "apa itu outbound perusahaan",
+        "bots corporate event artinya",
+      ],
+    }),
     faqPageSchema(
       all.slice(0, 30).map((e) => ({
         question: `Apa itu ${e.term}?`,

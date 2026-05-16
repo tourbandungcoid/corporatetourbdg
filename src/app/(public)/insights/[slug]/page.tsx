@@ -69,6 +69,22 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
     related.push(...fallback);
   }
 
+  const CATEGORY_KEYWORDS: Record<string, string[]> = {
+    "Methodology":     ["metodologi corporate event bandung", "framework outing kantor", "pendekatan event organizer corporate"],
+    "Framework":       ["framework perencanaan corporate event", "panduan outing perusahaan", "corporate event design bandung"],
+    "HR Tactics":      ["strategi hr corporate event bandung", "tips hr outing kantor", "engagement karyawan event perusahaan"],
+    "Team Design":     ["desain program team building bandung", "aktivitas team bonding perusahaan", "format team building corporate"],
+    "Strategic Event": ["corporate gathering strategis bandung", "event perusahaan berdampak bisnis", "annual gathering strategic"],
+    "Risk Management": ["manajemen risiko corporate event", "kontingensi event outing kantor", "mitigasi risiko gathering perusahaan"],
+    "Format Design":   ["format corporate event bandung", "pilihan format outing kantor 2025", "desain program event perusahaan"],
+    "Program Design":  ["desain program corporate event", "susunan acara outing kantor", "rundown corporate gathering bandung"],
+    "Planning Guide":  ["panduan perencanaan outing kantor bandung", "checklist corporate event bandung", "langkah persiapan gathering perusahaan"],
+    "Vendor Selection":["tips memilih vendor corporate event bandung", "cara seleksi eo corporate bandung", "kriteria event organizer b2b"],
+    "Destination Guide":["destinasi outing kantor bandung", "lokasi corporate event jawa barat", "pilihan venue gathering bandung"],
+    "Venue Guide":     ["venue corporate event bandung", "villa gathering perusahaan bandung", "rekomendasi venue outing kantor jawa barat"],
+  };
+  const categoryKeywords = CATEGORY_KEYWORDS[article.category] ?? ["corporate event bandung", "outing kantor bandung", "team building jawa barat"];
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -81,6 +97,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       slug: `/insights/${article.slug}`,
       author: { name: article.author.name, role: article.author.role },
       aboutService: article.internalLinks?.[0]?.label ?? "Corporate Event Bandung",
+      keywords: categoryKeywords,
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

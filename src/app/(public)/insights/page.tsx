@@ -13,6 +13,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   itemListSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -50,6 +51,15 @@ export default async function InsightsIndexPage({
     ? all.filter((a) => a.category === category)
     : all;
 
+  const INSIGHT_AUTHOR_SLUGS: Record<string, string> = {
+    "Andre Pratama": "andre-pratama",
+    "Sinta Rahmadhani": "sinta-rahmadhani",
+    "Raden Bagus Wicaksono": "raden-bagus",
+    "Amelia Chandra": "amelia-chandra",
+    "Tio Mahesa": "tio-mahesa",
+    "Putri Anggraeni": "putri-anggraeni",
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -57,12 +67,33 @@ export default async function InsightsIndexPage({
       { name: "Home", url: SITE.url },
       { name: "Insights", url: `${SITE.url}/insights` },
     ]),
+    articleSchema({
+      headline: "Insights & Panduan Corporate Event Bandung — 14 Long-Form Guides",
+      description: "Editorial dan thought leadership untuk HR + corporate decision-makers — framework, data, dan insight soal corporate event design di Indonesia dari 400+ events delivered.",
+      image: IMAGES.heroMain.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/insights",
+      aboutService: "Corporate Event Design & Thought Leadership",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "panduan corporate event bandung",
+        "framework outing kantor indonesia",
+        "tips team building perusahaan",
+        "budget corporate gathering 2025",
+        "cara memilih vendor event organizer bandung",
+        "roi corporate outing",
+        "insight hr corporate event",
+      ],
+    }),
     {
       "@context": "https://schema.org",
       "@type": "Blog",
+      "@id": `${SITE.url}/insights#blog`,
       url: `${SITE.url}/insights`,
       name: "TourBandung Corporate Insights",
       inLanguage: "id-ID",
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       blogPost: all.slice(0, 10).map((a) => ({
         "@type": "BlogPosting",
         headline: a.title,
@@ -71,12 +102,14 @@ export default async function InsightsIndexPage({
         dateModified: a.publishDate,
         author: {
           "@type": "Person",
+          "@id": `${SITE.url}/team#${INSIGHT_AUTHOR_SLUGS[a.author.name] ?? a.author.name.toLowerCase().replace(/\s+/g, "-")}`,
           name: a.author.name,
           jobTitle: a.author.role,
-          worksFor: { "@type": "Organization", name: "7Summits Travel" },
+          worksFor: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "7Summits Travel", url: SITE.url },
         },
         articleSection: a.category,
         description: a.excerpt,
+        isPartOf: { "@id": `${SITE.url}/insights#blog` },
       })),
     },
     itemListSchema({

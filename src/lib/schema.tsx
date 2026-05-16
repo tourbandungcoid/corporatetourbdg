@@ -366,6 +366,7 @@ export function personSchema({
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${SITE.url}${slug}`,
     name,
     jobTitle,
     description,
@@ -373,6 +374,7 @@ export function personSchema({
     url: `${SITE.url}${slug}`,
     worksFor: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.legalName,
       url: SITE.url,
     },

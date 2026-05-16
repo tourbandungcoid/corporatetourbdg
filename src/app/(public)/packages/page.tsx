@@ -13,6 +13,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -45,6 +46,24 @@ export default function PackagesIndexPage() {
       { name: "Home", url: SITE.url },
       { name: "Packages", url: `${SITE.url}/packages` },
     ]),
+    articleSchema({
+      headline: "Paket Corporate Outing Bandung — 8 Sample Program Rp 1,5–6,5 Jt/Pax",
+      description: "8 sample corporate event packages dari TourBandung Corporate — starting point yang bisa di-customize. Range Rp 1.5–6.5 jt/pax. Free proposal dalam 24 jam.",
+      image: IMAGES.packageAnnualGathering.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/packages",
+      aboutService: "Corporate Event Packages Bandung",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "paket corporate outing bandung",
+        "harga paket team building bandung 2025",
+        "sample program company gathering jawa barat",
+        "biaya corporate event per pax bandung",
+        "paket annual gathering bandung murah berkualitas",
+        "contoh proposal outing kantor bandung",
+      ],
+    }),
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",

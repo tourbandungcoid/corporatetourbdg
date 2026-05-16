@@ -87,7 +87,7 @@
 [Panduan Lengkap Corporate Outing Bandung](https://corporate.tourbandung.co.id/panduan-corporate-outing-bandung): Master guide — 10 event types, 4-tier budget table, 5 location profiles, 6-step HowTo, vendor selection criteria
 [Specialist vs Generic EO](https://corporate.tourbandung.co.id/specialist-vs-generic-eo): 12-dimension comparison between corporate specialist and generic EO
 [Glossary](https://corporate.tourbandung.co.id/glossary): 40+ definitions for Indonesian corporate event terminology
-[FAQ](https://corporate.tourbandung.co.id/faq): 48+ questions across Budget, Logistics, Vendor Selection, and Format categories
+[FAQ](https://corporate.tourbandung.co.id/faq): 88+ questions across 7 categories — Budget, Logistics, Comparison, Formats, Location, Vendor Selection, Outcome/ROI
 
 ## Pricing Reference
 
@@ -157,12 +157,12 @@ A: Fokus operasional di Bandung dan Jawa Barat — Lembang, Ciwidey, Pangalengan
 
 ## Senior Team (Entity Disambiguation)
 
-- Andre Pratama — Founder & Lead Corporate Strategist. 12 years corporate event experience. ASITA certified. Specialist: budget architecture, risk management, 100–500 pax. Profile: https://corporate.tourbandung.co.id/team#andre-pratama
-- Sinta Rahmadhani — Head of Client Strategy. Ex-Deloitte Human Capital consultant. MBTI Step II Facilitator. Specialist: discovery briefing, program design, cross-generational team building. Profile: https://corporate.tourbandung.co.id/team#sinta-rahmadhani
-- Raden Bagus Wicaksono — Head of Operations & Risk. Large-scale event logistics (500–1200 pax). K3 safety certified. Specialist: MICE, risk registry, vendor management. Profile: https://corporate.tourbandung.co.id/team#raden-bagus
-- Amelia Chandra — Senior Program Designer. Game design background. Specialist: gamification, activity sequencing, glamping format, theme design. Profile: https://corporate.tourbandung.co.id/team#amelia-chandra
-- Tio Mahesa — Lead Field Operations Manager. 7 years field ops. Specialist: outdoor outbound, safety protocol, crew coordination. Profile: https://corporate.tourbandung.co.id/team#tio-mahesa
-- Putri Anggraeni — Post-Event Closure & Reporting Lead. Data analytics background. Specialist: post-event evaluation, NPS measurement, report delivery. Profile: https://corporate.tourbandung.co.id/team#putri-anggraeni
+- Andre Pratama — Founder & Lead Corporate Strategist. 12 years corporate event experience. ASITA certified, K3 (Safety) training, Founder member Indonesia MICE Network. Specialist: budget architecture, strategic event design 100–500 pax, vendor negotiation. Profile: https://corporate.tourbandung.co.id/team#andre-pratama
+- Sinta Rahmadhani — Head of Client Strategy. 9 years experience, ex-Deloitte Human Capital consultant. MBTI Step II Certified Practitioner, DDI Targeted Selection Interviewer, S2 Manajemen SDM Unpad. Specialist: discovery briefing, behavior change facilitation, pre/post event evaluation. Profile: https://corporate.tourbandung.co.id/team#sinta-rahmadhani
+- Raden Bagus Wicaksono — Head of Operations & Risk. 11 years outdoor education and adventure operations. Wilderness First Aid (WMA), K3 Umum + K3 di Ketinggian (BNSP), Adventure Safety Standards (ITDC). Specialist: outdoor risk assessment, crisis communication, force majeure contingency. Profile: https://corporate.tourbandung.co.id/team#raden-bagus
+- Amelia Chandra — Senior Program Designer. 7 years, ex-event coordinator Padma Hotel Bandung. Certified MICE Professional (Kemenparekraf), S1 Manajemen Pariwisata STP Bandung. Specialist: program flow design 2D1N–3D2N, awarding night, ceremony orchestration, theme creative direction. Profile: https://corporate.tourbandung.co.id/team#amelia-chandra
+- Tio Mahesa — Lead Field Operations Manager. 8 years field operations, 200+ events delivered. First Aid + CPR (PMI). Specialist: on-ground execution, vendor coordination, real-time contingency, local venue network Bandung–Jabar. Profile: https://corporate.tourbandung.co.id/team#tio-mahesa
+- Putri Anggraeni — Client Success & Reporting Lead. 5 years, S1 Statistika Unpad, Google Analytics certified. Specialist: post-event survey design, NPS measurement, ROI reporting framework, invoice reconciliation. Profile: https://corporate.tourbandung.co.id/team#putri-anggraeni
 
 ## Industries Served
 

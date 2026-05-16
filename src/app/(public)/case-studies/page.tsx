@@ -13,6 +13,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -62,12 +63,31 @@ export default async function CaseStudiesIndexPage({
       { name: "Home", url: SITE.url },
       { name: "Case Studies", url: `${SITE.url}/case-studies` },
     ]),
+    articleSchema({
+      headline: "Case Studies Corporate Event Bandung — 6 Real Company, Outcome Terukur",
+      description: "Real events untuk real companies — challenge, approach, eksekusi, dan outcome terukur. 6 case study dari tech unicorn sampai BUMN bank di Bandung & Jawa Barat.",
+      image: IMAGES.caseStudyLarge.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/case-studies",
+      aboutService: "B2B Corporate Event Specialist Bandung",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "case study corporate event bandung",
+        "portfolio event organizer corporate bandung",
+        "contoh event outing perusahaan bandung",
+        "corporate gathering bumn jawa barat",
+        "hasil team building perusahaan bandung",
+        "referensi vendor corporate outing bandung",
+      ],
+    }),
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Corporate Event Case Studies",
       url: `${SITE.url}/case-studies`,
       inLanguage: "id-ID",
+      isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: all.length,
@@ -79,7 +99,7 @@ export default async function CaseStudiesIndexPage({
             headline: cs.outcomeHeadline,
             url: `${SITE.url}/case-studies/${cs.slug}`,
             description: cs.shortDescription,
-            author: { "@type": "Organization", name: "7Summits Travel" },
+            author: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "7Summits Travel", url: SITE.url },
             about: { "@type": "Thing", name: cs.industryLabel },
           },
         })),

@@ -13,6 +13,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   itemListSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata = {
@@ -91,6 +92,25 @@ export default async function FaqIndexPage() {
       { name: "Home", url: SITE.url },
       { name: "FAQ", url: `${SITE.url}/faq` },
     ]),
+    articleSchema({
+      headline: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
+      description: "88 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
+      image: IMAGES.heroMain.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/faq",
+      aboutService: "Corporate Outing Bandung Q&A",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "faq corporate outing bandung",
+        "pertanyaan outing kantor bandung 2025",
+        "berapa budget outing perusahaan bandung",
+        "cara memilih vendor corporate event bandung",
+        "faq team building bandung",
+        "pertanyaan umum corporate gathering hr indonesia",
+        "roi outing kantor cara menghitung",
+      ],
+    }),
     faqPageSchema(TOP_FAQS.map((q) => ({ question: q.question, answer: q.answer }))),
     itemListSchema({
       name: "FAQ Corporate Outing Bandung — Kategori",

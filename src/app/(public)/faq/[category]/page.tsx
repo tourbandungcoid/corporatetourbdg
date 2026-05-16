@@ -59,6 +59,16 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     outcome:    { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
   };
 
+  const FAQ_KEYWORDS: Record<string, string[]> = {
+    budget:     ["budget outing kantor bandung 2025", "estimasi biaya corporate event bandung", "harga team building per pax bandung", "berapa biaya gathering perusahaan jawa barat"],
+    logistics:  ["logistik corporate event bandung", "timeline persiapan outing kantor", "proses pemesanan event organizer bandung", "cara booking vendor corporate event"],
+    comparison: ["perbedaan outing kantor dan corporate gathering", "tim building vs company retreat", "memilih format corporate event bandung", "beda eo specialist dan travel agent corporate"],
+    formats:    ["format outing kantor bandung", "pilihan program team building perusahaan", "jenis corporate event indonesia", "format gathering karyawan 2025"],
+    location:   ["lokasi corporate event bandung", "destinasi outing kantor jawa barat", "rekomendasi tempat gathering perusahaan bandung", "lembang ciwidey venue corporate"],
+    vendor:     ["cara memilih vendor corporate event bandung", "tips seleksi eo corporate", "checklist vendor event organizer", "ciri vendor corporate event terpercaya bandung"],
+    outcome:    ["roi corporate outing", "cara mengukur hasil team building", "impact outing kantor pada produktivitas", "justifikasi budget gathering ke cfo"],
+  };
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -70,6 +80,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
       dateModified: "2026-05-16",
       slug: `/faq/${cat.slug}`,
       author: FAQ_AUTHORS[cat.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: FAQ_KEYWORDS[cat.slug] ?? ["faq corporate event bandung", "pertanyaan outing kantor", "corporate outing bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

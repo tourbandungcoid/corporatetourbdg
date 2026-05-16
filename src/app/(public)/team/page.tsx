@@ -14,6 +14,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   personSchema,
+  articleSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -47,6 +48,24 @@ export default function TeamPage() {
       { name: "Home", url: SITE.url },
       { name: "Team", url: `${SITE.url}/team` },
     ]),
+    articleSchema({
+      headline: "Senior Planner Team — 6 Specialist Corporate Event Bandung",
+      description: "Senior planner team 7Summits Travel — 6 specialist dengan total 50+ tahun pengalaman corporate event di Bandung & Jawa Barat. Real people, real credentials, real accountability.",
+      image: IMAGES.groupShot1.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/team",
+      aboutService: "Senior Corporate Event Planner Team Bandung",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      keywords: [
+        "senior planner corporate event bandung",
+        "tim event organizer corporate bandung",
+        "profil planner outing kantor jawa barat",
+        "dedicated project manager corporate event",
+        "pengalaman vendor corporate event bandung 2018",
+        "team building specialist bandung bersertifikat",
+      ],
+    }),
     ...TEAM.map((m) =>
       personSchema({
         name: m.name,
