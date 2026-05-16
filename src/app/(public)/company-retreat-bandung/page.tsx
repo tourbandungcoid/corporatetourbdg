@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     description: "Multi-day company retreat untuk strategic deep work di Bandung & Jawa Barat.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#sinta-rahmadhani`],
+    section: "Company Retreat",
+    tags: ["company retreat bandung", "corporate retreat jawa barat", "strategic retreat", "multi-day retreat bandung"],
     images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
   twitter: {
@@ -106,6 +111,13 @@ export default function CompanyRetreatBandungPage() {
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Company Retreat Bandung",
       keywords: ["company retreat bandung", "corporate retreat bandung", "paket retreat perusahaan bandung", "team retreat bandung", "strategy retreat perusahaan jawa barat", "company retreat lembang"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Corporate Retreat", url: `${SITE.url}/services/corporate-retreat`, id: `${SITE.url}/services/corporate-retreat#service` },
+        { type: "WebPage", name: "Executive Offsite Bandung", url: `${SITE.url}/executive-offsite-bandung` },
+        { type: "WebPage", name: "Villa Gathering Bandung", url: `${SITE.url}/villa-gathering-bandung` },
+        { type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+      ],
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Company Retreat Bandung", url: URL }]),
     serviceSchema({

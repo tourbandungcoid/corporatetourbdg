@@ -39,6 +39,11 @@ export const metadata: Metadata = {
       "Employee gathering yang measurable: engagement, retention, cultural reinforcement.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#sinta-rahmadhani`],
+    section: "Employee Gathering",
+    tags: ["employee gathering bandung", "gathering karyawan bandung", "hr event bandung", "jawa barat"],
     images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
   twitter: {
@@ -168,6 +173,13 @@ export default function EmployeeGatheringBandungPage() {
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Employee Gathering Bandung",
       keywords: ["employee gathering bandung", "gathering karyawan bandung", "event gathering pegawai bandung", "EO employee gathering bandung", "paket gathering karyawan perusahaan bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Employee Gathering", url: `${SITE.url}/services/employee-gathering`, id: `${SITE.url}/services/employee-gathering#service` },
+        { type: "WebPage", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "WebPage", name: "Pricing Transparent", url: `${SITE.url}/pricing` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

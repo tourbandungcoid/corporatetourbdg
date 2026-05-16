@@ -38,6 +38,11 @@ export const metadata: Metadata = {
       "Structured team building untuk perusahaan Indonesia di Bandung. 400+ events delivered.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#sinta-rahmadhani`],
+    section: "Team Building",
+    tags: ["team building bandung", "outbound perusahaan bandung", "activity team building", "jawa barat"],
     images: [{ url: IMAGES.caseStudyTeamBuilding.src, width: 1200, height: 630, alt: IMAGES.caseStudyTeamBuilding.alt }],
   },
   twitter: {
@@ -201,6 +206,13 @@ export default function TeamBuildingBandungPage() {
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Team Building Bandung",
       keywords: ["team building bandung", "team building perusahaan bandung", "outbound team building bandung", "games team building kantor", "vendor team building bandung", "program team building bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Team Building", url: `${SITE.url}/services/team-building`, id: `${SITE.url}/services/team-building#service` },
+        { type: "WebPage", name: "Packages — Sample Programs", url: `${SITE.url}/packages` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "WebPage", name: "Methodology Framework", url: `${SITE.url}/methodology` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

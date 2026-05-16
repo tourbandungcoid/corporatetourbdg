@@ -38,6 +38,11 @@ export const metadata: Metadata = {
       "Private villa setting untuk corporate outing 30-300 pax di Bandung & Lembang.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#amelia-chandra`],
+    section: "Villa Gathering",
+    tags: ["villa gathering bandung", "villa corporate outing lembang", "venue villa gathering bandung", "private villa bandung"],
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
   twitter: {
@@ -158,6 +163,13 @@ export default function VillaGatheringBandungPage() {
       author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Villa Gathering Bandung",
       keywords: ["villa gathering bandung", "sewa villa corporate bandung", "villa outbound bandung", "villa gathering lembang", "villa private gathering perusahaan bandung", "paket villa gathering bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+        { type: "WebPage", name: "Glamping Corporate Bandung", url: `${SITE.url}/glamping-corporate-bandung` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "Place", name: "Lembang, Jawa Barat" },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

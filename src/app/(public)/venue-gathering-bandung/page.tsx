@@ -33,6 +33,11 @@ export const metadata: Metadata = {
       "Panduan lengkap venue gathering korporat di Bandung. Hotel ballroom, villa private, resort, outdoor. Kapasitas dan estimasi budget.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#raden-bagus-wicaksono`],
+    section: "Venue Gathering",
+    tags: ["venue gathering bandung", "venue corporate event bandung", "hotel gathering bandung", "lokasi outing kantor bandung"],
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
   twitter: {
@@ -258,6 +263,13 @@ export default function VenueGatheringBandungPage() {
       author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
       aboutService: "Venue Gathering Bandung",
       keywords: ["venue gathering bandung", "tempat gathering perusahaan bandung", "venue corporate event bandung", "sewa venue gathering bandung", "rekomendasi venue gathering bandung", "venue outbound corporate lembang"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Villa Gathering Bandung", url: `${SITE.url}/villa-gathering-bandung` },
+        { type: "WebPage", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "Place", name: "Bandung, Jawa Barat" },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

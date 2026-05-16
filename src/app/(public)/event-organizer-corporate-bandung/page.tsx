@@ -34,6 +34,11 @@ export const metadata: Metadata = {
       "Specialist B2B corporate event di Bandung. Bukan generic EO. 400+ events, 100+ perusahaan Indonesia. Proposal dalam 24 jam.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Event Organizer Corporate",
+    tags: ["event organizer corporate bandung", "eo corporate bandung", "specialist b2b event bandung", "vendor event perusahaan bandung"],
     images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
   twitter: {
@@ -145,6 +150,13 @@ export default function EventOrganizerCorporateBandungPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Event Organizer Corporate Bandung",
       keywords: ["event organizer corporate bandung", "EO corporate bandung", "vendor corporate event bandung", "jasa event organizer perusahaan bandung", "EO perusahaan bandung terpercaya"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` },
+        { type: "WebPage", name: "B2B Corporate Event Specialist", url: `${SITE.url}/b2b-corporate-event-specialist-bandung` },
+        { type: "WebPage", name: "Services Overview", url: `${SITE.url}/services` },
+        { type: "WebPage", name: "Case Studies", url: `${SITE.url}/case-studies` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

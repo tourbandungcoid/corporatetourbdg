@@ -38,6 +38,11 @@ export const metadata: Metadata = {
       "Premium glamping untuk corporate event. Differentiator dari hotel atau villa biasa.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#amelia-chandra`],
+    section: "Glamping Corporate",
+    tags: ["glamping corporate bandung", "glamping lembang corporate", "outdoor corporate event", "glamping jawa barat"],
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
   twitter: {
@@ -183,6 +188,13 @@ export default function GlampingCorporateBandungPage() {
       author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Glamping Corporate Bandung",
       keywords: ["glamping corporate bandung", "glamping perusahaan bandung", "glamping outing kantor bandung", "sewa glamping corporate ciwidey", "glamping team building bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Glamping Corporate", url: `${SITE.url}/services/glamping-corporate`, id: `${SITE.url}/services/glamping-corporate#service` },
+        { type: "WebPage", name: "Villa Gathering Bandung", url: `${SITE.url}/villa-gathering-bandung` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "Place", name: "Lembang, Jawa Barat" },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

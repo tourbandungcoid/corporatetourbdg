@@ -34,6 +34,11 @@ export const metadata: Metadata = {
       "Specialist MICE Bandung: meeting, incentive, conference, exhibition. Stage AV, multi-session, hybrid. 400+ events delivered.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#raden-bagus-wicaksono`],
+    section: "MICE",
+    tags: ["mice organizer bandung", "conference organizer bandung", "event organizer mice bandung", "mice corporate jawa barat"],
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
   twitter: {
@@ -179,6 +184,13 @@ export default function MiceOrganizerBandungPage() {
       author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
       aboutService: "MICE Organizer Bandung",
       keywords: ["mice organizer bandung", "event organizer mice bandung", "paket mice bandung", "konferensi perusahaan bandung", "incentive meeting conference exhibition bandung", "vendor mice bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "MICE", url: `${SITE.url}/services/mice`, id: `${SITE.url}/services/mice#service` },
+        { type: "WebPage", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+        { type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+        { type: "WebPage", name: "Event Organizer Corporate Bandung", url: `${SITE.url}/event-organizer-corporate-bandung` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

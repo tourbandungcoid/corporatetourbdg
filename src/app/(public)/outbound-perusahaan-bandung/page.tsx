@@ -38,6 +38,11 @@ export const metadata: Metadata = {
       "Outdoor adventure outbound untuk corporate dengan safety standards profesional.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#tio-mahesa`],
+    section: "Outbound Perusahaan",
+    tags: ["outbound perusahaan bandung", "outbound corporate bandung", "adventure team building bandung", "outbound outdoor jawa barat"],
     images: [{ url: IMAGES.offroad1.src, width: 1200, height: 630, alt: IMAGES.offroad1.alt }],
   },
   twitter: {
@@ -172,6 +177,13 @@ export default function OutboundPerusahaanBandungPage() {
       author: { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
       aboutService: "Outbound Perusahaan Bandung",
       keywords: ["outbound perusahaan bandung", "outbound kantor bandung", "outbound corporate bandung", "paket outbound bandung", "vendor outbound perusahaan bandung", "outbound team building lembang"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Team Building", url: `${SITE.url}/services/team-building`, id: `${SITE.url}/services/team-building#service` },
+        { type: "WebPage", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "Place", name: "Lembang, Jawa Barat" },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

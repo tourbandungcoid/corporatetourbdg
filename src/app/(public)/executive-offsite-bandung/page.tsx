@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     description: "Discreet executive offsite untuk strategic decision-making di Bandung.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Executive Offsite",
+    tags: ["executive offsite bandung", "c-suite strategy session", "corporate retreat premium jawa barat", "offsite bandung"],
     images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
   twitter: {
@@ -107,6 +112,13 @@ export default function ExecutiveOffsiteBandungPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Executive Offsite Bandung",
       keywords: ["executive offsite bandung", "c-suite offsite bandung", "strategy offsite direksi bandung", "strategic retreat eksekutif bandung", "private offsite executive jawa barat"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Executive Offsite", url: `${SITE.url}/services/executive-offsite`, id: `${SITE.url}/services/executive-offsite#service` },
+        { type: "WebPage", name: "Leadership Retreat Jawa Barat", url: `${SITE.url}/leadership-retreat-jawa-barat` },
+        { type: "WebPage", name: "Company Retreat Bandung", url: `${SITE.url}/company-retreat-bandung` },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team` },
+      ],
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Executive Offsite Bandung", url: URL }]),
     serviceSchema({

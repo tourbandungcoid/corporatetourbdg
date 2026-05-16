@@ -38,6 +38,11 @@ export const metadata: Metadata = {
       "Premium annual gathering untuk perusahaan dengan awarding ceremony, gala dinner, dan multi-day program.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Corporate Gathering",
+    tags: ["corporate gathering bandung", "company gathering", "annual event perusahaan", "jawa barat"],
     images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
   twitter: {
@@ -156,6 +161,13 @@ export default function CorporateGatheringBandungPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Gathering Bandung",
       keywords: ["corporate gathering bandung", "gathering perusahaan bandung", "annual gathering bandung", "EO corporate gathering bandung", "paket gathering perusahaan bandung", "venue corporate gathering bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Company Gathering", url: `${SITE.url}/services/company-gathering`, id: `${SITE.url}/services/company-gathering#service` },
+        { type: "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+        { type: "WebPage", name: "Pricing Transparent", url: `${SITE.url}/pricing` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

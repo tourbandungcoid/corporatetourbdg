@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     description: "Premium leadership development untuk senior management Indonesia.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#sinta-rahmadhani`],
+    section: "Leadership Retreat",
+    tags: ["leadership retreat jawa barat", "leadership development bandung", "senior management program", "executive development jawa barat"],
     images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
   twitter: {
@@ -106,6 +111,13 @@ export default function LeadershipRetreatJawaBaratPage() {
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Leadership Retreat Jawa Barat",
       keywords: ["leadership retreat jawa barat", "leadership retreat bandung", "program leadership perusahaan jawa barat", "executive leadership camp bandung", "senior management retreat jawa barat"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Leadership Camp", url: `${SITE.url}/services/leadership-camp`, id: `${SITE.url}/services/leadership-camp#service` },
+        { type: "WebPage", name: "Executive Offsite Bandung", url: `${SITE.url}/executive-offsite-bandung` },
+        { type: "WebPage", name: "Company Retreat Bandung", url: `${SITE.url}/company-retreat-bandung` },
+        { type: "WebPage", name: "Methodology Framework", url: `${SITE.url}/methodology` },
+      ],
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Leadership Retreat Jawa Barat", url: URL }]),
     serviceSchema({

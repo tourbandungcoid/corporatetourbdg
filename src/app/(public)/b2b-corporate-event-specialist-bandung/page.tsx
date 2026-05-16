@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "B2B Corporate Event",
+    tags: ["b2b corporate event bandung", "vendor corporate event bandung", "eo corporate specialist bandung", "hr procurement vendor event"],
     images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
   twitter: {
@@ -136,6 +141,13 @@ export default function B2BSpecialistPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "B2B Corporate Event Specialist Bandung",
       keywords: ["b2b corporate event bandung", "corporate event specialist bandung", "spesialis event perusahaan bandung", "vendor b2b event bandung", "event specialist corporate bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` },
+        { type: "WebPage", name: "Event Organizer Corporate Bandung", url: `${SITE.url}/event-organizer-corporate-bandung` },
+        { type: "WebPage", name: "Services Overview", url: `${SITE.url}/services` },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team` },
+      ],
     }),
     serviceSchema({
       name: "B2B Corporate Event Specialist Bandung",

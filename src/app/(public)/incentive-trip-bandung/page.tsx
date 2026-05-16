@@ -34,6 +34,11 @@ export const metadata: Metadata = {
       "Program incentive trip yang memorable untuk tim terbaik lo. Premium accommodation, exclusive activities, gala recognition dinner.",
     url: URL,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Incentive Trip",
+    tags: ["incentive trip bandung", "program reward karyawan bandung", "incentive corporate bandung", "reward top performer jawa barat"],
     images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
   twitter: {
@@ -153,6 +158,13 @@ export default function IncentiveTripBandungPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Incentive Trip Bandung",
       keywords: ["incentive trip bandung", "paket incentive trip bandung", "program insentif karyawan bandung", "reward trip top performer bandung", "incentive travel program bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Service", name: "Incentive Trip", url: `${SITE.url}/services/incentive-trip`, id: `${SITE.url}/services/incentive-trip#service` },
+        { type: "WebPage", name: "Annual Company Trip", url: `${SITE.url}/services/annual-company-trip` },
+        { type: "WebPage", name: "Packages — Sample Programs", url: `${SITE.url}/packages` },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team` },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
