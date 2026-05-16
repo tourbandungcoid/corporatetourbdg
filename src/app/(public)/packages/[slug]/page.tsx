@@ -18,6 +18,8 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 type Params = Promise<{ slug: string }>;
@@ -110,12 +112,14 @@ export default async function PackageDetailPage({
     ]),
     articleSchema({
       headline: `${pkg.title} — ${pkg.startingPrice}`,
+      alternativeHeadline: `${pkg.subtitle} — ${pkg.paxRange}, ${pkg.duration}, Mulai ${pkg.startingPrice}`,
       description: `${pkg.subtitle}. ${pkg.paxRange} · ${pkg.duration}. Starting ${pkg.startingPrice}.`,
       image: pkg.image.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
       slug: `/packages/${pkg.slug}`,
       aboutService: `${pkg.title} Bandung`,
+      aboutServiceUrl: `${SITE.url}/outing-kantor-bandung`,
       author: PACKAGE_AUTHORS[pkg.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: PACKAGE_KEYWORDS[pkg.slug] ?? [`paket ${pkg.title.toLowerCase()} bandung`, "program corporate event jawa barat", "harga outing kantor bandung"],
       mentions: [
@@ -149,7 +153,22 @@ export default async function PackageDetailPage({
           { "@type": "AdministrativeArea", name: "Jawa Barat", sameAs: "https://www.wikidata.org/wiki/Q3812" },
         ],
       },
-    }
+    },
+    howToSchema({
+      pageUrl: url,
+      name: `Cara Booking Paket ${pkg.title} TourBandung Corporate`,
+      description: `3 langkah proses dari inquiry hingga konfirmasi paket ${pkg.title} untuk tim Anda.`,
+      steps: [
+        { name: "Request Proposal via Form atau WhatsApp", text: "Isi form request proposal di /proposal/request atau chat WhatsApp langsung. Sertakan: jumlah pax, tanggal rencana, dan catatan khusus (dietary, fisik terbatas, dll). Proposal custom dengan breakdown lengkap akan dikirim dalam 24 jam." },
+        { name: "Discovery Brief Call (Opsional tapi Direkomendasikan)", text: "Senior planner kami akan hubungi untuk call 15–30 menit guna memastikan paket ini fit objective dan constraint Anda. Jika perlu customisasi (tambah/kurangi aktivitas, ganti venue), revisi proposal bisa siap dalam 1–2 hari." },
+        { name: "Sign PKS dan DP untuk Lock Date", text: "Setelah sepakat dengan proposal, tanda tangan PKS dan transfer DP 30–50% untuk lock tanggal event dan vendor. Pelunasan 50–70% dilakukan H-14 sebelum event. Faktur pajak tersedia untuk klien yang membutuhkan." },
+      ],
+    }),
+    faqPageSchema([
+      { question: `Berapa kapasitas paket ${pkg.title}?`, answer: `Paket ${pkg.title} dirancang untuk ${pkg.paxRange}. Jika jumlah peserta Anda lebih atau kurang dari range ini, tim kami bisa adjust program — hubungi kami untuk minta proposal custom yang sesuai skala tim Anda.` },
+      { question: `Apakah paket ${pkg.title} bisa dikustomisasi?`, answer: `Ya — paket ini adalah starting point yang bisa di-customize 100%: tambah/kurangi aktivitas, ganti venue, ubah format F&B, atau gabung dengan program lain. Request proposal custom dan senior planner akan design ulang sesuai brief Anda.` },
+      { question: `Berapa harga total paket ${pkg.title} untuk [X] orang?`, answer: `Harga mulai ${pkg.startingPrice}. Untuk estimasi total, kalikan harga per pax dengan jumlah peserta Anda lalu tambah 10–15% untuk contingency. Harga final bergantung pada tanggal event, venue pilihan, dan customisasi tambahan. Request proposal untuk angka yang akurat.` },
+    ], url)
   );
 
   return (
