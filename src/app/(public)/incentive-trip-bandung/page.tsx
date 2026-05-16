@@ -144,6 +144,7 @@ export default function IncentiveTripBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
       slug: SLUG,
+      aboutService: "Incentive Trip Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

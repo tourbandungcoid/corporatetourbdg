@@ -162,6 +162,7 @@ export default function OutboundPerusahaanBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: SLUG,
+      aboutService: "Outbound Perusahaan Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

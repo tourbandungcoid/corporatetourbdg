@@ -191,6 +191,7 @@ export default function TeamBuildingBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: SLUG,
+      aboutService: "Team Building Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

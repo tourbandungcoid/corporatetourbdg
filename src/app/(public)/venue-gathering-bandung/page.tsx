@@ -249,6 +249,7 @@ export default function VenueGatheringBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
       slug: SLUG,
+      aboutService: "Venue Gathering Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

@@ -170,6 +170,7 @@ export default function MiceOrganizerBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
       slug: SLUG,
+      aboutService: "MICE Organizer Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

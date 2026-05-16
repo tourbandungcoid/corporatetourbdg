@@ -216,6 +216,7 @@ export default function OutingKantorBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: SLUG,
+      aboutService: "Outing Kantor Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

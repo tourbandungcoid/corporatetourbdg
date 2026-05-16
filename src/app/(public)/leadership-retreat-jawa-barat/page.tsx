@@ -96,6 +96,7 @@ export default function LeadershipRetreatJawaBaratPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: SLUG,
+      aboutService: "Leadership Retreat Jawa Barat",
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Leadership Retreat Jawa Barat", url: URL }]),
     serviceSchema({

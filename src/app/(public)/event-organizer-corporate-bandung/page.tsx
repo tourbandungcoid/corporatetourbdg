@@ -136,6 +136,7 @@ export default function EventOrganizerCorporateBandungPage() {
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
       slug: SLUG,
+      aboutService: "Event Organizer Corporate Bandung",
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

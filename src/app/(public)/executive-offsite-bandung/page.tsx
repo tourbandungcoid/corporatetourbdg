@@ -97,6 +97,7 @@ export default function ExecutiveOffsiteBandungPage() {
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
       slug: SLUG,
+      aboutService: "Executive Offsite Bandung",
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Executive Offsite Bandung", url: URL }]),
     serviceSchema({

@@ -125,6 +125,7 @@ export default function B2BSpecialistPage() {
       datePublished: "2026-05-15",
       dateModified: "2026-05-15",
       slug: PATH,
+      aboutService: "B2B Corporate Event Specialist Bandung",
     }),
     serviceSchema({
       name: "B2B Corporate Event Specialist Bandung",
