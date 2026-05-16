@@ -31,6 +31,21 @@ export function organizationSchema() {
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
     },
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 6 },
+    knowsAbout: [
+      "Corporate outing Bandung",
+      "Team building Bandung",
+      "Corporate gathering Bandung",
+      "Executive offsite Jawa Barat",
+      "Incentive trip Bandung",
+      "MICE organizer Bandung",
+      "Company retreat Jawa Barat",
+      "Glamping corporate Bandung",
+      "B2B corporate event planning",
+      "Corporate event budgeting Indonesia",
+      "Venue gathering Bandung",
+      "Outbound perusahaan Bandung",
+    ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
@@ -206,6 +221,15 @@ export function serviceSchema({
       reviewCount: REVIEWS.googleReviewCount,
       bestRating: 5,
       worstRating: 1,
+    },
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE.url}/proposal/request`,
+        actionPlatform: ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+      },
+      result: { "@type": "Reservation", name: "Corporate Event Proposal Request" },
     },
   };
 }

@@ -16,11 +16,11 @@ import {
 export const metadata = {
   title: "FAQ",
   description:
-    "48+ pertanyaan detail dalam 4 kategori — budget, logistics, comparison, formats. Update 2026. Verified by senior planner.",
+    "88 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
   alternates: { canonical: `${SITE.url}/faq` },
   openGraph: {
     title: "FAQ — TourBandung Corporate",
-    description: "48+ pertanyaan paling sering dari HR Indonesia dalam 4 kategori.",
+    description: "88 pertanyaan paling sering dari HR Indonesia dalam 7 kategori — budget, vendor, lokasi, ROI, dan lebih.",
     url: `${SITE.url}/faq`,
     type: "website" as const,
   },
@@ -50,6 +50,24 @@ const TOP_FAQS = [
     answer:
       "6 format paling sering: 1-day quarterly refresh, 1D2N glamping bonding, 2D1N standard annual employee gathering, 3D2N premium corporate gathering, hybrid outbound+indoor, dan family day corporate.",
     href: "/faq/formats#q1",
+  },
+  {
+    question: "Area mana di Bandung yang paling direkomendasikan untuk corporate outing?",
+    answer:
+      "Lembang (30–45 mnt dari kota): villa private, alam pegunungan, cocok untuk 50–500 pax. Ciwidey (60–90 mnt): glamping, alam terbuka, lebih adventurous. Bandung Kota: hotel bintang 4–5 dengan ballroom untuk MICE atau gathering besar. Pilihan area bergantung pada format event, pax, dan budget.",
+    href: "/faq/location#q1",
+  },
+  {
+    question: "Bagaimana cara memilih vendor EO corporate yang aman untuk procurement perusahaan?",
+    answer:
+      "12 poin checklist vendor: (1) NPWP aktif, (2) rekening perusahaan, (3) track record B2B terdokumentasi, (4) dedicated PM, (5) risk register, (6) breakdown line-item, (7) referensi klien yang bisa dihubungi, (8) post-event report, (9) contract clause jelas, (10) asuransi event, (11) tidak minta full payment di muka, (12) responsif dalam 24 jam working hours.",
+    href: "/faq/vendor#q1",
+  },
+  {
+    question: "Bagaimana cara mengukur ROI corporate outing untuk justifikasi ke CFO?",
+    answer:
+      "3-layer ROI framework: (1) Employee Retention — hitung biaya rekrutmen yang dihindari (rata-rata 6–9 bulan gaji); (2) Productivity — Gallup data: engaged employees 21% lebih produktif; (3) Collaboration — pre/post NPS internal, kualitas cross-team project 3 bulan post-event. Bandingkan biaya outing dengan cost turnover 1 orang: biasanya ROI positif jika retain 1–2 orang.",
+    href: "/faq/outcome#q1",
   },
 ];
 

@@ -60,7 +60,12 @@ export default async function InsightsIndexPage({
         url: `${SITE.url}/insights/${a.slug}`,
         datePublished: a.publishDate,
         dateModified: a.publishDate,
-        author: { "@type": "Organization", name: a.author.role },
+        author: {
+          "@type": "Person",
+          name: a.author.name,
+          jobTitle: a.author.role,
+          worksFor: { "@type": "Organization", name: "7Summits Travel" },
+        },
         articleSection: a.category,
         description: a.excerpt,
       })),
