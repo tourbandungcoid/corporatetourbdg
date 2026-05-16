@@ -182,6 +182,7 @@ export default function GlampingCorporateBandungPage() {
       slug: SLUG,
       author: { name: "Amelia Chandra", role: "Senior Program Designer" },
       aboutService: "Glamping Corporate Bandung",
+      keywords: ["glamping corporate bandung", "glamping perusahaan bandung", "glamping outing kantor bandung", "sewa glamping corporate ciwidey", "glamping team building bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

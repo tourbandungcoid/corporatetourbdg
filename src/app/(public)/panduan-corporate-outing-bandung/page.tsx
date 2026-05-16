@@ -200,6 +200,8 @@ export default function PanduanCorporateOutingPage() {
       dateModified: "2026-05-16",
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      aboutService: "Corporate Outing Bandung",
+      keywords: ["panduan corporate outing bandung", "cara buat outing kantor bandung", "jenis corporate outing bandung", "budget corporate outing bandung", "tips pilih vendor corporate outing", "corporate outing bandung 2026"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
