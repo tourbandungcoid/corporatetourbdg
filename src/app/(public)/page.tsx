@@ -19,6 +19,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -123,7 +124,30 @@ export default function HomePage() {
         { "@type": "WebPage", "@id": `${SITE.url}/b2b-corporate-event-specialist-bandung`, name: "B2B Corporate Event Specialist Bandung", url: `${SITE.url}/b2b-corporate-event-specialist-bandung` },
       ],
     },
-    faqPageSchema(TOP_FAQS, SITE.url)
+    faqPageSchema(TOP_FAQS, SITE.url),
+    howToSchema({
+      pageUrl: SITE.url,
+      name: "Cara Mulai Merencanakan Corporate Outing di Bandung dengan TourBandung Corporate",
+      description: "4 langkah dari kebutuhan awal hingga event terlaksana — proses yang kami pakai untuk 400+ corporate events di Bandung & Jawa Barat.",
+      steps: [
+        {
+          name: "Tentukan Objective dan Kirim Brief Awal",
+          text: "Tentukan satu primary objective event (bonding, recognition, alignment, atau refreshing). Kirim brief awal via WhatsApp atau form Request Proposal — cukup 3 informasi: jumlah pax, budget range, dan tanggal target. Kami respond dalam 6 jam working hours.",
+        },
+        {
+          name: "Ikuti Briefing Call 15 Menit dengan Senior Planner",
+          text: "Senior planner kami jadwalkan briefing call 15 menit untuk menggali objective lebih dalam, preferensi format, dan constraint khusus (procurement requirement, dietary restriction, dsb). Call ini gratis dan tidak mengikat.",
+        },
+        {
+          name: "Terima Proposal Lengkap dalam 24 Jam",
+          text: "Setelah briefing call, proposal lengkap dengan breakdown line-item, 2 alternatif venue, dan timeline eksekusi dikirim dalam 24 jam. Revisi proposal dilakukan dalam 1–2 hari berdasarkan feedback Anda.",
+        },
+        {
+          name: "Konfirmasi dan Serahkan Eksekusi ke Tim Kami",
+          text: "Konfirmasi dengan DP 30% untuk lock venue dan vendor. Project manager dedicated kami mulai koordinasi produksi — dari logistics, vendor briefing, hingga rehearsal (untuk event besar). Pada hari H, tim kami hadir penuh dari setup hingga wrap up.",
+        },
+      ],
+    })
   );
 
   return (

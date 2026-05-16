@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { getAllFaqCategorySlugs, getFaqCategory, getFaqCategoriesList } from "@/lib/faq-data";
 import { buildWaLink, SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
@@ -167,6 +167,16 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
     },
   };
 
+  const FAQ_QUICK_ANSWERS: Record<string, string> = {
+    budget:     `Budget corporate outing di Bandung mulai dari <strong>Rp 1,5 jt/pax</strong> (1-day Foundation) hingga <strong>Rp 12 jt+/pax</strong> (executive offsite premium). Paket 2D1N standar 100 pax: <strong>Rp 2,5–5 jt/pax</strong> (total Rp 250–500 juta). Semua tier include venue, F&B, aktivitas, PM, dan contingency.`,
+    logistics:  `Proses dari request proposal ke eksekusi: briefing call 15 menit → proposal dalam <strong>24 jam</strong> → revisi 1–2 hari → konfirmasi + DP 30% → siap eksekusi <strong>3 minggu kemudian</strong>. Timeline optimal planning: <strong>6–8 minggu sebelum event</strong> (12 minggu untuk grup > 200 pax di peak season).`,
+    comparison: `<strong>Outing kantor</strong>: refreshing informal, 1–2 hari, budget mid-tier, vibe relaxed. <strong>Corporate gathering</strong>: formal annual event + ceremony, 2–3 hari, budget 1.5–2x outing. <strong>Team building</strong>: fokus aktivitas terstruktur, bisa 1 hari. <strong>Executive offsite</strong>: agenda strategis 8–30 pax, venue premium.`,
+    formats:    `6 format paling umum di Bandung: <strong>1-day refresh</strong> (quarterly, 30–150 pax), <strong>1D2N glamping bonding</strong> (30–100 pax), <strong>2D1N standard gathering</strong> (50–300 pax), <strong>3D2N premium corporate gathering</strong> (100–800 pax), <strong>hybrid outbound+indoor</strong>, dan <strong>family day corporate</strong>.`,
+    location:   `Tiga area utama: <strong>Lembang</strong> (30–45 mnt dari kota, pegunungan, villa privat, 50–500 pax) — paling sering dipilih. <strong>Ciwidey</strong> (60–90 mnt, glamping, adventurous). <strong>Bandung Kota</strong> (hotel bintang 4–5 dengan ballroom, ideal gathering > 300 pax). Pilihan tergantung format, pax, dan budget.`,
+    vendor:     `12-poin checklist vendor aman: NPWP aktif, rekening perusahaan, track record B2B terdokumentasi, dedicated PM, risk register, <strong>breakdown line-item</strong> (bukan lump sum), referensi klien yang bisa dihubungi, post-event report, contract clause jelas, asuransi event, tidak minta full payment di muka, responsif < 24 jam.`,
+    outcome:    `ROI framework 3-layer: (1) <strong>Retention</strong> — cost rekrut 1 orang = 6–9x gaji bulanan; (2) <strong>Productivity</strong> — engaged employees 21% lebih produktif (Gallup); (3) <strong>Collaboration</strong> — NPS internal pre/post + kualitas cross-team project 3 bulan post-event. Bandingkan total cost outing vs turnover 1–2 orang.`,
+  };
+
   const FAQ_ABOUT_SERVICE_URLS: Record<string, string> = {
     budget:     `${SITE.url}/pricing`,
     logistics:  `${SITE.url}/outing-kantor-bandung`,
@@ -221,6 +231,20 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
           title={cat.title.split(" — ")[0]}
           description={cat.intro}
         />
+
+        {FAQ_QUICK_ANSWERS[cat.slug] && (
+          <section className="py-8 border-b border-divider bg-cream/30">
+            <div className="container-1280">
+              <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkle size={16} className="text-brand" />
+                  <p className="eyebrow-brand">Quick Answer</p>
+                </div>
+                <p className="text-base md:text-lg text-ink leading-relaxed" dangerouslySetInnerHTML={{ __html: FAQ_QUICK_ANSWERS[cat.slug] }} />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Stat strip */}
         <section className="bg-paper border-b border-divider py-8">
