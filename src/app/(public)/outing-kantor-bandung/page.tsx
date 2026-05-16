@@ -226,6 +226,13 @@ export default function OutingKantorBandungPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Outing Kantor Bandung",
       keywords: ["outing kantor bandung", "harga outing kantor bandung", "paket outing kantor bandung", "vendor outing kantor bandung", "outing perusahaan bandung", "corporate outing bandung", "outing kantor lembang", "outbound kantor bandung"],
+      mentions: [
+        { type: "Service", name: "Team Building Bandung", url: `${SITE.url}/services/team-building`, id: `${SITE.url}/team-building-bandung#service` },
+        { type: "Service", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung`, id: `${SITE.url}/corporate-gathering-bandung#service` },
+        { type: "Place", name: "Lembang, Kabupaten Bandung Barat", url: `${SITE.url}/venue-gathering-bandung` },
+        { type: "Place", name: "Ciwidey, Kabupaten Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

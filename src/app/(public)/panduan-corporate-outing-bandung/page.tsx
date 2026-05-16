@@ -202,6 +202,17 @@ export default function PanduanCorporateOutingPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Outing Bandung",
       keywords: ["panduan corporate outing bandung", "cara buat outing kantor bandung", "jenis corporate outing bandung", "budget corporate outing bandung", "tips pilih vendor corporate outing", "corporate outing bandung 2026"],
+      mentions: [
+        { type: "Service", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung`, id: `${SITE.url}/outing-kantor-bandung#service` },
+        { type: "Service", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung`, id: `${SITE.url}/team-building-bandung#service` },
+        { type: "Service", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung`, id: `${SITE.url}/corporate-gathering-bandung#service` },
+        { type: "Service", name: "Executive Offsite Bandung", url: `${SITE.url}/executive-offsite-bandung`, id: `${SITE.url}/executive-offsite-bandung#service` },
+        { type: "Service", name: "Glamping Corporate Bandung", url: `${SITE.url}/glamping-corporate-bandung`, id: `${SITE.url}/glamping-corporate-bandung#service` },
+        { type: "Place", name: "Lembang, Kabupaten Bandung Barat" },
+        { type: "Place", name: "Ciwidey, Kabupaten Bandung" },
+        { type: "Place", name: "Pangalengan, Kabupaten Bandung" },
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

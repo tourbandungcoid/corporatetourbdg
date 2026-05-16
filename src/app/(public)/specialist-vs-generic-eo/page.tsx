@@ -164,6 +164,12 @@ export default function CompareSpecialistVsGenericPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Event Specialist Bandung",
       keywords: ["corporate event specialist vs generic eo", "pilih vendor event organizer corporate", "perbedaan eo specialist dan travel agent", "cara pilih eo corporate yang tepat"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "Methodology — 3 Named Framework", url: `${SITE.url}/methodology` },
+        { type: "WebPage", name: "Checklist Pilih Vendor EO Corporate", url: `${SITE.url}/insights/checklist-vendor-event-organizer-corporate` },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team#andre-pratama` },
+      ],
     }),
     serviceSchema({
       name: "Corporate Event Specialist B2B Bandung",

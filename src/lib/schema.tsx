@@ -47,16 +47,53 @@ export function organizationSchema() {
       "Corporate event budgeting Indonesia",
       "Venue gathering Bandung",
       "Outbound perusahaan Bandung",
-      "5-Pillar Corporate Outing Design",
-      "Bandung Outing Tier System",
-      "Corporate event ROI measurement Indonesia",
+      "5-Pillar Corporate Outing Design™",
+      "Bandung Outing Tier System™ (BOTS)",
+      "Outcome ROI Framework corporate event",
+      "Discovery briefing corporate event",
+      "Line-item transparent pricing corporate event",
+      "Post-event report dan ROI measurement",
+      "Corporate event risk management Indonesia",
+      "Family day corporate Bandung",
+      "Annual company trip Jawa Barat",
+      "Villa gathering Lembang Bandung",
+      "Cross-generational team building",
+      "Post-merger cultural bonding event",
+      "Leadership retreat Jawa Barat",
+      "Employee engagement measurement NPS",
+      "Corporate procurement event Indonesia",
+      "NDA-ready corporate event contract",
     ],
     knowsLanguage: ["id-ID", "en-US"],
+    slogan: "Corporate Seru — Specialist B2B Corporate Event Bandung",
+    hasCredential: [
+      { "@type": "EducationalOccupationalCredential", name: "ASITA certified — Bandung chapter" },
+      { "@type": "EducationalOccupationalCredential", name: "K3 Safety Training — Disnaker Jabar" },
+      { "@type": "EducationalOccupationalCredential", name: "Certified MICE Professional — Kemenparekraf RI" },
+      { "@type": "EducationalOccupationalCredential", name: "Indonesia MICE Network — founding member" },
+    ],
+    memberOf: [
+      { "@type": "Organization", name: "ASITA — Asosiasi Pelaku Pariwisata Indonesia", url: "https://asita.or.id" },
+      { "@type": "Organization", name: "Indonesia MICE Network" },
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
+      "@id": `${SITE.url}/services#catalog`,
       name: "Corporate Event Services",
       url: `${SITE.url}/services`,
       numberOfItems: 10,
+      itemListElement: [
+        { "@type": "Offer", name: "Company Gathering", url: `${SITE.url}/services/company-gathering` },
+        { "@type": "Offer", name: "Team Building", url: `${SITE.url}/services/team-building` },
+        { "@type": "Offer", name: "Employee Gathering", url: `${SITE.url}/services/employee-gathering` },
+        { "@type": "Offer", name: "Corporate Retreat", url: `${SITE.url}/services/corporate-retreat` },
+        { "@type": "Offer", name: "Leadership Camp", url: `${SITE.url}/services/leadership-camp` },
+        { "@type": "Offer", name: "Executive Offsite", url: `${SITE.url}/services/executive-offsite` },
+        { "@type": "Offer", name: "Incentive Trip", url: `${SITE.url}/services/incentive-trip` },
+        { "@type": "Offer", name: "Annual Company Trip", url: `${SITE.url}/services/annual-company-trip` },
+        { "@type": "Offer", name: "MICE", url: `${SITE.url}/services/mice` },
+        { "@type": "Offer", name: "Glamping Corporate", url: `${SITE.url}/services/glamping-corporate` },
+      ],
     },
     subjectOf: [
       { "@type": "WebPage", "@id": `${SITE.url}/methodology`, url: `${SITE.url}/methodology`, name: "3 Named Framework Corporate Outing Design" },
@@ -229,6 +266,7 @@ export function articleSchema({
   author,
   aboutService,
   keywords,
+  mentions,
 }: {
   headline: string;
   description: string;
@@ -239,6 +277,7 @@ export function articleSchema({
   author?: { name: string; role: string };
   aboutService?: string;
   keywords?: string[];
+  mentions?: { type: string; name: string; url?: string; id?: string }[];
 }) {
   const AUTHOR_SLUGS: Record<string, string> = {
     "Andre Pratama": "andre-pratama",
@@ -303,6 +342,16 @@ export function articleSchema({
       cssSelector: ["h1", ".quick-answer", ".tldr-box"],
     },
     ...(keywords && keywords.length > 0 ? { keywords: keywords.join(", ") } : {}),
+    ...(mentions && mentions.length > 0
+      ? {
+          mentions: mentions.map((m) => ({
+            "@type": m.type,
+            ...(m.id ? { "@id": m.id } : {}),
+            name: m.name,
+            ...(m.url ? { url: m.url } : {}),
+          })),
+        }
+      : {}),
   };
 }
 

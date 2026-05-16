@@ -125,6 +125,14 @@ export default function MethodologyPage() {
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Event Design Methodology Bandung",
       keywords: ["metodologi corporate event bandung", "framework corporate outing design", "5-pillar corporate outing", "bandung outing tier system BOTS", "ROI framework corporate event"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "WebPage", name: "5-Pillar Corporate Outing Design™", url: `${SITE.url}/insights/5-pillar-corporate-outing-design` },
+        { type: "WebPage", name: "Bandung Outing Tier System™", url: `${SITE.url}/insights/bandung-outing-tier-system` },
+        { type: "WebPage", name: "Cara Justify Budget Outing ke Finance", url: `${SITE.url}/insights/justify-outing-budget-to-finance` },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team#andre-pratama` },
+        { type: "Person", name: "Sinta Rahmadhani", id: `${SITE.url}/team#sinta-rahmadhani`, url: `${SITE.url}/team#sinta-rahmadhani` },
+      ],
     }),
     howToSchema({
       name: "Cara merancang corporate outing yang outcome-driven dengan 3 framework TourBandung",
