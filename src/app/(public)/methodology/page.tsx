@@ -123,6 +123,8 @@ export default function MethodologyPage() {
       dateModified: "2026-05-16",
       slug: "/methodology",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+      aboutService: "Corporate Event Design Methodology Bandung",
+      keywords: ["metodologi corporate event bandung", "framework corporate outing design", "5-pillar corporate outing", "bandung outing tier system BOTS", "ROI framework corporate event"],
     }),
     howToSchema({
       name: "Cara merancang corporate outing yang outcome-driven dengan 3 framework TourBandung",
