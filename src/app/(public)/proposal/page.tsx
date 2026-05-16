@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
+import { JsonLd, combineSchemas, breadcrumbSchema, organizationSchema, localBusinessSchema, articleSchema } from "@/lib/schema";
 
 const description = "Pilih cara lo dapat custom corporate event proposal — full request, quick quote, atau briefing call. Free, dalam 24 jam.";
 
@@ -63,8 +64,29 @@ const PATHS = [
 ];
 
 export default function ProposalEntrancePage() {
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Proposal", url: `${SITE.url}/proposal` },
+    ]),
+    articleSchema({
+      headline: "Request Proposal Corporate Event Bandung — Gratis, 24 Jam",
+      description,
+      image: IMAGES.heroMain.src,
+      datePublished: "2026-05-12",
+      dateModified: "2026-05-16",
+      slug: "/proposal",
+      aboutService: "Corporate Event Proposal Bandung",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+    })
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Get a proposal"
         title="3 cara mulai. Pick yang paling fit untuk lo."
@@ -162,5 +184,6 @@ export default function ProposalEntrancePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

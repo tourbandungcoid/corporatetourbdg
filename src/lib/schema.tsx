@@ -100,6 +100,8 @@ export function localBusinessSchema() {
     url: SITE.url,
     telephone: `+${CONTACT.whatsapp}`,
     email: CONTACT.email,
+    naics: "561599",
+    isicV4: "7911",
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.address.street,
@@ -221,15 +223,24 @@ export function articleSchema({
   author?: { name: string; role: string };
   aboutService?: string;
 }) {
+  const AUTHOR_SLUGS: Record<string, string> = {
+    "Andre Pratama": "andre-pratama",
+    "Sinta Rahmadhani": "sinta-rahmadhani",
+    "Raden Bagus Wicaksono": "raden-bagus",
+    "Amelia Chandra": "amelia-chandra",
+    "Tio Mahesa": "tio-mahesa",
+    "Putri Anggraeni": "putri-anggraeni",
+  };
   const authorEntity = author
     ? {
         "@type": "Person",
+        "@id": `${SITE.url}/team#${AUTHOR_SLUGS[author.name] ?? author.name.toLowerCase().replace(/\s+/g, "-")}`,
         name: author.name,
         jobTitle: author.role,
-        worksFor: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
-        url: `${SITE.url}/team`,
+        worksFor: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.legalName, url: SITE.url },
+        url: `${SITE.url}/team#${AUTHOR_SLUGS[author.name] ?? author.name.toLowerCase().replace(/\s+/g, "-")}`,
       }
-    : { "@type": "Organization", name: SITE.name, url: SITE.url };
+    : { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url };
 
   return {
     "@context": "https://schema.org",

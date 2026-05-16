@@ -2,6 +2,8 @@ import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { youtubeWatchUrl } from "@/lib/utils/youtube";
 import { Play } from "@/components/icons/Icons";
+import { JsonLd } from "@/lib/schema";
+import { SITE } from "@/lib/site";
 
 type VideoRow = {
   id: string;
@@ -30,8 +32,39 @@ export async function YouTubeVideos() {
   const videos = await getVideos();
   if (videos.length === 0) return null;
 
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Video Corporate Event dari TourBandung Corporate",
+    description: "Konten YouTube dari 7Summits Travel — behind the scenes corporate outing, team building, dan executive offsite di Bandung & Jawa Barat.",
+    url: `${SITE.url}#videos`,
+    itemListElement: videos.slice(0, 3).map((v, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: v.title ?? `Corporate Event Video ${i + 1} — TourBandung`,
+        description: v.title ?? "Corporate outing, team building & executive offsite video dari 7Summits Travel Bandung.",
+        thumbnailUrl: `https://i.ytimg.com/vi/${v.youtube_id}/hqdefault.jpg`,
+        embedUrl: `https://www.youtube.com/embed/${v.youtube_id}`,
+        contentUrl: v.youtube_url || youtubeWatchUrl(v.youtube_id),
+        uploadDate: "2026-01-01",
+        publisher: {
+          "@type": "Organization",
+          name: "7Summits Travel",
+          url: SITE.url,
+          logo: { "@type": "ImageObject", url: `${SITE.url}/logo/logo.png` },
+        },
+        inLanguage: "id-ID",
+      },
+    })),
+  };
+
   return (
-    <section className="section bg-paper" id="videos">
+    <>
+      <JsonLd data={videoSchema} />
+      <section className="section bg-paper" id="videos">
       <div className="container-1280">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
@@ -89,5 +122,6 @@ export async function YouTubeVideos() {
         </div>
       </div>
     </section>
+    </>
   );
 }

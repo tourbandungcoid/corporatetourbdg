@@ -3,6 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { RequestProposalForm } from "@/components/proposal/RequestProposalForm";
 import { SITE } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
+import { JsonLd, combineSchemas, breadcrumbSchema, organizationSchema, localBusinessSchema } from "@/lib/schema";
 
 const title = "Request Proposal Gratis — Corporate Outing & Gathering Bandung | TourBandung Corporate";
 const description =
@@ -28,8 +29,39 @@ export const metadata: Metadata = {
 };
 
 export default function RequestProposalPage() {
+  const schema = combineSchemas(
+    organizationSchema(),
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: SITE.url },
+      { name: "Proposal", url: `${SITE.url}/proposal` },
+      { name: "Request Proposal", url: `${SITE.url}/proposal/request` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Request Proposal Corporate Event Bandung",
+      description,
+      url: `${SITE.url}/proposal/request`,
+      inLanguage: "id-ID",
+      mainEntity: {
+        "@type": "Organization",
+        name: SITE.legalName,
+        url: SITE.url,
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "Sales",
+          availableLanguage: ["Indonesian", "English"],
+          hoursAvailable: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "08:00", closes: "18:00" },
+        },
+      },
+    }
+  );
+
   return (
-    <main>
+    <>
+      <JsonLd data={schema} />
+      <main>
       <PageHero
         eyebrow="Request proposal"
         title="Free proposal dalam 24 jam."
@@ -44,5 +76,6 @@ export default function RequestProposalPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
