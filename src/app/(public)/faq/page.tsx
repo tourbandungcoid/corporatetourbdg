@@ -93,8 +93,8 @@ export default async function FaqIndexPage() {
       { name: "FAQ", url: `${SITE.url}/faq` },
     ]),
     articleSchema({
-      headline: "FAQ Corporate Outing Bandung — 88 Pertanyaan dalam 7 Kategori",
-      description: "88 pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
+      headline: "FAQ Corporate Outing Bandung — 100+ Pertanyaan dalam 7 Kategori",
+      description: "100+ pertanyaan detail dalam 7 kategori — budget, logistik, vendor, lokasi, format, comparison, ROI. Update 2026. Verified by senior planner TourBandung Corporate.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
