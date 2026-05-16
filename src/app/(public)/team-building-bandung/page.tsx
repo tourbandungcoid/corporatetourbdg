@@ -200,6 +200,7 @@ export default function TeamBuildingBandungPage() {
       slug: SLUG,
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Team Building Bandung",
+      keywords: ["team building bandung", "team building perusahaan bandung", "outbound team building bandung", "games team building kantor", "vendor team building bandung", "program team building bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

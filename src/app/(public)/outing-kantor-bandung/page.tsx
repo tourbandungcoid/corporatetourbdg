@@ -225,6 +225,7 @@ export default function OutingKantorBandungPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Outing Kantor Bandung",
+      keywords: ["outing kantor bandung", "harga outing kantor bandung", "paket outing kantor bandung", "vendor outing kantor bandung", "outing perusahaan bandung", "corporate outing bandung", "outing kantor lembang", "outbound kantor bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

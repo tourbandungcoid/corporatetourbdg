@@ -218,6 +218,7 @@ export function articleSchema({
   slug,
   author,
   aboutService,
+  keywords,
 }: {
   headline: string;
   description: string;
@@ -227,6 +228,7 @@ export function articleSchema({
   slug: string;
   author?: { name: string; role: string };
   aboutService?: string;
+  keywords?: string[];
 }) {
   const AUTHOR_SLUGS: Record<string, string> = {
     "Andre Pratama": "andre-pratama",
@@ -286,6 +288,7 @@ export function articleSchema({
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".quick-answer", ".tldr-box"],
     },
+    ...(keywords && keywords.length > 0 ? { keywords: keywords.join(", ") } : {}),
   };
 }
 

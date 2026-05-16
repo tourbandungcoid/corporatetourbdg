@@ -155,6 +155,7 @@ export default function CorporateGatheringBandungPage() {
       slug: SLUG,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "Corporate Gathering Bandung",
+      keywords: ["corporate gathering bandung", "gathering perusahaan bandung", "annual gathering bandung", "EO corporate gathering bandung", "paket gathering perusahaan bandung", "venue corporate gathering bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
