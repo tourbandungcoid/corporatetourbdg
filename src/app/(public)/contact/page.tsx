@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { CONTACT, SITE, buildWaLink } from "@/lib/site";
+import { IMAGES } from "@/lib/drive-images";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import {
   JsonLd,
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
       "WhatsApp +62 811-2277-954 · hello@corporate.tourbandung.co.id · Jl. Babakan Priangan I No.11C, Bandung 40255 · Senin–Jumat 08:00–17:00 WIB. Proposal dalam 24 jam.",
     url: `${SITE.url}/contact`,
     type: "website",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hubungi TourBandung Corporate — Brief & Konsultasi Free",
+    description: "WhatsApp · Email · Office Bandung. Proposal gratis dalam 24 jam. Response avg 6 jam.",
+    images: [IMAGES.heroMain.src],
   },
 };
 
