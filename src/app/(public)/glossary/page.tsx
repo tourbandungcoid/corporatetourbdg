@@ -23,14 +23,14 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Glossary Corporate Event Bandung — 40+ Istilah untuk HR & Procurement",
+  title: "Glossary Corporate Event Bandung — 70+ Istilah untuk HR & Procurement",
   description:
-    "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
+    "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 70+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
   alternates: { canonical: `${SITE.url}/glossary` },
   openGraph: {
-    title: "Glossary Corporate Event: 40+ Istilah MICE & Outing — TourBandung",
+    title: "Glossary Corporate Event: 70+ Istilah MICE & Outing — TourBandung",
     description:
-      "Glossary 40+ istilah corporate event yang sering dipakai HR Indonesia.",
+      "Glossary 70+ istilah corporate event yang sering dipakai HR Indonesia.",
     url: `${SITE.url}/glossary`,
     type: "article",
     publishedTime: "2026-05-12",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Glossary Corporate Event: 40+ Istilah MICE & Outing",
-    description: "40+ istilah corporate event yang sering dipakai HR Indonesia. Definitif, dipakai senior planner.",
+    title: "Glossary Corporate Event: 70+ Istilah MICE & Outing",
+    description: "70+ istilah corporate event yang sering dipakai HR Indonesia. Definitif, dipakai senior planner.",
     images: [IMAGES.heroMain.src],
   },
 };
@@ -60,9 +60,9 @@ export default function GlossaryPage() {
       { name: "Glossary", url: `${SITE.url}/glossary` },
     ]),
     articleSchema({
-      headline: "Glossary Corporate Event Bandung — 40+ Istilah untuk HR & Procurement",
+      headline: "Glossary Corporate Event Bandung — 70+ Istilah untuk HR & Procurement",
       alternativeHeadline: "Kamus Istilah Corporate Outing Indonesia: Annual Gathering, MICE, Outbound, BOTS, Executive Offsite",
-      description: "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 40+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
+      description: "Glossary istilah corporate event Indonesia — annual gathering, BOTS, outbound, executive offsite, MICE, dan 70+ term lain yang sering dipakai HR Indonesia. Definitif & dipakai senior planner.",
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-16",
