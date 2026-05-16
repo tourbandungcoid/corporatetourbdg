@@ -687,10 +687,14 @@ export function itemListSchema({
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: item.url,
-      name: item.name,
-      ...(item.description ? { description: item.description } : {}),
-      ...(item.image ? { image: item.image } : {}),
+      item: {
+        "@type": "Article",
+        "@id": `${item.url}#article`,
+        name: item.name,
+        url: item.url,
+        ...(item.description ? { description: item.description } : {}),
+        ...(item.image ? { image: { "@type": "ImageObject", url: item.image, contentUrl: item.image } } : {}),
+      },
     })),
   };
 }
