@@ -12,6 +12,7 @@ import {
   combineSchemas,
   articleSchema,
   faqPageSchema,
+  howToSchema,
   breadcrumbSchema,
   serviceSchema,
   organizationSchema,
@@ -158,7 +159,13 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       priceRange: `${service.priceFrom} - up`,
       url,
     }),
-    faqPageSchema(service.faqs, url)
+    faqPageSchema(service.faqs, url),
+    howToSchema({
+      pageUrl: url,
+      name: `Cara Booking ${service.title} di TourBandung Corporate`,
+      description: `Proses lengkap dari brief awal hingga post-event report untuk ${service.title} di Bandung & Jawa Barat — ${service.paxRange} pax.`,
+      steps: service.process.map((p) => ({ name: p.step, text: p.description })),
+    })
   );
 
   const relatedServices = service.relatedSlugs.map(getService).filter(Boolean);
