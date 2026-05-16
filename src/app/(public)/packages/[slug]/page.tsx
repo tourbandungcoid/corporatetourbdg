@@ -86,14 +86,19 @@ export default async function PackageDetailPage({
       name: pkg.title,
       description: pkg.subtitle,
       url,
-      image: pkg.image.src,
-      brand: { "@type": "Organization", name: "TourBandung Corporate" },
+      image: { "@type": "ImageObject", url: pkg.image.src, width: 1200, height: 630, alt: pkg.image.alt },
+      brand: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "TourBandung Corporate", url: SITE.url },
+      category: "Corporate Event Package",
+      audience: { "@type": "BusinessAudience", audienceType: "Corporate B2B" },
       offers: {
         "@type": "Offer",
         price: pkg.priceNumeric * 1_000_000,
         priceCurrency: "IDR",
+        priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         url,
+        seller: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
+        areaServed: [{ "@type": "City", name: "Bandung" }, { "@type": "AdministrativeArea", name: "Jawa Barat" }],
       },
     }
   );
