@@ -38,6 +38,7 @@ export const metadata: Metadata = {
       "Premium annual gathering untuk perusahaan dengan awarding ceremony, gala dinner, dan multi-day program.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
 };
 

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description: "Multi-day company retreat untuk strategic deep work di Bandung & Jawa Barat.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
 };
 

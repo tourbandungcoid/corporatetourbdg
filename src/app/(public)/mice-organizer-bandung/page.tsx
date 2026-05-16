@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Specialist MICE Bandung: meeting, incentive, conference, exhibition. Stage AV, multi-session, hybrid. 400+ events delivered.",
     url: URL,
     type: "article",
-    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
 };
 

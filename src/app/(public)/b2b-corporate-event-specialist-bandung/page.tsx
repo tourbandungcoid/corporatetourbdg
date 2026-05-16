@@ -5,6 +5,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
+import { IMAGES } from "@/lib/drive-images";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
 };
 
@@ -121,7 +123,7 @@ export default function B2BSpecialistPage() {
     articleSchema({
       headline: TITLE,
       description: DESCRIPTION,
-      image: `${SITE.url}/opengraph-image`,
+      image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-15",
       dateModified: "2026-05-15",
       slug: PATH,

@@ -38,6 +38,7 @@ export const metadata: Metadata = {
       "Outdoor adventure outbound untuk corporate dengan safety standards profesional.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.offroad1.src, width: 1200, height: 630, alt: IMAGES.offroad1.alt }],
   },
 };
 

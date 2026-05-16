@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Program incentive trip yang memorable untuk tim terbaik lo. Premium accommodation, exclusive activities, gala recognition dinner.",
     url: URL,
     type: "article",
-    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
 };
 

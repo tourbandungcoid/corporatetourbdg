@@ -39,6 +39,7 @@ export const metadata: Metadata = {
       "Custom-designed corporate outing untuk perusahaan Indonesia. 400+ events delivered sejak 2018.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
 };
 

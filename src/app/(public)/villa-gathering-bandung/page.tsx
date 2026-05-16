@@ -38,6 +38,7 @@ export const metadata: Metadata = {
       "Private villa setting untuk corporate outing 30-300 pax di Bandung & Lembang.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
 };
 

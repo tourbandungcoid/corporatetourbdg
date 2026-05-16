@@ -38,6 +38,7 @@ export const metadata: Metadata = {
       "Premium glamping untuk corporate event. Differentiator dari hotel atau villa biasa.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.packageGlamping.src, width: 1200, height: 630, alt: IMAGES.packageGlamping.alt }],
   },
 };
 

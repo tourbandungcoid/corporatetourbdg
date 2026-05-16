@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description: "Discreet executive offsite untuk strategic decision-making di Bandung.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.packageExecutiveOffsite.src, width: 1200, height: 630, alt: IMAGES.packageExecutiveOffsite.alt }],
   },
 };
 

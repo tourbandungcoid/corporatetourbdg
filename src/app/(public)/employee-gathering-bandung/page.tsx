@@ -39,6 +39,7 @@ export const metadata: Metadata = {
       "Employee gathering yang measurable: engagement, retention, cultural reinforcement.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
 };
 

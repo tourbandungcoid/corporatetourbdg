@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       "Panduan lengkap venue gathering korporat di Bandung. Hotel ballroom, villa private, resort, outdoor. Kapasitas dan estimasi budget.",
     url: URL,
     type: "article",
-    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: IMAGES.packageAnnualGathering.src, width: 1200, height: 630, alt: IMAGES.packageAnnualGathering.alt }],
   },
 };
 

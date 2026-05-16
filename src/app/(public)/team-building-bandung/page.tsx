@@ -38,6 +38,7 @@ export const metadata: Metadata = {
       "Structured team building untuk perusahaan Indonesia di Bandung. 400+ events delivered.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.caseStudyTeamBuilding.src, width: 1200, height: 630, alt: IMAGES.caseStudyTeamBuilding.alt }],
   },
 };
 

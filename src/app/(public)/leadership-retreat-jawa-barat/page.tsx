@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description: "Premium leadership development untuk senior management Indonesia.",
     url: URL,
     type: "article",
+    images: [{ url: IMAGES.caseStudyExecutive.src, width: 1200, height: 630, alt: IMAGES.caseStudyExecutive.alt }],
   },
 };
 

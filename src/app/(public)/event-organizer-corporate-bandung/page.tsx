@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Specialist B2B corporate event di Bandung. Bukan generic EO. 400+ events, 100+ perusahaan Indonesia. Proposal dalam 24 jam.",
     url: URL,
     type: "article",
-    images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: IMAGES.caseStudyLarge.src, width: 1200, height: 630, alt: IMAGES.caseStudyLarge.alt }],
   },
 };
 
