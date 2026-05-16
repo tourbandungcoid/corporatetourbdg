@@ -9,6 +9,7 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
     name: SITE.legalName,
     alternateName: ["TourBandung Corporate", "Tour Bandung Corporate", "7Summits Corporate"],
     url: SITE.url,
@@ -26,12 +27,13 @@ export function organizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "Customer Service",
+      contactType: "Sales",
       telephone: `+${CONTACT.whatsapp}`,
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
+      contactOption: "https://schema.org/TollFree",
     },
-    numberOfEmployees: { "@type": "QuantitativeValue", value: 6 },
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 6, minValue: 6, maxValue: 15 },
     knowsAbout: [
       "Corporate outing Bandung",
       "Team building Bandung",
@@ -45,6 +47,21 @@ export function organizationSchema() {
       "Corporate event budgeting Indonesia",
       "Venue gathering Bandung",
       "Outbound perusahaan Bandung",
+      "5-Pillar Corporate Outing Design",
+      "Bandung Outing Tier System",
+      "Corporate event ROI measurement Indonesia",
+    ],
+    knowsLanguage: ["id-ID", "en-US"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Corporate Event Services",
+      url: `${SITE.url}/services`,
+      numberOfItems: 10,
+    },
+    subjectOf: [
+      { "@type": "WebPage", url: `${SITE.url}/methodology`, name: "3 Named Framework Corporate Outing Design" },
+      { "@type": "WebPage", url: `${SITE.url}/specialist-vs-generic-eo`, name: "Specialist vs Generic EO — 12 Dimensi Comparison" },
+      { "@type": "WebPage", url: `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Lengkap Corporate Outing Bandung" },
     ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
@@ -88,6 +105,22 @@ export function localBusinessSchema() {
       worstRating: 1,
     },
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
+    potentialAction: {
+      "@type": "ReserveAction",
+      name: "Request Free Proposal",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE.url}/proposal/request`,
+        actionPlatform: ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+      },
+    },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Discovery Brief", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Line-Item Proposal Transparent", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Risk Register Terdokumentasi", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Post-Event Report", value: true },
+      { "@type": "LocationFeatureSpecification", name: "NDA-Ready Confidentiality Protocol", value: true },
+    ],
   };
 }
 
@@ -181,6 +214,10 @@ export function articleSchema({
         "@type": "City",
         name: "Bandung",
       },
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".quick-answer", ".tldr-box", "h2:first-of-type"],
     },
   };
 }
