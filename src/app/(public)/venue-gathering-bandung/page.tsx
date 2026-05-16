@@ -609,6 +609,14 @@ export default function VenueGatheringBandungPage() {
                 ))}
               </div>
             </div>
+            <p className="mt-6 text-sm text-slate">
+              Lihat juga:{" "}
+              <Link href="/faq/location" className="text-brand-deep hover:underline">FAQ Lokasi & Venue</Link>
+              {" · "}
+              <Link href="/faq/logistics" className="text-brand-deep hover:underline">FAQ Logistik</Link>
+              {" · "}
+              <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+            </p>
           </div>
         </section>
 

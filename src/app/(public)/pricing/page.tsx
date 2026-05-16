@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -12,7 +12,9 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  serviceSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -228,7 +230,36 @@ export default function PricingPage() {
       dateModified: "2026-05-12",
       slug: "/pricing",
     }),
-    faqPageSchema(FAQS)
+    serviceSchema({
+      name: "Corporate Outing Bandung — Transparent Pricing",
+      description:
+        "Layanan corporate outing di Bandung dengan 4 tier pricing transparan dan line-item breakdown per komponen. Foundation Rp 1,5–2,5 jt/pax hingga Bespoke Rp 7 jt+/pax.",
+      priceRange: "Rp 1.500.000 - Rp 15.000.000 per pax",
+    }),
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Menentukan Budget Corporate Outing yang Tepat",
+      description:
+        "4 langkah untuk memilih tier budget corporate outing yang sesuai dengan skala, objective, dan kapasitas finansial perusahaan.",
+      steps: [
+        {
+          name: "Tentukan Skala Pax dan Format Event",
+          text: "Hitung jumlah peserta realistis (bukan undangan maksimal) dan format: 1 Day, 2D1N, atau 3D2N. Skala pax dan durasi adalah dua variable terbesar dalam total budget.",
+        },
+        {
+          name: "Pilih Tier Berdasarkan Outcome yang Diharapkan",
+          text: "Foundation (Rp 1,5–2,5 jt/pax): casual refresh 30–80 pax. Elevated (Rp 2,5–4,5 jt/pax): annual outing sweet spot. Signature (Rp 4,5–7 jt/pax): marquee production event. Bespoke (Rp 7 jt+): executive offsite fully custom.",
+        },
+        {
+          name: "Hitung Total dengan Contingency dan PPN",
+          text: "Formula: (cost/pax × jumlah pax) + 8% contingency + 11% PPN. Contoh: 100 pax × Rp 3 jt = Rp 300 jt base + Rp 24 jt contingency + PPN ≈ total Rp 358 juta.",
+        },
+        {
+          name: "Bandingkan Budget dengan Cost Turnover sebagai Justifikasi ROI",
+          text: "Cost replace 1 karyawan = 50–200% annual salary. Jika outing mencegah 1–2 resignation, ROI sudah break-even. Frame ini untuk presentasi ke CFO atau direksi yang skeptis terhadap budget outing.",
+        },
+      ],
+    })
   );
 
   return (
@@ -252,6 +283,57 @@ export default function PricingPage() {
               <span className="hidden md:inline">Bandung &amp; Jawa Barat</span>
             </div>
             <GoogleReviewsBadge variant="compact" />
+          </div>
+        </section>
+
+        {/* Quick Answer */}
+        <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                Corporate outing di Bandung tersedia dalam{" "}
+                <strong>4 tier pricing</strong>: Foundation{" "}
+                <strong>Rp 1,5–2,5 jt/pax</strong> (casual 1-day, 30–80 pax),
+                Elevated <strong>Rp 2,5–4,5 jt/pax</strong> (annual outing
+                2D1N, sweet spot mayoritas klien), Signature{" "}
+                <strong>Rp 4,5–7 jt/pax</strong> (marquee event dengan
+                production), Bespoke <strong>Rp 7 jt+/pax</strong> (executive
+                offsite fully custom). Semua harga{" "}
+                <strong>exclude PPN 11%</strong>.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs">
+                {[
+                  "Foundation: Rp 1,5–2,5 jt/pax",
+                  "Elevated: Rp 2,5–4,5 jt/pax",
+                  "Signature: Rp 4,5–7 jt/pax",
+                  "Bespoke: Rp 7 jt+/pax",
+                  "Exclude PPN 11%",
+                ].map((t) => (
+                  <span key={t} className="inline-flex items-center rounded-full bg-cream/60 border border-border px-3 py-1 text-slate">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
+                <Link
+                  href="/proposal/quick-quote"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-11 text-sm font-medium hover:bg-brand-deep transition"
+                >
+                  Hitung estimasi budget
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  href="/faq/budget"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition"
+                >
+                  FAQ budget lengkap →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -445,6 +527,14 @@ export default function PricingPage() {
                 </details>
               ))}
             </div>
+            <p className="mt-6 text-sm text-slate">
+              Lihat juga:{" "}
+              <Link href="/faq/budget" className="text-brand-deep hover:underline">FAQ Budget & Investasi</Link>
+              {" · "}
+              <Link href="/faq/outcome" className="text-brand-deep hover:underline">FAQ ROI & Outcome</Link>
+              {" · "}
+              <Link href="/faq/vendor" className="text-brand-deep hover:underline">FAQ Vendor Selection</Link>
+            </p>
           </div>
         </section>
 

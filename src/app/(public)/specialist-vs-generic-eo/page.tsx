@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -12,7 +12,9 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  serviceSchema,
   faqPageSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -152,7 +154,36 @@ export default function CompareSpecialistVsGenericPage() {
       dateModified: "2026-05-12",
       slug: "/specialist-vs-generic-eo",
     }),
-    faqPageSchema(FAQS)
+    serviceSchema({
+      name: "Corporate Event Specialist B2B Bandung",
+      description:
+        "Layanan corporate event specialist B2B di Bandung — discovery-first approach, line-item proposal transparan, dedicated senior PM, dan post-event report. Berbeda dari generic EO.",
+      priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
+    }),
+    faqPageSchema(FAQS),
+    howToSchema({
+      name: "Cara Membedakan Corporate Event Specialist vs Generic EO",
+      description:
+        "4 tes cepat untuk validasi apakah vendor yang Anda pertimbangkan adalah specialist B2B atau generic EO yang nyambi corporate.",
+      steps: [
+        {
+          name: "Cek Apakah Ada Discovery Brief Sebelum Quote",
+          text: "Specialist B2B selalu minta briefing call 60–90 menit sebelum kirim proposal. Generic EO langsung kirim 3 paket dari katalog dalam 24 jam tanpa memahami objective Anda.",
+        },
+        {
+          name: "Minta Line-Item Breakdown, Bukan Lump-Sum",
+          text: "Specialist memberikan breakdown per komponen: venue, F&B, activity, transport, PM fee, contingency. Generic EO kirim total 'all included' tanpa rincian — Anda tidak bisa justify ke finance.",
+        },
+        {
+          name: "Minta Sample Post-Event Report dari Client Sebelumnya",
+          text: "Specialist punya template post-event report dengan NPS, attendance, cost reconciliation, dan rekomendasi berikutnya. Generic EO biasanya tidak punya — invoice selesai, urusan selesai.",
+        },
+        {
+          name: "Verifikasi Dedicated Senior PM dari Awal sampai Akhir",
+          text: "Specialist assign 1 senior PM yang sama dari briefing sampai on-site. Generic EO briefing dengan sales, eksekusi dengan crew berbeda yang tidak tahu konteks — ini sumber #1 miscommunication.",
+        },
+      ],
+    })
   );
 
   return (
@@ -176,6 +207,42 @@ export default function CompareSpecialistVsGenericPage() {
               <span className="hidden md:inline">Verified by senior planner</span>
             </div>
             <GoogleReviewsBadge variant="compact" />
+          </div>
+        </section>
+
+        {/* Quick Answer */}
+        <section className="bg-cream/40 border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                <strong>Corporate event specialist</strong> berbeda dari generic EO atau travel agent dalam{" "}
+                <strong>4 dimensi kritis</strong>: (1) discovery brief wajib 60–90 menit sebelum quote; (2) line-item proposal transparan per komponen; (3) dedicated senior PM dari briefing sampai eksekusi; (4) post-event report dengan NPS dan cost reconciliation. Generic EO skip semua ini dan kirim paket dari katalog.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs">
+                {["Discovery-first", "Line-item transparan", "Senior PM dedicated", "Post-event report", "Legal entity + NPWP"].map((t) => (
+                  <span key={t} className="inline-flex items-center rounded-full bg-cream/60 border border-border px-3 py-1 text-slate">{t}</span>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
+                <Link
+                  href="/proposal/request"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-11 text-sm font-medium hover:bg-brand-deep transition"
+                >
+                  Request proposal specialist
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  href="/faq/vendor"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition"
+                >
+                  FAQ vendor selection →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
