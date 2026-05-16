@@ -212,7 +212,31 @@ export default function PanduanCorporateOutingPage() {
         name: s.title,
         text: s.desc,
       })),
-    })
+    }),
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "15 Halaman Corporate Outing Bandung",
+      description: "Panduan spesifik per jenis corporate event di Bandung & Jawa Barat",
+      numberOfItems: 15,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { "@type": "ListItem", position: 2, name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` },
+        { "@type": "ListItem", position: 3, name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+        { "@type": "ListItem", position: 4, name: "Employee Gathering Bandung", url: `${SITE.url}/employee-gathering-bandung` },
+        { "@type": "ListItem", position: 5, name: "Outbound Perusahaan Bandung", url: `${SITE.url}/outbound-perusahaan-bandung` },
+        { "@type": "ListItem", position: 6, name: "Company Retreat Bandung", url: `${SITE.url}/company-retreat-bandung` },
+        { "@type": "ListItem", position: 7, name: "Villa Gathering Bandung", url: `${SITE.url}/villa-gathering-bandung` },
+        { "@type": "ListItem", position: 8, name: "Glamping Corporate Bandung", url: `${SITE.url}/glamping-corporate-bandung` },
+        { "@type": "ListItem", position: 9, name: "Leadership Retreat Jawa Barat", url: `${SITE.url}/leadership-retreat-jawa-barat` },
+        { "@type": "ListItem", position: 10, name: "Executive Offsite Bandung", url: `${SITE.url}/executive-offsite-bandung` },
+        { "@type": "ListItem", position: 11, name: "B2B Corporate Event Specialist Bandung", url: `${SITE.url}/b2b-corporate-event-specialist-bandung` },
+        { "@type": "ListItem", position: 12, name: "Event Organizer Corporate Bandung", url: `${SITE.url}/event-organizer-corporate-bandung` },
+        { "@type": "ListItem", position: 13, name: "MICE Organizer Bandung", url: `${SITE.url}/mice-organizer-bandung` },
+        { "@type": "ListItem", position: 14, name: "Incentive Trip Bandung", url: `${SITE.url}/incentive-trip-bandung` },
+        { "@type": "ListItem", position: 15, name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` },
+      ],
+    }
   );
 
   return (

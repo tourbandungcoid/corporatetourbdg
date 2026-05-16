@@ -127,6 +127,7 @@ export function articleSchema({
   dateModified,
   slug,
   author,
+  aboutService,
 }: {
   headline: string;
   description: string;
@@ -135,6 +136,7 @@ export function articleSchema({
   dateModified: string;
   slug: string;
   author?: { name: string; role: string };
+  aboutService?: string;
 }) {
   const authorEntity = author
     ? {
@@ -154,6 +156,7 @@ export function articleSchema({
     image,
     datePublished,
     dateModified,
+    inLanguage: "id-ID",
     author: authorEntity,
     publisher: {
       "@type": "Organization",
@@ -169,7 +172,7 @@ export function articleSchema({
     },
     about: {
       "@type": "Service",
-      name: "Corporate Outing Bandung",
+      name: aboutService ?? "Corporate Outing Bandung",
       provider: {
         "@type": "Organization",
         name: SITE.name,
