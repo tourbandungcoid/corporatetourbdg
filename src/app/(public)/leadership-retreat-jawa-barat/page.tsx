@@ -114,7 +114,7 @@ export default function LeadershipRetreatJawaBaratPage() {
       priceRange: "Rp 5.000.000 - Rp 9.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Merancang Leadership Retreat yang Impactful di Jawa Barat",
       description: "5 langkah untuk mendesain leadership retreat yang menghasilkan keputusan strategis nyata dan alignment antar pemimpin senior.",

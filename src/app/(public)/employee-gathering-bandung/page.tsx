@@ -180,7 +180,7 @@ export default function EmployeeGatheringBandungPage() {
       priceRange: "Rp 1.500.000 - Rp 3.500.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Organise Employee Gathering yang Inklusif di Bandung",
       description: "5 langkah untuk merencanakan employee gathering yang engaging dan inklusif — dari mapping kebutuhan hingga measurement post-event.",

@@ -111,7 +111,7 @@ export default async function FaqIndexPage() {
         "roi outing kantor cara menghitung",
       ],
     }),
-    faqPageSchema(TOP_FAQS.map((q) => ({ question: q.question, answer: q.answer }))),
+    faqPageSchema(TOP_FAQS.map((q) => ({ question: q.question, answer: q.answer })), `${SITE.url}/faq`),
     itemListSchema({
       name: "FAQ Corporate Outing Bandung — Kategori",
       description: `${totalQuestions} pertanyaan dalam ${categories.length} kategori untuk HR dan procurement perusahaan Indonesia.`,

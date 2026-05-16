@@ -157,7 +157,7 @@ export default function EventOrganizerCorporateBandungPage() {
       priceRange: "Rp 1.200.000 - Rp 12.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Bekerja dengan Event Organizer Corporate Bandung — 7 Langkah",
       description: "Proses kerja dari inquiry pertama hingga post-event report yang TourBandung Corporate jalankan untuk setiap event",

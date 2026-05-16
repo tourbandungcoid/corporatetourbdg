@@ -87,7 +87,7 @@ export default async function FaqCategoryPage({ params }: { params: Params }) {
       { name: "FAQ", url: `${SITE.url}/faq` },
       { name: cat.eyebrow, url },
     ]),
-    faqPageSchema(cat.questions.map((q) => ({ question: q.question, answer: q.answer })))
+    faqPageSchema(cat.questions.map((q) => ({ question: q.question, answer: q.answer })), url)
   );
 
   return (

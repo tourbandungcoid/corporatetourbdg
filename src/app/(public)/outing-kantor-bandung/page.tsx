@@ -238,7 +238,7 @@ export default function OutingKantorBandungPage() {
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Merencanakan Outing Kantor di Bandung",
       description: "5 langkah dari awal brief hingga eksekusi outing kantor yang outcome-driven di Bandung.",

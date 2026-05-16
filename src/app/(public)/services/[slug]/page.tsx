@@ -107,7 +107,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       priceRange: `${service.priceFrom} - up`,
       url,
     }),
-    faqPageSchema(service.faqs)
+    faqPageSchema(service.faqs, url)
   );
 
   const relatedServices = service.relatedSlugs.map(getService).filter(Boolean);

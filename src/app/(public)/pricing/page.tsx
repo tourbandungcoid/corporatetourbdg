@@ -248,7 +248,7 @@ export default function PricingPage() {
       priceRange: "Rp 1.500.000 - Rp 15.000.000 per pax",
       url: `${SITE.url}/pricing`,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, `${SITE.url}/pricing`),
     howToSchema({
       name: "Cara Menentukan Budget Corporate Outing yang Tepat",
       description:

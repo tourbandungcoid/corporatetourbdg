@@ -191,7 +191,7 @@ export default function MiceOrganizerBandungPage() {
       priceRange: "Rp 3.000.000 - Rp 6.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih MICE Organizer Bandung yang Tepat",
       description: "5 langkah untuk memilih dan bekerja dengan MICE organizer Bandung yang capable untuk event skala besar.",

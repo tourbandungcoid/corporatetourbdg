@@ -172,7 +172,7 @@ export default function CompareSpecialistVsGenericPage() {
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
       url: `${SITE.url}/specialist-vs-generic-eo`,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, `${SITE.url}/specialist-vs-generic-eo`),
     howToSchema({
       name: "Cara Membedakan Corporate Event Specialist vs Generic EO",
       description:

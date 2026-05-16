@@ -93,21 +93,21 @@ export default function HomePage() {
         "query-input": "required name=search_term_string",
       },
       hasPart: [
-        { "@type": "WebPage", name: "Services", url: `${SITE.url}/services` },
-        { "@type": "WebPage", name: "Packages", url: `${SITE.url}/packages` },
-        { "@type": "WebPage", name: "Case Studies", url: `${SITE.url}/case-studies` },
-        { "@type": "WebPage", name: "Insights", url: `${SITE.url}/insights` },
-        { "@type": "WebPage", name: "FAQ", url: `${SITE.url}/faq` },
-        { "@type": "WebPage", name: "Pricing", url: `${SITE.url}/pricing` },
-        { "@type": "WebPage", name: "Team", url: `${SITE.url}/team` },
-        { "@type": "WebPage", name: "About", url: `${SITE.url}/about` },
-        { "@type": "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
-        { "@type": "WebPage", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
-        { "@type": "WebPage", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` },
-        { "@type": "WebPage", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
+        { "@type": "WebPage", "@id": `${SITE.url}/services`, name: "Services", url: `${SITE.url}/services` },
+        { "@type": "WebPage", "@id": `${SITE.url}/packages`, name: "Packages", url: `${SITE.url}/packages` },
+        { "@type": "WebPage", "@id": `${SITE.url}/case-studies`, name: "Case Studies", url: `${SITE.url}/case-studies` },
+        { "@type": "WebPage", "@id": `${SITE.url}/insights`, name: "Insights", url: `${SITE.url}/insights` },
+        { "@type": "WebPage", "@id": `${SITE.url}/faq`, name: "FAQ", url: `${SITE.url}/faq` },
+        { "@type": "WebPage", "@id": `${SITE.url}/pricing`, name: "Pricing", url: `${SITE.url}/pricing` },
+        { "@type": "WebPage", "@id": `${SITE.url}/team`, name: "Team", url: `${SITE.url}/team` },
+        { "@type": "WebPage", "@id": `${SITE.url}/about`, name: "About", url: `${SITE.url}/about` },
+        { "@type": "WebPage", "@id": `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
+        { "@type": "WebPage", "@id": `${SITE.url}/outing-kantor-bandung`, name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+        { "@type": "WebPage", "@id": `${SITE.url}/team-building-bandung`, name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung` },
+        { "@type": "WebPage", "@id": `${SITE.url}/corporate-gathering-bandung`, name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung` },
       ],
     },
-    faqPageSchema(TOP_FAQS)
+    faqPageSchema(TOP_FAQS, SITE.url)
   );
 
   return (

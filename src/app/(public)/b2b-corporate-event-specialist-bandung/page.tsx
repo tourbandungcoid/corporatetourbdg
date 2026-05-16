@@ -144,7 +144,7 @@ export default function B2BSpecialistPage() {
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih Vendor B2B Corporate Event Bandung yang Tepat",
       description: "7 kriteria yang harus dicek HR/procurement sebelum sign kontrak vendor corporate event — dari discovery brief hingga NDA-readiness.",

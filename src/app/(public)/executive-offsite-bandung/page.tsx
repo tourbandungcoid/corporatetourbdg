@@ -115,7 +115,7 @@ export default function ExecutiveOffsiteBandungPage() {
       priceRange: "Rp 6.500.000 - Rp 12.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Plan Executive Offsite C-Suite yang Efektif di Bandung",
       description: "5 langkah untuk merencanakan executive offsite yang produktif dan discreet — dari brief kerahasiaan hingga action items pasca-sesi.",

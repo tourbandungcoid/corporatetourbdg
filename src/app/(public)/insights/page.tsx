@@ -96,10 +96,13 @@ export default async function InsightsIndexPage({
       isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       blogPost: all.slice(0, 10).map((a) => ({
         "@type": "BlogPosting",
+        "@id": `${SITE.url}/insights/${a.slug}`,
         headline: a.title,
         url: `${SITE.url}/insights/${a.slug}`,
         datePublished: a.publishDate,
         dateModified: a.publishDate,
+        image: a.heroImage.src,
+        inLanguage: "id-ID",
         author: {
           "@type": "Person",
           "@id": `${SITE.url}/team#${INSIGHT_AUTHOR_SLUGS[a.author.name] ?? a.author.name.toLowerCase().replace(/\s+/g, "-")}`,
@@ -107,6 +110,7 @@ export default async function InsightsIndexPage({
           jobTitle: a.author.role,
           worksFor: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: "7Summits Travel", url: SITE.url },
         },
+        publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url },
         articleSection: a.category,
         description: a.excerpt,
         isPartOf: { "@id": `${SITE.url}/insights#blog` },

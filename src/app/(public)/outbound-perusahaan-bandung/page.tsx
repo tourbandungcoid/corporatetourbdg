@@ -184,7 +184,7 @@ export default function OutboundPerusahaanBandungPage() {
       priceRange: "Rp 1.500.000 - Rp 4.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih Program Outbound Perusahaan yang Aman di Bandung",
       description: "5 langkah untuk memilih dan menjalankan outbound perusahaan yang fun sekaligus aman dan sesuai kondisi tim.",

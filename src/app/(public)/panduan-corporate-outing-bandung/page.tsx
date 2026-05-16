@@ -214,7 +214,7 @@ export default function PanduanCorporateOutingPage() {
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
       url: PAGE_URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, PAGE_URL),
     howToSchema({
       name: "Cara Merencanakan Corporate Outing di Bandung",
       description:

@@ -213,7 +213,7 @@ export default function TeamBuildingBandungPage() {
       priceRange: "Rp 1.200.000 - Rp 4.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih Program Team Building yang Tepat di Bandung",
       description: "5 langkah untuk mendesain program team building yang outcome-driven — dari diagnosa kebutuhan tim hingga pengukuran hasil.",

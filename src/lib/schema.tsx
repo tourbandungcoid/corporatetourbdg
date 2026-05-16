@@ -59,14 +59,14 @@ export function organizationSchema() {
       numberOfItems: 10,
     },
     subjectOf: [
-      { "@type": "WebPage", url: `${SITE.url}/methodology`, name: "3 Named Framework Corporate Outing Design" },
-      { "@type": "WebPage", url: `${SITE.url}/specialist-vs-generic-eo`, name: "Specialist vs Generic EO — 12 Dimensi Comparison" },
-      { "@type": "WebPage", url: `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Lengkap Corporate Outing Bandung" },
-      { "@type": "WebPage", url: `${SITE.url}/about`, name: "Tentang TourBandung Corporate — Sejak 2018" },
-      { "@type": "WebPage", url: `${SITE.url}/team`, name: "Senior Planner Team — 6 Specialist Corporate Event" },
-      { "@type": "WebPage", url: `${SITE.url}/pricing`, name: "Pricing Transparent 4-Tier Corporate Outing Bandung" },
-      { "@type": "WebPage", url: `${SITE.url}/case-studies`, name: "Case Studies — Real Events, Real Outcomes" },
-      { "@type": "WebPage", url: `${SITE.url}/glossary`, name: "Glossary Istilah Corporate Event Indonesia" },
+      { "@type": "WebPage", "@id": `${SITE.url}/methodology`, url: `${SITE.url}/methodology`, name: "3 Named Framework Corporate Outing Design" },
+      { "@type": "WebPage", "@id": `${SITE.url}/specialist-vs-generic-eo`, url: `${SITE.url}/specialist-vs-generic-eo`, name: "Specialist vs Generic EO — 12 Dimensi Comparison" },
+      { "@type": "WebPage", "@id": `${SITE.url}/panduan-corporate-outing-bandung`, url: `${SITE.url}/panduan-corporate-outing-bandung`, name: "Panduan Lengkap Corporate Outing Bandung" },
+      { "@type": "WebPage", "@id": `${SITE.url}/about`, url: `${SITE.url}/about`, name: "Tentang TourBandung Corporate — Sejak 2018" },
+      { "@type": "WebPage", "@id": `${SITE.url}/team`, url: `${SITE.url}/team`, name: "Senior Planner Team — 6 Specialist Corporate Event" },
+      { "@type": "WebPage", "@id": `${SITE.url}/pricing`, url: `${SITE.url}/pricing`, name: "Pricing Transparent 4-Tier Corporate Outing Bandung" },
+      { "@type": "WebPage", "@id": `${SITE.url}/case-studies`, url: `${SITE.url}/case-studies`, name: "Case Studies — Real Events, Real Outcomes" },
+      { "@type": "WebPage", "@id": `${SITE.url}/glossary`, url: `${SITE.url}/glossary`, name: "Glossary Istilah Corporate Event Indonesia" },
     ],
     foundingLocation: {
       "@type": "Place",
@@ -83,12 +83,12 @@ export function organizationSchema() {
       { "@type": "AdministrativeArea", name: "Jawa Barat" },
     ],
     employee: [
-      { "@type": "Person", name: "Andre Pratama", jobTitle: "Founder & Lead Corporate Strategist", url: `${SITE.url}/team#andre-pratama` },
-      { "@type": "Person", name: "Sinta Rahmadhani", jobTitle: "Head of Client Strategy", url: `${SITE.url}/team#sinta-rahmadhani` },
-      { "@type": "Person", name: "Raden Bagus Wicaksono", jobTitle: "Head of Operations & Risk", url: `${SITE.url}/team#raden-bagus` },
-      { "@type": "Person", name: "Amelia Chandra", jobTitle: "Senior Program Designer", url: `${SITE.url}/team#amelia-chandra` },
-      { "@type": "Person", name: "Tio Mahesa", jobTitle: "Lead Field Operations Manager", url: `${SITE.url}/team#tio-mahesa` },
-      { "@type": "Person", name: "Putri Anggraeni", jobTitle: "Post-Event Closure & Reporting Lead", url: `${SITE.url}/team#putri-anggraeni` },
+      { "@type": "Person", "@id": `${SITE.url}/team#andre-pratama`, name: "Andre Pratama", jobTitle: "Founder & Lead Corporate Strategist", url: `${SITE.url}/team#andre-pratama` },
+      { "@type": "Person", "@id": `${SITE.url}/team#sinta-rahmadhani`, name: "Sinta Rahmadhani", jobTitle: "Head of Client Strategy", url: `${SITE.url}/team#sinta-rahmadhani` },
+      { "@type": "Person", "@id": `${SITE.url}/team#raden-bagus`, name: "Raden Bagus Wicaksono", jobTitle: "Head of Operations & Risk", url: `${SITE.url}/team#raden-bagus` },
+      { "@type": "Person", "@id": `${SITE.url}/team#amelia-chandra`, name: "Amelia Chandra", jobTitle: "Senior Program Designer", url: `${SITE.url}/team#amelia-chandra` },
+      { "@type": "Person", "@id": `${SITE.url}/team#tio-mahesa`, name: "Tio Mahesa", jobTitle: "Lead Field Operations Manager", url: `${SITE.url}/team#tio-mahesa` },
+      { "@type": "Person", "@id": `${SITE.url}/team#putri-anggraeni`, name: "Putri Anggraeni", jobTitle: "Post-Event Closure & Reporting Lead", url: `${SITE.url}/team#putri-anggraeni` },
     ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
     aggregateRating: {
@@ -145,6 +145,7 @@ export function localBusinessSchema() {
       bestRating: 5,
       worstRating: 1,
     },
+    parentOrganization: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.legalName, url: SITE.url },
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
     potentialAction: {
       "@type": "ReserveAction",
@@ -201,12 +202,14 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-export function faqPageSchema(items: { question: string; answer: string }[]) {
+export function faqPageSchema(items: { question: string; answer: string }[], pageUrl?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    ...(pageUrl ? { "@id": `${pageUrl}#faqpage`, url: pageUrl, isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url } } : {}),
+    mainEntity: items.map((item, i) => ({
       "@type": "Question",
+      ...(pageUrl ? { "@id": `${pageUrl}#faq-${i + 1}` } : {}),
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
@@ -259,6 +262,7 @@ export function articleSchema({
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${SITE.url}${slug}#article`,
     headline,
     description,
     image,
@@ -268,7 +272,9 @@ export function articleSchema({
     author: authorEntity,
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.name,
+      url: SITE.url,
       logo: {
         "@type": "ImageObject",
         url: `${SITE.url}/logo/logo.png`,
@@ -284,6 +290,7 @@ export function articleSchema({
       name: aboutService ?? "Corporate Outing Bandung",
       provider: {
         "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
         name: SITE.name,
       },
       areaServed: {
@@ -533,10 +540,11 @@ export function definedTermSetSchema({
     publisher: { "@type": "Organization", "@id": `${SITE.url}#organization`, name: SITE.name, url: SITE.url },
     hasDefinedTerm: terms.map((t) => ({
       "@type": "DefinedTerm",
+      "@id": `${url}#${t.slug}`,
       name: t.name,
       description: t.description,
       url: `${url}#${t.slug}`,
-      inDefinedTermSet: `${url}#termset`,
+      inDefinedTermSet: { "@id": `${url}#termset` },
     })),
   };
 }

@@ -77,7 +77,8 @@ export default function GlossaryPage() {
       all.slice(0, 30).map((e) => ({
         question: `Apa itu ${e.term}?`,
         answer: e.long,
-      }))
+      })),
+      `${SITE.url}/glossary`
     ),
     definedTermSetSchema({
       name: "Glossary Istilah Corporate Event Indonesia",

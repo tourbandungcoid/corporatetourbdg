@@ -114,7 +114,7 @@ export default function CompanyRetreatBandungPage() {
       priceRange: "Rp 3.500.000 - Rp 8.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Merencanakan Company Retreat di Bandung",
       description: "5 langkah untuk merancang company retreat multi-hari yang produktif dan impactful di Bandung & Jawa Barat.",

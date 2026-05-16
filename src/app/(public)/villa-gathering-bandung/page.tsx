@@ -170,7 +170,7 @@ export default function VillaGatheringBandungPage() {
       priceRange: "Rp 2.200.000 - Rp 6.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih Villa untuk Corporate Gathering di Bandung",
       description: "5 langkah untuk menemukan dan memesan villa yang tepat untuk gathering perusahaan di Bandung & Lembang.",

@@ -195,7 +195,7 @@ export default function GlampingCorporateBandungPage() {
       priceRange: "Rp 2.500.000 - Rp 6.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Merencanakan Glamping Corporate di Bandung",
       description: "5 langkah untuk mengorganisir glamping corporate yang premium dan memorable di Bandung & Lembang.",

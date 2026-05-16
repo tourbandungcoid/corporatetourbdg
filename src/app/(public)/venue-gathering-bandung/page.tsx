@@ -270,7 +270,7 @@ export default function VenueGatheringBandungPage() {
       priceRange: "Rp 1.500.000 - Rp 7.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Memilih Venue Gathering di Bandung",
       description:

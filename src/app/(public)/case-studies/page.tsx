@@ -84,18 +84,21 @@ export default async function CaseStudiesIndexPage({
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
+      "@id": `${SITE.url}/case-studies#webpage`,
       name: "Corporate Event Case Studies",
       url: `${SITE.url}/case-studies`,
       inLanguage: "id-ID",
       isPartOf: { "@type": "WebSite", "@id": `${SITE.url}#website`, url: SITE.url },
       mainEntity: {
         "@type": "ItemList",
+        "@id": `${SITE.url}/case-studies#itemlist`,
         numberOfItems: all.length,
         itemListElement: all.map((cs, i) => ({
           "@type": "ListItem",
           position: i + 1,
           item: {
             "@type": "Article",
+            "@id": `${SITE.url}/case-studies/${cs.slug}#article`,
             headline: cs.outcomeHeadline,
             url: `${SITE.url}/case-studies/${cs.slug}`,
             description: cs.shortDescription,

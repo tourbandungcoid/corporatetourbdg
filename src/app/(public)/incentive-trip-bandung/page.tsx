@@ -165,7 +165,7 @@ export default function IncentiveTripBandungPage() {
       priceRange: "Rp 3.500.000 - Rp 9.000.000 per pax",
       url: URL,
     }),
-    faqPageSchema(FAQS),
+    faqPageSchema(FAQS, URL),
     howToSchema({
       name: "Cara Merancang Incentive Trip yang Efektif untuk Top Performer",
       description: "5 langkah untuk mendesain incentive trip yang bermakna, memorable, dan berdampak pada retensi top performer.",
