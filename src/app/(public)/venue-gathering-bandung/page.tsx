@@ -257,6 +257,7 @@ export default function VenueGatheringBandungPage() {
       slug: SLUG,
       author: { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
       aboutService: "Venue Gathering Bandung",
+      keywords: ["venue gathering bandung", "tempat gathering perusahaan bandung", "venue corporate event bandung", "sewa venue gathering bandung", "rekomendasi venue gathering bandung", "venue outbound corporate lembang"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

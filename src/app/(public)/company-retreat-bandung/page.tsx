@@ -105,6 +105,7 @@ export default function CompanyRetreatBandungPage() {
       slug: SLUG,
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Company Retreat Bandung",
+      keywords: ["company retreat bandung", "corporate retreat bandung", "paket retreat perusahaan bandung", "team retreat bandung", "strategy retreat perusahaan jawa barat", "company retreat lembang"],
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Company Retreat Bandung", url: URL }]),
     serviceSchema({

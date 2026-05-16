@@ -167,6 +167,7 @@ export default function EmployeeGatheringBandungPage() {
       slug: SLUG,
       author: { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
       aboutService: "Employee Gathering Bandung",
+      keywords: ["employee gathering bandung", "gathering karyawan bandung", "event gathering pegawai bandung", "EO employee gathering bandung", "paket gathering karyawan perusahaan bandung"],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

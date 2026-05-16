@@ -135,6 +135,7 @@ export default function B2BSpecialistPage() {
       slug: PATH,
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       aboutService: "B2B Corporate Event Specialist Bandung",
+      keywords: ["b2b corporate event bandung", "corporate event specialist bandung", "spesialis event perusahaan bandung", "vendor b2b event bandung", "event specialist corporate bandung"],
     }),
     serviceSchema({
       name: "B2B Corporate Event Specialist Bandung",
