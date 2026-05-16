@@ -10,6 +10,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 import {
   ArrowRight,
@@ -204,7 +205,13 @@ export default function ServicesPage() {
           },
         })),
       },
-    }
+    },
+    faqPageSchema([
+      { question: "Apa saja layanan corporate event yang tersedia di TourBandung Corporate?", answer: "10 program: (1) Company Gathering — annual event 50–800 pax. (2) Team Building — outbound, indoor, hybrid. (3) Employee Gathering — engagement-focused. (4) Corporate Retreat — strategic 2–3 hari. (5) Leadership Camp — leadership development program. (6) Executive Offsite — C-level private retreat. (7) Incentive Trip — top performer reward. (8) Annual Company Trip — large-scale year-end. (9) MICE — Meeting, Incentive, Conference, Exhibition. (10) Glamping Corporate — nature immersive di Bandung area." },
+      { question: "Apakah semua program bisa dikustomisasi atau harus pakai paket yang tersedia?", answer: "Semua program bisa dikustomisasi — paket yang tersedia di katalog adalah starting point dan referensi budget, bukan menu fixed. Brief Anda menjadi dasar proposal custom: objective, pax, tanggal, budget range, dan constraint spesifik akan menentukan desain program yang unik untuk perusahaan Anda." },
+      { question: "Berapa pax minimum dan maksimum yang bisa di-handle TourBandung Corporate?", answer: "Optimal dari 30 pax ke atas. Range paling umum: 50–500 pax. Untuk executive offsite atau leadership retreat yang lebih intimate: 15–50 pax. Maximum yang pernah di-handle: 800+ pax untuk annual employee gathering. Di bawah 30 pax, unit economics kurang optimal — konsultasi dahulu dengan senior planner." },
+      { question: "Berapa harga layanan corporate event TourBandung Corporate?", answer: "4-tier pricing: Foundation (1D, Rp 1.5–2.5 jt/pax, 30–80 pax), Elevated (2D1N, Rp 2.5–4.5 jt/pax, 100–300 pax), Signature (2D1N–3D2N, Rp 4.5–7 jt/pax, 100–500 pax), Bespoke (3D2N+, Rp 7 jt+/pax, executive level). Semua termasuk venue, F&B, activity, transport lokal, PM, dan contingency. Detail breakdown di /pricing." },
+    ], `${SITE.url}/services`)
   );
 
   return (

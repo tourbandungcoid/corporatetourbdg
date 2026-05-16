@@ -13,6 +13,7 @@ import {
   localBusinessSchema,
   articleSchema,
   howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -112,7 +113,13 @@ export default function AboutPage() {
         { name: "Minta Referensi Klien Aktual", text: "Hubungi minimum 2 referensi klien sebelumnya di industri atau skala yang relevan. Tanyakan: apakah vendor tepat waktu, adakah biaya tak terduga, apakah mereka akan pakai lagi?" },
         { name: "Evaluasi Kualitas Proposal", text: "Proposal yang baik mencantumkan breakdown line-item (bukan lump sum), risk register atau backup plan, dedicated PM yang disebutkan namanya, dan post-event report sebagai deliverable standar. Tidak ada hidden cost policy harus tertulis di kontrak." },
       ],
-    })
+    }),
+    faqPageSchema([
+      { question: "Kapan TourBandung Corporate berdiri?", answer: "TourBandung Corporate adalah unit B2B specialized dari 7Summits Travel yang resmi fokus di corporate event sejak 2018. Parent company 7Summits Travel berdiri sejak 2014 sebagai travel agency umum sebelum pivot ke market corporate." },
+      { question: "Apa perbedaan TourBandung Corporate dan 7Summits Travel?", answer: "7Summits Travel adalah entitas legal induk (travel company umum sejak 2014). TourBandung Corporate adalah brand unit B2B specialized yang fokus 100% di corporate event (outing, team building, executive offsite, MICE) di Bandung & Jawa Barat sejak 2018. Operasional, tim, dan methodology terpisah dari divisi leisure travel." },
+      { question: "Berapa total corporate events yang sudah di-handle TourBandung Corporate?", answer: "400+ corporate events delivered sejak 2018, melibatkan 100+ perusahaan Indonesia dari tech unicorn, BUMN bank, FMCG global, manufacturing MNC, telco, hingga healthcare. Repeat booking rate 92% — artinya 9 dari 10 klien kembali untuk event berikutnya." },
+      { question: "Apakah TourBandung Corporate bisa issue faktur pajak (PPN)?", answer: "Ya. 7Summits Travel terdaftar sebagai PKP (Pengusaha Kena Pajak) dan dapat menerbitkan faktur pajak standar untuk setiap transaksi. Ini penting untuk klien BUMN, perusahaan publik, dan korporasi besar yang butuh dokumentasi PPN untuk procurement." },
+    ], `${SITE.url}/about`)
   );
 
   return (

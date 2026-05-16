@@ -16,6 +16,7 @@ import {
   personSchema,
   articleSchema,
   howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -98,7 +99,13 @@ export default function TeamPage() {
         { name: "Verifikasi Pengalaman di Industri atau Skala yang Relevan", text: "Tanyakan pengalaman spesifik: 'Sudah pernah handle gathering untuk industri perbankan sebelumnya?', 'Bagaimana cara Anda handle 300+ pax outdoor event saat hujan?' Jawaban konkret dengan detail teknis adalah sinyal pengalaman nyata." },
         { name: "Lakukan Briefing Call Langsung", text: "Minta briefing call 15–30 menit dengan planner yang akan jadi PM proyek Anda — bukan sales rep. Respons terhadap pertanyaan Anda, kemampuan menangkap nuance brief, dan proaktivitas dalam mengidentifikasi risiko adalah indikator kualitas pelayanan sesungguhnya." },
       ],
-    })
+    }),
+    faqPageSchema([
+      { question: "Apakah semua planner TourBandung Corporate full-time atau freelance?", answer: "Semua 6 senior planner TourBandung Corporate adalah full-time — bukan freelancer yang di-hire per project. Rata-rata tenure tim: 4+ tahun. Ini yang membedakan kami dari kebanyakan EO yang bergantung pada pool freelancer yang berubah-ubah setiap event." },
+      { question: "Siapa yang akan jadi project manager untuk event saya?", answer: "PM dedicated akan ditunjuk saat onboarding proyek — biasanya planner yang spesialisasinya paling relevan dengan objective event Anda. Nama PM tertera di PKS (kontrak). PM yang sama dari briefing hingga post-event closure — tidak ada handover." },
+      { question: "Berapa total pengalaman kombinasi tim TourBandung Corporate?", answer: "50+ tahun pengalaman gabungan: Andre (12 tahun), Raden Bagus (11 tahun), Sinta (9 tahun), Tio (8 tahun), Amelia (7 tahun), Putri (5 tahun). Selain pengalaman di TourBandung Corporate, beberapa senior planner membawa pengalaman dari background sebelumnya (hotel bintang 5, big-4 consulting, outdoor education)." },
+      { question: "Apakah tim TourBandung Corporate punya sertifikasi profesional?", answer: "Ya — beberapa sertifikasi yang dimiliki tim: ASITA certified (Andre), K3 Safety + Wilderness First Aid (Raden Bagus), MBTI Step II Facilitator (Sinta), Certified MICE Professional Kemenparekraf (Amelia), Google Analytics (Putri). Detail kredensial setiap planner ada di halaman team." },
+    ], `${SITE.url}/team`)
   );
 
   return (

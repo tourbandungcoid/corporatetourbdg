@@ -13,6 +13,7 @@ import {
   localBusinessSchema,
   articleSchema,
   howToSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 import { getTestimonialsList } from "@/lib/testimonials-data";
 
@@ -152,7 +153,13 @@ export default async function ClientsPage() {
         { name: "Evaluasi Kualitas Proposal & Transparansi", text: "Proposal berkualitas: breakdown line-item (venue, F&B, transport, PM fee, contingency), risk mitigation plan, dedicated PM dengan nama jelas, dan post-event report sebagai deliverable standar. Vendor transparan tidak keberatan jika Anda tanya 'apa yang tidak termasuk dalam paket ini?'" },
         { name: "Lakukan Briefing Call dengan PM Aktual", text: "Sebelum sign kontrak, lakukan briefing call dengan project manager yang akan benar-benar menangani event Anda — bukan hanya sales rep. Chemistry, response time, dan pemahaman mereka tentang objective event Anda adalah indikator paling akurat tentang kualitas eksekusi." },
       ],
-    })
+    }),
+    faqPageSchema([
+      { question: "Apakah TourBandung Corporate bisa share nama klien secara spesifik?", answer: "Nama klien spesifik tidak dipublikasikan di website karena sebagian besar beroperasi di banking, BUMN, atau kategori sensitif yang mensyaratkan NDA. Untuk verifikasi kredensial specific, briefing call dengan senior planner kami akan share relevant case study sesuai industri Anda, subject to NDA jika diperlukan." },
+      { question: "Dari industri apa saja klien TourBandung Corporate?", answer: "8+ industri: Technology (startup unicorn, fintech, SaaS, e-commerce), Banking & Finance (BUMN bank, multifinance, securities), BUMN & Government (energy, telco, construction, SOE holding), FMCG & Manufacturing (global FMCG, pharma MNC, automotive), Retail & Hospitality, Telco & Media, Education & Healthcare. Diversity industri ini mencerminkan kemampuan kami handling complexity yang sangat berbeda." },
+      { question: "Berapa persen klien TourBandung Corporate yang kembali untuk event berikutnya?", answer: "92% repeat booking rate — angka yang paling kami banggakan. Artinya 9 dari 10 klien yang sudah pernah kerja sama memilih kami kembali untuk event berikutnya. Ini lebih reliable sebagai indikator kualitas dibandingkan testimonial tertulis atau marketing material." },
+      { question: "Apakah bisa request reference call dengan klien TourBandung Corporate?", answer: "Ya, untuk proyek di atas nilai tertentu atau klien dari industri regulated (BUMN, banking), kami bisa fasilitasi reference call dengan klien sebelumnya sesuai industri yang relevan — subject to persetujuan klien referensi dan NDA. Request ini diajukan saat briefing call dengan senior planner." },
+    ], `${SITE.url}/clients`)
   );
 
   return (
