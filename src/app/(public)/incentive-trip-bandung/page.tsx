@@ -179,6 +179,7 @@ export default function IncentiveTripBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Merancang Incentive Trip yang Efektif untuk Top Performer",
       description: "5 langkah untuk mendesain incentive trip yang bermakna, memorable, dan berdampak pada retensi top performer.",
       steps: [

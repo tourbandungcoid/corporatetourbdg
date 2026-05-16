@@ -33,6 +33,11 @@ export const metadata: Metadata = {
       "Glossary 40+ istilah corporate event yang sering dipakai HR Indonesia.",
     url: `${SITE.url}/glossary`,
     type: "article",
+    publishedTime: "2026-05-12",
+    modifiedTime: "2026-05-16",
+    authors: [`${SITE.url}/team#andre-pratama`],
+    section: "Glossary",
+    tags: ["glossary corporate event indonesia", "istilah mice bandung", "definisi corporate outing", "kamus event organizer"],
     images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
   },
   twitter: {

@@ -209,6 +209,7 @@ export default function GlampingCorporateBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Merencanakan Glamping Corporate di Bandung",
       description: "5 langkah untuk mengorganisir glamping corporate yang premium dan memorable di Bandung & Lembang.",
       steps: [

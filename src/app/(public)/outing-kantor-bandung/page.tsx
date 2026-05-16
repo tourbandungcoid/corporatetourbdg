@@ -252,6 +252,7 @@ export default function OutingKantorBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Merencanakan Outing Kantor di Bandung",
       description: "5 langkah dari awal brief hingga eksekusi outing kantor yang outcome-driven di Bandung.",
       steps: [

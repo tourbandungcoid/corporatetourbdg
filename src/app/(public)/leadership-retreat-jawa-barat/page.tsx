@@ -128,6 +128,7 @@ export default function LeadershipRetreatJawaBaratPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Merancang Leadership Retreat yang Impactful di Jawa Barat",
       description: "5 langkah untuk mendesain leadership retreat yang menghasilkan keputusan strategis nyata dan alignment antar pemimpin senior.",
       steps: [

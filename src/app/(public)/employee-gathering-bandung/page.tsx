@@ -194,6 +194,7 @@ export default function EmployeeGatheringBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Organise Employee Gathering yang Inklusif di Bandung",
       description: "5 langkah untuk merencanakan employee gathering yang engaging dan inklusif — dari mapping kebutuhan hingga measurement post-event.",
       steps: [

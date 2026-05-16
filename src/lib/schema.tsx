@@ -504,22 +504,27 @@ export function howToSchema({
   name,
   description,
   steps,
+  pageUrl,
 }: {
   name: string;
   description: string;
   steps: { name: string; text: string }[];
+  pageUrl?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",
+    ...(pageUrl ? { "@id": `${pageUrl}#howto` } : {}),
     name,
     description,
     inLanguage: "id-ID",
+    isAccessibleForFree: true,
     step: steps.map((s, i) => ({
       "@type": "HowToStep",
       position: i + 1,
       name: s.name,
       text: s.text,
+      url: pageUrl ? `${pageUrl}#step-${i + 1}` : undefined,
     })),
     author: {
       "@type": "Organization",

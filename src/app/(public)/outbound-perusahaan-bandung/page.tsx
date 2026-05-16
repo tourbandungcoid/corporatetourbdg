@@ -198,6 +198,7 @@ export default function OutboundPerusahaanBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih Program Outbound Perusahaan yang Aman di Bandung",
       description: "5 langkah untuk memilih dan menjalankan outbound perusahaan yang fun sekaligus aman dan sesuai kondisi tim.",
       steps: [

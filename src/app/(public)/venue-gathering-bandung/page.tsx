@@ -284,6 +284,7 @@ export default function VenueGatheringBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih Venue Gathering di Bandung",
       description:
         "5 langkah memilih venue gathering korporat di Bandung yang sesuai budget, kapasitas, dan format event.",

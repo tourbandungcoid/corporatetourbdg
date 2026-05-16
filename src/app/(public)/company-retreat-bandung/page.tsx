@@ -128,6 +128,7 @@ export default function CompanyRetreatBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Merencanakan Company Retreat di Bandung",
       description: "5 langkah untuk merancang company retreat multi-hari yang produktif dan impactful di Bandung & Jawa Barat.",
       steps: [

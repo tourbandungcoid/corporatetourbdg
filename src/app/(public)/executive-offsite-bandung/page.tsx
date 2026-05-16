@@ -129,6 +129,7 @@ export default function ExecutiveOffsiteBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Plan Executive Offsite C-Suite yang Efektif di Bandung",
       description: "5 langkah untuk merencanakan executive offsite yang produktif dan discreet — dari brief kerahasiaan hingga action items pasca-sesi.",
       steps: [

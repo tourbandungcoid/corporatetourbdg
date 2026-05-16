@@ -227,6 +227,7 @@ export default function TeamBuildingBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih Program Team Building yang Tepat di Bandung",
       description: "5 langkah untuk mendesain program team building yang outcome-driven — dari diagnosa kebutuhan tim hingga pengukuran hasil.",
       steps: [

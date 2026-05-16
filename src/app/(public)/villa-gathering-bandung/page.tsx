@@ -184,6 +184,7 @@ export default function VillaGatheringBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih Villa untuk Corporate Gathering di Bandung",
       description: "5 langkah untuk menemukan dan memesan villa yang tepat untuk gathering perusahaan di Bandung & Lembang.",
       steps: [

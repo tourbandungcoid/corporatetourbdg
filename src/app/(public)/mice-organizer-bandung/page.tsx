@@ -205,6 +205,7 @@ export default function MiceOrganizerBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Memilih MICE Organizer Bandung yang Tepat",
       description: "5 langkah untuk memilih dan bekerja dengan MICE organizer Bandung yang capable untuk event skala besar.",
       steps: [

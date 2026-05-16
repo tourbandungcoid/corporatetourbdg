@@ -182,6 +182,7 @@ export default function CorporateGatheringBandungPage() {
     }),
     faqPageSchema(FAQS, URL),
     howToSchema({
+      pageUrl: URL,
       name: "Cara Organise Corporate Gathering di Bandung",
       description: "5 langkah perencanaan corporate gathering skala besar di Bandung — dari penentuan skala event hingga post-event report.",
       steps: [
