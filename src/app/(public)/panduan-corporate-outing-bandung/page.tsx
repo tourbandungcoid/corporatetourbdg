@@ -849,14 +849,27 @@ export default function PanduanCorporateOutingPage() {
                 </details>
               ))}
             </div>
-            <div className="mt-8">
-              <Link
-                href="/faq"
-                className="inline-flex items-center gap-2 text-sm text-brand-deep hover:underline"
-              >
-                Lihat semua FAQ di halaman FAQ
-                <ArrowRight size={13} />
-              </Link>
+            <div className="mt-10 pt-8 border-t border-divider">
+              <p className="eyebrow text-slate mb-4">Explore FAQ by category</p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  ["/faq/budget", "Budget & Investment", "Range harga, breakdown per komponen"],
+                  ["/faq/comparison", "Comparison & Decision", "Outing vs gathering vs retreat"],
+                  ["/faq/vendor", "Vendor Selection", "12 poin checklist pilih EO"],
+                  ["/faq/location", "Lokasi & Venue", "Lembang vs Ciwidey vs kota"],
+                  ["/faq/formats", "Format & Programs", "Outdoor, indoor, hybrid"],
+                  ["/faq/logistics", "Process & Logistics", "Timeline dan koordinasi"],
+                  ["/faq/outcome", "Outcome & ROI", "Cara justify ke Finance"],
+                ].map(([href, label, desc]) => (
+                  <Link key={href} href={href} className="group rounded-xl border border-border bg-paper p-4 hover:border-ink-soft transition-all hover:-translate-y-0.5">
+                    <p className="font-medium text-sm text-ink group-hover:text-brand-deep transition-colors leading-snug">{label}</p>
+                    <p className="mt-1 text-xs text-slate">{desc}</p>
+                    <span className="mt-2 inline-flex items-center gap-1 text-xs text-ink/70">
+                      Selengkapnya <ArrowRight size={10} className="transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
