@@ -49,6 +49,19 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
+const SERVICE_AUTHORS: Record<string, { name: string; role: string }> = {
+  "company-gathering": { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+  "team-building": { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+  "employee-gathering": { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+  "corporate-retreat": { name: "Sinta Rahmadhani", role: "Head of Client Strategy" },
+  "leadership-camp": { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+  "executive-offsite": { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+  "incentive-trip": { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
+  "annual-company-trip": { name: "Tio Mahesa", role: "Lead Field Operations Manager" },
+  "mice": { name: "Raden Bagus Wicaksono", role: "Head of Operations & Risk" },
+  "glamping-corporate": { name: "Amelia Chandra", role: "Senior Program Designer" },
+};
+
 export default async function ServiceDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
   const service = getService(slug);
@@ -67,6 +80,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       dateModified: "2026-05-16",
       slug: `/services/${service.slug}`,
       aboutService: `${service.title} Bandung`,
+      author: SERVICE_AUTHORS[service.slug] ?? { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

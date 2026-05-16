@@ -77,6 +77,14 @@ export function organizationSchema() {
       { "@type": "City", name: "Bandung" },
       { "@type": "AdministrativeArea", name: "Jawa Barat" },
     ],
+    employee: [
+      { "@type": "Person", name: "Andre Pratama", jobTitle: "Founder & Lead Corporate Strategist", url: `${SITE.url}/team#andre-pratama` },
+      { "@type": "Person", name: "Sinta Rahmadhani", jobTitle: "Head of Client Strategy", url: `${SITE.url}/team#sinta-rahmadhani` },
+      { "@type": "Person", name: "Raden Bagus Wicaksono", jobTitle: "Head of Operations & Risk", url: `${SITE.url}/team#raden-bagus` },
+      { "@type": "Person", name: "Amelia Chandra", jobTitle: "Senior Program Designer", url: `${SITE.url}/team#amelia-chandra` },
+      { "@type": "Person", name: "Tio Mahesa", jobTitle: "Lead Field Operations Manager", url: `${SITE.url}/team#tio-mahesa` },
+      { "@type": "Person", name: "Putri Anggraeni", jobTitle: "Post-Event Closure & Reporting Lead", url: `${SITE.url}/team#putri-anggraeni` },
+    ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
@@ -325,6 +333,7 @@ export function personSchema({
   slug,
   sameAs,
   knowsAbout,
+  hasCredential,
 }: {
   name: string;
   jobTitle: string;
@@ -333,6 +342,7 @@ export function personSchema({
   slug: string;
   sameAs?: string[];
   knowsAbout?: string[];
+  hasCredential?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -349,6 +359,9 @@ export function personSchema({
     },
     ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
     ...(knowsAbout && knowsAbout.length > 0 ? { knowsAbout } : {}),
+    ...(hasCredential && hasCredential.length > 0
+      ? { hasCredential: hasCredential.map((c) => ({ "@type": "EducationalOccupationalCredential", name: c })) }
+      : {}),
   };
 }
 

@@ -54,6 +54,7 @@ export default function TeamPage() {
         description: m.bioLong,
         slug: `/team#${m.slug}`,
         knowsAbout: m.specialties,
+        hasCredential: m.credentials,
       })
     )
   );

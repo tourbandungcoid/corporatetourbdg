@@ -136,6 +136,7 @@ export default async function ClientsPage() {
       dateModified: "2026-05-16",
       slug: "/clients",
       aboutService: "B2B Corporate Event Specialist Bandung",
+      author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
     })
   );
 
