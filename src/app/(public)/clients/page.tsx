@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
-import { ArrowRight } from "@/components/icons/Icons";
+import { ArrowRight, Sparkle } from "@/components/icons/Icons";
 import { SITE, STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
 import {
@@ -173,6 +173,20 @@ export default async function ClientsPage() {
       />
 
       {/* Stats strip */}
+      <section className="py-8 border-b border-divider bg-cream/30">
+        <div className="container-1280">
+          <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkle size={16} className="text-brand" />
+              <p className="eyebrow-brand">Quick Answer</p>
+            </div>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              TourBandung Corporate melayani <strong>100+ perusahaan korporat</strong> di Indonesia dari 8+ industri aktif — tech unicorn, BUMN bank, FMCG MNC, telco, manufacturing, healthcare, retail, dan agribisnis. <strong>Repeat booking rate 92%</strong>. Klien terbesar: <strong>800 pax</strong> tech company post-merger. Spesialisasi B2B murni sejak 2018.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-paper border-b border-divider py-12">
         <div className="container-1280">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">

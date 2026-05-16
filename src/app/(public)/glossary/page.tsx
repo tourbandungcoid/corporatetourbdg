@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
-import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
+import { ArrowRight, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import {
   getGlossaryGroups,
   getAllGlossaryEntries,
@@ -128,6 +128,20 @@ export default function GlossaryPage() {
         />
 
         {/* Letter index */}
+        <section className="py-8 border-b border-divider bg-cream/30">
+          <div className="container-1280">
+            <div className="quick-answer max-w-4xl rounded-3xl bg-paper border border-border p-7 md:p-9">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkle size={16} className="text-brand" />
+                <p className="eyebrow-brand">Quick Answer</p>
+              </div>
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                Glossary ini memuat <strong>70+ definisi istilah corporate event Indonesia</strong> — dari Annual Company Trip hingga Wilderness First Aid — disusun oleh senior planner TourBandung Corporate dari <strong>400+ events delivered</strong>. Berguna untuk evaluasi proposal vendor, negosiasi kontrak, dan briefing pre-event dengan tim HR atau procurement.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-paper border-b border-divider py-8 sticky top-20 z-10 backdrop-blur">
           <div className="container-1280 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-1.5">
