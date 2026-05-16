@@ -85,6 +85,34 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
   };
   const categoryKeywords = CATEGORY_KEYWORDS[article.category] ?? ["corporate event bandung", "outing kantor bandung", "team building jawa barat"];
 
+  const CATEGORY_MENTIONS: Record<string, { type: string; name: string; url: string; id?: string }[]> = {
+    "Methodology":     [
+      { type: "WebPage", name: "Methodology — 3 Named Framework", url: `${SITE.url}/methodology` },
+      { type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` },
+    ],
+    "Framework":       [{ type: "WebPage", name: "Methodology", url: `${SITE.url}/methodology` }],
+    "HR Tactics":      [
+      { type: "Service", name: "Team Building Bandung", url: `${SITE.url}/services/team-building`, id: `${SITE.url}/team-building-bandung#service` },
+      { type: "Service", name: "Employee Gathering Bandung", url: `${SITE.url}/employee-gathering-bandung`, id: `${SITE.url}/employee-gathering-bandung#service` },
+    ],
+    "Team Design":     [{ type: "Service", name: "Team Building Bandung", url: `${SITE.url}/team-building-bandung`, id: `${SITE.url}/team-building-bandung#service` }],
+    "Strategic Event": [{ type: "Service", name: "Corporate Gathering Bandung", url: `${SITE.url}/corporate-gathering-bandung`, id: `${SITE.url}/corporate-gathering-bandung#service` }],
+    "Risk Management": [
+      { type: "WebPage", name: "Force Majeure Guide", url: `${SITE.url}/insights/force-majeure-contingency-corporate-outing` },
+      { type: "Service", name: "Outing Kantor Bandung", url: `${SITE.url}/outing-kantor-bandung` },
+    ],
+    "Format Design":   [{ type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` }],
+    "Program Design":  [{ type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` }],
+    "Planning Guide":  [{ type: "WebPage", name: "Panduan Corporate Outing Bandung", url: `${SITE.url}/panduan-corporate-outing-bandung` }],
+    "Vendor Selection":[{ type: "WebPage", name: "Specialist vs Generic EO", url: `${SITE.url}/specialist-vs-generic-eo` }],
+    "Destination Guide":[{ type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` }],
+    "Venue Guide":     [{ type: "WebPage", name: "Venue Gathering Bandung", url: `${SITE.url}/venue-gathering-bandung` }],
+  };
+  const categoryMentions = [
+    { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+    ...(CATEGORY_MENTIONS[article.category] ?? []),
+  ];
+
   const schema = combineSchemas(
     organizationSchema(),
     localBusinessSchema(),
@@ -98,6 +126,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       author: { name: article.author.name, role: article.author.role },
       aboutService: article.internalLinks?.[0]?.label ?? "Corporate Event Bandung",
       keywords: categoryKeywords,
+      mentions: categoryMentions,
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },

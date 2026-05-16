@@ -116,6 +116,12 @@ export default async function CaseStudyDetailPage({ params }: { params: Params }
         `corporate event ${cs.industry.toLowerCase()} bandung`,
         `${cs.pax} pax corporate event jawa barat`,
       ],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        ...(relatedService ? [{ type: "Service", name: relatedService.title, url: `${SITE.url}/services/${relatedService.slug}`, id: `${SITE.url}/services/${relatedService.slug}#service` }] : []),
+        ...(moneyPage ? [{ type: "WebPage", name: moneyPage.label, url: `${SITE.url}${moneyPage.href}` }] : []),
+        { type: "Place", name: cs.location },
+      ],
     }),
     breadcrumbSchema([
       { name: "Home", url: SITE.url },
