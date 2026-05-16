@@ -65,6 +65,16 @@ export default function TeamPage() {
         "pengalaman vendor corporate event bandung 2018",
         "team building specialist bandung bersertifikat",
       ],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team#andre-pratama` },
+        { type: "Person", name: "Sinta Rahmadhani", id: `${SITE.url}/team#sinta-rahmadhani`, url: `${SITE.url}/team#sinta-rahmadhani` },
+        { type: "Person", name: "Raden Bagus Wicaksono", id: `${SITE.url}/team#raden-bagus`, url: `${SITE.url}/team#raden-bagus` },
+        { type: "Person", name: "Amelia Chandra", id: `${SITE.url}/team#amelia-chandra`, url: `${SITE.url}/team#amelia-chandra` },
+        { type: "Person", name: "Tio Mahesa", id: `${SITE.url}/team#tio-mahesa`, url: `${SITE.url}/team#tio-mahesa` },
+        { type: "Person", name: "Putri Anggraeni", id: `${SITE.url}/team#putri-anggraeni`, url: `${SITE.url}/team#putri-anggraeni` },
+        { type: "WebPage", name: "Metodologi — 3 Named Framework", url: `${SITE.url}/methodology` },
+      ],
     }),
     ...TEAM.map((m) =>
       personSchema({

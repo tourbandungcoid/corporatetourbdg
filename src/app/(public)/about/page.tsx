@@ -72,6 +72,14 @@ export default function AboutPage() {
       aboutService: "B2B Corporate Event Specialist Bandung",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: ["tentang TourBandung Corporate", "7summits travel corporate", "vendor corporate event bandung sejak 2018", "profil perusahaan event organizer corporate bandung"],
+      mentions: [
+        { type: "Organization", name: "TourBandung Corporate", id: `${SITE.url}#organization`, url: SITE.url },
+        { type: "Person", name: "Andre Pratama", id: `${SITE.url}/team#andre-pratama`, url: `${SITE.url}/team` },
+        { type: "WebPage", name: "Team — 6 Senior Planner", url: `${SITE.url}/team` },
+        { type: "WebPage", name: "Methodology — 3 Named Framework", url: `${SITE.url}/methodology` },
+        { type: "WebPage", name: "Case Studies — Real Events", url: `${SITE.url}/case-studies` },
+        { type: "Place", name: "Bandung, Jawa Barat" },
+      ],
     }),
     {
       "@context": "https://schema.org",
