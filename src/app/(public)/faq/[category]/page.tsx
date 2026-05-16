@@ -34,7 +34,18 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: cat.title,
     description: cat.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: cat.title, description: cat.metaDescription, url, type: "article", images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }] },
+    openGraph: {
+      title: cat.title,
+      description: cat.metaDescription,
+      url,
+      type: "article",
+      publishedTime: "2026-05-12",
+      modifiedTime: "2026-05-16",
+      authors: [`${SITE.url}/team#andre-pratama`],
+      section: "FAQ Corporate Outing Bandung",
+      tags: ["faq corporate outing bandung", cat.eyebrow.toLowerCase(), "pertanyaan corporate event"],
+      images: [{ url: IMAGES.heroMain.src, width: 1200, height: 630, alt: IMAGES.heroMain.alt }],
+    },
     twitter: { card: "summary_large_image", title: cat.title, description: cat.metaDescription, images: [IMAGES.heroMain.src] },
   };
 }

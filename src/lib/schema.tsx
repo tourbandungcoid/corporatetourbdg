@@ -168,6 +168,19 @@ export function organizationSchema() {
       bestRating: 5,
       worstRating: 1,
     },
+    interactionStatistic: [
+      {
+        "@type": "InteractionCounter",
+        interactionType: "https://schema.org/ReviewAction",
+        userInteractionCount: REVIEWS.googleReviewCount,
+      },
+      {
+        "@type": "InteractionCounter",
+        interactionType: "https://schema.org/BookmarkAction",
+        userInteractionCount: 400,
+        description: "400+ corporate events delivered since 2018",
+      },
+    ],
   };
 }
 
@@ -341,6 +354,7 @@ export function articleSchema({
     datePublished,
     dateModified,
     inLanguage: "id-ID",
+    isAccessibleForFree: true,
     author: authorEntity,
     publisher: {
       "@type": "Organization",

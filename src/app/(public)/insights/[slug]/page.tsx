@@ -24,11 +24,21 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+const INSIGHT_AUTHOR_ID_MAP: Record<string, string> = {
+  "Andre Pratama": `${SITE.url}/team#andre-pratama`,
+  "Sinta Rahmadhani": `${SITE.url}/team#sinta-rahmadhani`,
+  "Raden Bagus Wicaksono": `${SITE.url}/team#raden-bagus`,
+  "Amelia Chandra": `${SITE.url}/team#amelia-chandra`,
+  "Tio Mahesa": `${SITE.url}/team#tio-mahesa`,
+  "Putri Anggraeni": `${SITE.url}/team#putri-anggraeni`,
+};
+
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const article = await getInsight(slug);
   if (!article) return { title: "Article not found" };
   const url = `${SITE.url}/insights/${article.slug}`;
+  const authorId = INSIGHT_AUTHOR_ID_MAP[article.author.name] ?? `${SITE.url}/team`;
   return {
     title: article.title,
     description: article.metaDescription,
@@ -40,9 +50,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       type: "article",
       publishedTime: article.publishDate,
       modifiedTime: "2026-05-16",
-      authors: [`${SITE.url}/team`],
+      authors: [authorId],
       section: article.category,
-      tags: ["corporate event bandung", article.category.toLowerCase(), "outing kantor"],
+      tags: ["corporate event bandung", article.category.toLowerCase(), "outing kantor bandung"],
       images: [{ url: article.heroImage.src, width: 1200, height: 630, alt: article.heroImage.alt }],
     },
     twitter: {
