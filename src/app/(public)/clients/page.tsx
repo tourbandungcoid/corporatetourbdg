@@ -12,6 +12,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  howToSchema,
 } from "@/lib/schema";
 import { getTestimonialsList } from "@/lib/testimonials-data";
 
@@ -139,6 +140,18 @@ export default async function ClientsPage() {
       aboutService: "B2B Corporate Event Specialist Bandung",
       author: { name: "Andre Pratama", role: "Founder & Lead Corporate Strategist" },
       keywords: ["klien corporate event bandung", "perusahaan corporate outing bandung", "referensi event organizer corporate bandung", "portfolio vendor corporate event indonesia"],
+    }),
+    howToSchema({
+      pageUrl: `${SITE.url}/clients`,
+      name: "Cara Melakukan Due Diligence Vendor Corporate Event untuk Procurement Perusahaan",
+      description: "5 langkah verifikasi vendor corporate event sebelum procurement sign-off — dari cek legalitas hingga konfirmasi referensi klien.",
+      steps: [
+        { name: "Request Company Profile & Dokumen Legalitas", text: "Minta NPWP aktif, SIUP/NIB terbaru, rekening perusahaan atas nama badan usaha, dan sertifikasi relevan (K3, ASITA, MICE Professional). Untuk BUMN dan perusahaan publik, konfirmasi status PKP untuk faktur pajak." },
+        { name: "Verifikasi Track Record Klien Sejenis", text: "Minta referensi 3 klien dari industri atau skala yang relevan (tech, banking, FMCG, atau BUMN). Portofolio yang sehat mencakup minimal 5 tahun operasional dan 50+ corporate events." },
+        { name: "Hubungi Referensi Secara Langsung", text: "Telepon atau email klien referensi — jangan hanya terima testimonial tertulis. Tanyakan: apakah on-time delivery, adakah biaya muncul di luar proposal, apakah PM yang dijanjikan yang benar-benar menangani, dan apakah mereka rekomendasikan vendor ini." },
+        { name: "Evaluasi Kualitas Proposal & Transparansi", text: "Proposal berkualitas: breakdown line-item (venue, F&B, transport, PM fee, contingency), risk mitigation plan, dedicated PM dengan nama jelas, dan post-event report sebagai deliverable standar. Vendor transparan tidak keberatan jika Anda tanya 'apa yang tidak termasuk dalam paket ini?'" },
+        { name: "Lakukan Briefing Call dengan PM Aktual", text: "Sebelum sign kontrak, lakukan briefing call dengan project manager yang akan benar-benar menangani event Anda — bukan hanya sales rep. Chemistry, response time, dan pemahaman mereka tentang objective event Anda adalah indikator paling akurat tentang kualitas eksekusi." },
+      ],
     })
   );
 

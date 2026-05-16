@@ -15,6 +15,7 @@ import {
   localBusinessSchema,
   personSchema,
   articleSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -86,7 +87,18 @@ export default function TeamPage() {
         knowsAbout: m.specialties,
         hasCredential: m.credentials,
       })
-    )
+    ),
+    howToSchema({
+      pageUrl: `${SITE.url}/team`,
+      name: "Cara Memilih Senior Planner Corporate Event yang Tepat",
+      description: "4 langkah mencocokkan kebutuhan corporate event Anda dengan spesialisasi planner yang tepat untuk hasil optimal.",
+      steps: [
+        { name: "Definisikan Objective Event", text: "Identifikasi prioritas utama: bonding informal (→ Amelia atau Sinta), strategic alignment atau leadership (→ Andre), safety-heavy outdoor (→ Raden Bagus), atau operasional lapangan skala besar (→ Tio). Objective yang jelas menentukan komposisi tim yang paling relevan." },
+        { name: "Match Spesialisasi dengan Kebutuhan Spesifik", text: "Sinta Rahmadhani: discovery brief dan behavior change facilitation, ex-Deloitte HC. Amelia Chandra: program flow design dan experience architecture. Raden Bagus: risk management dan outdoor safety. Tio Mahesa: field execution 200+ events. Putri Anggraeni: post-event reporting dan ROI measurement." },
+        { name: "Verifikasi Pengalaman di Industri atau Skala yang Relevan", text: "Tanyakan pengalaman spesifik: 'Sudah pernah handle gathering untuk industri perbankan sebelumnya?', 'Bagaimana cara Anda handle 300+ pax outdoor event saat hujan?' Jawaban konkret dengan detail teknis adalah sinyal pengalaman nyata." },
+        { name: "Lakukan Briefing Call Langsung", text: "Minta briefing call 15–30 menit dengan planner yang akan jadi PM proyek Anda — bukan sales rep. Respons terhadap pertanyaan Anda, kemampuan menangkap nuance brief, dan proaktivitas dalam mengidentifikasi risiko adalah indikator kualitas pelayanan sesungguhnya." },
+      ],
+    })
   );
 
   return (

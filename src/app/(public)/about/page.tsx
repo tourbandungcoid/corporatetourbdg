@@ -12,6 +12,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   articleSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -99,7 +100,19 @@ export default function AboutPage() {
         numberOfEmployees: { "@type": "QuantitativeValue", value: 6, minValue: 6, maxValue: 15 },
       },
       primaryImageOfPage: { "@type": "ImageObject", url: IMAGES.heroMain.src, width: 1200, height: 630 },
-    }
+    },
+    howToSchema({
+      pageUrl: `${SITE.url}/about`,
+      name: "Cara Memverifikasi Kredensial Vendor Corporate Event Bandung",
+      description: "5 langkah due diligence untuk memilih vendor corporate event yang aman dan accountable untuk procurement perusahaan.",
+      steps: [
+        { name: "Periksa Track Record & Portfolio", text: "Cek tahun berdiri, jumlah corporate events yang pernah di-handle, dan klien dari industri yang relevan. Vendor specialist B2B harus bisa tunjukkan minimum 50+ corporate events dengan client dari beberapa industri berbeda." },
+        { name: "Verifikasi Legalitas & Procurement Readiness", text: "Minta NPWP aktif, SIUP/NIB, rekening perusahaan (bukan rekening pribadi), dan konfirmasi apakah vendor terdaftar sebagai PKP (untuk faktur pajak). Ini wajib untuk klien BUMN, perbankan, dan perusahaan publik." },
+        { name: "Evaluasi Tim Senior", text: "Tanya siapa PM dedicated yang akan menangani proyek Anda, berapa tahun tenure mereka, dan tunjukkan portofolio spesifik. Red flag: tidak ada nama PM yang jelas atau tim berganti-ganti selama proses." },
+        { name: "Minta Referensi Klien Aktual", text: "Hubungi minimum 2 referensi klien sebelumnya di industri atau skala yang relevan. Tanyakan: apakah vendor tepat waktu, adakah biaya tak terduga, apakah mereka akan pakai lagi?" },
+        { name: "Evaluasi Kualitas Proposal", text: "Proposal yang baik mencantumkan breakdown line-item (bukan lump sum), risk register atau backup plan, dedicated PM yang disebutkan namanya, dan post-event report sebagai deliverable standar. Tidak ada hidden cost policy harus tertulis di kontrak." },
+      ],
+    })
   );
 
   return (
