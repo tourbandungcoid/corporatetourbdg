@@ -38,7 +38,7 @@ export function organizationSchema() {
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "TravelAgency"],
+    "@type": ["LocalBusiness", "EventPlanner", "ProfessionalService"],
     "@id": `${SITE.url}#business`,
     name: SITE.legalName,
     alternateName: SITE.name,
@@ -286,6 +286,40 @@ export function videoObjectSchema({
       "@type": "Organization",
       name: SITE.name,
       logo: { "@type": "ImageObject", url: `${SITE.url}/logo/logo.png` },
+    },
+  };
+}
+
+/**
+ * SpeakableSpecification — marks page sections as AI/voice extractable.
+ * Helps Google AI Overview and voice search identify key content.
+ */
+export function speakableSchema(cssSelectors: string[], xPaths?: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      ...(cssSelectors.length > 0 ? { cssSelector: cssSelectors } : {}),
+      ...(xPaths && xPaths.length > 0 ? { xpath: xPaths } : {}),
+    },
+  };
+}
+
+/**
+ * DefinedTerm schema for glossary entries — entity-level semantic clarity.
+ */
+export function definedTermSchema({ term, description, url }: { term: string; description: string; url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: term,
+    description,
+    url,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Corporate Event Glossary Indonesia",
+      url: `${SITE.url}/glossary`,
     },
   };
 }

@@ -20,28 +20,39 @@ import {
   organizationSchema,
   localBusinessSchema,
   faqPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
-    "Corporate Outing & Gathering Bandung | TourBandung Corporate — 7Summits Travel",
+    "Provider Corporate Event Bandung — Event Organizer B2B, Team Building & Gathering | TourBandung Corporate",
   description:
-    "Specialist B2B corporate outing, team building & executive offsite di Bandung. ⭐ 4.9/5 (105 Google Reviews) · 400+ events delivered · Proposal gratis dalam 24 jam. Hubungi kami sekarang.",
+    "Provider corporate event Bandung specialist B2B: outing kantor, corporate gathering, team building, MICE, incentive trip & executive offsite. ⭐ 4.9/5 · 400+ events sejak 2018 · Proposal gratis dalam 24 jam.",
   alternates: { canonical: SITE.url },
+  keywords: [
+    "corporate event bandung",
+    "provider corporate event bandung",
+    "event organizer corporate bandung",
+    "corporate gathering bandung",
+    "team building bandung",
+    "outing kantor bandung",
+    "MICE organizer bandung",
+    "incentive trip bandung",
+  ],
   openGraph: {
     title:
-      "TourBandung Corporate — Corporate Outing & Gathering Bandung Specialist",
+      "TourBandung Corporate — Provider Corporate Event & EO B2B Bandung Specialist",
     description:
-      "400+ corporate events. 100+ perusahaan Indonesia. Specialist B2B — bukan generic EO. Proposal gratis dalam 24 jam.",
+      "400+ corporate events delivered. 100+ perusahaan Indonesia. Specialist B2B — outing, gathering, team building, MICE, incentive trip. Proposal gratis dalam 24 jam.",
     url: SITE.url,
     type: "website",
     images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TourBandung Corporate — Corporate Outing & Gathering Bandung",
+    title: "TourBandung Corporate — Provider Corporate Event Bandung",
     description:
-      "Specialist B2B corporate outing & team building Bandung. 400+ events · 4.9 ⭐ Google · Proposal 24 jam.",
+      "Specialist B2B corporate event Bandung. 400+ events · 4.9 ⭐ Google · Proposal 24 jam.",
     images: [`${SITE.url}/opengraph-image`],
   },
 };
@@ -92,7 +103,8 @@ export default function HomePage() {
         "query-input": "required name=search_term_string",
       },
     },
-    faqPageSchema(TOP_FAQS)
+    faqPageSchema(TOP_FAQS),
+    speakableSchema(["h1", ".quick-answer", ".trust-bar", "h2"])
   );
 
   return (
