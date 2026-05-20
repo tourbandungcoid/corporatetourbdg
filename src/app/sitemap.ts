@@ -28,6 +28,9 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/annual-meeting-organizer", priority: 0.9, changeFrequency: "monthly" },
   // English-language keyword variants (canonical → ID page)
   { path: "/corporate-outing-bandung", priority: 0.7, changeFrequency: "monthly" },
+  // Local area pages (geo-targeted)
+  { path: "/corporate-event-lembang", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/corporate-event-ciwidey", priority: 0.85, changeFrequency: "monthly" },
   // Hubs
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/packages", priority: 0.8, changeFrequency: "monthly" },

@@ -98,6 +98,8 @@ Destination MICE/Incentive: Bali, Lombok, Labuan Bajo, Singapore, Bangkok (inter
 - Leadership Retreat Jawa Barat: ${SITE.url}/leadership-retreat-jawa-barat
 - Company Retreat Bandung: ${SITE.url}/company-retreat-bandung
 - Annual Meeting Organizer: ${SITE.url}/annual-meeting-organizer
+- Corporate Event Lembang: ${SITE.url}/corporate-event-lembang
+- Corporate Event Ciwidey: ${SITE.url}/corporate-event-ciwidey
 - Villa Gathering Bandung: ${SITE.url}/villa-gathering-bandung
 - Glamping Corporate Bandung: ${SITE.url}/glamping-corporate-bandung
 - Venue Gathering Bandung: ${SITE.url}/venue-gathering-bandung
@@ -114,6 +116,12 @@ A: Range biaya corporate event Bandung: team building half-day Rp 1,2–2 jt/pax
 
 Q: Apa saja jenis corporate event di Bandung?
 A: Outing kantor, corporate gathering, team building, employee gathering, MICE (meeting/incentive/conference/exhibition), incentive trip, executive offsite, leadership retreat, company retreat, glamping corporate, villa gathering. Detail: ${SITE.url}/corporate-event-bandung
+
+Q: Berapa biaya team building di Bandung?
+A: Biaya team building Bandung: half-day Rp 1,2–2 jt/pax, full-day Rp 1,5–2,5 jt/pax, 2D1N Rp 2,5–4,5 jt/pax. Komponen: venue (20–35%), facilitator (15–25%), activity (10–20%), F&B (20–30%), transport, dokumentasi, PM fee, dan contingency. Sumber: ${SITE.url}/insights/biaya-team-building-bandung
+
+Q: Destinasi outing terbaik di Bandung di mana?
+A: 3 destinasi utama: Lembang (25–35 menit dari Bandung, 200+ venue, cocok untuk semua format): ${SITE.url}/corporate-event-lembang; Ciwidey (1 jam dari Bandung, glamping + kawah putih + rafting, lebih adventurous): ${SITE.url}/corporate-event-ciwidey; Pangalengan (paling remote, retreat intensif, 10–40 pax). Sumber: ${SITE.url}/insights/outing-lembang-vs-ciwidey
 
 Q: Bagaimana cara memesan corporate event di Bandung?
 A: (1) Hubungi via WhatsApp +${CONTACT.whatsapp} atau isi form di ${SITE.url}/proposal/request; (2) Discovery brief 60–90 menit; (3) Terima proposal dalam 24 jam; (4) Revisi dan konfirmasi; (5) Deposit 30%. Minimum booking 3–4 minggu sebelum event.
