@@ -318,7 +318,11 @@ export default function IncentiveTripBandungPage() {
         <Section id="beda" eyebrow="Section 1" title="Kenapa incentive trip berbeda dari company outing biasa">
           <p>
             Incentive trip adalah tool HR dan sales leadership yang spesifik — bukan sekedar rekreasi. Fungsinya:{" "}
-            <strong>mengkomunikasikan bahwa perusahaan benar-benar invest pada orang-orang terbaiknya.</strong>
+            <strong>mengkomunikasikan bahwa perusahaan benar-benar invest pada orang-orang terbaiknya.</strong> Untuk acara formal annual dengan awarding ceremony yang lebih besar, lihat{" "}
+            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+              corporate gathering yang lebih formal dan expensive
+            </Link>
+            .
           </p>
           <p>
             Bedanya dengan company outing biasa:
