@@ -320,6 +320,48 @@ export default function MiceOrganizerBandungPage() {
           </div>
         </section>
 
+        {/* Budget Breakdown */}
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per format (per pax):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Format MICE</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (200 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Corporate Meeting (1D, 20–100 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 1,5–2,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 300–500 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Conference Single-Day (100–300 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3–4 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 600–800 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Conference Multi-Day (200–500 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 4–5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 800 jt–1 m</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Conference + Exhibition (300–500 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 5–6 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 1–1,2 m</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Table of Contents */}
         <section className="py-12 border-b border-divider">
           <div className="container-1280">

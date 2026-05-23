@@ -280,6 +280,42 @@ export default function OutboundPerusahaanBandungPage() {
           </div>
         </section>
 
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 1D):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Tier Outbound</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (80 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 1: Light (Low-Impact)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 1,5–2,2 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 120–176 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 2: Medium (High-Adrenaline)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2–2,8 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 160–224 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 3: Extreme (Adventure)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3–4 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 240–320 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 border-b border-divider">
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>

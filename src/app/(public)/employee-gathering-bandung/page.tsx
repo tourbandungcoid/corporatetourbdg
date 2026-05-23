@@ -258,6 +258,42 @@ export default function EmployeeGatheringBandungPage() {
                 dateUpdated="2026-05-22"
                 googleReviewCount={105}
               />
+              <div className="mt-5 border-t border-divider pt-5">
+                <p className="text-sm font-medium text-ink mb-3">Budget by format (per pax, 100 pax):</p>
+                <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-cream/40 border-b border-divider">
+                        <th className="px-3 py-2 text-left font-medium">Format</th>
+                        <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                        <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">1 Day Gathering</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,5–2 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 150–200 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">1D2N Standard</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2–2,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 200–250 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">2D1N Premium</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2,5–3,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 250–350 jt</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-medium">Multi-generational</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 3–3,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 300–350 jt</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"

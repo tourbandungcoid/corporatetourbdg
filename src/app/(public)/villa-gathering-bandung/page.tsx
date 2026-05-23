@@ -268,6 +268,42 @@ export default function VillaGatheringBandungPage() {
           </div>
         </section>
 
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 2D1N):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Villa Tier</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Standard Villa (30-60 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2,2–3 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 220–300 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Premium Villa Estate (60-120 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3,5–4,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 350–450 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Exclusive / Multi-Villa Cluster (100-300 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 4,5–5,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 450–550 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 border-b border-divider">
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>

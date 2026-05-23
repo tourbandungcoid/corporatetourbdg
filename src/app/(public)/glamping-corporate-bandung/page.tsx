@@ -296,6 +296,42 @@ export default function GlampingCorporateBandungPage() {
           </div>
         </section>
 
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 1D2N):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Tier Glamping</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Standard (Tenda Safari)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 250 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Premium (Tenda Suite)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3,6 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 360 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Executive (Villa-Tent Hybrid)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 5,2 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 520 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 border-b border-divider">
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>
