@@ -5,6 +5,7 @@ import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -444,6 +445,17 @@ export default function EventOrganizerCorporateBandungPage() {
             ))}
           </div>
         </Section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Event Organizer"
+              experience="6+ years"
+              eventCount={400}
+              lastReviewDate="May 2026"
+            />
+          </div>
+        </section>
 
         {/* Case Studies */}
         <section id="case-studies" className="py-16 md:py-20 border-t border-divider">

@@ -11,6 +11,7 @@ import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -740,6 +741,17 @@ export default function TeamBuildingBandungPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Senior Facilitator"
+              experience="6+ years"
+              eventCount={300}
+              lastReviewDate="May 2026"
+            />
           </div>
         </section>
 
