@@ -9,6 +9,10 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -288,6 +292,46 @@ export default function TeamBuildingBandungPage() {
                 <Tag>Durasi: Half/Full/2D1N</Tag>
                 <Tag>Format: Outbound · Indoor · Hybrid</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
+              <div className="mt-5 border-t border-divider pt-5">
+                <p className="text-sm font-medium text-ink mb-3">Budget breakdown by duration (per pax, 100 pax):</p>
+                <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-cream/40 border-b border-divider">
+                        <th className="px-3 py-2 text-left font-medium">Format</th>
+                        <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                        <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Half-day (4 jam)</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,2–1,8 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 120–180 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Full-day (8 jam)</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,8–2,8 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 180–280 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">2D1N</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2,5–4 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 250–400 jt</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-medium">3D2N (immersive)</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 4–6 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 400–600 jt</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -352,7 +396,11 @@ export default function TeamBuildingBandungPage() {
             terbalik: <em>apa team outcome yang mau dicapai?</em> Bonding
             pasca-merger? Improve cross-department komunikasi? Build trust
             di tim baru? Develop leadership di middle management? Setiap goal
-            butuh activity dan methodology yang berbeda.
+            butuh activity dan methodology yang berbeda. Berbeda dengan{" "}
+            <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+              outing kantor yang lebih casual dan fokus refresh + bonding
+            </Link>
+            .
           </p>
           <p>
             Dari 400+ event yang kami handle, pattern paling jelas: tim yang
@@ -488,9 +536,14 @@ export default function TeamBuildingBandungPage() {
         <Section
           id="budget"
           eyebrow="Section 5"
-          title="Estimasi budget team building per pax"
+          title="Team Building Cost Breakdown Bandung — Full Pricing 1D to 3D2N"
         >
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p className="mb-4">
+                Pricing tergantung durasi, format (outbound/indoor/hybrid), dan methodology yang dipilih. Semua paket sudah include venue, F&B, activity guide, basic equipment, dan project management.
+              </p>
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -518,11 +571,29 @@ export default function TeamBuildingBandungPage() {
             </table>
           </div>
 
-          <p className="mt-6">
-            Untuk grup besar (200+ pax), economy of scale turunkan ke kisaran
-            Rp 1,5-2,5 jt/pax untuk full-day. Senior facilitator (certified)
-            tambah Rp 5-10 jt/event sebagai flat fee.
-          </p>
+              <p className="mt-6">
+                Untuk grup besar (200+ pax), economy of scale turunkan ke kisaran
+                Rp 1,5-2,5 jt/pax untuk full-day. Senior facilitator (certified)
+                tambah Rp 5-10 jt/event sebagai flat fee. Untuk event tahunan yang
+                lebih formal dengan ceremony dan awarding, lihat{" "}
+                <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+                  corporate gathering yang lebih formal dan expensive
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Team Building Bandung"
+                intents={[
+                  { percentage: 60, description: "Budget planning (berapa cost)" },
+                  { percentage: 25, description: "Activity options (pilihan kegiatan)" },
+                  { percentage: 15, description: "Outcome measurement (gimana ukur hasilnya)" },
+                ]}
+                cta="Konsultasi gratis tentang program? Chat sekarang →"
+              />
+            </div>
+          </div>
         </Section>
 
         <Section
@@ -610,6 +681,31 @@ export default function TeamBuildingBandungPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6">
+            Untuk detail lengkap venue gathering Bandung dengan activity facilities, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung recommendation →
+            </Link>
+          </p>
+        </Section>
+
+        {/* Competitor Comparison */}
+        <Section
+          id="specialist-vs-generic"
+          eyebrow="Why Specialist Matters"
+          title="Generic Travel Agent vs Corporate Specialist — Kenapa Perbedaannya Signifikan"
+        >
+          <p>
+            Bandung punya banyak vendor team building — dari travel agent retail yang
+            nyambi corporate, sampai specialist yang fokus 100% B2B corporate development.
+            Perbedaan methodology dan outcome mereka sangat signifikan.
+          </p>
+          <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist team building facilitator vs generic outbound →
+            </Link>
+          </p>
         </Section>
 
         {/* Trust strip */}
@@ -700,6 +796,17 @@ export default function TeamBuildingBandungPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Senior Facilitator"
+              experience="6+ years"
+              eventCount={300}
+              lastReviewDate="May 2026"
+            />
           </div>
         </section>
 

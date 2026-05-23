@@ -9,6 +9,8 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -271,6 +273,10 @@ export default function GlampingCorporateBandungPage() {
                 <Tag>Durasi: 1D2N standard</Tag>
                 <Tag>Top areas: Cikole · Ranca Upas · Pangalengan</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -327,7 +333,12 @@ export default function GlampingCorporateBandungPage() {
             Setiap year, ratusan corporate outing di Indonesia book hotel atau
             villa. Bagus untuk most case. <strong>Tapi</strong> ada momentum
             spesifik dimana glamping memberi outcome yang impossible di setting
-            indoor: <strong>shared vulnerability di alam terbuka</strong>.
+            indoor: <strong>shared vulnerability di alam terbuka</strong>. Untuk
+            opsi venue gathering lengkap termasuk venue indoor dan outdoor, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung recommendations
+            </Link>
+            .
           </p>
           <p>
             Saat tim duduk mengelilingi bonfire dengan langit penuh bintang

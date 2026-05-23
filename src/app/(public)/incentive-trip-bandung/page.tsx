@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -264,6 +266,10 @@ export default function IncentiveTripBandungPage() {
                 <Tag>Durasi: 2D1N – 4D3N</Tag>
                 <Tag>Domestik + Internasional</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -313,7 +319,11 @@ export default function IncentiveTripBandungPage() {
         <Section id="beda" eyebrow="Section 1" title="Kenapa incentive trip berbeda dari company outing biasa">
           <p>
             Incentive trip adalah tool HR dan sales leadership yang spesifik — bukan sekedar rekreasi. Fungsinya:{" "}
-            <strong>mengkomunikasikan bahwa perusahaan benar-benar invest pada orang-orang terbaiknya.</strong>
+            <strong>mengkomunikasikan bahwa perusahaan benar-benar invest pada orang-orang terbaiknya.</strong> Untuk acara formal annual dengan awarding ceremony yang lebih besar, lihat{" "}
+            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+              corporate gathering yang lebih formal dan expensive
+            </Link>
+            .
           </p>
           <p>
             Bedanya dengan company outing biasa:
@@ -473,6 +483,17 @@ export default function IncentiveTripBandungPage() {
             </table>
           </div>
         </Section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Trip Planner"
+              experience="6+ years"
+              eventCount={350}
+              lastReviewDate="May 2026"
+            />
+          </div>
+        </section>
 
         {/* Case Studies */}
         <section id="case-studies" className="py-16 md:py-20 border-t border-divider">

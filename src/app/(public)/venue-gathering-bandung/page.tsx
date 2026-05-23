@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
 import { IMAGES } from "@/lib/drive-images";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
@@ -73,7 +74,7 @@ const VENUE_CATEGORIES = [
   {
     cat: "Hotel Premium — Ballroom Besar",
     id: "hotel",
-    desc: "Untuk corporate gathering formal 200–800 pax yang butuh ballroom, AV in-house, dan fasilitas lengkap.",
+    desc: <>Untuk <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">corporate gathering formal dengan ballroom production</Link> 200–800 pax yang butuh ballroom, AV in-house, dan fasilitas lengkap.</>,
     venues: [
       {
         name: "Padma Hotel Lembang",
@@ -128,7 +129,7 @@ const VENUE_CATEGORIES = [
   {
     cat: "Resort & Villa — Suasana Alam",
     id: "resort",
-    desc: "Untuk gathering yang butuh nature setting, outdoor activities, dan exclusive vibe. 50–300 pax.",
+    desc: <>Untuk gathering yang butuh nature setting, outdoor activities, dan exclusive vibe. 50–300 pax. Lihat juga <Link href="/villa-gathering-bandung" className="text-brand font-medium hover:underline">private villa gathering untuk intimate bonding</Link>.</>,
     venues: [
       {
         name: "Dusun Bambu Family Leisure Park",
@@ -183,7 +184,7 @@ const VENUE_CATEGORIES = [
   {
     cat: "Outdoor & Adventure Ground",
     id: "outdoor",
-    desc: "Untuk team building outbound, glamping corporate, dan active programs. 20–300 pax.",
+    desc: <>Untuk team building outbound, <Link href="/glamping-corporate-bandung" className="text-brand font-medium hover:underline">glamping corporate experience unique</Link>, dan active programs. 20–300 pax.</>,
     venues: [
       {
         name: "Cikole Adventure & Outbound",
@@ -372,6 +373,10 @@ export default function VenueGatheringBandungPage() {
                 <Tag>20 pax – 2.000 pax</Tag>
                 <Tag>3 kategori venue</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -494,6 +499,14 @@ export default function VenueGatheringBandungPage() {
                   </tbody>
                 </table>
               </div>
+
+              <p className="mt-6 text-slate">
+                Untuk event yang lebih casual dengan fokus bonding (bukan formal gathering), lihat{" "}
+                <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+                  venue untuk outing kantor casual vs gathering formal
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

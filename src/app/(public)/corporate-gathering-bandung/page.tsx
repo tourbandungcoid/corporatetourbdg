@@ -9,6 +9,10 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -238,6 +242,46 @@ export default function CorporateGatheringBandungPage() {
                 <Tag>Durasi: 2D1N – 3D2N</Tag>
                 <Tag>Venue: Hotel ballroom premium</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
+              <div className="mt-5 border-t border-divider pt-5">
+                <p className="text-sm font-medium text-ink mb-3">Budget breakdown by tier (2D1N, Bandung):</p>
+                <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-cream/40 border-b border-divider">
+                        <th className="px-3 py-2 text-left font-medium">Tier</th>
+                        <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                        <th className="px-3 py-2 text-left font-medium">200 Pax Total</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Business Hotel</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2,5–3,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 500–700 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Premium Hotel</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 3,5–5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 700 jt–1 M</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Luxury Resort</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 5–7 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1–1,4 M</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-medium">Bespoke Venue</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 7 jt+</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,4 M+</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -328,8 +372,11 @@ export default function CorporateGatheringBandungPage() {
           <p className="mt-6">
             <strong>Rule of thumb:</strong> kalau ada momen besar (anniversary,
             milestone, post-IPO, awarding tahunan), pilih corporate gathering.
-            Kalau prioritas refresh + bonding informal, pilih outing kantor.
-            Beberapa perusahaan mix — corporate gathering setahun sekali +
+            Kalau prioritas refresh + bonding informal, pilih{" "}
+            <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+              outing kantor
+            </Link>
+            . Beberapa perusahaan mix — corporate gathering setahun sekali +
             outing kantor quarterly.
           </p>
         </Section>
@@ -475,6 +522,13 @@ export default function CorporateGatheringBandungPage() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6">
+            Untuk venue gathering options yang lebih luas including villa, resort, dan location-specific recommendations, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              8 hotel ballroom terbaik dan venue gathering recommendations →
+            </Link>
+          </p>
         </Section>
 
         <Section
@@ -539,12 +593,14 @@ export default function CorporateGatheringBandungPage() {
           eyebrow="Section 6"
           title="Budget breakdown corporate gathering by component"
         >
-          <p>
-            Untuk 200 pax 2D1N premium total Rp 700jt-1,4 miliar, breakdown
-            per komponen:
-          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p>
+                Untuk 200 pax 2D1N premium total Rp 700jt-1,4 miliar, breakdown
+                per komponen:
+              </p>
 
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -572,7 +628,36 @@ export default function CorporateGatheringBandungPage() {
                 ))}
               </tbody>
             </table>
+              </div>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Corporate Gathering Bandung"
+                intents={[
+                  { percentage: 70, description: "Budget breakdown (berapa cost per komponen)" },
+                  { percentage: 20, description: "Vendor & venue (pilihan hotel terbaik)" },
+                  { percentage: 10, description: "Timeline & preparation (berapa lama prep)" },
+                ]}
+                cta="Mau proposal gathering premium? Chat sekarang →"
+              />
+            </div>
           </div>
+        </Section>
+
+        <Section
+          id="compare-tb"
+          eyebrow="Quick Comparison"
+          title="Corporate Gathering vs Team Building"
+        >
+          <p>
+            Gathering adalah formal annual event dengan ceremony &amp; awarding.
+            Untuk acara yang lebih fokus ke team outcomes tertentu (komunikasi,
+            problem solving, trust building), lihat{" "}
+            <Link href="/team-building-bandung" className="text-brand font-medium hover:underline">
+              team building vs gathering — formal vs casual →
+            </Link>
+            . Team building bisa jadi komponen di dalam gathering, atau standalone activity.
+          </p>
         </Section>
 
         <Section
@@ -633,6 +718,25 @@ export default function CorporateGatheringBandungPage() {
             </div>
           </div>
         </section>
+
+        {/* Competitor Comparison */}
+        <Section
+          id="specialist-vs-generic"
+          eyebrow="Why Specialist Matters"
+          title="Generic Travel Agent vs Corporate Specialist — Kenapa Perbedaannya Signifikan"
+        >
+          <p>
+            Untuk event besar seperti corporate gathering, perbedaan antara bekerja
+            dengan generic travel agent vs corporate specialist sangat signifikan — terutama
+            dalam hal production quality, risk management, dan post-event accountability.
+          </p>
+          <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist vs generic organizer →
+            </Link>
+          </p>
+        </Section>
 
         <Section id="faq" eyebrow="FAQ" title="Pertanyaan yang sering ditanyakan HR">
           <div className="not-prose space-y-3 mt-4">
@@ -714,6 +818,17 @@ export default function CorporateGatheringBandungPage() {
                 WhatsApp
               </a>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Senior Planner"
+              experience="6+ years"
+              eventCount={400}
+              lastReviewDate="May 2026"
+            />
           </div>
         </section>
 

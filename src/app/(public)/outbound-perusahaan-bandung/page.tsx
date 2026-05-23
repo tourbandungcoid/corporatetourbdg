@@ -9,6 +9,8 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -255,6 +257,10 @@ export default function OutboundPerusahaanBandungPage() {
                 <Tag>Tier: Light · Medium · Extreme</Tag>
                 <Tag>Safety: 5-layer protocol</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -309,7 +315,7 @@ export default function OutboundPerusahaanBandungPage() {
         >
           <p>
             Term sering digunakan interchangeable, tapi sebenarnya:{" "}
-            <strong>outbound adalah subset team building</strong>. Team building
+            <strong>outbound adalah subset <Link href="/team-building-bandung" className="link">team building</Link></strong>. Team building
             adalah umbrella — bisa outdoor (outbound), indoor (workshop), atau
             hybrid. Outbound khusus mengacu pada outdoor adventure dengan
             physical activity dominant.

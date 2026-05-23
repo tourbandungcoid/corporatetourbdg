@@ -9,6 +9,10 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -309,6 +313,46 @@ export default function OutingKantorBandungPage() {
                 <Tag>Durasi: 1D – 3D2N</Tag>
                 <Tag>Lokasi: Lembang · Ciwidey · Pangalengan</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
+              <div className="mt-5 border-t border-divider pt-5">
+                <p className="text-sm font-medium text-ink mb-3">Budget breakdown 4-tier (2D1N, 100 pax):</p>
+                <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-cream/40 border-b border-divider">
+                        <th className="px-3 py-2 text-left font-medium">Tier</th>
+                        <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                        <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Conservative</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,8–2,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 180–250 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Standard</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2,5–4,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 250–450 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">Premium</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 4,5–7 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 450–700 jt</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-medium">Bespoke</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 7 jt+</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 700 jt+</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -360,7 +404,7 @@ export default function OutingKantorBandungPage() {
         </section>
 
         {/* Section 1: Why Bandung */}
-        <Section id="why-bandung" eyebrow="Section 1" title="Mengapa Bandung pilihan top untuk outing kantor?">
+        <Section id="why-bandung" eyebrow="Section 1" title="Outing Kantor Bandung — 5 Alasan #1 Destinasi 1000+ Perusahaan Indonesia">
           <p>
             Bandung jadi destinasi paling sering di-pick untuk corporate outing
             dari Jakarta dan kota besar lainnya karena 4 alasan kombinatif:
@@ -384,7 +428,10 @@ export default function OutingKantorBandungPage() {
             Bandung, ada 60+ venue corporate-ready — villa private (capacity
             10–200), resort dengan ballroom (kapasitas 300–800), glamping site,
             dan outdoor activity ground. Kami punya direct partnership dengan
-            mereka, bukan reseller.
+            mereka, bukan reseller.{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              Lihat 20 venue terbaik →
+            </Link>
           </p>
           <p>
             <strong>Activity mix:</strong> Outbound adventure (Maribaya,
@@ -405,7 +452,7 @@ export default function OutingKantorBandungPage() {
               },
               {
                 t: "Team Building (Half Day – 2D1N)",
-                d: "Fokus team outcomes specific: komunikasi, problem solving, alignment. Format outbound, indoor workshop, atau hybrid. Pax 20–300.",
+                d: <>Fokus team outcomes specific: komunikasi, problem solving, alignment. Format <Link href="/team-building-bandung" className="text-brand font-medium hover:underline">outbound, indoor workshop, atau hybrid</Link>. Pax 20–300.</>,
               },
               {
                 t: "Department / Squad Bonding (1D – 1D2N)",
@@ -439,16 +486,18 @@ export default function OutingKantorBandungPage() {
         <Section
           id="budget"
           eyebrow="Section 3"
-          title="Estimasi budget outing kantor Bandung per pax (2D1N standar)"
+          title="Budget Outing Kantor 2026 — Per Pax Breakdown & 4-Tier Pricing Model"
         >
-          <p>
-            Range pricing di bawah ini untuk paket 2D1N standar (50–200 pax),
-            sudah include venue, F&amp;B 3x, transportation lokal, activity,
-            project management, dan contingency 8%. Berbeda tier = berbeda
-            kualitas venue dan kompleksitas activity.
-          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p>
+                Range pricing di bawah ini untuk paket 2D1N standar (50–200 pax),
+                sudah include venue, F&amp;B 3x, transportation lokal, activity,
+                project management, dan contingency 8%. Berbeda tier = berbeda
+                kualitas venue dan kompleksitas activity.
+              </p>
 
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -476,14 +525,27 @@ export default function OutingKantorBandungPage() {
             </table>
           </div>
 
-          <p className="mt-6">
-            <strong>Breakdown komponen (proporsi typical):</strong> Venue
-            30–40%, F&amp;B 25–30%, Activity 15–20%, Transportation 5–10%,
-            Talent/Production 5–10%, Contingency 5–8%, Project Management
-            included. Untuk grup &gt; 300 pax, ekonomi skala turun ke
-            Rp 2–4 jt/pax untuk tier standard karena negotiation power dengan
-            venue.
-          </p>
+              <p className="mt-6">
+                <strong>Breakdown komponen (proporsi typical):</strong> Venue
+                30–40%, F&amp;B 25–30%, Activity 15–20%, Transportation 5–10%,
+                Talent/Production 5–10%, Contingency 5–8%, Project Management
+                included. Untuk grup &gt; 300 pax, ekonomi skala turun ke
+                Rp 2–4 jt/pax untuk tier standard karena negotiation power dengan
+                venue.
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Outing Kantor Bandung"
+                intents={[
+                  { percentage: 65, description: "Budget planning (berapa cost)" },
+                  { percentage: 20, description: "Vendor selection (mana EO terbaik)" },
+                  { percentage: 15, description: "Logistical details (kapan, di mana)" },
+                ]}
+                cta="Siap clear semua detail? Chat sekarang →"
+              />
+            </div>
+          </div>
         </Section>
 
         {/* Section 4: Duration */}
@@ -526,7 +588,12 @@ export default function OutingKantorBandungPage() {
             <strong>Rule of thumb:</strong> Quarterly bonding cukup 1 day.
             Annual outing default ke 2D1N. Marquee event (anniversary, hari
             jadi 5/10 tahun, post-IPO, post-acquisition) layakkan 3D2N untuk
-            arc cerita yang complete.
+            arc cerita yang complete. Untuk acara tahunan yang lebih formal dengan
+            ceremony &amp; awarding, lihat{" "}
+            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+              corporate gathering yang lebih formal
+            </Link>
+            .
           </p>
         </Section>
 
@@ -599,8 +666,14 @@ export default function OutingKantorBandungPage() {
 
           <p className="mt-6">
             Untuk grup pertama kali outing di Bandung, kami biasanya rekomendasi{" "}
-            <strong>Lembang</strong> (variasi venue paling banyak) atau{" "}
-            <strong>Ciwidey</strong> (kalau prioritas adventure outbound).
+            <Link href="/locations/lembang-bandung" className="text-brand font-medium hover:underline">
+              <strong>Lembang</strong> (cool, scenic)
+            </Link>
+            {" "}atau{" "}
+            <Link href="/locations/ciwidey-bandung" className="text-brand font-medium hover:underline">
+              <strong>Ciwidey</strong> (adventure, Kawah Putih)
+            </Link>
+            .
           </p>
         </Section>
 
@@ -632,7 +705,30 @@ export default function OutingKantorBandungPage() {
 
           <p className="mt-6 text-sm text-slate-mute italic">
             Disclosure: kami check semua 7 — itulah kenapa kami nulis list-nya.
-            Bandingin dengan vendor lain sebelum decide.
+            Bandingin dengan vendor lain sebelum decide. Baca juga{" "}
+            <Link href="/event-organizer-corporate-bandung" className="text-brand hover:underline">
+              specialist B2B corporate vs generic EO
+            </Link>
+            .
+          </p>
+        </Section>
+
+        {/* Competitor Comparison */}
+        <Section
+          id="specialist-vs-generic"
+          eyebrow="Why Specialist Matters"
+          title="Generic Travel Agent vs Corporate Specialist — Kenapa Perbedaannya Signifikan"
+        >
+          <p>
+            Bandung punya banyak vendor outing — dari travel agent retail yang nyambi
+            corporate, sampai specialist yang fokus 100% B2B corporate. Perbedaan
+            approach mereka sangat signifikan terhadap hasil event Anda.
+          </p>
+          <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist vs generic organizer →
+            </Link>
           </p>
         </Section>
 
@@ -733,6 +829,17 @@ export default function OutingKantorBandungPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Senior Planner"
+              experience="6+ years"
+              eventCount={400}
+              lastReviewDate="May 2026"
+            />
           </div>
         </section>
 

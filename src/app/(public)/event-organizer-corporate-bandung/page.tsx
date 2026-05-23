@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -109,7 +111,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Direct venue partnership — bukan reseller",
-    desc: "60+ venue partner di Bandung & Jawa Barat dengan direct relationship. Tidak ada markup reseller layer. Anda dapat harga lebih baik dan prioritas availability.",
+    desc: <>60+ <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">direct venue partnership di Bandung & Jawa Barat</Link> dengan direct relationship. Tidak ada markup reseller layer. Anda dapat harga lebih baik dan prioritas availability.</>,
   },
   {
     title: "Risk register terdokumentasi",
@@ -258,6 +260,10 @@ export default function EventOrganizerCorporateBandungPage() {
                 <strong>Hanya corporate events</strong> — dari team building 20 orang sampai annual gathering 2.000 pax. Dengan{" "}
                 <strong>{STATS.eventsDelivered} events</strong> dan <strong>{STATS.companiesTrusted} klien korporat</strong>, kami adalah salah satu EO corporate paling berpengalaman di Bandung & Jawa Barat.
               </p>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -344,7 +350,8 @@ export default function EventOrganizerCorporateBandungPage() {
             Ingin cara mudah memverifikasi vendor sebelum booking? Baca panduan kami di{" "}
             <Link href="/specialist-vs-generic-eo" className="text-brand hover:underline">
               Specialist vs Generic EO — 12 Dimensi Comparison
-            </Link>.
+            </Link>
+            . Kami handle <Link href="/outing-kantor-bandung" className="text-brand hover:underline">outing kantor specialist</Link>, <Link href="/team-building-bandung" className="text-brand hover:underline">team building dengan methodology</Link>, dan <Link href="/corporate-gathering-bandung" className="text-brand hover:underline">corporate gathering production</Link> dengan approach yang sama structured.
           </p>
         </Section>
 
@@ -406,6 +413,9 @@ export default function EventOrganizerCorporateBandungPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6">
+            Lihat <Link href="/case-studies" className="text-brand font-medium hover:underline">400+ events case studies →</Link> dengan detail brief, scope, dan hasil execution dari berbagai industri.
+          </p>
         </Section>
 
         {/* Section 5: Process */}
@@ -435,6 +445,17 @@ export default function EventOrganizerCorporateBandungPage() {
             ))}
           </div>
         </Section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Event Organizer"
+              experience="6+ years"
+              eventCount={400}
+              lastReviewDate="May 2026"
+            />
+          </div>
+        </section>
 
         {/* Case Studies */}
         <section id="case-studies" className="py-16 md:py-20 border-t border-divider">

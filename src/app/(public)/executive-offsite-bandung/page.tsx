@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import { JsonLd, combineSchemas, articleSchema, faqPageSchema, breadcrumbSchema, serviceSchema, organizationSchema, localBusinessSchema, howToSchema } from "@/lib/schema";
@@ -148,6 +150,10 @@ export default function ExecutiveOffsiteBandungPage() {
                 Executive offsite di Bandung untuk C-suite <strong>2D1N range Rp 6,5-12 juta/pax</strong>. 1D intensive Rp 5-7 jt/pax. Termasuk venue private exclusive (heritage villa atau private estate), F&amp;B fine-dining, NDA-bound staff, dan AV setup. Strategy consultant senior tambah <strong>Rp 50-150 jt flat fee</strong>. Sweet spot pax <strong>8-15</strong>. Min prep <strong>4-6 minggu</strong>. Format paling sering: annual strategic planning, quarterly alignment, atau post-merger integration.
               </p>
               <div className="mt-5 flex flex-wrap gap-2 text-xs"><Tag>Budget: Rp 6,5-12 jt/pax</Tag><Tag>Pax: 8-20</Tag><Tag>Discretion: 100%</Tag><Tag>Format: 1D – 2D1N</Tag></div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link href="/proposal/request" className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-11 text-sm font-medium hover:bg-brand-deep transition">Request Free Proposal<ArrowRight size={14} /></Link>
                 <Link href="#purposes" className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition">6 use cases</Link>
@@ -168,7 +174,7 @@ export default function ExecutiveOffsiteBandungPage() {
         </section>
 
         <Section id="what-distinguishes" eyebrow="Section 1" title="What distinguishes executive offsite from other corporate event">
-          <p>Executive offsite punya signature characteristics yang membedakan dari leadership retreat, corporate gathering, atau outing:</p>
+          <p>Executive offsite punya signature characteristics yang membedakan dari leadership retreat, corporate gathering, atau outing. <Link href="/specialist-vs-generic-eo" className="link">Cek specialist vs generic organizer approach</Link> untuk understand value add:</p>
           <ul className="not-prose space-y-3 mt-5">
             {[
               { t: "Audience: C-suite only (8-20 pax)", d: "Founder, CEO, CXO, atau SVP-level. Bukan extended leadership." },

@@ -9,6 +9,8 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -252,6 +254,10 @@ export default function EmployeeGatheringBandungPage() {
                 <Tag>Goal: engagement + retention</Tag>
                 <Tag>5 format options</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -307,7 +313,11 @@ export default function EmployeeGatheringBandungPage() {
             siapa, milestone apa di-celebrate. Employee gathering dari{" "}
             <strong>HR perspective</strong>: apa employee experience yang mau
             di-create, engagement score apa yang mau di-improve, retention
-            risk apa yang mau di-mitigasi.
+            risk apa yang mau di-mitigasi. Berbeda dengan{" "}
+            <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+              outing kantor yang lebih casual dan fokus bonding informal
+            </Link>
+            .
           </p>
           <p>
             Beda fundamental ini berdampak ke <strong>3 design decision</strong>:

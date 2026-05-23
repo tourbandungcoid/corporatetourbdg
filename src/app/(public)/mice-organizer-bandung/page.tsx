@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowRight, Check, Sparkle, Whatsapp } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -295,6 +297,10 @@ export default function MiceOrganizerBandungPage() {
                 <Tag>Hybrid: Tersedia</Tag>
                 <Tag>SI Translation: Tersedia</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -346,7 +352,7 @@ export default function MiceOrganizerBandungPage() {
         {/* Section 1: Apa itu MICE */}
         <Section id="apa-itu-mice" eyebrow="Section 1" title="Apa itu MICE dan kenapa butuh specialist organizer?">
           <p>
-            MICE adalah akronim dari <strong>Meeting, Incentive, Conference, dan Exhibition</strong> — empat kategori event bisnis yang membutuhkan level produksi dan koordinasi lebih kompleks dari corporate gathering standar.
+            MICE adalah akronim dari <strong>Meeting, Incentive, Conference, dan Exhibition</strong> — empat kategori event bisnis yang membutuhkan level produksi dan koordinasi lebih kompleks dari <Link href="/event-organizer-corporate-bandung" className="link">corporate gathering</Link> standar.
           </p>
           <p>
             Kenapa butuh specialist, bukan generic EO atau hotel in-house? Karena MICE melibatkan banyak stakeholder sekaligus: speaker lineup, sponsor, exhibitor, peserta dengan segmentasi berbeda, dan requirement teknis yang tidak bisa dihandle oleh satu tim generalis. Satu koordinasi yang gagal — speaker tidak dibriefing tentang format stage, AV cue sheet tidak disiapkan, registration antre 45 menit — dan seluruh kesan event runtuh.
@@ -554,6 +560,17 @@ export default function MiceOrganizerBandungPage() {
             ))}
           </div>
         </Section>
+
+        <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
+          <div className="container-1280 max-w-3xl">
+            <AuthorCredibility
+              role="Event Producer"
+              experience="6+ years"
+              eventCount={400}
+              lastReviewDate="May 2026"
+            />
+          </div>
+        </section>
 
         {/* Case Studies */}
         <section id="case-studies" className="py-16 md:py-20 border-t border-divider">

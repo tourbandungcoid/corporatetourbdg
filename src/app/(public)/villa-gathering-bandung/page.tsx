@@ -9,6 +9,8 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { FreshnessSignal } from "@/components/FreshnessSignal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -243,6 +245,10 @@ export default function VillaGatheringBandungPage() {
                 <Tag>Sewa villa: Rp 25-80 jt/2D1N</Tag>
                 <Tag>Per pax: Rp 2,2-6 jt</Tag>
               </div>
+              <FreshnessSignal
+                dateUpdated="2026-05-22"
+                googleReviewCount={105}
+              />
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -439,7 +445,11 @@ export default function VillaGatheringBandungPage() {
             &amp; bonding, multi-day stay, custom vibe penting.{" "}
             <strong>Pilih hotel kalau:</strong> formal corporate event (awarding
             night, conference component), pax 300+, butuh built-in MICE
-            facilities, atau prep time singkat (&lt; 3 minggu).
+            facilities, atau prep time singkat (&lt; 3 minggu). Untuk complete
+            venue gathering options, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung — semua kategori →
+            </Link>
           </p>
         </Section>
 
