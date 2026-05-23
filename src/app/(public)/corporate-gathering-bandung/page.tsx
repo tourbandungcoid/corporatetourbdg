@@ -12,6 +12,7 @@ import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { FreshnessSignal } from "@/components/FreshnessSignal";
 import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -592,12 +593,14 @@ export default function CorporateGatheringBandungPage() {
           eyebrow="Section 6"
           title="Budget breakdown corporate gathering by component"
         >
-          <p>
-            Untuk 200 pax 2D1N premium total Rp 700jt-1,4 miliar, breakdown
-            per komponen:
-          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p>
+                Untuk 200 pax 2D1N premium total Rp 700jt-1,4 miliar, breakdown
+                per komponen:
+              </p>
 
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -625,6 +628,19 @@ export default function CorporateGatheringBandungPage() {
                 ))}
               </tbody>
             </table>
+              </div>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Corporate Gathering Bandung"
+                intents={[
+                  { percentage: 70, description: "Budget breakdown (berapa cost per komponen)" },
+                  { percentage: 20, description: "Vendor & venue (pilihan hotel terbaik)" },
+                  { percentage: 10, description: "Timeline & preparation (berapa lama prep)" },
+                ]}
+                cta="Mau proposal gathering premium? Chat sekarang →"
+              />
+            </div>
           </div>
         </Section>
 

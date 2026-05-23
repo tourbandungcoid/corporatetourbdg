@@ -12,6 +12,7 @@ import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { FreshnessSignal } from "@/components/FreshnessSignal";
 import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -487,14 +488,16 @@ export default function OutingKantorBandungPage() {
           eyebrow="Section 3"
           title="Budget Outing Kantor 2026 — Per Pax Breakdown & 4-Tier Pricing Model"
         >
-          <p>
-            Range pricing di bawah ini untuk paket 2D1N standar (50–200 pax),
-            sudah include venue, F&amp;B 3x, transportation lokal, activity,
-            project management, dan contingency 8%. Berbeda tier = berbeda
-            kualitas venue dan kompleksitas activity.
-          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p>
+                Range pricing di bawah ini untuk paket 2D1N standar (50–200 pax),
+                sudah include venue, F&amp;B 3x, transportation lokal, activity,
+                project management, dan contingency 8%. Berbeda tier = berbeda
+                kualitas venue dan kompleksitas activity.
+              </p>
 
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -522,14 +525,27 @@ export default function OutingKantorBandungPage() {
             </table>
           </div>
 
-          <p className="mt-6">
-            <strong>Breakdown komponen (proporsi typical):</strong> Venue
-            30–40%, F&amp;B 25–30%, Activity 15–20%, Transportation 5–10%,
-            Talent/Production 5–10%, Contingency 5–8%, Project Management
-            included. Untuk grup &gt; 300 pax, ekonomi skala turun ke
-            Rp 2–4 jt/pax untuk tier standard karena negotiation power dengan
-            venue.
-          </p>
+              <p className="mt-6">
+                <strong>Breakdown komponen (proporsi typical):</strong> Venue
+                30–40%, F&amp;B 25–30%, Activity 15–20%, Transportation 5–10%,
+                Talent/Production 5–10%, Contingency 5–8%, Project Management
+                included. Untuk grup &gt; 300 pax, ekonomi skala turun ke
+                Rp 2–4 jt/pax untuk tier standard karena negotiation power dengan
+                venue.
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Outing Kantor Bandung"
+                intents={[
+                  { percentage: 65, description: "Budget planning (berapa cost)" },
+                  { percentage: 20, description: "Vendor selection (mana EO terbaik)" },
+                  { percentage: 15, description: "Logistical details (kapan, di mana)" },
+                ]}
+                cta="Siap clear semua detail? Chat sekarang →"
+              />
+            </div>
+          </div>
         </Section>
 
         {/* Section 4: Duration */}

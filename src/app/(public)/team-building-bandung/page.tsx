@@ -12,6 +12,7 @@ import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
 import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { FreshnessSignal } from "@/components/FreshnessSignal";
 import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SearchIntentSnapshot } from "@/components/SearchIntentSnapshot";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -537,7 +538,12 @@ export default function TeamBuildingBandungPage() {
           eyebrow="Section 5"
           title="Team Building Cost Breakdown Bandung — Full Pricing 1D to 3D2N"
         >
-          <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <p className="mb-4">
+                Pricing tergantung durasi, format (outbound/indoor/hybrid), dan methodology yang dipilih. Semua paket sudah include venue, F&B, activity guide, basic equipment, dan project management.
+              </p>
+              <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40">
@@ -565,16 +571,29 @@ export default function TeamBuildingBandungPage() {
             </table>
           </div>
 
-          <p className="mt-6">
-            Untuk grup besar (200+ pax), economy of scale turunkan ke kisaran
-            Rp 1,5-2,5 jt/pax untuk full-day. Senior facilitator (certified)
-            tambah Rp 5-10 jt/event sebagai flat fee. Untuk event tahunan yang
-            lebih formal dengan ceremony dan awarding, lihat{" "}
-            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
-              corporate gathering yang lebih formal dan expensive
-            </Link>
-            .
-          </p>
+              <p className="mt-6">
+                Untuk grup besar (200+ pax), economy of scale turunkan ke kisaran
+                Rp 1,5-2,5 jt/pax untuk full-day. Senior facilitator (certified)
+                tambah Rp 5-10 jt/event sebagai flat fee. Untuk event tahunan yang
+                lebih formal dengan ceremony dan awarding, lihat{" "}
+                <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+                  corporate gathering yang lebih formal dan expensive
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <SearchIntentSnapshot
+                pageName="Team Building Bandung"
+                intents={[
+                  { percentage: 60, description: "Budget planning (berapa cost)" },
+                  { percentage: 25, description: "Activity options (pilihan kegiatan)" },
+                  { percentage: 15, description: "Outcome measurement (gimana ukur hasilnya)" },
+                ]}
+                cta="Konsultasi gratis tentang program? Chat sekarang →"
+              />
+            </div>
+          </div>
         </Section>
 
         <Section
