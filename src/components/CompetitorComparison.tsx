@@ -78,7 +78,7 @@ export function CompetitorComparison() {
           tapi risk management, quality output, dan ROI-nya{" "}
           <strong>beda jauh</strong>. Pilih specialist jika Anda
           butuh event yang outcome-driven dan terukur. Pilih generic EO jika Anda
-          cuma perlu "ada acara tahunan" saja tanpa memperdulikan impact.
+          cuma perlu &ldquo;ada acara tahunan&rdquo; saja tanpa memperdulikan impact.
         </p>
       </div>
     </div>
