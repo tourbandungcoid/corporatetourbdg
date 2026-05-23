@@ -332,7 +332,12 @@ export default function GlampingCorporateBandungPage() {
             Setiap year, ratusan corporate outing di Indonesia book hotel atau
             villa. Bagus untuk most case. <strong>Tapi</strong> ada momentum
             spesifik dimana glamping memberi outcome yang impossible di setting
-            indoor: <strong>shared vulnerability di alam terbuka</strong>.
+            indoor: <strong>shared vulnerability di alam terbuka</strong>. Untuk
+            opsi venue gathering lengkap termasuk venue indoor dan outdoor, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung recommendations
+            </Link>
+            .
           </p>
           <p>
             Saat tim duduk mengelilingi bonfire dengan langit penuh bintang

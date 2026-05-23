@@ -172,7 +172,7 @@ export default function LeadershipRetreatJawaBaratPage() {
         </section>
 
         <Section id="vs-offsite" eyebrow="Section 1" title="Leadership retreat vs executive offsite — beda lens">
-          <p>Both terms get used interchangeably, but they have distinct focus:</p>
+          <p>Both terms get used interchangeably, but they have distinct focus. <Link href="/specialist-vs-generic-eo" className="link">Specialist facilitator</Link> critical untuk navigate nuances keduanya dengan proper methodology:</p>
           <div className="not-prose overflow-x-auto -mx-6 md:mx-0 mt-6">
             <table className="w-full text-sm border-collapse">
               <thead><tr className="text-left text-xs uppercase tracking-wider text-slate-mute border-b border-divider bg-cream/40"><th className="px-4 py-3 font-medium">Aspek</th><th className="px-4 py-3 font-medium">Leadership Retreat</th><th className="px-4 py-3 font-medium">Executive Offsite</th></tr></thead>

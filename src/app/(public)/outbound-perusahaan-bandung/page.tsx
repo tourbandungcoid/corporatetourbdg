@@ -314,7 +314,7 @@ export default function OutboundPerusahaanBandungPage() {
         >
           <p>
             Term sering digunakan interchangeable, tapi sebenarnya:{" "}
-            <strong>outbound adalah subset team building</strong>. Team building
+            <strong>outbound adalah subset <Link href="/team-building-bandung" className="link">team building</Link></strong>. Team building
             adalah umbrella — bisa outdoor (outbound), indoor (workshop), atau
             hybrid. Outbound khusus mengacu pada outdoor adventure dengan
             physical activity dominant.

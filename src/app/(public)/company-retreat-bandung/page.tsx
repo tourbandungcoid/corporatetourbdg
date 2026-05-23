@@ -194,7 +194,7 @@ export default function CompanyRetreatBandungPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-6"><strong>Rule of thumb:</strong> kalau output retreat adalah deliverable (strategic plan, alignment doc, leadership development plan), pilih retreat. Kalau output adalah experience (memorable moment, energy boost, recognition), pilih gathering atau outing.</p>
+          <p className="mt-6"><strong>Rule of thumb:</strong> kalau output retreat adalah deliverable (strategic plan, alignment doc, leadership development plan), pilih retreat. Kalau output adalah experience (memorable moment, energy boost, recognition), pilih <Link href="/corporate-gathering-bandung" className="link">gathering yang lebih formal dan expensive</Link> atau outing.</p>
         </Section>
 
         <Section id="scenarios" eyebrow="Section 2" title="6 scenario yang butuh company retreat (bukan gathering)">

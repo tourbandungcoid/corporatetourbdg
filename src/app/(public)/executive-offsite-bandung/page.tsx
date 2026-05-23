@@ -173,7 +173,7 @@ export default function ExecutiveOffsiteBandungPage() {
         </section>
 
         <Section id="what-distinguishes" eyebrow="Section 1" title="What distinguishes executive offsite from other corporate event">
-          <p>Executive offsite punya signature characteristics yang membedakan dari leadership retreat, corporate gathering, atau outing:</p>
+          <p>Executive offsite punya signature characteristics yang membedakan dari leadership retreat, corporate gathering, atau outing. <Link href="/specialist-vs-generic-eo" className="link">Cek specialist vs generic organizer approach</Link> untuk understand value add:</p>
           <ul className="not-prose space-y-3 mt-5">
             {[
               { t: "Audience: C-suite only (8-20 pax)", d: "Founder, CEO, CXO, atau SVP-level. Bukan extended leadership." },

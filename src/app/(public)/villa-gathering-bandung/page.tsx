@@ -444,7 +444,11 @@ export default function VillaGatheringBandungPage() {
             &amp; bonding, multi-day stay, custom vibe penting.{" "}
             <strong>Pilih hotel kalau:</strong> formal corporate event (awarding
             night, conference component), pax 300+, butuh built-in MICE
-            facilities, atau prep time singkat (&lt; 3 minggu).
+            facilities, atau prep time singkat (&lt; 3 minggu). Untuk complete
+            venue gathering options, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung — semua kategori →
+            </Link>
           </p>
         </Section>
 

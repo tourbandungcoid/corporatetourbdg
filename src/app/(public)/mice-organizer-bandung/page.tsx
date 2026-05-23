@@ -351,7 +351,7 @@ export default function MiceOrganizerBandungPage() {
         {/* Section 1: Apa itu MICE */}
         <Section id="apa-itu-mice" eyebrow="Section 1" title="Apa itu MICE dan kenapa butuh specialist organizer?">
           <p>
-            MICE adalah akronim dari <strong>Meeting, Incentive, Conference, dan Exhibition</strong> — empat kategori event bisnis yang membutuhkan level produksi dan koordinasi lebih kompleks dari corporate gathering standar.
+            MICE adalah akronim dari <strong>Meeting, Incentive, Conference, dan Exhibition</strong> — empat kategori event bisnis yang membutuhkan level produksi dan koordinasi lebih kompleks dari <Link href="/event-organizer-corporate-bandung" className="link">corporate gathering</Link> standar.
           </p>
           <p>
             Kenapa butuh specialist, bukan generic EO atau hotel in-house? Karena MICE melibatkan banyak stakeholder sekaligus: speaker lineup, sponsor, exhibitor, peserta dengan segmentasi berbeda, dan requirement teknis yang tidak bisa dihandle oleh satu tim generalis. Satu koordinasi yang gagal — speaker tidak dibriefing tentang format stage, AV cue sheet tidak disiapkan, registration antre 45 menit — dan seluruh kesan event runtuh.
