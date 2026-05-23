@@ -9,6 +9,7 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -633,6 +634,20 @@ export default function CorporateGatheringBandungPage() {
             </div>
           </div>
         </section>
+
+        {/* Competitor Comparison */}
+        <Section
+          id="specialist-vs-generic"
+          eyebrow="Why Specialist Matters"
+          title="Generic Travel Agent vs Corporate Specialist — Kenapa Perbedaannya Signifikan"
+        >
+          <p>
+            Untuk event besar seperti corporate gathering, perbedaan antara bekerja
+            dengan generic travel agent vs corporate specialist sangat signifikan — terutama
+            dalam hal production quality, risk management, dan post-event accountability.
+          </p>
+          <CompetitorComparison />
+        </Section>
 
         <Section id="faq" eyebrow="FAQ" title="Pertanyaan yang sering ditanyakan HR">
           <div className="not-prose space-y-3 mt-4">

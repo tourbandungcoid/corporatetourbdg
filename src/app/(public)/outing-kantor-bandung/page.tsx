@@ -9,6 +9,7 @@ import {
 } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { RelatedCaseStudies } from "@/components/RelatedCaseStudies";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { IMAGES } from "@/lib/drive-images";
 import { STATS, buildWaLink, SITE } from "@/lib/site";
 import {
@@ -634,6 +635,20 @@ export default function OutingKantorBandungPage() {
             Disclosure: kami check semua 7 — itulah kenapa kami nulis list-nya.
             Bandingin dengan vendor lain sebelum decide.
           </p>
+        </Section>
+
+        {/* Competitor Comparison */}
+        <Section
+          id="specialist-vs-generic"
+          eyebrow="Why Specialist Matters"
+          title="Generic Travel Agent vs Corporate Specialist — Kenapa Perbedaannya Signifikan"
+        >
+          <p>
+            Bandung punya banyak vendor outing — dari travel agent retail yang nyambi
+            corporate, sampai specialist yang fokus 100% B2B corporate. Perbedaan
+            approach mereka sangat signifikan terhadap hasil event Anda.
+          </p>
+          <CompetitorComparison />
         </Section>
 
         {/* Trust strip */}
