@@ -366,7 +366,7 @@ export default function OutingKantorBandungPage() {
         </section>
 
         {/* Section 1: Why Bandung */}
-        <Section id="why-bandung" eyebrow="Section 1" title="Mengapa Bandung pilihan top untuk outing kantor?">
+        <Section id="why-bandung" eyebrow="Section 1" title="Outing Kantor Bandung — 5 Alasan #1 Destinasi 1000+ Perusahaan Indonesia">
           <p>
             Bandung jadi destinasi paling sering di-pick untuk corporate outing
             dari Jakarta dan kota besar lainnya karena 4 alasan kombinatif:
@@ -448,7 +448,7 @@ export default function OutingKantorBandungPage() {
         <Section
           id="budget"
           eyebrow="Section 3"
-          title="Estimasi budget outing kantor Bandung per pax (2D1N standar)"
+          title="Budget Outing Kantor 2026 — Per Pax Breakdown & 4-Tier Pricing Model"
         >
           <p>
             Range pricing di bawah ini untuk paket 2D1N standar (50–200 pax),

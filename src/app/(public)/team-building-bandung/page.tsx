@@ -498,7 +498,7 @@ export default function TeamBuildingBandungPage() {
         <Section
           id="budget"
           eyebrow="Section 5"
-          title="Estimasi budget team building per pax"
+          title="Team Building Cost Breakdown Bandung — Full Pricing 1D to 3D2N"
         >
           <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
             <table className="w-full text-sm border-collapse">
