@@ -358,7 +358,11 @@ export default function TeamBuildingBandungPage() {
             terbalik: <em>apa team outcome yang mau dicapai?</em> Bonding
             pasca-merger? Improve cross-department komunikasi? Build trust
             di tim baru? Develop leadership di middle management? Setiap goal
-            butuh activity dan methodology yang berbeda.
+            butuh activity dan methodology yang berbeda. Berbeda dengan{" "}
+            <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+              outing kantor yang lebih casual dan fokus refresh + bonding
+            </Link>
+            .
           </p>
           <p>
             Dari 400+ event yang kami handle, pattern paling jelas: tim yang
@@ -527,7 +531,12 @@ export default function TeamBuildingBandungPage() {
           <p className="mt-6">
             Untuk grup besar (200+ pax), economy of scale turunkan ke kisaran
             Rp 1,5-2,5 jt/pax untuk full-day. Senior facilitator (certified)
-            tambah Rp 5-10 jt/event sebagai flat fee.
+            tambah Rp 5-10 jt/event sebagai flat fee. Untuk event tahunan yang
+            lebih formal dengan ceremony dan awarding, lihat{" "}
+            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+              corporate gathering yang lebih formal dan expensive
+            </Link>
+            .
           </p>
         </Section>
 
@@ -616,6 +625,12 @@ export default function TeamBuildingBandungPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6">
+            Untuk detail lengkap venue gathering Bandung dengan activity facilities, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              venue gathering Bandung recommendation →
+            </Link>
+          </p>
         </Section>
 
         {/* Competitor Comparison */}
@@ -630,6 +645,11 @@ export default function TeamBuildingBandungPage() {
             Perbedaan methodology dan outcome mereka sangat signifikan.
           </p>
           <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist team building facilitator vs generic outbound →
+            </Link>
+          </p>
         </Section>
 
         {/* Trust strip */}

@@ -390,7 +390,10 @@ export default function OutingKantorBandungPage() {
             Bandung, ada 60+ venue corporate-ready — villa private (capacity
             10–200), resort dengan ballroom (kapasitas 300–800), glamping site,
             dan outdoor activity ground. Kami punya direct partnership dengan
-            mereka, bukan reseller.
+            mereka, bukan reseller.{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              Lihat 20 venue terbaik →
+            </Link>
           </p>
           <p>
             <strong>Activity mix:</strong> Outbound adventure (Maribaya,
@@ -411,7 +414,7 @@ export default function OutingKantorBandungPage() {
               },
               {
                 t: "Team Building (Half Day – 2D1N)",
-                d: "Fokus team outcomes specific: komunikasi, problem solving, alignment. Format outbound, indoor workshop, atau hybrid. Pax 20–300.",
+                d: <>Fokus team outcomes specific: komunikasi, problem solving, alignment. Format <Link href="/team-building-bandung" className="text-brand font-medium hover:underline">outbound, indoor workshop, atau hybrid</Link>. Pax 20–300.</>,
               },
               {
                 t: "Department / Squad Bonding (1D – 1D2N)",
@@ -532,7 +535,12 @@ export default function OutingKantorBandungPage() {
             <strong>Rule of thumb:</strong> Quarterly bonding cukup 1 day.
             Annual outing default ke 2D1N. Marquee event (anniversary, hari
             jadi 5/10 tahun, post-IPO, post-acquisition) layakkan 3D2N untuk
-            arc cerita yang complete.
+            arc cerita yang complete. Untuk acara tahunan yang lebih formal dengan
+            ceremony &amp; awarding, lihat{" "}
+            <Link href="/corporate-gathering-bandung" className="text-brand font-medium hover:underline">
+              corporate gathering yang lebih formal
+            </Link>
+            .
           </p>
         </Section>
 
@@ -605,8 +613,14 @@ export default function OutingKantorBandungPage() {
 
           <p className="mt-6">
             Untuk grup pertama kali outing di Bandung, kami biasanya rekomendasi{" "}
-            <strong>Lembang</strong> (variasi venue paling banyak) atau{" "}
-            <strong>Ciwidey</strong> (kalau prioritas adventure outbound).
+            <Link href="/locations/lembang-bandung" className="text-brand font-medium hover:underline">
+              <strong>Lembang</strong> (cool, scenic)
+            </Link>
+            {" "}atau{" "}
+            <Link href="/locations/ciwidey-bandung" className="text-brand font-medium hover:underline">
+              <strong>Ciwidey</strong> (adventure, Kawah Putih)
+            </Link>
+            .
           </p>
         </Section>
 
@@ -638,7 +652,11 @@ export default function OutingKantorBandungPage() {
 
           <p className="mt-6 text-sm text-slate-mute italic">
             Disclosure: kami check semua 7 — itulah kenapa kami nulis list-nya.
-            Bandingin dengan vendor lain sebelum decide.
+            Bandingin dengan vendor lain sebelum decide. Baca juga{" "}
+            <Link href="/event-organizer-corporate-bandung" className="text-brand hover:underline">
+              specialist B2B corporate vs generic EO
+            </Link>
+            .
           </p>
         </Section>
 
@@ -654,6 +672,11 @@ export default function OutingKantorBandungPage() {
             approach mereka sangat signifikan terhadap hasil event Anda.
           </p>
           <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist vs generic organizer →
+            </Link>
+          </p>
         </Section>
 
         {/* Trust strip */}

@@ -334,8 +334,11 @@ export default function CorporateGatheringBandungPage() {
           <p className="mt-6">
             <strong>Rule of thumb:</strong> kalau ada momen besar (anniversary,
             milestone, post-IPO, awarding tahunan), pilih corporate gathering.
-            Kalau prioritas refresh + bonding informal, pilih outing kantor.
-            Beberapa perusahaan mix — corporate gathering setahun sekali +
+            Kalau prioritas refresh + bonding informal, pilih{" "}
+            <Link href="/outing-kantor-bandung" className="text-brand font-medium hover:underline">
+              outing kantor
+            </Link>
+            . Beberapa perusahaan mix — corporate gathering setahun sekali +
             outing kantor quarterly.
           </p>
         </Section>
@@ -481,6 +484,13 @@ export default function CorporateGatheringBandungPage() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6">
+            Untuk venue gathering options yang lebih luas including villa, resort, dan location-specific recommendations, lihat{" "}
+            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+              8 hotel ballroom terbaik dan venue gathering recommendations →
+            </Link>
+          </p>
         </Section>
 
         <Section
@@ -582,6 +592,22 @@ export default function CorporateGatheringBandungPage() {
         </Section>
 
         <Section
+          id="compare-tb"
+          eyebrow="Quick Comparison"
+          title="Corporate Gathering vs Team Building"
+        >
+          <p>
+            Gathering adalah formal annual event dengan ceremony &amp; awarding.
+            Untuk acara yang lebih fokus ke team outcomes tertentu (komunikasi,
+            problem solving, trust building), lihat{" "}
+            <Link href="/team-building-bandung" className="text-brand font-medium hover:underline">
+              team building vs gathering — formal vs casual →
+            </Link>
+            . Team building bisa jadi komponen di dalam gathering, atau standalone activity.
+          </p>
+        </Section>
+
+        <Section
           id="timeline"
           eyebrow="Section 7"
           title="Prep timeline — 6-12 minggu dari brief ke event day"
@@ -652,6 +678,11 @@ export default function CorporateGatheringBandungPage() {
             dalam hal production quality, risk management, dan post-event accountability.
           </p>
           <CompetitorComparison />
+          <p className="mt-6">
+            <Link href="/specialist-vs-generic-eo" className="text-brand font-medium hover:underline">
+              Baca full comparison: specialist vs generic organizer →
+            </Link>
+          </p>
         </Section>
 
         <Section id="faq" eyebrow="FAQ" title="Pertanyaan yang sering ditanyakan HR">
