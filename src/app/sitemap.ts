@@ -23,6 +23,14 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/mice-organizer-bandung", priority: 0.9, changeFrequency: "monthly" },
   { path: "/incentive-trip-bandung", priority: 0.9, changeFrequency: "monthly" },
   { path: "/venue-gathering-bandung", priority: 0.85, changeFrequency: "monthly" },
+  // New high-priority pages
+  { path: "/corporate-event-bandung", priority: 1.0, changeFrequency: "monthly" },
+  { path: "/annual-meeting-organizer", priority: 0.9, changeFrequency: "monthly" },
+  // English-language keyword variants (canonical → ID page)
+  { path: "/corporate-outing-bandung", priority: 0.7, changeFrequency: "monthly" },
+  // Local area pages (geo-targeted)
+  { path: "/corporate-event-lembang", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/corporate-event-ciwidey", priority: 0.85, changeFrequency: "monthly" },
   // Hubs
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/packages", priority: 0.8, changeFrequency: "monthly" },
