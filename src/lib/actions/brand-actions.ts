@@ -38,6 +38,7 @@ const logoSchema = z.object({
   logo_primary_url: z.string().url().or(z.literal("")),
   logo_dark_url: z.string().url().or(z.literal("")),
   logo_favicon_url: z.string().url().or(z.literal("")),
+  logo_height_nav: z.coerce.number().int().min(24).max(250).default(48),
 });
 
 const copySchema = z.object({
@@ -113,15 +114,50 @@ export async function updateBrandLogos(formData: FormData): Promise<BrandActionR
       message: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; "),
     };
   }
-  // Convert empty strings → null so fallback kicks in
   return updateBrandRow(
     {
       logo_primary_url: parsed.data.logo_primary_url || null,
       logo_dark_url: parsed.data.logo_dark_url || null,
       logo_favicon_url: parsed.data.logo_favicon_url || null,
+      logo_height_nav: parsed.data.logo_height_nav,
     },
     profile.id
   );
+}
+
+const carouselSchema = z.object({
+  logo_carousel_speed: z.coerce.number().int().min(10).max(120).default(35),
+  logo_carousel_swipe: z.coerce.boolean().default(false),
+});
+
+export async function updateLogoCarousel(formData: FormData): Promise<BrandActionResult> {
+  const profile = await getCurrentProfile();
+  if (!profile) return { ok: false, message: "Not authenticated" };
+  if (!canEdit(profile.role)) return { ok: false, message: "Not authorized" };
+
+  const parsed = carouselSchema.safeParse({
+    logo_carousel_speed: formData.get("logo_carousel_speed"),
+    logo_carousel_swipe: formData.get("logo_carousel_swipe") === "on",
+  });
+  if (!parsed.success) {
+    return {
+      ok: false,
+      message: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; "),
+    };
+  }
+
+  const sb = createAdminClient();
+  const { error } = await sb
+    .from("brand_settings")
+    .upsert(
+      { id: 1, ...parsed.data, updated_by: profile.id },
+      { onConflict: "id" }
+    );
+  if (error) return { ok: false, message: error.message };
+
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/content/clients");
+  return { ok: true, message: "Carousel settings saved" };
 }
 
 export async function updateBrandCopy(formData: FormData): Promise<BrandActionResult> {

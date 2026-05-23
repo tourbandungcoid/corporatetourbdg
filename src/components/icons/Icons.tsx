@@ -143,3 +143,26 @@ export const IconGlamping = ({ size = 24, ...rest }: IconProps) => (
     <path d="M3 20 12 4l9 16M7 20h10M10 20v-5h4v5" />
   </svg>
 );
+
+export const LinkedIn = ({ size = 24, ...rest }: IconProps) => (
+  <svg {...baseProps(size)} aria-hidden="true" {...rest}>
+    <rect x="2" y="2" width="20" height="20" rx="4" />
+    <path d="M7 10v7M7 7.01V7" />
+    <path d="M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" />
+  </svg>
+);
+
+export const Instagram = ({ size = 24, ...rest }: IconProps) => (
+  <svg {...baseProps(size)} aria-hidden="true" {...rest}>
+    <rect x="2" y="2" width="20" height="20" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+export const YouTube = ({ size = 24, ...rest }: IconProps) => (
+  <svg {...baseProps(size)} aria-hidden="true" {...rest}>
+    <rect x="2" y="5" width="20" height="14" rx="3" />
+    <path d="M10 9.5l5 2.5-5 2.5V9.5z" fill="currentColor" stroke="none" />
+  </svg>
+);

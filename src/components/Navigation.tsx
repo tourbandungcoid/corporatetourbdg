@@ -22,7 +22,7 @@ const NAV_LINKS = [
  * - CTA pill standalone
  * - All glassmorphism only on the nav pill itself
  */
-export function Navigation() {
+export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
@@ -51,9 +51,8 @@ export function Navigation() {
             className="flex-shrink-0 flex items-center"
           >
             <LogoLockup
-              height={40}
+              height={logoHeight}
               variant={useLightStyle ? "light" : "dark"}
-              showCorporateLabel={false}
             />
           </Link>
 
@@ -122,7 +121,7 @@ export function Navigation() {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={40} showCorporateLabel={false} />
+              <LogoLockup height={logoHeight} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

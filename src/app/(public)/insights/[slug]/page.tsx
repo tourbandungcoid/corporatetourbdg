@@ -226,7 +226,9 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
         <section className="border-b border-divider">
           <div className="container-1280 py-8">
             <div className="rounded-3xl overflow-hidden aspect-[16/8] relative bg-gradient-to-br from-forest to-ink">
-              <Image src={article.heroImage.src} alt={article.heroImage.alt} fill priority sizes="100vw" className="object-cover" />
+              {article.heroImage.src && (
+                <Image src={article.heroImage.src} alt={article.heroImage.alt} fill priority sizes="100vw" className="object-cover" />
+              )}
             </div>
           </div>
         </section>

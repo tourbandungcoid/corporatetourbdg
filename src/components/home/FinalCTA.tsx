@@ -1,8 +1,19 @@
 import Link from "next/link";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { STATS, buildWaLink } from "@/lib/site";
+import { getCopy } from "@/lib/brand-settings";
 
-export function FinalCTA() {
+export async function FinalCTA() {
+  const [eyebrow, line1, line2, line3, sub, ctaPrimary, ctaWhatsapp] = await Promise.all([
+    getCopy("home.cta.eyebrow", "Ready when you are"),
+    getCopy("home.cta.line1", "Free proposal."),
+    getCopy("home.cta.line2", "No commitment."),
+    getCopy("home.cta.line3", "No pressure."),
+    getCopy("home.cta.sub", "Briefing call 15 menit. Proposal lengkap dalam 24 jam. Tim lo review & approve internal. Itu workflow-nya — nggak lebih ribet dari itu."),
+    getCopy("home.cta.primary", "Request Proposal"),
+    getCopy("home.cta.whatsapp", "WhatsApp Aja Dulu"),
+  ]);
+
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
       <div className="absolute inset-0 bg-gradient-to-br from-ink via-forest/30 to-ink" />
@@ -16,24 +27,22 @@ export function FinalCTA() {
 
       <div className="container-1280 section relative">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="eyebrow text-brand-light/80">Ready when you are</span>
+          <span className="eyebrow text-brand-light/80">{eyebrow}</span>
 
           <h2 className="font-display mt-6 text-paper leading-[0.98] tracking-[-0.035em]">
             <span className="block text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-              Free proposal.
+              {line1}
             </span>
             <span className="block text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-brand-light/70 mt-2">
-              No commitment.
+              {line2}
             </span>
             <span className="block text-4xl md:text-6xl lg:text-7xl xl:text-8xl mt-2">
-              No pressure.
+              {line3}
             </span>
           </h2>
 
           <p className="mt-10 text-lg text-cream/75 md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Briefing call 15 menit. Proposal lengkap dalam 24 jam. Tim lo
-            review &amp; approve internal. Itu workflow-nya — nggak lebih
-            ribet dari itu.
+            {sub}
           </p>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
@@ -41,7 +50,7 @@ export function FinalCTA() {
               href="/proposal/request"
               className="group inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
             >
-              Request Proposal
+              {ctaPrimary}
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
@@ -54,7 +63,7 @@ export function FinalCTA() {
               className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 hover:border-paper/50 transition-colors"
             >
               <Whatsapp size={16} />
-              WhatsApp Aja Dulu
+              {ctaWhatsapp}
             </a>
           </div>
 

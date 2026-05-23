@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "@/components/icons/Icons";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getCopy, getBrandSettings } from "@/lib/brand-settings";
+import { LogoCarousel } from "@/components/home/LogoCarousel";
 
 type ClientLogoRow = {
   id: string;
@@ -10,7 +12,6 @@ type ClientLogoRow = {
   website_url: string | null;
 };
 
-// Fallback when no logos uploaded yet — keeps the marquee from looking empty.
 const PLACEHOLDER_LOGOS = [
   "TECH UNICORN",
   "BUMN BANK",
@@ -42,49 +43,52 @@ async function getClientLogos(): Promise<ClientLogoRow[]> {
 }
 
 export async function TrustBar() {
-  const dbLogos = await getClientLogos();
-  const hasLogos = dbLogos.length > 0;
+  const [dbLogos, brand, eyebrow, sub] = await Promise.all([
+    getClientLogos(),
+    getBrandSettings(),
+    getCopy("home.trust.eyebrow", "Trusted By"),
+    getCopy("home.trust.sub", "Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka"),
+  ]);
 
-  // Duplicate the array so the marquee loops seamlessly.
-  const logos = hasLogos ? [...dbLogos, ...dbLogos] : null;
-  const placeholders = hasLogos ? null : [...PLACEHOLDER_LOGOS, ...PLACEHOLDER_LOGOS];
+  const hasLogos = dbLogos.length > 0;
+  const speed = brand.logo_carousel_speed;
+  const allowSwipe = brand.logo_carousel_swipe;
 
   return (
     <section className="relative bg-paper py-20 md:py-24 border-b border-divider/60">
       <div className="container-1280">
         <div className="flex flex-col items-center gap-5 text-center">
-          <span className="eyebrow-brand">Trusted By</span>
+          <span className="eyebrow-brand">{eyebrow}</span>
           <p className="text-base md:text-lg text-slate max-w-md">
-            Perusahaan terbaik di Indonesia memilih kami untuk corporate event mereka
+            {sub}
           </p>
           <GoogleReviewsBadge variant="compact" className="mt-2" />
         </div>
       </div>
 
-      {/* Marquee strip */}
-      <div className="mt-14 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="marquee flex items-center gap-16 whitespace-nowrap">
-          {logos
-            ? logos.map((logo, i) => (
-                <LogoCell
-                  key={`${logo.id}-${i}`}
-                  src={logo.logo_url}
-                  name={logo.name}
-                  href={logo.website_url}
-                />
-              ))
-            : placeholders?.map((label, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center min-w-[180px] h-12 px-6 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-                >
-                  <span className="font-display text-base tracking-wide text-slate">
-                    {label}
-                  </span>
-                </div>
-              ))}
-        </div>
+      <div className="mt-14">
+        {hasLogos ? (
+          <LogoCarousel
+            mode="logos"
+            items={dbLogos}
+            speed={speed}
+            allowSwipe={allowSwipe}
+          />
+        ) : (
+          <LogoCarousel
+            mode="placeholders"
+            items={PLACEHOLDER_LOGOS}
+            speed={speed}
+            allowSwipe={allowSwipe}
+          />
+        )}
       </div>
+
+      {allowSwipe && (
+        <p className="text-center mt-3 text-[11px] text-slate-mute tracking-wide">
+          ← geser untuk melihat semua →
+        </p>
+      )}
 
       <div className="container-1280 mt-14 text-center">
         <Link href="/case-studies" className="link-underline text-sm">
@@ -93,41 +97,5 @@ export async function TrustBar() {
         </Link>
       </div>
     </section>
-  );
-}
-
-function LogoCell({
-  src,
-  name,
-  href,
-}: {
-  src: string;
-  name: string;
-  href: string | null;
-}) {
-  const inner = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt={name}
-      className="max-h-12 max-w-[160px] object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-      loading="lazy"
-    />
-  );
-  return (
-    <div className="flex items-center justify-center min-w-[180px] h-12 px-6">
-      {href ? (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={name}
-        >
-          {inner}
-        </a>
-      ) : (
-        inner
-      )}
-    </div>
   );
 }

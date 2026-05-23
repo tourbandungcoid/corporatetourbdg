@@ -77,15 +77,15 @@ export function LogoImage({
   priority = false,
 }: LogoImageProps) {
   const src = variant === "dark" ? LOGO_ON_DARK_BG : LOGO_ON_LIGHT_BG;
-  // Aspect ratio of source logo ~1:1 (uploaded as square). Adjust if cropped.
   return (
     <Image
       src={src}
-      alt="7Summits Travel — Corporate"
-      width={height}
+      alt="TourBandung Corporate"
+      width={height * 6}
       height={height}
       priority={priority}
       className={className}
+      style={{ width: "auto", height: `${height}px` }}
       unoptimized
     />
   );
@@ -110,16 +110,16 @@ export function LogoLockup({
     variant === "dark" ? "rgba(255,255,255,0.65)" : "var(--color-brand-deep)";
 
   return (
-    <span className="inline-flex items-center gap-3">
+    <span className="inline-flex items-center gap-2.5">
       <LogoImage variant={variant} height={height} />
       {showCorporateLabel && (
         <span
-          className="hidden sm:inline-block text-[10px] tracking-[0.18em] uppercase font-medium px-2 py-1 rounded border"
+          className="hidden sm:inline-block text-[11px] tracking-[0.16em] uppercase font-semibold px-2.5 py-1 rounded-md border"
           style={{
             color: labelColor,
             borderColor:
               variant === "dark"
-                ? "rgba(255,255,255,0.18)"
+                ? "rgba(255,255,255,0.22)"
                 : "var(--color-divider)",
           }}
         >

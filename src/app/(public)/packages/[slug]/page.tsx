@@ -6,10 +6,10 @@ import { ArrowRight, Check, Whatsapp, Sparkle } from "@/components/icons/Icons";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import {
-  getPackageBySlug,
   getPackageSlugs,
   getPackages,
 } from "@/lib/packages-data";
+import { getPackageDB } from "@/lib/packages-data-db";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -34,7 +34,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const pkg = getPackageBySlug(slug);
+  const pkg = await getPackageDB(slug);
   if (!pkg) return { title: "Package not found" };
 
   const url = `${SITE.url}/packages/${pkg.slug}`;
@@ -72,7 +72,7 @@ export default async function PackageDetailPage({
   params: Params;
 }) {
   const { slug } = await params;
-  const pkg = getPackageBySlug(slug);
+  const pkg = await getPackageDB(slug);
   if (!pkg) notFound();
 
   const url = `${SITE.url}/packages/${pkg.slug}`;

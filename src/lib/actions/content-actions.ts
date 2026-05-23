@@ -12,6 +12,8 @@ export type ContentActionResult = {
   id?: string;
 };
 
+import { normalizeDriveUrl } from "@/lib/utils/drive";
+
 const STATUS_VALUES = ["draft", "published", "archived"] as const;
 const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -71,7 +73,7 @@ export async function upsertInsight(formData: FormData): Promise<ContentActionRe
     excerpt: formData.get("excerpt"),
     category: formData.get("category"),
     metaDescription: formData.get("metaDescription"),
-    heroImageUrl: (formData.get("heroImageUrl") as string) || "",
+    heroImageUrl: normalizeDriveUrl((formData.get("heroImageUrl") as string) || ""),
     heroImageAlt: (formData.get("heroImageAlt") as string) || "",
     publishDate: formData.get("publishDate"),
     readTimeMin: formData.get("readTimeMin"),
@@ -209,7 +211,7 @@ export async function upsertCaseStudy(formData: FormData): Promise<ContentAction
     outcomeHeadline: formData.get("outcomeHeadline"),
     shortDescription: formData.get("shortDescription"),
     metaDescription: formData.get("metaDescription"),
-    heroImageUrl: (formData.get("heroImageUrl") as string) || "",
+    heroImageUrl: normalizeDriveUrl((formData.get("heroImageUrl") as string) || ""),
     heroImageAlt: (formData.get("heroImageAlt") as string) || "",
     pax: formData.get("pax"),
     duration: formData.get("duration"),

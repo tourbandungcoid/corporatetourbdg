@@ -3,6 +3,8 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
 import { YouTubeVideos } from "@/components/home/YouTubeVideos";
+
+export const dynamic = "force-dynamic";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { FeaturedPackages } from "@/components/home/FeaturedPackages";
 import { CaseStudies } from "@/components/home/CaseStudies";
