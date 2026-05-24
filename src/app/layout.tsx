@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import {
   AnalyticsScripts,
   GTMNoScript,
@@ -77,6 +78,7 @@ export default async function RootLayout({
         />
         {children}
         <ExitIntentModal />
+        <Analytics />
       </body>
     </html>
   );
