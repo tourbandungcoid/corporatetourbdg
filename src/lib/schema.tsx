@@ -14,8 +14,12 @@ export function organizationSchema() {
     url: SITE.url,
     logo: `${SITE.url}/logo/logo.png`,
     description:
-      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 7Summits Travel beroperasi sejak 2018 dengan 400+ corporate events delivered.",
+      "Tour Bandung Corporate adalah unit specialized dari 7Summits Travel yang fokus 100% pada B2B corporate event organizer untuk outing kantor, team building, corporate gathering, incentive trip, leadership retreat, dan executive offsite di Bandung & Jawa Barat. Operating sejak 2018 dengan 400+ corporate events delivered, 92% repeat booking rate, 60+ venue partnership direct, dan tim senior (tenure 4+ tahun) dedicated per client.",
     foundingDate: "2018",
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: "8-12",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.address.street,
@@ -30,8 +34,24 @@ export function organizationSchema() {
       telephone: `+${CONTACT.whatsapp}`,
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: CONTACT.officeHoursStructured.days,
+        opens: CONTACT.officeHoursStructured.opens,
+        closes: CONTACT.officeHoursStructured.closes,
+      },
     },
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
+    knowsAbout: [
+      "Corporate Outing",
+      "Team Building",
+      "Corporate Gathering",
+      "Executive Offsite",
+      "Leadership Retreat",
+      "Incentive Trip",
+      "MICE Organization",
+      "Event Management",
+    ],
   };
 }
 
