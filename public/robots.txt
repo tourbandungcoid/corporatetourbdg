@@ -1,0 +1,52 @@
+# TourBandung Corporate Robots.txt
+# Generated dynamically for SEO optimization
+
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /llms.txt
+
+# Disallow admin/sensitive routes (handled by auth middleware, but explicit for crawlers)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# Allow specific static assets
+Allow: /_next/static/
+Allow: /public/
+
+# Prefer HTTPS + www-less version
+Sitemap: https://corporate.tourbandung.co.id/sitemap.xml
+
+# AI/LLM crawlers — allow with specific rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Perplexity-Bot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Crawl delay for heavy crawlers
+User-agent: AhrefsBot
+Crawl-delay: 1
+
+User-agent: SemrushBot
+Crawl-delay: 1
+
+User-agent: DotBot
+Crawl-delay: 1
+
+# Generic rule for rate limiting
+User-agent: *
+Crawl-delay: 0.5
+Request-rate: 60/1m
+
+# Full WWW redirect handled at DNS/CDN level, so no need for rewrite rule here
