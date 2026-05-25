@@ -11,6 +11,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  reviewSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -54,6 +55,12 @@ export default function AboutPage() {
       { name: "Home", url: SITE.url },
       { name: "About", url: `${SITE.url}/about` },
     ]),
+    reviewSchema({
+      reviewRating: 5,
+      reviewBody: "Yang gw appreciate: senior planner dedicated dari briefing sampai event. Bukan rotating freelancer. Komunikasi clean, accountability ada nama.",
+      reviewerName: "Andini Pratama",
+      reviewerJobTitle: "HR Manager · Tech Unicorn",
+    }),
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",

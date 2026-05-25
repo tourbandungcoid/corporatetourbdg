@@ -310,6 +310,103 @@ export function videoObjectSchema({
   };
 }
 
+export function reviewSchema({
+  reviewRating,
+  reviewBody,
+  reviewerName,
+  reviewerJobTitle,
+}: {
+  reviewRating: number;
+  reviewBody: string;
+  reviewerName: string;
+  reviewerJobTitle: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: reviewRating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody,
+    author: {
+      "@type": "Person",
+      name: reviewerName,
+      jobTitle: reviewerJobTitle,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+}
+
+export function eventSchema({
+  name,
+  description,
+  startDate,
+  endDate,
+  eventLocation,
+  organizer,
+  image,
+}: {
+  name: string;
+  description: string;
+  startDate?: string;
+  endDate?: string;
+  eventLocation?: string;
+  organizer?: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name,
+    description,
+    ...(startDate ? { startDate } : {}),
+    ...(endDate ? { endDate } : {}),
+    ...(eventLocation ? { location: { "@type": "Place", name: eventLocation } } : {}),
+    organizer: {
+      "@type": "Organization",
+      name: organizer || SITE.name,
+      url: SITE.url,
+    },
+    ...(image ? { image } : {}),
+  };
+}
+
+export function offerSchema({
+  name,
+  priceLow,
+  priceHigh,
+  priceCurrency = "IDR",
+  description,
+}: {
+  name: string;
+  priceLow: string;
+  priceHigh: string;
+  priceCurrency?: string;
+  description?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    name,
+    priceCurrency,
+    price: `${priceLow} - ${priceHigh}`,
+    priceRange: `${priceLow} - ${priceHigh}`,
+    ...(description ? { description } : {}),
+    seller: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+}
+
 /**
  * Render multiple schemas as a single @graph for performance + cleanliness.
  */
