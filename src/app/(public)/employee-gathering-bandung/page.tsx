@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Employee Gathering Bandung 2026: Engagement & Retention Event untuk HR",
   description:
-    "Employee gathering Bandung untuk engagement & retention — bukan refresh biasa. Rp 1,5–3,5 jt/pax, cross-generational design, ROI framework. ⭐ 4.9/5 · 400+ events · Proposal gratis 24 jam.",
+    "Employee gathering Bandung untuk engagement & retention. Rp 1,5–3,5 jt/pax, cross-generational design. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:

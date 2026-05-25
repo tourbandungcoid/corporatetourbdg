@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   title:
     "Outing Kantor Bandung 2026: Panduan Budget, Itinerary & Vendor Recommended",
   description:
-    "Outing kantor Bandung Rp 2,5–5 jt/pax untuk 2D1N. Budget breakdown, sample itinerary, 5 lokasi top, checklist vendor 7-poin. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam — hubungi kami sekarang.",
+    "Outing kantor Bandung Rp 2,5–5 jt/pax (2D1N). Budget breakdown, 5 lokasi top, vendor checklist. 400+ events, 4.9/5 rating. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:

@@ -16,7 +16,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Leadership Retreat Jawa Barat 2026: Senior Leadership Development Program",
   description:
-    "Leadership retreat Jawa Barat — 5 framework (Servant, Adaptive, Situational, Transformational, Authentic), certified executive coach, venue private. Rp 5–9 jt/pax. ⭐ 4.9/5 · Proposal 24 jam.",
+    "Leadership retreat Jawa Barat — 5 frameworks, certified coach, private venue. Rp 5–9 jt/pax. 400+ events, 4.9/5. Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Leadership Retreat Jawa Barat — Senior Leadership Development",

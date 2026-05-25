@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Villa Gathering Bandung 2026: 12 Villa Premium untuk Outing 50–300 Pax",
   description:
-    "Villa gathering Bandung — 12 villa premium capacity 30–300 pax, Rp 25–80 jt/2D1N. Private exclusive, direct partnership (tanpa reseller). ⭐ 4.9/5 · Proposal + rekomendasi villa dalam 24 jam.",
+    "Villa gathering Bandung — 12 premium villas, 30–300 pax, Rp 25–80 jt/2D1N. Direct partnership. 400+ events, 4.9/5. Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Villa Gathering Bandung — 12 Villa Premium 2026",

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Glamping Corporate Bandung 2026: Premium Outdoor Experience untuk Tim yang Beda",
   description:
-    "Glamping corporate Bandung — tenda safari premium, bonfire dinner, sunrise reflection. Rp 2,5–5,5 jt/pax, 30–80 pax. Outdoor experience paling memorable untuk team bonding. ⭐ 4.9/5 · Proposal 24 jam.",
+    "Glamping corporate Bandung — safari tent, bonfire, sunrise. Rp 2,5–5,5 jt/pax. Memorable team bonding. 400+ events, 4.9/5. Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Glamping Corporate Bandung — Unique Outdoor Experience",

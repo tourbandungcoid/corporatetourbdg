@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   title:
     "Team Building Bandung 2026: Methodology, 50+ Activity, Vendor Recommended",
   description:
-    "Team building Bandung outcome-driven — Tuckman, DiSC, Belbin methodology, 50+ activity catalog, Rp 1,2–4 jt/pax. Outbound vs indoor vs hybrid. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam.",
+    "Team building outcome-driven Bandung — Tuckman, DiSC, Belbin methodology. Rp 1,2–4 jt/pax. 400+ events, 4.9/5 rating. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Team Building Bandung — Methodology + Activity Catalog 2026",

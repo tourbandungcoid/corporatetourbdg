@@ -24,7 +24,7 @@ const SLUG = "/incentive-trip-bandung";
 const URL = `${SITE.url}${SLUG}`;
 const TITLE = "Incentive Trip Bandung 2026: Program Reward Premium untuk Top Performers";
 const DESCRIPTION =
-  "Incentive trip Bandung untuk reward top performers — premium accommodation, exclusive activities, recognition ceremony. Rp 3,5–7 jt/pax. ⭐ 4.9/5 · Design program reward dalam 24 jam.";
+  "Incentive trip Bandung — reward top performers, premium stay, exclusive activities. Rp 3,5–7 jt/pax. 400+ events, 4.9/5. Program dalam 24 jam.";
 
 export const metadata: Metadata = {
   title: TITLE,

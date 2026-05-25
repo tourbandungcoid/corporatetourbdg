@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   title:
     "Corporate Gathering Bandung 2026: Annual Event Production untuk Perusahaan 100-800 Pax",
   description:
-    "Corporate gathering Bandung 100–800 pax — awarding night, opening ceremony, gala dinner, Rp 3,5–7 jt/pax. 8 hotel ballroom rekomendasi, sample rundown 2D1N, production checklist. ⭐ 4.9/5 · Proposal gratis 24 jam.",
+    "Corporate gathering Bandung 100–800 pax — awarding, opening ceremony, gala. Rp 3,5–7 jt/pax. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Corporate Gathering Bandung — Annual Event Production 2026",

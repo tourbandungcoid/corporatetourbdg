@@ -16,7 +16,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Company Retreat Bandung 2026: Strategic Multi-Day untuk Deep Work & Cultural Reset",
   description:
-    "Company retreat Bandung — strategic planning, cultural reset, post-merger integration. Venue private exclusive, facilitator senior bersertifikat. Rp 3,5–8 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
+    "Company retreat Bandung — strategic planning, cultural reset, integration. Rp 3,5–8 jt/pax. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Company Retreat Bandung — Strategic Multi-Day Premium Retreat",

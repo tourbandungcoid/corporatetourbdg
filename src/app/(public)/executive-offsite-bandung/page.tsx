@@ -16,7 +16,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Executive Offsite Bandung 2026: Discreet C-Suite Strategy Session",
   description:
-    "Executive offsite Bandung untuk C-suite strategy session — discreet, venue private exclusive, NDA-bound. Rp 6,5–12 jt/pax, 8–20 pax. ⭐ 4.9/5 · Proposal konfidensial dalam 24 jam.",
+    "Executive offsite Bandung — discreet, private venue, NDA-bound. Rp 6,5–12 jt/pax, 8–20 pax. 400+ events, 4.9/5. Proposal konfidensial 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Executive Offsite Bandung — Premium C-Suite Strategy Session",

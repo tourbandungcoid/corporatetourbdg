@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Outbound Perusahaan Bandung 2026: 3 Tier Adventure, Safety Standards, dan Lokasi Outdoor Terbaik",
   description:
-    "Outbound perusahaan Bandung — 3 tier adventure (Light/Medium/Extreme), safety certified, 8 lokasi outdoor, insurance peserta included. Rp 1,5–3,5 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
+    "Outbound Bandung — 3-tier adventure, safety certified, outdoor locations. Rp 1,5–3,5 jt/pax. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Outbound Perusahaan Bandung — Adventure dengan Safety Standards",
