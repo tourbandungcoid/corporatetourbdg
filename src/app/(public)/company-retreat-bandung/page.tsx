@@ -345,9 +345,26 @@ export default function CompanyRetreatBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk retreat perusahaan"], ["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"]].map(([href, title, desc]) => (
-                <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk retreat perusahaan"],
+                ["/executive-offsite-bandung", "Executive Offsite", "C-level intensive 1-2 day"],
+                ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"],
+                ["/leadership-retreat-jawa-barat", "Leadership Retreat Jawa Barat", "Development program untuk emerging leaders"],
+                ["/pricing", "Transparent Pricing Guide", "Budget retreat multi-hari dengan fasilitator & venue"],
+              ].map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"
+                >
+                  <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>
+                  <p className="mt-2 text-sm text-slate">{desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">
+                    Read guide
+                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

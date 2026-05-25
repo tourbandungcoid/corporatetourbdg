@@ -625,11 +625,13 @@ export default function EmployeeGatheringBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — apa bedanya untuk employee event"],
                 ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performer perusahaan"],
                 ["/corporate-gathering-bandung", "Corporate Gathering", "Formal annual event production"],
+                ["/team-building-bandung", "Team Building Bandung", "Bonding activities untuk employee engagement"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework untuk employee experience yang memorable"],
               ].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5">
                   <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>

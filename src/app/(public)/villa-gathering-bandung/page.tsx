@@ -666,11 +666,13 @@ export default function VillaGatheringBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — why it matters"],
+                ["/corporate-gathering-bandung", "Corporate Gathering Bandung", "Formal annual event production"],
+                ["/pricing", "Transparent Pricing Guide", "Budget villa gathering — intimate sampai 500+ pax"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

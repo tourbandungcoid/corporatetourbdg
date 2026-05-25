@@ -563,6 +563,40 @@ export default function IncentiveTripBandungPage() {
           </div>
         </section>
 
+        {/* Related guides */}
+        <section className="py-14 bg-bone border-t border-divider">
+          <div className="container-1280">
+            <p className="eyebrow-brand mb-6">Related guides</p>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Company gathering dengan budget & timeline manageable"],
+                ["/executive-offsite-bandung", "Executive Offsite Bandung", "C-level retreat untuk strategy & bonding"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk reward & recognition program"],
+                ["/pricing", "Transparent Pricing Guide", "Budget incentive trip — dari domestic sampai luxury international"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework untuk memorable incentive experience"],
+              ].map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"
+                >
+                  <h3 className="font-display text-lg text-ink leading-tight">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate">{desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">
+                    Read guide
+                    <ArrowRight
+                      size={12}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-16 md:py-24 bg-ink">
           <div className="container-1280 text-center">

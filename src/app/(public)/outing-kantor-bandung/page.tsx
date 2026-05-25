@@ -792,7 +792,7 @@ export default function OutingKantorBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 [
                   "/event-organizer-corporate-bandung",
@@ -808,6 +808,16 @@ export default function OutingKantorBandungPage() {
                   "/venue-gathering-bandung",
                   "Venue Gathering Bandung",
                   "20 rekomendasi hotel, villa & resort terbaik",
+                ],
+                [
+                  "/company-retreat-bandung",
+                  "Corporate Retreat Bandung",
+                  "Leadership offsite, strategy session, multi-hari",
+                ],
+                [
+                  "/pricing",
+                  "Transparent Pricing Guide",
+                  "Budget breakdown 4-tier, compare dengan kompetitor",
                 ],
               ].map(([href, title, desc]) => (
                 <Link

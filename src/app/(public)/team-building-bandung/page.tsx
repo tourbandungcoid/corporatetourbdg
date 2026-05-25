@@ -771,11 +771,13 @@ export default function TeamBuildingBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — bukan generic EO"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
                 ["/mice-organizer-bandung", "MICE Organizer Bandung", "Meeting, conference, hybrid event"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework team building yang outcome-driven"],
+                ["/specialist-vs-generic-eo", "Specialist vs Generic EO", "Kenapa B2B specialist lebih maksimal"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

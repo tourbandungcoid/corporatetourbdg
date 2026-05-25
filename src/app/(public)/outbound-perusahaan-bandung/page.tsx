@@ -662,11 +662,13 @@ export default function OutboundPerusahaanBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — benefit vs generic EO"],
                 ["/team-building-bandung", "Team Building Bandung", "Indoor + outdoor methodology"],
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "Lokasi terbaik untuk outbound + gathering"],
+                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Outbound + bonding program 1-3 hari"],
+                ["/pricing", "Transparent Pricing Guide", "Budget outbound per pax — dari adventure sampai corporate gathering"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}
