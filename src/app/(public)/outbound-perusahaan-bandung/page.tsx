@@ -163,6 +163,8 @@ export default function OutboundPerusahaanBandungPage() {
       image: IMAGES.offroad1.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Raden Bagus Wicaksono",
+      authorJobTitle: "Head of Operations & Risk",
       slug: SLUG,
     }),
     breadcrumbSchema([

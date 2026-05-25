@@ -150,6 +150,8 @@ export default function CorporateGatheringBandungPage() {
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([
@@ -527,7 +529,7 @@ export default function CorporateGatheringBandungPage() {
 
           <p className="mt-6">
             Untuk venue gathering options yang lebih luas including villa, resort, dan location-specific recommendations, lihat{" "}
-            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">
               8 hotel ballroom terbaik dan venue gathering recommendations →
             </Link>
           </p>

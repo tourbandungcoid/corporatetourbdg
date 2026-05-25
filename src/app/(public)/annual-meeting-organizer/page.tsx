@@ -203,6 +203,8 @@ export default function AnnualMeetingOrganizerPage() {
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-20",
       dateModified: "2026-05-20",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([

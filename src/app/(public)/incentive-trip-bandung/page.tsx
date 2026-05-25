@@ -145,6 +145,8 @@ export default function IncentiveTripBandungPage() {
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
+      authorName: "Sinta Rahmadhani",
+      authorJobTitle: "Head of Client Strategy",
       slug: SLUG,
     }),
     breadcrumbSchema([

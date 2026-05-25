@@ -171,6 +171,8 @@ export default function MiceOrganizerBandungPage() {
       image: IMAGES.packageAnnualGathering.src,
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([

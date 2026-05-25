@@ -123,6 +123,8 @@ export default function B2BSpecialistPage() {
       image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-15",
       dateModified: "2026-05-15",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: PATH,
     }),
     faqPageSchema(FAQS),

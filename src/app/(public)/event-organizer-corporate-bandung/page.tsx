@@ -120,7 +120,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Direct venue partnership — bukan reseller",
-    desc: <>60+ <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">direct venue partnership di Bandung & Jawa Barat</Link> dengan direct relationship. Tidak ada markup reseller layer. Anda dapat harga lebih baik dan prioritas availability.</>,
+    desc: <>60+ <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">direct venue partnership di Bandung & Jawa Barat</Link> dengan direct relationship. Tidak ada markup reseller layer. Anda dapat harga lebih baik dan prioritas availability.</>,
   },
   {
     title: "Risk register terdokumentasi",
@@ -146,6 +146,8 @@ export default function EventOrganizerCorporateBandungPage() {
       image: IMAGES.caseStudyLarge.src,
       datePublished: "2026-05-14",
       dateModified: "2026-05-14",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([

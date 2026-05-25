@@ -97,6 +97,8 @@ export default function LeadershipRetreatJawaBaratPage() {
       image: IMAGES.caseStudyExecutive.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Sinta Rahmadhani",
+      authorJobTitle: "Head of Client Strategy",
       slug: SLUG,
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Leadership Retreat Jawa Barat", url: URL }]),

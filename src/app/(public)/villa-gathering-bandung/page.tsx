@@ -149,6 +149,8 @@ export default function VillaGatheringBandungPage() {
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Amelia Chandra",
+      authorJobTitle: "Senior Program Designer",
       slug: SLUG,
     }),
     breadcrumbSchema([
@@ -447,7 +449,7 @@ export default function VillaGatheringBandungPage() {
             night, conference component), pax 300+, butuh built-in MICE
             facilities, atau prep time singkat (&lt; 3 minggu). Untuk complete
             venue gathering options, lihat{" "}
-            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">
               venue gathering Bandung — semua kategori →
             </Link>
           </p>

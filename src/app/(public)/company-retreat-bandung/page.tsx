@@ -97,6 +97,8 @@ export default function CompanyRetreatBandungPage() {
       image: IMAGES.packageExecutiveOffsite.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Sinta Rahmadhani",
+      authorJobTitle: "Head of Client Strategy",
       slug: SLUG,
     }),
     breadcrumbSchema([{ name: "Home", url: SITE.url }, { name: "Company Retreat Bandung", url: URL }]),

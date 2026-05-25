@@ -174,6 +174,8 @@ export default function GlampingCorporateBandungPage() {
       image: IMAGES.packageGlamping.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Amelia Chandra",
+      authorJobTitle: "Senior Program Designer",
       slug: SLUG,
     }),
     breadcrumbSchema([
@@ -335,7 +337,7 @@ export default function GlampingCorporateBandungPage() {
             spesifik dimana glamping memberi outcome yang impossible di setting
             indoor: <strong>shared vulnerability di alam terbuka</strong>. Untuk
             opsi venue gathering lengkap termasuk venue indoor dan outdoor, lihat{" "}
-            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">
               venue gathering Bandung recommendations
             </Link>
             .

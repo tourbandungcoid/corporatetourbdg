@@ -150,6 +150,8 @@ export default function CompareSpecialistVsGenericPage() {
       image: `${SITE.url}/opengraph-image`,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: "/specialist-vs-generic-eo",
     }),
     faqPageSchema(FAQS)

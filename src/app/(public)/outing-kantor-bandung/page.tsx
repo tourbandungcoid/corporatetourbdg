@@ -220,6 +220,8 @@ export default function OutingKantorBandungPage() {
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([
@@ -431,7 +433,7 @@ export default function OutingKantorBandungPage() {
             10–200), resort dengan ballroom (kapasitas 300–800), glamping site,
             dan outdoor activity ground. Kami punya direct partnership dengan
             mereka, bukan reseller.{" "}
-            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">
               Lihat 20 venue terbaik →
             </Link>
           </p>
@@ -668,11 +670,11 @@ export default function OutingKantorBandungPage() {
 
           <p className="mt-6">
             Untuk grup pertama kali outing di Bandung, kami biasanya rekomendasi{" "}
-            <Link href="/locations/lembang-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/corporate-event-lembang" className="text-brand font-medium hover:underline">
               <strong>Lembang</strong> (cool, scenic)
             </Link>
             {" "}atau{" "}
-            <Link href="/locations/ciwidey-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/corporate-event-ciwidey" className="text-brand font-medium hover:underline">
               <strong>Ciwidey</strong> (adventure, Kawah Putih)
             </Link>
             .

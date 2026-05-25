@@ -160,6 +160,8 @@ export default function CorporateEventLembangPage() {
       image: IMAGES.heroMain.src,
       datePublished: "2026-05-20",
       dateModified: "2026-05-20",
+      authorName: "Tio Mahesa",
+      authorJobTitle: "Lead Field Operations Manager",
       slug: SLUG,
     }),
     breadcrumbSchema([

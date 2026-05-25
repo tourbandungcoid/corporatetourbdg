@@ -194,6 +194,8 @@ export default function TeamBuildingBandungPage() {
       image: IMAGES.caseStudyTeamBuilding.src,
       datePublished: "2026-05-12",
       dateModified: "2026-05-12",
+      authorName: "Andre Pratama",
+      authorJobTitle: "Founder & Lead Corporate Strategist",
       slug: SLUG,
     }),
     breadcrumbSchema([
@@ -683,7 +685,7 @@ export default function TeamBuildingBandungPage() {
           </div>
           <p className="mt-6">
             Untuk detail lengkap venue gathering Bandung dengan activity facilities, lihat{" "}
-            <Link href="/venues-gathering-bandung" className="text-brand font-medium hover:underline">
+            <Link href="/venue-gathering-bandung" className="text-brand font-medium hover:underline">
               venue gathering Bandung recommendation →
             </Link>
           </p>
