@@ -9,13 +9,20 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
     name: SITE.legalName,
     alternateName: ["TourBandung Corporate", "Tour Bandung Corporate", "7Summits Corporate"],
     url: SITE.url,
-    logo: `${SITE.url}/logo/logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/logo/logo.png`,
+      width: 200,
+      height: 60,
+    },
     description:
       "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 7Summits Travel beroperasi sejak 2018 dengan 400+ corporate events delivered.",
     foundingDate: "2018",
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.address.street,
@@ -31,6 +38,17 @@ export function organizationSchema() {
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
     },
+    knowsAbout: [
+      "Corporate Outing",
+      "Team Building",
+      "MICE",
+      "Incentive Trip",
+      "Corporate Gathering",
+      "Executive Offsite",
+      "Leadership Retreat",
+      "Event Management",
+      "Corporate Travel Indonesia",
+    ],
     sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
@@ -38,7 +56,7 @@ export function organizationSchema() {
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "EventPlanner", "ProfessionalService"],
+    "@type": ["LocalBusiness", "TravelAgency", "EventPlanner", "ProfessionalService"],
     "@id": `${SITE.url}#business`,
     name: SITE.legalName,
     alternateName: SITE.name,
@@ -54,8 +72,17 @@ export function localBusinessSchema() {
       postalCode: CONTACT.address.postalCode,
       addressCountry: CONTACT.address.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -6.9306,
+      longitude: 107.619,
+    },
     hasMap: SITE.googleMapsUrl,
-    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Subang", "Jawa Barat"],
+    areaServed: [
+      { "@type": "City", name: "Bandung" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat" },
+      { "@type": "Country", name: "Indonesia" },
+    ],
     priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
     openingHoursSpecification: [
       {
@@ -111,6 +138,8 @@ export function articleSchema({
   datePublished,
   dateModified,
   slug,
+  authorName,
+  authorJobTitle,
 }: {
   headline: string;
   description: string;
@@ -118,7 +147,18 @@ export function articleSchema({
   datePublished: string;
   dateModified: string;
   slug: string;
+  authorName?: string;
+  authorJobTitle?: string;
 }) {
+  const author = authorName
+    ? {
+        "@type": "Person",
+        name: authorName,
+        ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
+        worksFor: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
+      }
+    : { "@type": "Organization", name: SITE.legalName, url: SITE.url };
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -127,14 +167,12 @@ export function articleSchema({
     image,
     datePublished,
     dateModified,
-    author: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE.url,
-    },
+    inLanguage: "id-ID",
+    author,
     publisher: {
       "@type": "Organization",
-      name: SITE.name,
+      "@id": `${SITE.url}#organization`,
+      name: SITE.legalName,
       logo: {
         "@type": "ImageObject",
         url: `${SITE.url}/logo/logo.png`,
@@ -149,7 +187,7 @@ export function articleSchema({
       name: "Corporate Outing Bandung",
       provider: {
         "@type": "Organization",
-        name: SITE.name,
+        name: SITE.legalName,
       },
       areaServed: {
         "@type": "City",
