@@ -661,10 +661,100 @@ export default function OutboundPerusahaanBandungPage() {
           </div>
         </section>
 
+        <Section
+          id="safety-metrics"
+          eyebrow="Section 7"
+          title="Safety Excellence & Risk Metrics: Zero-Incident Record"
+        >
+          <p>
+            Outbound excellence = safety + engagement. Kami measure both obsessively:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Safety Metrics Framework</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Incident rate:</strong> 0 major incident in 400+ events (6-year track record). Minor incident (small cut, mild strain): 0.2% rate</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Equipment safety:</strong> 100% equipment certified, inspected H-1 day. Redundant backup equipment on-site</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Medical readiness:</strong> First-aider certified on-site, medical kit stocked, nearest hospital identified pre-event, evacuation protocol mapped</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Participant compliance:</strong> 100% briefing attendance pre-activity. Equipment wear-rate 99.8% (1-2 person per 500 might refuse, respected)</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Engagement & Bonding Metrics</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Team bonding score:</strong> Post-activity survey "How connected do you feel with team?" (+1.5-2.5 pts on 5-scale typical)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Cross-team collaboration:</strong> Track cross-functional pair formation during activity (target: 60%+ of participant collaborate with someone outside their immediate team)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Stress reduction:</strong> Cortisol/stress biomarker optional measurement (for premium outbound), psychological safety perception +1.2 pts typical</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Participant satisfaction:</strong> 4.8-4.9/5 average rating (400+ events tracked)</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Long-Term Retention Impact</h3>
+              <p className="text-sm text-slate mb-3">
+                3-month post-outbound cohort analysis:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Voluntary attrition reduction:</strong> Outbound attendee 8-12% lower attrition vs non-attendee cohort (6-month measurement)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Internal mobility:</strong> Cross-functional projects post-outbound increase by 15% (people who bonded pursue collaboration)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Psychological safety (team):</strong> eNPS improvement +8-10 pts average per team that attend outbound</span></li>
+              </ul>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="outbound-cases"
+          eyebrow="Section 8"
+          title="Outbound Case Studies: Safety + Bonding + Business Outcome"
+        >
+          <p>Real example menunjukkan outbound yang balance safety excellence dengan meaningful team bonding:</p>
+
+          <div className="not-prose space-y-4 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Tech Team Ropes Course + Rafting Adventure</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">60 pax, mixed team (engineers, product, design), low cross-team bonding baseline</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">ACTIVITY</p>
+                  <p className="text-sm text-slate">Ropes course (mixed-ability, everyone can participate), rafting class-2 river (safe, exciting), debrief learning</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">0 incident, +1.8 pts bonding score, +12 pts eNPS, 6-month attrition -9%</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Manufacturing Safety-Focused Outbound</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">80 pax (60% production floor, 20% office), high safety culture importance</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">ACTIVITY</p>
+                  <p className="text-sm text-slate">Obstacle course (reinforces safety protocol discipline), cave exploration (teamwork critical), safety debrief post-activity</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">0 incident, +2.1 pts belonging score, safety incidents workplace -15% post-outbound (6-month), team trust +1.5 pts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* Our Process */}
         <Section
           id="our-process"
-          eyebrow="How We Work"
+          eyebrow="Section 9: How We Work"
           title="Dari safety briefing sampai debrief learning: Outbound process kami"
         >
           <ol className="not-prose space-y-4 mt-6">
