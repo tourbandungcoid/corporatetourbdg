@@ -16,7 +16,7 @@ const URL = `${SITE.url}${SLUG}`;
 export const metadata: Metadata = {
   title: "Executive Offsite Bandung 2026: Discreet C-Suite Strategy Session",
   description:
-    "Executive offsite Bandung untuk C-suite strategy session — discreet, venue private exclusive, NDA-bound. Rp 6,5–12 jt/pax, 8–20 pax. ⭐ 4.9/5 · Proposal konfidensial dalam 24 jam.",
+    "Executive offsite Bandung — discreet, private venue, NDA-bound. Rp 6,5–12 jt/pax, 8–20 pax. 400+ events, 4.9/5. Proposal konfidensial 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Executive Offsite Bandung — Premium C-Suite Strategy Session",
@@ -162,6 +162,42 @@ export default function ExecutiveOffsiteBandungPage() {
           </div>
         </section>
 
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per format (per pax):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Format Offsite</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (12 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">1D – Surface Alignment</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 5–7 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 60–84 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">2D1N – Standard Strategic</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 7–9 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 84–108 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">2D1N – Bespoke w/ Strategy Consultant</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 10–15 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 120–180 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 border-b border-divider">
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>
@@ -300,9 +336,26 @@ export default function ExecutiveOffsiteBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — key differentiator"], ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"], ["/leadership-retreat-jawa-barat", "Leadership Retreat", "Development cohort 12-30 pax"]].map(([href, title, desc]) => (
-                <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"><h3 className="font-display text-lg text-ink leading-tight">{title}</h3><p className="mt-2 text-sm text-slate">{desc}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">Read guide<ArrowRight size={12} className="transition-transform group-hover:translate-x-1" /></span></Link>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — key differentiator"],
+                ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performers"],
+                ["/leadership-retreat-jawa-barat", "Leadership Retreat", "Development cohort 12-30 pax"],
+                ["/company-retreat-bandung", "Corporate Retreat Bandung", "Multi-day strategy session untuk leadership"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework untuk C-suite experience design"],
+              ].map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"
+                >
+                  <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>
+                  <p className="mt-2 text-sm text-slate">{desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">
+                    Read guide
+                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

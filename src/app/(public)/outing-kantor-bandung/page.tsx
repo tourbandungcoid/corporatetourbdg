@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   title:
     "Outing Kantor Bandung 2026: Panduan Budget, Itinerary & Vendor Recommended",
   description:
-    "Outing kantor Bandung Rp 2,5–5 jt/pax untuk 2D1N. Budget breakdown, sample itinerary, 5 lokasi top, checklist vendor 7-poin. ⭐ 4.9/5 · 400+ events · Proposal gratis dalam 24 jam — hubungi kami sekarang.",
+    "Outing kantor Bandung Rp 2,5–5 jt/pax (2D1N). Budget breakdown, 5 lokasi top, vendor checklist. 400+ events, 4.9/5 rating. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:
@@ -794,7 +794,7 @@ export default function OutingKantorBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 [
                   "/event-organizer-corporate-bandung",
@@ -810,6 +810,16 @@ export default function OutingKantorBandungPage() {
                   "/venue-gathering-bandung",
                   "Venue Gathering Bandung",
                   "20 rekomendasi hotel, villa & resort terbaik",
+                ],
+                [
+                  "/company-retreat-bandung",
+                  "Corporate Retreat Bandung",
+                  "Leadership offsite, strategy session, multi-hari",
+                ],
+                [
+                  "/pricing",
+                  "Transparent Pricing Guide",
+                  "Budget breakdown 4-tier, compare dengan kompetitor",
                 ],
               ].map(([href, title, desc]) => (
                 <Link

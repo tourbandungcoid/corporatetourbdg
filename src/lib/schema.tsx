@@ -20,7 +20,7 @@ export function organizationSchema() {
       height: 60,
     },
     description:
-      "Specialist B2B corporate outing, team building, dan executive offsite di Bandung & Jawa Barat. 7Summits Travel beroperasi sejak 2018 dengan 400+ corporate events delivered.",
+      "Tour Bandung Corporate adalah unit specialized dari 7Summits Travel yang fokus 100% pada B2B corporate event organizer untuk outing kantor, team building, corporate gathering, incentive trip, leadership retreat, dan executive offsite di Bandung & Jawa Barat. Operating sejak 2018 dengan 400+ corporate events delivered, 92% repeat booking rate, 60+ venue partnership direct, dan tim senior (tenure 4+ tahun) dedicated per client.",
     foundingDate: "2018",
     numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
     address: {
@@ -37,6 +37,12 @@ export function organizationSchema() {
       telephone: `+${CONTACT.whatsapp}`,
       email: CONTACT.email,
       availableLanguage: ["Indonesian", "English"],
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: CONTACT.officeHoursStructured.days,
+        opens: CONTACT.officeHoursStructured.opens,
+        closes: CONTACT.officeHoursStructured.closes,
+      },
     },
     knowsAbout: [
       "Corporate Outing",
@@ -324,6 +330,103 @@ export function videoObjectSchema({
       "@type": "Organization",
       name: SITE.name,
       logo: { "@type": "ImageObject", url: `${SITE.url}/logo/logo.png` },
+    },
+  };
+}
+
+export function reviewSchema({
+  reviewRating,
+  reviewBody,
+  reviewerName,
+  reviewerJobTitle,
+}: {
+  reviewRating: number;
+  reviewBody: string;
+  reviewerName: string;
+  reviewerJobTitle: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: reviewRating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody,
+    author: {
+      "@type": "Person",
+      name: reviewerName,
+      jobTitle: reviewerJobTitle,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+}
+
+export function eventSchema({
+  name,
+  description,
+  startDate,
+  endDate,
+  eventLocation,
+  organizer,
+  image,
+}: {
+  name: string;
+  description: string;
+  startDate?: string;
+  endDate?: string;
+  eventLocation?: string;
+  organizer?: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name,
+    description,
+    ...(startDate ? { startDate } : {}),
+    ...(endDate ? { endDate } : {}),
+    ...(eventLocation ? { location: { "@type": "Place", name: eventLocation } } : {}),
+    organizer: {
+      "@type": "Organization",
+      name: organizer || SITE.name,
+      url: SITE.url,
+    },
+    ...(image ? { image } : {}),
+  };
+}
+
+export function offerSchema({
+  name,
+  priceLow,
+  priceHigh,
+  priceCurrency = "IDR",
+  description,
+}: {
+  name: string;
+  priceLow: string;
+  priceHigh: string;
+  priceCurrency?: string;
+  description?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    name,
+    priceCurrency,
+    price: `${priceLow} - ${priceHigh}`,
+    priceRange: `${priceLow} - ${priceHigh}`,
+    ...(description ? { description } : {}),
+    seller: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
     },
   };
 }

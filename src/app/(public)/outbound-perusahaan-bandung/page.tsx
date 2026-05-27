@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Outbound Perusahaan Bandung 2026: 3 Tier Adventure, Safety Standards, dan Lokasi Outdoor Terbaik",
   description:
-    "Outbound perusahaan Bandung — 3 tier adventure (Light/Medium/Extreme), safety certified, 8 lokasi outdoor, insurance peserta included. Rp 1,5–3,5 jt/pax. ⭐ 4.9/5 · Proposal gratis 24 jam.",
+    "Outbound Bandung — 3-tier adventure, safety certified, outdoor locations. Rp 1,5–3,5 jt/pax. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Outbound Perusahaan Bandung — Adventure dengan Safety Standards",
@@ -275,6 +275,42 @@ export default function OutboundPerusahaanBandungPage() {
                 >
                   Lihat 3 tier
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 1D):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Tier Outbound</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (80 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 1: Light (Low-Impact)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 1,5–2,2 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 120–176 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 2: Medium (High-Adrenaline)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2–2,8 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 160–224 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Tier 3: Extreme (Adventure)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3–4 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 240–320 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -626,11 +662,13 @@ export default function OutboundPerusahaanBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — benefit vs generic EO"],
                 ["/team-building-bandung", "Team Building Bandung", "Indoor + outdoor methodology"],
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "Lokasi terbaik untuk outbound + gathering"],
+                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Outbound + bonding program 1-3 hari"],
+                ["/pricing", "Transparent Pricing Guide", "Budget outbound per pax — dari adventure sampai corporate gathering"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

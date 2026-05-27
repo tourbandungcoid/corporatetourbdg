@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   title:
     "Corporate Gathering Bandung 2026: Annual Event Production untuk Perusahaan 100-800 Pax",
   description:
-    "Corporate gathering Bandung 100–800 pax — awarding night, opening ceremony, gala dinner, Rp 3,5–7 jt/pax. 8 hotel ballroom rekomendasi, sample rundown 2D1N, production checklist. ⭐ 4.9/5 · Proposal gratis 24 jam.",
+    "Corporate gathering Bandung 100–800 pax — awarding, opening ceremony, gala. Rp 3,5–7 jt/pax. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Corporate Gathering Bandung — Annual Event Production 2026",
@@ -768,11 +768,13 @@ export default function CorporateGatheringBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — kenapa ini matter untuk gathering"],
                 ["/mice-organizer-bandung", "MICE Organizer Bandung", "Conference, exhibition, hybrid event"],
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel & resort ballroom terbaik"],
+                ["/pricing", "Transparent Pricing Guide", "Budget tier gathering — dari intimate sampai gala 1000 pax"],
+                ["/packages", "Featured Packages", "Ready-to-use gathering template untuk annual event"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Glamping Corporate Bandung 2026: Premium Outdoor Experience untuk Tim yang Beda",
   description:
-    "Glamping corporate Bandung — tenda safari premium, bonfire dinner, sunrise reflection. Rp 2,5–5,5 jt/pax, 30–80 pax. Outdoor experience paling memorable untuk team bonding. ⭐ 4.9/5 · Proposal 24 jam.",
+    "Glamping corporate Bandung — safari tent, bonfire, sunrise. Rp 2,5–5,5 jt/pax. Memorable team bonding. 400+ events, 4.9/5. Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Glamping Corporate Bandung — Unique Outdoor Experience",
@@ -291,6 +291,42 @@ export default function GlampingCorporateBandungPage() {
                 >
                   Lihat tipe tenda
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 1D2N):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Tier Glamping</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Standard (Tenda Safari)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 250 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Premium (Tenda Suite)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3,6 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 360 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Executive (Villa-Tent Hybrid)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 5,2 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 520 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -701,11 +737,13 @@ export default function GlampingCorporateBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk event outdoor"],
+                ["/company-retreat-bandung", "Corporate Retreat Bandung", "Multi-day retreat dengan bonding & strategy"],
+                ["/pricing", "Transparent Pricing Guide", "Budget glamping — dari intimate 20 orang sampai 100+ pax"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

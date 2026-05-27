@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Employee Gathering Bandung 2026: Engagement & Retention Event untuk HR",
   description:
-    "Employee gathering Bandung untuk engagement & retention — bukan refresh biasa. Rp 1,5–3,5 jt/pax, cross-generational design, ROI framework. ⭐ 4.9/5 · 400+ events · Proposal gratis 24 jam.",
+    "Employee gathering Bandung untuk engagement & retention. Rp 1,5–3,5 jt/pax, cross-generational design. 400+ events, 4.9/5. Proposal gratis 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title:
@@ -258,6 +258,42 @@ export default function EmployeeGatheringBandungPage() {
                 dateUpdated="2026-05-22"
                 googleReviewCount={105}
               />
+              <div className="mt-5 border-t border-divider pt-5">
+                <p className="text-sm font-medium text-ink mb-3">Budget by format (per pax, 100 pax):</p>
+                <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-cream/40 border-b border-divider">
+                        <th className="px-3 py-2 text-left font-medium">Format</th>
+                        <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                        <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">1 Day Gathering</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 1,5–2 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 150–200 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">1D2N Standard</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2–2,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 200–250 jt</td>
+                      </tr>
+                      <tr className="border-b border-divider">
+                        <td className="px-3 py-2 font-medium">2D1N Premium</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 2,5–3,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 250–350 jt</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-medium">Multi-generational</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 3–3,5 jt</td>
+                        <td className="px-3 py-2 font-mono text-slate">Rp 300–350 jt</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div className="mt-6 pt-5 border-t border-divider flex flex-wrap gap-3">
                 <Link
                   href="/proposal/request"
@@ -589,11 +625,13 @@ export default function EmployeeGatheringBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — apa bedanya untuk employee event"],
                 ["/incentive-trip-bandung", "Incentive Trip Bandung", "Program reward top performer perusahaan"],
                 ["/corporate-gathering-bandung", "Corporate Gathering", "Formal annual event production"],
+                ["/team-building-bandung", "Team Building Bandung", "Bonding activities untuk employee engagement"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework untuk employee experience yang memorable"],
               ].map(([href, title, desc]) => (
                 <Link key={href} href={href} className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5">
                   <h3 className="font-display text-lg text-ink leading-tight">{title}</h3>

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Villa Gathering Bandung 2026: 12 Villa Premium untuk Outing 50–300 Pax",
   description:
-    "Villa gathering Bandung — 12 villa premium capacity 30–300 pax, Rp 25–80 jt/2D1N. Private exclusive, direct partnership (tanpa reseller). ⭐ 4.9/5 · Proposal + rekomendasi villa dalam 24 jam.",
+    "Villa gathering Bandung — 12 premium villas, 30–300 pax, Rp 25–80 jt/2D1N. Direct partnership. 400+ events, 4.9/5. Proposal 24 jam.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Villa Gathering Bandung — 12 Villa Premium 2026",
@@ -263,6 +263,42 @@ export default function VillaGatheringBandungPage() {
                 >
                   Lihat 4 villa tier
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax, 2D1N):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Villa Tier</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Standard Villa (30-60 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 2,2–3 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 220–300 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Premium Villa Estate (60-120 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3,5–4,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 350–450 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Exclusive / Multi-Villa Cluster (100-300 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 4,5–5,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 450–550 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -630,11 +666,13 @@ export default function VillaGatheringBandungPage() {
         <section className="py-14 bg-bone border-t border-divider">
           <div className="container-1280">
             <p className="eyebrow-brand mb-6">Related guides</p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               {[
                 ["/venue-gathering-bandung", "Venue Gathering Bandung", "20 hotel, villa & resort terbaik Bandung"],
                 ["/outing-kantor-bandung", "Outing Kantor Bandung", "Panduan budget, itinerary, vendor"],
                 ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B — why it matters"],
+                ["/corporate-gathering-bandung", "Corporate Gathering Bandung", "Formal annual event production"],
+                ["/pricing", "Transparent Pricing Guide", "Budget villa gathering — intimate sampai 500+ pax"],
               ].map(([href, title, desc]) => (
                 <Link
                   key={href}

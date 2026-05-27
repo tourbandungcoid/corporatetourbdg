@@ -24,7 +24,7 @@ const SLUG = "/incentive-trip-bandung";
 const URL = `${SITE.url}${SLUG}`;
 const TITLE = "Incentive Trip Bandung 2026: Program Reward Premium untuk Top Performers";
 const DESCRIPTION =
-  "Incentive trip Bandung untuk reward top performers — premium accommodation, exclusive activities, recognition ceremony. Rp 3,5–7 jt/pax. ⭐ 4.9/5 · Design program reward dalam 24 jam.";
+  "Incentive trip Bandung — reward top performers, premium stay, exclusive activities. Rp 3,5–7 jt/pax. 400+ events, 4.9/5. Program dalam 24 jam.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -289,6 +289,43 @@ export default function IncentiveTripBandungPage() {
           </div>
         </section>
 
+        {/* Budget Breakdown */}
+        <section className="bg-paper border-b border-divider py-10 md:py-14">
+          <div className="container-1280">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium text-ink mb-4">Estimasi budget per tier (per pax):</p>
+              <div className="not-prose overflow-x-auto -mx-3 md:mx-0">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Tier Program</th>
+                      <th className="px-3 py-2 text-left font-medium">Per Pax</th>
+                      <th className="px-3 py-2 text-left font-medium">Total (100 pax)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Standard (2D1N, 30–80 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 3,5–4,5 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 350–450 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Premium (2D1N–3D2N, 20–50 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 4,5–6 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 450–600 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">President&apos;s Club (3D2N–4D3N, 10–25 pax)</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 6–9 jt</td>
+                      <td className="px-3 py-2 font-mono text-slate">Rp 600–900 jt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* TOC */}
         <section className="py-12 border-b border-divider">
           <div className="container-1280">
@@ -522,6 +559,40 @@ export default function IncentiveTripBandungPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related guides */}
+        <section className="py-14 bg-bone border-t border-divider">
+          <div className="container-1280">
+            <p className="eyebrow-brand mb-6">Related guides</p>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["/outing-kantor-bandung", "Outing Kantor Bandung", "Company gathering dengan budget & timeline manageable"],
+                ["/executive-offsite-bandung", "Executive Offsite Bandung", "C-level retreat untuk strategy & bonding"],
+                ["/event-organizer-corporate-bandung", "Event Organizer Corporate Bandung", "Specialist B2B untuk reward & recognition program"],
+                ["/pricing", "Transparent Pricing Guide", "Budget incentive trip — dari domestic sampai luxury international"],
+                ["/methodology", "Our 5-Pillar Design Methodology", "Framework untuk memorable incentive experience"],
+              ].map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-2xl border border-border bg-paper p-6 hover:border-ink-soft transition-all hover:-translate-y-0.5"
+                >
+                  <h3 className="font-display text-lg text-ink leading-tight">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate">{desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-ink/85">
+                    Read guide
+                    <ArrowRight
+                      size={12}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

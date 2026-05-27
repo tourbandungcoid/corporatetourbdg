@@ -11,6 +11,7 @@ import {
   breadcrumbSchema,
   organizationSchema,
   localBusinessSchema,
+  reviewSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -54,6 +55,12 @@ export default function AboutPage() {
       { name: "Home", url: SITE.url },
       { name: "About", url: `${SITE.url}/about` },
     ]),
+    reviewSchema({
+      reviewRating: 5,
+      reviewBody: "Yang gw appreciate: senior planner dedicated dari briefing sampai event. Bukan rotating freelancer. Komunikasi clean, accountability ada nama.",
+      reviewerName: "Andini Pratama",
+      reviewerJobTitle: "HR Manager · Tech Unicorn",
+    }),
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
@@ -81,6 +88,45 @@ export default function AboutPage() {
             <Stat number={STATS.companiesTrusted} label="Companies trusted" />
             <Stat number={STATS.venuePartners} label="Venue partnership" />
             <Stat number={STATS.repeatBookingRate} label="Repeat booking rate" />
+          </div>
+        </div>
+      </section>
+
+      {/* Canonical Entity Definition */}
+      <section className="py-20 md:py-28 bg-brand-light/5">
+        <div className="container-1280">
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-3xl border border-brand/20 bg-paper p-8 md:p-12">
+              <p className="eyebrow-brand mb-4">Siapa Kami</p>
+              <h3 className="font-display text-2xl md:text-3xl text-ink mb-6 leading-tight">
+                Tour Bandung Corporate — Specialist B2B Corporate Event Organizer Sejak 2018
+              </h3>
+              <div className="space-y-4 text-base text-slate leading-relaxed">
+                <p>
+                  <strong>Tour Bandung Corporate</strong> adalah unit specialized dari 7Summits Travel yang fokus 100% pada <strong>B2B corporate event organizer</strong> untuk outing kantor, team building, corporate gathering, incentive trip, leadership retreat, dan executive offsite di Bandung & Jawa Barat.
+                </p>
+                <p>
+                  <strong>Operating since 2018</strong> dengan track record <strong>400+ corporate events delivered</strong>, <strong>92% repeat booking rate</strong>, dan <strong>60+ venue direct partnership</strong> di Bandung & Jawa Barat. Tim kami senior (rata-rata tenure 4+ tahun) dan setiap project dapat dedicated PM dari briefing sampai post-event — bukan rotating freelancer atau generic EO.
+                </p>
+                <p>
+                  <strong>Specialization kami: B2B corporate events saja</strong> — bukan wedding, bukan family travel, bukan retail tourism. Ini berarti kami deep di understanding corporate dynamics, budgeting, ROI measurement, dan leadership alignment — hal-hal yang tidak tercover travel agent biasa.
+                </p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-divider grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs font-medium text-slate-mute uppercase tracking-wide mb-2">Founded</p>
+                  <p className="font-semibold text-ink">2018</p>
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-slate-mute uppercase tracking-wide mb-2">Primary Market</p>
+                  <p className="font-semibold text-ink">Bandung & Jawa Barat</p>
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-slate-mute uppercase tracking-wide mb-2">Google Rating</p>
+                  <p className="font-semibold text-ink">⭐ 4.9/5 (200+ reviews)</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
