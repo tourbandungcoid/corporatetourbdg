@@ -923,7 +923,7 @@ export default function TeamBuildingBandungPage() {
               Siap deliver team building yang mengubah dinamika tim?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              <strong>Dari goal clarification hingga measurable impact</strong> — kami design experience yang deliver real team outcomes, bukan sekadar "fun activity".
+              <strong>Dari goal clarification hingga measurable impact</strong> — kami design experience yang deliver real team outcomes, bukan sekadar fun activities.
             </p>
             <p className="mt-4 text-sm text-cream/65">
               30-min discovery call → activity framework selection + pre-event assessment (optional) → facilitated program → impact measurement. Everything tracked, nothing hidden.

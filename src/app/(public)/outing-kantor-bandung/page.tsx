@@ -776,7 +776,7 @@ export default function OutingKantorBandungPage() {
               ))}
             </div>
             <p className="mt-8 text-slate leading-relaxed max-w-3xl">
-              Kami tidak hanya coordinate vendor — kami <strong>design experience</strong> yang align dengan corporate values Anda, deliver outcomes (team bonding depth, engagement score lift, brand alignment), dan manage risk dengan protocol matang. Setiap event kami trace back ke business objective Anda, bukan sekadar "fun day".
+              Kami tidak hanya coordinate vendor — kami <strong>design experience</strong> yang align dengan corporate values Anda, deliver outcomes (team bonding depth, engagement score lift, brand alignment), dan manage risk dengan protocol matang. Setiap event kami trace back ke business objective Anda, bukan sekadar fun day.
             </p>
           </div>
         </section>
