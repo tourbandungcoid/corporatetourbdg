@@ -708,6 +708,104 @@ export default function TeamBuildingBandungPage() {
           </p>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Methodology-Driven Results</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Team Building dengan 7Summits Corporate Deliver Measurable Outcomes
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "300+",
+                  label: "Team building events",
+                  detail: "Sejak 2018 — dari 20 pax department bonding hingga 500+ pax company-wide transformation program"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated by HR/Finance teams",
+                  detail: "Konsisten rekomendasi karena hasil terukur, bukan sekadar 'fun day'"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat engagement",
+                  detail: "Perusahaan yang sudah kami facilitate, sering book lagi untuk program berbeda tahun berikutnya"
+                },
+                {
+                  metric: "3",
+                  label: "Proven frameworks",
+                  detail: "Tuckman, DiSC, Belbin — bukan generic activity booking, tapi structured team development"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "arrange outbound". Kami <strong>design team development arc</strong> — dari assessment phase (DiSC profiling, baseline team metric), activity yang hit specific goals, hingga reflection session yang integrate insight. Post-event, kami measure impact (engagement lift, communication index change) — bukan sekadar photo album.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari goal-setting sampai impact measurement: Proses team building methodology kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Goal Clarity Briefing (30 min)",
+                desc: "Anda cerita team challenge & desired outcome (communication, trust, alignment, cross-functional bonding). Kami diagnose dan pilih framework yang fit.",
+              },
+              {
+                step: "Pre-Event Assessment (Optional)",
+                desc: "DiSC profiling (30 min workshop atau online), baseline team metric survey. Ini kasih data untuk activity design dan post-event comparison.",
+              },
+              {
+                step: "Experience Design & Proposal (48 hours)",
+                desc: "Activity sequence yang map to Tuckman/DiSC/Belbin framework. Proposal detail: objective, activity flow, facilitator credential, risk management, measurement plan.",
+              },
+              {
+                step: "Facilitation Day(s)",
+                desc: "Senior facilitator on-site penuh. Real-time group dynamic monitoring, activity adaptation kalau needed. Group reflection session (15-20 min setelah major activity).",
+              },
+              {
+                step: "Post-Event Report & Debrief",
+                desc: "Participant feedback survey + facilitator note. For premium programs: group debrief call 1 minggu setelah untuk integrate insight.",
+              },
+              {
+                step: "Impact Measurement (90 days)",
+                desc: "Follow-up survey to track behavior change and team performance shift. Optional: 360-feedback untuk high-commitment programs.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Setiap tahap di-document. Tidak ada surprise cost atau scope creep.
+          </p>
+        </Section>
+
         {/* Trust strip */}
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
@@ -822,28 +920,41 @@ export default function TeamBuildingBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Mau team building yang outcome-driven?
+              Siap deliver team building yang mengubah dinamika tim?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Briefing call 15 menit → kami pilih methodology + activity yang
-              fit goal tim Anda. Free proposal dalam 24 jam.
+              <strong>Dari goal clarification hingga measurable impact</strong> — kami design experience yang deliver real team outcomes, bukan sekadar "fun activity".
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              30-min discovery call → activity framework selection + pre-event assessment (optional) → facilitated program → impact measurement. Everything tracked, nothing hidden.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Proven methodology
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Impact measurement
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Senior facilitator
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Get Design Proposal
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("team building Bandung")}
+                href={buildWaLink("team building Bandung — methodology discovery")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

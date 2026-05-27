@@ -312,6 +312,108 @@ export default function ExecutiveOffsiteBandungPage() {
           </ol>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">C-Suite Confidentiality & Strategy</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa C-suite Trust 7Summits untuk Executive Offsite yang High-Stakes
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "100+",
+                  label: "C-suite offsites facilitated",
+                  detail: "Dari quarterly alignment sampai major transformation — M&A, restructuring, succession planning"
+                },
+                {
+                  metric: "100%",
+                  label: "Discretion & confidentiality record",
+                  detail: "Zero breach. 6-layer NDA protocol. Legal-reviewed for highly sensitive discussions"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat booking untuk annual strategic",
+                  detail: "Founder/CEO yang offsite once dengan kami, book lagi untuk offsite tahunan berikutnya"
+                },
+                {
+                  metric: "15+",
+                  label: "Tahun strategy consultant network",
+                  detail: "McKinsey, BCG, Bain alumni — facilitator kami bukan sekadar event MC, tapi strategy partner"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami bukan "corporate event organizer". Kami <strong>partner C-suite di strategic moments</strong> — dari pre-work material development, stakeholder pre-brief, facilitation strategy session, sampai post-offsite follow-up. Discretion, confidentiality, dan strategic outcome adalah core value kami, bukan afterthought.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari CEO brief sampai post-offsite alignment: Executive offsite process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Founder / CEO Strategic Brief (1 hour)",
+                desc: "Confidential discussion tentang objective, success criteria, sensitive topics, participant dynamics. Kami understand political landscape sebelum design.",
+              },
+              {
+                step: "Scope & NDA Finalization",
+                desc: "Define discretion protocol level. High-level NDA draft (legal review optional). Venue exclusive booking lock. Participant list confidential.",
+              },
+              {
+                step: "Pre-work Material Development (1-2 weeks)",
+                desc: "Industry brief, competitive analysis, internal data summary, strategic framework. Distribute 1 minggu sebelum offsite untuk informed participation.",
+              },
+              {
+                step: "Individual Pre-Offsite Calls (30 min per person)",
+                desc: "1-on-1 dengan setiap participant — listen to pain points, priority, personal success criteria. Briefing notes untuk facilitator hanya.",
+              },
+              {
+                step: "Agenda Design & Facilitator Prep",
+                desc: "Detailed agenda yang balance structured input + free-flowing discussion. Facilitator scenario-plan untuk potential stuck points atau controversial discussions.",
+              },
+              {
+                step: "Facilitation Day(s) — Discreet On-Site",
+                desc: "Senior facilitator on-site penuh. Venue exclusive. Minimal staff. Real-time group dynamic management. Breakout session untuk sensitive topics. Zero documentation exposed.",
+              },
+              {
+                step: "Post-Offsite Alignment & Follow-up",
+                desc: "Decision summary (approved by participants), action item log, accountability assign. Confidential report to CEO only. Post-engagement coaching kalau needed.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Confidentiality embedded di setiap tahap. Tidak ada shortcuts, tidak ada "just briefing" yang casual. C-suite offsite adalah high-stakes work.
+          </p>
+        </Section>
+
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -363,11 +465,33 @@ export default function ExecutiveOffsiteBandungPage() {
 
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Discreet executive offsite untuk tim Anda?</h2>
-            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Briefing call confidential dengan senior planner — kami match facilitator certified, venue exclusive, dan agenda untuk C-suite Anda.</p>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
+              Siap facilitate C-suite decision yang transformative & confidential?
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
+              <strong>Strategy partnership + Discretion + Outcome focus</strong> — kami facilitate high-stakes offsite dengan confidentiality as core, strategy as methodology, and measurable alignment as outcome.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Confidential brief call → pre-work material development → individual pre-brief → facilitated offsite with certified strategy consultant → post-engagement alignment tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> 100% confidentiality
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Certified facilitator
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Discretion protocol
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">Request Proposal<ArrowRight size={16} /></Link>
-              <a href={buildWaLink("executive offsite Bandung")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"><Whatsapp size={16} />WhatsApp</a>
+              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
+                Confidential Consultation<ArrowRight size={16} />
+              </Link>
+              <a href={buildWaLink("executive offsite Bandung — confidential discussion")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />WhatsApp Direct
+              </a>
             </div>
           </div>
         </section>

@@ -604,6 +604,104 @@ export default function VillaGatheringBandungPage() {
           </ul>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Premium Venue Experience</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Villa Gathering dengan 7Summits = Premium + Exclusive + Outcome-Driven
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "60+",
+                  label: "Villa & resort partnership",
+                  detail: "Direct relationship dengan premium venue — intimate villa 10-50 pax hingga sprawling resort 200+ pax"
+                },
+                {
+                  metric: "400+",
+                  label: "Gathering event executed",
+                  detail: "Dari intimate villa bonding sampai formal annual gathering — semua di-execute dengan white-glove service"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh HR teams",
+                  detail: "Consistent feedback untuk venue selection, activity facilitation, luxury + casualness balance"
+                },
+                {
+                  metric: "0",
+                  label: "Hidden cost history",
+                  detail: "Transparent line-item pricing — apa yang di-quote = apa yang di-invoice, tidak ada surprise"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "book villa". Kami <strong>curate premium experience</strong> — dari venue selection yang perfect untuk objective Anda, activity design yang sesuai dengan setting, F&B coordination untuk culinary excellence, sampai accessibility & comfort planning yang matang. Gathering Anda di-execute dengan excellence, bukan sekadar "nice day out".
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari gathering concept sampai memory documentation: Villa gathering process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Gathering Vision Briefing (30 min)",
+                desc: "Objective, pax, atmosphere (formal vs casual), activity preference, F&B preference, budget. Kami align vision sebelum recommend venue.",
+              },
+              {
+                step: "Venue Recommendation & Site Visit (1-2 weeks)",
+                desc: "Recommend 3-5 villa/resort options based on objective. Kami do site visit, verify facility, negotiate rate, lock availability.",
+              },
+              {
+                step: "Experience Design & Proposal (1 week)",
+                desc: "Detailed itinerary, activity menu, F&B menu preview, accessibility checklist, contingency plan. Budget breakdown line-item clear.",
+              },
+              {
+                step: "Pre-Event Coordination (4 weeks out)",
+                desc: "Final menu confirmation, seating arrangement, AV requirement clarification, parking coordinate, accessibility final check.",
+              },
+              {
+                step: "Event Day Execution",
+                desc: "On-site PM + ops team penuh. Setup H-3 hours, guest welcome & orientation, activity facilitation, F&B service coordination, live problem solving.",
+              },
+              {
+                step: "Post-Event Memory Curation",
+                desc: "Professional photo album curated, highlight video (if applicable), attendee feedback survey, media sent within 1 minggu.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Premium experience curated. Outcome measured. Memories documented — bukan sekadar event, tapi special gathering experience.
+          </p>
+        </Section>
+
         {/* Trust strip */}
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
@@ -699,28 +797,41 @@ export default function VillaGatheringBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Cari villa yang fit corporate event Anda?
+              Siap curate premium villa gathering yang memorable?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Brief size, durasi, dan budget — kami match dengan 3-4 villa
-              recommended dari 60+ partnership langsung kami.
+              <strong>Venue curation + Activity design + White-glove execution</strong> — kami match perfect villa, facilitate seamless experience, dan document memories yang lasting.
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              30-min vision brief → 3-4 venue options (dari 60+ partners) → detailed itinerary & proposal → on-site full execution → curated memory documentation.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Premium venue curation
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Seamless execution
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Transparent pricing
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Get Villa Proposal
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("villa gathering Bandung")}
+                href={buildWaLink("villa gathering Bandung — exclusive venue")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

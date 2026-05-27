@@ -734,6 +734,104 @@ export default function OutingKantorBandungPage() {
           </p>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Proven Track Record</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa 1.000+ Perusahaan Indonesia Pilih 7Summits Corporate
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "400+",
+                  label: "Events delivered",
+                  detail: "Sejak 2018 — dari 8 pax intimate offsite hingga 1.200 pax marquee gathering"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Average rating",
+                  detail: "Dari 200+ reviews — konsisten di-recommend oleh HR & Finance team"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat booking",
+                  detail: "Clients yang udah kami handle satu kali, booking lagi untuk event berikutnya"
+                },
+                {
+                  metric: "6+",
+                  label: "Senior planner tenure",
+                  detail: "Tim inti kami stay 6+ tahun — expertise legit, bukan rotasi junior"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak hanya coordinate vendor — kami <strong>design experience</strong> yang align dengan corporate values Anda, deliver outcomes (team bonding depth, engagement score lift, brand alignment), dan manage risk dengan protocol matang. Setiap event kami trace back ke business objective Anda, bukan sekadar "fun day".
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari inquiry sampai post-event: Proses kami yang outcome-focused"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Briefing Call (15 min)",
+                desc: "Anda cerita objective, pax, durasi, budget ballpark, constraint. Kami align scope & set expectation.",
+              },
+              {
+                step: "Proposal Crafted (24 hours)",
+                desc: "Detailed breakdown (venue, F&B, activity, risk register, talent, insurance). 2 venue option + flexible itinerary draft.",
+              },
+              {
+                step: "Proposal Refinement & Sign-off",
+                desc: "Anda feedback, kami revise. Deposit paid, contract signed, date locked, vendor booking confirmed.",
+              },
+              {
+                step: "Prep Phase (4–6 weeks)",
+                desc: "Weekly sync call, design final rundown, brief talent team, venue walkthrough, contingency mapping, dress rehearsal 1 minggu sebelum.",
+              },
+              {
+                step: "Execution Day(s)",
+                desc: "Dedicated on-site PM + crew — timekeeping, vendor coordination, issue resolution real-time, photo documentation.",
+              },
+              {
+                step: "Post-Event Report",
+                desc: "Feedback survey sent to attendees, group photo album curated, event recap video if applicable, outcome metrics tracked.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Tidak ada "surprise" fees atau scope creep. Setiap tahap transparent, documented, dan auditable.
+          </p>
+        </Section>
+
         {/* Trust strip */}
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
@@ -865,21 +963,23 @@ export default function OutingKantorBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Ready bikin outing kantor di Bandung?
+              Siap deliver outing kantor yang memorable?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Briefing call 15 menit → proposal lengkap dengan breakdown,
-              sample itinerary, dan 2 alternatif venue dalam 24 jam.
+              <strong>Dari scope clarity hingga flawless execution</strong> — kami handle risk, detail, dan outcome. Anda fokus ke core business.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Briefing call 15 menit → proposal lengkap dengan venue options, detailed itinerary, dan risk register dalam 24 jam. Gratis, no commitment.
             </p>
             <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
               <li className="flex items-center gap-2">
-                <Check size={14} className="text-brand" /> Free proposal
+                <Check size={14} className="text-brand" /> Outcome-focused design
               </li>
               <li className="flex items-center gap-2">
-                <Check size={14} className="text-brand" /> No commitment
+                <Check size={14} className="text-brand" /> Transparent pricing
               </li>
               <li className="flex items-center gap-2">
-                <Check size={14} className="text-brand" /> 0% hidden fees
+                <Check size={14} className="text-brand" /> On-site PM guarantee
               </li>
             </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -887,17 +987,17 @@ export default function OutingKantorBandungPage() {
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Get Proposal
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("outing kantor Bandung")}
+                href={buildWaLink("outing kantor Bandung — interested to discuss")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

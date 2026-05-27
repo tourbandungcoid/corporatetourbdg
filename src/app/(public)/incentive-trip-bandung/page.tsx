@@ -521,6 +521,104 @@ export default function IncentiveTripBandungPage() {
           </div>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Reward & Recognition Expertise</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Incentive Trip dengan 7Summits Generate Genuine Top-Performer Motivation
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "350+",
+                  label: "Incentive trips executed",
+                  detail: "Dari standard tier domestic, premium tier Bali/international, sampai President's Club exotic destination"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh CFO & HR teams",
+                  detail: "Consistent feedback untuk ROI-clear reward structure, motivation impact measurable, budget optimization"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat program booking",
+                  detail: "Companies yang run incentive trip once dengan kami, often design lagi untuk tahun berikutnya"
+                },
+                {
+                  metric: "100%",
+                  label: "Destination partnership integrity",
+                  detail: "Direct vendor relationship, pricing transparent, zero hidden cost — value untuk budget diberikan adalah real"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "book destination". Kami <strong>engineer reward experience</strong> — dari tier-matching based on performer profile, destination curation yang aspirational, program structure yang reinforce achievement recognition, sampai post-trip gratitude communication yang sustain motivation. Incentive trip Anda deliver genuine business ROI — engagement lift, retention lift, performance momentum.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari incentive strategy sampai post-trip momentum: Incentive trip process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Reward Strategy Briefing (1 hour)",
+                desc: "Total performer count, tier structure (standard/premium/president's), motivation goal (retention, engagement, performance lift), budget per tier, timeline.",
+              },
+              {
+                step: "Destination & Experience Curation (2 weeks)",
+                desc: "Recommend 3-4 destination option per tier. Activity design yang balance luxury + adventure + cultural experience. Detailed itinerary + budget breakdown.",
+              },
+              {
+                step: "Performer Communication & Selection",
+                desc: "Announce program, selection criteria, tier communication. Pre-trip excitement building — teaser content, destination facts, itinerary preview.",
+              },
+              {
+                step: "Logistics & Vendor Coordination (6-12 weeks prep)",
+                desc: "Confirm hotel, dining, activity, ground transport, flight (kalau international). Insurance & visa coordination kalau perlu. Final attendee list finalization.",
+              },
+              {
+                step: "On-Site Experience Management",
+                desc: "Dedicated trip coordinator on-ground throughout. Welcome & orientation, daily activity facilitation, contingency handling, photo documentation, team bonding monitoring.",
+              },
+              {
+                step: "Post-Trip Gratitude & Momentum",
+                desc: "Photo album + highlight video curated within 1 minggu. Thank you communication dari leadership. Optional: group gathering atau debrief to celebrate achievement & reinforce culture.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Reward experience curated. Performer motivation sustained. Business ROI delivered — tidak sekadar "nice trip", tapi genuine incentive lever.
+          </p>
+        </Section>
+
         <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
           <div className="container-1280 max-w-3xl">
             <AuthorCredibility
@@ -600,12 +698,12 @@ export default function IncentiveTripBandungPage() {
         {/* Final CTA */}
         <section className="py-16 md:py-24 bg-ink">
           <div className="container-1280 text-center">
-            <p className="eyebrow text-brand mb-4">Incentive Trip Bandung</p>
+            <p className="eyebrow text-brand mb-4">Incentive Trip Program</p>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper mb-6 max-w-2xl mx-auto">
-              Top performers lo layak dapat lebih dari sekadar hadiah uang.
+              Design incentive experience yang deliver genuine performer motivation & retention.
             </h2>
             <p className="text-paper/70 mb-8 max-w-xl mx-auto">
-              Ceritakan siapa yang akan diajak dan apa yang ingin dikomunikasikan — kami design incentive program yang memorable.
+              <strong>Tier-matched destination + Experience curation + Post-trip momentum</strong> — kami deliver incentive trip yang ROI-measurable, performer-memorable, dan business-impactful.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link
@@ -616,13 +714,13 @@ export default function IncentiveTripBandungPage() {
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href={buildWaLink("program incentive trip untuk top performers")}
+                href={buildWaLink("incentive trip program untuk top performers — tier-matched destination")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/30 text-paper px-8 h-13 font-medium hover:bg-paper hover:text-ink transition-colors"
               >
                 <Whatsapp size={16} />
-                Konsultasi via WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
             <p className="mt-6 text-xs text-paper/40">

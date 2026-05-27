@@ -675,6 +675,104 @@ export default function GlampingCorporateBandungPage() {
           </div>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Unique Outdoor Experience</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Glamping Corporate dengan 7Summits = Memorable & Comfortable
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "100+",
+                  label: "Glamping corporate events",
+                  detail: "Specialized di outdoor immersion tanpa camping roughness — comfort bertemu adventure"
+                },
+                {
+                  metric: "8+",
+                  label: "Premium glamping site partnership",
+                  detail: "Direct relationship dengan top glamping providers — tidak lewat reseller"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated untuk unique experience",
+                  detail: "HR teams appreciate differentiation dari hotel/villa standard — memorable vibe"
+                },
+                {
+                  metric: "0",
+                  label: "Complaint untuk comfort",
+                  detail: "Setup tepat untuk mendukung activities sambil maintain high comfort standard"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Glamping bukan sekadar "outdoor camping". Kami <strong>engineer experience</strong> yang deliver adventure immersion + premium comfort — modern tent dengan air con, quality F&B, hot water, proper sanitation. Perfect untuk perusahaan yang mau differentiation tanpa rough-camping risk.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari discovery sampai memorable weekend: Proses glamping corporate kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Adventure Experience Briefing (30 min)",
+                desc: "Goal (bonding, refresh, adventure), pax, fitness level, adventure appetite. Kami recommend glamping site yang best fit.",
+              },
+              {
+                step: "Site Selection & Proposal (1 week)",
+                desc: "Glamping site option dengan facility check, activity menu (trekking, campfire, cooking, workshops), F&B preference, capacity confirmation.",
+              },
+              {
+                step: "Pre-Event Coordination",
+                desc: "Site walkthrough, finalize menu, brief glamping staff, prepare activity gear, confirm comfort amenities (wifi, hot water, electricity).",
+              },
+              {
+                step: "On-Site Facilitation",
+                desc: "Dedicated PM + ops team on-site. Welcome & orientation, activity facilitation, F&B coordination, comfort monitoring throughout.",
+              },
+              {
+                step: "Experience Reflection & Bonfire Session",
+                desc: "Guided reflection circle, storytelling session, team bonding di campfire. Photo documentation throughout weekend.",
+              },
+              {
+                step: "Post-Event Media & Feedback",
+                desc: "Curated photo album + highlight video, attendee feedback survey. Optional: group message dari PM 1 minggu setelah untuk continued engagement.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Comfort dan adventure balanced. Every detail — dari tent setup sampai hot water — planned & executed.
+          </p>
+        </Section>
+
         {/* Trust strip */}
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
@@ -770,29 +868,41 @@ export default function GlampingCorporateBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Mau outing yang tim Anda inget seumur hidup?
+              Siap deliver glamping experience yang tim Anda ceritakan bertahun-tahun?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Glamping corporate adalah differentiator yang tim Anda akan
-              ceritakan ke tim lain bertahun-tahun. Briefing call 15 menit
-              untuk mulai design experience-nya.
+              <strong>Adventure immersion meets premium comfort</strong> — kami engineer glamping experience yang memorable, comfortable, dan outcome-driven untuk bonding yang authentic.
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Discovery call → glamping site selection (8+ premium partners) → comfort + activity curation → on-site facilitation → curated memory documentation.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Premium glamping sites
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Comfort + adventure balance
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Authentic bonding space
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Design Glamping Experience
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("glamping corporate Bandung")}
+                href={buildWaLink("glamping corporate Bandung — adventure planning")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

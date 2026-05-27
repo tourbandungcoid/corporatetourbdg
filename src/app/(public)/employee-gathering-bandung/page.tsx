@@ -586,6 +586,104 @@ export default function EmployeeGatheringBandungPage() {
           </ul>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Employee Experience Excellence</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Employee Gathering dengan 7Summits Deliver ROI & Engagement Lift
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "400+",
+                  label: "Employee events delivered",
+                  detail: "Department bonding, annual gathering, inclusive event dengan special needs accommodation"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated by HR & management",
+                  detail: "Consistent feedback untuk engagement lift, cultural reinforcement, memorable experience"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat booking rate",
+                  detail: "HR teams yang book kami untuk 1st event, biasanya re-engage untuk event tahunan berikutnya"
+                },
+                {
+                  metric: "100%",
+                  label: "Inclusive accommodation",
+                  detail: "Accessibility, dietary, religious, mobility — zero peserta left behind"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "organize outing". Kami <strong>design inclusive experience</strong> yang reinforce culture, celebrate employees, dan generate measurable engagement lift. Pre-event accessibility mapping, on-site inclusive accommodation, post-event sentiment tracking — semua documented untuk HR reporting.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari HR brief sampai post-event sentiment: Proses employee gathering kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "HR Strategy Briefing (30 min)",
+                desc: "Engagement goal, employee count, special needs requirement, cultural objective. Kami baseline engagement score pre-event.",
+              },
+              {
+                step: "Event Design & Proposal (1 week)",
+                desc: "Format recommendation, venue + activity flow, inclusive accommodation spec, post-event measurement plan. Detailed breakdown accessible ke management.",
+              },
+              {
+                step: "Pre-Event Accessibility Mapping",
+                desc: "Medical questionnaire send-out, accessibility audit venue, dietary/religious accommodation coordination, special needs logistics prep.",
+              },
+              {
+                step: "Facilitation & Inclusive On-Site Team",
+                desc: "Senior facilitator + ops team on-site. Real-time accommodation, accessibility support, safe environment management.",
+              },
+              {
+                step: "Post-Event Sentiment Survey",
+                desc: "Attendee feedback (1 minggu after) + facilitator observation note. Measure engagement lift, belonging score, cultural alignment perception.",
+              },
+              {
+                step: "HR Impact Report",
+                desc: "Sentiment data analyzed, outcome metrics tracked, recommendations untuk follow-up engagement program.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Setiap milestone documented. Inclusive accommodation bukan afterthought, tapi core design principle.
+          </p>
+        </Section>
+
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -649,18 +747,31 @@ export default function EmployeeGatheringBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Mau employee gathering yang ROI-measurable?
+              Siap deliver employee gathering yang reinforce culture?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Briefing call 15 menit → kami design format + measurement
-              framework untuk justify investment ke management.
+              <strong>Dari inclusive design hingga measurable engagement lift</strong> — kami handle accessibility, cultural reinforcement, dan post-event impact tracking.
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              30-min HR strategy call → inclusive experience design → pre-event accessibility mapping → facilitated event → post-event sentiment tracking & report.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Inclusive by design
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Engagement measurement
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> HR-reportable ROI
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
-                Request Proposal<ArrowRight size={16} />
+                Get Experience Design<ArrowRight size={16} />
               </Link>
-              <a href={buildWaLink("employee gathering Bandung")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
-                <Whatsapp size={16} />WhatsApp
+              <a href={buildWaLink("employee gathering Bandung — inclusive event")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />Chat on WhatsApp
               </a>
             </div>
           </div>

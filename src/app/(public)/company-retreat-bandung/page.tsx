@@ -321,6 +321,104 @@ export default function CompanyRetreatBandungPage() {
           </ol>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Strategic Retreat Expertise</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Corporate Retreat dengan 7Summits Generate Strategic Outcome
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "50+",
+                  label: "Strategic retreats facilitated",
+                  detail: "Dari cultural reset, post-merger integration, strategic planning, sampai leadership alignment"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh executive team",
+                  detail: "Consistent feedback untuk structured facilitation, actionable outcomes, team alignment achieved"
+                },
+                {
+                  metric: "85%",
+                  label: "Execute outcome decision post-retreat",
+                  detail: "Strategic decision yang di-buat di retreat, benar-benar di-execute — bukan sekadar talk, no action"
+                },
+                {
+                  metric: "100%",
+                  label: "Measurable outcome tracking",
+                  detail: "Setiap retreat di-measure dengan concrete metrics — dari OKR lock hingga culture shift survey"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "book venue + facilitate discussion". Kami <strong>engineer strategic outcome architecture</strong> — dari pre-retreat planning session, facilitated decision-making workshop, conflict resolution workshop, sampai post-retreat execution tracking. Outcome measurable, decision locked, execution accountability clear.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari strategy brief sampai post-retreat execution: Company retreat process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Executive Team Briefing (1 hour)",
+                desc: "Retreat objective, business challenge, participant list, desired outcomes, timeline. Kami understand landscape sebelum design.",
+              },
+              {
+                step: "Pre-Retreat Planning Session (1 week before)",
+                desc: "With executive lead — detail agenda, discussion framework, decision-making protocol, conflict resolution plan kalau needed.",
+              },
+              {
+                step: "Pre-read Material Development",
+                desc: "Industry analysis, competitor brief, internal performance data, strategic option memo. Distribute 1 minggu sebelum agar peserta informed.",
+              },
+              {
+                step: "Facilitated Strategy Workshop (Day 1-2)",
+                desc: "Morning: Data deep-dive & challenge alignment. Afternoon: Solution workshop & decision-making. Evening: Cultural alignment discussion & team bonding.",
+              },
+              {
+                step: "Decision Documentation & Commitment",
+                desc: "Strategic decision di-document, approval vote captured, OKR/KPI finalized, accountability assign, execution timeline lock.",
+              },
+              {
+                step: "Post-Retreat Execution Tracking",
+                desc: "30/60/90-day check-in dengan executive team. Outcome metrics tracked, decision execution monitored, team alignment maintained.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Strategic outcome measurable. Decision executed. Team aligned — tidak sekadar team bonding event.
+          </p>
+        </Section>
+
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -372,11 +470,33 @@ export default function CompanyRetreatBandungPage() {
 
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Mau strategic retreat yang substantive?</h2>
-            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Briefing call 15 menit dengan senior planner — kami match facilitator + venue yang fit goal retreat Anda.</p>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
+              Siap facilitate strategic retreat yang generate measurable outcome?
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
+              <strong>From strategic planning to post-retreat execution tracking</strong> — kami facilitate retreat dengan structured methodology, outcome-focused design, dan decision-to-execution accountability.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              1-hour strategy brief → pre-retreat material prep → facilitated workshop (2-3 days) → decision documentation → 90-day execution tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Structured facilitation
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Decision locked
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Outcome measurement
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">Request Proposal<ArrowRight size={16} /></Link>
-              <a href={buildWaLink("company retreat Bandung")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"><Whatsapp size={16} />WhatsApp</a>
+              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
+                Plan Strategic Retreat<ArrowRight size={16} />
+              </Link>
+              <a href={buildWaLink("company retreat Bandung — strategic planning")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />Chat on WhatsApp
+              </a>
             </div>
           </div>
         </section>

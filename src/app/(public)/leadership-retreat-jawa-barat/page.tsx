@@ -280,6 +280,104 @@ export default function LeadershipRetreatJawaBaratPage() {
           </ol>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Leadership Development Excellence</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Leadership Retreat dengan 7Summits Deliver Behavioral Change
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "50+",
+                  label: "Leadership cohorts facilitated",
+                  detail: "Dari manager development sampai C-suite cohort — semua dengan post-program behavior tracking"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh HR & participants",
+                  detail: "Consistent feedback untuk actionable insights, peer learning value, behavioral impact measurable"
+                },
+                {
+                  metric: "85%",
+                  label: "Maintain behavior change 90 days",
+                  detail: "Dengan post-retreat coaching + peer accountability structure — tidak sekadar event high"
+                },
+                {
+                  metric: "6+",
+                  label: "Certified executive coach network",
+                  detail: "Facilitator kami bukan motivational speaker — tapi certified coach dengan methodology matang"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "organize retreat". Kami <strong>engineer behavior change architecture</strong> — dari pre-retreat 360 assessment, facilitated peer learning session, individual coaching, sampai 90-day post-retreat follow-up dengan accountability mechanism. Behavioral change measurable, peer relationships deepened, leadership capability lifted.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari cohort assessment sampai behavior change: Leadership retreat process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "HR Requirement Briefing (30 min)",
+                desc: "Cohort size, participant profile, development need (self-awareness, decision-making, delegation, strategic thinking). Baseline leadership assessment discuss.",
+              },
+              {
+                step: "Framework & Coach Selection (1 week)",
+                desc: "Match certified coach yang fit cohort. Select framework (e.g. Tuckman, executive presence, strategic leadership). Pre-retreat assessment calendar open.",
+              },
+              {
+                step: "Pre-Retreat Assessment (2 weeks before)",
+                desc: "360-feedback survey (optional but recommended), individual leadership questionnaire, cohort dynamics baseline. Facilitator prep notes per participant.",
+              },
+              {
+                step: "Facilitated Retreat (3D2N format typical)",
+                desc: "Day 1: Individual leadership narrative + cohort peer learning. Day 2: Small group coaching, peer coaching practice. Day 3: Commitment statement + 90-day action plan.",
+              },
+              {
+                step: "Peer Coaching Pair Matching",
+                desc: "After retreat: setiap peserta paired untuk 90-day peer coaching commitment (biweekly 30-min call dengan structured framework).",
+              },
+              {
+                step: "Post-Retreat Coaching & Accountability",
+                desc: "30/60/90 day structured check-in dengan facilitator. Group booster session 6 month later untuk momentum maintenance.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Behavior change measurable. Peer relationships deepened. Leadership capability lifted — tidak sekadar event experience.
+          </p>
+        </Section>
+
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -331,11 +429,33 @@ export default function LeadershipRetreatJawaBaratPage() {
 
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Develop senior leadership tim Anda?</h2>
-            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Briefing call dengan senior planner — kami match facilitator certified, framework, dan venue private yang fit cohort leadership Anda.</p>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
+              Siap develop leadership cohort yang deliver strategic impact?
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
+              <strong>From pre-retreat assessment to 90-day behavior change</strong> — kami facilitate leadership development dengan methodology matang, certified coach partnership, dan post-retreat accountability structure.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Cohort assessment → framework selection → pre-retreat 360 feedback → facilitated retreat → peer coaching pairing → 90-day follow-up tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Certified coaches
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Behavior measurement
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Post-retreat follow-up
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">Request Proposal<ArrowRight size={16} /></Link>
-              <a href={buildWaLink("leadership retreat Jawa Barat")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"><Whatsapp size={16} />WhatsApp</a>
+              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
+                Design Leadership Program<ArrowRight size={16} />
+              </Link>
+              <a href={buildWaLink("leadership retreat Jawa Barat — development program")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />Chat on WhatsApp
+              </a>
             </div>
           </div>
         </section>
