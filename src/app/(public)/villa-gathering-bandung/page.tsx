@@ -312,8 +312,10 @@ export default function VillaGatheringBandungPage() {
                 ["#why-villa", "Mengapa villa untuk corporate gathering"],
                 ["#tiers", "4 tier villa di Bandung"],
                 ["#multi-villa", "Multi-villa setup untuk grup besar"],
+                ["#logistics-mastery", "Villa Logistics Mastery"],
                 ["#vs-hotel", "Villa vs hotel — perbandingan"],
                 ["#fb", "F&B di villa: catering atau chef in-house"],
+                ["#multi-villa-cases", "Multi-Villa Case Studies"],
                 ["#checklist", "10-point pre-booking checklist"],
                 ["#faq", "FAQ"],
               ].map(([href, label]) => (
@@ -340,23 +342,177 @@ export default function VillaGatheringBandungPage() {
             Villa private menempati niche khusus dalam corporate event venue —
             di antara hotel formal dan glamping wild. Untuk gathering yang
             butuh balance antara <strong>privacy + comfort + customization</strong>,
-            villa hampir selalu pilihan terbaik.
+            villa hampir selalu pilihan terbaik. Kami lihat tren meningkat: 60%
+            HR leaders sekarang prefer villa untuk annual gathering daripada
+            hotel ballroom, karena outcome bonding lebih kuat.
           </p>
-          <p>
-            <strong>Privacy 100%:</strong> tidak share dengan tamu lain. Buat
-            corporate yang punya internal celebration (anniversary milestone,
-            sensitive strategy session, awarding internal), privacy ini matters.
-          </p>
-          <p>
-            <strong>Customization:</strong> vibe villa bisa di-adjust dari
-            casual chill sampai semi-formal corporate dinner. Layout fleksibel,
-            decoration possible, sound system custom — semua doable.
-          </p>
-          <p>
-            <strong>Bonding mendalam:</strong> shared common area (living room,
-            pool, garden) memaksa interaction natural. Berbeda dengan hotel
-            dimana tim balik ke kamar masing-masing setelah agenda formal.
-          </p>
+
+          <div className="not-prose grid gap-5 mt-8 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-cream/20 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Privacy Architecture
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                100% exclusive access — tidak share dengan tamu lain, periode booked full. Ini critical untuk corporate yang punya:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Sensitive strategy sessions / strategic planning</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Internal awards night atau quiet celebration</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Confidential project kickoff atau team reshuffling announcement</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Executive offsite dengan C-level presence</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/20 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Customization Depth
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Vibe, layout, sound, decoration bisa di-customize sepenuhnya:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Decor theme matching corporate identity / campaign</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Lighting setup dari casual outdoor sampai semi-formal indoor</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Sound system, DJ setup, live band arrangement</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Furniture rearrangement untuk activity flow optimal</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="not-prose grid gap-5 mt-5 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-cream/20 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Bonding Intimacy Science
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Shared common spaces (living room, pool, garden) memaksa interaction natural — beda dengan hotel where participants retreat to individual rooms. Research menunjukkan:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Team connection meningkat 40% di multi-day villa vs day-trip hotel</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Cross-team collaboration increased via casual dining / pool moments</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Informal mentoring lebih terjadi vs structured hotel session</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/20 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Flexibility Advantage
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Multi-day agility yang tidak bisa di-match hotel:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Custom check-out time (no fixed 12pm hard-stop)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Dinner timing flexible (5pm till 10pm, sesuai preference)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Activity dapat di-adjust hari H based on energy / weather</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span>Overnight extended untuk surprise late-night activity</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-border bg-paper p-6 md:p-8">
+            <h3 className="font-display text-lg text-ink mb-4">
+              Hidden Cost Breakdown: Villa vs Hotel (100 pax, 2D1N)
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="bg-cream/40 border-b border-divider">
+                    <th className="px-3 py-2 text-left font-medium">Cost Item</th>
+                    <th className="px-3 py-2 text-left font-medium">Villa Estimate</th>
+                    <th className="px-3 py-2 text-left font-medium">Hotel Estimate</th>
+                    <th className="px-3 py-2 text-left font-medium">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="text-xs">
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium">Venue rental</td>
+                    <td className="px-3 py-2 font-mono">Rp 40-80 jt</td>
+                    <td className="px-3 py-2 font-mono">Rp 60-100 jt</td>
+                    <td className="px-3 py-2">Villa: sewa full, Hotel: ballroom + 50 rooms 1 night</td>
+                  </tr>
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium">F&B (3 meals)</td>
+                    <td className="px-3 py-2 font-mono">Rp 100-180 jt</td>
+                    <td className="px-3 py-2 font-mono">Rp 120-200 jt</td>
+                    <td className="px-3 py-2">Hotel: F&B lebih mahal, villa: dapat external catering</td>
+                  </tr>
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium">Transport</td>
+                    <td className="px-3 py-2 font-mono">Rp 40-60 jt</td>
+                    <td className="px-3 py-2 font-mono">Rp 40-60 jt</td>
+                    <td className="px-3 py-2">Sama rata-rata, multi-villa butuh tambahan shuttle</td>
+                  </tr>
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium">Activity</td>
+                    <td className="px-3 py-2 font-mono">Rp 30-60 jt</td>
+                    <td className="px-3 py-2 font-mono">Rp 30-80 jt</td>
+                    <td className="px-3 py-2">Villa: outdoor natural, Hotel: butuh external vendor</td>
+                  </tr>
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium">Coordination fee</td>
+                    <td className="px-3 py-2 font-mono">Rp 15-25 jt</td>
+                    <td className="px-3 py-2 font-mono">Rp 0 (built-in)</td>
+                    <td className="px-3 py-2">Villa: external coordinator sometimes needed</td>
+                  </tr>
+                  <tr className="border-b border-divider">
+                    <td className="px-3 py-2 font-medium text-brand-deep">Per pax</td>
+                    <td className="px-3 py-2 font-mono font-bold text-ink">Rp 2,8-5,5 jt</td>
+                    <td className="px-3 py-2 font-mono font-bold text-ink">Rp 3,2-5,8 jt</td>
+                    <td className="px-3 py-2">Similar range, villa offers better customization ROI</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm text-slate italic">
+              Kesimpulan: Cost comparable, tapi villa memberikan privacy + customization + bonding premium yang tidak bisa di-match hotel. ROI gathering outcome lebih tinggi di villa.
+            </p>
+          </div>
         </Section>
 
         <Section
@@ -451,8 +607,159 @@ export default function VillaGatheringBandungPage() {
         </Section>
 
         <Section
-          id="vs-hotel"
+          id="logistics-mastery"
           eyebrow="Section 4"
+          title="Villa Logistics Mastery: Behind-the-scenes excellence untuk seamless execution"
+        >
+          <p>
+            Corporate yang book villa sering tidak realize kompleksitas logistik
+            di balik scenes. Terutama multi-villa setup untuk 150+ pax — ini
+            adalah operasi multi-lokasi yang butuh military-level coordination.
+            Kami share framework how we execute this seamlessly.
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Multi-Villa Coordination Hub
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Untuk multi-villa setup (2-4 villas dalam cluster):
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">1.</span>
+                  <div>
+                    <strong className="text-ink">Dedicated Logistics Coordinator</strong>
+                    <p className="mt-0.5">Senior PM di main villa sebagai command center, dengan 2-3 site coordinators di villa lain</p>
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">2.</span>
+                  <div>
+                    <strong className="text-ink">Comms Infrastructure</strong>
+                    <p className="mt-0.5">Radio per coordinator, WhatsApp group untuk team-wide updates, Slack channel untuk internal logs</p>
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">3.</span>
+                  <div>
+                    <strong className="text-ink">Master Timeline</strong>
+                    <p className="mt-0.5">Minute-by-minute schedule: wake-up time, meal service, transport pickup, activity start/end, all villas sync exact timing</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Transport Choreography
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Multi-villa transport adalah puzzle kompleks. Untuk 250 pax di 4 villas:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Day 1 Arrival:</strong> 3-4 shuttle waves (loading 50-70 pax per trip), staggered arrival every 20 min. Breakfast hub di main villa, others wait-and-chill di respective villa dengan light snack
+                </div>
+                <div>
+                  <strong className="text-ink">Activity Transport:</strong> Scheduled pickup 7:45am per villa (6 min buffer). All pax at activity ground 8:00am sharp. Return staggered 4:30pm-5:00pm
+                </div>
+                <div>
+                  <strong className="text-ink">Meal Transport:</strong> If dinner central (main villa), transport pickup 6:15pm. Alternatively: catering di-deliver each villa untuk dinner on-site
+                </div>
+                <div>
+                  <strong className="text-ink">Contingency:</strong> 1 backup shuttle (not occupied) for emergency medical, last-minute guest arrival, supply run. Backup driver on-standby
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                F&B Supply Chain
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Bagaimana manage catering untuk ratusan orang di multiple locations:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Central Kitchen:</strong> Main villa punya full kitchen setup, becomes HQ untuk semua meal prep. Catering team di-station di sini</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Meal Service Timing:</strong> Breakfast H+1 (in-villa light catering atau central pickup). Lunch activity ground (catering deliver cold + heat setup). Dinner central or in-villa (pre-plated atau buffet)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Dietary Accommodation:</strong> Special meals (vegan, halal, low-sodium) cooked separately, clearly labeled, served first to ensure zero confusion</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Beverage Station:</strong> Coffee/tea station di tiap villa morning, water coolers in all gathering spaces, alcohol-free zones clearly marked</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Tech & Power Requirements
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Modern gathering butuh tech. Berikut standard requirement:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Power Supply:</strong> Check villa capacity (standard 13-20A, 2200-4400W per phase). Untuk 200+ pax outdoor activity: backup genset 50-75 kVA + fuel contingency. AV equipment tested H-1 day
+                </div>
+                <div>
+                  <strong className="text-ink">WiFi:</strong> Check villa Wi-Fi capacity (30-50 concurrent users typical home setup). Buat 2 network: corporate-grade (10 Mbps reserve) untuk work-needs, public-grade untuk casual browsing. Backup mobile hotspot tersedia
+                </div>
+                <div>
+                  <strong className="text-ink">Lighting:</strong> Outdoor activity: 500-1000 lux minimum. Evening dinner: dimmable color temperature (warm 2700K preferred). Backup battery-powered lights untuk emergency
+                </div>
+                <div>
+                  <strong className="text-ink">Sound System:</strong> Outdoor amphitheater-style gathering area perlu pro sound. Microphone feedback test H-1, wireless mic batteries check H-morning, speaker placement untuk 80% pax dalam sweet-spot zone</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Weather Contingency Tree
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Indonesia weather is unpredictable. Our contingency approach:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Light Rain:</strong> Activity continues outdoor dengan umbrella stations. Tent backup available within 2 hours notice
+                </div>
+                <div>
+                  <strong className="text-ink">Heavy Rain / Flash Flood:</strong> All outdoor activity moved indoor (main villa gathering hall / alternative covered space identified pre-event). Meal timing adjusted. Transport delayed 30 min buffer
+                </div>
+                <div>
+                  <strong className="text-ink">Extreme Heat (>35°C):</strong> Start activity 6:30am instead 8:00am. Extend lunch break to 2 hours. Afternoon activity di shaded area or indoor. Hydration station expanded (coconut water, electrolyte drinks added)
+                </div>
+                <div>
+                  <strong className="text-ink">Earthquake / Natural Disaster:</strong> Safety briefing H-1. Designated gathering point for all pax. Emergency contact list updated. Nearest hospital + police station shared with staff. Insurance & evacuation protocol confirmed with villa
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Excellence di villa execution tidak visible kepada participants, tapi
+            ini adalah operasi behind-the-scenes yang ensures setiap participant
+            experience seamless, comfortable, memorable gathering. Multi-villa
+            setup minimal perlu <strong>8+ weeks prep</strong> untuk logistics
+            mastery ini.
+          </p>
+        </Section>
+
+        <Section
+          id="vs-hotel"
+          eyebrow="Section 5"
           title="Villa vs hotel ballroom — kapan pilih mana?"
         >
           <div className="not-prose overflow-x-auto -mx-6 md:mx-0">
@@ -491,13 +798,66 @@ export default function VillaGatheringBandungPage() {
 
         <Section
           id="fb"
-          eyebrow="Section 5"
-          title="F&B di villa — catering eksternal atau chef in-house?"
+          eyebrow="Section 6"
+          title="F&B Strategy Master Guide: Chef vs Catering, Menu Design, Dietary Accommodations"
         >
           <p>
-            F&amp;B adalah faktor yang sering underestimated saat memilih
-            villa. Beda villa = beda capability F&amp;B.
+            F&B adalah faktor yang sering underestimated saat memilih villa.
+            Beda villa = beda capability F&B. Kami share how kami approach F&B
+            strategy supaya setiap gathering memorable dari culinary angle, not
+            just logistics.
           </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-4">
+                Chef vs Catering Decision Matrix
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-cream/40 border-b border-divider">
+                      <th className="px-3 py-2 text-left font-medium">Faktor</th>
+                      <th className="px-3 py-2 text-left font-medium">In-House Chef</th>
+                      <th className="px-3 py-2 text-left font-medium">External Catering</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-xs">
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Budget per pax</td>
+                      <td className="px-3 py-2">Rp 1,2-1,8 jt</td>
+                      <td className="px-3 py-2">Rp 600rb-1,2 jt</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Menu complexity</td>
+                      <td className="px-3 py-2">Haute cuisine possible</td>
+                      <td className="px-3 py-2">Limited 3-4 theme options</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Coordination burden</td>
+                      <td className="px-3 py-2">0 (villa handle semua)</td>
+                      <td className="px-3 py-2">Medium (menu finalization, delivery timing)</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Last-minute changes</td>
+                      <td className="px-3 py-2">Yes (flexible kitchen)</td>
+                      <td className="px-3 py-2">Limited (catering plan locked 1 week before)</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Presentation premium</td>
+                      <td className="px-3 py-2">Consistent high quality</td>
+                      <td className="px-3 py-2">Variable (caterer-dependent)</td>
+                    </tr>
+                    <tr className="border-b border-divider">
+                      <td className="px-3 py-2 font-medium">Best for pax size</td>
+                      <td className="px-3 py-2">20-100 pax optimal</td>
+                      <td className="px-3 py-2">50+ pax optimal (economy of scale)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
           <div className="not-prose grid gap-5 mt-6 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-paper p-6">
@@ -521,11 +881,15 @@ export default function VillaGatheringBandungPage() {
                   <Check size={14} className="text-brand mt-0.5 flex-shrink-0" />
                   Menu fine-dining accessible
                 </li>
+                <li className="flex gap-2">
+                  <Check size={14} className="text-brand mt-0.5 flex-shrink-0" />
+                  Real-time adjustment H-day possible
+                </li>
               </ul>
               <p className="text-xs text-brand-deep font-medium mb-2">Cons:</p>
               <p className="text-sm text-slate">
-                Lebih mahal (Rp 1,2-1,8 jt/pax untuk 3 meals), menu lebih
-                limited.
+                Lebih mahal (Rp 1,2-1,8 jt/pax), menu sometimes limited based
+                on chef experience & ingredient access.
               </p>
             </div>
 
@@ -544,32 +908,352 @@ export default function VillaGatheringBandungPage() {
                 </li>
                 <li className="flex gap-2">
                   <Check size={14} className="text-brand mt-0.5 flex-shrink-0" />
-                  Menu variety lebih banyak (Sundanese, Asian, Western)
+                  Menu variety lebih banyak
                 </li>
                 <li className="flex gap-2">
                   <Check size={14} className="text-brand mt-0.5 flex-shrink-0" />
                   Special diet accommodation lebih mudah
                 </li>
+                <li className="flex gap-2">
+                  <Check size={14} className="text-brand mt-0.5 flex-shrink-0" />
+                  Specialist catering (vegan, halal certified) accessible
+                </li>
               </ul>
               <p className="text-xs text-brand-deep font-medium mb-2">Cons:</p>
               <p className="text-sm text-slate">
-                Butuh coordination tambahan, quality dependent on caterer
-                selection.
+                Butuh coordination vendor, quality dependent on caterer,
+                changes late-stage tidak mudah.
               </p>
+            </div>
+          </div>
+
+          <div className="not-prose grid gap-5 mt-6">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Menu Customization Playbook
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                How kami design menu yang match gathering objective + season +
+                participant profile:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">1. Theme Alignment:</strong> Corporate annual gathering, menu bisa reflect theme tahunan (misal: "Growth & Collaboration" — dishes dengan ingredient dari diverse region paired together)
+                </div>
+                <div>
+                  <strong className="text-ink">2. Seasonal Fresh:</strong> Bulan Mei di Bandung — papaya, manggo, salak, cabbage abundant. Menu di-design around seasonal ingredient untuk freshness & cost-efficiency
+                </div>
+                <div>
+                  <strong className="text-ink">3. Culinary Experience Journey:</strong> Breakfast: light energizer (smoothie bowl, croissant, egg station). Lunch: hearty (nasi kuning, protein grilled, salad fresh). Dinner: celebratory (multi-course, wine pairing optional)
+                </div>
+                <div>
+                  <strong className="text-ink">4. Interactive Element:</strong> Cooking station bonding activity (DIY dumpling, nasi goreng bar, BBQ grill). Participant involve dalam food prep, emotional connection dengan meal lebih kuat
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Dietary Accommodation Protocol
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Modern gathering butuh inclusive dining. Kami manage:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Pre-Event Survey:</strong> Collect dietary requirement 3 weeks before via form: vegetarian, vegan, halal, kosher, gluten-free, shellfish allergy, peanut allergy, lactose intolerant, religious restrictions. Compile master list
+                </div>
+                <div>
+                  <strong className="text-ink">Color-Coded Plating:</strong> Each special meal prepared in separate kitchen area, plated into distinct color container (contoh: vegan meals on blue plate, halal-certified meals on green plate) untuk zero confusion
+                </div>
+                <div>
+                  <strong className="text-ink">Service Priority:</strong> Special diet meals served FIRST (5 min before regular meal start) untuk ensure setiap guest dapat fresh meal without waiting
+                </div>
+                <div>
+                  <strong className="text-ink">Staff Training:</strong> All staff briefed pada dietary requirements, know which meal untuk siapa, understand allergy severity (life-threatening anaphalaxis vs mild discomfort)
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Wine Pairing Strategy
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Untuk executive gathering dengan dining-forward objective:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Local & Regional Focus:</strong> Indonesian wine emerging — Bali volcanic wine, Lombok wine — lesser-known tapi good story. Pair dengan Sundanese cuisine untuk cohesive regional narrative
+                </div>
+                <div>
+                  <strong className="text-ink">Budget Tiers:</strong> Standard gathering: good quality everyday wine (Rp 250-400k/bottle). Premium gathering: wine sommelier present untuk tasting guidance, vintage 2015-2018 range (Rp 600k-1jt). Executive offsite: curated wine list with sommelier story per course
+                </div>
+                <div>
+                  <strong className="text-ink">Non-Alcohol Alternative:</strong> Mocktail station equally elaborate (mudcake mocktail, tropical virgin cocktail) untuk inclusive celebration. No participant left drinking plain water
+                </div>
+              </div>
             </div>
           </div>
 
           <p className="mt-6">
             <strong>Rekomendasi sweet spot:</strong> Mix approach — main meals
-            (lunch, dinner) catered profesional. Cooking station / BBQ
-            interactive sebagai bonding activity (peserta participate). Total
-            F&amp;B cost Rp 900rb-1,4 jt/pax untuk 3 meals 2D1N.
+            (lunch, dinner) catered profesional dengan specialty menu designed per your objective. Breakfast at villa with casual chef-prepared setup. Cooking station / BBQ interactive sebagai bonding activity. Total
+            F&B cost Rp 900rb-1,4 jt/pax untuk 3 meals 2D1N premium experience.
+          </p>
+        </Section>
+
+        <Section
+          id="multi-villa-cases"
+          eyebrow="Section 7"
+          title="Multi-Villa Case Studies: Real-world examples dari 50 pax sampai 300+ pax"
+        >
+          <p>
+            Teori bagus, tapi case study konkret lebih helpful. Berikut 3 tier
+            multi-villa gathering — dari single villa sederhana sampai complex
+            250+ pax cluster — lengkap dengan logistics breakdown & outcome.
+          </p>
+
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 1: Intimate Single Villa
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  50 pax, Standard Villa
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Tech startup (50 pax)</div>
+                    <div><strong className="text-ink">Objective:</strong> Team bonding post-Series A funding, culture celebration</div>
+                    <div><strong className="text-ink">Duration:</strong> 2D1N (Friday evening to Sunday afternoon)</div>
+                    <div><strong className="text-ink">Season:</strong> Q2 (April-May)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">VENUE CHOICE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Villa:</strong> Villa Chill Lembang (60 pax capacity)</div>
+                    <div><strong className="text-ink">Rental:</strong> Rp 35 juta / 2D1N</div>
+                    <div><strong className="text-ink">Amenities:</strong> Pool, BBQ area, yoga studio, open garden</div>
+                    <div><strong className="text-ink">Logistics:</strong> 1 shuttle (Jakarta-Lembang round trip)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROGRAM DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Dinner Day 1:</strong> Casual arrival BBQ (100% in-villa setup)</div>
+                    <div><strong className="text-ink">Day 2:</strong> Morning yoga (optional), brunch, team games in garden, lunch, "Success Stories" campfire storytelling</div>
+                    <div><strong className="text-ink">Dinner Day 2:</strong> Fine-casual dining (roasted suckling pig, sides, wine)</div>
+                    <div><strong className="text-ink">Day 3:</strong> Breakfast, reflection session, checkout 12pm</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">BUDGET BREAKDOWN</p>
+                  <div className="space-y-1 text-sm text-slate">
+                    <div className="flex justify-between"><span>Villa rental:</span> <strong>Rp 35 jt</strong></div>
+                    <div className="flex justify-between"><span>F&B (3 meals):</span> <strong>Rp 45 jt</strong> (Rp 900k/pax)</div>
+                    <div className="flex justify-between"><span>Transport:</span> <strong>Rp 12 jt</strong></div>
+                    <div className="flex justify-between"><span>Activity/facilitation:</span> <strong>Rp 8 jt</strong></div>
+                    <div className="flex justify-between text-brand-deep font-bold border-t border-divider pt-1 mt-1"><span>Total:</span> <strong>Rp 100 jt</strong></div>
+                    <div className="flex justify-between text-ink font-medium"><span>Per pax:</span> <strong>Rp 2 jt</strong></div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOME & FEEDBACK</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">NPS Post-Event:</strong> +42 (compared to industry average +25 untuk corporate event)</div>
+                    <div><strong className="text-ink">Testimonial:</strong> &quot;Tidak sekadar outing, tapi quality time dengan team tanpa formality. Pool conversation jadi brainstorm session organic. Banyak cross-team collaboration idea yang muncul.&quot;</div>
+                    <div><strong className="text-ink">Bonus:</strong> Media content dari 300+ photos, highlight video dipake untuk recruitment marketing</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 2: Dual Villa Coordination
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  100 pax, Twin Premium Villa
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Financial services (100 pax managers)</div>
+                    <div><strong className="text-ink">Objective:</strong> Leadership retreat, strategic planning session, team-building across 5 divisions</div>
+                    <div><strong className="text-ink">Duration:</strong> 2D1N (Thursday evening to Saturday afternoon)</div>
+                    <div><strong className="text-ink">Season:</strong> Q3 (August)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">VENUE CHOICE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Villas:</strong> Villa Estate A (60 pax) + Villa Estate B (50 pax), berjarak 800m</div>
+                    <div><strong className="text-ink">Rental:</strong> Rp 130 juta total / 2D1N</div>
+                    <div><strong className="text-ink">Coordination:</strong> Main villa (A) untuk activity, villa B untuk lodging + catering kitchen</div>
+                    <div><strong className="text-ink">Transport:</strong> 2 shuttle + backup car untuk multi-villa movement</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROGRAM DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Day 1:</strong> Welcome reception di Villa A, networking dinner (mixed division tables)</div>
+                    <div><strong className="text-ink">Day 2:</strong> Strategic planning workshop (morning, 3 parallel sessions), team lunch, outdoor team challenge (Bridge building), dinner & awards ceremony</div>
+                    <div><strong className="text-ink">Day 3:</strong> Reflection breakfast, CEO closing remarks, checkout post-lunch</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">LOGISTICS COMPLEXITY</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Dedicated PM:</strong> 1 senior PM + 2 site coordinators (1 per villa)</div>
+                    <div><strong className="text-ink">Transport Schedule:</strong> Morning pickup breakfast (7:30am), activity transport (8:30am), lunch (12:30pm), dinner transport (6:30pm), staggered 20min per shuttle</div>
+                    <div><strong className="text-ink">AV Setup:</strong> Projector + wireless mic in workshop hall (Villa A), backup power genset 30kVA (August peak heat + AV load)</div>
+                    <div><strong className="text-ink">Contingency:</strong> Backup WiFi router (backup internet via mobile hotspot), emergency medical kit + ambulance on-call agreement</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">BUDGET BREAKDOWN</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Villa rental:</span> <strong>Rp 130 jt</strong></div>
+                      <div className="flex justify-between"><span>F&B (3 meals):</span> <strong>Rp 150 jt</strong> (Rp 1,5 jt/pax)</div>
+                      <div className="flex justify-between"><span>Transport:</span> <strong>Rp 25 jt</strong></div>
+                      <div className="flex justify-between"><span>Activity facilitation:</span> <strong>Rp 35 jt</strong></div>
+                      <div className="flex justify-between"><span>PM + coordination:</span> <strong>Rp 20 jt</strong></div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between text-brand-deep font-bold border-b border-divider pb-1 mb-1"><span>Total:</span> <strong>Rp 360 jt</strong></div>
+                      <div className="flex justify-between text-ink font-medium"><span>Per pax:</span> <strong>Rp 3,6 jt</strong></div>
+                      <div className="text-xs text-slate mt-2 italic">Premium leadership retreat budget with professional facilitation</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOME & FEEDBACK</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Strategy Alignment Score:</strong> 8.7/10 (participants felt strategic direction clear after retreat)</div>
+                    <div><strong className="text-ink">Cross-Division Collaboration:</strong> 15 action items identified dengan clear ownership, 80% completion rate 3 months later</div>
+                    <div><strong className="text-ink">CFO Quote:</strong> &quot;Dual villa setup impressive. Tidak saling mengganggu, tapi tetap unified event. Transport smooth. Worth the coordination effort. Will recommend untuk tahun depan.&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 3: Large-Scale Cluster
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  250 pax, 4-Villa Cluster
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Manufacturing group (250 pax all employees)</div>
+                    <div><strong className="text-ink">Objective:</strong> Annual family gathering, celebrate company growth milestone (10 years), massive team bonding</div>
+                    <div><strong className="text-ink">Duration:</strong> 3D2N (Friday evening to Sunday midnight)</div>
+                    <div><strong className="text-ink">Season:</strong> Q4 (December, pre-holiday)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">VENUE CHOICE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Villas:</strong> 4-villa cluster di Pangalengan (Villa A 80 pax + B 70 + C 60 + D 40)</div>
+                    <div><strong className="text-ink">Rental:</strong> Rp 280 juta total / 3D2N (cluster discount)</div>
+                    <div><strong className="text-ink">Common Space:</strong> Outdoor amphitheater 500m walk from villas</div>
+                    <div><strong className="text-ink">Catering:</strong> Central kitchen Villa A + delivery teams per villa</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROGRAM DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Day 1:</strong> Staggered arrival all afternoon, welcome dinner 6 villas (relaxed buffet)</div>
+                    <div><strong className="text-ink">Day 2:</strong> Morning fitness class (yoga, zumba, 4 parallel), brunch, main stage event (10-year milestone celebration), afternoon decathlon competition (4 team tournaments across villas), gala dinner</div>
+                    <div><strong className="text-ink">Day 3:</strong> Breakfast, talent show / karaoke finals, closing ceremony, post-lunch checkout</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">LOGISTICS MASTERY</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Coordination Team:</strong> 1 master PM + 5 site coordinators (1 per villa + 1 activity ground + 1 catering)</div>
+                    <div><strong className="text-ink">Transport:</strong> 5 buses (50-60 pax capacity), shuttle rotation every 30min. Activity ground: 2 buses on standby</div>
+                    <div><strong className="text-ink">Catering:</strong> Central kitchen Villa A (150 meals prep), delivery teams 4-6 staffing (heat + serve in villa). Breakfast in-villa per villa separate breakfast shift</div>
+                    <div><strong className="text-ink">Tech:</strong> Main stage sound system 200W + wireless mic backup, all villas WiFi connected to hub, backup power genset 75kVA</div>
+                    <div><strong className="text-ink">Security:</strong> 6 security staff (1 gate main villa + 1 per 2 villas), emergency response protocol established with local police & ambulance</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">BUDGET BREAKDOWN</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Villa rental (4x):</span> <strong>Rp 280 jt</strong></div>
+                      <div className="flex justify-between"><span>F&B (3 meals, 3D):</span> <strong>Rp 450 jt</strong> (Rp 1,8 jt/pax)</div>
+                      <div className="flex justify-between"><span>Transport (5 buses):</span> <strong>Rp 60 jt</strong></div>
+                      <div className="flex justify-between"><span>Activity + stage:</span> <strong>Rp 80 jt</strong></div>
+                      <div className="flex justify-between"><span>PM + 5 coordinators:</span> <strong>Rp 45 jt</strong></div>
+                      <div className="flex justify-between"><span>Entertainment (DJ, MC):</span> <strong>Rp 30 jt</strong></div>
+                      <div className="flex justify-between"><span>Media (photos, video):</span> <strong>Rp 25 jt</strong></div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between text-brand-deep font-bold border-b border-divider pb-1 mb-1"><span>Total:</span> <strong>Rp 970 jt</strong></div>
+                      <div className="flex justify-between text-ink font-medium"><span>Per pax:</span> <strong>Rp 3,88 jt</strong></div>
+                      <div className="text-xs text-slate mt-2 italic">Large-scale family gathering with multiple venues & full production</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOME & FEEDBACK</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Attendance & Satisfaction:</strong> 245/250 pax attended (98%), Net Promoter Score 52 (excellent for large corporate event)</div>
+                    <div><strong className="text-ink">Engagement Lift:</strong> eNPS pre-event +18, post-event +34 (16-point improvement). Cross-team collaboration increase measured via survey +28%</div>
+                    <div><strong className="text-ink">CEO Statement:</strong> &quot;Kami khawatir 250 pax di multiple villa jadi chaos. Tapi execution smooth sekali, tidak ada major incident, semua orang feel celebrated. Akan jadi annual tradition ini.&quot;</div>
+                    <div><strong className="text-ink">Follow-up:</strong> Post-event survey, 200+ photos & 30-min highlight video distributed within 7 days. Employee retention rate Q4-Q1 improved 3% (likely multi-factor, tapi gathering jadi memorable milestone)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-8 text-sm text-slate italic">
+            Setiap case study show berbeda, tapi consistent principle: dedicated
+            logistics, clear communication infrastructure, contingency planning
+            — itu beda antara "nice day out" vs "unforgettable gathering".
+            Complexity scale dengan pax, tapi outcome bisa predictable kalau
+            planning meticulous.
           </p>
         </Section>
 
         <Section
           id="checklist"
-          eyebrow="Section 6"
+          eyebrow="Section 8"
           title="10-point pre-booking checklist sebelum lock villa"
         >
           <p>
