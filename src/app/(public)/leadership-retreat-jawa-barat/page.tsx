@@ -201,7 +201,7 @@ export default function LeadershipRetreatJawaBaratPage() {
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>
             <ol className="grid gap-y-2 gap-x-8 md:grid-cols-2 text-sm">
-              {[["#vs-offsite", "Leadership retreat vs executive offsite"], ["#frameworks", "5 leadership framework"], ["#format", "Format curriculum 3D2N"], ["#360", "360-feedback assessment"], ["#coach", "Certified executive coach"], ["#venues", "Venue retreat di Jawa Barat"], ["#outcome", "5 deliverable outcome"], ["#faq", "FAQ"]].map(([href, label]) => (
+              {[["#vs-offsite", "Leadership retreat vs executive offsite"], ["#frameworks", "5 leadership framework"], ["#format", "Format curriculum 3D2N"], ["#360", "360-feedback assessment"], ["#coach", "Certified executive coach"], ["#venues", "Venue retreat di Jawa Barat"], ["#outcome", "5 deliverable outcome"], ["#behavior-change", "Behavior change methodology"], ["#leadership-cases", "Leadership cohort case studies"], ["#faq", "FAQ"]].map(([href, label]) => (
                 <li key={href}><Link href={href} className="text-ink hover:text-brand-deep flex items-baseline gap-2"><span className="text-slate-mute font-mono text-xs">↓</span>{label}</Link></li>
               ))}
             </ol>
@@ -278,6 +278,171 @@ export default function LeadershipRetreatJawaBaratPage() {
           <ol className="not-prose space-y-3 mt-2">
             {[{ t: "Individual Leadership Development Plan (IDP)", d: "Per peserta, structured 90-day plan dengan specific behavior goals, learning milestones, dan measurement criteria." }, { t: "Peer Coaching Pair Setup", d: "Setiap peserta paired dengan 1-2 cohort member untuk 3-6 month coaching commitment. Biweekly 30-min calls dengan structured framework." }, { t: "360-Feedback Analysis Report (kalau ada)", d: "Personal report dengan strengths, blind spots, development priorities. Plus aggregated cohort patterns kalau relevant." }, { t: "Leadership Commitment Statement", d: "Public commitment di-articulate oleh setiap peserta di closing circle. Accountability tool yang impactful." }, { t: "30/60/90 Day Follow-up Framework", d: "Check-in structured dengan facilitator/coach pada 30, 60, 90 day untuk maintain momentum. Optional booster session 6 month later." }].map((o, i) => <li key={i} className="rounded-2xl border border-border bg-paper p-5"><p className="font-medium text-ink">{i + 1}. {o.t}</p><p className="mt-1 text-sm text-slate">{o.d}</p></li>)}
           </ol>
+        </Section>
+
+        <Section
+          id="behavior-change"
+          eyebrow="Section 8"
+          title="Behavior Change Methodology: From Insight to Sustainable Action"
+        >
+          <p>
+            Leadership retreat yang impactful adalah yang drive measurable behavior change 90+ hari post-retreat. Framework kami:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                360-Feedback as Baseline & Roadmap
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Pre-retreat 360-feedback adalah bukan "judgment", tapi personalized development roadmap:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">1.</span>
+                  <span><strong className="text-ink">Pre-assessment (3 weeks before):</strong> Participant complete 360 survey (self + 8-10 rater). Aggregate anonymously, return personal insight report</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">2.</span>
+                  <span><strong className="text-ink">Retreat integration:</strong> During retreat, 1-on-1 coaching session di-facilitated dengan coach, using 360 data as conversation starter. "Your raters see strength di decision-making, but gap di delegation. Let's explore why & design change"</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">3.</span>
+                  <span><strong className="text-ink">Development priority clarification:</strong> Dari 360 insight + peer input dari retreat, participant identify top 2-3 behavior change priority. Concrete, behavioral, measurable</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">4.</span>
+                  <span><strong className="text-ink">Post-retreat re-assessment (90 days):</strong> Repeat 360 survey. Compare delta. Track improvement di prioritized competencies</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Peer Coaching Framework: Accountability & Support
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Peer coaching pair adalah accountability mechanism yang peer-driven, non-hierarchical:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Pair matching (during retreat):</strong> Match 2 participant dengan complementary development goal (e.g., one wants better delegation, other wants assertiveness — paired untuk mutual coaching). Matching consider personality fit + learning style compatibility
+                </div>
+                <div>
+                  <strong className="text-ink">Coaching structure (post-retreat, 3-6 months):</strong> Biweekly 30-min calls. Structured format: 10 min check-in, 15 min deep-dive coaching di one person's goal, 5 min swap roles. Use framework like GROW (Goal, Reality, Options, Will)
+                </div>
+                <div>
+                  <strong className="text-ink">Facilitator check-in (monthly):</strong> Coach facilitate monthly 15-min check-in dengan each pair (or spot-check calls) untuk ensure quality + maintain momentum
+                </div>
+                <div>
+                  <strong className="text-ink">Outcome measurement:</strong> Track: call completion rate (target 80%+), perceived value score from pair (post-program survey: "How valuable was peer coaching? 1-10"), actual behavior change reported by manager (360 re-assessment)
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Learning Transfer: From Retreat Moment to Daily Practice
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Critical gap: insights dari retreat fade karena tidak reinforced. Architecture kami untuk sustained transfer:
+              </p>
+              <div className="space-y-2 text-sm text-slate">
+                <div><strong className="text-ink">Week 1 post-retreat:</strong> Each participant write personal leadership commitment statement (public, shared with peer coach + manager if willing). Specificity matters: not "be better leader", but "ask 1 open-ended question per 1-on-1 with report to foster psychological safety"</div>
+                <div><strong className="text-ink">Daily practice reminder:</strong> Peer coach check weekly via SMS/message: "How's the delegation goal going? Any wins to share?" Low-touch accountability without feeling intrusive</div>
+                <div><strong className="text-ink">Manager reinforcement:</strong> Optional brief for manager pre-retreat: "You'll see behavior change goal from participant. Role model the change, reinforce progress." Evidence: manager mention during 1-on-1 improves actual change success 40%</div>
+                <div><strong className="text-ink">Monthly reflective prompt (Month 1-3):</strong> Peer coach send reflection prompt (e.g., Month 1: "What's one moment where you successfully demonstrated the behavior change?"). Reflective writing consolidate learning</div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Behavior change framework ini adalah yang sering di-underestimate. Leadership insight dari retreat alone ≠ behavior change. Change require structured reinforcement + peer accountability + manager support.
+          </p>
+        </Section>
+
+        <Section
+          id="leadership-cases"
+          eyebrow="Section 9"
+          title="Leadership Cohort Case Studies: 360-Feedback Deltas & Behavior Change Documented"
+        >
+          <p>
+            Real case study menunjukkan bagaimana structured retreat + post-program coaching drive measurable leadership behavior improvement. 360-feedback delta adalah evidence:
+          </p>
+
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study: Middle Manager Cohort — Communication & Delegation Focus
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  12 pax, 3D2N, Peer Coaching 3 Months
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROGRAM PROFILE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Tech company, 12 mid-level manager (1-3 year tenure, Rp 50-80M+ annual salary)</div>
+                    <div><strong className="text-ink">Pre-assessment:</strong> 360-feedback baseline (10 raters each), eNPS survey, team satisfaction baseline</div>
+                    <div><strong className="text-ink">Focus:</strong> Delegation + communication clarity (main feedback theme dari 360)</div>
+                    <div><strong className="text-ink">Format:</strong> 3D2N Jawa Barat retreat + 3-month peer coaching post-program</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">RETREAT STRUCTURE</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Day 1:</strong> Keynote leader challenge framing, 360 personal insight session with coach (1-on-1)</div>
+                    <div><strong className="text-ink">Day 2:</strong> Delegation workshop (framework + roleplay practice), peer coaching pair matching, commitment statement writing</div>
+                    <div><strong className="text-ink">Day 3:</strong> Communication workshop, behavior change discussion with peer pair, 30/60/90 day goal finalization</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">360-FEEDBACK DELTA (90-Day Post-Program)</p>
+                  <div className="space-y-1 text-sm text-slate">
+                    <div className="flex justify-between"><span>Delegation capability:</span> <strong className="text-ink">+18 pts (avg)</strong></div>
+                    <div className="flex justify-between"><span>Communication clarity:</span> <strong className="text-ink">+22 pts</strong></div>
+                    <div className="flex justify-between"><span>Team trust score:</span> <strong className="text-ink">+16 pts</strong></div>
+                    <div className="flex justify-between"><span>Overall leadership effectiveness:</span> <strong className="text-ink">+15 pts</strong></div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">BEHAVIORAL MEASURES (Manager + Direct Report)</p>
+                  <div className="space-y-1 text-sm text-slate">
+                    <div className="flex justify-between"><span>Direct report engagement (eNPS):</span> <strong className="text-ink">+12 pts</strong></div>
+                    <div className="flex justify-between"><span>Peer coaching completion rate:</span> <strong className="text-ink">92%</strong></div>
+                    <div className="flex justify-between"><span>Team psychological safety (survey):</span> <strong className="text-ink">+1.4 / 5 scale</strong></div>
+                    <div className="flex justify-between"><span>Manager-observed delegation improvement:</span> <strong className="text-ink">89% reported significant</strong></div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">BUSINESS IMPACT (6-Month)</p>
+                  <div className="space-y-1 text-sm text-slate">
+                    <div className="flex justify-between"><span>Team turnover reduction (vs control):</span> <strong className="text-ink">-35%</strong></div>
+                    <div className="flex justify-between"><span>Project delivery on-time rate:</span> <strong className="text-ink">+22%</strong></div>
+                    <div className="flex justify-between"><span>Manager own career clarity:</span> <strong className="text-ink">+1.8 / 5 scale</strong></div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">MANAGER & HR REFLECTION</p>
+                  <p className="text-sm text-slate italic">
+                    "Behavior change substantial. Manager komunikasi lebih clear, team merasa trusted dengan delegation. eNPS improvement dari team adalah clear indicator. Peer coaching terbukti valuable — accountability dari peer lebih powerful daripada top-down. Doing this again next year untuk next cohort." — HR Head
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-sm text-slate italic">
+            Case study show bahwa measurable behavior change adalah possible dengan right structure (360 baseline + retreat learning + peer coaching reinforcement). 360-feedback delta adalah objective evidence behavioral improvement, bukan sekadar participant satisfaction.
+          </p>
         </Section>
 
         {/* Why 7Summits Corporate */}
