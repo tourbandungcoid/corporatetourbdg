@@ -39,6 +39,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://corporate.tourbandung.co.id",
+    languages: {
+      "id-ID": "https://corporate.tourbandung.co.id",
+      "x-default": "https://corporate.tourbandung.co.id",
+    },
+  },
 };
 
 function normalizeSiteUrl(input: string | undefined): URL {

@@ -90,6 +90,24 @@ export default function PackagesIndexPage() {
         </div>
       </section>
 
+      {/* Packages Approach Explanation */}
+      <section className="py-16 md:py-24 border-b border-divider bg-cream/30">
+        <div className="container-1280 max-w-3xl">
+          <h2 className="font-display text-3xl md:text-4xl text-ink mb-6">Kenapa sample packages, bukan fixed paket?</h2>
+          <div className="space-y-4 text-base text-slate leading-relaxed">
+            <p>
+              <strong>Setiap tim berbeda.</strong> Budget-nya beda, objective-nya beda, audience profile-nya beda. Fixed paket cenderung <em>one-size-fits-none</em> — lo bayar untuk fitur yang enggak lo pakai, atau paket terlalu basic untuk kebutuhan lo.
+            </p>
+            <p>
+              <strong>Kami mulai dari briefing.</strong> 60–90 menit discovery call untuk understand goal, constraints, dan vibe yang lo mau. Setelah itu, kami design proposal yang benar-benar fit — bukan template yang di-paste.
+            </p>
+            <p>
+              <strong>8 sample di bawah adalah starting point.</strong> Gunakan sebagai reference harga, durasi, dan scope. Untuk proposal final, kami customize line-item breakdown, activity mix, dan venue berdasarkan kebutuhan spesifik lo.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Filter bar + Packages grid */}
       <PackagesGrid packages={packages} />
 
