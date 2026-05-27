@@ -781,10 +781,86 @@ export default function OutingKantorBandungPage() {
           </div>
         </section>
 
+        <Section
+          id="engagement-metrics"
+          eyebrow="Section 7"
+          title="Engagement Measurement: Quantify Team Bonding Impact"
+        >
+          <p>Outing yang good punya measurable engagement lift. Framework kami:</p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Pre/Post Outing Survey</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Team bonding score:</strong> Pre-outing baseline, post-outing 1 week. Typical improvement +1-1.5 pts (5-scale)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Psychological safety:</strong> Post-outing, team psychological safety perception increase +0.8-1.2 pts</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Cross-team collaboration intent:</strong> "I'm open to collaborate outside my immediate team". Increase +2.5 pts average (survey)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Workplace belonging:</strong> "I feel valued as team member". +1-1.5 pts lift typical post-outing</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">3-Month Business Impact</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Voluntary attrition:</strong> Outing attendee 5-10% lower attrition vs non-attendee (6-month cohort analysis)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Cross-team project collaboration:</strong> Increase +15-20% in spontaneous cross-team initiative participation</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">eNPS improvement:</strong> Team eNPS improvement +5-8 pts average per outing</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Informal mentoring pairs:</strong> Number of informal mentoring relationship increase post-outing (+30% typical)</span></li>
+              </ul>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="outing-cases"
+          eyebrow="Section 8"
+          title="Outing Case Studies: Bonding + Retention Impact"
+        >
+          <p>Real examples menunjukkan structured outing drive team engagement improvement:</p>
+
+          <div className="not-prose space-y-4 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Department Outing — Communication & Collaboration</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">60 pax department, communication siloed between teams, morale moderate</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTING</p>
+                  <p className="text-sm text-slate">1D outing Ciwidey, team games (mixed across sub-teams), debrief reflection</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">+1.3 bonding score, +2.8 collaboration intent, +6 eNPS, cross-team project collaboration +18%</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Company Annual Outing — Culture Reinforcement</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">150 pax mixed level (10% C-level, 40% manager, 50% IC)</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTING</p>
+                  <p className="text-sm text-slate">1D2N company gathering, inclusive activity, leadership visible participation</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">+1.5 belonging score, +1.2 psychological safety, +8 eNPS, voluntary attrition -8% (6-month)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* Our Process */}
         <Section
           id="our-process"
-          eyebrow="How We Work"
+          eyebrow="Section 9: How We Work"
           title="Dari inquiry sampai post-event: Proses kami yang outcome-focused"
         >
           <ol className="not-prose space-y-4 mt-6">
