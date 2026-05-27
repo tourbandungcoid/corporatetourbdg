@@ -17,6 +17,8 @@ import {
   organizationSchema,
   localBusinessSchema,
   faqPageSchema,
+  definedTermSchema,
+  speakableSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -49,6 +51,15 @@ export default function GlossaryPage() {
         question: `Apa itu ${e.term}?`,
         answer: e.long,
       }))
+    ),
+    speakableSchema(["h1", "h2", ".glossary-entry"]),
+    // Emit DefinedTerm for first 20 entries — entity clarity for Knowledge Graph
+    ...all.slice(0, 20).map((e) =>
+      definedTermSchema({
+        term: e.term,
+        description: e.short,
+        url: `${SITE.url}/glossary#${getEntrySlug(e)}`,
+      })
     )
   );
 

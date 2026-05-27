@@ -25,6 +25,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   howToSchema,
+  speakableSchema,
 } from "@/lib/schema";
 
 const SLUG = "/outing-kantor-bandung";
@@ -242,7 +243,8 @@ export default function OutingKantorBandungPage() {
         { name: "Rancang Program & Rundown", text: "Desain activity mix yang seimbang — tidak back-to-back high intensity, accommodate kebutuhan dietary dan religi, sertakan buffer time. Rundown harus include waktu registrasi, makan, ibadah, dan wrap-up." },
         { name: "Brief Vendor + Finalkan Proposal", text: "Minta proposal dengan line-item breakdown dari vendor. Konfirmasi: dedicated senior planner, risk register, dan post-event report. Deposit 30-50% setelah tanda tangan kontrak untuk lock date dan vendor." },
       ],
-    })
+    }),
+    speakableSchema(["h1", ".quick-answer", "h2", ".faq-section"])
   );
 
   return (

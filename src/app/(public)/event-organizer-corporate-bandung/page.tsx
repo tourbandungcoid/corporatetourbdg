@@ -22,18 +22,27 @@ import {
 
 const SLUG = "/event-organizer-corporate-bandung";
 const URL = `${SITE.url}${SLUG}`;
-const TITLE = "Event Organizer Corporate Bandung — Specialist B2B, Bukan Generic EO";
+const TITLE = "Event Organizer Corporate Bandung & Provider Corporate Event — Specialist B2B";
 const DESCRIPTION =
-  "Event organizer corporate Bandung yang fokus B2B — bukan EO pernikahan, bukan travel agent. Specialist company gathering, team building, executive offsite, MICE. ⭐ 4.9/5 · 400+ events · Proposal 24 jam.";
+  "Event organizer corporate & provider corporate event Bandung yang fokus B2B — bukan EO pernikahan, bukan travel agent. Specialist company gathering, team building, MICE, incentive trip. ⭐ 4.9/5 · 400+ events · Proposal 24 jam.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
+  keywords: [
+    "event organizer corporate bandung",
+    "provider corporate event bandung",
+    "EO corporate bandung",
+    "jasa event organizer corporate bandung",
+    "perusahaan event organizer bandung",
+    "vendor corporate event bandung",
+    "corporate event management bandung",
+  ],
   openGraph: {
-    title: "Event Organizer Corporate Bandung — Specialist B2B 2026",
+    title: "Event Organizer Corporate Bandung — Provider B2B Specialist 2026",
     description:
-      "Specialist B2B corporate event di Bandung. Bukan generic EO. 400+ events, 100+ perusahaan Indonesia. Proposal dalam 24 jam.",
+      "Provider corporate event & specialist B2B di Bandung. Bukan generic EO. 400+ events, 100+ perusahaan Indonesia. Proposal dalam 24 jam.",
     url: URL,
     type: "article",
     images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630 }],

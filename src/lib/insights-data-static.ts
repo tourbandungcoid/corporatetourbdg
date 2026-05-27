@@ -1399,6 +1399,325 @@ const INSIGHTS: Record<string, Insight> = {
       ],
     },
   },
+
+  "biaya-team-building-bandung": {
+    slug: "biaya-team-building-bandung",
+    title: "Biaya Team Building Bandung 2026: Breakdown Lengkap dari Half-Day sampai 2D1N",
+    excerpt:
+      "Budget lengkap team building di Bandung — dari half-day Rp 1,2 jt/pax sampai program 2D1N Rp 4,5 jt/pax. Breakdown per komponen, hidden cost, dan tips negosiasi vendor.",
+    metaDescription:
+      "Biaya team building Bandung 2026: range Rp 1,2–4,5 jt/pax tergantung format. Breakdown venue, facilitator, F&B, AV, transport. Hidden cost yang jarang diungkap vendor.",
+    category: "Budget Guide",
+    tldr: [
+      "Team building Bandung half-day: Rp 1,2–2 jt/pax. Full-day: Rp 1,5–2,5 jt/pax. 2D1N: Rp 2,5–4,5 jt/pax. Angka ini mencakup venue, facilitator, F&B, dan transport lokal.",
+      "Komponen biaya terbesar yang sering disembunyikan vendor: PM fee (8–15%), contingency (5–8%), dan dokumentasi video (Rp 5–15 jt/hari).",
+      "Tim 50 pax vs 150 pax tidak linear — economies of scale nyata di venue dan F&B. Tim lebih besar = biaya per pax lebih murah.",
+      "Red flag vendor yang quote murah: no PM fee terpisah, no contingency, facilitator external tanpa certified credentials.",
+    ],
+    heroImage: IMAGES.caseStudyTeamBuilding,
+    publishDate: "2026-05-20",
+    readTimeMin: 9,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Pertanyaan paling sering kami terima dari HRD: 'Berapa biaya team building di Bandung?' Jawaban pendek: Rp 1,2–4,5 juta per orang, tergantung format dan tier. Tapi angka itu tidak berguna tanpa konteks — apa yang included, apa yang tidak, dan kenapa ada vendor yang quote Rp 800 ribu/pax.",
+          "Artikel ini breakdown komponen biaya team building secara jujur — berdasarkan 400+ event yang kami deliver sejak 2018. Tidak ada hidden cost yang kami sembunyikan, dan kami jelaskan kenapa vendor yang quote sangat murah hampir pasti missing beberapa komponen kritis.",
+        ],
+      },
+      {
+        heading: "Range biaya team building Bandung 2026",
+        paragraphs: [
+          "Ada 3 format utama dengan range biaya yang berbeda signifikan:",
+          "Half-day team building (4–5 jam): Rp 1,2–2 juta per pax. Cocok untuk departmental bonding, quarterly refresh, atau team building yang bukan program utama. Venue: outdoor camp atau meeting room. Activity: outbound ringan atau indoor workshop. Sudah include: venue, activity, F&B coffee break + makan siang, transport lokal, fasilitator.",
+          "Full-day team building (7–8 jam): Rp 1,5–2,5 juta per pax. Format paling populer — cukup waktu untuk multi-phase activity tanpa harus menginap. Biasanya: morning activity + siang break + afternoon activity + refleksi penutup. Include semua half-day plus dokumentasi foto dan certificate peserta.",
+          "2D1N team building: Rp 2,5–4,5 juta per pax. Format intensif dengan overnight di villa atau resort. Deep bonding yang lebih lasting — peserta interaksi 36+ jam, bukan hanya 8 jam. Biaya tambahan: akomodasi (Rp 300–800 ribu/orang/malam), makan malam, dan program malam hari.",
+        ],
+        callout: {
+          label: "Benchmark Harga",
+          text: "Tim 50 pax vs tim 150 pax: biaya per pax tim 150 bisa 15–25% lebih murah karena economies of scale di venue dan F&B. Pastikan Anda dapat quote untuk skala pax aktual, bukan estimasi saja.",
+        },
+      },
+      {
+        heading: "Breakdown komponen biaya team building",
+        paragraphs: [
+          "Inilah breakdown per komponen yang kami pakai dalam semua proposal — transparan dan bisa Anda bandingkan dengan vendor lain:",
+          "1. Venue / lokasi (20–35% dari total): Tergantung tipe — outdoor camp Ciwidey/Lembang Rp 300–600 ribu/pax/hari. Villa privat Lembang Rp 500 ribu–1,2 jt/pax/malam. Meeting room hotel Rp 150–400 ribu/pax/hari. Perbedaan besar ada di exclusivity dan fasilitas.",
+          "2. Fasilitator / trainer (15–25%): Range Rp 1–5 juta per fasilitator per sesi (bukan per pax). Tim 100 pax butuh 2–3 fasilitator untuk parallel track. Certified coach (ICF, DISC) lebih mahal tapi output jauh lebih terukur.",
+          "3. Activity & equipment (10–20%): Outbound equipment (flying fox, high-rope, water activity): Rp 100–250 ribu/pax. Indoor board game atau simulation: Rp 80–150 ribu/pax. Custom branded activity: Rp 200–500 ribu/pax.",
+          "4. F&B (20–30%): Coffee break x2 + makan siang = Rp 150–350 ribu/pax untuk full-day. Kalau menginap tambah makan malam Rp 100–250 ribu/pax. Dietary accommodation (halal, vegan, alergi) tidak add cost kalau di-brief dari awal.",
+          "5. Transport (8–15%): Bus pariwisata Jakarta–Bandung PP: Rp 80–150 ribu/pax. Shuttle lokal: Rp 50–80 ribu/pax. Kalau tidak dari Jakarta, komponen ini bisa lebih kecil.",
+          "6. Dokumentasi (5–10%): Foto profesional: Rp 2–5 juta per event. Video highlight 3–5 menit: Rp 5–15 juta. Drone footage (kalau outdoor): Rp 2–4 juta tambahan.",
+          "7. PM fee / jasa penyelenggara (8–15%): Fee project manager yang coordinate semua vendor, present di hari-H, dan kirim post-event report. Vendor yang tidak charge PM fee terpisah — artinya PM fee sudah di-blend ke komponen lain tanpa transparansi.",
+          "8. Contingency (5–8%): Buffer untuk kebutuhan tak terduga — cuaca, pax tambahan last-minute, equipment fail. Vendor profesional selalu include dan declare contingency. Vendor yang tidak include ini, bayarnya nanti muncul di luar proposal.",
+        ],
+      },
+      {
+        heading: "Hidden cost yang jarang diungkap vendor murah",
+        paragraphs: [
+          "Kenapa ada vendor yang quote Rp 800 ribu/pax untuk full-day team building? Karena mereka skip atau underprice beberapa komponen:",
+          "No PM fee: Coordinator harian adalah freelancer yang baru kenal di hari-H — tidak ada continuity, tidak ada accountability.",
+          "No contingency: Budget pas-pasan. Kalau ada tambahan pax atau cuaca buruk, biaya muncul di luar agreement.",
+          "Facilitator tidak certified: Outbound yang dipandu 'kakak outbound' tanpa training fasilitasi formal — activity jalan tapi tidak ada learning outcome yang terukur.",
+          "Dokumentasi tidak include: Foto dan video 'nanti bisa dibeli tambahan' — tapi 'harga tambahan' itu sering tidak jelas dan bisa lebih mahal dari yang bundled.",
+          "Venue kapasitas tidak match: Quote untuk pax X, tapi venue sesungguhnya kapasitas setengahnya — event jadi penuh sesak.",
+        ],
+      },
+      {
+        heading: "Tips negosiasi dan optimasi budget",
+        paragraphs: [
+          "4 cara efektif optimasi budget tanpa korbankan kualitas:",
+          "Pilih lokasi lebih dekat: Venue Lembang vs Ciwidey — Lembang 15% lebih mahal rata-rata karena aksesibilitas. Ciwidey lebih murah tapi transport 30–45 menit lebih lama.",
+          "Kurangi dokumentasi video, keep foto: Foto profesional full-day Rp 2–3 juta. Video highlight bisa skip untuk budget event — foto sudah cukup untuk dokumentasi internal.",
+          "Gabung tim untuk scale: Tim 30 pax vs tim 60 pax dari departemen berbeda — biaya per pax turun 15–20% karena venue dan fasilitator cost dibagi lebih banyak peserta.",
+          "Booking 8–12 minggu sebelumnya: Harga venue terbaik di Bandung naik 20–30% kalau booking 2–3 minggu sebelum event. Lead time panjang = negosiasi lebih baik.",
+        ],
+      },
+      {
+        heading: "Perbandingan cepat: team building half-day vs full-day vs 2D1N",
+        paragraphs: [
+          "Pilih format berdasarkan tujuan, bukan budget semata. Half-day works kalau tujuannya refresh ringan atau ice-breaker untuk project baru. Full-day optimal untuk departmental bonding atau team building rutin. 2D1N untuk post-merger integration, cross-generational deep bonding, atau leadership cohort yang butuh waktu lebih panjang untuk impact lasting.",
+          "Dari 400+ events kami, format 2D1N punya retention impact 2.5–3x lebih tinggi dari full-day — bukan karena lebih lama, tapi karena momen malam hari (informal, relax, tanpa hierarki) yang paling banyak membangun koneksi personal.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/team-building-bandung", label: "Team Building Bandung", description: "Program team building outcome-driven dengan facilitator bersertifikat." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing kantor 2D1N — termasuk team building sebagai salah satu agenda." },
+      { href: "/pricing", label: "Pricing Lengkap", description: "Pricing 4-tier untuk semua format corporate event Bandung." },
+    ],
+    relatedSlugs: ["bandung-outing-tier-system", "justify-outing-budget-to-finance", "5-pillar-corporate-outing-design"],
+    howTo: {
+      name: "Cara Hitung Budget Team Building Bandung yang Akurat",
+      description: "5 langkah untuk menghitung dan mengalokasikan budget team building Bandung secara akurat sebelum kirim RFP ke vendor.",
+      steps: [
+        { name: "Tentukan format dan durasi", text: "Half-day (Rp 1,2–2 jt/pax), full-day (Rp 1,5–2,5 jt/pax), atau 2D1N (Rp 2,5–4,5 jt/pax). Format ditentukan oleh objective — refresh ringan = half-day, deep bonding = 2D1N." },
+        { name: "Hitung pax aktual dan bukan estimasi", text: "Budget berubah signifikan antara 30, 60, dan 120 pax — karena venue fixed cost dibagi berbeda. Gunakan angka pax yang paling likely hadir, bukan kapasitas maksimum tim." },
+        { name: "Breakdown 8 komponen biaya", text: "Venue (20–35%), facilitator (15–25%), activity & equipment (10–20%), F&B (20–30%), transport (8–15%), dokumentasi (5–10%), PM fee (8–15%), contingency (5–8%). Total angka-angka ini adalah budget minimum yang realistis." },
+        { name: "Tambahkan buffer 10–15%", text: "Di luar contingency yang ada di proposal, sisakan 10–15% budget pribadi untuk kebutuhan last-minute yang legitimate (tambahan pax mendekati hari H, upgrade venue kalau ada yang cancel, kebutuhan khusus peserta)." },
+        { name: "Evaluasi vendor dengan 5 pertanyaan kritis", text: "Apakah PM fee dibreak terpisah? Berapa contingency-nya? Siapa fasilitatornya dan apa credentials-nya? Dokumentasi termasuk atau not? Bisa kasih sample proposal dari event serupa? Vendor yang tidak bisa jawab dengan jelas — skip." },
+      ],
+    },
+  },
+
+  "cara-memilih-vendor-corporate-event-bandung": {
+    slug: "cara-memilih-vendor-corporate-event-bandung",
+    title: "Cara Memilih Vendor Corporate Event Bandung: 10 Kriteria dari Senior Planner",
+    excerpt:
+      "Panduan seleksi vendor corporate event Bandung yang tidak buang waktu. 10 kriteria evaluasi dari senior planner dengan 400+ event experience — dari RFP sampai kontrak.",
+    metaDescription:
+      "Cara memilih vendor corporate event Bandung yang tepat — 10 kriteria evaluasi, red flags, checklist RFP, dan pertanyaan wajib sebelum tanda tangan kontrak.",
+    category: "Procurement Guide",
+    tldr: [
+      "70% masalah event berakar dari pemilihan vendor yang salah — bukan dari hari-H. Proses seleksi yang rigorous di depan menghemat lebih banyak dari yang Anda bayangkan.",
+      "10 kriteria: track record scale, proposal format, certified facilitator, physical office, discovery brief, risk register, insurance, post-event deliverables, payment terms, dan referensi langsung.",
+      "Red flag paling sering diabaikan: vendor yang quote tanpa brief mendalam, tidak punya PM fee terpisah, dan tidak bisa tunjukkan sample proposal.",
+      "Minta 3 referensi klien — hubungi langsung, bukan baca testimoni di website. Pertanyaan yang paling revealing: 'Apa yang tidak berjalan sesuai rencana dan bagaimana vendor handle-nya?'",
+    ],
+    heroImage: IMAGES.caseStudyLarge,
+    publishDate: "2026-05-20",
+    readTimeMin: 10,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Seleksi vendor corporate event adalah keputusan yang impact-nya jauh lebih besar dari angka budget. Vendor yang salah bisa destroy kesan satu annual gathering yang sudah di-anticipate seluruh tim selama setahun. Vendor yang tepat bisa transform corporate event jadi turning point cultural perusahaan.",
+          "Artikel ini adalah criteria framework yang kami pakai saat audit vendor sebelum partnership — dari perspektif senior planner yang sudah 8 tahun di industri ini. Gunakan ini untuk evaluasi vendor Anda, termasuk kami.",
+        ],
+      },
+      {
+        heading: "Kriteria 1: Track record di skala yang mirip",
+        paragraphs: [
+          "Bukan hanya 'pernah handle 500 pax' — tapi 'pernah handle 500 pax dengan format yang mirip dengan kebutuhan Anda'. Vendor yang dominan handle 50 pax outing casual akan struggle di AGM 300 pax dengan multiple speaker dan hybrid setup.",
+          "Yang harus ditanya: 'Boleh minta 3 case study event dengan pax dan format paling mirip dengan kebutuhan kami? Termasuk yang tidak berjalan 100% sesuai rencana?' Vendor yang tidak bisa atau tidak mau tunjukkan — red flag.",
+        ],
+      },
+      {
+        heading: "Kriteria 2: Format proposal — line-item vs lump-sum",
+        paragraphs: [
+          "Vendor profesional kirim proposal dengan breakdown per komponen: venue, F&B, activity, PM fee, dokumentasi, transport, contingency, dan margin. Anda bisa evaluasi setiap item.",
+          "Vendor amatir atau yang tidak transparan kirim lump-sum: 'Total paket Rp 200 juta untuk 100 orang.' Tidak ada cara untuk tahu apakah angka itu wajar atau di-inflate di bagian tertentu.",
+          "Rule of thumb: kalau vendor tidak bisa kasih breakdown per komponen setelah diminta, jangan lanjutkan diskusi.",
+        ],
+      },
+      {
+        heading: "Kriteria 3: Discovery brief sebelum quote",
+        paragraphs: [
+          "Vendor yang langsung kirim harga tanpa briefing — tidak pernah bisa deliver event yang benar-benar sesuai kebutuhan Anda. Mereka quote berdasarkan asumsi, bukan pemahaman.",
+          "Discovery brief yang proper: 60–90 menit call/meeting untuk align objective, pax, timeline, budget range, unique requirements (dietary, accessibility, religious), dan expected outcome. Brief yang baik seharusnya membuat proposal yang keluar jauh lebih spesifik dan relevan.",
+        ],
+      },
+      {
+        heading: "Kriteria 4: Facilitator credentials",
+        paragraphs: [
+          "Untuk team building yang berbasis metodologi (Tuckman, DiSC, Belbin, experiential learning) — facilitator credentials sangat penting. Perbedaan antara facilitator bersertifikat dengan 'kakak outbound' biasa adalah perbedaan antara event yang mengubah team dynamics vs event yang hanya menghibur.",
+          "Credentials yang relevan: ICF (International Coaching Federation), DISC certified practitioner, atau sertifikat dari institusi facilitasi terkemuka (ATD, IAF). Untuk outbound fisik: SOP keselamatan, first aid training, dan asuransi aktivitas.",
+        ],
+      },
+      {
+        heading: "Kriteria 5: Physical office dan tim tetap",
+        paragraphs: [
+          "Di Bandung, ada ratusan 'event organizer' yang hanya punya Instagram dan WhatsApp. Tidak ada kantor tetap, tidak ada tim tetap — mereka mobilize freelancer sesuai proyek.",
+          "Risiko: tidak ada accountability kalau ada masalah, tidak ada continuity kalau PIC-nya ganti, dan tidak ada jaminan kualitas crew yang di-assign ke event Anda.",
+          "Cek: alamat kantor yang bisa diverifikasi di Maps, tim full-time yang bisa ditemui, dan struktur organisasi yang jelas.",
+        ],
+      },
+      {
+        heading: "Kriteria 6: Risk register dan contingency plan",
+        paragraphs: [
+          "Event profesional punya risk register: daftar risiko yang teridentifikasi (cuaca, vendor gagal, pax naik last-minute, AV breakdown) dengan mitigation plan per item.",
+          "Tanda vendor yang mature: mereka proaktif tunjukkan contingency plan tanpa diminta. Tanda vendor yang hanya bisa kerja kalau semua berjalan lancar: tidak ada dokumen risk register.",
+          "Minimal yang harus ada: backup venue indoor kalau event outdoor, backup vendor AV, dan protokol kalau pax naik 20% dari agreed number.",
+        ],
+      },
+      {
+        heading: "Kriteria 7: Insurance peserta",
+        paragraphs: [
+          "Event dengan aktivitas fisik (outbound, hiking, water sports, high ropes) wajib punya accident insurance untuk peserta. Ini bukan opsional — ini obligation hukum dan etika.",
+          "Yang harus ditanyakan: nama insurance provider, nomor polis, coverage amount per peserta, dan apakah include medical evac untuk event di lokasi terpencil.",
+          "Vendor yang tidak bisa tunjukkan coverage ini — jangan sign kontrak.",
+        ],
+      },
+      {
+        heading: "Kriteria 8: Post-event deliverables",
+        paragraphs: [
+          "Event selesai bukan berarti pekerjaan vendor selesai. Deliverables post-event yang professional: highlight video dalam 48 jam (bukan 2 minggu kemudian), foto dokumentasi full event, attendance report, survey peserta, dan post-event debrief call.",
+          "Tanpa deliverables ini, Anda tidak punya data untuk justify budget ke management tahun depan, tidak punya konten untuk komunikasi internal, dan tidak punya baseline untuk improve event berikutnya.",
+        ],
+      },
+      {
+        heading: "Kriteria 9: Payment terms yang wajar",
+        paragraphs: [
+          "Standard industri: 30% deposit setelah proposal disetujui, 70% sisa bayar 3–7 hari sebelum event execution. Ini melindungi kedua pihak.",
+          "Red flag: vendor yang minta 100% di muka jauh sebelum event (risiko tinggi kalau vendor tidak deliver), atau vendor yang tidak minta deposit sama sekali (mungkin tidak punya modal kerja untuk book venue).",
+          "Pastikan semua terms ada di kontrak tertulis — bukan hanya WhatsApp agreement.",
+        ],
+      },
+      {
+        heading: "Kriteria 10: Referensi — hubungi langsung, bukan baca testimoni",
+        paragraphs: [
+          "Testimoni di website diseleksi vendor — Anda hanya baca yang positif. Referensi langsung adalah ground truth.",
+          "Minta minimal 3 referensi dari event dengan pax dan format mirip. Pertanyaan paling revealing: 'Apa yang tidak berjalan sesuai rencana di event itu, dan bagaimana vendor menanganinya?' Vendor yang baik punya cerita honest tentang masalah dan solusinya. Vendor yang hanya punya cerita sempurna — kemungkinan besar menyembunyikan sesuatu.",
+        ],
+      },
+      {
+        heading: "Checklist RFP singkat untuk vendor corporate event",
+        paragraphs: [
+          "Kirimkan 5 pertanyaan ini sebelum invitation tender formal: (1) Boleh kirim 2 case study event dengan format dan pax mirip kami? (2) Proposal Anda breakdown per komponen atau lump-sum? (3) Siapa PM yang akan di-assign ke event kami dan apa credentials-nya? (4) Apakah ada asuransi peserta, dan apa coveragenya? (5) Apa deliverables post-event yang Anda berikan?",
+          "Dari respons 5 pertanyaan ini, Anda bisa eliminasi 70-80% vendor yang tidak qualified sebelum masuk ke proses brief yang lebih dalam.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/event-organizer-corporate-bandung", label: "Event Organizer Corporate Bandung", description: "Lihat bagaimana kami measure up terhadap 10 kriteria ini." },
+      { href: "/corporate-event-bandung", label: "Corporate Event Bandung", description: "Overview layanan corporate event B2B kami — 9 format untuk 20–1.500 pax." },
+      { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO", description: "12 perbedaan kritis antara specialist B2B dan generic event organizer." },
+    ],
+    relatedSlugs: ["checklist-vendor-event-organizer-corporate", "5-pillar-corporate-outing-design", "biaya-team-building-bandung"],
+    howTo: {
+      name: "Cara Memilih Vendor Corporate Event Bandung yang Tepat",
+      description: "Proses seleksi 5 tahap untuk menemukan vendor corporate event Bandung yang capable sebelum tanda tangan kontrak.",
+      steps: [
+        { name: "Kirim RFI dengan 5 pertanyaan kualifikasi", text: "Sebelum RFP formal, kirim 5 pertanyaan: track record skala serupa, format proposal, credentials PM dan fasilitator, asuransi peserta, dan post-event deliverables. Eliminasi vendor yang tidak bisa jawab dengan konkret." },
+        { name: "Evaluasi proposal format", text: "Hanya lanjutkan dengan vendor yang kasih breakdown line-item per komponen — bukan lump-sum. Bandingkan apel dengan apel: pastikan semua vendor quote komponen yang sama." },
+        { name: "Lakukan discovery brief dengan minimum 2 finalis", text: "Brief call 60–90 menit dengan 2 vendor terbaik. Evaluasi kualitas pertanyaan yang mereka ajukan — vendor yang bagus akan tanya tentang objective, audience, dan constraint, bukan hanya budget." },
+        { name: "Hubungi 2 referensi langsung per vendor", text: "Telepon langsung — bukan email. Tanya satu pertanyaan ini: 'Apa yang tidak berjalan sesuai rencana dan bagaimana mereka handle-nya?' Jawaban honest = tanda vendor yang mature dan accountable." },
+        { name: "Review kontrak sebelum sign", text: "Pastikan tertulis: scope pekerjaan yang jelas, payment terms (30/70%), deliverables post-event dengan deadline, force majeure clause, dan kebijakan pembatalan. Kontrak yang ambigu adalah risiko yang Anda tanggung sendiri." },
+      ],
+    },
+  },
+
+  "corporate-gathering-vs-outing-kantor": {
+    slug: "corporate-gathering-vs-outing-kantor",
+    title: "Corporate Gathering vs Outing Kantor: Mana yang Perusahaan Anda Butuhkan?",
+    excerpt:
+      "Banyak HR mix up corporate gathering dan outing kantor — format, budget, dan outcome-nya sangat berbeda. Panduan decision framework dari 400+ events.",
+    metaDescription:
+      "Perbedaan corporate gathering vs outing kantor — format, budget, tujuan, venue, dan kapan memilih masing-masing. Decision framework dari senior planner.",
+    category: "Format Guide",
+    tldr: [
+      "Corporate gathering = event formal perusahaan (awarding, gala dinner, company update) — biasanya 2–3 hari di hotel berbintang. Budget Rp 3,5–7 jt/pax.",
+      "Outing kantor = refresh dan bonding informal (villa, outdoor camp) — biasanya 1–2 hari. Budget Rp 1,5–5 jt/pax.",
+      "Memilih format yang salah = budget lebih besar dari yang dibutuhkan ATAU outcome yang tidak tercapai.",
+      "Decision criteria: kalau ada elemen seremonial (awarding, CEO speech, annual review) → gathering. Kalau tujuan utama refresh dan bonding → outing.",
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-05-20",
+    readTimeMin: 8,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Dari 400+ event yang kami deliver, ada satu misconception yang konsisten: banyak HR menggunakan istilah 'gathering' dan 'outing' secara interchangeable. Padahal dua format ini sangat berbeda dari sisi objective, venue requirement, production, dan budget.",
+          "Memilih format yang salah punya konsekuensi konkret: Anda bayar premium untuk production gathering tapi yang dibutuhkan sebenarnya hanya refresh outing — atau sebaliknya, event gagal deliver karena format outing casual tidak cukup structured untuk company update yang penting.",
+        ],
+      },
+      {
+        heading: "Definisi dan karakteristik utama",
+        paragraphs: [
+          "Corporate Gathering adalah event tahunan formal perusahaan dengan elemen ceremonial. Komponen standar: opening ceremony, CEO/direktur address, company update (business review, target tahun depan), awarding night, gala dinner, dan entertainment. Biasanya berlangsung 2–3 hari di hotel berbintang atau resort premium.",
+          "Outing Kantor adalah program refresh dan team bonding yang lebih informal. Fokus: istirahat dari rutinitas kantor, membangun koneksi personal antar kolega. Komponen: activities leisure (outbound ringan, hiking, workshop seru), makan bersama, dan waktu bebas. Biasanya 1–2 hari di villa atau outdoor venue.",
+        ],
+      },
+      {
+        heading: "Perbedaan 7 dimensi kritis",
+        paragraphs: [
+          "1. Tujuan utama: Gathering → komunikasi company update + recognition karyawan + celebration milestone. Outing → refresh, decompression, team bonding informal.",
+          "2. Formalitas: Gathering → formal, ada dress code, protokol MC, susunan acara ketat. Outing → casual, bebas, tidak ada protokol ceremonial.",
+          "3. Venue: Gathering → hotel bintang 4–5 dengan ballroom dan stage production. Outing → villa privat, resort, outdoor camp, atau glamping.",
+          "4. Produksi event: Gathering → AV stage profesional, dekorasi, lighting, MC formal, live band untuk gala. Outing → sound system sederhana, dekorasi minimal, MC informal.",
+          "5. Budget: Gathering → Rp 3,5–7 juta per pax untuk program premium. Outing → Rp 1,5–5 juta per pax.",
+          "6. Timeline persiapan: Gathering → 8–12 minggu minimum. Outing → 3–6 minggu cukup untuk kebanyakan kasus.",
+          "7. Ukuran optimal: Gathering → 100–800 pax. Outing → 20–500 pax (lebih intimate lebih efektif).",
+        ],
+      },
+      {
+        heading: "Framework keputusan: pilih yang mana?",
+        paragraphs: [
+          "Jawab 4 pertanyaan ini untuk tentukan format yang tepat:",
+          "Pertanyaan 1: Apakah ada elemen ceremonial yang tidak bisa di-skip? (CEO speech, awarding, company update resmi) → Jika ya, ini GATHERING. Elemen ceremonial tidak efektif di format outing yang casual.",
+          "Pertanyaan 2: Apakah tujuan utama adalah refresh dan bonding personal antar peserta? → Jika ya, ini OUTING. Gathering yang terlalu formal justru mengurangi natural bonding.",
+          "Pertanyaan 3: Berapa pax dan berapa budget per pax yang realistic? → Di bawah 100 pax dengan budget Rp 2–3 jt/pax → lebih cocok outing. 150+ pax dengan budget Rp 4 jt+/pax → gathering bisa fully executed.",
+          "Pertanyaan 4: Apakah ini event tahunan utama perusahaan? → Jika ya, dan ada multiple stakeholder (direksi, seluruh karyawan), gathering memberikan impact komunikasional yang outing tidak bisa.",
+        ],
+        callout: {
+          label: "Decision Matrix",
+          text: "Format hybrid juga exist: gathering 2D1N di mana Day 1 adalah program outing bonding, Day 2 adalah gathering ceremony formal. Format ini sweet spot untuk perusahaan yang mau maximize kedua objective — tapi budget-nya 20–30% lebih tinggi dari salah satu format saja.",
+        },
+      },
+      {
+        heading: "Kapan harus hybrid?",
+        paragraphs: [
+          "Format hybrid gathering + outing optimal kalau: (1) Anda punya agenda ceremonial SEKALIGUS ingin bonding yang deep — tidak mau sacrifice salah satunya. (2) Budget Rp 4–6 jt/pax dan 150+ pax — skala yang support dua hari program penuh. (3) Timeline persiapan 10+ minggu — hybrid butuh koordinasi lebih kompleks.",
+          "Contoh timeline hybrid 2D1N: Day 1 arrival siang, team building / outing activities sore + malam casual dinner. Day 2 pagi team activity ringan, siangnya ceremony + lunch, malam gala dinner + awarding. Ini format yang paling banyak kami deliver untuk perusahaan skala menengah ke atas.",
+        ],
+      },
+      {
+        heading: "Budget realistis per format 2026",
+        paragraphs: [
+          "Outing kantor Bandung: Half-day Rp 1,2–2 jt/pax, 1 hari penuh Rp 1,5–2,5 jt/pax, 2D1N Rp 2,5–5 jt/pax.",
+          "Corporate gathering Bandung: 2D1N hotel bintang 4–5 Rp 3,5–6 jt/pax. 3D2N premium Rp 5–8 jt/pax. Penambahan elemen (live band, dekorasi custom, awarding trophy premium) bisa tambah Rp 500–1 jt/pax.",
+          "Format hybrid: 2D1N outing + ceremony Rp 4–7 jt/pax, 3D2N hybrid premium Rp 6–9 jt/pax.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Annual gathering formal — awarding night, gala dinner, opening ceremony." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing kantor 1–2 hari: villa, resort, outdoor Bandung area." },
+      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Gathering karyawan yang lebih intimate — departemen atau cross-team." },
+    ],
+    relatedSlugs: ["bandung-outing-tier-system", "biaya-team-building-bandung", "cara-pilih-venue-corporate-gathering-bandung"],
+    howTo: {
+      name: "Cara Memutuskan Antara Corporate Gathering atau Outing Kantor",
+      description: "4 pertanyaan untuk menentukan format event perusahaan yang tepat — gathering formal atau outing informal.",
+      steps: [
+        { name: "Identifikasi ada tidaknya elemen ceremonial", text: "Apakah ada CEO speech, awarding karyawan, atau company update resmi yang harus disampaikan? Kalau ya → gathering. Elemen ini tidak efektif di format outing casual." },
+        { name: "Tentukan tujuan utama", text: "Tujuan utama refresh dan bonding personal antar kolega? → Outing. Tujuan utama komunikasi company direction + recognition? → Gathering. Keduanya sekaligus? → Hybrid 2D1N." },
+        { name: "Cocokkan dengan pax dan budget", text: "Di bawah 100 pax dengan budget Rp 2–3 jt/pax → outing optimal. 150+ pax dengan budget Rp 4 jt+/pax → gathering bisa fully executed. Hybrid butuh Rp 4–7 jt/pax untuk 2D1N." },
+        { name: "Tentukan timeline dan persiapan", text: "Gathering butuh 8–12 minggu persiapan minimum. Outing bisa 3–6 minggu. Kalau timeline sempit → outing lebih realistis." },
+      ],
+    },
+  },
 };
 
 export function getAllInsightSlugsStatic(): string[] {

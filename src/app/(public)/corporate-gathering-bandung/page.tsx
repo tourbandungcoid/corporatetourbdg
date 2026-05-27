@@ -25,6 +25,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   howToSchema,
+  speakableSchema,
 } from "@/lib/schema";
 
 const SLUG = "/corporate-gathering-bandung";
@@ -172,7 +173,8 @@ export default function CorporateGatheringBandungPage() {
         { name: "Setup AV Production & Awarding Ceremony", text: "Untuk 200+ pax, AV production adalah investasi wajib: LED screen, sound system, lighting, MC professional. Awarding ceremony butuh rundown terpisah — trophies, certificate design, photography & videography coverage." },
         { name: "Eksekusi + Post-Event Report", text: "On-site: dedicated event coordinator per 50 pax. Post-event: vendor specialist kirim report lengkap (attendance, NPS survey, foto/video bank, cost reconciliation, recommendation untuk event berikutnya) dalam 5-7 hari kerja." },
       ],
-    })
+    }),
+    speakableSchema(["h1", ".quick-answer", "h2", ".faq-section"])
   );
 
   return (

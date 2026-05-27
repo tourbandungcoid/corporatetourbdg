@@ -9,17 +9,20 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
     name: SITE.legalName,
     alternateName: ["TourBandung Corporate", "Tour Bandung Corporate", "7Summits Corporate"],
     url: SITE.url,
-    logo: `${SITE.url}/logo/logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/logo/logo.png`,
+      width: 200,
+      height: 60,
+    },
     description:
       "Tour Bandung Corporate adalah unit specialized dari 7Summits Travel yang fokus 100% pada B2B corporate event organizer untuk outing kantor, team building, corporate gathering, incentive trip, leadership retreat, dan executive offsite di Bandung & Jawa Barat. Operating sejak 2018 dengan 400+ corporate events delivered, 92% repeat booking rate, 60+ venue partnership direct, dan tim senior (tenure 4+ tahun) dedicated per client.",
     foundingDate: "2018",
-    numberOfEmployees: {
-      "@type": "QuantitativeValue",
-      value: "8-12",
-    },
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.address.street,
@@ -41,24 +44,25 @@ export function organizationSchema() {
         closes: CONTACT.officeHoursStructured.closes,
       },
     },
-    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
     knowsAbout: [
       "Corporate Outing",
       "Team Building",
+      "MICE",
+      "Incentive Trip",
       "Corporate Gathering",
       "Executive Offsite",
       "Leadership Retreat",
-      "Incentive Trip",
-      "MICE Organization",
       "Event Management",
+      "Corporate Travel Indonesia",
     ],
+    sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.youtube, SITE.googleMapsUrl],
   };
 }
 
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "TravelAgency"],
+    "@type": ["LocalBusiness", "TravelAgency", "EventPlanner", "ProfessionalService"],
     "@id": `${SITE.url}#business`,
     name: SITE.legalName,
     alternateName: SITE.name,
@@ -74,8 +78,17 @@ export function localBusinessSchema() {
       postalCode: CONTACT.address.postalCode,
       addressCountry: CONTACT.address.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -6.9306,
+      longitude: 107.619,
+    },
     hasMap: SITE.googleMapsUrl,
-    areaServed: ["Bandung", "Lembang", "Ciwidey", "Pangalengan", "Subang", "Jawa Barat"],
+    areaServed: [
+      { "@type": "City", name: "Bandung" },
+      { "@type": "AdministrativeArea", name: "Jawa Barat" },
+      { "@type": "Country", name: "Indonesia" },
+    ],
     priceRange: "Rp 1.500.000 - Rp 10.000.000 / pax",
     openingHoursSpecification: [
       {
@@ -131,6 +144,8 @@ export function articleSchema({
   datePublished,
   dateModified,
   slug,
+  authorName,
+  authorJobTitle,
 }: {
   headline: string;
   description: string;
@@ -138,7 +153,18 @@ export function articleSchema({
   datePublished: string;
   dateModified: string;
   slug: string;
+  authorName?: string;
+  authorJobTitle?: string;
 }) {
+  const author = authorName
+    ? {
+        "@type": "Person",
+        name: authorName,
+        ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
+        worksFor: { "@type": "Organization", name: SITE.legalName, url: SITE.url },
+      }
+    : { "@type": "Organization", name: SITE.legalName, url: SITE.url };
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -147,14 +173,12 @@ export function articleSchema({
     image,
     datePublished,
     dateModified,
-    author: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE.url,
-    },
+    inLanguage: "id-ID",
+    author,
     publisher: {
       "@type": "Organization",
-      name: SITE.name,
+      "@id": `${SITE.url}#organization`,
+      name: SITE.legalName,
       logo: {
         "@type": "ImageObject",
         url: `${SITE.url}/logo/logo.png`,
@@ -169,7 +193,7 @@ export function articleSchema({
       name: "Corporate Outing Bandung",
       provider: {
         "@type": "Organization",
-        name: SITE.name,
+        name: SITE.legalName,
       },
       areaServed: {
         "@type": "City",
@@ -403,6 +427,40 @@ export function offerSchema({
       "@type": "Organization",
       name: SITE.name,
       url: SITE.url,
+    },
+  };
+}
+
+/**
+ * SpeakableSpecification — marks page sections as AI/voice extractable.
+ * Helps Google AI Overview and voice search identify key content.
+ */
+export function speakableSchema(cssSelectors: string[], xPaths?: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      ...(cssSelectors.length > 0 ? { cssSelector: cssSelectors } : {}),
+      ...(xPaths && xPaths.length > 0 ? { xpath: xPaths } : {}),
+    },
+  };
+}
+
+/**
+ * DefinedTerm schema for glossary entries — entity-level semantic clarity.
+ */
+export function definedTermSchema({ term, description, url }: { term: string; description: string; url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: term,
+    description,
+    url,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Corporate Event Glossary Indonesia",
+      url: `${SITE.url}/glossary`,
     },
   };
 }
