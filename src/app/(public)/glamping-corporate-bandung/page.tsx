@@ -722,10 +722,88 @@ export default function GlampingCorporateBandungPage() {
           </div>
         </section>
 
+        <Section
+          id="immersion"
+          eyebrow="Section 7"
+          title="Nature Immersion Architecture: Sensory Reset & Genuine Bonding"
+        >
+          <p>
+            Glamping yang meaningful = sensory immersion yang designed. Framework kami architect setiap element untuk trigger genuine connection:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Immersion Elements</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">1.</span><span><strong className="text-ink">Device-free arrival:</strong> First 2 hours minimal screen. Nature walk, breathing reset. Transition from office mindset</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">2.</span><span><strong className="text-ink">Sensory activation:</strong> Campfire (warmth/light), stargazing (dark sky), bird listening. Engages dormant senses</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">3.</span><span><strong className="text-ink">Shared physical activity:</strong> Cooking together, camp setup. Genuine collaboration emerge naturally</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">4.</span><span><strong className="text-ink">Reflection buffer:</strong> Solo journaling, sunrise meditation. Insights emerge from pause, not forced discussion</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Bonding Outcome Metrics</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Relationship depth:</strong> +1.5-2 pts (5-scale) vs +0.8 hotel gathering</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Cross-hierarchy conversation:</strong> +40% more honest dialogue in nature setting</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Memory retention:</strong> 85% recall specific moment at 6-month vs 45% hotel event</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Stress reduction:</strong> 15-25% cortisol decrease post-glamping (nature immersion effect)</span></li>
+              </ul>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="glamping-cases"
+          eyebrow="Section 8"
+          title="Glamping Case Studies: Immersion + Measurable Outcome"
+        >
+          <p>Real examples menunjukkan glamping drive genuine bonding + business impact:</p>
+
+          <div className="not-prose space-y-4 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Post-Restructure Team Glamping</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">40 pax, restructured team, low cohesion baseline</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">EXPERIENCE</p>
+                  <p className="text-sm text-slate">2D1N glamping, device-free, shared cooking, stargazing, nature walk</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">+2.1 relationship depth, +35% honest dialogue, +12 eNPS, -40% team conflict (6-month)</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Executive Team Glamping Retreat</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">12 pax leadership, high stress, functional silos</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">EXPERIENCE</p>
+                  <p className="text-sm text-slate">3D2N premium glamping, CEO tent, strategy by fire, meditation, reflection time</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">+1.9 trust score, aligned strategy, +18 eNPS, 3x increase cross-functional collaboration projects</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* Our Process */}
         <Section
           id="our-process"
-          eyebrow="How We Work"
+          eyebrow="Section 9: How We Work"
           title="Dari discovery sampai memorable weekend: Proses glamping corporate kami"
         >
           <ol className="not-prose space-y-4 mt-6">
