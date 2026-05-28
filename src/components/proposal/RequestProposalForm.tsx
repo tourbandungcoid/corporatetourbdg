@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useActionState } from "react";
 import { submitLeadRequest, type LeadSubmitState } from "@/lib/actions/submit-lead";
 import { ArrowRight, Check } from "@/components/icons/Icons";
+import { FormTrustSignals, FormConfidenceIndicator, FormSocialProof } from "./FormTrustSignals";
 
 // ---------------------------------------------------------------------
 // Static options
@@ -120,7 +121,14 @@ export function RequestProposalForm() {
 
   return (
     <form action={action} className="space-y-8">
+      {/* Trust signals at top */}
+      <FormTrustSignals position="top" />
+
       {/* Progress indicator */}
+      <div>
+        <FormConfidenceIndicator step={step} />
+      </div>
+
       <div className="flex items-center gap-3 mb-10">
         {[1, 2, 3].map((n) => (
           <div key={n} className="flex items-center gap-3 flex-1">
@@ -148,6 +156,9 @@ export function RequestProposalForm() {
           </div>
         ))}
       </div>
+
+      {/* Social proof */}
+      <FormSocialProof />
 
       {/* Step 1 */}
       <div className={step === 1 ? "block space-y-5" : "hidden"}>
@@ -203,7 +214,7 @@ export function RequestProposalForm() {
           type="number"
           required
           placeholder="80"
-          helper="Range juga OK. Tepat sekalipun ga harus."
+          helper="Exact atau range OK. Bisa adjust di proposal nanti."
           error={err("pax_estimated")}
         />
 
@@ -272,7 +283,7 @@ export function RequestProposalForm() {
             type="email"
             required
             placeholder="kamu@perusahaan.com"
-            helper="Pakai email perusahaan ya"
+            helper="Email perusahaan untuk respon lebih cepat & verified."
             error={err("work_email")}
           />
         </div>
@@ -303,11 +314,13 @@ export function RequestProposalForm() {
             <Check size={14} />
           </span>
           <p>
-            🔒 Info lo aman. No spam — kami kirim proposal sekali, + 1
-            follow-up call 3 hari kemudian kalau lo tertarik.
+            🔒 Privacy anda terjaga. Kami kirim proposal custom dalam 24 jam + optional 15-min consultation call. No pressure, no hidden fees.
           </p>
         </div>
       </div>
+
+      {/* Trust signals at bottom */}
+      <FormTrustSignals position="bottom" />
 
       {/* Error banner */}
       {state.status === "error" && state.message && (
