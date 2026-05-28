@@ -501,7 +501,7 @@ export async function sendNurtureEmail({
     return { ok: false, reason: `No template found for day ${daysSinceCapture}` };
   }
 
-  let html = template.htmlTemplate
+  const html = template.htmlTemplate
     .replace(/\[FIRST_NAME\]/g, fullName.split(" ")[0])
     .replace(/\[SENDER_NAME\]/g, "Senior Planner")
     .replace(/\[COMPANY_SIZE\]/g, companySize ?? "100")
