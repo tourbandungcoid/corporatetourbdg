@@ -719,7 +719,7 @@ export default function VillaGatheringBandungPage() {
                   <strong className="text-ink">Lighting:</strong> Outdoor activity: 500-1000 lux minimum. Evening dinner: dimmable color temperature (warm 2700K preferred). Backup battery-powered lights untuk emergency
                 </div>
                 <div>
-                  <strong className="text-ink">Sound System:</strong> Outdoor amphitheater-style gathering area perlu pro sound. Microphone feedback test H-1, wireless mic batteries check H-morning, speaker placement untuk 80% pax dalam sweet-spot zone</div>
+                  <strong className="text-ink">Sound System:</strong> Outdoor amphitheater-style gathering area perlu pro sound. Microphone feedback test H-1, wireless mic batteries check H-morning, speaker placement untuk 80% pax dalam sweet-spot zone
                 </div>
               </div>
             </div>
@@ -739,7 +739,7 @@ export default function VillaGatheringBandungPage() {
                   <strong className="text-ink">Heavy Rain / Flash Flood:</strong> All outdoor activity moved indoor (main villa gathering hall / alternative covered space identified pre-event). Meal timing adjusted. Transport delayed 30 min buffer
                 </div>
                 <div>
-                  <strong className="text-ink">Extreme Heat (>35°C):</strong> Start activity 6:30am instead 8:00am. Extend lunch break to 2 hours. Afternoon activity di shaded area or indoor. Hydration station expanded (coconut water, electrolyte drinks added)
+                  <strong className="text-ink">Extreme Heat (&gt;35°C):</strong> Start activity 6:30am instead 8:00am. Extend lunch break to 2 hours. Afternoon activity di shaded area or indoor. Hydration station expanded (coconut water, electrolyte drinks added)
                 </div>
                 <div>
                   <strong className="text-ink">Earthquake / Natural Disaster:</strong> Safety briefing H-1. Designated gathering point for all pax. Emergency contact list updated. Nearest hospital + police station shared with staff. Insurance & evacuation protocol confirmed with villa
