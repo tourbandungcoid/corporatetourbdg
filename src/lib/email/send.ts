@@ -12,6 +12,7 @@
 
 import { Resend } from "resend";
 import { CONTACT, SITE } from "@/lib/site";
+import { getEmailTemplate } from "@/lib/email-nurture-templates";
 
 const RESEND_KEY = process.env.RESEND_API_KEY;
 const FROM = process.env.RESEND_FROM_EMAIL ?? `noreply@${new URL(SITE.url).hostname}`;
@@ -469,6 +470,47 @@ Reply email ini atau WhatsApp ${CONTACT.phoneDisplay} dengan ref ${refCode} kala
 ${SITE.name}
 ${CONTACT.address.full}
 `;
+
+  return send({
+    to,
+    subject,
+    html,
+    text,
+    replyTo: CONTACT.email,
+  });
+}
+
+// -----
+// Email nurture sequence (lead magnet → proposal conversion)
+// -----
+export async function sendNurtureEmail({
+  to,
+  fullName,
+  daysSinceCapture,
+  companySize,
+  industry,
+}: {
+  to: string;
+  fullName: string;
+  daysSinceCapture: number;
+  companySize?: string;
+  industry?: string;
+}): Promise<SendResult> {
+  const template = getEmailTemplate(daysSinceCapture);
+  if (!template) {
+    return { ok: false, reason: `No template found for day ${daysSinceCapture}` };
+  }
+
+  let html = template.htmlTemplate
+    .replace(/\[FIRST_NAME\]/g, fullName.split(" ")[0])
+    .replace(/\[SENDER_NAME\]/g, "Senior Planner")
+    .replace(/\[COMPANY_SIZE\]/g, companySize ?? "100")
+    .replace(/\[INDUSTRY\]/g, industry ?? "Your");
+
+  const subject = template.subject
+    .replace(/\[COMPANY_SIZE\]/g, companySize ?? "100");
+
+  const text = `${template.name}\n\n${template.description}`;
 
   return send({
     to,

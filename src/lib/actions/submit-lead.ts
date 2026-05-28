@@ -247,7 +247,17 @@ export async function submitLeadRequest(
     },
   });
 
-  // 4. Fire-and-forget email notifications (await to ensure send completes
+  // 4. Schedule nurture emails
+  const { error: nurtureSched } = await supabase.rpc(
+    "schedule_nurture_emails",
+    { p_lead_id: lead.id }
+  );
+  if (nurtureSched) {
+    console.error("[submitLeadRequest] nurture scheduling failed:", nurtureSched);
+    // continue — lead capture succeeds even if nurture scheduling fails
+  }
+
+  // 5. Fire-and-forget email notifications (await to ensure send completes
   //    before Vercel function shutdown, but don't fail submission on email errors)
   const priority =
     score >= 90 ? "hot" : score >= 70 ? "warm" : score >= 50 ? "medium" : score >= 30 ? "cool" : "cold";
@@ -263,6 +273,6 @@ export async function submitLeadRequest(
     priority,
   });
 
-  // 5. Redirect to thank-you with ref code
+  // 6. Redirect to thank-you with ref code
   redirect(`/proposal/thank-you/${lead.ref_code}`);
 }
