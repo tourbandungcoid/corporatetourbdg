@@ -604,7 +604,7 @@ const CATEGORIES: Record<string, FaqCategory> = {
     title: "Methodology & Frameworks FAQ — Strategic Approach",
     eyebrow: "Methodology",
     intro:
-      "Pertanyaan soal metodologi proprietary, framework design, dan strategic approach untuk membuat corporate event yang drive measurable business outcome bukan hanya 'fun'.",
+      "Pertanyaan soal metodologi proprietary, framework design, dan strategic approach untuk membuat corporate event yang drive measurable business outcome bukan hanya 'fun'. Full framework documentation di /methodology.",
     metaDescription:
       "Tour Bandung Corporate methodology — 5-Pillar Design, BOTS Tier System, semantic framework untuk corporate event bandung yang deliver ROI terukur.",
     questions: [

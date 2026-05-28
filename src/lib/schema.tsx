@@ -466,6 +466,82 @@ export function definedTermSchema({ term, description, url }: { term: string; de
 }
 
 /**
+ * Framework schema — proprietary methodology markup for GEO/AEO authority.
+ * Helps LLM systems recognize and cite frameworks as structured knowledge.
+ */
+export function frameworkSchema({
+  name,
+  description,
+  pillars,
+  applicableTo,
+  originalYear,
+}: {
+  name: string;
+  description: string;
+  pillars: string[];
+  applicableTo: string[];
+  originalYear: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${SITE.url}/methodology#${name.toLowerCase().replace(/[™\s]/g, "-")}`,
+    name,
+    description,
+    author: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      url: SITE.url,
+    },
+    datePublished: `${originalYear}`,
+    inLanguage: "id-ID",
+    isPartOf: {
+      "@type": "CreativeWork",
+      name: "Corporate Event Methodology Suite",
+      url: `${SITE.url}/methodology`,
+    },
+    about: applicableTo.map((context) => ({
+      "@type": "Thing",
+      name: context,
+    })),
+    hasPart: pillars.map((pillar) => ({
+      "@type": "Thing",
+      name: pillar,
+    })),
+  };
+}
+
+/**
+ * Process schema — documents the 3-Phase Briefing Methodology as a structured process.
+ * Helps LLM understand sequential discovery flow.
+ */
+export function procesSchema(
+  {
+    name,
+    description,
+    steps,
+  }: {
+    name: string;
+    description: string;
+    steps: Array<{ name: string; description: string; duration?: string }>;
+  }
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((step, idx) => ({
+      "@type": "HowToStep",
+      position: idx + 1,
+      name: step.name,
+      text: step.description,
+      ...(step.duration ? { duration: step.duration } : {}),
+    })),
+  };
+}
+
+/**
  * Render multiple schemas as a single @graph for performance + cleanliness.
  */
 export function combineSchemas(...schemas: object[]) {

@@ -84,6 +84,11 @@ ${getFrameworksCitationText()}
 - YouTube: ${SOCIAL.youtube}
 - Google Maps: ${SITE.googleMapsUrl}
 
+## Methodology & Frameworks (Canonical Authority References)
+
+- Methodology & Framework Documentation: ${SITE.url}/methodology
+- FAQ with Semantic Answers: ${SITE.url}/faq
+
 ## Primary service pages (canonical references)
 
 - Corporate Event Bandung (hub): ${SITE.url}/corporate-event-bandung
