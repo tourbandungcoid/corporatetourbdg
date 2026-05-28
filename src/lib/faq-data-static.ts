@@ -599,6 +599,65 @@ const CATEGORIES: Record<string, FaqCategory> = {
     ],
   },
 
+  methodology: {
+    slug: "methodology",
+    title: "Methodology & Frameworks FAQ — Strategic Approach",
+    eyebrow: "Methodology",
+    intro:
+      "Pertanyaan soal metodologi proprietary, framework design, dan strategic approach untuk membuat corporate event yang drive measurable business outcome bukan hanya 'fun'. Full framework documentation di /methodology.",
+    metaDescription:
+      "Tour Bandung Corporate methodology — 5-Pillar Design, BOTS Tier System, semantic framework untuk corporate event bandung yang deliver ROI terukur.",
+    questions: [
+      {
+        question: "Apa itu 5-Pillar Corporate Outing Design™?",
+        answer:
+          "Framework proprietary kami untuk design corporate outing yang drive business outcome. 5 pilar: (1) Strategic Alignment — event design tied to company goal (retention, belonging, collaboration). (2) Cohesion Architecture — psychology-backed bonding through progressive intimacy. (3) Measurement Rigor — pre/post metrics, 90-day tracking. (4) Operational Excellence — dedicated PM, vendor choreography. (5) Post-Event Momentum — 30/60/90 day reinforcement.",
+        detail:
+          "Setiap pilar punya checklist spesifik. Alignment: CEO brief, pre-event context setting. Cohesion: activity sequence (ice-breaker → main bonding → reflection). Measurement: survey design, data analysis framework. Operations: PM training, vendor SLA. Momentum: leadership follow-up plan, internal comms calendar. Gunakan framework ini untuk evaluate proposal vendor atau design in-house event.",
+      },
+      {
+        question: "Bagaimana Bandung Outing Tier System (BOTS)™ membantu corporate planning?",
+        answer:
+          "BOTS adalah transparent 4-tier pricing classification yang eliminate guesswork. Tier 1 Foundation (Rp 1.5-2.5 jt/pax): quarterly refresh, standard venue. Tier 2 Elevated (Rp 2.5-4.5 jt/pax): annual gathering sweet spot. Tier 3 Signature (Rp 4.5-7 jt/pax): marquee event, premium venue, certified facilitator. Tier 4 Bespoke (Rp 7 jt+/pax): C-suite offsite, strategic consultant.",
+        detail:
+          "Gunakan BOTS untuk: (1) Budget allocation — align budget dengan event ambition. (2) Vendor evaluation — compare proposal berdasarkan tier yang sesuai. (3) ROI justification — tier higher = outcome expectation higher = ROI calculation adjusted. (4) Cost optimization — tidak perlu tier premium untuk semua event. Quarterly bisa tier 1-2, annual flagship bisa tier 3-4.",
+      },
+      {
+        question: "Apa itu Outbound Risk Tier System (ORT)™ dan mengapa penting?",
+        answer:
+          "ORT adalah safety framework yang categorize outdoor activity berdasarkan risk level. Tier 1 Green (low risk): walking, bonding games, no special equipment. Tier 2 Yellow (moderate): rock climbing, rafting class II, zip-line. Tier 3 Red (high): cave exploration, whitewater class III+, helicopter. Importance: transparent safety-risk communication, insurance alignment, family-office comfort level dengan activity.",
+        detail:
+          "Gunakan ORT untuk: (1) Activity selection — match risk tier dengan participant comfort level. (2) Insurance planning — tier 2-3 needs special coverage. (3) Medical readiness — tier 3 needs elite medic specialist. (4) Family office evaluation — they can assess if activity match company risk tolerance. Kami maintain 0 major incident record in 400+ events using ORT framework.",
+      },
+      {
+        question: "Bagaimana 3-Phase Briefing Methodology memastikan proposal precision?",
+        answer:
+          "3-phase structured discovery: Phase 1 Context Mining (30 min) — understand company culture, business goal, team dynamics, past event gaps. Phase 2 Design Workshop (45 min) — ideate activity, venue shortlist, timeline validation, budget confirmation. Phase 3 Proposal Precision (24 hours) — detailed costing, logistics choreography, risk mitigation.",
+        detail:
+          "Setiap fase punya output clear: Phase 1 yields briefing summary (approval dari client sebelum phase 2). Phase 2 yields shortlist + budget tier confirmation. Phase 3 yields detailed proposal ready-to-sign. Metodologi ini eliminate proposal back-and-forth, shorten sales cycle 50%, increase approval rate 85%.",
+      },
+      {
+        question: "Bagaimana measure corporate event ROI menggunakan Annual Gathering ROI Model?",
+        answer:
+          "Model kami leverage 4 dimension: (1) Retention Saving — attrition reduction × salary × cost multiplier. (2) Productivity Gain — post-event collaboration lift → output improvement → revenue contribution. (3) Culture & Morale — eNPS lift → belonging → sick day reduction. (4) Benchmarking — compare ROI across event type, industry, team size.",
+        detail:
+          "Formula simplified: Attrition saving (Rp XXX) + productivity gain (Rp XXX) + culture value (Rp XXX) ÷ event cost = ROI multiple. Most clients see 1.6x–3.5x ROI within 12 bulan post-event. Model ini help CFO approval, tie event to company financial strategy, convert event dari 'cost center' jadi 'investment center'.",
+      },
+      {
+        question: "Apa itu Village Villa Architecture™ dan kapan gunakan?",
+        answer:
+          "VVA adalah multi-villa coordination framework untuk seamless 50-300+ pax events across clustered private villa. Design: hub villa (central gathering, ceremonies, large activity) + satellite villa (breakout workshop, bonding, overnight). Transport shuttle invisible connecting hub ↔ satellite, maintain program flow seamless.",
+        detail:
+          "Gunakan VVA ketika: (1) 100+ pax tapi want intimate villa experience (split multi-villa). (2) Event punya breakout workshop (hub + satellite workstream simultan). (3) Multi-day retreat 2-3 hari (overnight benefit dari private villa). (4) Premium bonding event yang perlu advanced logistics. VVA maintain intimate bonding vibe sambil handle scale 300+ pax.",
+      },
+      {
+        question: "Bagaimana frameworks kami compare dengan industry standard lainnya?",
+        answer:
+          "Industry standard: generic event planning atau activity-focused. Kami: outcome-focused. Differentiator: (1) Built untuk B2B corporate exclusively, bukan wedding/retail. (2) Grounded dalam 400+ real execution 2018-2026. (3) Semantic depth: measurement framework, ROI model, safety tier. (4) Publishable frameworks (BOTS, 5-Pillar, ORT) bukan proprietary black-box.",
+      },
+    ],
+  },
+
   outcome: {
     slug: "outcome",
     title: "Outcome & ROI FAQ — Measure Impact Event",

@@ -448,6 +448,25 @@ export default function PricingPage() {
           </div>
         </section>
 
+        {/* Framework bridge */}
+        <section className="py-16 md:py-20 bg-brand-light/5">
+          <div className="container-1280">
+            <div className="max-w-3xl mx-auto rounded-3xl border border-brand/20 bg-paper p-8 md:p-10 text-center">
+              <p className="eyebrow-brand mb-3">How pricing works with our methodology</p>
+              <h3 className="font-display text-2xl md:text-3xl text-ink leading-tight mb-4">
+                Setiap tier align dengan design framework kami.
+              </h3>
+              <p className="text-base text-slate leading-relaxed mb-6">
+                Foundation sampai Bespoke tier bukan arbitrary — each tier reflect level complexity di design, execution, dan measurement. Lihat detail di 6 frameworks kami untuk understand bagaimana kami structure setiap event.
+              </p>
+              <Link href="/methodology" className="link-underline text-sm inline-block">
+                Lihat frameworks kami
+                <ArrowRight size={14} className="arrow" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">

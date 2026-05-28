@@ -46,6 +46,13 @@ export const metadata: Metadata = {
       "x-default": "https://corporate.tourbandung.co.id",
     },
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    minimumScale: 1,
+    maximumScale: 5,
+    viewportFit: "cover",
+  },
 };
 
 function normalizeSiteUrl(input: string | undefined): URL {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "@/components/icons/Icons";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { STATS } from "@/lib/site";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getCopy, getBrandSettings } from "@/lib/brand-settings";
 import { LogoCarousel } from "@/components/home/LogoCarousel";
@@ -66,7 +67,37 @@ export async function TrustBar() {
         </div>
       </div>
 
-      <div className="mt-14">
+      {/* Social Proof Stats Grid */}
+      <div className="container-1280 mt-12 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="text-center">
+            <p className="font-display text-3xl md:text-4xl text-brand tabular leading-none">
+              {STATS.eventsDelivered}
+            </p>
+            <p className="text-xs md:text-sm text-slate mt-2">Events delivered</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl md:text-4xl text-brand tabular leading-none">
+              {STATS.companiesTrusted}
+            </p>
+            <p className="text-xs md:text-sm text-slate mt-2">Companies trusted</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl md:text-4xl text-brand tabular leading-none">
+              {STATS.repeatBookingRate}
+            </p>
+            <p className="text-xs md:text-sm text-slate mt-2">Repeat booking rate</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl md:text-4xl text-brand tabular leading-none">
+              {STATS.avgResponseTime}
+            </p>
+            <p className="text-xs md:text-sm text-slate mt-2">Avg response time</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8">
         {hasLogos ? (
           <LogoCarousel
             mode="logos"

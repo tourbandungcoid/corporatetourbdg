@@ -6,6 +6,7 @@ import { YouTubeVideos } from "@/components/home/YouTubeVideos";
 
 export const dynamic = "force-dynamic";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { OurFrameworks } from "@/components/home/OurFrameworks";
 import { FeaturedPackages } from "@/components/home/FeaturedPackages";
 import { CaseStudies } from "@/components/home/CaseStudies";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -116,6 +117,7 @@ export default function HomePage() {
         <Services />
         <YouTubeVideos />
         <WhyChooseUs />
+        <OurFrameworks />
         <FeaturedPackages />
         <CaseStudies />
         <Testimonials />

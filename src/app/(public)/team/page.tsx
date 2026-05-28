@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { TeamFrameworkMapping } from "@/components/team/TeamFrameworkMapping";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { ArrowRight, Whatsapp } from "@/components/icons/Icons";
 import { TEAM } from "@/lib/team-data";
@@ -207,6 +208,8 @@ export default function TeamPage() {
             </div>
           </div>
         </section>
+        <TeamFrameworkMapping />
+
 
         <StickyProposalBar
           message="Briefing langsung dengan senior planner — free 15 menit, no template."
