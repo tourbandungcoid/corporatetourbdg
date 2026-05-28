@@ -196,6 +196,16 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-base text-slate">
+              Ingin tahu lebih detail tentang methodology & frameworks kami?
+            </p>
+            <Link href="/methodology" className="link-underline text-sm mt-2 inline-block">
+              Lihat 6 frameworks kami
+              <ArrowRight size={14} className="arrow" />
+            </Link>
+          </div>
         </div>
       </section>
 
