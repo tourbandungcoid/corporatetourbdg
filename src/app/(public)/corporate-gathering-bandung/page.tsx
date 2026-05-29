@@ -740,6 +740,108 @@ export default function CorporateGatheringBandungPage() {
           </p>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Enterprise-Grade Delivery</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa 400+ Event dengan 7Summits Corporate Deliver Premium Results
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "400+",
+                  label: "Events dari 8 pax hingga 1.200 pax",
+                  detail: "Annual gathering, marquee celebration, multi-venue coordination — expertise untuk skala apapun"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Konsisten di-rate oleh klien corporate",
+                  detail: "85% repeat booking untuk event tahunan berikutnya — proof of satisfaction"
+                },
+                {
+                  metric: "6+",
+                  label: "Tahun tenure tim senior kami",
+                  detail: "PM, facilitator, production lead — bukan freelancer rotating, tapi dedicated expertise"
+                },
+                {
+                  metric: "1 PM",
+                  label: "Per event dedicated on-site",
+                  detail: "Day-of execution: on-site PM + crew, real-time coordination, contingency handling"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami bukan "booking forwarding service". Kami <strong>design & execute</strong> your gathering sebagai strategic event — dari objective alignment, production quality, talent coordination, sampai documented post-event metrics. Risk management protocol yang mature. Insurance coverage lengkap. Contingency planning untuk worst-case scenario.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari brief sampai post-event impact: Proses gathering kami step-by-step"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Strategic Briefing (1 hour)",
+                desc: "Business objective, audience, desired outcomes, budget, timeline. Kami align scope & baseline expectation.",
+              },
+              {
+                step: "Concept Design & Proposal (1 week)",
+                desc: "Event theme, venue option (min 3), production roadmap (AV/talent/decoration), detailed budget breakdown, risk register.",
+              },
+              {
+                step: "Vendor Lock & Contract (Week 2-3)",
+                desc: "Venue deposit signed, F&B menu locked, talent booking confirmed, AV vendor contract, insurance policy issued.",
+              },
+              {
+                step: "Production Design & Rehearsal (Week 4-7)",
+                desc: "Video production, decoration/setup design, MC script, program flow finalization, talent briefing, site walkthrough.",
+              },
+              {
+                step: "Full Dress Rehearsal (Week 8)",
+                desc: "On-site rehearsal dengan MC, AV crew, production team. Timing practice, contingency scenario walkthrough.",
+              },
+              {
+                step: "Execution Day — On-Site PM + Team",
+                desc: "Setup H-1, event day execution, 4-6 crew on-ground, real-time coordination, live problem solving, photo/video documentation.",
+              },
+              {
+                step: "Post-Event Report & Debrief",
+                desc: "Attendee feedback survey, curated media album, event highlight video, post-event debrief call dengan HR/leadership.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Setiap fase documented dengan checklist. Contract dan timeline clear. Tidak ada hidden cost atau last-minute surprises.
+          </p>
+        </Section>
+
         <Section id="faq" eyebrow="FAQ" title="Pertanyaan yang sering ditanyakan HR">
           <div className="not-prose space-y-3 mt-4">
             {FAQS.map((item, i) => (
@@ -798,28 +900,41 @@ export default function CorporateGatheringBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Mau bikin annual gathering yang memorable?
+              Siap deliver annual gathering yang transform culture?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Briefing call 15 menit → kami propose theme, venue, dan
-              awarding production yang fit perusahaan Anda.
+              <strong>Dari strategic planning hingga flawless execution</strong> — kami own the entire production. Dedicated PM on-site, risk management mature, outcome-tracked.
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              1-hour strategic brief → production roadmap + 3 venue options + budget breakdown dalam 1 minggu → full execution dari concept sampai post-event report.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Enterprise-grade production
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Full on-site team
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Risk management protocol
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Get Production Proposal
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("corporate gathering Bandung")}
+                href={buildWaLink("corporate gathering Bandung — production discussion")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

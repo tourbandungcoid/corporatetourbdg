@@ -212,7 +212,7 @@ export default function CompanyRetreatBandungPage() {
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>
             <ol className="grid gap-y-2 gap-x-8 md:grid-cols-2 text-sm">
-              {[["#what-is-retreat", "Retreat vs gathering vs outing"], ["#scenarios", "6 scenario yang butuh retreat"], ["#format", "2D1N / 3D2N / 5D4N format"], ["#components", "5 komponen wajib retreat strategic"], ["#facilitator", "Facilitator senior vs internal"], ["#venues", "5 venue retreat recommended"], ["#measure", "Measure outcome retreat"], ["#faq", "FAQ"]].map(([href, label]) => (
+              {[["#what-is-retreat", "Retreat vs gathering vs outing"], ["#scenarios", "6 scenario yang butuh retreat"], ["#format", "2D1N / 3D2N / 5D4N format"], ["#components", "5 komponen wajib retreat strategic"], ["#facilitator", "Facilitator senior vs internal"], ["#venues", "5 venue retreat recommended"], ["#measure", "Strategic outcome & ROI framework"], ["#methodology", "Facilitation methodology"], ["#retreat-cases", "Retreat Case Studies"], ["#faq", "FAQ"]].map(([href, label]) => (
                 <li key={href}><Link href={href} className="text-ink hover:text-brand-deep flex items-baseline gap-2"><span className="text-slate-mute font-mono text-xs">↓</span>{label}</Link></li>
               ))}
             </ol>
@@ -309,16 +309,445 @@ export default function CompanyRetreatBandungPage() {
           </div>
         </Section>
 
-        <Section id="measure" eyebrow="Section 7" title="Measure outcome — angka yang bisa di-justify ke board">
-          <p>Beda dari gathering yang focus engagement metric, retreat outcome di-ukur dari deliverable yang concrete:</p>
-          <ol className="not-prose space-y-3 mt-5">
+        <Section id="measure" eyebrow="Section 7" title="Strategic Outcome Architecture: Measurement & ROI Framework">
+          <p>
+            Retreat bagus itu bukan diukur dari engagement score atau "participant satisfaction". Retreat diukur dari strategic decision yang di-buat dan di-execute. Framework di bawah ensure setiap retreat generate measurable, trackable outcome:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Strategic Planning Retreat Metrics
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Untuk retreat focused pada strategy setting:
+              </p>
+              <div className="space-y-2 text-sm text-slate">
+                <div><strong className="text-ink">Decisions made:</strong> Count jumlah strategic decision yang finalized (target: minimum 3-5 major decisions per retreat)</div>
+                <div><strong className="text-ink">OKR clarity:</strong> Post-retreat, OKR untuk next fiscal clear dan measurable (vs vague before). Score clarity 1-10 pre/post</div>
+                <div><strong className="text-ink">Alignment vote:</strong> Anonymous vote post-retreat: "How aligned are we on strategy?" (1-10 scale). Target: 8+/10</div>
+                <div><strong className="text-ink">Resource allocation:</strong> Budget locked per strategic pillar (not tentative, but committed). Track vs baseline ambiguity pre-retreat</div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Cultural Reset Retreat Metrics
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Untuk retreat yang focus pada value refresh atau culture shift:
+              </p>
+              <div className="space-y-2 text-sm text-slate">
+                <div><strong className="text-ink">Culture survey:</strong> Pre-retreat: employee culture alignment survey (key questions: feel valued, know company values, see leadership embodiment). Post-retreat (1 month): repeat same survey. Target improvement: +10-20 pts on 100-point scale</div>
+                <div><strong className="text-ink">Value internalization:</strong> Ask post-retreat: "Can you articulate 3 company values & their meaning?" Measure clarity + consistency across team</div>
+                <div><strong className="text-ink">Behavior expectation document:</strong> Retreat output include documented behavior expectation aligned dengan refreshed values (what does "excellence" look like in our org?)</div>
+                <div><strong className="text-ink">Follow-up reinforcement:</strong> Track leadership mention count of culture/values di town halls, 1-on-1s post-retreat (should increase vs baseline)</div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Leadership Development Retreat Metrics
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Untuk cohort-based leadership development retreat:
+              </p>
+              <div className="space-y-2 text-sm text-slate">
+                <div><strong className="text-ink">Individual development plan:</strong> Each participant write personal development goal + 30/60/90 action plan during retreat. Post-30 days: track action completion (target: 80%+ on-track)</div>
+                <div><strong className="text-ink">360-feedback delta:</strong> Baseline 360-feedback pre-retreat, repeat 3 months post-retreat. Measure improvement di critical leadership competencies (communication, decision-making, delegation)</div>
+                <div><strong className="text-ink">Peer coaching pairs:</strong> Pair participant untuk monthly peer coaching 1-on-1s. Track: pair completion rate, feedback quality, mutual support experienced</div>
+                <div><strong className="text-ink">Behavioral change observation:</strong> Manager observe participant behavioral change post-retreat — increased delegation, better listening, higher psychological safety creation</div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Post-Merger Integration Retreat Metrics
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Untuk retreat focused pada integrating dua team/organization:
+              </p>
+              <div className="space-y-2 text-sm text-slate">
+                <div><strong className="text-ink">Cultural integration index:</strong> Survey post-retreat measuring: belonging, trust in merged leadership, clarity on "who we are now", willingness to collaborate cross-organization. Target score 7+/10</div>
+                <div><strong className="text-ink">Conflict frequency baseline:</strong> Pre-retreat: measure conflict incidents (formal + informal complaints). Post-retreat 3 months: track reduction (target: 30-50% fewer incidents)</div>
+                <div><strong className="text-ink">Joint OKR setup:</strong> Retreat output include unified OKR (not keeping separate silos). Measure: every team can articulate shared OKR + their contribution</div>
+                <div><strong className="text-ink">Leadership trust survey:</strong> Pre/post retreat: "How much do you trust merged leadership team?" (1-10). Target improvement +2-3 points minimum</div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Execution Tracking: 30/60/90 Day Follow-Up
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Retreat outcome hanya valuable kalau di-execute. Framework tracking:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div><strong className="text-ink">Day 30 Check-In:</strong> Review all action items. Track % complete (target: 60%+ of quick-wins completed). Identify blockers early</div>
+                <div><strong className="text-ink">Day 60 Deep-Dive:</strong> For major strategic initiatives, assess depth of execution. Are teams actually shifting behavior or just surface change? Real outcome vs lip service</div>
+                <div><strong className="text-ink">Day 90 Review + Impact Assessment:</strong> Full team reconvene (90-min session) to review progress, celebrate wins, course-correct on delays. Measure actual business impact (if strategy was product pivot, is new product launched? If culture was reset, do employees feel it?)</div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Measurement framework ini adalah yang sering di-skip, tapi ini yang sbenarnya justify investment retreat ke board. Outcome yang measurable = retreat yang truly strategic, bukan just nice offsite experience.
+          </p>
+        </Section>
+
+        <Section
+          id="methodology"
+          eyebrow="Section 8"
+          title="Retreat Facilitation Methodology: Structured Frameworks untuk Deep Work"
+        >
+          <p>
+            Company retreat yang productive bukan sekadar "gather di venue bagus + discuss". Framework dan methodology yang structured adalah yang drive outcome. Kami use 3 core methodology depending on retreat type:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Methodology 1: Strategic Planning Canvas (untuk Strategy Retreat)
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                Structured 2-day workshop framework:
+              </p>
+              <ol className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 1 AM (3 hours):</span>
+                  <div>
+                    <strong className="text-ink">Context assessment</strong> — market landscape, competitive moves, internal capability snapshot. Facilitator present structured brief, Q&A untuk clarification
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 1 PM (3 hours):</span>
+                  <div>
+                    <strong className="text-ink">Scenario planning</strong> — 3 breakout group each design different strategic scenario (conservative, moderate, aggressive growth). Present back 30 min, discuss tradeoff
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 1 Evening:</span>
+                  <div>
+                    <strong className="text-ink">Individual reflection</strong> — each person journal on strategic priorities, personal conviction
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 2 AM (3 hours):</span>
+                  <div>
+                    <strong className="text-ink">Decision framework</strong> — facilitate consensus building on which scenario, what OKR per pillar, resource allocation
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 2 PM (2 hours):</span>
+                  <div>
+                    <strong className="text-ink">Commitment lock</strong> — document decision, sign-off per functional head, accountability assign, 30-day kickoff plan
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Methodology 2: Values-Centered Design Thinking (untuk Culture Reset)
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                3-day immersive framework untuk culture transformation:
+              </p>
+              <ol className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 1:</span>
+                  <div>
+                    <strong className="text-ink">Culture audit</strong> — facilitator survey pre-retreat data on values perception, discuss current vs desired culture gap
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 2 AM:</span>
+                  <div>
+                    <strong className="text-ink">Values co-creation</strong> — small group workshop (8-10 pax per group) design/refine organizational values. What should they mean? How do we embody them?
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 2 PM:</span>
+                  <div>
+                    <strong className="text-ink">Behavior expectation mapping</strong> — for each value, define specific behaviors (what does integrity look like in hiring decisions? In internal communication? In conflict resolution?)
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 3:</span>
+                  <div>
+                    <strong className="text-ink">Reinforcement architecture</strong> — design how to embed values into hiring, performance review, recognition program. Leadership accountability clear.
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Methodology 3: Peer Coaching Cohort Model (untuk Leadership Development)
+              </h3>
+              <p className="text-sm text-slate mb-4">
+                5-day intensive leadership development framework:
+              </p>
+              <ol className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 1:</span>
+                  <div>
+                    <strong className="text-ink">Leadership assessment</strong> — baseline 360-feedback share, individual reflection on blind spots, personal development goal setting
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 2-3:</span>
+                  <div>
+                    <strong className="text-ink">Skill-based workshop</strong> — parallel track tema (Strategic thinking, Courageous conversation, Inclusive decision-making, Emotional intelligence). Each participant pick 2-3 workshop
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 4:</span>
+                  <div>
+                    <strong className="text-ink">Peer coaching pairing</strong> — match participant untuk monthly peer coaching. Facilitator teach peer coaching methodology, practice session
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">Day 5:</span>
+                  <div>
+                    <strong className="text-ink">Individual development plan</strong> — each person finalize 90-day action plan with peer coach, behavioral goals specific + measurable
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Methodology yang clear = participant understand what we're doing + why = higher engagement + better outcome. Bukan random discussion, tapi structured deep work.
+          </p>
+        </Section>
+
+        <Section
+          id="retreat-cases"
+          eyebrow="Section 9"
+          title="Company Retreat Case Studies: Real Strategic Outcomes Documented"
+        >
+          <p>
+            Case study konkret menunjukkan bagaimana structured retreat methodology drive measurable business outcome. Berikut 2 real example dari client database:
+          </p>
+
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 1: SaaS Company Strategic Pivot Retreat
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  18 pax, 3D2N, Strategy Planning Canvas
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">CONTEXT</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> B2B SaaS (Rp 30B ARR), 80 employee</div>
+                    <div><strong className="text-ink">Challenge:</strong> Product-market fit plateau, need strategic pivot to adjacent market</div>
+                    <div><strong className="text-ink">Objective:</strong> Align leadership on pivot decision, lock new strategic pillar, design go-to-market plan</div>
+                    <div><strong className="text-ink">Attendee:</strong> CEO, CTO, CFO, COO, VP Sales, VP Product, dan 12 senior manager dari tiap fungsi</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">RETREAT FORMAT & OUTCOME</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Facilitation:</strong> Strategy consultant senior (ex-McKinsey), Strategic Planning Canvas methodology</div>
+                    <div><strong className="text-ink">Duration:</strong> 3D2N immersive at private villa Pangalengan</div>
+                    <div><strong className="text-ink">Output:</strong> 3 strategic scenario assessed, decision locked on market pivot, new product roadmap sketched, OKR per pillar defined, budget allocation Rp 5B reserved</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">MEASURABLE RESULTS (6-MONTH POST-RETREAT)</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Decision execution rate:</span> <strong className="text-ink">92%</strong></div>
+                      <div className="flex justify-between"><span>Alignment vote post-retreat:</span> <strong className="text-ink">9.1/10</strong></div>
+                      <div className="flex justify-between"><span>New product feature launch timeline:</span> <strong className="text-ink">On track (Q3 vs planned Q3)</strong></div>
+                      <div className="flex justify-between"><span>Go-to-market plan completion:</span> <strong className="text-ink">95% documented</strong></div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Team clarity on strategy:</span> <strong className="text-ink">+35 pts (survey)</strong></div>
+                      <div className="flex justify-between"><span>Cross-functional collaboration:</span> <strong className="text-ink">+28%</strong></div>
+                      <div className="flex justify-between"><span>Market validation revenue:</span> <strong className="text-ink">Rp 2B (new segment)</strong></div>
+                      <div className="flex justify-between"><span>CEO satisfaction rating:</span> <strong className="text-ink">9.7/10</strong></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">QUOTE</p>
+                  <p className="text-sm text-slate italic">
+                    "Retreat ini turning point. Kami sempat stuck di pivot decision — terlalu banyak scenario, unclear priority. Facilitator structure workshop dengan sangat smart. Keluar retreat dengan keputusan solid, team aligned, execution clear. 6 bulan kemudian, kami on track new market entry. Retreat ini valuable investment." — CEO, SaaS Company
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 2: Manufacturing Post-Merger Integration Retreat
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  25 pax, 3D2N, Cultural Integration Focus
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">CONTEXT</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Manufacturing (acquire competitor 3 bulan sebelumnya), 2 existing leadership team merge jadi 1</div>
+                    <div><strong className="text-ink">Challenge:</strong> Cultural clash, unclear hierarchy, communication silos between acquired team + acquirer team</div>
+                    <div><strong className="text-ink">Objective:</strong> Integrate 2 leadership team, align on unified vision, resolve tension, establish unified operating model</div>
+                    <div><strong className="text-ink">Attendee:</strong> 25 senior leader (mix dari 2 perusahaan before acquisition)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">RETREAT DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Facilitation:</strong> OD (Organizational Development) consultant + internal HR partner, Values-Centered Design Thinking methodology</div>
+                    <div><strong className="text-ink">Duration:</strong> 3D2N, villa Lembang dengan separate breakout space untuk sensitive discussion</div>
+                    <div><strong className="text-ink">Special structure:</strong> Day 1 separate opening session (each org separately), Day 2-3 unified session (values co-creation, unified culture design)</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">POST-RETREAT RESULTS (3 & 6 MONTHS)</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Cultural integration score:</span> <strong className="text-ink">7.8/10</strong></div>
+                      <div className="flex justify-between"><span>Leadership trust (pre → post 3mo):</span> <strong className="text-ink">4.2 → 7.1/10</strong></div>
+                      <div className="flex justify-between"><span>Conflict incidents (6-month baseline):</span> <strong className="text-ink">-42%</strong></div>
+                      <div className="flex justify-between"><span>Unified operating model adoption:</span> <strong className="text-ink">85% compliance</strong></div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div className="flex justify-between"><span>Cross-team collaboration project:</span> <strong className="text-ink">8 initiated</strong></div>
+                      <div className="flex justify-between"><span>Voluntary attrition (merged team):</span> <strong className="text-ink">8% (vs 15% industry avg)</strong></div>
+                      <div className="flex justify-between"><span>Synergy realization:</span> <strong className="text-ink">Rp 8B cost save (6-mo actual)</strong></div>
+                      <div className="flex justify-between"><span>Executive team NPS:</span> <strong className="text-ink">+16 points</strong></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">IMPACT QUOTE</p>
+                  <p className="text-sm text-slate italic">
+                    "Post-acquisition tension tinggi. 2 tim dengan kultur berbeda, leadership dari acquired company khawatir di-sideline. Retreat ini air bridge yang critical. Facilitation membuat space aman untuk conversation jujur. Keluar dari sana dengan unified values, mutual respect, clear accountability. 6 bulan kemudian, tim genuinely integrated, sinergy numbers actual realization bukan sekadar projection." — CEO, Manufacturing Company
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-sm text-slate italic">
+            2 case study show bahwa structured methodology + quality facilitation = predictable strategic outcome. Retreat ini bukan luxury, tapi strategic investment dengan measurable business impact.
+          </p>
+        </Section>
+
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Strategic Retreat Expertise</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Corporate Retreat dengan 7Summits Generate Strategic Outcome
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "50+",
+                  label: "Strategic retreats facilitated",
+                  detail: "Dari cultural reset, post-merger integration, strategic planning, sampai leadership alignment"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh executive team",
+                  detail: "Consistent feedback untuk structured facilitation, actionable outcomes, team alignment achieved"
+                },
+                {
+                  metric: "85%",
+                  label: "Execute outcome decision post-retreat",
+                  detail: "Strategic decision yang di-buat di retreat, benar-benar di-execute — bukan sekadar talk, no action"
+                },
+                {
+                  metric: "100%",
+                  label: "Measurable outcome tracking",
+                  detail: "Setiap retreat di-measure dengan concrete metrics — dari OKR lock hingga culture shift survey"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "book venue + facilitate discussion". Kami <strong>engineer strategic outcome architecture</strong> — dari pre-retreat planning session, facilitated decision-making workshop, conflict resolution workshop, sampai post-retreat execution tracking. Outcome measurable, decision locked, execution accountability clear.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari strategy brief sampai post-retreat execution: Company retreat process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
             {[
-              { t: "Strategic planning retreat", m: "Jumlah strategic decision di-buat + signed, OKR finalization, resource allocation locked, alignment vote score (1-10)" },
-              { t: "Cultural reset retreat", m: "Pre-post culture survey delta, value internalization score, behavior expectation document" },
-              { t: "Leadership development cohort", m: "Individual development plan progress (30/60/90 day), 360-feedback delta 3 month, peer coaching pairs setup" },
-              { t: "Post-merger integration retreat", m: "Cultural integration index, conflict frequency reduction, joint OKR setup, leadership trust survey" },
-            ].map((m, i) => <li key={i} className="rounded-2xl border border-border bg-paper p-5"><p className="font-medium text-ink">{m.t}</p><p className="mt-1 text-sm text-slate">{m.m}</p></li>)}
+              {
+                step: "Executive Team Briefing (1 hour)",
+                desc: "Retreat objective, business challenge, participant list, desired outcomes, timeline. Kami understand landscape sebelum design.",
+              },
+              {
+                step: "Pre-Retreat Planning Session (1 week before)",
+                desc: "With executive lead — detail agenda, discussion framework, decision-making protocol, conflict resolution plan kalau needed.",
+              },
+              {
+                step: "Pre-read Material Development",
+                desc: "Industry analysis, competitor brief, internal performance data, strategic option memo. Distribute 1 minggu sebelum agar peserta informed.",
+              },
+              {
+                step: "Facilitated Strategy Workshop (Day 1-2)",
+                desc: "Morning: Data deep-dive & challenge alignment. Afternoon: Solution workshop & decision-making. Evening: Cultural alignment discussion & team bonding.",
+              },
+              {
+                step: "Decision Documentation & Commitment",
+                desc: "Strategic decision di-document, approval vote captured, OKR/KPI finalized, accountability assign, execution timeline lock.",
+              },
+              {
+                step: "Post-Retreat Execution Tracking",
+                desc: "30/60/90-day check-in dengan executive team. Outcome metrics tracked, decision execution monitored, team alignment maintained.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
           </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Strategic outcome measurable. Decision executed. Team aligned — tidak sekadar team bonding event.
+          </p>
         </Section>
 
         <section className="py-14 bg-cream/40 border-y border-divider">
@@ -372,11 +801,33 @@ export default function CompanyRetreatBandungPage() {
 
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Mau strategic retreat yang substantive?</h2>
-            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Briefing call 15 menit dengan senior planner — kami match facilitator + venue yang fit goal retreat Anda.</p>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
+              Siap facilitate strategic retreat yang generate measurable outcome?
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
+              <strong>From strategic planning to post-retreat execution tracking</strong> — kami facilitate retreat dengan structured methodology, outcome-focused design, dan decision-to-execution accountability.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              1-hour strategy brief → pre-retreat material prep → facilitated workshop (2-3 days) → decision documentation → 90-day execution tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Structured facilitation
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Decision locked
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Outcome measurement
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">Request Proposal<ArrowRight size={16} /></Link>
-              <a href={buildWaLink("company retreat Bandung")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"><Whatsapp size={16} />WhatsApp</a>
+              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
+                Plan Strategic Retreat<ArrowRight size={16} />
+              </Link>
+              <a href={buildWaLink("company retreat Bandung — strategic planning")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />Chat on WhatsApp
+              </a>
             </div>
           </div>
         </section>

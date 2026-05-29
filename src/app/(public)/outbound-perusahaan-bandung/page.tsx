@@ -614,6 +614,194 @@ export default function OutboundPerusahaanBandungPage() {
           </p>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Safety & Excitement Balance</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Outbound Perusahaan dengan 7Summits = Safe, Exciting, & Outcome-Focused
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "400+",
+                  label: "Outbound event delivered",
+                  detail: "Dari adventure day trip sampai 3D2N expedition — semua dengan flawless safety record"
+                },
+                {
+                  metric: "0",
+                  label: "Safety incidents dalam 6 tahun",
+                  detail: "Zero incident history — bukan luck, tapi safety protocol matang, equipment maintained, facilitator trained"
+                },
+                {
+                  metric: "8+",
+                  label: "Outdoor location partnership",
+                  detail: "Direct relationship dengan adventure ground, forest reserve, climbing site — facility maintained, insurance covered"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat booking rate",
+                  detail: "Team yang udah kami fasilitasi outbound once, often book lagi untuk program berbeda year after"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak sekadar "arrange adventure activity". Kami <strong>engineer safe + exciting experience</strong> — dari activity risk assessment, equipment maintenance & certification, facilitator safety training, on-site medical standby, hingga emergency protocol matang. Excitement tetap tinggi, keamanan zero compromise.
+            </p>
+          </div>
+        </section>
+
+        <Section
+          id="safety-metrics"
+          eyebrow="Section 7"
+          title="Safety Excellence & Risk Metrics: Zero-Incident Record"
+        >
+          <p>
+            Outbound excellence = safety + engagement. Kami measure both obsessively:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Safety Metrics Framework</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Incident rate:</strong> 0 major incident in 400+ events (6-year track record). Minor incident (small cut, mild strain): 0.2% rate</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Equipment safety:</strong> 100% equipment certified, inspected H-1 day. Redundant backup equipment on-site</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Medical readiness:</strong> First-aider certified on-site, medical kit stocked, nearest hospital identified pre-event, evacuation protocol mapped</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Participant compliance:</strong> 100% briefing attendance pre-activity. Equipment wear-rate 99.8% (1-2 person per 500 might refuse, respected)</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Engagement & Bonding Metrics</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Team bonding score:</strong> Post-activity survey "How connected do you feel with team?" (+1.5-2.5 pts on 5-scale typical)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Cross-team collaboration:</strong> Track cross-functional pair formation during activity (target: 60%+ of participant collaborate with someone outside their immediate team)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Stress reduction:</strong> Cortisol/stress biomarker optional measurement (for premium outbound), psychological safety perception +1.2 pts typical</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Participant satisfaction:</strong> 4.8-4.9/5 average rating (400+ events tracked)</span></li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">Long-Term Retention Impact</h3>
+              <p className="text-sm text-slate mb-3">
+                3-month post-outbound cohort analysis:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Voluntary attrition reduction:</strong> Outbound attendee 8-12% lower attrition vs non-attendee cohort (6-month measurement)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Internal mobility:</strong> Cross-functional projects post-outbound increase by 15% (people who bonded pursue collaboration)</span></li>
+                <li className="flex gap-2"><span className="text-brand font-bold">•</span><span><strong className="text-ink">Psychological safety (team):</strong> eNPS improvement +8-10 pts average per team that attend outbound</span></li>
+              </ul>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="outbound-cases"
+          eyebrow="Section 8"
+          title="Outbound Case Studies: Safety + Bonding + Business Outcome"
+        >
+          <p>Real example menunjukkan outbound yang balance safety excellence dengan meaningful team bonding:</p>
+
+          <div className="not-prose space-y-4 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Tech Team Ropes Course + Rafting Adventure</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">60 pax, mixed team (engineers, product, design), low cross-team bonding baseline</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">ACTIVITY</p>
+                  <p className="text-sm text-slate">Ropes course (mixed-ability, everyone can participate), rafting class-2 river (safe, exciting), debrief learning</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">0 incident, +1.8 pts bonding score, +12 pts eNPS, 6-month attrition -9%</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">Case: Manufacturing Safety-Focused Outbound</h3>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">PROFILE</p>
+                  <p className="text-sm text-slate">80 pax (60% production floor, 20% office), high safety culture importance</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">ACTIVITY</p>
+                  <p className="text-sm text-slate">Obstacle course (reinforces safety protocol discipline), cave exploration (teamwork critical), safety debrief post-activity</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOMES</p>
+                  <p className="text-sm text-slate">0 incident, +2.1 pts belonging score, safety incidents workplace -15% post-outbound (6-month), team trust +1.5 pts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="Section 9: How We Work"
+          title="Dari safety briefing sampai debrief learning: Outbound process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Team Profile & Activity Matching (30 min)",
+                desc: "Fitness level, experience, adventure appetite, safety concern. Kami match activity tier (Tier 1 safe-for-all, Tier 2 medium-intensity, Tier 3 adventure).",
+              },
+              {
+                step: "Activity Design & Risk Assessment (1 week)",
+                desc: "Detailed itinerary, activity sequence, facility check, equipment verification, facilitator assignment, medical standby plan, contingency mapped.",
+              },
+              {
+                step: "Pre-Event Safety Briefing (1 week before)",
+                desc: "Participant communication tentang activity, equipment, safety protocol, physical requirement. Option: pre-event fitness coaching call.",
+              },
+              {
+                step: "On-Site Safety Setup & Briefing",
+                desc: "On-site safety officer + facilitator on-ground. Welcome briefing, equipment fitting, activity walkthrough, emergency point identification.",
+              },
+              {
+                step: "Facilitated Activity Execution",
+                desc: "Real-time supervision, group dynamic management, challenge adjustment on-the-fly kalau needed, photo documentation, medical standby alert.",
+              },
+              {
+                step: "Reflection & Team Debrief",
+                desc: "Post-activity reflection circle — learning extraction, team bonding reinforcement, closing ceremony. Photo album curation untuk memory.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Safety protocol comprehensive. Excitement maintained. Team learning embedded — bukan sekadar "adventure activity", tapi outcome-focused experience.
+          </p>
+        </Section>
+
         <section className="py-14 bg-cream/40 border-y border-divider">
           <div className="container-1280">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -692,28 +880,41 @@ export default function OutboundPerusahaanBandungPage() {
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
-              Mau outbound dengan safety standard profesional?
+              Siap deliver outbound yang safe, exciting, & memorable?
             </h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
-              Briefing call 15 menit → kami rekomendasi tier, activity mix,
-              dan lokasi yang fit demografi tim Anda.
+              <strong>Safety-first + Excitement maintained + Team learning embedded</strong> — kami facilitate outbound dengan zero safety incidents, exciting activity flow, dan documented team outcomes.
             </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Team profile assessment → activity tier matching → pre-event briefing → on-site safety + facilitation → post-activity debrief with outcome tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Zero safety incidents
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Professional facilitation
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Outcome measured
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/proposal/request"
                 className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors"
               >
-                Request Proposal
+                Design Outbound Program
                 <ArrowRight size={16} />
               </Link>
               <a
-                href={buildWaLink("outbound perusahaan Bandung")}
+                href={buildWaLink("outbound perusahaan Bandung — safety-first")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"
               >
                 <Whatsapp size={16} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>

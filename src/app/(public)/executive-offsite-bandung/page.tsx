@@ -202,7 +202,7 @@ export default function ExecutiveOffsiteBandungPage() {
           <div className="container-1280">
             <p className="eyebrow text-slate mb-4">Table of contents</p>
             <ol className="grid gap-y-2 gap-x-8 md:grid-cols-2 text-sm">
-              {[["#what-distinguishes", "What distinguishes executive offsite"], ["#purposes", "6 use cases offsite"], ["#format", "Format 1D / 2D1N / Bespoke"], ["#discretion", "Discretion & confidentiality protocol"], ["#facilitator", "Strategy facilitator senior"], ["#venues", "5 venue paling discreet"], ["#prep", "Prep timeline 4-6 minggu"], ["#faq", "FAQ"]].map(([href, label]) => (
+              {[["#what-distinguishes", "What distinguishes executive offsite"], ["#purposes", "6 use cases offsite"], ["#format", "Format 1D / 2D1N / Bespoke"], ["#pre-engagement", "Pre-Offsite Engagement Architecture"], ["#discretion", "Discretion & confidentiality protocol"], ["#confidentiality-scenarios", "Confidentiality Protocol Scenarios"], ["#facilitator", "Strategy facilitator senior"], ["#venues", "5 venue paling discreet"], ["#prep", "Prep timeline 4-6 minggu"], ["#post-momentum", "Post-Offsite Momentum & Implementation"], ["#csuite-cases", "C-Suite Case Studies"], ["#faq", "FAQ"]].map(([href, label]) => (
                 <li key={href}><Link href={href} className="text-ink hover:text-brand-deep flex items-baseline gap-2"><span className="text-slate-mute font-mono text-xs">↓</span>{label}</Link></li>
               ))}
             </ol>
@@ -253,7 +253,141 @@ export default function ExecutiveOffsiteBandungPage() {
           </div>
         </Section>
 
-        <Section id="discretion" eyebrow="Section 4" title="Discretion & confidentiality protocol — 6 layer">
+        <Section
+          id="pre-engagement"
+          eyebrow="Section 4"
+          title="Pre-Offsite Engagement Architecture: How we prepare for substantive C-suite discussion"
+        >
+          <p>
+            Ini yang separating high-quality offsite dari mediocre one. Pre-engagement yang substantive ensure setiap participant arrive prepared, aligned pada objective, dan ready untuk productive discussion. Framework kami:
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Confidential CEO Brief (Week 1)
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                1-hour confidential discussion dengan CEO atau founder:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Strategic objectives:</strong> Apa yang perlu di-decide / di-align selama offsite?</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Success criteria:</strong> Seperti apa offsite yang successful? Output konkret apa?</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Sensitive topics:</strong> Ada topik yang poli delicate? Orang yang mungkin tak setuju?</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Participant dynamics:</strong> Siapa senior yang mungkin dominate? Siapa yang pendiem tapi punya valuable input?</span>
+                </li>
+              </ul>
+              <p className="mt-3 text-xs text-slate-mute italic">
+                Confidentiality lock: notes dari call ini cuma accessible by facilitator, not shared with team.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Industry & Strategic Context Brief (Week 2-3)
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Kami develop 15-20 page strategic brief untuk semua participant:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">1.</span>
+                  <div>
+                    <strong className="text-ink">Industry landscape snapshot</strong>
+                    <p className="text-xs">Market size, growth rate, key trends (2024-2026), competitive moves relevant to company</p>
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">2.</span>
+                  <div>
+                    <strong className="text-ink">Internal performance data</strong>
+                    <p className="text-xs">YoY revenue/margin, key metric dashboard, product/service mix breakdown, customer/market segments</p>
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">3.</span>
+                  <div>
+                    <strong className="text-ink">Competitive benchmarking</strong>
+                    <p className="text-xs">Top 3 competitors — their strategy, market share, recent moves, threat/opportunity assessment</p>
+                  </div>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">4.</span>
+                  <div>
+                    <strong className="text-ink">Strategic frameworks intro</strong>
+                    <p className="text-xs">SWOT canvas (pre-filled with CEO + CFO input), scenario planning framework if applicable</p>
+                  </div>
+                </li>
+              </ul>
+              <p className="mt-3 text-xs text-slate-mute">
+                Distributed 10 days before offsite. Expectation: skim minimum 30 min, flagpole any questions.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Individual Pre-Offsite Calls (Week 3-4)
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                30-45 min 1-on-1 dengan setiap C-suite participant:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Listen phase:</strong> Apa pain point Anda saat ini? Apa yang tidak berjalan baik dalam leadership team? Apa yang Anda khawatirkan?
+                </div>
+                <div>
+                  <strong className="text-ink">Priority clarification:</strong> Dalam 3 strategic priority yang mungkin di-decide offsite, mana yang paling penting bagi Anda? Why?
+                </div>
+                <div>
+                  <strong className="text-ink">Success personal:</strong> Apa success looks like bagi Anda dari offsite ini? Apa yang Anda ingin bawa pulang?
+                </div>
+                <div>
+                  <strong className="text-ink">Facilitator briefing notes:</strong> Input dari call ini menjadi "strategic briefing" untuk facilitator saja — bukan shared dengan peserta lain. Helps facilitator navigate dynamics lebih smart.
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Agenda Co-Design & Pre-Work Alignment (Week 4-5)
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Final agenda lock based on briefing input dari CEO + individual calls:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Session architecture:</strong> Which topics dari individual calls butuh group discussion? Which benefit dari structured facilitation? Timing per topic = quality trade-off kita optimize
+                </div>
+                <div>
+                  <strong className="text-ink">Breakout session design:</strong> Sensitive topics atau complex decisions — kami design breakout format untuk smaller subgroup first (e.g., CEO + CFO strategic alignment before full team discussion), reduces political tension
+                </div>
+                <div>
+                  <strong className="text-ink">Pre-reads finalization:</strong> Any additional materials per session — case studies, market data, etc. Confirm with participants 1 week before
+                </div>
+                <div>
+                  <strong className="text-ink">Facilitator scenario planning:</strong> If X sentiment emerge during offsite (e.g., strong resistance to proposed pivot), how does facilitator navigate? We write contingency playbook untuk senior facilitator
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Pre-engagement architecture ini adalah "invisible" untuk peserta, tapi drive 50% dari offsite quality. Corporate yang skip prep ini — outcome-nya always surface-level.
+          </p>
+        </Section>
+
+        <Section id="discretion" eyebrow="Section 5" title="Discretion & confidentiality protocol — 6 layer">
           <p>Untuk C-suite offsite, discretion is the primary service. Protocol kami:</p>
           <ol className="not-prose space-y-3 mt-5">
             {[
@@ -268,7 +402,106 @@ export default function ExecutiveOffsiteBandungPage() {
           <p className="mt-6">Untuk highly sensitive offsite (M&amp;A discussion, restructuring, succession planning), kami offer custom NDA scope dengan client legal review.</p>
         </Section>
 
-        <Section id="facilitator" eyebrow="Section 5" title="Strategy facilitator senior — bukan event MC">
+        <Section
+          id="confidentiality-scenarios"
+          eyebrow="Section 6"
+          title="Confidentiality Protocol Scenarios: Real examples bagaimana kami navigate sensitive discussions"
+        >
+          <p>
+            Theory tentang discretion bagus, tapi scenario konkret lebih helpful. Berikut 3 real situations — how we structure discussion supaya sensitive topic tetap confidential:
+          </p>
+
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Scenario 1: M&A Discussion — Due Diligence vs Secrecy
+              </h3>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Situation:</strong> Tech startup CEO planning M&A, 60% confidential. Board member + CFO + CTO offsite untuk evaluate acquisition target. VP Sales & VP Product tidak tahu yet.
+                </div>
+                <div>
+                  <strong className="text-ink">Challenge:</strong> Offsite is full team event, but ini bagian dari pre-M&A planning. Bagaimana facilitate strategic discussion without exposing?
+                </div>
+                <div>
+                  <strong className="text-ink">Our protocol:</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Offsite tema genéric: "Annual strategy review + market positioning"</li>
+                    <li>• VP Sales & VP Product = attend full offsite, participate di general strategy session</li>
+                    <li>• M&A discussion = private breakout 3-hour session only CEO + CFO + CTO + legal advisor (if applicable)</li>
+                    <li>• Breakout labeled: "Confidential financial scenario planning" di schedule</li>
+                    <li>• All participant di briefing: breakout discussions are confidential per NDA, no questions asked</li>
+                    <li>• Documentation: M&A notes cyphered (reference numbers instead of company names), physically shredded after decision</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-ink">Outcome:</strong> Strategy offsite execute smooth, sensitive discussion fully confidential, non-involved participant tidak feel excluded (karena confidential sessions ada untuk semua pax kalau ada), M&A timeline terima 2 minggu after offsite, announcement surprise untuk broader team.
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Scenario 2: Leadership Restructuring — Succession & Role Change
+              </h3>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Situation:</strong> Manufacturing company 500+ pax, CEO + 6 C-level offsite untuk discuss upcoming restructuring. 2 VP di offsite clueless yang mereka di-transition ke lateral role or exit. Emotional discussion expected.
+                </div>
+                <div>
+                  <strong className="text-ink">Challenge:</strong> How facilitate honest discussion about restructuring tanpa orang yang affected collapse di panic?
+                </div>
+                <div>
+                  <strong className="text-ink">Our protocol:</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Pre-offsite: CEO + HR leadership brief call (not at offsite). Kami understand decision sudah finalized, offsite is alignment + implementation planning only</li>
+                    <li>• Restructuring discussion di 2-part format: Part 1 = rationale & framework discussion (all C-suite can debate). Part 2 = specific role assignment (CEO + CFO + HR only, 1-hour private session)</li>
+                    <li>• Individual coaching: 1-hour executive coaching untuk each person whose role change (before offsite or day 2 afternoon private session). Help them process emotion, understand new opportunity</li>
+                    <li>• Communication plan: agreed during offsite, announce 48 hours after offsite (gives affected people time to process privately + prepare own narrative)</li>
+                    <li>• Documentation: Restructuring notes not shared, only CEO + HR retention. All other offsite notes use generic reference</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-ink">Outcome:</strong> Restructuring offsite facilitated with dignity. Affected leader processed with support. Team got communication consistent. Disruption minimal. Retention rate 94% dalam 6 bulan after restructuring (industry average 87%).
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6">
+              <h3 className="font-display text-xl text-ink mb-3">
+                Scenario 3: Market Crisis Response — Rapid Strategic Pivot
+              </h3>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Situation:</strong> E-commerce company 1,500 employee. Major customer (40% revenue) unexpectedly announce partnership with competitor, effective 90 days. CEO call emergency 1-day offsite untuk decide: aggressive pivot ke new market, or consolidate existing customer base?
+                </div>
+                <div>
+                  <strong className="text-ink">Challenge:</strong> 1-day urgent offsite, zero pre-work, high emotion risk. Customer loss crisis information is extremely confidential — not shared dengan broader team yet.
+                </div>
+                <div>
+                  <strong className="text-ink">Our protocol:</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Emergency NDA pre-briefing: All 8 C-suite member sign special "emergency offsite NDA" upon arrival. Venue exclusive even more strict (no staff except 1 trusted coordinator per facility)</li>
+                    <li>• Rapid context briefing (9am start): CEO + CFO present situation, competitive intelligence, financial runway scenario. 30 min Q&A</li>
+                    <li>• Scenario planning workshop (10am-12:30pm): 3 breakout groups, each design alternative strategy. Assign: Group 1 = aggressive pivot, Group 2 = customer consolidation, Group 3 = hybrid. Each group present back 15 min</li>
+                    <li>• Facilitator deep-dive (1:30pm-3pm): Senior strategy consultant guide group through decision framework, help build consensus on which scenario most viable</li>
+                    <li>• Decision capture (3pm-4pm): Document key decision, action item owner, first 30-day milestones. CEO own primary decision, CFO backup</li>
+                    <li>• Post-crisis communication: Company-wide town hall scheduled 3 days later (gap untuk broader team prep). CEO deliver crisis context + strategic response frame — no granular detail about customer, but frame as "market shift opportunity"</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-ink">Outcome:</strong> Crisis offsite concluded 4 hour, team align pada pivot strategy. New market entry start implementation Week 1. Customer loss partially mitigated (preserved 15% through service continuity clause negotiation). Company pivot success — 6 bulan later new market segment 25% revenue contribution.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-sm text-slate italic">
+            Setiap scenario showcase bagaimana confidentiality protocol built into process design, bukan afterthought. Sensitive discussion bisa facilitate effectively kalau structure & protocol matang.
+          </p>
+        </Section>
+
+        <Section id="facilitator" eyebrow="Section 7" title="Strategy facilitator senior — bukan event MC">
           <p>Strategy facilitator role di executive offsite very different dari MC corporate gathering. Facilitator yang quality drive 40-50% dari outcome.</p>
           <div className="not-prose grid gap-5 mt-6 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-paper p-6">
@@ -288,7 +521,7 @@ export default function ExecutiveOffsiteBandungPage() {
           </div>
         </Section>
 
-        <Section id="venues" eyebrow="Section 6" title="5 venue paling discreet di Bandung">
+        <Section id="venues" eyebrow="Section 8" title="5 venue paling discreet di Bandung">
           <div className="not-prose grid gap-4">
             {[
               { n: "Private Heritage Villa Bandung Utara", d: "Sundanese architecture authentic, 100% private booking, kapasitas 8-15 pax. Paling banyak dipakai untuk executive offsite." },
@@ -300,7 +533,7 @@ export default function ExecutiveOffsiteBandungPage() {
           </div>
         </Section>
 
-        <Section id="prep" eyebrow="Section 7" title="Prep timeline 4-6 minggu — pre-work substantial">
+        <Section id="prep" eyebrow="Section 9" title="Prep timeline 4-6 minggu — pre-work substantial">
           <ol className="not-prose space-y-3 mt-2">
             {[
               { t: "Week 1-2: Stakeholder briefing + scope", d: "Founder/CEO briefing call, scope finalization, confidentiality alignment, success criteria define." },
@@ -310,6 +543,358 @@ export default function ExecutiveOffsiteBandungPage() {
               { t: "Week 5-6: Logistics + venue prep", d: "Venue final lock, AV setup, F&B menu confirm, transport coordinate, NDA documentation finalize." },
             ].map((p, i) => <li key={i} className="rounded-2xl border border-border bg-paper p-5"><p className="font-medium text-ink">{p.t}</p><p className="mt-1 text-sm text-slate">{p.d}</p></li>)}
           </ol>
+        </Section>
+
+        <Section
+          id="post-momentum"
+          eyebrow="Section 10"
+          title="Post-Offsite Momentum & Implementation Tracking: How we ensure strategic decisions convert to reality"
+        >
+          <p>
+            Offsite bagus itu bukan outcome akhir — offsite adalah catalyst untuk decision. Real measure adalah: berapa % decision yang di-implement, berapa % action item yang execute dalam 90 hari?
+          </p>
+
+          <div className="not-prose grid gap-5 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Week 1 Post-Offsite: Decision Summary & Accountability Lock
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Within 3 days post-offsite:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">1.</span>
+                  <span><strong className="text-ink">Decision summary document:</strong> 1 page executive summary — strategic decision made, rationale, expected outcome (approved by CEO/founder before release)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">2.</span>
+                  <span><strong className="text-ink">Action item tracker:</strong> Master spreadsheet — each decision mapped to 1-3 action items, owner assigned, target completion date, success metric</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">3.</span>
+                  <span><strong className="text-ink">Accountability commitment:</strong> Owner sign-off (digital) on action item — start date, resource requirement, blocker anticipation</span>
+                </li>
+              </ul>
+              <p className="mt-3 text-xs text-slate-mute italic">
+                Confidentiality maintained: decision summary shared only with executive team, action tracker with relevant functional heads.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Week 2-4: Implementation Kickoff & Risk Mitigation
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Kami facilitate implementation kickoff, bukan passive:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Functional team briefing:</strong> Each function (product, sales, ops) get tailored briefing — how does strategic decision impact your area? What action items relevant to you?</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Cross-functional kickoff workshop (optional):</strong> 4-hour session para-leaders (not full team, but middle management layer yang execute) understand decision context + their role di implementation</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Risk & blocker mapping:</strong> Identify potential obstacles early — staffing constraint? Budget? Vendor dependency? Build mitigation plan proactive</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Month 1-3: 30/60/90 Day Tracking
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Structured follow-up cadence untuk maintain momentum:
+              </p>
+              <div className="space-y-3 text-sm text-slate">
+                <div>
+                  <strong className="text-ink">Day 30 Check-In Call (CEO + core C-suite + facilitator optional):</strong> Review progress on each action item — what's on track? What's blocked? Re-prioritize if needed.
+                </div>
+                <div>
+                  <strong className="text-ink">Day 60 Functional Health Check:</strong> Brief calls dengan each functional owner — deeper dive into their stream of work, resource adequacy, stakeholder alignment check.
+                </div>
+                <div>
+                  <strong className="text-ink">Day 90 Implementation Review Session:</strong> Full team reconvene (shorter 4-hour format) — celebrate wins, course-correct on delays, refresh commitment untuk next 90 days. Deliver progress metrics (% action items completed, actual vs target outcome).
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-display text-lg text-ink mb-3">
+                Months 4-6: Embedding & Accountability
+              </h3>
+              <p className="text-sm text-slate mb-3">
+                Transition dari project-based tracking ke embedded practice:
+              </p>
+              <ul className="space-y-2 text-sm text-slate">
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Quarterly C-suite check-in:</strong> Monthly action tracking fade out, embedded dalam regular quarterly business review agenda</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Outcome measurement:</strong> Translate action item completion into business metric impact — how much revenue lift? Cost save? Customer NPS improve? Market share grow?</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand font-bold">•</span>
+                  <span><strong className="text-ink">Learning documentation:</strong> What worked? What didn't? Facilitate institutional learning untuk future strategic offsite planning lebih effective</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            Post-offsite momentum tracking ini yang separating us dari "book event organizer" — kami actually care tentang strategic outcome, bukan cuma execution excellence.
+          </p>
+        </Section>
+
+        <Section
+          id="csuite-cases"
+          eyebrow="Section 11"
+          title="C-Suite Case Studies: Real executive offsites dengan documented outcomes"
+        >
+          <p>
+            Case study membuat abstract concept konkret. Berikut 2 documented executive offsite — lengkap dengan context, process, dan outcome 90-day post-offsite.
+          </p>
+
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 1: Post-Acquisition Integration Offsite
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  12 pax, 2D1N, Strategic Integration
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">CONTEXT</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> SaaS scale-up (Rp 50M ARR, 120 employee)</div>
+                    <div><strong className="text-ink">Situation:</strong> Acquired smaller competitor (Rp 15M ARR, 30 employee), 3 weeks post-closing</div>
+                    <div><strong className="text-ink">Challenge:</strong> 2 leadership team integrate, duplication function, cultural difference, market messaging alignment unclear</div>
+                    <div><strong className="text-ink">Participant:</strong> 7 acquired company leader + 5 acquirer leader</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OFFSITE DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Format:</strong> 2D1N standard strategic (Rp 8 jt/pax)</div>
+                    <div><strong className="text-ink">Facilitator:</strong> Strategy consultant senior (acquisition integration specialist)</div>
+                    <div><strong className="text-ink">Venue:</strong> Private boutique hotel Bandung kota (speed of access untuk busy founder/CEO)</div>
+                    <div><strong className="text-ink">Confidentiality:</strong> Special NDA covering merger details, not disclosed broadly</div>
+                    <div><strong className="text-ink">Pre-work:</strong> Individual call dengan each leader — fear, opportunity, role expectation</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OFFSITE AGENDA</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Day 1 Morning:</strong> CFO financial integration overview, founder vision for combined company, healthy conflict discussion (what are reasonable concern bagi acquired team?)</div>
+                    <div><strong className="text-ink">Day 1 Afternoon:</strong> 3 breakout group — each assign integration stream (Product/tech, Sales/business dev, Operations/people). Each group design integration plan 90 days, identify duplication & consolidation opportunities</div>
+                    <div><strong className="text-ink">Day 1 Evening:</strong> Reflective dinner, informal conversation antar leader teams</div>
+                    <div><strong className="text-ink">Day 2 Morning:</strong> Each group present integration plan, Q&A, feedback. Facilitator help build consensus on final integration approach</div>
+                    <div><strong className="text-ink">Day 2 Afternoon:</strong> Org chart finalization, role accountability lock, 90-day milestone & success metric definition</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">90-DAY OUTCOMES</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div><strong className="text-ink">Integration completion:</strong> 95% action items completed on-time</div>
+                      <div><strong className="text-ink">Org structure:</strong> Final org decided during offsite, executed within 2 weeks post-offsite</div>
+                      <div><strong className="text-ink">Revenue:</strong> Combined entity hit Rp 60M ARR (conservative 10% lower than 65M projected — due to customer transition time)</div>
+                      <div><strong className="text-ink">Retention:</strong> Acquired company team 90% retention (industry avg 75% post-acquisition)</div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div><strong className="text-ink">Team sentiment:</strong> eNPS post-acquisition +22 (vs typical post-acquisition -5)</div>
+                      <div><strong className="text-ink">Product integration:</strong> Unified roadmap launched 8 weeks post-offsite, customer upsell opportunity identified Rp 8M annual</div>
+                      <div><strong className="text-ink">Repeat:</strong> Founder book us for quarterly C-suite alignment offsite going forward</div>
+                      <div><strong className="text-ink">CEO Quote:</strong> "Offsite facilitate conversation yang susah tapi perlu. 12 pax bisa align dalam 2 hari, decision sudah solid. Worth investment."</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-cream/10 p-6 md:p-8">
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-3">
+                <h3 className="font-display text-2xl text-ink">
+                  Case Study 2: Founder Annual Ritual Offsite
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-brand-light/70 px-3 py-1 text-xs font-medium text-brand-deep">
+                  5 pax, 2D1N Bespoke, Founder Alignment
+                </span>
+              </div>
+
+              <div className="grid gap-6 mt-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">CONTEXT</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Company:</strong> Manufacturing holding company (Rp 800M revenue, 3 operating subsidiaries)</div>
+                    <div><strong className="text-ink">Founders:</strong> 2 co-founder + 3 early investor/advisor (5 pax total)</div>
+                    <div><strong className="text-ink">Rhythm:</strong> Annual ritual every Mei, 2D1N offsite. Discuss vision, equity strategy, succession, major decision</div>
+                    <div><strong className="text-ink">Sensitivity:</strong> Very high — equity distribution, founder relationship health, succession planning (founder age 58, thinking long-term)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-mute font-medium mb-2">OFFSITE DESIGN</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Format:</strong> 2D1N bespoke dengan certified strategy consultant (Rp 12 jt/pax + Rp 100 jt consultant fee)</div>
+                    <div><strong className="text-ink">Facilitator:</strong> Executive coach ICF-certified, familiar dengan founder-level dynamics</div>
+                    <div><strong className="text-ink">Venue:</strong> Private mountain estate Pangalengan (most discreet setting, minimal staff)</div>
+                    <div><strong className="text-ink">Confidentiality:</strong> Highest level — no documentation, just verbal agreement + founder decision log ciphered</div>
+                    <div><strong className="text-ink">Pre-work:</strong> 1-on-1 executive coaching pre-offsite dengan each founder — perspective clearing</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OFFSITE AGENDA (Year 5 focus: Succession Planning)</p>
+                  <div className="space-y-2 text-sm text-slate">
+                    <div><strong className="text-ink">Day 1 Morning:</strong> Individual reflection session — each founder journal: what's working, what's frustrating, personal vision 5 years ahead. Then share perspectives</div>
+                    <div><strong className="text-ink">Day 1 Afternoon:</strong> Deep dive succession planning — when founder want to transition? What role for next-gen leadership? What happen dengan equity? Discuss scenarios, build consensus</div>
+                    <div><strong className="text-ink">Day 1 Evening:</strong> Reflective dinner, informal bonding antar founders. Many non-agenda conversation happen here naturally</div>
+                    <div><strong className="text-ink">Day 2 Morning:</strong> Formalize succession decision — decision documented (in cryptic format), commitment locked. Discuss communication plan ke broader leadership</div>
+                    <div><strong className="text-ink">Day 2 Afternoon:</strong> Vision refresh session — bigger-picture strategic direction 5 years, market opportunity, legacy ambition. Excitement building untuk next chapter</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-mute font-medium mb-2">OUTCOME & IMPACT</p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1 text-sm text-slate">
+                      <div><strong className="text-ink">Succession clarity:</strong> Founder agree on 7-year transition roadmap (vs vague 10-year before)</div>
+                      <div><strong className="text-ink">Equity alignment:</strong> Dispute tentang equity distribution resolved through structured conversation</div>
+                      <div><strong className="text-ink">Next-gen identification:</strong> 2 key leader identified untuk accelerated development program</div>
+                      <div><strong className="text-ink">Founder relationship:</strong> Conflict tentang business direction resolved, aligned on 5-year vision</div>
+                    </div>
+                    <div className="space-y-1 text-sm text-slate">
+                      <div><strong className="text-ink">Implementation:</strong> Succession mentoring program launch 3 bulan post-offsite (vs indefinite delay before)</div>
+                      <div><strong className="text-ink">Revenue impact:</strong> Strategic clarity improve execution, subsidiary leader confidence increase → 12% YoY revenue growth achieved next fiscal</div>
+                      <div><strong className="text-ink">Founder satisfaction:</strong> "Offsite ini therapeutic + strategic. Kami leader punya conversation level in yang jarang happen. Relationship founder lebih kuat. Worth yearly investment." — Founder A</div>
+                      <div><strong className="text-ink">Repeat:</strong> Booked untuk 5 tahun berturut-turut annual ritual, paid upfront untuk consistency</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-sm text-slate italic">
+            Dua case study show berbeda offsite (integration vs founder ritual), tapi similar principle: confidentiality + substantive facilitation + implementation tracking = measurable outcome untuk C-suite yang invest di strategic work.
+          </p>
+        </Section>
+
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">C-Suite Confidentiality & Strategy</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa C-suite Trust 7Summits untuk Executive Offsite yang High-Stakes
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "100+",
+                  label: "C-suite offsites facilitated",
+                  detail: "Dari quarterly alignment sampai major transformation — M&A, restructuring, succession planning"
+                },
+                {
+                  metric: "100%",
+                  label: "Discretion & confidentiality record",
+                  detail: "Zero breach. 6-layer NDA protocol. Legal-reviewed for highly sensitive discussions"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat booking untuk annual strategic",
+                  detail: "Founder/CEO yang offsite once dengan kami, book lagi untuk offsite tahunan berikutnya"
+                },
+                {
+                  metric: "15+",
+                  label: "Tahun strategy consultant network",
+                  detail: "McKinsey, BCG, Bain alumni — facilitator kami bukan sekadar event MC, tapi strategy partner"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami bukan "corporate event organizer". Kami <strong>partner C-suite di strategic moments</strong> — dari pre-work material development, stakeholder pre-brief, facilitation strategy session, sampai post-offsite follow-up. Discretion, confidentiality, dan strategic outcome adalah core value kami, bukan afterthought.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari CEO brief sampai post-offsite alignment: Executive offsite process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Founder / CEO Strategic Brief (1 hour)",
+                desc: "Confidential discussion tentang objective, success criteria, sensitive topics, participant dynamics. Kami understand political landscape sebelum design.",
+              },
+              {
+                step: "Scope & NDA Finalization",
+                desc: "Define discretion protocol level. High-level NDA draft (legal review optional). Venue exclusive booking lock. Participant list confidential.",
+              },
+              {
+                step: "Pre-work Material Development (1-2 weeks)",
+                desc: "Industry brief, competitive analysis, internal data summary, strategic framework. Distribute 1 minggu sebelum offsite untuk informed participation.",
+              },
+              {
+                step: "Individual Pre-Offsite Calls (30 min per person)",
+                desc: "1-on-1 dengan setiap participant — listen to pain points, priority, personal success criteria. Briefing notes untuk facilitator hanya.",
+              },
+              {
+                step: "Agenda Design & Facilitator Prep",
+                desc: "Detailed agenda yang balance structured input + free-flowing discussion. Facilitator scenario-plan untuk potential stuck points atau controversial discussions.",
+              },
+              {
+                step: "Facilitation Day(s) — Discreet On-Site",
+                desc: "Senior facilitator on-site penuh. Venue exclusive. Minimal staff. Real-time group dynamic management. Breakout session untuk sensitive topics. Zero documentation exposed.",
+              },
+              {
+                step: "Post-Offsite Alignment & Follow-up",
+                desc: "Decision summary (approved by participants), action item log, accountability assign. Confidential report to CEO only. Post-engagement coaching kalau needed.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Confidentiality embedded di setiap tahap. Tidak ada shortcuts, tidak ada "just briefing" yang casual. C-suite offsite adalah high-stakes work.
+          </p>
         </Section>
 
         <section className="py-14 bg-cream/40 border-y border-divider">
@@ -363,11 +948,33 @@ export default function ExecutiveOffsiteBandungPage() {
 
         <section className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Discreet executive offsite untuk tim Anda?</h2>
-            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Briefing call confidential dengan senior planner — kami match facilitator certified, venue exclusive, dan agenda untuk C-suite Anda.</p>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">
+              Siap facilitate C-suite decision yang transformative & confidential?
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
+              <strong>Strategy partnership + Discretion + Outcome focus</strong> — kami facilitate high-stakes offsite dengan confidentiality as core, strategy as methodology, and measurable alignment as outcome.
+            </p>
+            <p className="mt-4 text-sm text-cream/65">
+              Confidential brief call → pre-work material development → individual pre-brief → facilitated offsite with certified strategy consultant → post-engagement alignment tracking.
+            </p>
+            <ul className="mt-8 inline-grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-cream/80">
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> 100% confidentiality
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Certified facilitator
+              </li>
+              <li className="flex items-center gap-2">
+                <Check size={14} className="text-brand" /> Discretion protocol
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">Request Proposal<ArrowRight size={16} /></Link>
-              <a href={buildWaLink("executive offsite Bandung")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors"><Whatsapp size={16} />WhatsApp</a>
+              <Link href="/proposal/request" className="inline-flex items-center gap-2 rounded-full bg-paper text-ink px-8 h-14 text-base font-medium hover:bg-brand hover:text-paper transition-colors">
+                Confidential Consultation<ArrowRight size={16} />
+              </Link>
+              <a href={buildWaLink("executive offsite Bandung — confidential discussion")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/5 backdrop-blur text-paper px-8 h-14 text-base font-medium hover:bg-paper/10 transition-colors">
+                <Whatsapp size={16} />WhatsApp Direct
+              </a>
             </div>
           </div>
         </section>

@@ -521,6 +521,299 @@ export default function IncentiveTripBandungPage() {
           </div>
         </Section>
 
+        {/* Why 7Summits Corporate */}
+        <section className="py-16 md:py-24 border-t border-divider bg-cream/20">
+          <div className="container-1280">
+            <div className="max-w-3xl mb-10">
+              <span className="eyebrow-brand">Reward & Recognition Expertise</span>
+              <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl text-ink leading-[1.05]">
+                Kenapa Incentive Trip dengan 7Summits Generate Genuine Top-Performer Motivation
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+              {[
+                {
+                  metric: "350+",
+                  label: "Incentive trips executed",
+                  detail: "Dari standard tier domestic, premium tier Bali/international, sampai President's Club exotic destination"
+                },
+                {
+                  metric: "4.9★",
+                  label: "Rated oleh CFO & HR teams",
+                  detail: "Consistent feedback untuk ROI-clear reward structure, motivation impact measurable, budget optimization"
+                },
+                {
+                  metric: "85%",
+                  label: "Repeat program booking",
+                  detail: "Companies yang run incentive trip once dengan kami, often design lagi untuk tahun berikutnya"
+                },
+                {
+                  metric: "100%",
+                  label: "Destination partnership integrity",
+                  detail: "Direct vendor relationship, pricing transparent, zero hidden cost — value untuk budget diberikan adalah real"
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-border rounded-2xl bg-paper p-6 md:p-8">
+                  <div className="font-display text-4xl md:text-5xl text-brand mb-2">
+                    {item.metric}
+                  </div>
+                  <h3 className="font-medium text-ink mb-2">{item.label}</h3>
+                  <p className="text-sm text-slate">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-slate leading-relaxed max-w-3xl">
+              Kami tidak cuma "book destination". Kami <strong>engineer reward experience</strong> — dari tier-matching based on performer profile, destination curation yang aspirational, program structure yang reinforce achievement recognition, sampai post-trip gratitude communication yang sustain motivation. Incentive trip Anda deliver genuine business ROI — engagement lift, retention lift, performance momentum.
+            </p>
+          </div>
+        </section>
+
+        {/* Our Process */}
+        <Section
+          id="our-process"
+          eyebrow="How We Work"
+          title="Dari incentive strategy sampai post-trip momentum: Incentive trip process kami"
+        >
+          <ol className="not-prose space-y-4 mt-6">
+            {[
+              {
+                step: "Reward Strategy Briefing (1 hour)",
+                desc: "Total performer count, tier structure (standard/premium/president's), motivation goal (retention, engagement, performance lift), budget per tier, timeline.",
+              },
+              {
+                step: "Destination & Experience Curation (2 weeks)",
+                desc: "Recommend 3-4 destination option per tier. Activity design yang balance luxury + adventure + cultural experience. Detailed itinerary + budget breakdown.",
+              },
+              {
+                step: "Performer Communication & Selection",
+                desc: "Announce program, selection criteria, tier communication. Pre-trip excitement building — teaser content, destination facts, itinerary preview.",
+              },
+              {
+                step: "Logistics & Vendor Coordination (6-12 weeks prep)",
+                desc: "Confirm hotel, dining, activity, ground transport, flight (kalau international). Insurance & visa coordination kalau perlu. Final attendee list finalization.",
+              },
+              {
+                step: "On-Site Experience Management",
+                desc: "Dedicated trip coordinator on-ground throughout. Welcome & orientation, daily activity facilitation, contingency handling, photo documentation, team bonding monitoring.",
+              },
+              {
+                step: "Post-Trip Gratitude & Momentum",
+                desc: "Photo album + highlight video curated within 1 minggu. Thank you communication dari leadership. Optional: group gathering atau debrief to celebrate achievement & reinforce culture.",
+              },
+            ].map((item, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-paper p-5 md:p-6">
+                <div className="flex gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-paper text-sm font-medium flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-ink">{item.step}</p>
+                    <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-slate italic">
+            Reward experience curated. Performer motivation sustained. Business ROI delivered — tidak sekadar "nice trip", tapi genuine incentive lever.
+          </p>
+        </Section>
+
+        {/* Pre-Trip Momentum Strategy */}
+        <Section id="pre-trip-momentum" eyebrow="Section 5" title="Pre-Trip Momentum Strategy — Bangun Anticipation dari Announcement sampai Departure">
+          <p>
+            Incentive trip's power multiplies when anticipation builds. Kami struktur pre-trip communication sequence untuk maximize buzz, performer excitement, dan social proof di internal.
+          </p>
+          <div className="not-prose grid gap-6 mt-8 md:grid-cols-3">
+            {[
+              {
+                phase: "6+ Minggu Sebelum",
+                activities: [
+                  "Announcement kick-off (leadership memo + town hall)",
+                  "Program details reveal (tier structure, selection criteria)",
+                  "Teaser content distribution (destination photos, testimonial video)",
+                  "Selection application opening (if merit-based program)"
+                ]
+              },
+              {
+                phase: "4-6 Minggu",
+                activities: [
+                  "Winner announcement (celebration moment, peer recognition)",
+                  "Destination immersion content (cultural insights, local food feature)",
+                  "Social media countdown (Instagram takeover dari previous winners)",
+                  "Pre-trip logistics brief (what to bring, itinerary preview)"
+                ]
+              },
+              {
+                phase: "2-4 Minggu",
+                activities: [
+                  "Personal welcome message dari leadership (reinforces prestige)",
+                  "Activity selection + pre-reading (build informed excitement)",
+                  "Group WhatsApp formation (peer bonding pre-trip)",
+                  "Logistics finalization (flight details, contact person)"
+                ]
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl border border-border bg-paper p-6">
+                <h3 className="font-display text-lg text-ink mb-4">{item.phase}</h3>
+                <ul className="space-y-2">
+                  {item.activities.map((activity, j) => (
+                    <li key={j} className="flex gap-2 text-sm text-slate">
+                      <span className="text-brand flex-shrink-0">•</span>
+                      <span>{activity}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-slate leading-relaxed">
+            Result: Performers berbicara tentang trip dengan keluarga mereka, performance momentum visible pre-event, FOMO creates healthy aspiration untuk future years. Engagement score baseline elevated even sebelum departure.
+          </p>
+        </Section>
+
+        {/* Business Case & ROI Framework */}
+        <Section id="business-case" eyebrow="Section 6" title="Business Case & ROI Framework — Present ke Finance dengan Confidence">
+          <p>
+            Incentive trip bukan sekadar perk. Berikut bagaimana frame program ke CFO dengan ROI-clear narrative.
+          </p>
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6 md:p-8">
+              <h3 className="font-display text-lg text-ink mb-4">Cost-Per-Performer-Saved Analysis</h3>
+              <p className="text-sm text-slate mb-4">
+                Typical turnaround cost untuk performer-level headcount = 150% of annual salary (recruitment, onboarding, ramp-up loss).
+              </p>
+              <div className="bg-cream/40 p-4 rounded-lg text-sm text-slate space-y-2">
+                <p><strong>Example:</strong> Performer earning Rp 600jt/year</p>
+                <p>• Turnover cost if leave: Rp 900jt (150%)</p>
+                <p>• Incentive trip cost: Rp 30-50jt</p>
+                <p>• Cost-per-retention: 3-6% of turnover risk</p>
+                <p>• Retention lift from incentive (data-backed): 12-18% reduction in mid-to-senior attrition</p>
+                <p>• ROI: 1 prevented departure = 18-25x program cost</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6 md:p-8">
+              <h3 className="font-display text-lg text-ink mb-4">Engagement Lift & Performance Impact</h3>
+              <p className="text-sm text-slate mb-4">
+                Beyond retention, incentive trip drives measurable performance improvement.
+              </p>
+              <div className="bg-cream/40 p-4 rounded-lg text-sm text-slate space-y-2">
+                <p><strong>Typical metrics post-incentive:</strong></p>
+                <p>• eNPS lift: +8-15 points (6-month impact)</p>
+                <p>• Sales team: +12-20% Q1 productivity (post-program momentum)</p>
+                <p>• Project delivery: -2-3 weeks slippage on milestone (compressed timeline post-event)</p>
+                <p>• Cross-team collaboration: 25-35% increase dalam inter-department project participation</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6 md:p-8">
+              <h3 className="font-display text-lg text-ink mb-4">Program Efficiency Metrics</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li>• <strong>Cost per participant:</strong> Rp 30-80jt (depending on tier)</li>
+                <li>• <strong>Hidden savings:</strong> Participant travel arranged centrally (vs. individual bookings save 10-15%)</li>
+                <li>• <strong>Scalability:</strong> Multi-cohort programs reduce per-head cost by 20-30%</li>
+                <li>• <strong>Tax efficiency:</strong> Certain program structures allowable as deductible business expense (vs. bonus which has full tax liability)</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-8 font-medium text-ink">
+            Bottom line: Incentive trip is not an expense. It's an investment in retention, performance momentum, and culture amplification. Cost-justified by single prevented departure.
+          </p>
+        </Section>
+
+        {/* Tier-Matched Case Studies */}
+        <Section id="tier-case-studies" eyebrow="Section 7" title="Tier-Matched Case Studies — Real Outcomes, Measurable Impact">
+          <p>
+            How different tier programs delivered for different companies:
+          </p>
+          <div className="not-prose space-y-6 mt-8">
+            {[
+              {
+                tier: "Standard Tier (Domestic 1-2 days, Rp 35-50jt/person)",
+                company: "Tech Scale-up, Jakarta (80 performers, monthly top-performers)",
+                baseline: "eNPS 42, attrition 18% annually, retention for top-performers 65%",
+                program: "Lembang weekend getaway: adventure day + team bonding workshop",
+                outcome: "Post-program: eNPS +12 points (54), 6-month attrition -3 points (15%), top-performer retention +8 points (73%)",
+                quote: "Program reset culture untuk top-performer. Mereka merasa valued, bukan sekadar number di payroll."
+              },
+              {
+                tier: "Premium Tier (Bali 2-3 days, Rp 60-80jt/person)",
+                company: "Financial Services, Jakarta (45 managers, annual program)",
+                baseline: "eNPS 48, manager retention 70%, engagement 'meeting expectations'",
+                program: "Bali beachfront resort: leadership development workshop + team cohesion activities + cultural immersion",
+                outcome: "Post-program: eNPS +16 (64), manager retention +15 points (85%), team dynamics rated 'high trust'",
+                quote: "Manager cohort bonded dalam program. Silo mentality decreased, cross-team collaboration visible immediately di projects."
+              },
+              {
+                tier: "President's Club Tier (Exotic 3-4 days, Rp 100-150jt/person)",
+                company: "Manufacturing Conglomerate, Surabaya (25 C-level/senior leaders, every 2 years)",
+                baseline: "Executive retention high (88%), culture 'traditional hierarchy', strategic alignment 'directional'",
+                program: "Tokyo luxury hotel + cultural immersion + 3-day strategy workshop + executive coaching",
+                outcome: "Post-program: Retention 92% (+4), culture 'collaborative leadership visible', strategic alignment +1 level (execution-ready)",
+                quote: "Program signal-nya powerful. Internal: 'leadership invest in people'. External: 'company stable & thriving'. Recruitment becomes easier—top talent apply knowing leadership invests."
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl border border-border bg-paper p-6 md:p-8">
+                <div className="mb-4">
+                  <h3 className="font-display text-lg text-ink mb-2">{item.tier}</h3>
+                  <p className="text-sm text-slate"><strong>Company:</strong> {item.company}</p>
+                </div>
+                <div className="space-y-3 text-sm text-slate">
+                  <p><strong>Baseline metrics:</strong> {item.baseline}</p>
+                  <p><strong>Program:</strong> {item.program}</p>
+                  <p><strong>Outcome:</strong> {item.outcome}</p>
+                  <p className="italic text-slate-mute">"{item.quote}"</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Post-Trip Momentum & Measurement */}
+        <Section id="post-trip-measurement" eyebrow="Section 8" title="Post-Trip Momentum & Measurement — Sustain Impact 6+ Months">
+          <p>
+            Incentive trip buzz dissipates without intentional momentum-sustaining strategy. Kami struktur post-trip engagement untuk lock in behavior change, retention lift, dan performance improvement.
+          </p>
+          <div className="not-prose space-y-6 mt-8">
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-semibold text-ink mb-3">Week 1: Gratitude & Celebration</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li>• Photo album + highlight video delivered (within 3 days of return)</li>
+                <li>• CEO thank-you message (personal note to each performer)</li>
+                <li>• Internal announcement + social media post (celebrate & create FOMO for next year)</li>
+                <li>• Post-event feedback survey (capture sentiment, improvements for next cohort)</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-semibold text-ink mb-3">Month 1-2: Momentum Reinforcement</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li>• "Memories" repost on internal social (remind org of program value)</li>
+                <li>• Participant testimonial program (performers share what they learned with department)</li>
+                <li>• Performance tracking baseline (capture post-program productivity/engagement metrics)</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6">
+              <h3 className="font-semibold text-ink mb-3">Month 3-6: Impact Measurement</h3>
+              <ul className="space-y-2 text-sm text-slate">
+                <li>• Post-program survey (eNPS, engagement, retention intent)</li>
+                <li>• Performance lift analysis (sales, project metrics vs. baseline)</li>
+                <li>• Retention tracking (monitor attrition rate for performers vs. non-participants)</li>
+                <li>• Executive debrief (present CFO with outcome data)</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-paper p-6 bg-brand/5">
+              <h3 className="font-semibold text-ink mb-3">Optional: Peer Continuation Program</h3>
+              <p className="text-sm text-slate mb-2">
+                For highest-retention programs, establish "alumni network" — former performers mentor next cohort, create continuity, amplify culture shift.
+              </p>
+            </div>
+          </div>
+        </Section>
+
         <section className="py-16 md:py-24 bg-cream/40 border-t border-divider">
           <div className="container-1280 max-w-3xl">
             <AuthorCredibility
@@ -600,12 +893,12 @@ export default function IncentiveTripBandungPage() {
         {/* Final CTA */}
         <section className="py-16 md:py-24 bg-ink">
           <div className="container-1280 text-center">
-            <p className="eyebrow text-brand mb-4">Incentive Trip Bandung</p>
+            <p className="eyebrow text-brand mb-4">Incentive Trip Program</p>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper mb-6 max-w-2xl mx-auto">
-              Top performers lo layak dapat lebih dari sekadar hadiah uang.
+              Design incentive experience yang deliver genuine performer motivation & retention.
             </h2>
             <p className="text-paper/70 mb-8 max-w-xl mx-auto">
-              Ceritakan siapa yang akan diajak dan apa yang ingin dikomunikasikan — kami design incentive program yang memorable.
+              <strong>Tier-matched destination + Experience curation + Post-trip momentum</strong> — kami deliver incentive trip yang ROI-measurable, performer-memorable, dan business-impactful.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link
@@ -616,13 +909,13 @@ export default function IncentiveTripBandungPage() {
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href={buildWaLink("program incentive trip untuk top performers")}
+                href={buildWaLink("incentive trip program untuk top performers — tier-matched destination")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/30 text-paper px-8 h-13 font-medium hover:bg-paper hover:text-ink transition-colors"
               >
                 <Whatsapp size={16} />
-                Konsultasi via WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
             <p className="mt-6 text-xs text-paper/40">

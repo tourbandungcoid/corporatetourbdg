@@ -1718,6 +1718,150 @@ const INSIGHTS: Record<string, Insight> = {
       ],
     },
   },
+
+  "how-to-measure-roi-corporate-event": {
+    slug: "how-to-measure-roi-corporate-event",
+    title: "Cara Mengukur ROI Corporate Event — Dari Kualitatif ke Kuantitatif",
+    excerpt: "ROI corporate event bukan 'peserta senang' — tapi retention impact, engagement lift, productivity gain. Framework measurement untuk CFO approval.",
+    metaDescription: "Cara mengukur ROI corporate event — AG ROI Model dari TourBandung Corporate untuk retention impact & productivity measurement.",
+    category: "Measurement",
+    tldr: [
+      "70% perusahaan track event success dengan 'peserta enjoyed' — qualitative. CFO butuh numbers.",
+      "AG ROI Model: Retention saving + Productivity lift + Culture impact = Total ROI calculated dari data existing (HR analytics, payroll).",
+      "Typical event ROI 1.6x–3.5x dari 400+ events — funded sendiri dalam 6–12 bulan via retention saving dari attrition reduction.",
+      "Measurement pre-event (baseline eNPS, attrition) dan post-event (3-month, 6-month tracking) adalah requirement untuk ROI calculation valid.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-29",
+    readTimeMin: 8,
+    author: { name: "Finance & Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "CFO pertanyaan: 'Event ini worthwhile berapa ROI-nya?' Banyak perusahaan tidak track — percaya event 'penting' untuk culture, tapi tidak bisa quantify impact.",
+          "Dari 400+ event, kami develop AG ROI Model untuk translate corporate event investment jadi CFO-friendly numbers. Outcome: retention impact, engagement lift, productivity gain — semuanya terukur dari existing data.",
+        ],
+      },
+      {
+        heading: "Traditional Metrics Miss the Point",
+        paragraphs: [
+          "Event organizer track: 'attendance 98%', 'satisfaction 4.5/5', 'NPS +8'. Valid tapi incomplete.",
+          "CFO perlu: 'Berapa orang tidak akan resign tahun depan? Berapa cost saving dari reduced recruitment?' — business impact, bukan sentiment.",
+        ],
+      },
+      {
+        heading: "AG ROI Model — Retention + Productivity + Culture",
+        paragraphs: [
+          "3 komponen terukur dari data existing:",
+        ],
+        numbered: [
+          "Retention Saving = Attrition reduction % × Salary × Tenure cost. Example: 100 orang, attrition 20%→15%, 5 saved × Rp 72jt = Rp 360jt.",
+          "Productivity Lift = Hours saved/month × Hourly rate × Duration. Example: 10 hours/month/person × 100 pax × Rp 100k × 6 months = Rp 600jt.",
+          "Culture Impact = eNPS lift × Recruitment cost if resigned. Example: +15 pts → prevent 3 resignations × Rp 100jt = Rp 300jt soft.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/pricing", label: "BOTS™ Pricing", description: "4-tier transparent pricing — Foundation to Bespoke." },
+      { href: "/proposal/request", label: "Request Proposal", description: "Custom proposal dengan ROI measurement built-in." },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor"],
+  },
+
+  "corporate-event-budget-breakdown": {
+    slug: "corporate-event-budget-breakdown",
+    title: "Corporate Event Budget Breakdown — Venue 35%, F&B 25%, Activity 20%, Logistics 15%, Contingency 5%",
+    excerpt: "Budget Rp 300jt untuk 200 pax — kemana perginya? Realistic cost allocation breakdown per line item untuk corporate outing, gathering, retreat.",
+    metaDescription: "Corporate event budget breakdown — transparent cost allocation, hidden costs, economies of scale. TourBandung pricing reference.",
+    category: "Budget Planning",
+    tldr: [
+      "Corporate event budget tidak linear — Rp 2jt/pax bukan 2× dari Rp 1jt/pax. Economies of scale + fixed cost distribution.",
+      "Standard breakdown: Venue 35%, F&B 25%, Activity 20%, Logistics 15%, Contingency 5% — varies per tier & format.",
+      "Hidden costs overlooked: pre-event travel, post-event report production, contingency untuk force majeure, permits, insurance.",
+      "Vendor negotiation across 3–5 options saves 15–25% markup. Specialist EO advantage dari direct vendor relationships.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-29",
+    readTimeMin: 7,
+    author: { name: "Finance Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "CFO ask: 'Rp 300jt untuk 200 pax — reasonable?' Depends on tier. Rp 1.5jt/pax (basic) vs Rp 4.5jt/pax (premium) adalah spektrum normal.",
+          "Key: event budget tidak linear. Rp 2jt/pax bukan 2× dari Rp 1jt/pax — fixed cost (planning, PM) spread across pax.",
+        ],
+      },
+      {
+        heading: "Mid-Tier Breakdown Example (Rp 2.5jt/pax, 150 pax = Rp 375jt total)",
+        paragraphs: [
+          "Breakdown konkret per line item:",
+        ],
+        numbered: [
+          "Venue 35% (Rp 131jt): Resort premium atau villa cluster 2 malam. Includes rooms, communal space, parking.",
+          "F&B 25% (Rp 94jt): Arrival snack + 2 breakfasts + 2 lunches + 2 dinners + daily breaks. Rp 400–600k/person/day.",
+          "Activity 20% (Rp 75jt): 2–3 organized activities + optional talent (band, DJ, facilitator).",
+          "Logistics 15% (Rp 56jt): Transport, photographer, videographer, sound equipment, insurance, permits.",
+          "Planning & PM 5% (Rp 19jt): Senior planner 10–15 hours coordination.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/pricing", label: "BOTS™ Pricing", description: "4-tier breakdown with line-item details." },
+    ],
+    relatedSlugs: ["how-to-measure-roi-corporate-event"],
+  },
+
+  "corporate-event-timeline-planning-checklist": {
+    slug: "corporate-event-timeline-planning-checklist",
+    title: "Corporate Event Timeline & Checklist — 12 Weeks Standard dari Brief sampai Post-Event Report",
+    excerpt: "12-minggu planning timeline untuk Foundation tier. Mingguan checklist dari brief clarity sampai vendor confirmation sampai execution smooth.",
+    metaDescription: "Corporate event timeline & planning checklist — 12-week framework dari TourBandung Corporate. Week-by-week checklist prevent missed items.",
+    category: "Planning",
+    tldr: [
+      "Foundation 8–12 minggu. Signature 12–16 minggu. Kurang 8 minggu → scope reduction atau risk increase.",
+      "Critical path: Brief (week 1) → Vendor selection (week 3) → Proposal finalization (week 6) → Logistics (week 10) → Execution.",
+      "80% execution quality determined in first 6 weeks (brief clarity, vendor selection). Last 6 weeks = fine-tuning & contingency.",
+      "Checklist per minggu prevent 3–5 day-of stress items. Tanpa checklist, forgotten details = execution chaos.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-05-29",
+    readTimeMin: 10,
+    author: { name: "Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Dari 400+ events: smooth execution selalu dari structured timeline & checklist. Chaotic execution = rushed planning atau skipped steps.",
+          "Standard 12-minggu timeline untuk Foundation/Elevated tier (16 minggu untuk Signature/Bespoke).",
+        ],
+      },
+      {
+        heading: "Weeks 1–6: Brief → Proposal → Signed Contract",
+        paragraphs: [
+          "Foundation phase — objective clarity, vendor selection, financial approval.",
+        ],
+        numbered: [
+          "Week 1–2: Briefing (60–90 min), document requirements, present format recommendation.",
+          "Week 3–4: Scout 3–5 venues, negotiate rates, client choose & lock contract.",
+          "Week 5–6: Design activities & menu, prepare proposal, client sign + 30% deposit due.",
+        ],
+      },
+      {
+        heading: "Weeks 7–12: Logistics → Execution → Post-Event",
+        paragraphs: [
+          "Execution phase — vendor confirmation, contingency planning, event day + deliverables.",
+        ],
+        numbered: [
+          "Week 7–8: Final headcount, dietary confirmation, transportation locked, vendors briefed.",
+          "Week 9–10: Venue walkthrough, contingency plan, insurance confirmed, 70% payment due.",
+          "Week 11–12: Team briefing, event execution, photo/video delivery, report summary.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/proposal/request", label: "Request Proposal", description: "We handle timeline & checklist for you." },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "corporate-event-budget-breakdown"],
+  },
 };
 
 export function getAllInsightSlugsStatic(): string[] {
