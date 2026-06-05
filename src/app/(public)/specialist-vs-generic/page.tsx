@@ -34,6 +34,9 @@ export default function SpecialistVsGenericPage() {
     articleSchema({
       headline: "Specialist vs Generic Event Organizer — Perbedaan Fundamental",
       description: metadata.description!,
+      image: `${SITE.url}/opengraph-image`,
+      datePublished: "2026-01-01",
+      dateModified: "2026-06-01",
       slug: "/specialist-vs-generic",
       authorName: "TourBandung Corporate",
       authorJobTitle: "B2B Corporate Event Specialist",

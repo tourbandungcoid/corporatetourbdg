@@ -149,9 +149,9 @@ export function articleSchema({
 }: {
   headline: string;
   description: string;
-  image: string;
-  datePublished: string;
-  dateModified: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
   slug: string;
   authorName?: string;
   authorJobTitle?: string;
@@ -165,14 +165,17 @@ export function articleSchema({
       }
     : { "@type": "Organization", name: SITE.legalName, url: SITE.url };
 
+  const resolvedImage = image ?? `${SITE.url}/opengraph-image`;
+  const resolvedDate = datePublished ?? new Date().toISOString().split("T")[0];
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline,
     description,
-    image,
-    datePublished,
-    dateModified,
+    image: resolvedImage,
+    datePublished: resolvedDate,
+    dateModified: dateModified ?? resolvedDate,
     inLanguage: "id-ID",
     author,
     publisher: {
