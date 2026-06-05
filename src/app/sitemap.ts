@@ -40,6 +40,7 @@ const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/methodology", priority: 0.85, changeFrequency: "monthly" },
   { path: "/glossary", priority: 0.7, changeFrequency: "monthly" },
   { path: "/specialist-vs-generic-eo", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/transparent-pricing-model", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pricing", priority: 0.9, changeFrequency: "monthly" },
   // Company
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },

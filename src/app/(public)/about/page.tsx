@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Check } from "@/components/icons/Icons";
 import { SITE, STATS } from "@/lib/site";
 import { IMAGES } from "@/lib/drive-images";
+import { TEAM } from "@/lib/team-data";
 import {
   JsonLd,
   combineSchemas,
@@ -12,6 +13,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   reviewSchema,
+  personSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -67,7 +69,16 @@ export default function AboutPage() {
       url: `${SITE.url}/about`,
       inLanguage: "id-ID",
       about: { "@type": "Organization", name: "7Summits Travel" },
-    }
+    },
+    ...TEAM.map((m) =>
+      personSchema({
+        name: m.name,
+        jobTitle: m.jobTitle,
+        description: m.bioLong,
+        slug: `/team/${m.slug}`,
+        sameAs: m.linkedinUrl ? [m.linkedinUrl] : undefined,
+      })
+    )
   );
 
   return (

@@ -1811,6 +1811,289 @@ const INSIGHTS: Record<string, Insight> = {
     relatedSlugs: ["how-to-measure-roi-corporate-event"],
   },
 
+  "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor": {
+    slug: "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor",
+    title: "Corporate Gathering vs Outing Kantor: Panduan Memilih Format yang Tepat",
+    excerpt:
+      "Dua format yang sering tertukar — padahal objective, budget, dan eksekusinya berbeda signifikan. Decision framework dari 400+ events untuk HR yang butuh pilih yang right fit.",
+    metaDescription:
+      "Perbedaan corporate gathering dan outing kantor — objective, format, budget, timeline. Decision framework dari TourBandung Corporate berdasarkan 400+ events.",
+    category: "Planning Guide",
+    tldr: [
+      "Corporate gathering adalah annual flagship event dengan ceremony + awarding + company update — formal, 2–3 hari, budget 1.5–2× outing standar.",
+      "Outing kantor adalah aktivitas bonding + refreshing yang lebih informal dan fleksibel — quarterly, 1–2 hari, focus pengalaman tim bukan formal ceremony.",
+      "Pilih gathering kalau: ada milestone tahunan penting, perlu alignment strategis, atau agenda awarding. Pilih outing kalau: refresh rutin, departmental bonding, atau quarterly engagement maintenance.",
+      "Banyak perusahaan overkill: plan gathering-level production untuk outing objective. Dan sebaliknya — underkill flagship annual event dengan format outing santai.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-06-01",
+    readTimeMin: 8,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Dua pertanyaan yang paling sering masuk ke inbox kami dari HR: 'Kita mau gathering atau outing ya?' dan 'Bedanya apa sebenernya?' Pertanyaan yang terlihat sederhana, tapi jawabannya berdampak besar pada budget, timeline, dan hasil yang bisa diharapkan.",
+          "Dari 400+ events sejak 2018, kami handle keduanya — dan sering melihat perusahaan mismatch antara objective dan format yang dipilih. Hasilnya: event yang technically terlaksana tapi tidak hit target yang diinginkan.",
+        ],
+      },
+      {
+        heading: "Apa Itu Corporate Gathering?",
+        paragraphs: [
+          "Corporate gathering adalah event tahunan atau semi-tahunan yang fungsinya lebih dari sekadar refreshing. Gathering biasanya punya komponen formal: CEO address, pencapaian perusahaan year-in-review, awarding ceremony, dan strategic alignment message. Format 2D1N sampai 3D2N adalah yang paling umum.",
+          "Target peserta biasanya seluruh perusahaan atau divisi besar — artinya logistik lebih kompleks, venue harus bisa accommodate full ballroom setup, dan production value harus mencerminkan brand perusahaan. Budget untuk gathering standard berkisar Rp 3.5–6 juta per pax all-inclusive.",
+        ],
+        callout: {
+          label: "Kapan pilih Gathering",
+          text: "Ada milestone penting (anniversary, IPO, rebranding), agenda pencapaian + awarding, perlu alignment strategis seluruh perusahaan, atau ingin membuat momen yang memorable dan fotogenik untuk internal communication.",
+        },
+      },
+      {
+        heading: "Apa Itu Outing Kantor?",
+        paragraphs: [
+          "Outing kantor adalah aktivitas bonding + refreshing yang lebih informal dan bisa dilakukan lebih sering — quarterly atau semi-annual. Fokusnya pada pengalaman bersama tim, bukan formal ceremony. Format 1-day sampai 2D1N paling umum, dengan pax range yang lebih fleksibel mulai dari 20 pax departmental hingga 300 pax company-wide.",
+          "Budget outing standar berkisar Rp 1.5–3.5 juta per pax all-inclusive. Venue lebih variatif: villa private, glamping site, resort dengan outdoor activity, atau hotel dengan fun program. Tidak ada stage setup atau formal awarding — fokusnya shared experience yang natural.",
+        ],
+        callout: {
+          label: "Kapan pilih Outing",
+          text: "Refresh rutin tim setelah peak season, quarterly departmental bonding, onboarding cohort baru, atau engagement maintenance tanpa agenda formal. Cocok juga sebagai complement antara dua gathering tahunan.",
+        },
+      },
+      {
+        heading: "Decision Matrix: 8 Pertanyaan untuk Menentukan Format yang Tepat",
+        paragraphs: [
+          "Jawab 8 pertanyaan berikut — masing-masing lebih banyak menjawab 'A' atau 'B' akan menentukan format yang fit:",
+        ],
+        numbered: [
+          "Ada agenda formal (awarding, CEO address, company milestone)? A = Gathering / B = Outing",
+          "Budget per pax di atas Rp 3.5 juta? A = Gathering / B = Outing",
+          "Peserta seluruh perusahaan (200+ pax)? A = Gathering / B = Outing",
+          "Perlu ballroom atau stage AV setup profesional? A = Gathering / B = Outing",
+          "Timeline lebih dari 3 bulan dari sekarang? A = Gathering / B = Outing",
+          "Ini annual flagship event (bukan rutinitas quarterly)? A = Gathering / B = Outing",
+          "Perlu dokumentasi profesional untuk internal comms? A = Gathering / B = Outing",
+          "Ada misi alignment strategis atau culture reinforcement? A = Gathering / B = Outing",
+        ],
+      },
+      {
+        heading: "Common Mistake: Format Mismatch",
+        paragraphs: [
+          "Mismatch paling sering yang kami temui: perusahaan plan gathering-level production budget dan logistik untuk objective yang sebenarnya cukup dengan outing. Hasilnya: overspend tanpa proportional impact, karena tim tidak butuh ballroom dan awarding — mereka butuh bonding santai di alam terbuka.",
+          "Sebaliknya: annual flagship event yang seharusnya jadi company-defining moment dieksekusi dengan format outing minimalis. Tim merasa tidak diapresiasi, management kecewa karena 'tidak berkesan', dan ROI engagement drop cepat setelah event.",
+          "Formula sederhana: kalau objectivenya ada kata 'celebration', 'milestone', 'alignment', atau 'awarding' — pilih gathering. Kalau objectivenya ada kata 'refresh', 'bonding', 'connect', atau 'recharge' — outing sudah cukup.",
+        ],
+      },
+      {
+        heading: "Bisa Kombinasi Keduanya?",
+        paragraphs: [
+          "Ya — dan ini sebenarnya sweet spot untuk banyak perusahaan. Format hybrid yang sering kami design: formal gathering session di hari pertama (awarding, CEO address, strategic update), lalu outing activities di hari kedua (bonding, outdoor activities, santai).",
+          "Format ini efisien dari sisi budget karena satu venue bisa accommodate keduanya, dan peserta dapat dua pengalaman berbeda dalam satu trip. Ideal untuk perusahaan yang mau annual flagship event sekaligus genuine bonding moment — tanpa dua trip terpisah.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Paket corporate gathering premium 2D1N–3D2N di Bandung." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Paket outing kantor Bandung dari 1-day hingga 2D1N." },
+      { href: "/pricing", label: "Pricing Guide", description: "Transparent breakdown budget per format — gathering vs outing." },
+    ],
+    relatedSlugs: ["corporate-gathering-vs-outing-kantor", "5-pillar-corporate-outing-design"],
+  },
+
+  "incentive-trip-perusahaan-panduan-lengkap": {
+    slug: "incentive-trip-perusahaan-panduan-lengkap",
+    title: "Incentive Trip Perusahaan: Panduan Lengkap Budget, Destinasi & ROI 2026",
+    excerpt:
+      "Incentive travel bukan sekadar liburan gratis karyawan — ini strategic tool untuk boost performance dan retensi. Panduan komprehensif dari planning hingga ROI measurement.",
+    metaDescription:
+      "Panduan incentive trip perusahaan 2026 — budget per pax, destinasi terbaik Indonesia & Asia, proses planning, dan cara ukur ROI. Dari TourBandung Corporate, 400+ events.",
+    category: "Incentive Travel",
+    tldr: [
+      "Incentive trip berbeda dari outing biasa — ini reward terstruktur untuk top performer berdasarkan KPI, bukan company-wide gathering.",
+      "Budget realistic: Rp 5–12 juta/pax untuk domestic premium (Bali, Lombok). Rp 15–35 juta/pax untuk internasional (Singapura, Bangkok, Tokyo).",
+      "ROI incentive travel terbukti: 3:1 sampai 8:1 return dari peningkatan produktivitas dan retensi top performer — jauh lebih tinggi dari cash bonus equivalent.",
+      "Threshold peserta ideal: 15–80 pax. Di atas 100 pax, rasa exclusivity menurun dan logistik jadi kompleks.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-06-02",
+    readTimeMin: 11,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Incentive trip adalah salah satu employee reward program dengan ROI tertinggi yang ada — tapi juga salah satu yang paling sering dieksekusi dengan cara yang salah. Banyak perusahaan memperlakukan incentive trip seperti outing massal biasa, kehilangan semua elemen yang membuat program ini efektif sebagai motivasi tool.",
+          "Dari pengalaman kami mendesain dan mengeksekusi incentive program untuk 50+ perusahaan Indonesia, ada pattern jelas antara program yang berhasil boost performance jangka panjang dan yang hanya jadi liburan satu kali tanpa impact.",
+        ],
+      },
+      {
+        heading: "Apa Itu Incentive Trip dan Bedanya dari Outing Biasa?",
+        paragraphs: [
+          "Incentive trip adalah perjalanan reward yang diberikan secara selective kepada karyawan yang mencapai threshold performa tertentu — bukan company-wide event untuk semua. Ini yang membedakannya dari outing kantor atau corporate gathering.",
+          "Komponen utama program incentive yang efektif: (1) Threshold KPI yang jelas dan dipublikasikan jauh sebelumnya — minimal 6 bulan sebelum trip. (2) Eksklusivitas yang terasa — peserta 15–80 pax maksimal. (3) Experience level di atas standar outing biasa — destinasi aspirasional, hotel bintang 5, experience premium. (4) Recognition moment selama trip — awarding, shoutout personal, foto kenangan.",
+        ],
+        callout: {
+          label: "Key Difference",
+          text: "Outing kantor = reward untuk semua karyawan. Incentive trip = reward untuk top performer berdasarkan KPI. Mencampur keduanya menghilangkan efek motivasi dari incentive program.",
+        },
+      },
+      {
+        heading: "Budget Incentive Trip: Domestic vs Internasional",
+        paragraphs: [
+          "Kesalahan umum: budget incentive trip sama dengan outing biasa. Incentive trip harus terasa 'lebih' dari pengalaman biasa agar efektif sebagai motivasi tool. Rule of thumb: budget incentive minimum 1.5–2× outing standar.",
+        ],
+        numbered: [
+          "Domestic Premium (Bali 3D2N): Rp 5–8 jt/pax untuk 30–60 pax. Include: direct flight PP, hotel bintang 5, private activities (sea walking, private dinner, spa), recognition dinner.",
+          "Domestic Bespoke (Labuan Bajo 4D3N): Rp 8–14 jt/pax untuk 20–40 pax. Include: charter flight atau business class, private liveaboard atau resort Komodo, exclusive guided experience.",
+          "Internasional Budget (Singapura/Kuala Lumpur 3D2N): Rp 12–18 jt/pax. Include: penerbangan business class, hotel bintang 5, private city experience, recognition gala.",
+          "Internasional Premium (Bangkok/Tokyo 4D3N): Rp 18–28 jt/pax. Include: business class, luxury hotel, private experiences (cooking class dengan chef berbintang, private temple tour), merchandise premium.",
+          "Internasional Prestige (Paris/Dubai 5D4N): Rp 35–60 jt/pax untuk President's Club tier. Full VIP treatment dari departure sampai return.",
+        ],
+      },
+      {
+        heading: "Destinasi Incentive Trip Paling Populer 2026",
+        paragraphs: [
+          "Pilihan destinasi harus aspirasional tapi realistis dari sisi travel document untuk karyawan Indonesia (visa on arrival atau visa-free jadi pertimbangan penting).",
+        ],
+        bullets: [
+          "Bali — perennial favorite, no visa, direct flight dari semua kota besar. Sweet spot antara premium experience dan familiarity.",
+          "Lombok/Labuan Bajo — lebih ekslusif dari Bali, cocok untuk tim yang sering ke Bali dan butuh differentiator.",
+          "Singapura — cosmopolitan, no visa, 2 jam dari Jakarta. Shopping + fine dining + F1 race experience populer.",
+          "Bangkok — visa-free, value-for-money tinggi, culture experience kaya. Thai culinary experience + Chao Phraya cruise jadi highlight.",
+          "Tokyo/Osaka — Jepang tetap aspirasional. Japan Approved Destination mendorong visa on arrival untuk grup terorganisasi.",
+          "Dubai — untuk President's Club tier. Luxury positioning, Burj Khalifa, desert safari premium.",
+        ],
+      },
+      {
+        heading: "ROI Incentive Travel: Data yang Perlu Diketahui HRD",
+        paragraphs: [
+          "Incentive Research Foundation (IRF) melaporkan: incentive travel program menghasilkan ROI 3:1 sampai 8:1 dibanding non-travel reward program setara biaya. Untuk konteks Indonesia, angka yang sering kami observe dari client data:",
+        ],
+        numbered: [
+          "Retensi top performer: perusahaan yang rutin jalankan incentive trip tahunan memiliki retensi top performer 40–60% lebih baik vs yang tidak. Cost of replacing 1 top performer = 6–9× monthly salary.",
+          "Performance lift post-announcement: sales team yang tahu ada incentive trip sebagai reward menunjukkan 15–25% performance uplift dalam 6 bulan menjelang threshold.",
+          "Repeat performance: karyawan yang pernah dapat incentive trip memiliki 73% probability mencapai threshold lagi di tahun berikutnya vs 31% untuk yang belum pernah.",
+          "Aspiration multiplier: 78% karyawan yang belum reach threshold menyatakan incentive trip adalah motivator utama vs 45% untuk cash bonus equivalent.",
+        ],
+      },
+      {
+        heading: "Timeline Planning Incentive Trip",
+        paragraphs: [
+          "Incentive trip membutuhkan planning lebih panjang dari outing biasa karena: (1) koordinasi visa internasional, (2) penyesuaian peak season destinasi, (3) announcement program ke karyawan harus jauh di awal agar ada cukup waktu untuk motivasi effect.",
+        ],
+        bullets: [
+          "12 bulan sebelum trip: announce program, set KPI threshold, komunikasikan destinasi (create excitement)",
+          "9 bulan: vendor selection, preliminary venue booking untuk peak season",
+          "6 bulan: finalize vendor, mulai proses visa (untuk destinasi yang butuh visa)",
+          "3 bulan: confirm qualified winners, personalized communication ke peserta",
+          "6–8 minggu: finalize logistics, dietary, flight arrangements, recognition program design",
+          "2 minggu: briefing pack ke peserta, last-minute logistics lock",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/incentive-trip-bandung", label: "Incentive Trip Bandung", description: "Paket incentive trip premium di Bandung & Jawa Barat." },
+      { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "Format premium untuk C-suite team." },
+      { href: "/pricing", label: "Pricing Guide", description: "BOTS™ pricing tiers — Foundation sampai Bespoke." },
+    ],
+    relatedSlugs: ["annual-company-trip-vs-incentive-trip", "how-to-measure-roi-corporate-event"],
+  },
+
+  "executive-offsite-perusahaan-panduan": {
+    slug: "executive-offsite-perusahaan-panduan",
+    title: "Executive Offsite Perusahaan: Format, Budget & Cara Mengeksekusinya dengan Benar",
+    excerpt:
+      "Executive offsite bukan sekadar rapat di luar kantor — kalau didesain benar, ini adalah accelerator keputusan strategis dan alignment C-suite yang tidak bisa digantikan oleh Zoom meeting.",
+    metaDescription:
+      "Panduan executive offsite perusahaan — format, budget Rp 5–15 jt/pax, venue terbaik Bandung, dan metodologi untuk C-suite strategic session yang menghasilkan keputusan nyata.",
+    category: "Executive Events",
+    tldr: [
+      "Executive offsite yang efektif bukan sekadar rapat di luar kota — ada metodologi design yang memastikan strategic alignment dan keputusan konkret keluar dari sesi tersebut.",
+      "Budget realistic: Rp 5–9 jt/pax untuk 2D1N, Rp 7–15 jt/pax untuk 2D1N bespoke dengan strategy consultant.",
+      "Sweet spot peserta: 8–25 orang. Lebih kecil lebih baik — setiap eksekutif harus punya voice yang bermakna.",
+      "5 output yang wajib ada: clarity on top 3 strategic priorities, assigned accountability, 90-day commitment, follow-up mechanism, dan documented decisions.",
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-06-03",
+    readTimeMin: 9,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        paragraphs: [
+          "Berapa banyak executive offsite yang Anda hadiri di mana pada akhirnya tidak ada yang berubah? Rapat berjalan 2 hari, presentasi bagus, energi tinggi di hari terakhir — tapi 3 bulan kemudian business as usual kembali.",
+          "Masalahnya bukan niatnya. Masalahnya adalah design-nya. Offsite yang gagal menghasilkan alignment biasanya jatuh ke salah satu dari tiga jebakan: agenda yang terlalu padat (tidak ada ruang untuk explorasi), tidak ada facilitator yang netral (dominasi satu atau dua suara), atau tidak ada commitment mechanism post-offsite.",
+        ],
+      },
+      {
+        heading: "Apa yang Membuat Executive Offsite Berbeda dari Meeting Biasa?",
+        paragraphs: [
+          "Tiga faktor yang secara empiris meningkatkan kualitas strategic decision dalam setting offsite vs in-office meeting: environment novelty (otak yang distimulasi lingkungan baru memproses informasi berbeda), reduced hierarchy (keluar dari gedung kantor secara psikologis meratakan hierarki), dan time investment (blokir 2 hari menandakan bahwa agenda ini serius).",
+          "Tapi ketiganya hanya aktif kalau offsite didesain dengan benar. Venue mewah tanpa agenda yang terstruktur hanya menghasilkan bonding tanpa clarity. Agenda padat tanpa waktu untuk percakapan informal kehilangan insight yang sering muncul di luar sesi formal.",
+        ],
+        callout: {
+          label: "Research finding",
+          text: "MIT Sloan study (2023): leadership teams yang melakukan structured annual offsite dengan external facilitator menghasilkan 2.3× lebih banyak strategic decisions yang terimplementasi dalam 6 bulan dibanding yang tidak.",
+        },
+      },
+      {
+        heading: "Format Executive Offsite yang Kami Rekomendasikan",
+        paragraphs: [
+          "Berdasarkan 50+ executive offsite yang kami fasilitasi, format berikut konsisten menghasilkan output terbaik:",
+        ],
+        numbered: [
+          "Pre-work (2 minggu sebelum): setiap peserta submit 1-page strategic brief — 3 prioritas utama mereka dan 1 keputusan yang perlu team alignment. Fasilitator synthesize jadi pre-read material.",
+          "Day 1 Morning — Context Setting (3 jam): landscape review, data-driven, bukan opini. Apa yang berubah dari last offsite? Apa yang expected dalam 12–18 bulan? Facilitator-led, tidak ada PowerPoint dari satu peserta.",
+          "Day 1 Afternoon — Strategic Options (3 jam): 3–5 strategic options dipaparkan dan di-debate. Structured disagreement — setiap peserta harus berikan 1 challenge per option. Tulis, bukan verbal, untuk menghindari groupthink.",
+          "Day 1 Evening — Informal Setting: dinner informal, tidak ada agenda, conversation organik. Sering kali insight terbaik muncul di sini.",
+          "Day 2 Morning — Prioritization + Commitment (3 jam): narrow ke top 3 priorities, assign champion per priority, define 90-day milestones. Setiap keputusan harus punya nama pemilik.",
+          "Day 2 Afternoon — Close + Follow-up Mechanism (2 jam): document decisions, schedule 30-day check-in, set accountability structure. CEO close dengan commitment statement.",
+        ],
+      },
+      {
+        heading: "Budget Executive Offsite: Breakdown Realistis",
+        paragraphs: [
+          "Executive offsite memiliki komponen biaya yang berbeda dari outing regular — facilitator dan venue privacy adalah dua yang paling signifikan.",
+        ],
+        bullets: [
+          "Venue exclusive (villa private atau resort suite): Rp 15–40 jt/malam untuk kapasitas 15–25 orang di Lembang atau Pangalengan premium",
+          "F&B premium (all-day working meal): Rp 500–800 ribu/orang/hari termasuk coffee break, lunch, dinner",
+          "External strategy facilitator (opsional): Rp 30–80 jt/hari untuk certified senior strategist",
+          "Pre-work design + material: Rp 5–15 jt untuk synthesis brief, visual summary, decision documentation",
+          "AV minimal (projector, whiteboard premium, printing): Rp 3–8 jt",
+          "Total estimasi 2D1N tanpa facilitator: Rp 5–9 jt/pax. Dengan facilitator: Rp 9–15 jt/pax",
+        ],
+      },
+      {
+        heading: "Venue Executive Offsite Terbaik di Bandung & Jawa Barat",
+        paragraphs: [
+          "Tidak semua venue premium cocok untuk executive offsite. Yang kami cari: privacy (bukan resort yang campur dengan tamu retail), acoustic yang baik untuk working session, dan suasana yang mendorong focus tanpa distraksi.",
+        ],
+        bullets: [
+          "Pangalengan area — paling remote dan quiet di Jawa Barat. Perkebunan teh dengan private villa. Cocok untuk refleksi strategis mendalam.",
+          "Lembang hillside private villas — accessible (2–2.5 jam dari Jakarta), privacy tinggi, scenic. Banyak villa dengan dedicated meeting space.",
+          "Ciwidey — natural setting, fresh air, cocok untuk full-day working session yang butuh 'fresh eyes'.",
+          "Bandung kota boutique hotel — untuk offsite yang butuh urban accessibility (tamu internasional, COO dari luar kota). Pilih hotel butik bukan chain besar untuk atmosphere yang lebih private.",
+        ],
+      },
+      {
+        heading: "5 Output yang Harus Ada dari Executive Offsite",
+        paragraphs: [
+          "Keberhasilan executive offsite tidak diukur dari betapa enaknya venue atau betapa serunya diskusinya — diukur dari keputusan konkret yang terimplementasi setelahnya. Lima deliverable yang wajib ada:",
+        ],
+        numbered: [
+          "Top 3 Strategic Priorities — terdefinisi dengan jelas, tidak boleh lebih dari 3 (lebih dari 3 artinya tidak ada prioritas).",
+          "Accountability Map — setiap priority punya satu nama pemilik (champion), bukan committee.",
+          "90-Day Milestone — concrete output apa yang expected dari setiap priority dalam 90 hari pertama.",
+          "Decision Log — semua keputusan yang dibuat selama offsite didokumentasikan: apa keputusannya, siapa yang memutuskan, apa pertimbangannya. Bisa dijadikan referensi saat ada ambiguitas.",
+          "Follow-up Mechanism — jadwal 30-day check-in yang sudah dimasukkan ke kalender sebelum offsite selesai. Accountability tidak terjadi otomatis.",
+        ],
+      },
+    ],
+    internalLinks: [
+      { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "Paket executive offsite dengan venue premium di Bandung." },
+      { href: "/leadership-retreat-jawa-barat", label: "Leadership Retreat Jawa Barat", description: "Format retreat untuk leadership development." },
+      { href: "/methodology", label: "Methodology Kami", description: "5-Pillar framework yang kami terapkan di setiap executive session." },
+    ],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "post-merger-cultural-bonding"],
+  },
+
   "corporate-event-timeline-planning-checklist": {
     slug: "corporate-event-timeline-planning-checklist",
     title: "Corporate Event Timeline & Checklist — 12 Weeks Standard dari Brief sampai Post-Event Report",
