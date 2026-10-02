@@ -6,6 +6,7 @@ import {
   LinkedInNoScript,
 } from "@/components/AnalyticsScripts";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
+import { ConversionTracker } from "@/components/ConversionTracker";
 import { getAppSettings } from "@/lib/app-settings";
 import "./globals.css";
 
@@ -91,6 +92,7 @@ export default async function RootLayout({
         />
         {children}
         <ExitIntentModal />
+        <ConversionTracker />
       </body>
     </html>
   );

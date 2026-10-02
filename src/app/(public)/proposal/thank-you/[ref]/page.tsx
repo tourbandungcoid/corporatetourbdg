@@ -2,6 +2,14 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Check, Whatsapp } from "@/components/icons/Icons";
 import { buildWaLink } from "@/lib/site";
+import { LeadConversionEvent } from "@/components/LeadConversionEvent";
+
+const FORM_TYPES = new Set([
+  "request_proposal",
+  "quick_quote",
+  "book_consultation",
+  "lead_magnet",
+]);
 
 export const metadata = {
   title: "Thanks — Proposal Request Submitted",
@@ -10,11 +18,17 @@ export const metadata = {
 
 type Props = {
   params: Promise<{ ref: string }>;
+  searchParams: Promise<{ source?: string }>;
 };
 
-export default async function ThankYouPage({ params }: Props) {
+export default async function ThankYouPage({ params, searchParams }: Props) {
   const { ref } = await params;
+  const { source } = await searchParams;
   const refCode = ref.toUpperCase();
+  // Legacy links used ?source=sample for the lead magnet.
+  const normalizedSource = source === "sample" ? "lead_magnet" : source;
+  const formType =
+    normalizedSource && FORM_TYPES.has(normalizedSource) ? normalizedSource : "unknown";
 
   const steps = [
     { state: "done" as const, label: "Submitted", time: "Sekarang" },
@@ -37,6 +51,7 @@ export default async function ThankYouPage({ params }: Props) {
 
   return (
     <main>
+      <LeadConversionEvent refCode={refCode} formType={formType} />
       <PageHero
         eyebrow="Thanks 🎉"
         title="Got it. Senior planner sudah notified."

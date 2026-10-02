@@ -117,6 +117,12 @@ Phase 1-9 strategy lengkap di **`docs/strategy.md`**. Refer to this before makin
 - `/api/admin/bootstrap-admin` (one-shot admin bootstrap via env vars)
 - `/api/admin/leads/export` (filtered CSV export — auth required)
 
+## Conversion tracking & attribution
+
+- `src/components/ConversionTracker.tsx` (root layout) — sets `tb_attr` (last non-direct touch: landing page, referrer, UTM, gclid/fbclid) + `tb_lc` (last content page before `/proposal/*`) cookies, and fires GA4/GTM/Meta/Clarity events via `src/lib/conversion-tracking.ts`: `whatsapp_click`, `cta_click`, `phone_click`, `email_click`, `form_start`, `form_step_complete`, `form_field_error`, `form_abandoned`, `generate_lead` (thank-you page). Label CTA wrappers with `data-cta-location="..."`.
+- Lead actions persist attribution via `getLeadAttribution()` + `insertLeadWithAttribution()` (`src/lib/attribution-server.ts`) → `leads.channel`, `conversion_page`, `landing_page`, `referrer`, `utm_*`, `gclid`. Shown on `/admin` (Channel + Converting pages, 90d), lead detail (Attribution card), CSV export.
+- New lead forms: use `insertLeadWithAttribution` and redirect to `/proposal/thank-you/<ref>?source=<lead_source>`.
+
 ## Data-driven content
 
 Site content lives in TypeScript files (no CMS). Edit + commit + push to publish.

@@ -7,6 +7,7 @@ import {
   type ExitIntentState,
 } from "@/lib/actions/submit-secondary-forms";
 import { ArrowRight, Check, Close } from "@/components/icons/Icons";
+import { trackLeadGenerated } from "@/lib/conversion-tracking";
 
 const STORAGE_KEY = "exitIntentShown_v1";
 const initial: ExitIntentState = { status: "idle" };
@@ -96,6 +97,10 @@ export function ExitIntentModal() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  useEffect(() => {
+    if (state.status === "success") trackLeadGenerated("exit_intent");
+  }, [state.status]);
+
   if (blocked || !open) return null;
 
   const isSuccess = state.status === "success";
@@ -163,7 +168,12 @@ export function ExitIntentModal() {
               Kami kirim ke email lo, no spam.
             </p>
 
-            <form action={action} className="mt-6 space-y-3">
+            <form
+              action={action}
+              data-track-form="exit_intent"
+              data-track-abandon="false"
+              className="mt-6 space-y-3"
+            >
               <input
                 type="hidden"
                 name="source_url"

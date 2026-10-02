@@ -66,6 +66,7 @@ async function getDashboard() {
     activitiesRes,
     slaPendingRes,
     followUpsDueRes,
+    attributionRes,
   ] = await Promise.all([
     baseFilter,
     sb
@@ -144,6 +145,12 @@ async function getDashboard() {
       .is("deleted_at", null)
       .order("follow_up_at", { ascending: true })
       .limit(10),
+    sb
+      .from("leads")
+      .select("channel, conversion_page, status")
+      .is("deleted_at", null)
+      .gte("created_at", isoNDaysAgo(90))
+      .limit(2000),
   ]);
 
   // Funnel aggregation
@@ -166,6 +173,28 @@ async function getDashboard() {
     .map(([source, count]) => ({ source, count }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 6);
+
+  // Attribution (last 90 days) — which channels & pages produce leads / wins
+  const attributionRows = attributionRes.error ? [] : attributionRes.data ?? [];
+  const tally = (key: "channel" | "conversion_page", fallback: string) => {
+    const map = new Map<string, { leads: number; won: number }>();
+    attributionRows.forEach((r) => {
+      const k = (r[key] as string | null) ?? fallback;
+      const cur = map.get(k) ?? { leads: 0, won: 0 };
+      cur.leads += 1;
+      if (r.status === "won") cur.won += 1;
+      map.set(k, cur);
+    });
+    return Array.from(map.entries())
+      .map(([label, v]) => ({ label, ...v }))
+      .sort((a, b) => b.leads - a.leads)
+      .slice(0, 8);
+  };
+  const attribution = {
+    ready: !attributionRes.error,
+    channels: tally("channel", "Untracked"),
+    pages: tally("conversion_page", "(untracked)"),
+  };
 
   const total = totalRes.count ?? 0;
   const won = wonRes.count ?? 0;
@@ -203,6 +232,7 @@ async function getDashboard() {
     activities: activitiesRes.data ?? [],
     slaBreaches,
     followUpsDue: followUpsDueRes.data ?? [],
+    attribution,
     queryError: recentLeadsRes.error?.message,
   };
 }
@@ -413,6 +443,23 @@ export default async function DashboardPage() {
           </section>
         </div>
 
+        {/* Attribution — last 90 days */}
+        <div className="grid gap-6 lg:grid-cols-2">
+          <AttributionList
+            title="Channel"
+            subtitle="Asal lead · 90 hari"
+            ready={stats.attribution.ready}
+            rows={stats.attribution.channels}
+          />
+          <AttributionList
+            title="Converting pages"
+            subtitle="Halaman terakhir dibaca sebelum isi form · 90 hari"
+            ready={stats.attribution.ready}
+            rows={stats.attribution.pages}
+            mono
+          />
+        </div>
+
         {/* Recent leads + Activity feed */}
         <div className="grid gap-6 lg:grid-cols-3">
           <section className="lg:col-span-2 rounded-2xl border border-border bg-paper overflow-hidden">
@@ -535,6 +582,51 @@ export default async function DashboardPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+function AttributionList({
+  title,
+  subtitle,
+  ready,
+  rows,
+  mono,
+}: {
+  title: string;
+  subtitle: string;
+  ready: boolean;
+  rows: { label: string; leads: number; won: number }[];
+  mono?: boolean;
+}) {
+  return (
+    <section className="rounded-2xl border border-border bg-paper p-6">
+      <div className="flex items-baseline justify-between gap-3 mb-5">
+        <h2 className="font-display text-xl text-ink">{title}</h2>
+        <span className="text-xs text-slate-mute">{subtitle}</span>
+      </div>
+      {!ready ? (
+        <p className="text-sm text-slate">
+          Attribution belum aktif — migration <code>20261002000000_lead_attribution</code> belum ter-apply.
+        </p>
+      ) : rows.length === 0 ? (
+        <p className="text-sm text-slate">No data yet.</p>
+      ) : (
+        <ul className="space-y-2.5 text-sm">
+          <li className="flex items-center justify-between gap-3 text-xs text-slate-mute">
+            <span />
+            <span className="tabular">leads · won</span>
+          </li>
+          {rows.map((r) => (
+            <li key={r.label} className="flex items-center justify-between gap-3">
+              <span className={`text-slate truncate ${mono ? "font-mono text-xs" : ""}`}>{r.label}</span>
+              <span className="font-medium text-ink tabular whitespace-nowrap">
+                {r.leads} <span className="text-slate-mute">·</span> {r.won}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
   );
 }
 
