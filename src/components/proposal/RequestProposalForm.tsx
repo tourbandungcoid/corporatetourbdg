@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useActionState } from "react";
+import { trackFormError, trackFormStepComplete } from "@/lib/conversion-tracking";
 import { submitLeadRequest, type LeadSubmitState } from "@/lib/actions/submit-lead";
 import { ArrowRight, Check } from "@/components/icons/Icons";
 import { FormTrustSignals, FormConfidenceIndicator, FormSocialProof } from "./FormTrustSignals";
@@ -113,14 +114,32 @@ export function RequestProposalForm() {
   );
   const [step, setStep] = useState(1);
 
-  const goNext = () => setStep((s) => Math.min(3, s + 1));
+  const goNext = () => {
+    trackFormStepComplete(step, 3, "request_proposal");
+    setStep((s) => Math.min(3, s + 1));
+  };
   const goBack = () => setStep((s) => Math.max(1, s - 1));
+
+  // Report validation friction so we can see which fields block submits.
+  useEffect(() => {
+    if (state.status !== "error") return;
+    const fields = Object.keys(state.fieldErrors ?? {});
+    if (fields.length === 0) trackFormError("_server", state.message, "request_proposal");
+    fields.forEach((f) =>
+      trackFormError(f, state.fieldErrors?.[f]?.[0], "request_proposal")
+    );
+  }, [state]);
 
   const err = (key: string): string | null =>
     state.fieldErrors?.[key]?.[0] ?? null;
 
   return (
-    <form action={action} className="space-y-8">
+    <form
+      action={action}
+      data-track-form="request_proposal"
+      data-step={step}
+      className="space-y-8"
+    >
       {/* Trust signals at top */}
       <FormTrustSignals position="top" />
 

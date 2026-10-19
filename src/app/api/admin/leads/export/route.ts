@@ -19,6 +19,11 @@ function rangeToDate(range: string | null): string | null {
   return d.toISOString();
 }
 
+/** Visitor-controlled text (UTM, referrer) — neutralise spreadsheet formulas. */
+function noFormula(value: unknown): unknown {
+  return typeof value === "string" && /^[=+\-@\t\r]/.test(value) ? `'${value}` : value;
+}
+
 function csvEscape(value: unknown): string {
   if (value === null || value === undefined) return "";
   const str = String(value);
@@ -44,9 +49,9 @@ export async function GET(req: NextRequest) {
   const sb = createAdminClient();
   let query = sb
     .from("leads")
-    .select(
-      "ref_code, full_name, work_email, whatsapp, company_name, industry, company_size, job_role, source, status, priority, lead_score, assigned_to, created_at, updated_at"
-    )
+    // "*" so export keeps working whether or not the attribution
+    // migration (20261002000000) has been applied yet.
+    .select("*")
     .is("deleted_at", null)
     .order("created_at", { ascending: false })
     .limit(EXPORT_LIMIT);
@@ -102,6 +107,14 @@ export async function GET(req: NextRequest) {
     "assigned_to",
     "created_at",
     "updated_at",
+    "channel",
+    "conversion_page",
+    "landing_page",
+    "referrer",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "gclid",
   ];
 
   const rows = (data ?? []).map((l) =>
@@ -121,6 +134,14 @@ export async function GET(req: NextRequest) {
       l.assigned_to ? nameMap.get(l.assigned_to) ?? l.assigned_to : "",
       l.created_at,
       l.updated_at,
+      l.channel,
+      noFormula(l.conversion_page),
+      noFormula(l.landing_page),
+      noFormula(l.referrer),
+      noFormula(l.utm_source),
+      noFormula(l.utm_medium),
+      noFormula(l.utm_campaign),
+      l.gclid ? "yes" : "",
     ]
       .map(csvEscape)
       .join(",")

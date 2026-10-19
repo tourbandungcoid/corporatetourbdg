@@ -36,6 +36,7 @@ export function StickyProposalBar({
 
   return (
     <div
+      data-cta-location="sticky_bar"
       className={[
         "fixed bottom-4 inset-x-0 z-40 px-4 transition-all duration-300 no-print pointer-events-none",
         visible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0",

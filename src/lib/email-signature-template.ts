@@ -25,7 +25,7 @@ export const EMAIL_SIGNATURE_HTML = `
           </td>
           <td style="padding-right: 16px; vertical-align: top;">
             <a href="https://wa.me/[WHATSAPP]" style="color: #6BA239; text-decoration: none;">WhatsApp</a> ·
-            <a href="https://corporate.tourbandung.co.id" style="color: #6BA239; text-decoration: none;">Website</a>
+            <a href="https://corporate.tourbandung.co.id/go/sig" style="color: #6BA239; text-decoration: none;">Website</a>
           </td>
         </tr>
       </table>
@@ -59,7 +59,7 @@ TourBandung Corporate
 Specialist B2B events
 
 WhatsApp: https://wa.me/${whatsapp}
-Website: https://corporate.tourbandung.co.id
+Website: https://corporate.tourbandung.co.id/go/sig
 
 400+ corporate events delivered · 92% repeat booking · 4.9⭐ Google Rating
 `;
