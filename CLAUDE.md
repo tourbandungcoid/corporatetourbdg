@@ -122,6 +122,13 @@ Phase 1-9 strategy lengkap di **`docs/strategy.md`**. Refer to this before makin
 - `src/components/ConversionTracker.tsx` (root layout) — sets `tb_attr` (last non-direct touch: landing page, referrer, UTM, gclid/fbclid) + `tb_lc` (last content page before `/proposal/*`) cookies, and fires GA4/GTM/Meta/Clarity events via `src/lib/conversion-tracking.ts`: `whatsapp_click`, `cta_click`, `phone_click`, `email_click`, `form_start`, `form_step_complete`, `form_field_error`, `form_abandoned`, `generate_lead` (thank-you page). Label CTA wrappers with `data-cta-location="..."`.
 - Lead actions persist attribution via `getLeadAttribution()` + `insertLeadWithAttribution()` (`src/lib/attribution-server.ts`) → `leads.channel`, `conversion_page`, `landing_page`, `referrer`, `utm_*`, `gclid`. Shown on `/admin` (Channel + Converting pages, 90d), lead detail (Attribution card), CSV export.
 - New lead forms: use `insertLeadWithAttribution` and redirect to `/proposal/thank-you/<ref>?source=<lead_source>`.
+- Short tracked links: `/go/<code>` (`src/app/go/[code]/route.ts`, codes in `src/lib/short-links.ts`) → 302 to page with UTM. Supports `?to=/path` (same-site only) and `?c=<utm_content>`. Never reuse a code for a different source.
+
+## Content operations
+
+- Playbook (cadence, 8-week calendar, UTM rules, monthly review): `docs/content-playbook.md`.
+- Weekly article drafts (CMS-ready, paste into `/admin/content/insights`): `docs/content-drafts/<YYYY>-W<week>-<n>-<slug>.md`. Check the playbook's "forbidden topics" list before proposing new ones.
+- `/insights` list + sitemap = DB articles + repo articles not in the DB (`src/lib/insights-data.ts`). DB wins on slug clash; a draft DB row hides its repo twin.
 
 ## Data-driven content
 

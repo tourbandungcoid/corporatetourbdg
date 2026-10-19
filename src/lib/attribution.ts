@@ -90,6 +90,8 @@ export function deriveChannel(t: FirstTouch): string {
   if (/^(email|e-mail|newsletter)$/.test(medium)) return "Email";
   if (medium === "social" || SOCIAL_SOURCES.test(source)) return "Social";
   if (/^(whatsapp|wa)$/.test(source) || medium === "whatsapp") return "WhatsApp";
+  if (medium === "organic") return "Organic Search";
+  if (medium === "referral") return "Referral";
   if (source || medium) return "Other Campaign";
 
   const host = hostOf(t.ref);
