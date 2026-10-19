@@ -34,6 +34,9 @@ export default function TransparentPricingPage() {
     articleSchema({
       headline: "BOTS™ Transparent Pricing Model — Corporate Event Tiers Explained",
       description: metadata.description!,
+      image: `${SITE.url}/opengraph-image`,
+      datePublished: "2026-05-29",
+      dateModified: "2026-05-29",
       slug: "/transparent-pricing-model",
       authorName: "TourBandung Corporate",
       authorJobTitle: "B2B Corporate Event Specialist",
