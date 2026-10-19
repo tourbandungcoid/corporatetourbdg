@@ -1,11 +1,13 @@
-import Image from "next/image";
-import type { SVGProps } from "react";
+"use client";
 
-// Official logo files in Google Drive (folder must be set to "Anyone with link can view")
-const LOGO_ON_LIGHT_BG =
-  "https://drive.google.com/thumbnail?id=1iUgnxGAJCNl0x0IIvAi-D0M-kwYAgON9&sz=w800";
-const LOGO_ON_DARK_BG =
-  "https://drive.google.com/thumbnail?id=1UPHvGeHBbwehMfTFikRX5xF7KkPLeGRu&sz=w800";
+import Image from "next/image";
+import { useState, type SVGProps } from "react";
+
+// Official logo files, self-hosted so the nav never depends on Drive sharing
+// permissions. Both are transparent, cropped to the artwork, 453x160.
+const LOGO_ON_LIGHT_BG = "/logo/logo-on-light.webp";
+const LOGO_ON_DARK_BG = "/logo/logo-on-dark.webp";
+const LOGO_ASPECT = 453 / 160;
 
 type LogoProps = SVGProps<SVGSVGElement> & {
   size?: number;
@@ -56,7 +58,7 @@ export function LogoMark({
 }
 
 /**
- * Official logo image (PNG from Drive). Use for nav, footer, hero — anywhere
+ * Official logo image (self-hosted in /public/logo). Use for nav, footer, hero — anywhere
  * the full brand lockup should appear.
  *
  * Variants:
@@ -76,13 +78,40 @@ export function LogoImage({
   className,
   priority = false,
 }: LogoImageProps) {
+  const [failed, setFailed] = useState(false);
   const src = variant === "dark" ? LOGO_ON_DARK_BG : LOGO_ON_LIGHT_BG;
+
+  // Fallback: if the image ever fails to load, render the inline mark +
+  // wordmark so the logo (and the home link around it) stays visible.
+  if (failed) {
+    return (
+      <span
+        className={["inline-flex items-center gap-2", className]
+          .filter(Boolean)
+          .join(" ")}
+        style={{ height: `${height}px` }}
+      >
+        <LogoMark size={Math.round(height * 0.8)} />
+        <span
+          className="font-bold leading-none tracking-tight"
+          style={{
+            fontSize: `${Math.max(14, Math.round(height * 0.38))}px`,
+            color: variant === "dark" ? "#FFFFFF" : "var(--color-ink)",
+          }}
+        >
+          7Summits Travel
+        </span>
+      </span>
+    );
+  }
+
   return (
     <Image
       src={src}
-      alt="TourBandung Corporate"
-      width={height * 6}
+      alt="7Summits Travel — Corporate"
+      width={Math.round(height * LOGO_ASPECT)}
       height={height}
+      onError={() => setFailed(true)}
       priority={priority}
       className={className}
       style={{ width: "auto", height: `${height}px` }}

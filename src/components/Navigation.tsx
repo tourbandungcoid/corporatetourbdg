@@ -8,6 +8,7 @@ import { Whatsapp, Menu, Close, ArrowRight } from "./icons/Icons";
 import { buildWaLink } from "@/lib/site";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/packages", label: "Packages" },
   { href: "/case-studies", label: "Case Studies" },
@@ -39,6 +40,9 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
   // light/inverted nav style there. Only the homepage hero is dark enough
   // to support the transparent-on-dark variant at the top of the page.
   const useLightStyle = !isHome || scrolled;
+
+  const isActive = (href: string) =>
+    href === "/" ? isHome : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="fixed top-4 inset-x-0 z-50 no-print px-4 md:px-6">
@@ -72,11 +76,16 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={[
                   "px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200",
                   useLightStyle
-                    ? "text-ink/75 hover:bg-ink hover:text-paper"
-                    : "text-paper/90 hover:bg-paper hover:text-ink",
+                    ? isActive(link.href)
+                      ? "bg-ink text-paper"
+                      : "text-ink/75 hover:bg-ink hover:text-paper"
+                    : isActive(link.href)
+                      ? "bg-paper text-ink"
+                      : "text-paper/90 hover:bg-paper hover:text-ink",
                 ].join(" ")}
               >
                 {link.label}
@@ -121,7 +130,14 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
         <div className="lg:hidden fixed inset-0 z-50 bg-paper flex flex-col">
           <div className="container-1280">
             <div className="flex h-16 items-center justify-between md:h-20">
-              <LogoLockup height={logoHeight} />
+              <Link
+                href="/"
+                aria-label="Beranda"
+                onClick={() => setOpen(false)}
+                className="flex items-center"
+              >
+                <LogoLockup height={logoHeight} />
+              </Link>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -139,7 +155,11 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-3xl font-display text-ink hover:text-brand transition-colors"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={[
+                  "py-3 text-3xl font-display hover:text-brand transition-colors",
+                  isActive(link.href) ? "text-brand" : "text-ink",
+                ].join(" ")}
               >
                 {link.label}
               </Link>
