@@ -38,7 +38,7 @@ Urutan disesuaikan musim: akhir tahun, musim hujan, dan kick-off Januari.
 | Minggu | Artikel #1 (Selasa) | Artikel #2 (Jumat) | Money page yang didukung |
 |---|---|---|---|
 | W43 · 20–23 Okt | ✅ Employee Gathering Akhir Tahun: Konsep & Timeline | ✅ Outing Kantor di Musim Hujan Bandung: Plan B | employee-gathering, outing-kantor |
-| W44 · 27–30 Okt | Rundown Gathering 2 Hari 1 Malam — Template | Cara Bikin Proposal Outing ke Direksi (+ template) | corporate-gathering, villa-gathering, /proposal/sample |
+| W44 · 27–30 Okt | ✅ Rundown Gathering 2 Hari 1 Malam — Template | ✅ Cara Bikin Proposal Outing ke Direksi (+ template) | corporate-gathering, villa-gathering, /proposal/sample |
 | W45 · 3–6 Nov | Annual Kick-off Januari: Format & Rundown | Games Team Building Indoor yang Nggak Cringe | annual-meeting-organizer, team-building |
 | W46 · 10–13 Nov | Villa untuk Gathering Kantor: Checklist Sebelum DP | Family Day Perusahaan: Konsep & Rundown | villa-gathering, employee-gathering |
 | W47 · 17–20 Nov | Outbound Perusahaan: Checklist Keamanan & Asuransi | Glamping untuk Corporate: Kapan Cocok, Kapan Tidak | outbound-perusahaan, glamping-corporate |
