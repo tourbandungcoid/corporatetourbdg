@@ -1,46 +1,81 @@
 /**
- * Conversion tracking helper for Tier 5 CRO
- * Tracks form funnel metrics and conversion events
- * Compatible with GA4, GTM, Segment
+ * Conversion tracking — client-side event dispatch.
+ *
+ * One call fans out to every analytics provider configured in
+ * /admin/settings/analytics:
+ *   - GA4 (gtag)        when GA4 is loaded standalone
+ *   - GTM (dataLayer)   when GTM is the container (no gtag on window)
+ *   - Meta Pixel        standard events for whatsapp_click / generate_lead
+ *   - Microsoft Clarity custom event (filter recordings by conversion)
+ *
+ * Event names follow GA4 conventions (snake_case, generate_lead is a
+ * GA4 recommended event) — mark generate_lead + whatsapp_click as Key
+ * Events in GA4 to count them as conversions.
  */
+
+type Params = Record<string, string | number | boolean | undefined | null>;
+
+type AnalyticsWindow = Window & {
+  gtag?: (...args: unknown[]) => void;
+  dataLayer?: unknown[];
+  fbq?: (...args: unknown[]) => void;
+  clarity?: (...args: unknown[]) => void;
+};
+
+/** Meta Pixel standard events — only conversion-grade events are mapped. */
+const META_EVENTS: Record<string, string> = {
+  whatsapp_click: "Contact",
+  phone_click: "Contact",
+  generate_lead: "Lead",
+};
+
+export function trackEvent(eventName: string, params: Params = {}): void {
+  if (typeof window === "undefined") return;
+  const w = window as AnalyticsWindow;
+  const payload: Params = { page_path: window.location.pathname, ...params };
+
+  try {
+    if (typeof w.gtag === "function") {
+      w.gtag("event", eventName, payload);
+    } else {
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ event: eventName, ...payload });
+    }
+
+    const metaEvent = META_EVENTS[eventName];
+    if (metaEvent && typeof w.fbq === "function") {
+      w.fbq("track", metaEvent, { content_name: eventName, ...payload });
+    }
+
+    if (typeof w.clarity === "function") {
+      w.clarity("event", eventName);
+    }
+  } catch {
+    // Analytics must never break the page.
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    console.log(`[track] ${eventName}`, payload);
+  }
+}
 
 /**
  * Track form event in analytics
  */
-export function trackFormEvent(
-  eventName: string,
-  data?: Record<string, any>
-): void {
-  if (typeof window === "undefined") return;
-
-  // Google Analytics 4 tracking
-  if ((window as any).gtag) {
-    (window as any).gtag("event", eventName, {
-      event_category: "form",
-      ...data,
-    });
-  }
-
-  // GTM dataLayer
-  if ((window as any).dataLayer) {
-    (window as any).dataLayer.push({
-      event: eventName,
-      eventCategory: "form",
-      ...data,
-    });
-  }
-
-  // Console log for development
-  if (process.env.NODE_ENV === "development") {
-    console.log(`[CRO] ${eventName}`, data);
-  }
+export function trackFormEvent(eventName: string, data?: Params): void {
+  trackEvent(eventName, { event_category: "form", ...data });
 }
 
 /**
  * Track form step completion
  */
-export function trackFormStepComplete(step: number, totalSteps: number): void {
+export function trackFormStepComplete(
+  step: number,
+  totalSteps: number,
+  formType?: string
+): void {
   trackFormEvent("form_step_complete", {
+    form_type: formType,
     step,
     total_steps: totalSteps,
     progress_percent: Math.round((step / totalSteps) * 100),
@@ -48,16 +83,13 @@ export function trackFormStepComplete(step: number, totalSteps: number): void {
 }
 
 /**
- * Track form submission
+ * Track successful lead capture — fire once, on the confirmation screen.
  */
-export function trackFormSubmit(
-  formType: string,
-  leadScore?: number
-): void {
-  trackFormEvent("form_submitted", {
+export function trackLeadGenerated(formType: string, refCode?: string): void {
+  trackEvent("generate_lead", {
+    event_category: "form",
     form_type: formType,
-    lead_score: leadScore,
-    timestamp: new Date().toISOString(),
+    lead_ref: refCode,
   });
 }
 
@@ -65,13 +97,16 @@ export function trackFormSubmit(
  * Track form abandonment
  */
 export function trackFormAbandonment(
-  step: number,
-  reason?: string
+  formType: string,
+  step?: number,
+  reason?: string,
+  formPage?: string
 ): void {
   trackFormEvent("form_abandoned", {
+    ...(formPage ? { page_path: formPage } : {}),
+    form_type: formType,
     abandoned_at_step: step,
     reason: reason || "unknown",
-    timestamp: new Date().toISOString(),
   });
 }
 
@@ -80,68 +115,12 @@ export function trackFormAbandonment(
  */
 export function trackFormError(
   fieldName: string,
-  errorMessage?: string
+  errorMessage?: string,
+  formType?: string
 ): void {
   trackFormEvent("form_field_error", {
+    form_type: formType,
     field: fieldName,
     error: errorMessage,
   });
-}
-
-/**
- * Track CTA click
- */
-export function trackCTAClick(
-  ctaType: string,
-  ctaLabel: string,
-  location?: string
-): void {
-  trackFormEvent("cta_clicked", {
-    cta_type: ctaType,
-    cta_label: ctaLabel,
-    location: location || "unknown",
-  });
-}
-
-/**
- * Conversion funnel helper
- * Estimates conversion probability based on form data
- */
-export function estimateConversionProbability(data: {
-  formStarted: boolean;
-  step3Reached: boolean;
-  hasWhatsapp: boolean;
-  budgetTierSelected: boolean;
-  companySize?: string;
-}): number {
-  let probability = 0.3; // Base 30% conversion rate
-
-  if (data.formStarted) probability += 0.1;
-  if (data.step3Reached) probability += 0.25; // Biggest jump at step 3
-  if (data.hasWhatsapp) probability += 0.1;
-  if (data.budgetTierSelected) probability += 0.15;
-  if (data.companySize === "enterprise") probability += 0.05;
-
-  return Math.min(probability, 1.0); // Cap at 100%
-}
-
-/**
- * Get conversion funnel stage
- */
-export function getFunnelStage(
-  pathname: string
-): "awareness" | "consideration" | "decision" | "conversion" | "unknown" {
-  if (pathname === "/" || pathname.includes("/blog") || pathname.includes("/insights")) {
-    return "awareness";
-  }
-  if (pathname === "/methodology" || pathname === "/case-studies") {
-    return "consideration";
-  }
-  if (pathname === "/pricing" || pathname === "/proposal") {
-    return "decision";
-  }
-  if (pathname.includes("/thank-you") || pathname.includes("/track")) {
-    return "conversion";
-  }
-  return "unknown";
 }

@@ -4,6 +4,10 @@ import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
 import { notifyNewLead } from "@/lib/email/send";
+import {
+  getLeadAttribution,
+  insertLeadWithAttribution,
+} from "@/lib/attribution-server";
 
 // ---------------------------------------------------------------------
 // Validation
@@ -175,10 +179,11 @@ export async function submitLeadRequest(
     };
   }
 
-  // 1. Create lead
-  const { data: lead, error: leadErr } = await supabase
-    .from("leads")
-    .insert({
+  // 1. Create lead (with first-touch / converting-page attribution)
+  const attribution = await getLeadAttribution();
+  const { data: lead, error: leadErr } = await insertLeadWithAttribution(
+    supabase,
+    {
       source: "request_proposal",
       source_url: "/proposal/request",
       full_name: input.full_name,
@@ -191,9 +196,9 @@ export async function submitLeadRequest(
       job_role: input.job_role,
       lead_score: score,
       lead_score_breakdown: breakdown,
-    })
-    .select("id, ref_code")
-    .single();
+    },
+    attribution
+  );
 
   if (leadErr || !lead) {
     console.error("[submitLeadRequest] Lead insert failed:", {
@@ -244,6 +249,8 @@ export async function submitLeadRequest(
       source: "request_proposal",
       score_breakdown: breakdown,
       computed_score: score,
+      channel: attribution.channel,
+      conversion_page: attribution.conversion_page,
     },
   });
 
@@ -274,5 +281,5 @@ export async function submitLeadRequest(
   });
 
   // 6. Redirect to thank-you with ref code
-  redirect(`/proposal/thank-you/${lead.ref_code}`);
+  redirect(`/proposal/thank-you/${lead.ref_code}?source=request_proposal`);
 }

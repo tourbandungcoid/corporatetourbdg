@@ -81,10 +81,30 @@ async function fetchPublished(): Promise<Insight[] | null> {
   }
 }
 
+/** Every slug in the DB regardless of status — a draft/archived row hides its repo twin. */
+async function fetchDbSlugs(): Promise<Set<string>> {
+  try {
+    const sb = createAdminClient();
+    const { data } = await sb.from("insights").select("slug");
+    return new Set((data ?? []).map((d) => d.slug as string));
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * DB rows + repo articles not (yet) in the DB. The DB was seeded with
+ * the first 8 articles only, so returning DB-only hid every repo article
+ * added afterwards from /insights and the sitemap. DB wins on slug clash.
+ */
 export async function getInsightsList(): Promise<Insight[]> {
-  const fromDb = await fetchPublished();
-  if (fromDb) return fromDb;
-  return getInsightsListStatic();
+  const [published, dbSlugs] = await Promise.all([fetchPublished(), fetchDbSlugs()]);
+  const fromDb = published ?? [];
+  fromDb.forEach((i) => dbSlugs.add(i.slug));
+  return [
+    ...fromDb,
+    ...getInsightsListStatic().filter((i) => !dbSlugs.has(i.slug)),
+  ].sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 }
 
 export async function getInsight(slug: string): Promise<Insight | undefined> {
@@ -108,12 +128,13 @@ export async function getInsight(slug: string): Promise<Insight | undefined> {
 export async function getAllInsightSlugs(): Promise<string[]> {
   try {
     const sb = createAdminClient();
-    const { data, error } = await sb
-      .from("insights")
-      .select("slug")
-      .eq("status", "published");
-    if (error || !data || data.length === 0) return getAllInsightSlugsStatic();
-    return data.map((d) => d.slug);
+    const { data, error } = await sb.from("insights").select("slug, status");
+    if (error || !data) return getAllInsightSlugsStatic();
+    const inDb = new Set(data.map((d) => d.slug));
+    return [
+      ...data.filter((d) => d.status === "published").map((d) => d.slug),
+      ...getAllInsightSlugsStatic().filter((slug) => !inDb.has(slug)),
+    ];
   } catch {
     return getAllInsightSlugsStatic();
   }

@@ -16,6 +16,7 @@ export function WhatsAppFloat({ context, className }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat WhatsApp"
+      data-cta-location="floating_whatsapp"
       className={[
         "fixed bottom-6 right-6 z-50",
         "flex items-center gap-2 rounded-full",

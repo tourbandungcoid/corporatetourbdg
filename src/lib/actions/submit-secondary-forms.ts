@@ -4,6 +4,10 @@ import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
 import { notifyNewLead } from "@/lib/email/send";
+import {
+  getLeadAttribution,
+  insertLeadWithAttribution,
+} from "@/lib/attribution-server";
 
 function priorityFromScore(score: number): "hot" | "warm" | "medium" | "cool" | "cold" {
   if (score >= 90) return "hot";
@@ -66,9 +70,10 @@ export async function submitQuickQuote(
   const score = 30 + (PERSONAL_EMAIL_DOMAINS.includes((input.work_email.split("@")[1] ?? "").toLowerCase()) ? 0 : 5);
 
   const sb = createAdminClient();
-  const { data: lead, error } = await sb
-    .from("leads")
-    .insert({
+  const attribution = await getLeadAttribution();
+  const { data: lead, error } = await insertLeadWithAttribution(
+    sb,
+    {
       source: "quick_quote",
       source_url: "/proposal/quick-quote",
       full_name: input.full_name,
@@ -76,9 +81,9 @@ export async function submitQuickQuote(
       company_name: input.company_name || "Not specified",
       lead_score: score,
       lead_score_breakdown: { base: 30, corp_email: score - 30 },
-    })
-    .select("id, ref_code")
-    .single();
+    },
+    attribution
+  );
 
   if (error || !lead) {
     return { status: "error", message: "Submit error. Try again or WhatsApp us." };
@@ -95,7 +100,7 @@ export async function submitQuickQuote(
     lead_id: lead.id,
     activity_type: "created",
     actor_type: "public_form",
-    details: { source: "quick_quote" },
+    details: { source: "quick_quote", channel: attribution.channel, conversion_page: attribution.conversion_page },
   });
 
   await notifyNewLead({
@@ -109,7 +114,7 @@ export async function submitQuickQuote(
     priority: priorityFromScore(score),
   });
 
-  redirect(`/proposal/thank-you/${lead.ref_code}`);
+  redirect(`/proposal/thank-you/${lead.ref_code}?source=quick_quote`);
 }
 
 // ---------------------------------------------------------------------
@@ -151,9 +156,10 @@ export async function submitConsultation(
 
   const score = 85; // High-intent
   const sb = createAdminClient();
-  const { data: lead, error } = await sb
-    .from("leads")
-    .insert({
+  const attribution = await getLeadAttribution();
+  const { data: lead, error } = await insertLeadWithAttribution(
+    sb,
+    {
       source: "book_consultation",
       source_url: "/proposal/book-consultation",
       full_name: input.full_name,
@@ -163,9 +169,9 @@ export async function submitConsultation(
       company_name: input.company_name,
       lead_score: score,
       lead_score_breakdown: { base: 85, note: "Book consultation = high intent" },
-    })
-    .select("id, ref_code")
-    .single();
+    },
+    attribution
+  );
 
   if (error || !lead) {
     return { status: "error", message: "Submit error. Try again or WhatsApp us." };
@@ -181,7 +187,12 @@ export async function submitConsultation(
     lead_id: lead.id,
     activity_type: "created",
     actor_type: "public_form",
-    details: { source: "book_consultation", preferred_time: input.preferred_time },
+    details: {
+      source: "book_consultation",
+      preferred_time: input.preferred_time,
+      channel: attribution.channel,
+      conversion_page: attribution.conversion_page,
+    },
   });
 
   await notifyNewLead({
@@ -196,7 +207,7 @@ export async function submitConsultation(
     priority: priorityFromScore(score),
   });
 
-  redirect(`/proposal/thank-you/${lead.ref_code}`);
+  redirect(`/proposal/thank-you/${lead.ref_code}?source=book_consultation`);
 }
 
 // ---------------------------------------------------------------------
@@ -228,9 +239,10 @@ export async function submitLeadMagnet(
   const input = parsed.data;
   const score = 20;
   const sb = createAdminClient();
-  const { data: lead, error } = await sb
-    .from("leads")
-    .insert({
+  const attribution = await getLeadAttribution();
+  const { data: lead, error } = await insertLeadWithAttribution(
+    sb,
+    {
       source: "lead_magnet",
       source_url: "/proposal/sample",
       full_name: input.full_name,
@@ -238,9 +250,9 @@ export async function submitLeadMagnet(
       company_name: input.company_name,
       lead_score: score,
       lead_score_breakdown: { base: 20 },
-    })
-    .select("id, ref_code")
-    .single();
+    },
+    attribution
+  );
 
   if (error || !lead) {
     return { status: "error", message: "Submit error. Try again or WhatsApp us." };
@@ -250,7 +262,12 @@ export async function submitLeadMagnet(
     lead_id: lead.id,
     activity_type: "created",
     actor_type: "public_form",
-    details: { source: "lead_magnet", lead_magnet: "sample-proposal-200pax" },
+    details: {
+      source: "lead_magnet",
+      lead_magnet: "sample-proposal-200pax",
+      channel: attribution.channel,
+      conversion_page: attribution.conversion_page,
+    },
   });
 
   await notifyNewLead({
@@ -304,9 +321,10 @@ export async function submitExitIntent(
 
   try {
     const sb = createAdminClient();
-    const { data: lead, error } = await sb
-      .from("leads")
-      .insert({
+    const attribution = await getLeadAttribution();
+    const { data: lead, error } = await insertLeadWithAttribution(
+      sb,
+      {
         source: "lead_magnet",
         source_url: input.source_url,
         full_name: "Anonymous (Exit Intent)",
@@ -314,9 +332,9 @@ export async function submitExitIntent(
         company_name: "Unknown",
         lead_score: score,
         lead_score_breakdown: { base: score, channel: "exit_intent" },
-      })
-      .select("id, ref_code")
-      .single();
+      },
+      attribution
+    );
 
     if (error || !lead) {
       console.error("[submitExitIntent] Lead insert failed:", error);

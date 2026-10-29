@@ -473,6 +473,41 @@ export default async function LeadDetailPage({
               )}
             </Card>
 
+            <Card title="Attribution">
+              {lead.channel ? (
+                <>
+                  <Field label="Channel" value={lead.channel} />
+                  {lead.conversion_page && (
+                    <Field label="Converted after reading" value={lead.conversion_page} mono />
+                  )}
+                  {lead.landing_page && (
+                    <Field label="Landing page" value={lead.landing_page} mono />
+                  )}
+                  {lead.referrer && <Field label="Referrer" value={lead.referrer} mono />}
+                  {(lead.utm_source || lead.utm_medium || lead.utm_campaign) && (
+                    <Field
+                      label="UTM"
+                      value={[lead.utm_source, lead.utm_medium, lead.utm_campaign, lead.utm_term, lead.utm_content]
+                        .filter(Boolean)
+                        .join(" / ")}
+                      mono
+                    />
+                  )}
+                  {lead.gclid && <Field label="Google Ads click" value="gclid ✓" />}
+                  {lead.first_visit_at && (
+                    <Field
+                      label="First visit"
+                      value={new Date(lead.first_visit_at).toLocaleString("id-ID")}
+                    />
+                  )}
+                </>
+              ) : (
+                <p className="text-sm text-slate">
+                  Belum ada data — lead dibuat manual atau sebelum attribution tracking aktif.
+                </p>
+              )}
+            </Card>
+
             <Card title="Audit">
               <Field
                 label="Submitted"

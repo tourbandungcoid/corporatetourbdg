@@ -209,7 +209,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
         </section>
 
         {/* Author + CTA block */}
-        <section className="py-12 md:py-16 border-t border-divider bg-bone">
+        <section data-cta-location="article_author_cta" className="py-12 md:py-16 border-t border-divider bg-bone">
           <div className="container-1280">
             <div className="max-w-3xl mx-auto rounded-3xl bg-paper border border-border p-7 md:p-9">
               <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -261,7 +261,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
         )}
 
         {/* Final CTA */}
-        <section className="bg-ink text-cream py-20 md:py-28">
+        <section data-cta-location="article_final_cta" className="bg-ink text-cream py-20 md:py-28">
           <div className="container-1280 text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-paper leading-[1.02]">Mau apply framework ini di tim Anda?</h2>
             <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">Brief 15 menit, custom proposal dalam 24 jam.</p>
