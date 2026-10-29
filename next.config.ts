@@ -25,6 +25,21 @@ const nextConfig: NextConfig = {
   compress: true,
   productionBrowserSourceMaps: false,
 
+  // Merged/retired insight articles → the stronger article on the same topic.
+  async redirects() {
+    return [
+      ["bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor", "corporate-gathering-vs-outing-kantor"],
+      ["checklist-vendor-event-organizer-corporate", "cara-memilih-vendor-corporate-event-bandung"],
+      ["annual-company-trip-vs-incentive-trip", "incentive-trip-perusahaan-panduan-lengkap"],
+      ["how-to-measure-roi-corporate-event", "justify-outing-budget-to-finance"],
+      ["corporate-event-budget-breakdown", "biaya-team-building-bandung"],
+    ].map(([from, to]) => ({
+      source: `/insights/${from}`,
+      destination: `/insights/${to}`,
+      permanent: true,
+    }));
+  },
+
   async headers() {
     return [
       {

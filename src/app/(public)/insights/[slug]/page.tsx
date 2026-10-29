@@ -29,11 +29,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const article = await getInsight(slug);
   if (!article) return { title: "Article not found" };
   const url = `${SITE.url}/insights/${article.slug}`;
+  const title = article.seoTitle ?? article.title;
   return {
-    title: article.title,
+    title,
     description: article.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: article.title, description: article.metaDescription, url, type: "article" },
+    openGraph: { title, description: article.metaDescription, url, type: "article" },
   };
 }
 
@@ -182,6 +183,18 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
                     <div className="mt-6 rounded-2xl border-l-4 border-brand bg-brand-light/30 p-5">
                       <p className="text-xs uppercase tracking-[0.18em] text-brand-deep font-medium mb-2">{section.callout.label}</p>
                       <p className="text-base text-ink leading-relaxed">{section.callout.text}</p>
+                    </div>
+                  )}
+                  {/* Mid-article CTA — most readers never reach the end-of-article blocks */}
+                  {i === 1 && article.sections.length >= 4 && (
+                    <div data-cta-location="article_mid_cta" className="mt-12 rounded-2xl border border-border bg-cream/40 p-6 md:p-7">
+                      <p className="font-display text-xl text-ink leading-snug">Lagi siapkan acara serupa untuk tim Anda?</p>
+                      <p className="mt-2 text-sm text-slate leading-relaxed">Lihat dulu contoh proposal kami, atau minta estimasi biaya — gratis, tanpa komitmen.</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <Link href="/proposal/sample" className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 h-11 text-sm font-medium hover:bg-brand-deep transition">Lihat contoh proposal<ArrowRight size={14} /></Link>
+                        <Link href="/proposal/quick-quote" className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition">Estimasi biaya cepat</Link>
+                        <a href={buildWaLink(article.title)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border bg-paper px-5 h-11 text-sm font-medium text-ink hover:bg-cream transition"><Whatsapp size={14} />WhatsApp</a>
+                      </div>
                     </div>
                   )}
                 </div>
