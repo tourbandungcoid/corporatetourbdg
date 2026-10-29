@@ -14,6 +14,8 @@ export type InsightSection = {
 export type Insight = {
   slug: string;
   title: string;
+  /** Shorter <title>/OG title (≤55 chars) when the H1 is long. Falls back to title. */
+  seoTitle?: string;
   excerpt: string;
   category: string;
   tldr: string[];
@@ -806,10 +808,11 @@ const INSIGHTS: Record<string, Insight> = {
   "contoh-rundown-outing-kantor-1-hari": {
     slug: "contoh-rundown-outing-kantor-1-hari",
     title: "Contoh Rundown Outing Kantor 1 Hari — Template Siap Pakai 2026",
+    seoTitle: "Contoh Rundown Outing Kantor 1 Hari + Template 2026",
     excerpt:
       "3 template rundown outing kantor 1 hari lengkap: casual bonding, team building fokus, dan premium 1-day experience. Dengan breakdown waktu, PIC, dan catatan logistik.",
     metaDescription:
-      "Contoh rundown outing kantor 1 hari yang bisa langsung dipakai — 3 format: casual bonding, team building, premium experience. Lengkap dengan timing, logistik, dan tips vendor.",
+      "Contoh rundown outing kantor 1 hari siap pakai: 3 format (santai, team building, premium) lengkap dengan jam, logistik, dan tips memilih vendor.",
     category: "Planning Guide",
     tldr: [
       "Rundown 1-hari terbaik mulai 08.00 dan selesai maksimal 18.00 — hindari kelelahan dan kesan tidak profesional.",
@@ -931,103 +934,13 @@ const INSIGHTS: Record<string, Insight> = {
     },
   },
 
-  "checklist-vendor-event-organizer-corporate": {
-    slug: "checklist-vendor-event-organizer-corporate",
-    title: "Checklist 12 Poin Pilih Vendor EO Corporate — Jangan Sampai Salah Pilih",
-    excerpt:
-      "12 pertanyaan yang harus ditanyakan sebelum hire EO corporate. Dari portofolio sampai kontrak, dari team structure sampai contingency plan. Panduan untuk HR & GA.",
-    metaDescription:
-      "Checklist 12 poin untuk memilih vendor event organizer corporate yang tepat. Pertanyaan untuk portfolio, contract, team, contingency, dan post-event accountability. Untuk HR & GA Indonesia.",
-    category: "Vendor Selection",
-    tldr: [
-      "70% masalah event bukan dari force majeure — tapi dari vendor yang tidak punya sistem. Checklist ini bantu HR/GA screen vendor sebelum commit.",
-      "Red flag terbesar: vendor yang tidak mau discovery call atau langsung quote tanpa brief. Vendor profesional selalu demand brief dulu.",
-      "Kontrak harus cover: force majeure clause, payment schedule, cancellation policy, dan accountability post-event. Tanpa ini, Anda tidak punya proteksi.",
-    ],
-    heroImage: IMAGES.heroMain,
-    publishDate: "2026-05-12",
-    readTimeMin: 7,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
-    sections: [
-      {
-        paragraphs: [
-          "Pilih vendor EO corporate yang salah bisa sangat mahal — bukan hanya dari sisi budget, tapi juga dari sisi reputasi internal HR/GA yang responsible. Setelah handle 400+ events dan sering di-brief oleh perusahaan yang pernah kecewa dengan vendor sebelumnya, kami kompilasi 12 pertanyaan ini sebagai due diligence framework.",
-          "Gunakan checklist ini sebagai panduan saat Anda shortlist 2-3 vendor dan masuk ke discovery call.",
-        ],
-      },
-      {
-        heading: "Kategori 1: Portofolio & Pengalaman (4 poin)",
-        paragraphs: [],
-        numbered: [
-          "Berapa event corporate (bukan retail/wedding) yang sudah dihandle? Minta angka spesifik — bukan 'sudah banyak'. Benchmark: vendor yang serius punya 50+ corporate events documented.",
-          "Pernah handle event dengan skala dan industri yang mirip perusahaan Anda? Minta 2-3 case study konkret — bukan katalog foto. Case study harus include brief, approach, dan result.",
-          "Siapa klien korporat mereka? Tidak perlu nama perusahaan (NDA wajar), tapi industri dan skala pax bisa di-share. Vendor yang tidak bisa share industri klien = red flag.",
-          "Apakah ada referensi yang bisa dihubungi langsung? Vendor confident akan welcome ini. Vendor yang menghindar = meragukan.",
-        ],
-      },
-      {
-        heading: "Kategori 2: Tim & Struktur (3 poin)",
-        paragraphs: [],
-        numbered: [
-          "Siapa project manager yang akan assigned ke event Anda? Apakah PM ini experienced atau junior? Vendor besar sering pitch dengan senior account tapi execute dengan tim junior.",
-          "Berapa event yang dihandle PM Anda secara paralel? PM yang handle 5+ event bersamaan tidak bisa memberikan attention yang cukup untuk event Anda.",
-          "Apakah fasilitator / MC internal atau freelance? Freelance tidak selalu buruk, tapi pastikan ada SLA dan hubungan kerja yang jelas — bukan asal subkon last minute.",
-        ],
-        callout: {
-          label: "Green flag",
-          text: "Vendor yang upfront soal tim structure dan tidak oversell — 'PM kami handle 2-3 event sekaligus tapi briefing kami intensive' lebih honest dari 'Anda dapat full attention kami'.",
-        },
-      },
-      {
-        heading: "Kategori 3: Proses & Sistem (3 poin)",
-        paragraphs: [],
-        numbered: [
-          "Apakah ada discovery brief / intake form sebelum mereka quote? Vendor profesional tidak akan quote tanpa brief. Kalau vendor langsung kirim harga tanpa tanya objective, audience, dan constraints — itu template quote, bukan custom proposal.",
-          "Bagaimana sistem komunikasi mereka? Ada project management tool (Notion, Trello, ClickUp)? Ada designated contact di luar jam kerja untuk urgency on-site? Verbal commitment saja tidak cukup.",
-          "Apakah ada risk register atau contingency plan per event? Setiap event punya Plan A dan Plan B minimum. Kalau vendor belum pernah dengar istilah ini, itu signal mereka tidak punya sistem.",
-        ],
-      },
-      {
-        heading: "Kategori 4: Kontrak & Post-Event (2 poin)",
-        paragraphs: [],
-        numbered: [
-          "Apakah kontrak cover force majeure, cancellation policy, dan refund terms secara eksplisit? Baca kontrak sebelum tanda tangan. Klausul 'force majeure' harus define trigger yang jelas, bukan open-ended.",
-          "Apakah ada post-event report? Vendor profesional deliver post-event report dalam 5-7 hari kerja: execution summary, dokumentasi, feedback compilation, dan lessons learned. Ini penting untuk justify budget ke management dan brief vendor next year.",
-        ],
-        callout: {
-          label: "Red flags dalam kontrak",
-          text: "Non-refundable deposit 100% untuk semua skenario cancel. Klausul 'perubahan sewaktu-waktu tanpa pemberitahuan'. Tidak ada service level agreement yang tertulis. Tidak ada mekanisme dispute resolution.",
-        },
-      },
-    ],
-    internalLinks: [
-      { href: "/event-organizer-corporate-bandung", label: "EO Corporate Bandung", description: "EO corporate Bandung yang memenuhi semua 12 poin checklist — NPWP, dedicated PM, post-event report." },
-      { href: "/b2b-corporate-event-specialist-bandung", label: "B2B Event Specialist", description: "Panduan lengkap 7 kriteria vendor B2B untuk procurement perusahaan besar." },
-      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Brief vendor outing Anda dengan checklist ini untuk mendapatkan proposal terbaik." },
-    ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "bandung-outing-tier-system"],
-    howTo: {
-      name: "Cara Memilih Event Organizer Corporate yang Tepat",
-      description: "Checklist 12 poin due diligence sebelum hire vendor EO corporate untuk acara perusahaan",
-      steps: [
-        { name: "Verifikasi portofolio event corporate", text: "Minta angka spesifik event corporate (bukan retail/wedding) yang sudah dihandle. Benchmark: 50+ corporate events documented. Minta 2-3 case study konkret dengan brief, approach, dan result." },
-        { name: "Cek referensi klien yang bisa dihubungi", text: "Vendor yang confident akan welcome referral check. Tanyakan industri dan skala pax klien sebelumnya. Vendor yang menghindar memberikan referensi adalah red flag." },
-        { name: "Identifikasi project manager yang akan assigned", text: "Siapa PM yang akan handle event Anda? Senior atau junior? Berapa event paralel yang dia handle? PM yang pegang 5+ event bersamaan tidak bisa memberikan attention cukup." },
-        { name: "Validasi proses discovery brief", text: "Apakah ada intake form atau discovery call sebelum mereka quote? Vendor yang langsung kirim harga tanpa brief sedang memberikan template quote, bukan custom proposal." },
-        { name: "Periksa sistem risk management", text: "Tanyakan apakah ada risk register atau contingency plan per event. Vendor tanpa dokumen ini tidak punya sistem profesional." },
-        { name: "Review kontrak secara menyeluruh", text: "Pastikan kontrak cover force majeure clause, cancellation policy, refund schedule, dan SLA komunikasi. Klausul ambigu = potensi dispute di kemudian hari." },
-        { name: "Konfirmasi deliverable post-event", text: "Apakah ada post-event report dalam 5-7 hari kerja? Report ini dibutuhkan HR untuk justify budget ke management dan brief vendor tahun berikutnya." },
-      ],
-    },
-  },
-
   "outing-lembang-vs-ciwidey": {
     slug: "outing-lembang-vs-ciwidey",
     title: "Outing Lembang vs Ciwidey — Mana yang Cocok untuk Tim Anda?",
     excerpt:
       "Dua destinasi outing terpopuler Bandung — Lembang dan Ciwidey — punya karakter sangat berbeda. Panduan komparasi venue, akses, aktivitas, dan harga per area.",
     metaDescription:
-      "Lembang vs Ciwidey untuk outing kantor — perbandingan jarak, venue, aktivitas, dan harga. Panduan lengkap untuk HR & GA yang sedang memilih lokasi outing Bandung.",
+      "Lembang vs Ciwidey untuk outing kantor: perbandingan jarak, venue, aktivitas, dan harga. Panduan HR & GA memilih lokasi outing di Bandung.",
     category: "Destination Guide",
     tldr: [
       "Lembang: akses termudah dari Bandung kota (45-90 menit), venue paling beragam (villa, resort, hotel), cocok untuk grup campuran dan first-timer.",
@@ -1125,6 +1038,7 @@ const INSIGHTS: Record<string, Insight> = {
   "mice-vs-corporate-outing-perbedaan": {
     slug: "mice-vs-corporate-outing-perbedaan",
     title: "MICE vs Corporate Outing — Beda Definisi, Beda Vendor, Beda Budget",
+    seoTitle: "MICE vs Corporate Outing: Beda Definisi & Budget",
     excerpt:
       "Banyak perusahaan salah pilih format karena tidak tahu beda MICE dan corporate outing. Panduan definitif untuk HR & GA yang sedang brief vendor.",
     metaDescription:
@@ -1206,101 +1120,17 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Corporate gathering dengan format annual event production — bukan sekadar outing." },
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing kantor sebagai alternatif MICE yang lebih kasual namun tetap impactful." },
     ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "checklist-vendor-event-organizer-corporate", "bandung-outing-tier-system"],
-  },
-
-  "annual-company-trip-vs-incentive-trip": {
-    slug: "annual-company-trip-vs-incentive-trip",
-    title: "Annual Company Trip vs Incentive Trip — Mana yang Perusahaan Anda Butuhkan?",
-    excerpt:
-      "Annual company trip untuk semua karyawan, incentive trip untuk top performers — terdengar simple, tapi banyak perusahaan salah mixing keduanya. Panduan untuk HR.",
-    metaDescription:
-      "Perbedaan annual company trip dan incentive trip — objective, eligibility, format, budget, dan vendor requirement. Panduan untuk HR Indonesia merencanakan program reward.",
-    category: "Program Design",
-    tldr: [
-      "Annual company trip = untuk semua karyawan, objective bonding + celebration + culture reinforcement. Tidak ada threshold performance.",
-      "Incentive trip = untuk top performers terseleksi, objective motivasi + reward + recognition. Ada threshold performance yang jelas.",
-      "Mixing keduanya tanpa clear eligibility criteria bisa hurt morale — peserta yang tidak lolos threshold merasa unfair, peserta yang lolos tidak merasa exclusive.",
-    ],
-    heroImage: IMAGES.packageGlamping,
-    publishDate: "2026-05-09",
-    readTimeMin: 6,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
-    sections: [
-      {
-        paragraphs: [
-          "Dua format yang sering di-brief bersamaan tapi punya logic yang sangat berbeda. Kami pernah handle perusahaan yang 'annual company trip'-nya hanya untuk tim sales dengan quota achieved — itu bukan annual trip, itu incentive trip yang kurang tepat naming-nya. Dan itu matter karena implikasi morale-nya berbeda.",
-        ],
-      },
-      {
-        heading: "Annual Company Trip — Inclusive Celebration",
-        paragraphs: [
-          "Format: semua karyawan eligible (atau semua karyawan dengan masa kerja tertentu). Objective primary adalah culture reinforcement, celebration milestone perusahaan, dan cross-departmental bonding yang tidak terjadi di hari kerja biasa.",
-        ],
-        bullets: [
-          "Eligibility: semua karyawan (atau min masa kerja, misal 3 bulan / 6 bulan)",
-          "Objective: team bonding, celebration, culture alignment, refresh",
-          "Scale: bisa besar (50-2000 pax) — butuh logistik yang solid",
-          "Experience: inklusif tapi bisa ada tier (departemen berbeda, kelas transportasi berbeda)",
-          "Budget range: Rp 2-5 jt/pax untuk 2D1N standard",
-          "Frequency: annual atau semi-annual",
-        ],
-        callout: {
-          label: "Red flag",
-          text: "Annual company trip yang tidak melibatkan semua divisi secara inklusif — sering memunculkan persepsi favoritism dan hurt cross-team collaboration.",
-        },
-      },
-      {
-        heading: "Incentive Trip — Exclusive Recognition",
-        paragraphs: [
-          "Format: hanya untuk peserta yang mencapai threshold tertentu (biasanya performance metric: sales quota, project delivery, atau behavioral target). Objective adalah motivasi top performers dan sinyal ke seluruh organisasi bahwa performance dihargai.",
-        ],
-        bullets: [
-          "Eligibility: threshold yang jelas (misal: top 20% sales, atau semua yang achieve 110% quota)",
-          "Objective: reward, recognition, exclusive experience, recharge untuk top performers",
-          "Scale: kecil dan intimate lebih baik (15-80 pax) — exclusivity adalah fitur, bukan bug",
-          "Experience: premium, personalized, bukan generic. Peserta harus feel 'ini special'",
-          "Budget range: Rp 3.5-9 jt/pax (standard sampai president's club)",
-          "Frequency: annual atau per-cycle (Q4 atau setelah sales cycle selesai)",
-        ],
-      },
-      {
-        heading: "Decision matrix — pilih yang mana?",
-        paragraphs: [],
-        numbered: [
-          "Semua karyawan harus merasakan benefitnya? → Annual company trip",
-          "Hanya top performer yang eligible? → Incentive trip",
-          "Mau reward sekaligus bonding seluruh perusahaan? → Dua program terpisah dengan budget terpisah",
-          "Budget terbatas tapi mau reward high achiever? → Incentive trip dengan skala kecil, tapi premium — lebih impactful dari annual trip biasa",
-        ],
-      },
-      {
-        heading: "Mengapa tidak disarankan di-mix?",
-        paragraphs: [
-          "Mixing — annual trip yang sebenarnya hanya untuk tim tertentu, atau incentive trip yang terlalu inklusif — menciptakan ambiguity yang justru hurt morale:",
-        ],
-        bullets: [
-          "Karyawan yang tidak diundang ke 'annual trip' merasa excluded — meski alasannya performance",
-          "Karyawan yang diundang ke incentive trip yang terlalu besar tidak merasa special",
-          "Management sulit justify budget ke Finance karena narrative program tidak jelas",
-        ],
-      },
-    ],
-    internalLinks: [
-      { href: "/incentive-trip-bandung", label: "Incentive Trip Bandung", description: "Rancang incentive trip yang eksklusif dan bermakna untuk top performer Anda." },
-      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Annual company trip format casual — bonding inklusif untuk semua karyawan." },
-      { href: "/employee-gathering-bandung", label: "Employee Gathering Bandung", description: "Employee gathering sebagai alternatif company trip yang lebih inklusif dan scalable." },
-    ],
-    relatedSlugs: ["bandung-outing-tier-system", "mice-vs-corporate-outing-perbedaan", "justify-outing-budget-to-finance"],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "cara-memilih-vendor-corporate-event-bandung", "bandung-outing-tier-system"],
   },
 
   "cara-pilih-venue-corporate-gathering-bandung": {
     slug: "cara-pilih-venue-corporate-gathering-bandung",
     title: "Cara Pilih Venue Corporate Gathering Bandung — 8 Faktor yang Sering Diabaikan",
+    seoTitle: "Cara Pilih Venue Corporate Gathering di Bandung",
     excerpt:
       "Venue yang salah bisa ruin event yang planning-nya sempurna. 8 faktor evaluasi yang HR & GA sering abaikan saat pilih venue gathering Bandung.",
     metaDescription:
-      "8 faktor penting pilih venue corporate gathering Bandung yang sering diabaikan — kapasitas real vs paper, akustik, akses, backup option, dan F&B flexibility. Panduan untuk HR & GA.",
+      "8 faktor memilih venue corporate gathering di Bandung yang sering terlewat: kapasitas real, akustik, akses, plan B, dan fleksibilitas F&B.",
     category: "Venue Guide",
     tldr: [
       "Kapasitas tertulis di brosur venue selalu lebih besar dari kapasitas realnya untuk setup corporate (dengan stage, AV, catering island). Minta floor plan.",
@@ -1403,10 +1233,11 @@ const INSIGHTS: Record<string, Insight> = {
   "biaya-team-building-bandung": {
     slug: "biaya-team-building-bandung",
     title: "Biaya Team Building Bandung 2026: Breakdown Lengkap dari Half-Day sampai 2D1N",
+    seoTitle: "Biaya Team Building Bandung 2026: Rincian Lengkap",
     excerpt:
       "Budget lengkap team building di Bandung — dari half-day Rp 1,2 jt/pax sampai program 2D1N Rp 4,5 jt/pax. Breakdown per komponen, hidden cost, dan tips negosiasi vendor.",
     metaDescription:
-      "Biaya team building Bandung 2026: range Rp 1,2–4,5 jt/pax tergantung format. Breakdown venue, facilitator, F&B, AV, transport. Hidden cost yang jarang diungkap vendor.",
+      "Biaya team building Bandung 2026: Rp 1,2–4,5 jt/pax tergantung format. Rincian venue, fasilitator, F&B, transport, dan biaya tersembunyi.",
     category: "Budget Guide",
     tldr: [
       "Team building Bandung half-day: Rp 1,2–2 jt/pax. Full-day: Rp 1,5–2,5 jt/pax. 2D1N: Rp 2,5–4,5 jt/pax. Angka ini mencakup venue, facilitator, F&B, dan transport lokal.",
@@ -1467,7 +1298,7 @@ const INSIGHTS: Record<string, Insight> = {
         heading: "Tips negosiasi dan optimasi budget",
         paragraphs: [
           "4 cara efektif optimasi budget tanpa korbankan kualitas:",
-          "Pilih lokasi lebih dekat: Venue Lembang vs Ciwidey — Lembang 15% lebih mahal rata-rata karena aksesibilitas. Ciwidey lebih murah tapi transport 30–45 menit lebih lama.",
+          "Pilih lokasi lebih dekat: Venue Lembang vs Ciwidey — Lembang umumnya lebih mahal karena aksesnya lebih mudah. Ciwidey lebih murah tapi transport 30–45 menit lebih lama.",
           "Kurangi dokumentasi video, keep foto: Foto profesional full-day Rp 2–3 juta. Video highlight bisa skip untuk budget event — foto sudah cukup untuk dokumentasi internal.",
           "Gabung tim untuk scale: Tim 30 pax vs tim 60 pax dari departemen berbeda — biaya per pax turun 15–20% karena venue dan fasilitator cost dibagi lebih banyak peserta.",
           "Booking 8–12 minggu sebelumnya: Harga venue terbaik di Bandung naik 20–30% kalau booking 2–3 minggu sebelum event. Lead time panjang = negosiasi lebih baik.",
@@ -1477,7 +1308,7 @@ const INSIGHTS: Record<string, Insight> = {
         heading: "Perbandingan cepat: team building half-day vs full-day vs 2D1N",
         paragraphs: [
           "Pilih format berdasarkan tujuan, bukan budget semata. Half-day works kalau tujuannya refresh ringan atau ice-breaker untuk project baru. Full-day optimal untuk departmental bonding atau team building rutin. 2D1N untuk post-merger integration, cross-generational deep bonding, atau leadership cohort yang butuh waktu lebih panjang untuk impact lasting.",
-          "Dari 400+ events kami, format 2D1N punya retention impact 2.5–3x lebih tinggi dari full-day — bukan karena lebih lama, tapi karena momen malam hari (informal, relax, tanpa hierarki) yang paling banyak membangun koneksi personal.",
+          "Dari 400+ events kami, format 2D1N biasanya jauh lebih membekas dibanding full-day — bukan karena durasinya, tapi karena momen malam hari (informal, relax, tanpa hierarki) yang paling banyak membangun koneksi personal.",
         ],
       },
     ],
@@ -1503,13 +1334,14 @@ const INSIGHTS: Record<string, Insight> = {
   "cara-memilih-vendor-corporate-event-bandung": {
     slug: "cara-memilih-vendor-corporate-event-bandung",
     title: "Cara Memilih Vendor Corporate Event Bandung: 10 Kriteria dari Senior Planner",
+    seoTitle: "Cara Memilih Vendor Corporate Event di Bandung",
     excerpt:
       "Panduan seleksi vendor corporate event Bandung yang tidak buang waktu. 10 kriteria evaluasi dari senior planner dengan 400+ event experience — dari RFP sampai kontrak.",
     metaDescription:
       "Cara memilih vendor corporate event Bandung yang tepat — 10 kriteria evaluasi, red flags, checklist RFP, dan pertanyaan wajib sebelum tanda tangan kontrak.",
     category: "Procurement Guide",
     tldr: [
-      "70% masalah event berakar dari pemilihan vendor yang salah — bukan dari hari-H. Proses seleksi yang rigorous di depan menghemat lebih banyak dari yang Anda bayangkan.",
+      "Banyak masalah event berakar dari pemilihan vendor yang salah — bukan dari hari-H. Proses seleksi yang teliti di depan menghemat lebih banyak dari yang Anda bayangkan.",
       "10 kriteria: track record scale, proposal format, certified facilitator, physical office, discovery brief, risk register, insurance, post-event deliverables, payment terms, dan referensi langsung.",
       "Red flag paling sering diabaikan: vendor yang quote tanpa brief mendalam, tidak punya PM fee terpisah, dan tidak bisa tunjukkan sample proposal.",
       "Minta 3 referensi klien — hubungi langsung, bukan baca testimoni di website. Pertanyaan yang paling revealing: 'Apa yang tidak berjalan sesuai rencana dan bagaimana vendor handle-nya?'",
@@ -1601,10 +1433,20 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
       {
+        heading: "Dua hal yang sering lupa dicek",
+        paragraphs: [
+          "Di luar 10 kriteria di atas, ada dua hal yang jarang ditanyakan HR/GA tapi sering jadi sumber masalah:",
+        ],
+        numbered: [
+          "Beban kerja PM Anda. Tanyakan siapa project manager yang akan pegang event Anda dan berapa event lain yang dia pegang di periode yang sama. Vendor besar kadang pitching dengan tim senior, lalu eksekusi diserahkan ke tim junior.",
+          "Red flag di kontrak: deposit 100% non-refundable untuk semua skenario pembatalan, klausul 'perubahan sewaktu-waktu tanpa pemberitahuan', tidak ada SLA tertulis, dan tidak ada mekanisme penyelesaian sengketa.",
+        ],
+      },
+      {
         heading: "Checklist RFP singkat untuk vendor corporate event",
         paragraphs: [
           "Kirimkan 5 pertanyaan ini sebelum invitation tender formal: (1) Boleh kirim 2 case study event dengan format dan pax mirip kami? (2) Proposal Anda breakdown per komponen atau lump-sum? (3) Siapa PM yang akan di-assign ke event kami dan apa credentials-nya? (4) Apakah ada asuransi peserta, dan apa coveragenya? (5) Apa deliverables post-event yang Anda berikan?",
-          "Dari respons 5 pertanyaan ini, Anda bisa eliminasi 70-80% vendor yang tidak qualified sebelum masuk ke proses brief yang lebih dalam.",
+          "Dari respons 5 pertanyaan ini, Anda bisa mencoret sebagian besar vendor yang tidak qualified sebelum masuk ke proses brief yang lebih dalam.",
         ],
       },
     ],
@@ -1613,7 +1455,7 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/corporate-event-bandung", label: "Corporate Event Bandung", description: "Overview layanan corporate event B2B kami — 9 format untuk 20–1.500 pax." },
       { href: "/specialist-vs-generic-eo", label: "Specialist vs Generic EO", description: "12 perbedaan kritis antara specialist B2B dan generic event organizer." },
     ],
-    relatedSlugs: ["checklist-vendor-event-organizer-corporate", "5-pillar-corporate-outing-design", "biaya-team-building-bandung"],
+    relatedSlugs: ["5-pillar-corporate-outing-design", "biaya-team-building-bandung", "corporate-event-timeline-planning-checklist"],
     howTo: {
       name: "Cara Memilih Vendor Corporate Event Bandung yang Tepat",
       description: "Proses seleksi 5 tahap untuk menemukan vendor corporate event Bandung yang capable sebelum tanda tangan kontrak.",
@@ -1630,6 +1472,7 @@ const INSIGHTS: Record<string, Insight> = {
   "corporate-gathering-vs-outing-kantor": {
     slug: "corporate-gathering-vs-outing-kantor",
     title: "Corporate Gathering vs Outing Kantor: Mana yang Perusahaan Anda Butuhkan?",
+    seoTitle: "Corporate Gathering vs Outing Kantor: Pilih Mana?",
     excerpt:
       "Banyak HR mix up corporate gathering dan outing kantor — format, budget, dan outcome-nya sangat berbeda. Panduan decision framework dari 400+ events.",
     metaDescription:
@@ -1693,6 +1536,14 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
       {
+        heading: "Kesalahan paling sering: format tidak cocok dengan tujuan",
+        paragraphs: [
+          "Mismatch yang paling sering kami temui: budget dan logistik level gathering dipakai untuk tujuan yang sebenarnya cukup dengan outing. Hasilnya overspend — tim tidak butuh ballroom dan awarding, mereka butuh bonding santai.",
+          "Kebalikannya juga sering: acara tahunan utama yang seharusnya jadi momen besar perusahaan dieksekusi dengan format outing minimalis. Tim merasa kurang diapresiasi dan manajemen menilai acaranya 'kurang berkesan'.",
+          "Patokan cepat: kalau tujuan acaranya mengandung kata 'perayaan', 'milestone', 'alignment', atau 'awarding' — pilih gathering. Kalau isinya 'refresh', 'bonding', atau 'recharge' — outing sudah cukup.",
+        ],
+      },
+      {
         heading: "Budget realistis per format 2026",
         paragraphs: [
           "Outing kantor Bandung: Half-day Rp 1,2–2 jt/pax, 1 hari penuh Rp 1,5–2,5 jt/pax, 2D1N Rp 2,5–5 jt/pax.",
@@ -1719,197 +1570,21 @@ const INSIGHTS: Record<string, Insight> = {
     },
   },
 
-  "how-to-measure-roi-corporate-event": {
-    slug: "how-to-measure-roi-corporate-event",
-    title: "Cara Mengukur ROI Corporate Event — Dari Kualitatif ke Kuantitatif",
-    excerpt: "ROI corporate event bukan 'peserta senang' — tapi retention impact, engagement lift, productivity gain. Framework measurement untuk CFO approval.",
-    metaDescription: "Cara mengukur ROI corporate event — AG ROI Model dari TourBandung Corporate untuk retention impact & productivity measurement.",
-    category: "Measurement",
-    tldr: [
-      "70% perusahaan track event success dengan 'peserta enjoyed' — qualitative. CFO butuh numbers.",
-      "AG ROI Model: Retention saving + Productivity lift + Culture impact = Total ROI calculated dari data existing (HR analytics, payroll).",
-      "Typical event ROI 1.6x–3.5x dari 400+ events — funded sendiri dalam 6–12 bulan via retention saving dari attrition reduction.",
-      "Measurement pre-event (baseline eNPS, attrition) dan post-event (3-month, 6-month tracking) adalah requirement untuk ROI calculation valid.",
-    ],
-    heroImage: IMAGES.heroMain,
-    publishDate: "2026-05-29",
-    readTimeMin: 8,
-    author: { name: "Finance & Planning Team", role: "TourBandung Corporate", initials: "TC" },
-    sections: [
-      {
-        paragraphs: [
-          "CFO pertanyaan: 'Event ini worthwhile berapa ROI-nya?' Banyak perusahaan tidak track — percaya event 'penting' untuk culture, tapi tidak bisa quantify impact.",
-          "Dari 400+ event, kami develop AG ROI Model untuk translate corporate event investment jadi CFO-friendly numbers. Outcome: retention impact, engagement lift, productivity gain — semuanya terukur dari existing data.",
-        ],
-      },
-      {
-        heading: "Traditional Metrics Miss the Point",
-        paragraphs: [
-          "Event organizer track: 'attendance 98%', 'satisfaction 4.5/5', 'NPS +8'. Valid tapi incomplete.",
-          "CFO perlu: 'Berapa orang tidak akan resign tahun depan? Berapa cost saving dari reduced recruitment?' — business impact, bukan sentiment.",
-        ],
-      },
-      {
-        heading: "AG ROI Model — Retention + Productivity + Culture",
-        paragraphs: [
-          "3 komponen terukur dari data existing:",
-        ],
-        numbered: [
-          "Retention Saving = Attrition reduction % × Salary × Tenure cost. Example: 100 orang, attrition 20%→15%, 5 saved × Rp 72jt = Rp 360jt.",
-          "Productivity Lift = Hours saved/month × Hourly rate × Duration. Example: 10 hours/month/person × 100 pax × Rp 100k × 6 months = Rp 600jt.",
-          "Culture Impact = eNPS lift × Recruitment cost if resigned. Example: +15 pts → prevent 3 resignations × Rp 100jt = Rp 300jt soft.",
-        ],
-      },
-    ],
-    internalLinks: [
-      { href: "/pricing", label: "BOTS™ Pricing", description: "4-tier transparent pricing — Foundation to Bespoke." },
-      { href: "/proposal/request", label: "Request Proposal", description: "Custom proposal dengan ROI measurement built-in." },
-    ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor"],
-  },
 
-  "corporate-event-budget-breakdown": {
-    slug: "corporate-event-budget-breakdown",
-    title: "Corporate Event Budget Breakdown — Venue 35%, F&B 25%, Activity 20%, Logistics 15%, Contingency 5%",
-    excerpt: "Budget Rp 300jt untuk 200 pax — kemana perginya? Realistic cost allocation breakdown per line item untuk corporate outing, gathering, retreat.",
-    metaDescription: "Corporate event budget breakdown — transparent cost allocation, hidden costs, economies of scale. TourBandung pricing reference.",
-    category: "Budget Planning",
-    tldr: [
-      "Corporate event budget tidak linear — Rp 2jt/pax bukan 2× dari Rp 1jt/pax. Economies of scale + fixed cost distribution.",
-      "Standard breakdown: Venue 35%, F&B 25%, Activity 20%, Logistics 15%, Contingency 5% — varies per tier & format.",
-      "Hidden costs overlooked: pre-event travel, post-event report production, contingency untuk force majeure, permits, insurance.",
-      "Vendor negotiation across 3–5 options saves 15–25% markup. Specialist EO advantage dari direct vendor relationships.",
-    ],
-    heroImage: IMAGES.heroMain,
-    publishDate: "2026-05-29",
-    readTimeMin: 7,
-    author: { name: "Finance Team", role: "TourBandung Corporate", initials: "TC" },
-    sections: [
-      {
-        paragraphs: [
-          "CFO ask: 'Rp 300jt untuk 200 pax — reasonable?' Depends on tier. Rp 1.5jt/pax (basic) vs Rp 4.5jt/pax (premium) adalah spektrum normal.",
-          "Key: event budget tidak linear. Rp 2jt/pax bukan 2× dari Rp 1jt/pax — fixed cost (planning, PM) spread across pax.",
-        ],
-      },
-      {
-        heading: "Mid-Tier Breakdown Example (Rp 2.5jt/pax, 150 pax = Rp 375jt total)",
-        paragraphs: [
-          "Breakdown konkret per line item:",
-        ],
-        numbered: [
-          "Venue 35% (Rp 131jt): Resort premium atau villa cluster 2 malam. Includes rooms, communal space, parking.",
-          "F&B 25% (Rp 94jt): Arrival snack + 2 breakfasts + 2 lunches + 2 dinners + daily breaks. Rp 400–600k/person/day.",
-          "Activity 20% (Rp 75jt): 2–3 organized activities + optional talent (band, DJ, facilitator).",
-          "Logistics 15% (Rp 56jt): Transport, photographer, videographer, sound equipment, insurance, permits.",
-          "Planning & PM 5% (Rp 19jt): Senior planner 10–15 hours coordination.",
-        ],
-      },
-    ],
-    internalLinks: [
-      { href: "/pricing", label: "BOTS™ Pricing", description: "4-tier breakdown with line-item details." },
-    ],
-    relatedSlugs: ["how-to-measure-roi-corporate-event"],
-  },
-
-  "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor": {
-    slug: "bagaimana-memilih-antara-corporate-gathering-atau-outing-kantor",
-    title: "Corporate Gathering vs Outing Kantor: Panduan Memilih Format yang Tepat",
-    excerpt:
-      "Dua format yang sering tertukar — padahal objective, budget, dan eksekusinya berbeda signifikan. Decision framework dari 400+ events untuk HR yang butuh pilih yang right fit.",
-    metaDescription:
-      "Perbedaan corporate gathering dan outing kantor — objective, format, budget, timeline. Decision framework dari TourBandung Corporate berdasarkan 400+ events.",
-    category: "Planning Guide",
-    tldr: [
-      "Corporate gathering adalah annual flagship event dengan ceremony + awarding + company update — formal, 2–3 hari, budget 1.5–2× outing standar.",
-      "Outing kantor adalah aktivitas bonding + refreshing yang lebih informal dan fleksibel — quarterly, 1–2 hari, focus pengalaman tim bukan formal ceremony.",
-      "Pilih gathering kalau: ada milestone tahunan penting, perlu alignment strategis, atau agenda awarding. Pilih outing kalau: refresh rutin, departmental bonding, atau quarterly engagement maintenance.",
-      "Banyak perusahaan overkill: plan gathering-level production untuk outing objective. Dan sebaliknya — underkill flagship annual event dengan format outing santai.",
-    ],
-    heroImage: IMAGES.heroMain,
-    publishDate: "2026-06-01",
-    readTimeMin: 8,
-    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
-    sections: [
-      {
-        paragraphs: [
-          "Dua pertanyaan yang paling sering masuk ke inbox kami dari HR: 'Kita mau gathering atau outing ya?' dan 'Bedanya apa sebenernya?' Pertanyaan yang terlihat sederhana, tapi jawabannya berdampak besar pada budget, timeline, dan hasil yang bisa diharapkan.",
-          "Dari 400+ events sejak 2018, kami handle keduanya — dan sering melihat perusahaan mismatch antara objective dan format yang dipilih. Hasilnya: event yang technically terlaksana tapi tidak hit target yang diinginkan.",
-        ],
-      },
-      {
-        heading: "Apa Itu Corporate Gathering?",
-        paragraphs: [
-          "Corporate gathering adalah event tahunan atau semi-tahunan yang fungsinya lebih dari sekadar refreshing. Gathering biasanya punya komponen formal: CEO address, pencapaian perusahaan year-in-review, awarding ceremony, dan strategic alignment message. Format 2D1N sampai 3D2N adalah yang paling umum.",
-          "Target peserta biasanya seluruh perusahaan atau divisi besar — artinya logistik lebih kompleks, venue harus bisa accommodate full ballroom setup, dan production value harus mencerminkan brand perusahaan. Budget untuk gathering standard berkisar Rp 3.5–6 juta per pax all-inclusive.",
-        ],
-        callout: {
-          label: "Kapan pilih Gathering",
-          text: "Ada milestone penting (anniversary, IPO, rebranding), agenda pencapaian + awarding, perlu alignment strategis seluruh perusahaan, atau ingin membuat momen yang memorable dan fotogenik untuk internal communication.",
-        },
-      },
-      {
-        heading: "Apa Itu Outing Kantor?",
-        paragraphs: [
-          "Outing kantor adalah aktivitas bonding + refreshing yang lebih informal dan bisa dilakukan lebih sering — quarterly atau semi-annual. Fokusnya pada pengalaman bersama tim, bukan formal ceremony. Format 1-day sampai 2D1N paling umum, dengan pax range yang lebih fleksibel mulai dari 20 pax departmental hingga 300 pax company-wide.",
-          "Budget outing standar berkisar Rp 1.5–3.5 juta per pax all-inclusive. Venue lebih variatif: villa private, glamping site, resort dengan outdoor activity, atau hotel dengan fun program. Tidak ada stage setup atau formal awarding — fokusnya shared experience yang natural.",
-        ],
-        callout: {
-          label: "Kapan pilih Outing",
-          text: "Refresh rutin tim setelah peak season, quarterly departmental bonding, onboarding cohort baru, atau engagement maintenance tanpa agenda formal. Cocok juga sebagai complement antara dua gathering tahunan.",
-        },
-      },
-      {
-        heading: "Decision Matrix: 8 Pertanyaan untuk Menentukan Format yang Tepat",
-        paragraphs: [
-          "Jawab 8 pertanyaan berikut — masing-masing lebih banyak menjawab 'A' atau 'B' akan menentukan format yang fit:",
-        ],
-        numbered: [
-          "Ada agenda formal (awarding, CEO address, company milestone)? A = Gathering / B = Outing",
-          "Budget per pax di atas Rp 3.5 juta? A = Gathering / B = Outing",
-          "Peserta seluruh perusahaan (200+ pax)? A = Gathering / B = Outing",
-          "Perlu ballroom atau stage AV setup profesional? A = Gathering / B = Outing",
-          "Timeline lebih dari 3 bulan dari sekarang? A = Gathering / B = Outing",
-          "Ini annual flagship event (bukan rutinitas quarterly)? A = Gathering / B = Outing",
-          "Perlu dokumentasi profesional untuk internal comms? A = Gathering / B = Outing",
-          "Ada misi alignment strategis atau culture reinforcement? A = Gathering / B = Outing",
-        ],
-      },
-      {
-        heading: "Common Mistake: Format Mismatch",
-        paragraphs: [
-          "Mismatch paling sering yang kami temui: perusahaan plan gathering-level production budget dan logistik untuk objective yang sebenarnya cukup dengan outing. Hasilnya: overspend tanpa proportional impact, karena tim tidak butuh ballroom dan awarding — mereka butuh bonding santai di alam terbuka.",
-          "Sebaliknya: annual flagship event yang seharusnya jadi company-defining moment dieksekusi dengan format outing minimalis. Tim merasa tidak diapresiasi, management kecewa karena 'tidak berkesan', dan ROI engagement drop cepat setelah event.",
-          "Formula sederhana: kalau objectivenya ada kata 'celebration', 'milestone', 'alignment', atau 'awarding' — pilih gathering. Kalau objectivenya ada kata 'refresh', 'bonding', 'connect', atau 'recharge' — outing sudah cukup.",
-        ],
-      },
-      {
-        heading: "Bisa Kombinasi Keduanya?",
-        paragraphs: [
-          "Ya — dan ini sebenarnya sweet spot untuk banyak perusahaan. Format hybrid yang sering kami design: formal gathering session di hari pertama (awarding, CEO address, strategic update), lalu outing activities di hari kedua (bonding, outdoor activities, santai).",
-          "Format ini efisien dari sisi budget karena satu venue bisa accommodate keduanya, dan peserta dapat dua pengalaman berbeda dalam satu trip. Ideal untuk perusahaan yang mau annual flagship event sekaligus genuine bonding moment — tanpa dua trip terpisah.",
-        ],
-      },
-    ],
-    internalLinks: [
-      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Paket corporate gathering premium 2D1N–3D2N di Bandung." },
-      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Paket outing kantor Bandung dari 1-day hingga 2D1N." },
-      { href: "/pricing", label: "Pricing Guide", description: "Transparent breakdown budget per format — gathering vs outing." },
-    ],
-    relatedSlugs: ["corporate-gathering-vs-outing-kantor", "5-pillar-corporate-outing-design"],
-  },
 
   "incentive-trip-perusahaan-panduan-lengkap": {
     slug: "incentive-trip-perusahaan-panduan-lengkap",
     title: "Incentive Trip Perusahaan: Panduan Lengkap Budget, Destinasi & ROI 2026",
+    seoTitle: "Incentive Trip Perusahaan: Budget, Destinasi & Tips",
     excerpt:
       "Incentive travel bukan sekadar liburan gratis karyawan — ini strategic tool untuk boost performance dan retensi. Panduan komprehensif dari planning hingga ROI measurement.",
     metaDescription:
-      "Panduan incentive trip perusahaan 2026 — budget per pax, destinasi terbaik Indonesia & Asia, proses planning, dan cara ukur ROI. Dari TourBandung Corporate, 400+ events.",
+      "Panduan incentive trip perusahaan 2026: budget per pax, destinasi Indonesia & Asia, alur perencanaan, dan cara mengukur dampaknya.",
     category: "Incentive Travel",
     tldr: [
       "Incentive trip berbeda dari outing biasa — ini reward terstruktur untuk top performer berdasarkan KPI, bukan company-wide gathering.",
       "Budget realistic: Rp 5–12 juta/pax untuk domestic premium (Bali, Lombok). Rp 15–35 juta/pax untuk internasional (Singapura, Bangkok, Tokyo).",
-      "ROI incentive travel terbukti: 3:1 sampai 8:1 return dari peningkatan produktivitas dan retensi top performer — jauh lebih tinggi dari cash bonus equivalent.",
+      "Incentive trip bekerja sebagai motivator karena hadiahnya berupa pengalaman dan pengakuan — sesuatu yang lebih diingat dibanding bonus tunai yang cepat habis.",
       "Threshold peserta ideal: 15–80 pax. Di atas 100 pax, rasa exclusivity menurun dan logistik jadi kompleks.",
     ],
     heroImage: IMAGES.heroMain,
@@ -1962,15 +1637,26 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
       {
-        heading: "ROI Incentive Travel: Data yang Perlu Diketahui HRD",
+        heading: "Incentive trip vs annual company trip: jangan dicampur",
         paragraphs: [
-          "Incentive Research Foundation (IRF) melaporkan: incentive travel program menghasilkan ROI 3:1 sampai 8:1 dibanding non-travel reward program setara biaya. Untuk konteks Indonesia, angka yang sering kami observe dari client data:",
+          "Annual company trip itu inklusif — semua karyawan ikut, tujuannya perayaan dan bonding. Incentive trip itu eksklusif — hanya untuk yang mencapai target, tujuannya apresiasi dan motivasi. Mencampur keduanya justru merusak dua-duanya:",
+        ],
+        bullets: [
+          "Karyawan yang tidak diajak ke 'annual trip' merasa tersisih, walaupun alasannya performa",
+          "Incentive trip yang pesertanya terlalu banyak kehilangan rasa spesialnya",
+          "Manajemen sulit menjelaskan budget ke Finance karena tujuan programnya tidak jelas",
+        ],
+      },
+      {
+        heading: "Cara Mengukur Dampak Incentive Trip",
+        paragraphs: [
+          "Dampak incentive trip memang tidak muncul di laporan keuangan bulan depan — tapi bisa diukur kalau disiapkan dari awal. Empat indikator yang kami sarankan dipantau HRD:",
         ],
         numbered: [
-          "Retensi top performer: perusahaan yang rutin jalankan incentive trip tahunan memiliki retensi top performer 40–60% lebih baik vs yang tidak. Cost of replacing 1 top performer = 6–9× monthly salary.",
-          "Performance lift post-announcement: sales team yang tahu ada incentive trip sebagai reward menunjukkan 15–25% performance uplift dalam 6 bulan menjelang threshold.",
-          "Repeat performance: karyawan yang pernah dapat incentive trip memiliki 73% probability mencapai threshold lagi di tahun berikutnya vs 31% untuk yang belum pernah.",
-          "Aspiration multiplier: 78% karyawan yang belum reach threshold menyatakan incentive trip adalah motivator utama vs 45% untuk cash bonus equivalent.",
+          "Retensi top performer: bandingkan tingkat resign peserta incentive trip vs top performer yang tidak ikut, 6–12 bulan setelah trip. Biaya mengganti satu top performer biasanya jauh di atas biaya trip-nya.",
+          "Performa menjelang threshold: pantau pencapaian target di bulan-bulan sebelum batas kualifikasi, dibanding periode yang sama tahun lalu tanpa program.",
+          "Repeat performance: berapa banyak peserta tahun ini yang kembali mencapai threshold tahun berikutnya.",
+          "Daya tarik program: survei singkat ke karyawan yang belum lolos — apakah trip ini jadi motivasi, dibanding bentuk reward lain.",
         ],
       },
       {
@@ -1993,16 +1679,17 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/executive-offsite-bandung", label: "Executive Offsite Bandung", description: "Format premium untuk C-suite team." },
       { href: "/pricing", label: "Pricing Guide", description: "BOTS™ pricing tiers — Foundation sampai Bespoke." },
     ],
-    relatedSlugs: ["annual-company-trip-vs-incentive-trip", "how-to-measure-roi-corporate-event"],
+    relatedSlugs: ["justify-outing-budget-to-finance", "executive-offsite-perusahaan-panduan"],
   },
 
   "executive-offsite-perusahaan-panduan": {
     slug: "executive-offsite-perusahaan-panduan",
     title: "Executive Offsite Perusahaan: Format, Budget & Cara Mengeksekusinya dengan Benar",
+    seoTitle: "Executive Offsite Perusahaan: Format & Budget",
     excerpt:
       "Executive offsite bukan sekadar rapat di luar kantor — kalau didesain benar, ini adalah accelerator keputusan strategis dan alignment C-suite yang tidak bisa digantikan oleh Zoom meeting.",
     metaDescription:
-      "Panduan executive offsite perusahaan — format, budget Rp 5–15 jt/pax, venue terbaik Bandung, dan metodologi untuk C-suite strategic session yang menghasilkan keputusan nyata.",
+      "Panduan executive offsite: format sesi, budget Rp 5–15 jt/pax, venue terbaik di Bandung, dan cara membuat sesi C-level menghasilkan keputusan.",
     category: "Executive Events",
     tldr: [
       "Executive offsite yang efektif bukan sekadar rapat di luar kota — ada metodologi design yang memastikan strategic alignment dan keputusan konkret keluar dari sesi tersebut.",
@@ -2096,54 +1783,127 @@ const INSIGHTS: Record<string, Insight> = {
 
   "corporate-event-timeline-planning-checklist": {
     slug: "corporate-event-timeline-planning-checklist",
-    title: "Corporate Event Timeline & Checklist — 12 Weeks Standard dari Brief sampai Post-Event Report",
-    excerpt: "12-minggu planning timeline untuk Foundation tier. Mingguan checklist dari brief clarity sampai vendor confirmation sampai execution smooth.",
-    metaDescription: "Corporate event timeline & planning checklist — 12-week framework dari TourBandung Corporate. Week-by-week checklist prevent missed items.",
-    category: "Planning",
+    title: "Timeline Persiapan Event Kantor: Checklist 12 Minggu dari Brief sampai Laporan",
+    seoTitle: "Timeline Persiapan Event Kantor: Checklist 12 Minggu",
+    excerpt:
+      "Event kantor yang mulus hampir selalu disiapkan dari jauh hari. Ini timeline 12 minggu yang kami pakai — apa yang harus beres di tiap fase, dan apa yang bisa dikompromikan kalau waktunya mepet.",
+    metaDescription:
+      "Timeline persiapan event kantor 12 minggu: checklist per fase dari brief, venue, kontrak, logistik, sampai laporan. Plus versi kilat 4–6 minggu.",
+    category: "Planning Guide",
     tldr: [
-      "Foundation 8–12 minggu. Signature 12–16 minggu. Kurang 8 minggu → scope reduction atau risk increase.",
-      "Critical path: Brief (week 1) → Vendor selection (week 3) → Proposal finalization (week 6) → Logistics (week 10) → Execution.",
-      "80% execution quality determined in first 6 weeks (brief clarity, vendor selection). Last 6 weeks = fine-tuning & contingency.",
-      "Checklist per minggu prevent 3–5 day-of stress items. Tanpa checklist, forgotten details = execution chaos.",
+      "Idealnya 8–12 minggu untuk outing atau gathering 1–2 hari. Gathering besar dengan gala/awarding atau 200+ pax: mulai 12–16 minggu sebelumnya.",
+      "Fase paling menentukan ada di 6 minggu pertama: brief jelas, venue terkunci, kontrak ditandatangani. Sisanya eksekusi.",
+      "Kunci tanggal venue dulu, baru detail acara. Di Bandung, akhir pekan musim liburan dan Desember cepat penuh.",
+      "Waktu mepet (4–6 minggu) masih bisa — asal scope dipangkas dan keputusan diambil cepat.",
     ],
-    heroImage: IMAGES.heroMain,
+    heroImage: IMAGES.caseStudyTeamBuilding,
     publishDate: "2026-05-29",
-    readTimeMin: 10,
-    author: { name: "Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
     sections: [
       {
         paragraphs: [
-          "Dari 400+ events: smooth execution selalu dari structured timeline & checklist. Chaotic execution = rushed planning atau skipped steps.",
-          "Standard 12-minggu timeline untuk Foundation/Elevated tier (16 minggu untuk Signature/Bespoke).",
+          "Hampir semua event kantor yang berantakan di hari-H punya pola yang sama: persiapannya dikejar-kejar. Venue dipilih dari yang tersisa, rundown baru jadi H-3, dan daftar peserta masih berubah di grup WhatsApp malam sebelum berangkat.",
+          "Timeline di bawah ini adalah kerangka 12 minggu yang kami pakai untuk outing, gathering, dan team building 1–2 hari. Pakai sebagai checklist — centang tiap poin, dan Anda tahu persis apa yang belum beres.",
         ],
       },
       {
-        heading: "Weeks 1–6: Brief → Proposal → Signed Contract",
+        heading: "Berapa lama waktu persiapan yang ideal?",
         paragraphs: [
-          "Foundation phase — objective clarity, vendor selection, financial approval.",
+          "Patokan kasar berdasarkan jenis acara:",
         ],
+        bullets: [
+          "Outing atau team building 1 hari, di bawah 100 pax: 6–8 minggu",
+          "Gathering 2D1N, 50–200 pax: 8–12 minggu",
+          "Gathering besar dengan gala/awarding atau 200+ pax: 12–16 minggu",
+          "Musim ramai (Desember, libur sekolah, long weekend): tambah 2–4 minggu supaya aman",
+        ],
+        callout: {
+          label: "Kenapa selama itu?",
+          text: "Bukan karena acaranya rumit, tapi karena approval internal. Budget perlu disetujui, tanggal harus cocok dengan kalender direksi, dan peserta perlu konfirmasi. Bagian inilah yang paling sering makan waktu.",
+        },
+      },
+      {
+        heading: "Minggu 1–2: Brief & approval budget",
+        paragraphs: [],
         numbered: [
-          "Week 1–2: Briefing (60–90 min), document requirements, present format recommendation.",
-          "Week 3–4: Scout 3–5 venues, negotiate rates, client choose & lock contract.",
-          "Week 5–6: Design activities & menu, prepare proposal, client sign + 30% deposit due.",
+          "Tulis tujuan acara dalam satu kalimat — misalnya 'apresiasi akhir tahun sekaligus kick-off target tahun depan'. Kalimat ini jadi patokan semua keputusan berikutnya.",
+          "Kunci angka kasar: jumlah peserta, durasi (1 hari atau 2D1N), dan range budget per pax.",
+          "Siapkan 2–3 opsi tanggal, jangan cuma satu.",
+          "Brief vendor. Kalau tujuan, pax, dan budget sudah jelas, 15–30 menit cukup.",
+          "Ajukan budget ke atasan atau direksi lengkap dengan tujuan acaranya — bukan sekadar angka.",
         ],
       },
       {
-        heading: "Weeks 7–12: Logistics → Execution → Post-Event",
-        paragraphs: [
-          "Execution phase — vendor confirmation, contingency planning, event day + deliverables.",
-        ],
+        heading: "Minggu 3–4: Venue & tanggal dikunci",
+        paragraphs: [],
         numbered: [
-          "Week 7–8: Final headcount, dietary confirmation, transportation locked, vendors briefed.",
-          "Week 9–10: Venue walkthrough, contingency plan, insurance confirmed, 70% payment due.",
-          "Week 11–12: Team briefing, event execution, photo/video delivery, report summary.",
+          "Shortlist 2–3 venue berdasarkan jumlah peserta real, bukan kapasitas di brosur.",
+          "Site visit — atau minimal video call walkthrough — untuk venue yang belum pernah dipakai.",
+          "Pastikan ada ruang indoor untuk plan B, terutama Oktober–April saat musim hujan.",
+          "Kunci tanggal dengan DP venue. Tanpa DP, tanggal itu belum benar-benar milik Anda.",
+        ],
+      },
+      {
+        heading: "Minggu 5–6: Konsep, rundown draft & kontrak",
+        paragraphs: [],
+        numbered: [
+          "Pilih konsep atau tema dan aktivitas utama.",
+          "Buat draft rundown pertama — cukup blok waktu, belum perlu detail per menit.",
+          "Review proposal final: rincian per item, apa yang termasuk dan apa yang tidak.",
+          "Tanda tangan kontrak dan bayar deposit. Cek klausul pembatalan, reschedule, dan force majeure.",
+        ],
+        callout: {
+          label: "Titik aman",
+          text: "Kalau di akhir minggu ke-6 venue sudah DP, kontrak sudah ditandatangani, dan draft rundown sudah ada — event Anda ada di jalur aman. Enam minggu sisanya tinggal eksekusi.",
+        },
+      },
+      {
+        heading: "Minggu 7–8: Peserta & logistik",
+        paragraphs: [],
+        numbered: [
+          "Buka konfirmasi peserta dengan deadline yang jelas.",
+          "Kumpulkan kebutuhan khusus: alergi, makanan halal atau vegetarian, kondisi kesehatan, dan kebutuhan ibadah.",
+          "Tentukan transportasi — bus, elf, atau kendaraan pribadi — lengkap dengan titik kumpul dan jam berangkat.",
+          "Susun rooming list kalau acaranya menginap.",
+        ],
+      },
+      {
+        heading: "Minggu 9–10: Finalisasi & plan B",
+        paragraphs: [],
+        numbered: [
+          "Kirim headcount final ke vendor (biasanya H-14).",
+          "Rundown detail per 15–30 menit, termasuk buffer waktu perjalanan.",
+          "Plan B tertulis untuk setiap aktivitas outdoor.",
+          "Pelunasan sesuai termin di kontrak.",
+          "Siapkan material: name tag, doorprize, banner, dan atribut tim.",
+        ],
+      },
+      {
+        heading: "Minggu 11–12: Briefing, hari-H & laporan",
+        paragraphs: [],
+        numbered: [
+          "Technical meeting dengan vendor dan PIC internal (H-7 sampai H-3).",
+          "Kirim info final ke peserta: jadwal, titik kumpul, dresscode, dan barang bawaan.",
+          "Di hari-H, tunjuk satu PIC internal sebagai penghubung ke vendor — jangan semua orang ikut koordinasi.",
+          "Setelah acara: survei singkat ke peserta, terima dokumentasi, dan minta laporan pasca-event untuk evaluasi tahun depan.",
+        ],
+      },
+      {
+        heading: "Kalau waktunya cuma 4–6 minggu?",
+        paragraphs: [
+          "Masih bisa, dengan tiga kompromi: pilih venue yang masih tersedia (bukan yang paling diinginkan), pakai format yang sudah teruji alih-alih konsep custom, dan kumpulkan keputusan di satu orang supaya approval tidak bolak-balik.",
+          "Yang tidak boleh dipangkas: plan B cuaca, data kebutuhan khusus peserta, dan briefing vendor. Tiga hal ini paling sering bikin masalah di hari-H kalau dilewati.",
+          "Tanggal Anda sudah dekat? Kirim brief singkat — kami bantu cek venue yang masih tersedia dan kirim proposal dalam 24 jam.",
         ],
       },
     ],
     internalLinks: [
-      { href: "/proposal/request", label: "Request Proposal", description: "We handle timeline & checklist for you." },
+      { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Paket outing kantor 1 hari sampai 2D1N — timeline persiapan kami yang pegang." },
+      { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Gathering tahunan dengan gala dan awarding, untuk 50–800 pax." },
+      { href: "/proposal/request", label: "Request Proposal", description: "Kirim brief, proposal custom dalam 24 jam." },
     ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "corporate-event-budget-breakdown"],
+    relatedSlugs: ["contoh-rundown-outing-kantor-1-hari", "cara-memilih-vendor-corporate-event-bandung", "biaya-team-building-bandung"],
   },
 };
 
