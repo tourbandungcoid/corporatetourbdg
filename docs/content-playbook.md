@@ -12,30 +12,46 @@ Panduan operasional untuk 3 rutinitas:
 
 ## 1. Konten rutin
 
-### Ritme mingguan
+### Ritme mingguan (mulai W45 · 6 posting/minggu, format campuran)
 
-| Hari | Aktivitas | PIC |
+| Hari tayang | Slot | Format | Panjang |
+|---|---|---|---|
+| Senin | Artikel utama #1 | Topik dari kalender di bawah | 800–1.200 kata |
+| Selasa | Tanya jawab #1 | Satu pertanyaan klien, dijawab langsung | 300–500 kata |
+| Rabu | Cerita event | Recap event nyata dari `docs/content-inbox.md` (kalau inbox kosong → tanya jawab tambahan) | 500–700 kata |
+| Kamis | Artikel utama #2 | Topik dari kalender | 800–1.200 kata |
+| Jumat | Tanya jawab #2 | Satu pertanyaan klien | 300–500 kata |
+| Sabtu | Update artikel lama | Tambah section/FAQ, perbarui info, set `updatedDate` | — |
+
+**Alur kerja otomatis**
+
+| Kapan | Siapa | Apa |
 |---|---|---|
-| Senin | Claude menyiapkan 2 draft (format siap paste CMS) di `docs/content-drafts/` | Claude |
-| Senin–Selasa | Review isi: fakta, harga, tone, foto | CEO / tim |
-| Selasa | Publish artikel #1 → distribusi (WA, IG story, LinkedIn) | Admin |
-| Jumat | Publish artikel #2 → distribusi | Admin |
+| Kamis | Claude (jadwal otomatis) | Menulis 6 posting minggu depan langsung di `src/lib/insights-data-static.ts`, lalu membuka PR |
+| Jumat–Minggu | CEO | Review & merge PR (±20 menit). **Merge paling lambat Minggu malam** |
+| Senin–Sabtu 00.00 WIB | Otomatis | Artikel tampil sendiri sesuai `publishDate` — sebelum tanggalnya tidak muncul di `/insights`, sitemap, maupun URL-nya (404) |
+| Senin–Sabtu pagi | Claude (jadwal otomatis) | Laporan harian: artikel yang tayang hari itu + link distribusi siap sebar |
 
-**Kenapa mulai 2/minggu, bukan 4:** 23 artikel lama punya 3 pasang topik kembar. Artikel ke-4 dalam seminggu biasanya mulai mengulang topik dan saling mengganggu ranking. Naikkan ke 3–4/minggu setelah 4 minggu, kalau Search Console sudah menunjukkan impresi dan ada bahan nyata dari event (cerita, foto, angka).
+Catatan:
+- Slot **update artikel lama** langsung berlaku begitu PR di-merge (bukan menunggu Sabtu).
+- Bahan nyata (pertanyaan klien, cerita event, foto) ditaruh di `docs/content-inbox.md`. Tanpa bahan, slot Rabu diisi tanya jawab dan kualitas cerita turun — inbox adalah bahan bakar sistem ini.
+- **Jangan buka URL artikel sebelum tanggal tayangnya** — tidak berbahaya, tapi tidak ada yang bisa dilihat (404).
 
-### Cara publish (tanpa deploy)
+### Cara publish lewat CMS (opsional, untuk artikel di luar jadwal)
 
 1. Login `/admin` → **Content → Insights → New**
 2. Salin tiap blok dari file draft ke field dengan nama yang sama
-3. Set **status = published** **pada hari publish** (CMS tidak menyembunyikan tanggal masa depan — kalau di-publish lebih awal, artikel langsung tampil)
+3. Set **status = published**. Artikel CMS dengan `publishDate` di masa depan sekarang juga otomatis tersembunyi sampai tanggalnya.
 4. Buka `/insights/<slug>` untuk cek tampilan
 5. Kirim link distribusi (ada di bagian bawah setiap draft)
+
+> Slug yang sama di CMS dan repo: versi CMS yang menang. Jangan menempel draft yang sudah masuk repo ke CMS.
 
 ### Kalender 8 minggu (Okt–Des 2026)
 
 Urutan disesuaikan musim: akhir tahun, musim hujan, dan kick-off Januari.
 
-| Minggu | Artikel #1 (Selasa) | Artikel #2 (Jumat) | Money page yang didukung |
+| Minggu | Artikel utama #1 (W43–W44: Selasa · mulai W45: Senin) | Artikel utama #2 (W43–W44: Jumat · mulai W45: Kamis) | Money page yang didukung |
 |---|---|---|---|
 | W43 · 20–23 Okt | ✅ Employee Gathering Akhir Tahun: Konsep & Timeline | ✅ Outing Kantor di Musim Hujan Bandung: Plan B | employee-gathering, outing-kantor |
 | W44 · 27–30 Okt | ✅ Rundown Gathering 2 Hari 1 Malam — Template | ✅ Cara Bikin Proposal Outing ke Direksi (+ template) | corporate-gathering, villa-gathering, /proposal/sample |
@@ -46,13 +62,13 @@ Urutan disesuaikan musim: akhir tahun, musim hujan, dan kick-off Januari.
 | W49 · 1–4 Des | Team Building untuk Tim Hybrid/Remote | Rombongan Jakarta–Bandung: Bus, Elf, atau Kereta? | team-building, corporate-outing |
 | W50 · 8–11 Des | Dokumentasi Event Kantor untuk Employer Branding | Awarding Night Karyawan: Ide Kategori & Alur Acara | services (cross-sell 7summits Project), corporate-gathering |
 
-**Slot 3–4 (setelah W46, kalau kapasitas ada):** recap event nyata (butuh data & foto dari tim), jawaban singkat dari pertanyaan sales call (bagus untuk AEO), update artikel lama yang performanya turun.
+**Slot tanya jawab, cerita event, dan update** tidak ada di tabel ini — topiknya diambil dari `docs/content-inbox.md` dan daftar artikel lama setiap minggu.
 
 **Topik yang dilarang (sudah ada, risiko kanibalisasi):** biaya team building, rundown 1 hari, checklist vendor EO, gathering vs outing, Lembang vs Ciwidey, MICE vs outing, incentive trip, executive offsite, ROI event, timeline 12 minggu.
 
 ### Checklist kualitas per artikel
 
-- [ ] 800–1.200 kata, ada TL;DR, minimal 1 list langkah/checklist
+- [ ] Panjang sesuai slot (artikel utama 800–1.200 · tanya jawab 300–500 · cerita event 500–700 kata), ada TL;DR, minimal 1 list langkah/checklist
 - [ ] Satu keyword utama di title, slug, meta description (≤160 karakter), dan paragraf pertama
 - [ ] Tidak ada angka/statistik karangan — harga mengacu ke `/pricing` dan `packages-data.ts`
 - [ ] 2–3 `relatedSlugs` ke artikel yang relevan

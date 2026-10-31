@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cache } from "react";
 import { ArrowRight, Whatsapp, Check } from "@/components/icons/Icons";
 import { StickyProposalBar } from "@/components/StickyProposalBar";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
-import { getAllInsightSlugs, getInsight, getInsightsList } from "@/lib/insights-data";
+import { getInsight as fetchInsight, getInsightsList } from "@/lib/insights-data";
 import { buildWaLink, SITE } from "@/lib/site";
 import {
   JsonLd,
@@ -19,10 +20,12 @@ import {
 
 type Params = Promise<{ slug: string }>;
 
-export async function generateStaticParams() {
-  const slugs = await getAllInsightSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+// Rendered per request so scheduled articles (future publishDate) go live at 00:00 WIB
+// without a deploy. ISR would cache the pre-launch 404 (incl. its <title>) for that URL.
+export const dynamic = "force-dynamic";
+
+// One DB read per slug per request, shared by generateMetadata and the page.
+const getInsight = cache(fetchInsight);
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
@@ -66,7 +69,7 @@ export default async function InsightDetailPage({ params }: { params: Params }) 
       description: article.metaDescription,
       image: article.heroImage.src,
       datePublished: article.publishDate,
-      dateModified: article.publishDate,
+      dateModified: article.updatedDate ?? article.publishDate,
       slug: `/insights/${article.slug}`,
       authorName: article.author.name,
       authorJobTitle: article.author.role,

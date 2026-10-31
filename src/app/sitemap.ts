@@ -5,6 +5,9 @@ import { getAllCaseStudySlugs } from "@/lib/case-studies-data";
 import { getAllInsightSlugs } from "@/lib/insights-data";
 import { getAllFaqCategorySlugs } from "@/lib/faq-data";
 
+// Per request, so scheduled insight articles enter the sitemap on their publish day.
+export const dynamic = "force-dynamic";
+
 const PUBLIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
   // SEO money pages (top-level — max ranking power)

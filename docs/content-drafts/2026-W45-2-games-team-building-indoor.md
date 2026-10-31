@@ -1,5 +1,7 @@
 # Games Team Building Indoor yang Seru & Nggak Bikin Canggung
 
+> ⚠️ **Sudah masuk repo (jadwal tayang otomatis) — JANGAN ditempel ke CMS.** File ini disimpan sebagai arsip. Kalau ditempel ke CMS, versi CMS akan menimpa versi repo.
+
 > Draft artikel siap publish via **/admin/content/insights → New**. Salin tiap blok ke field dengan nama yang sama.
 > Jadwal publish: **2026-11-06** · 840 kata · 5 menit baca
 

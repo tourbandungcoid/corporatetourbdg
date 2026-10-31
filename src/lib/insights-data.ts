@@ -16,6 +16,7 @@ import {
   getInsightsListStatic,
   getInsightStatic,
   getAllInsightSlugsStatic,
+  isInsightLive,
 } from "@/lib/insights-data-static";
 
 export type { Insight, InsightSection };
@@ -75,7 +76,7 @@ async function fetchPublished(): Promise<Insight[] | null> {
       .order("publish_date", { ascending: false });
     if (error || !data) return null;
     if (data.length === 0) return null;
-    return data.map((d) => rowToInsight(d as Row));
+    return data.map((d) => rowToInsight(d as Row)).filter((i) => isInsightLive(i.publishDate));
   } catch {
     return null;
   }
@@ -119,7 +120,8 @@ export async function getInsight(slug: string): Promise<Insight | undefined> {
       .eq("status", "published")
       .maybeSingle();
     if (error || !data) return getInsightStatic(slug);
-    return rowToInsight(data as Row);
+    // A future-dated CMS row stays hidden (and keeps hiding its repo twin) until its day.
+    return isInsightLive((data as Row).publish_date) ? rowToInsight(data as Row) : undefined;
   } catch {
     return getInsightStatic(slug);
   }
@@ -128,11 +130,13 @@ export async function getInsight(slug: string): Promise<Insight | undefined> {
 export async function getAllInsightSlugs(): Promise<string[]> {
   try {
     const sb = createAdminClient();
-    const { data, error } = await sb.from("insights").select("slug, status");
+    const { data, error } = await sb.from("insights").select("slug, status, publish_date");
     if (error || !data) return getAllInsightSlugsStatic();
     const inDb = new Set(data.map((d) => d.slug));
     return [
-      ...data.filter((d) => d.status === "published").map((d) => d.slug),
+      ...data
+        .filter((d) => d.status === "published" && isInsightLive(d.publish_date))
+        .map((d) => d.slug),
       ...getAllInsightSlugsStatic().filter((slug) => !inDb.has(slug)),
     ];
   } catch {
