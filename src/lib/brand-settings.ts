@@ -50,7 +50,7 @@ const FALLBACK: BrandSettings = {
   logo_primary_url: null,
   logo_dark_url: null,
   logo_favicon_url: null,
-  logo_height_nav: 48,
+  logo_height_nav: 40,
   logo_carousel_speed: 35,
   logo_carousel_swipe: false,
   copy_overrides: {},
@@ -81,7 +81,7 @@ export const getBrandSettings = cache(async (): Promise<BrandSettings> => {
       logo_primary_url: data.logo_primary_url ?? null,
       logo_dark_url: data.logo_dark_url ?? null,
       logo_favicon_url: data.logo_favicon_url ?? null,
-      logo_height_nav: typeof data.logo_height_nav === "number" ? data.logo_height_nav : 48,
+      logo_height_nav: typeof data.logo_height_nav === "number" ? data.logo_height_nav : 40,
       logo_carousel_speed: typeof data.logo_carousel_speed === "number" ? data.logo_carousel_speed : 35,
       logo_carousel_swipe: typeof data.logo_carousel_swipe === "boolean" ? data.logo_carousel_swipe : false,
       copy_overrides:

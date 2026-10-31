@@ -127,8 +127,8 @@ export default async function BrandSettingsPage() {
               label: "Logo height di navbar (px)",
               type: "number",
               default: String(b.logo_height_nav),
-              hint: "Ukuran tinggi logo di navbar. Min 24, max 56 (tinggi navbar 64px). Default: 48.",
-              placeholder: "48",
+              hint: "Ukuran tinggi logo di navbar. Min 24, max 40. Default: 40.",
+              placeholder: "40",
             },
           ]}
         />

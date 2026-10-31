@@ -11,7 +11,7 @@ import { buildWaLink } from "@/lib/site";
 // settings, so clamp it here to keep an oversized value from spilling over
 // the nav pill and hero.
 const NAV_LOGO_MIN = 24;
-const NAV_LOGO_MAX = 56;
+const NAV_LOGO_MAX = 40;
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -29,7 +29,7 @@ const NAV_LINKS = [
  * - CTA pill standalone
  * - All glassmorphism only on the nav pill itself
  */
-export function Navigation({ logoHeight: rawLogoHeight = 48 }: { logoHeight?: number }) {
+export function Navigation({ logoHeight: rawLogoHeight = 40 }: { logoHeight?: number }) {
   const logoHeight = Math.min(NAV_LOGO_MAX, Math.max(NAV_LOGO_MIN, rawLogoHeight));
   const pathname = usePathname();
   const isHome = pathname === "/";
