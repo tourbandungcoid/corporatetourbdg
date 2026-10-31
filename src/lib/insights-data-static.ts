@@ -21,7 +21,9 @@ export type Insight = {
   tldr: string[];
   metaDescription: string;
   heroImage: typeof IMAGES.heroMain;
-  publishDate: string; // ISO date
+  publishDate: string; // ISO date — articles with a future date stay hidden until that day (WIB)
+  /** Last substantive content update (ISO date) — emitted as schema dateModified. */
+  updatedDate?: string;
   readTimeMin: number;
   author: {
     name: string;
@@ -949,6 +951,7 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     heroImage: IMAGES.packageAnnualGathering,
     publishDate: "2026-05-11",
+    updatedDate: "2026-11-07",
     readTimeMin: 9,
     author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
     sections: [
@@ -1018,6 +1021,17 @@ const INSIGHTS: Record<string, Insight> = {
         ],
       },
       {
+        heading: "Kalau acaranya di musim hujan (Oktober–April)",
+        paragraphs: [
+          "Kedua area sama-sama sering hujan di sore hari selama musim hujan. Bedanya ada di akses dan cadangan indoor.",
+        ],
+        bullets: [
+          "Lembang: pilihan venue dengan ballroom atau aula indoor jauh lebih banyak, jadi plan B lebih mudah disiapkan. Tetap hitung tambahan waktu karena jalur ke Lembang padat saat hujan dan akhir pekan.",
+          "Ciwidey: pemandangan justru sering paling dramatis saat berkabut, tapi jalur lebih panjang dan berliku. Jadwalkan aktivitas outdoor di pagi hari dan pastikan venue punya ruang indoor yang muat seluruh peserta.",
+          "Untuk keduanya: siapkan versi indoor setiap aktivitas outdoor dan sepakati dengan vendor siapa yang memutuskan kapan beralih ke plan B.",
+        ],
+      },
+      {
         heading: "Decision framework — pilih berdasarkan ini",
         paragraphs: ["3 pertanyaan untuk arrive di keputusan yang tepat:"],
         numbered: [
@@ -1026,11 +1040,22 @@ const INSIGHTS: Record<string, Insight> = {
           "Apakah ada konten hybrid / live streaming yang penting? → Pilih Lembang — sinyal lebih reliable.",
         ],
       },
+      {
+        heading: "Pertanyaan yang sering muncul",
+        paragraphs: [],
+        bullets: [
+          "Bisa digabung dalam satu acara? Bisa — misalnya menginap di Lembang lalu day trip ke Ciwidey. Tapi untuk rombongan besar, perjalanan antar-area makan waktu cukup lama, jadi biasanya lebih nyaman fokus di satu area.",
+          "Mana yang lebih cocok untuk rombongan dari Jakarta? Lembang, karena aksesnya lebih singkat dan pilihan venue untuk grup besar lebih banyak.",
+          "Mana yang lebih cocok untuk outing yang 'beda dari tahun lalu'? Ciwidey atau Pangalengan, terutama kalau tim sudah beberapa kali ke Lembang.",
+        ],
+      },
     ],
     internalLinks: [
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Eksplorasi venue Lembang & Ciwidey dengan dukungan 60+ vendor partnership langsung." },
       { href: "/villa-gathering-bandung", label: "Villa Gathering Bandung", description: "Villa private premium Lembang — eksklusif, 30-300 pax, non-shared." },
       { href: "/glamping-corporate-bandung", label: "Glamping Corporate Bandung", description: "Glamping di Lembang atau Ciwidey — outdoor premium untuk team bonding unik." },
+      { href: "/corporate-event-lembang", label: "Corporate Event Lembang", description: "Venue dan paket acara perusahaan di kawasan Lembang." },
+      { href: "/corporate-event-ciwidey", label: "Corporate Event Ciwidey", description: "Venue dan paket acara perusahaan di kawasan Ciwidey." },
     ],
     relatedSlugs: ["bandung-outing-tier-system", "contoh-rundown-outing-kantor-1-hari", "indoor-vs-outdoor-corporate-outing"],
   },
@@ -1905,16 +1930,493 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     relatedSlugs: ["contoh-rundown-outing-kantor-1-hari", "cara-memilih-vendor-corporate-event-bandung", "biaya-team-building-bandung"],
   },
+  "annual-kick-off-meeting-januari": {
+    slug: "annual-kick-off-meeting-januari",
+    title: "Annual Kick-off Meeting Januari: Format, Rundown & Persiapan",
+    excerpt: "Kick-off Januari menentukan nada kerja setahun ke depan — tapi sering berakhir jadi maraton slide yang dilupakan seminggu kemudian. Ini panduan memilih format, contoh rundown, dan cara bikin target tahunan benar-benar nempel di tim.",
+    metaDescription: "Panduan annual kick-off meeting Januari: 3 pilihan format, contoh rundown 1 hari, cara menyampaikan target tahunan, dan timeline persiapan dari November.",
+    category: "Planning Guide",
+    tldr: [
+      "Kick-off Januari sebaiknya disiapkan sejak November. Desember sudah penuh acara akhir tahun dan libur, sementara venue untuk pertengahan Januari cepat terisi.",
+      "Tiga format umum: half-day di hotel, full-day kick-off plus aktivitas tim, atau kick-off retreat 2 hari 1 malam. Pilih berdasarkan seberapa besar perubahan yang mau disampaikan.",
+      "Kesalahan paling sering: terlalu banyak presentasi, terlalu sedikit interaksi. Batasi tiap presenter maksimal 20–25 menit dan sisakan waktu untuk breakout per divisi.",
+      "Target tahunan baru 'nempel' kalau tiap tim menerjemahkannya sendiri di hari itu — dan ditindaklanjuti 30 hari kemudian."
+    ],
+    heroImage: IMAGES.caseStudyLarge,
+    publishDate: "2026-11-02",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Kenapa kick-off Januari perlu disiapkan dari sekarang",
+        "paragraphs": [
+          "Di atas kertas, Januari terasa masih jauh. Kenyataannya, waktu efektif untuk persiapan tinggal sedikit: Desember habis untuk tutup buku, acara akhir tahun, dan libur Natal–Tahun Baru. Begitu kantor aktif lagi di minggu pertama Januari, kick-off idealnya sudah tinggal eksekusi.",
+          "Ada juga faktor venue. Pertengahan sampai akhir Januari adalah musim kick-off untuk banyak perusahaan sekaligus, jadi ballroom dan meeting room yang bagus di Bandung cepat dipesan. Mengunci tanggal di November memberi Anda pilihan, bukan sisa."
+        ]
+      },
+      {
+        "heading": "Tiga format kick-off yang paling sering dipakai",
+        "paragraphs": [
+          "Tidak ada format yang paling benar. Yang ada adalah format yang cocok dengan pesan yang mau disampaikan tahun ini."
+        ],
+        "numbered": [
+          "Half-day di hotel atau meeting venue (4–5 jam). Cocok kalau arah perusahaan relatif sama dengan tahun lalu dan fokusnya update target. Efisien, mudah diatur, dan minim izin kerja.",
+          "Full-day: kick-off pagi, aktivitas tim siang. Format paling seimbang. Pagi untuk arah dan target, siang untuk team building ringan yang menerjemahkan pesan pagi ke kerja sama tim. Cocok untuk 50–300 peserta.",
+          "Kick-off retreat 2 hari 1 malam. Cocok kalau ada perubahan besar: struktur baru, merger, strategi baru, atau target yang naik signifikan. Malam hari memberi ruang diskusi informal yang tidak muncul di ruang meeting."
+        ],
+        "callout": {
+          "label": "Patokan cepat",
+          "text": "Kalau pesan utamanya bisa dirangkum dalam satu slide, half-day cukup. Kalau tim perlu waktu mencerna dan menyesuaikan cara kerja, pertimbangkan full-day atau retreat."
+        }
+      },
+      {
+        "heading": "Contoh rundown full-day kick-off",
+        "paragraphs": [
+          "Contoh untuk 100–200 peserta di venue Bandung. Sesuaikan jamnya kalau rombongan datang dari luar kota."
+        ],
+        "numbered": [
+          "08.00–08.45 — Registrasi dan coffee morning. Putar recap foto/video tahun lalu di layar sambil peserta datang.",
+          "08.45–09.15 — Pembukaan dan refleksi tahun lalu: apa yang berhasil, apa pelajarannya. Singkat dan jujur.",
+          "09.15–10.00 — Arah dan target tahun ini dari pimpinan. Satu narasi besar, bukan daftar 30 KPI.",
+          "10.00–10.15 — Coffee break.",
+          "10.15–11.15 — Sesi per bagian (sales, operasional, dll.), masing-masing maksimal 20 menit, diikuti tanya jawab.",
+          "11.15–12.15 — Breakout per divisi: terjemahkan target perusahaan jadi 3 prioritas tim.",
+          "12.15–13.15 — Makan siang dan ishoma.",
+          "13.15–15.30 — Aktivitas tim lintas divisi yang terhubung dengan tema tahun ini.",
+          "15.30–16.30 — Presentasi singkat hasil breakout, commitment wall, dan penutupan.",
+          "16.30 — Foto bersama dan pulang."
+        ]
+      },
+      {
+        "heading": "Bagian yang paling sering gagal (dan cara memperbaikinya)",
+        "bullets": [
+          "Maraton slide. Setelah presenter ketiga, perhatian peserta turun drastis. Batasi durasi tiap presenter dan minta mereka fokus pada 'apa yang berubah' dibanding 'semua yang kami kerjakan'.",
+          "Target tanpa cerita. Angka target lebih mudah diingat kalau dibungkus satu tema atau tagline tahunan yang konsisten dipakai sepanjang acara.",
+          "Satu arah saja. Sediakan slot tanya jawab sungguhan, atau pertanyaan anonim lewat formulir online kalau budaya kantor masih sungkan bertanya langsung.",
+          "Aktivitas yang tidak nyambung. Team building setelah kick-off sebaiknya punya benang merah dengan pesan pagi, bukan sekadar games acak."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Cara bikin target tahunan benar-benar nempel",
+        "paragraphs": [
+          "Target yang hanya disampaikan dari panggung biasanya terlupakan dalam hitungan minggu. Yang membuatnya bertahan adalah keterlibatan tim dalam menerjemahkannya.",
+          "Karena itu sesi breakout per divisi adalah bagian paling penting dari kick-off, bukan pelengkap. Minta tiap tim pulang dengan tiga prioritas tertulis, satu nama penanggung jawab, dan satu indikator yang bisa dicek. Tempel hasilnya di commitment wall, foto, lalu bagikan ke semua peserta.",
+          "Tutup siklusnya 30 hari kemudian: satu email atau sesi singkat yang mengecek progres prioritas tadi. Langkah kecil ini yang membedakan kick-off yang berdampak dari acara seremonial tahunan."
+        ]
+      },
+      {
+        "heading": "Timeline persiapan dari November",
+        "bullets": [
+          "Awal November — tentukan tujuan, format, jumlah peserta, dan range budget. Ajukan approval.",
+          "Pertengahan November — kunci tanggal dan venue dengan DP.",
+          "Akhir November — tetapkan tema tahunan, susun draft rundown, dan tentukan siapa saja presenter.",
+          "Desember — presenter menyiapkan materi (beri template dan batas durasi), vendor menyiapkan aktivitas dan produksi.",
+          "Minggu pertama Januari — gladi singkat dengan presenter, finalisasi peserta, technical meeting dengan vendor."
+        ],
+        "paragraphs": [
+          "Untuk checklist persiapan yang lebih rinci per minggu, lihat panduan timeline persiapan event kantor 12 minggu kami."
+        ]
+      },
+      {
+        "heading": "Kesimpulan",
+        "paragraphs": [
+          "Kick-off Januari yang efektif bukan yang paling megah, tapi yang membuat setiap tim pulang dengan pemahaman yang sama: ke mana perusahaan bergerak tahun ini, dan apa peran mereka di dalamnya.",
+          "Kalau Anda sedang menyiapkan kick-off di Bandung — half-day, full-day, atau retreat — tim kami bisa menyusun rundown dan proposal lengkap dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/annual-meeting-organizer",
+        "label": "Annual Meeting Organizer",
+        "description": "Kick-off dan annual meeting di Bandung — dari rundown sampai produksi panggung."
+      },
+      {
+        "href": "/corporate-gathering-bandung",
+        "label": "Corporate Gathering Bandung",
+        "description": "Gathering tahunan dengan sesi target dan malam apresiasi."
+      },
+      {
+        "href": "/team-building-bandung",
+        "label": "Team Building Bandung",
+        "description": "Aktivitas tim yang menyambung dengan tema tahunan Anda."
+      }
+    ],
+    relatedSlugs: ["corporate-event-timeline-planning-checklist", "rundown-gathering-2-hari-1-malam", "corporate-gathering-vs-outing-kantor"],
+  },
+
+  "berapa-dp-outing-kantor": {
+    slug: "berapa-dp-outing-kantor",
+    title: "Berapa DP Outing Kantor dan Kapan Harus Dilunasi?",
+    excerpt: "Pertanyaan yang hampir selalu muncul di sales call: berapa persen DP untuk outing kantor, kapan pelunasan, dan apa yang terjadi kalau acara batal. Ini jawaban singkatnya.",
+    metaDescription: "Skema pembayaran outing kantor: DP saat proposal disetujui, pelunasan beberapa hari sebelum acara, plus hal yang wajib dicek di klausul pembatalan.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Skema yang umum: DP sekitar 30% setelah proposal disetujui, sisanya dilunasi 3–7 hari sebelum acara.",
+      "DP dipakai vendor untuk mengunci venue dan tanggal — tanpa DP, tanggal Anda belum aman.",
+      "Waspadai vendor yang minta 100% jauh sebelum acara, atau yang sama sekali tidak minta DP.",
+      "Sebelum transfer, baca klausul pembatalan, reschedule, dan force majeure di kontrak."
+    ],
+    heroImage: IMAGES.groupShot1,
+    publishDate: "2026-11-03",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Skema pembayaran yang paling umum untuk outing kantor adalah dua tahap: DP sekitar 30% setelah proposal dan kontrak disetujui, lalu pelunasan 70% sekitar 3–7 hari sebelum acara. Skema ini melindungi dua pihak: perusahaan tidak membayar penuh untuk sesuatu yang belum berjalan, dan vendor punya modal untuk mengunci venue serta pemasok."
+        ]
+      },
+      {
+        "heading": "Kenapa DP diperlukan",
+        "paragraphs": [
+          "Venue di Bandung — terutama di Lembang saat akhir pekan dan Desember — biasanya baru mau menahan tanggal setelah ada pembayaran. Vendor meneruskan sebagian DP Anda ke venue, catering, dan transportasi. Jadi selama DP belum masuk, tanggal acara Anda sebenarnya belum terkunci."
+        ]
+      },
+      {
+        "heading": "Yang perlu dicek sebelum transfer",
+        "paragraphs": [],
+        "bullets": [
+          "Kontrak tertulis dengan rincian per item, bukan hanya total.",
+          "Klausul pembatalan: berapa yang kembali kalau batal 30 hari, 14 hari, atau 7 hari sebelum acara.",
+          "Aturan reschedule: apakah DP bisa dipindah ke tanggal lain, dan berapa kali.",
+          "Force majeure: kejadian apa saja yang termasuk (bencana, cuaca ekstrem, kebijakan pemerintah) dan bagaimana penyelesaiannya.",
+          "Rekening atas nama perusahaan vendor, lengkap dengan invoice resmi."
+        ]
+      },
+      {
+        "heading": "Tanda bahaya",
+        "paragraphs": [],
+        "bullets": [
+          "Vendor minta pembayaran 100% berminggu-minggu sebelum acara — risikonya besar kalau vendor tidak deliver.",
+          "Vendor tidak minta DP sama sekali — bisa jadi mereka belum benar-benar memesan venue.",
+          "Transfer ke rekening pribadi tanpa invoice."
+        ]
+      },
+      {
+        "heading": "Untuk tim Finance",
+        "paragraphs": [
+          "Kalau proses pencairan di kantor Anda butuh waktu (PO, approval berlapis), sampaikan ke vendor sejak awal. Vendor yang profesional biasanya bisa menyesuaikan jadwal termin selama tanggal acara masih cukup jauh.",
+          "Ingin tahu rincian biaya sebelum bicara termin? Minta estimasi cepat atau proposal lengkap — kami kirim dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/pricing",
+        "label": "Transparansi Harga",
+        "description": "Rincian 4 tier harga outing dan gathering kami."
+      },
+      {
+        "href": "/proposal/quick-quote",
+        "label": "Estimasi Biaya Cepat",
+        "description": "Dapatkan perkiraan biaya sesuai jumlah peserta."
+      }
+    ],
+    relatedSlugs: ["cara-memilih-vendor-corporate-event-bandung", "biaya-team-building-bandung", "corporate-event-timeline-planning-checklist"],
+  },
+
+  "outing-kantor-hari-kerja-atau-akhir-pekan": {
+    slug: "outing-kantor-hari-kerja-atau-akhir-pekan",
+    title: "Outing Kantor Sebaiknya Hari Kerja atau Akhir Pekan?",
+    excerpt: "Hari kerja atau akhir pekan — pertanyaan sederhana yang sering bikin HR, direksi, dan karyawan beda pendapat. Ini pertimbangan dari sisi biaya, kehadiran, dan suasana acara.",
+    metaDescription: "Outing kantor di hari kerja atau akhir pekan? Perbandingan biaya venue, kemacetan, tingkat kehadiran, dan suasana — plus kapan masing-masing lebih tepat.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Hari kerja: venue lebih mudah didapat dan sering lebih murah, jalan lebih lengang, dan kehadiran karyawan tinggi karena dihitung jam kerja.",
+      "Akhir pekan: operasional kantor tidak terganggu, tapi venue lebih rebutan, macet lebih parah, dan sebagian karyawan merasa waktu pribadinya terpakai.",
+      "Format 2D1N yang sering dipakai: Jumat–Sabtu. Satu hari kerja, satu hari libur — kompromi yang biasanya diterima semua pihak.",
+      "Apa pun pilihannya, umumkan tanggal sejak jauh hari supaya karyawan bisa mengatur urusan keluarga."
+    ],
+    heroImage: IMAGES.heroMain,
+    publishDate: "2026-11-04",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Kalau operasional kantor memungkinkan, hari kerja biasanya lebih menguntungkan: venue lebih banyak pilihan, perjalanan lebih lancar, dan karyawan tidak merasa akhir pekannya diambil. Akhir pekan lebih cocok kalau bisnis Anda tidak bisa berhenti sehari, misalnya layanan pelanggan, retail, atau produksi."
+        ]
+      },
+      {
+        "heading": "Kelebihan hari kerja",
+        "paragraphs": [],
+        "bullets": [
+          "Venue dan villa di Bandung lebih mudah dipesan, dan harga weekday sering lebih rendah dibanding akhir pekan.",
+          "Jalur Jakarta–Bandung dan kawasan Lembang lebih lengang dibanding Sabtu–Minggu.",
+          "Tingkat kehadiran lebih tinggi karena acara dihitung sebagai hari kerja.",
+          "Karyawan tidak merasa waktu pribadinya terpakai — dampaknya terasa ke suasana acara."
+        ]
+      },
+      {
+        "heading": "Kelebihan akhir pekan",
+        "paragraphs": [],
+        "bullets": [
+          "Tidak ada hari kerja yang hilang — penting untuk bisnis dengan layanan yang harus jalan terus.",
+          "Lebih mudah kalau acara melibatkan keluarga, seperti family day.",
+          "Tidak perlu mengatur tim piket atau penutupan layanan sementara."
+        ]
+      },
+      {
+        "heading": "Kompromi yang paling sering dipakai",
+        "paragraphs": [
+          "Untuk acara menginap, format Jumat–Sabtu adalah jalan tengah yang paling sering kami jumpai: berangkat Jumat pagi sebagai hari kerja, pulang Sabtu siang, dan karyawan masih punya Minggu untuk istirahat.",
+          "Untuk outing satu hari, pertimbangkan Jumat. Energi tim biasanya sudah 'mode santai', dan Senin mereka kembali dengan segar."
+        ]
+      },
+      {
+        "heading": "Checklist sebelum memutuskan",
+        "paragraphs": [],
+        "bullets": [
+          "Apakah ada layanan yang harus tetap berjalan? Siapkan tim piket bergilir.",
+          "Bagaimana aturan perusahaan soal lembur atau pengganti hari libur kalau acara di akhir pekan?",
+          "Apakah tanggalnya bentrok dengan long weekend, libur sekolah, atau tutup buku?",
+          "Sudahkah tanggal diumumkan minimal 4–6 minggu sebelumnya?"
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Belum yakin tanggal mana yang paling masuk akal untuk tim Anda? Kirim brief singkat — kami bantu cek ketersediaan venue di beberapa opsi tanggal sekaligus."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/outing-kantor-bandung",
+        "label": "Outing Kantor Bandung",
+        "description": "Paket outing 1 hari sampai 2D1N, hari kerja maupun akhir pekan."
+      },
+      {
+        "href": "/villa-gathering-bandung",
+        "label": "Villa Gathering Bandung",
+        "description": "Villa privat untuk format Jumat–Sabtu."
+      }
+    ],
+    relatedSlugs: ["corporate-event-timeline-planning-checklist", "contoh-rundown-outing-kantor-1-hari", "outing-lembang-vs-ciwidey"],
+  },
+
+  "games-team-building-indoor": {
+    slug: "games-team-building-indoor",
+    title: "Games Team Building Indoor yang Seru & Nggak Bikin Canggung",
+    excerpt: "Games indoor sering jadi bagian yang paling ditakuti peserta: disuruh joget, ditunjuk maju sendirian, atau dihukum di depan atasan. Padahal games yang dipilih dengan benar bisa jadi momen paling cair di seluruh acara. Ini 10 ide plus cara memilihnya.",
+    metaDescription: "10 ide games team building indoor untuk kantor: ice breaker, kolaborasi, kompetisi ringan, dan sesi apresiasi. Plus games yang sebaiknya dihindari.",
+    category: "Program Design",
+    tldr: [
+      "Games indoor terasa canggung bukan karena indoor-nya, tapi karena peserta dipaksa tampil sendirian, dipermalukan, atau tidak tahu tujuan permainannya.",
+      "Pilih games yang dimainkan berkelompok, campur lintas divisi, berdurasi 15–30 menit, dan ditutup dengan debrief singkat.",
+      "Hindari hukuman memalukan, kontak fisik berlebihan, dan games yang menyinggung SARA atau gender — sekalipun 'cuma bercanda'.",
+      "Games indoor juga jadi plan B terbaik untuk outing di musim hujan Bandung. Siapkan dari awal, bukan improvisasi di hari-H."
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-11-05",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Kenapa games indoor sering terasa cringe",
+        "paragraphs": [
+          "Masalahnya hampir selalu sama: peserta merasa tidak punya pilihan. Disuruh maju ke depan sendirian, diminta joget di depan direksi, atau kalah lalu kena hukuman yang bikin malu. Orang dewasa tidak suka dipermalukan, apalagi di depan rekan kerja yang akan mereka temui lagi Senin pagi.",
+          "Masalah kedua: games tanpa tujuan. Kalau peserta tidak tahu kenapa mereka bermain, games terasa seperti pengisi waktu. Games yang sama bisa terasa seru atau garing, tergantung bagaimana dibuka dan ditutup."
+        ]
+      },
+      {
+        "heading": "4 prinsip memilih games indoor",
+        "numbered": [
+          "Main berkelompok, bukan sendirian. Biarkan kelompok yang tampil, bukan individu. Orang yang pemalu tetap bisa berkontribusi tanpa jadi pusat perhatian.",
+          "Campur lintas divisi. Bentuk kelompok acak atau campuran. Kalau tiap divisi main dengan timnya sendiri, tidak ada koneksi baru yang terbentuk.",
+          "Singkat dan bertahap. 15–30 menit per games sudah cukup. Mulai dari yang ringan, naik ke yang butuh kerja sama lebih dalam.",
+          "Selalu ada debrief. Lima sampai sepuluh menit setelah games untuk membahas apa yang terjadi. Di sinilah games berubah jadi pelajaran tim."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Ice breaker (10–15 menit)",
+        "bullets": [
+          "Human Bingo — kartu bingo berisi fakta seperti 'pernah tinggal di luar Jawa' atau 'punya kucing'. Peserta mencari rekan yang cocok. Cocok untuk tim yang belum saling kenal, butuh ruang untuk berjalan.",
+          "Dua Fakta Satu Bohong versi kelompok — tiap kelompok menyusun tiga fakta tentang anggotanya, kelompok lain menebak mana yang bohong. Lebih aman dibanding versi individu."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Kolaborasi (20–30 menit)",
+        "bullets": [
+          "Tower Challenge — bangun menara tertinggi dari bahan sederhana (spageti kering, selotip, tali, marshmallow) dalam waktu terbatas. Bagus untuk melihat cara tim merencanakan dan membagi peran.",
+          "Gambar Tanpa Melihat — satu orang mendeskripsikan gambar, satu orang menggambar tanpa melihat aslinya. Pelajaran langsung tentang cara memberi instruksi yang jelas.",
+          "Escape Box — kelompok memecahkan rangkaian teka-teki untuk membuka gembok. Bisa dikustom dengan nilai atau sejarah perusahaan.",
+          "Puzzle Estafet Antar-tim — tiap tim memegang potongan puzzle tim lain, jadi mereka harus bernegosiasi. Cocok untuk tim yang sering 'bekerja di silo'."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Kompetisi ringan (15–20 menit)",
+        "bullets": [
+          "Kuis Kantor — pertanyaan seputar perusahaan, produk, dan momen lucu sepanjang tahun. Pakai aplikasi kuis di ponsel supaya semua bisa ikut.",
+          "Tebak Kata Istilah Kantor — versi charades dengan istilah internal ('meeting yang harusnya email', 'revisi final final'). Biasanya paling banyak memancing tawa."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Penutup & apresiasi (15–20 menit)",
+        "bullets": [
+          "Kartu Apresiasi — tiap orang menulis satu kalimat terima kasih untuk rekan di kelompoknya. Kartu dibawa pulang. Sederhana, tapi sering jadi momen paling berkesan.",
+          "Lingkaran Refleksi — kelompok kecil berbagi satu hal yang mereka pelajari tentang rekan kerja hari itu. Cocok sebagai penutup sesi."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Games yang sebaiknya dihindari",
+        "bullets": [
+          "Hukuman yang mempermalukan (dicoret wajahnya, disuruh joget sendirian, dll.).",
+          "Games dengan kontak fisik berlebihan atau yang membuat sebagian peserta tidak nyaman.",
+          "Games yang menuntut satu orang tampil sendirian di depan semua peserta tanpa pilihan untuk menolak.",
+          "Lelucon atau tema yang menyinggung SARA, gender, atau kondisi fisik — sekalipun niatnya bercanda."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Menyesuaikan dengan jumlah peserta",
+        "paragraphs": [
+          "Untuk di bawah 30 orang, hampir semua games di atas bisa dimainkan bersamaan dengan satu fasilitator. Untuk 30–100 orang, bagi peserta ke kelompok berisi 6–8 orang dan siapkan asisten fasilitator. Di atas 100 orang, pakai sistem pos bergilir: beberapa games berjalan paralel dan kelompok berpindah sesuai jadwal, supaya tidak ada yang menunggu terlalu lama.",
+          "Pastikan juga ruangannya mendukung: meja yang bisa dipindah, sound system yang jelas, dan cukup ruang kosong untuk games yang butuh bergerak."
+        ]
+      },
+      {
+        "heading": "Games indoor sebagai plan B outing musim hujan",
+        "paragraphs": [
+          "Oktober sampai April, hujan sore di Lembang dan Ciwidey hampir jadi rutinitas. Daripada peserta menunggu hujan reda di aula tanpa kegiatan, siapkan dua atau tiga games indoor dari daftar di atas sebagai cadangan resmi.",
+          "Sepakati dengan vendor sejak awal: ruangan mana yang dipakai, perlengkapan apa yang dibawa, dan siapa yang memutuskan kapan beralih ke plan B. Dengan begitu, perpindahan ke indoor terasa seperti bagian dari acara — bukan acara yang batal."
+        ]
+      },
+      {
+        "heading": "Debrief 10 menit yang bikin games bermakna",
+        "paragraphs": [
+          "Setelah games kolaborasi, ajukan tiga pertanyaan ini ke tiap kelompok:"
+        ],
+        "numbered": [
+          "Apa yang terjadi? (Apa yang berjalan lancar, apa yang macet.)",
+          "Apa miripnya dengan cara kita bekerja sehari-hari?",
+          "Satu hal apa yang mau kita lakukan berbeda mulai minggu depan?"
+        ]
+      },
+      {
+        "heading": "Kesimpulan",
+        "paragraphs": [
+          "Games indoor yang baik membuat orang tertawa bersama, bukan menertawakan satu orang. Kuncinya ada di kelompok yang dicampur, durasi yang singkat, dan debrief yang menghubungkan games dengan pekerjaan.",
+          "Butuh sesi team building indoor yang sudah dirancang lengkap dengan fasilitator — atau plan B indoor untuk outing di musim hujan? Tim kami bisa menyiapkan proposalnya dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/team-building-bandung",
+        "label": "Team Building Bandung",
+        "description": "Sesi team building indoor dan outdoor dengan fasilitator."
+      },
+      {
+        "href": "/outing-kantor-bandung",
+        "label": "Outing Kantor Bandung",
+        "description": "Outing lengkap dengan plan B indoor untuk musim hujan."
+      }
+    ],
+    relatedSlugs: ["indoor-vs-outdoor-corporate-outing", "outing-kantor-musim-hujan-bandung", "cross-generational-team-building"],
+  },
+
+  "minimal-peserta-outing-kantor": {
+    slug: "minimal-peserta-outing-kantor",
+    title: "Minimal Berapa Orang untuk Outing Kantor atau Team Building?",
+    excerpt: "Tim Anda cuma 10–15 orang — masih masuk akal ikut outing atau team building yang terorganisir? Jawabannya bisa, asal formatnya disesuaikan. Ini panduan singkatnya.",
+    metaDescription: "Minimal peserta outing kantor dan team building: format yang cocok untuk tim kecil, menengah, dan besar, plus kenapa biaya per orang tim kecil lebih mahal.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Tidak ada jumlah minimum yang baku — tim 10 orang pun bisa outing yang terorganisir dengan format yang tepat.",
+      "Tim kecil (di bawah 20 orang) cocok dengan villa privat, aktivitas yang lebih personal, dan diskusi yang lebih dalam.",
+      "Biaya per orang untuk tim kecil biasanya lebih tinggi, karena biaya tetap (fasilitator, transport, dokumentasi) dibagi ke lebih sedikit peserta.",
+      "Mau lebih hemat? Gabungkan beberapa divisi atau pilih format half-day."
+    ],
+    heroImage: IMAGES.caseStudyTeamBuilding,
+    publishDate: "2026-11-06",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Tidak ada batas minimum yang baku. Yang berubah dengan jumlah peserta adalah format yang cocok dan biaya per orangnya. Tim 10–15 orang justru sering mendapat pengalaman yang lebih personal dibanding rombongan ratusan orang."
+        ]
+      },
+      {
+        "heading": "Format yang cocok per ukuran tim",
+        "paragraphs": [],
+        "bullets": [
+          "Di bawah 20 orang — villa privat, workshop atau diskusi tim, aktivitas yang bisa diikuti semua orang bersamaan, makan malam santai. Cocok untuk tim manajemen atau startup.",
+          "20–100 orang — team building dengan beberapa kelompok, outbound, atau gathering 2D1N di villa/resort. Ukuran yang paling fleksibel.",
+          "Di atas 100 orang — butuh sistem pos bergilir, beberapa fasilitator, venue dengan ruang besar, dan koordinator per bus atau kelompok."
+        ]
+      },
+      {
+        "heading": "Kenapa biaya per orang tim kecil lebih tinggi",
+        "paragraphs": [
+          "Sebagian biaya acara bersifat tetap, berapa pun pesertanya: fasilitator, sewa kendaraan, sound system, dokumentasi, dan project manager. Untuk tim kecil, biaya tetap ini dibagi ke lebih sedikit orang, sehingga angka per orangnya naik. Sebaliknya, makin besar tim, makin efisien biaya per orangnya."
+        ]
+      },
+      {
+        "heading": "Tiga cara menghemat untuk tim kecil",
+        "paragraphs": [],
+        "numbered": [
+          "Gabungkan beberapa divisi atau cabang dalam satu acara.",
+          "Pilih half-day atau full-day di dekat kota, tanpa menginap.",
+          "Fokus pada satu aktivitas utama yang berkualitas, bukan banyak aktivitas sekaligus."
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Untuk gambaran biaya sesuai jumlah peserta Anda, cek halaman transparansi harga kami atau minta estimasi cepat. Tim berapa pun bisa kami bantu rancang."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/team-building-bandung",
+        "label": "Team Building Bandung",
+        "description": "Format team building untuk tim kecil sampai ratusan orang."
+      },
+      {
+        "href": "/pricing",
+        "label": "Transparansi Harga",
+        "description": "Gambaran biaya per tier dan per jumlah peserta."
+      }
+    ],
+    relatedSlugs: ["biaya-team-building-bandung", "contoh-rundown-outing-kantor-1-hari", "games-team-building-indoor"],
+  },
+
 };
 
+/** Today's date in Bandung (WIB) as YYYY-MM-DD. */
+function todayWib(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(new Date());
+}
+
+/** Scheduled publishing: an article is live from 00:00 WIB on its publish date. */
+export function isInsightLive(publishDate: string): boolean {
+  return publishDate.slice(0, 10) <= todayWib();
+}
+
 export function getAllInsightSlugsStatic(): string[] {
-  return Object.keys(INSIGHTS);
+  return Object.values(INSIGHTS).filter((i) => isInsightLive(i.publishDate)).map((i) => i.slug);
 }
 
 export function getInsightStatic(slug: string): Insight | undefined {
-  return INSIGHTS[slug];
+  const insight = INSIGHTS[slug];
+  return insight && isInsightLive(insight.publishDate) ? insight : undefined;
 }
 
 export function getInsightsListStatic(): Insight[] {
-  return Object.values(INSIGHTS).sort((a, b) => b.publishDate.localeCompare(a.publishDate));
+  return Object.values(INSIGHTS)
+    .filter((i) => isInsightLive(i.publishDate))
+    .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 }
