@@ -128,12 +128,15 @@ type LockupProps = {
   height?: number;
   variant?: "light" | "dark";
   showCorporateLabel?: boolean;
+  /** Visibility classes for the "Corporate" label. */
+  labelClassName?: string;
 };
 
 export function LogoLockup({
   height = 40,
   variant = "light",
   showCorporateLabel = true,
+  labelClassName = "hidden sm:inline-block",
 }: LockupProps) {
   const labelColor =
     variant === "dark" ? "rgba(255,255,255,0.65)" : "var(--color-brand-deep)";
@@ -143,7 +146,7 @@ export function LogoLockup({
       <LogoImage variant={variant} height={height} />
       {showCorporateLabel && (
         <span
-          className="hidden sm:inline-block text-[11px] tracking-[0.16em] uppercase font-semibold px-2.5 py-1 rounded-md border"
+          className={`${labelClassName} text-[11px] tracking-[0.16em] uppercase font-semibold px-2.5 py-1 rounded-md border`}
           style={{
             color: labelColor,
             borderColor:

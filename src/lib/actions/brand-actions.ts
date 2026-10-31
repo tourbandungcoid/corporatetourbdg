@@ -38,7 +38,7 @@ const logoSchema = z.object({
   logo_primary_url: z.string().url().or(z.literal("")),
   logo_dark_url: z.string().url().or(z.literal("")),
   logo_favicon_url: z.string().url().or(z.literal("")),
-  logo_height_nav: z.coerce.number().int().min(24).max(250).default(48),
+  logo_height_nav: z.coerce.number().int().min(24).max(40).default(40),
 });
 
 const copySchema = z.object({

@@ -7,6 +7,12 @@ import { LogoLockup } from "./Logo";
 import { Whatsapp, Menu, Close, ArrowRight } from "./icons/Icons";
 import { buildWaLink } from "@/lib/site";
 
+// The nav bar row is h-16 (64px). The logo height comes from the admin brand
+// settings, so clamp it here to keep an oversized value from spilling over
+// the nav pill and hero.
+const NAV_LOGO_MIN = 24;
+const NAV_LOGO_MAX = 40;
+
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -23,7 +29,8 @@ const NAV_LINKS = [
  * - CTA pill standalone
  * - All glassmorphism only on the nav pill itself
  */
-export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
+export function Navigation({ logoHeight: rawLogoHeight = 40 }: { logoHeight?: number }) {
+  const logoHeight = Math.min(NAV_LOGO_MAX, Math.max(NAV_LOGO_MIN, rawLogoHeight));
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
@@ -57,6 +64,8 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
             <LogoLockup
               height={logoHeight}
               variant={useLightStyle ? "light" : "dark"}
+              // Below xl the label collides with the centered nav pill.
+              labelClassName="hidden sm:inline-block lg:hidden xl:inline-block"
             />
           </Link>
 
@@ -78,7 +87,7 @@ export function Navigation({ logoHeight = 48 }: { logoHeight?: number }) {
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={[
-                  "px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200",
+                  "px-3 xl:px-4 py-2 text-sm font-medium whitespace-nowrap rounded-full transition-colors duration-200",
                   useLightStyle
                     ? isActive(link.href)
                       ? "bg-ink text-paper"
