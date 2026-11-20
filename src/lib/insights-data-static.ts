@@ -1076,11 +1076,13 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     heroImage: IMAGES.heroMain,
     publishDate: "2026-05-10",
+    updatedDate: "2026-11-28",
     readTimeMin: 7,
     author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
     sections: [
       {
         paragraphs: [
+          "Perbedaan MICE dan corporate outing kelihatannya cuma soal istilah. Di lapangan, salah memilih format bisa berarti salah memilih vendor, salah menyusun budget, dan acara yang terasa 'nanggung' untuk semua pihak.",
           "Kami sering terima brief yang blur: 'Kami mau gathering tapi ada sesi presentation juga dan malam ada awarding.' Itu bukan outing biasa — itu hybrid MICE-Gathering yang butuh capability spesifik.",
           "Artikel ini untuk HR dan GA yang sedang dalam proses brief vendor dan perlu tahu format apa yang sesuai dengan kebutuhan perusahaan mereka.",
         ],
@@ -1139,13 +1141,59 @@ const INSIGHTS: Record<string, Insight> = {
           "Corporate outing: cost terbesar di venue + F&B + fasilitator + dokumentasi — predictable dan lebih linear dengan pax",
         ],
       },
+      {
+        heading: "Contoh brief yang sering membingungkan",
+        paragraphs: [
+          "Sebagian besar brief yang kami terima sebenarnya tidak murni MICE atau murni outing. Beberapa contoh yang sering muncul, dan cara kami membacanya:",
+        ],
+        bullets: [
+          "'Kick-off tahunan, siangnya ada games.' → Meeting di pagi hari (butuh panggung, sound, dan presenter yang disiplin waktu), lalu team building di siang hari. Vendor harus kuat di dua sisi.",
+          "'Trip untuk sales terbaik, plus sesi apresiasi.' → Incentive. Fokusnya pengalaman eksklusif dan momen pengakuan, bukan games massal.",
+          "'Gathering 2 hari, malamnya awarding.' → Corporate gathering dengan elemen produksi. Kebutuhan AV di malam hari sering diremehkan saat budgeting.",
+          "'Seminar untuk klien dan mitra, lalu makan malam.' → Conference. Butuh sistem registrasi, materi, dan manajemen tamu eksternal.",
+        ],
+        callout: {
+          label: "Patokan cepat",
+          text: "Tulis tujuan utama acara dalam satu kalimat sebelum brief ke vendor. Kalau kalimatnya tentang hasil bisnis, condong ke MICE. Kalau tentang kebersamaan dan semangat tim, condong ke outing.",
+        },
+      },
+      {
+        heading: "6 pertanyaan untuk vendor sebelum memilih",
+        paragraphs: [
+          "Pertanyaan ini membantu Anda menyaring vendor yang benar-benar cocok dengan format acara, bukan sekadar yang paling cepat mengirim penawaran.",
+        ],
+        numbered: [
+          "Acara serupa apa yang pernah Anda tangani dalam setahun terakhir? Boleh lihat rundown atau dokumentasinya?",
+          "Siapa yang memegang produksi panggung dan AV — tim sendiri atau subkontraktor?",
+          "Siapa fasilitator untuk sesi team building, dan bagaimana sesinya dikaitkan dengan tujuan acara?",
+          "Bagaimana pembagian peran project manager di hari H, terutama kalau ada sesi formal dan aktivitas outdoor sekaligus?",
+          "Komponen apa saja yang sudah termasuk di penawaran, dan apa yang dihitung terpisah?",
+          "Apa plan B kalau ada sesi yang molor atau cuaca tidak mendukung?",
+        ],
+      },
+      {
+        heading: "FAQ",
+        paragraphs: [],
+        bullets: [
+          "Apakah outing kantor termasuk MICE? — Dalam pengertian luas, perjalanan kantor bisa beririsan dengan Incentive. Tapi outing yang fokusnya bonding dan refresh biasanya direncanakan dengan pendekatan berbeda dari MICE formal.",
+          "Bisakah satu vendor menangani MICE sekaligus outing? — Bisa, asalkan punya tim produksi dan tim fasilitasi. Minta bukti pengalaman di kedua jenis acara, jangan hanya salah satunya.",
+          "Format hybrid pasti lebih mahal? — Tidak selalu. Biaya naik terutama karena kebutuhan produksi (panggung, sound, LED). Kalau sesi formalnya cukup di meeting room dengan proyektor, selisihnya bisa jauh lebih kecil.",
+          "Kapan sebaiknya brief ke vendor? — Untuk acara dengan produksi panggung atau peserta besar, makin awal makin baik karena venue dan vendor AV di musim ramai cepat penuh.",
+        ],
+      },
+      {
+        heading: "Penutup",
+        paragraphs: [
+          "Belum yakin acara Anda masuk MICE, outing, atau hybrid? Ceritakan tujuan dan jumlah pesertanya. Tim kami bantu memetakan formatnya dan mengirim proposal lengkap dalam 24 jam.",
+        ],
+      },
     ],
     internalLinks: [
       { href: "/mice-organizer-bandung", label: "MICE Organizer Bandung", description: "Full-stack MICE production — meeting, incentive, conference, exhibition di Bandung." },
       { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Corporate gathering dengan format annual event production — bukan sekadar outing." },
       { href: "/outing-kantor-bandung", label: "Outing Kantor Bandung", description: "Outing kantor sebagai alternatif MICE yang lebih kasual namun tetap impactful." },
     ],
-    relatedSlugs: ["5-pillar-corporate-outing-design", "cara-memilih-vendor-corporate-event-bandung", "bandung-outing-tier-system"],
+    relatedSlugs: ["annual-kick-off-meeting-januari", "cara-memilih-vendor-corporate-event-bandung", "5-pillar-corporate-outing-design"],
   },
 
   "cara-pilih-venue-corporate-gathering-bandung": {
@@ -2392,6 +2440,514 @@ const INSIGHTS: Record<string, Insight> = {
       }
     ],
     relatedSlugs: ["biaya-team-building-bandung", "contoh-rundown-outing-kantor-1-hari", "games-team-building-indoor"],
+  },
+
+  "checklist-villa-gathering-kantor": {
+    slug: "checklist-villa-gathering-kantor",
+    title: "Villa untuk Gathering Kantor: Checklist Sebelum Bayar DP",
+    excerpt: "Foto villanya cakep, harganya masuk, admin-nya cepat balas. Tapi sebelum transfer DP, ada belasan hal kecil yang menentukan gathering kantor Anda lancar atau penuh drama. Ini checklist-nya.",
+    metaDescription: "Checklist villa untuk gathering kantor sebelum bayar DP: kamar & kasur, akses bus, ruang serbaguna, aturan suara, air panas, listrik, dan isi kontrak.",
+    category: "Venue Guide",
+    tldr: [
+      "Villa gathering kantor dipilih bukan dari foto, tapi dari hitungan kasur, akses kendaraan, dan ruang kumpul untuk seluruh peserta.",
+      "Cek akses jalan untuk bus atau elf sampai ke depan villa. Kalau bus harus parkir jauh, siapkan shuttle dan hitung waktunya.",
+      "Tanyakan aturan suara dan jam malam sejak awal — banyak villa di area perumahan membatasi musik setelah jam tertentu.",
+      "Sebelum DP: minta semua kesepakatan tertulis, termasuk jumlah kasur, fasilitas yang termasuk, deposit kerusakan, dan aturan reschedule."
+    ],
+    heroImage: IMAGES.packageExecutiveOffsite,
+    publishDate: "2026-11-23",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "paragraphs": [
+          "Villa gathering kantor itu formatnya paling 'kekeluargaan': satu atap, masak-masak, ngobrol sampai malam, tanpa suasana hotel yang kaku. Wajar kalau banyak HR dan GA di Jakarta dan Bandung melirik villa di Lembang, Ciater, atau Ciwidey untuk acara 2 hari 1 malam.",
+          "Masalahnya, villa juga format yang paling sering bikin kejutan di hari H. Kasur ternyata kurang, bus tidak bisa masuk gang, air panas cuma cukup untuk lima orang pertama. Hampir semua kejutan itu sebenarnya bisa ketahuan sebelum DP — asal tahu apa yang ditanyakan. Checklist di bawah ini kami susun dari pertanyaan yang biasa kami ajukan ke pemilik villa sebelum mengunci tanggal untuk klien."
+        ]
+      },
+      {
+        "heading": "1. Kamar dan kasur: hitung orang, bukan kamar",
+        "paragraphs": [
+          "Iklan villa biasanya menulis '10 kamar, kapasitas 40 orang'. Angka kapasitas itu sering sudah termasuk extra bed dan kasur lantai. Untuk acara kantor, yang penting adalah siapa tidur di mana dengan nyaman."
+        ],
+        "bullets": [
+          "Minta denah kamar beserta jenis kasur per kamar (single, double, bunk bed, extra bed).",
+          "Pisahkan kamar laki-laki dan perempuan, lalu cek apakah pembagiannya masuk akal dengan jumlah kamar mandi.",
+          "Tanyakan apakah extra bed dan kasur lantai sudah termasuk harga atau dihitung per unit.",
+          "Siapkan kamar terpisah untuk direksi atau tamu VIP kalau memang ada yang ikut menginap.",
+          "Hitung rasio kamar mandi per orang. Pagi hari sebelum sesi pertama adalah jam paling rawan antre."
+        ]
+      },
+      {
+        "heading": "2. Akses jalan untuk bus atau elf",
+        "paragraphs": [
+          "Ini poin yang paling sering terlewat karena tidak kelihatan di foto. Banyak villa bagus di Lembang dan Dago Atas ada di jalan kecil atau tanjakan curam yang tidak bisa dilewati bus besar.",
+          "Tanyakan langsung: kendaraan terbesar apa yang pernah sampai ke depan villa? Kalau jawabannya hanya mobil pribadi atau elf, berarti rombongan dengan bus perlu titik turun lain dan shuttle. Itu menambah biaya dan waktu, jadi masukkan ke perhitungan sejak awal, bukan di hari H."
+        ],
+        "callout": {
+          "label": "Tips cepat",
+          "text": "Minta pemilik villa mengirim titik lokasi dan foto jalan masuk. Lebih bagus lagi kalau ada site visit — cek jalannya dengan kendaraan, bukan cuma lewat Street View."
+        }
+      },
+      {
+        "heading": "3. Ruang kumpul untuk semua peserta",
+        "paragraphs": [
+          "Gathering kantor butuh satu ruang yang bisa menampung semua orang sekaligus: untuk pembukaan, sesi diskusi, games malam, atau makan bersama. Ruang tamu villa yang terlihat luas di foto belum tentu muat untuk semua peserta duduk."
+        ],
+        "bullets": [
+          "Ada aula, pendopo, atau ruang serbaguna? Berapa orang yang muat dengan posisi duduk?",
+          "Kalau acara utama di area terbuka (taman, pinggir kolam), di mana plan B saat hujan? Musim hujan di Bandung biasanya berlangsung sekitar November sampai Maret.",
+          "Apakah boleh pasang tenda tambahan, panggung kecil, atau sound system dari vendor luar?",
+          "Ada area untuk games atau team building yang aman dan tidak licin?"
+        ]
+      },
+      {
+        "heading": "4. Aturan suara, jam malam, dan tetangga",
+        "paragraphs": [
+          "Banyak villa berada di kompleks perumahan atau dekat permukiman warga. Wajar kalau ada batas jam musik, larangan kembang api, atau aturan soal api unggun.",
+          "Tanyakan sebelum DP, karena aturan ini menentukan rundown malam Anda. Kalau rencananya ada awarding night dengan live music sampai larut, villa dengan batas suara ketat jelas bukan pilihan. Lebih baik tahu sekarang daripada didatangi pengurus RT di tengah acara."
+        ]
+      },
+      {
+        "heading": "5. Fasilitas dasar yang sering dianggap pasti ada",
+        "paragraphs": [
+          "Hal-hal kecil ini jarang ditulis di iklan, padahal paling terasa kalau tidak ada."
+        ],
+        "bullets": [
+          "Air panas: pakai pemanas apa dan cukup untuk berapa orang mandi berurutan? Di dataran tinggi yang dingin, ini krusial.",
+          "Listrik: berapa kapasitas daya villa? Sound system, proyektor, dan peralatan masak bersamaan bisa bikin listrik turun. Tanyakan apakah ada genset atau perlu sewa.",
+          "Sinyal dan WiFi: penting kalau ada sesi presentasi atau peserta yang tetap harus standby kerjaan.",
+          "Dapur dan alat makan: boleh dipakai catering luar? Ada biaya kebersihan tambahan?",
+          "Parkir: muat berapa kendaraan, termasuk mobil pribadi peserta yang datang terpisah?",
+          "Mushola atau ruang ibadah, serta arah kiblat."
+        ]
+      },
+      {
+        "heading": "6. Makan: catering villa atau dari luar?",
+        "paragraphs": [
+          "Sebagian villa menyediakan paket makan sendiri, sebagian membebaskan Anda membawa catering luar, sebagian lagi mengenakan biaya tambahan kalau pakai catering luar. Pastikan kebijakannya jelas, lalu bandingkan total biayanya.",
+          "Jangan lupa kebutuhan khusus peserta: menu halal, vegetarian, alergi makanan. Kumpulkan datanya lewat formulir pendaftaran supaya catering bisa menyiapkan sejak awal."
+        ]
+      },
+      {
+        "heading": "7. Isi kesepakatan sebelum transfer DP",
+        "paragraphs": [
+          "Bagian ini yang paling sering diabaikan karena chat dengan admin villa terasa santai. Padahal semua yang dijanjikan lewat chat sebaiknya masuk ke dokumen tertulis sebelum uang berpindah."
+        ],
+        "numbered": [
+          "Tanggal dan jam check-in serta check-out. Bisa early check-in untuk rombongan yang tiba pagi?",
+          "Jumlah kasur dan fasilitas yang sudah termasuk harga.",
+          "Biaya tambahan: extra bed, kebersihan, pemakaian aula, genset, atau overtime.",
+          "Deposit kerusakan: berapa, dan kapan dikembalikan.",
+          "Aturan pembatalan dan reschedule, termasuk kalau terjadi cuaca ekstrem atau kejadian di luar kendali.",
+          "Nama penanggung jawab di lokasi yang bisa dihubungi saat hari H.",
+          "Pembayaran ke rekening resmi, lengkap dengan invoice atau kuitansi."
+        ]
+      },
+      {
+        "heading": "Checklist ringkas yang bisa Anda forward ke tim",
+        "paragraphs": [],
+        "bullets": [
+          "Denah kamar + jenis kasur sudah diterima",
+          "Rasio kamar mandi per orang sudah dihitung",
+          "Akses bus atau elf sudah dikonfirmasi (atau shuttle sudah direncanakan)",
+          "Ruang kumpul muat semua peserta + plan B hujan jelas",
+          "Aturan suara dan jam malam cocok dengan rundown",
+          "Air panas, listrik, sinyal, dan parkir sudah dicek",
+          "Kebijakan catering dan data kebutuhan makan peserta siap",
+          "Semua kesepakatan tertulis, DP ke rekening resmi"
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Villa yang tepat bikin gathering kantor terasa hangat dan beda dari rutinitas. Villa yang salah bikin panitia sibuk memadamkan masalah dan tidak sempat menikmati acaranya sendiri.",
+          "Kalau Anda tidak sempat mengecek semua poin ini satu per satu, tim kami bisa bantu kurasi villa gathering di Bandung sesuai jumlah peserta dan rundown Anda — lengkap dengan proposal dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/villa-gathering-bandung",
+        "label": "Villa Gathering Bandung",
+        "description": "Villa privat di Lembang dan sekitarnya, dikurasi untuk rombongan kantor."
+      },
+      {
+        "href": "/venue-gathering-bandung",
+        "label": "Venue Gathering Bandung",
+        "description": "Pilihan villa, resort, dan hotel untuk gathering perusahaan."
+      },
+      {
+        "href": "/corporate-event-lembang",
+        "label": "Corporate Event Lembang",
+        "description": "Gathering dan outing kantor di kawasan Lembang."
+      }
+    ],
+    relatedSlugs: ["cara-pilih-venue-corporate-gathering-bandung", "berapa-dp-outing-kantor", "outing-lembang-vs-ciwidey"],
+  },
+
+  "jumlah-peserta-outing-berubah-setelah-dp": {
+    slug: "jumlah-peserta-outing-berubah-setelah-dp",
+    title: "Jumlah Peserta Outing Berubah Setelah DP, Gimana?",
+    excerpt: "Sudah bayar DP, lalu ada yang batal, ada divisi yang mau ikut, atau ada karyawan baru. Jumlah peserta outing kantor berubah itu normal — yang penting tahu batas waktunya.",
+    metaDescription: "Jumlah peserta outing kantor berubah setelah DP? Kapan masih bisa ditambah atau dikurangi, apa dampaknya ke biaya, dan cara mengatur data peserta.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Perubahan jumlah peserta setelah DP itu wajar dan umumnya masih bisa diakomodasi — selama dikabari sebelum batas final headcount.",
+      "Menambah peserta bergantung pada ketersediaan kamar, kursi kendaraan, dan kapasitas venue.",
+      "Mengurangi peserta tidak selalu menurunkan biaya, karena sebagian biaya sudah dibayarkan ke venue atau bersifat tetap.",
+      "Sepakati tanggal final headcount di kontrak dan pakai satu daftar peserta yang dipegang satu PIC."
+    ],
+    heroImage: IMAGES.groupShot1,
+    publishDate: "2026-11-24",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Bisa. Jumlah peserta outing kantor yang berubah setelah DP itu hal yang sangat biasa — ada yang sakit, ada yang tugas luar kota, ada karyawan baru yang bergabung. Kuncinya ada di satu tanggal: batas final headcount. Sebelum tanggal itu, perubahan biasanya masih fleksibel. Setelahnya, ruang geraknya makin sempit."
+        ]
+      },
+      {
+        "heading": "Kalau peserta bertambah",
+        "paragraphs": [
+          "Tambahan peserta hampir selalu bisa diusahakan, asal kapasitasnya masih ada. Yang dicek vendor:"
+        ],
+        "bullets": [
+          "Kamar atau kasur di venue — terutama untuk acara menginap di akhir pekan atau Desember.",
+          "Kursi kendaraan. Tambah lima orang bisa berarti tambah satu kendaraan.",
+          "Kapasitas ruang dan peralatan aktivitas.",
+          "Konsumsi, kaos, ID card, dan merchandise yang mungkin sudah diproduksi."
+        ]
+      },
+      {
+        "heading": "Kalau peserta berkurang",
+        "paragraphs": [
+          "Di sini sering ada salah paham. Mengurangi peserta tidak otomatis mengurangi tagihan secara proporsional. Sebagian biaya bersifat tetap (fasilitator, sound system, dokumentasi, sewa kendaraan), dan sebagian lagi mungkin sudah dibayarkan vendor ke venue sesuai jumlah awal.",
+          "Makin dekat ke hari H, makin kecil bagian yang bisa disesuaikan. Karena itu, kabari pengurangan peserta secepat mungkin, jangan menunggu daftar benar-benar final."
+        ]
+      },
+      {
+        "heading": "Cara supaya perubahan tidak jadi drama",
+        "paragraphs": [],
+        "numbered": [
+          "Tulis tanggal final headcount di kontrak, lengkap dengan aturan penambahan dan pengurangan.",
+          "Tunjuk satu PIC yang memegang daftar peserta. Jangan sampai vendor menerima revisi dari tiga orang berbeda.",
+          "Pakai formulir pendaftaran online untuk mengumpulkan nama, ukuran kaos, kebutuhan makan, dan kontak darurat.",
+          "Siapkan cadangan kecil di budget untuk tambahan peserta mendadak.",
+          "Kirim daftar final dalam satu file, lengkap dengan pembagian kamar dan kendaraan."
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Jumlah peserta Anda belum pasti? Tidak apa-apa. Kirim perkiraan range-nya — misalnya 60 sampai 80 orang — dan kami susun estimasi biaya yang memperhitungkan kemungkinan itu, sekaligus usulan tanggal final headcount yang realistis."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/outing-kantor-bandung",
+        "label": "Outing Kantor Bandung",
+        "description": "Outing kantor 1 hari sampai 2D1N, dengan perencanaan peserta yang rapi."
+      },
+      {
+        "href": "/proposal/quick-quote",
+        "label": "Estimasi Biaya Cepat",
+        "description": "Dapatkan perkiraan biaya untuk range jumlah peserta Anda."
+      }
+    ],
+    relatedSlugs: ["berapa-dp-outing-kantor", "minimal-peserta-outing-kantor", "cara-memilih-vendor-corporate-event-bandung"],
+  },
+
+  "peserta-outing-tidak-kuat-aktivitas-fisik": {
+    slug: "peserta-outing-tidak-kuat-aktivitas-fisik",
+    title: "Peserta Outing Tidak Kuat Aktivitas Fisik, Gimana?",
+    excerpt: "Ada karyawan yang sedang hamil, baru pulih dari cedera, punya kondisi jantung, atau memang tidak suka aktivitas berat. Apakah mereka harus absen dari outing kantor? Tidak harus.",
+    metaDescription: "Peserta outing kantor yang tidak kuat aktivitas fisik tetap bisa ikut. Cara mendata kondisi kesehatan, menyiapkan peran alternatif, dan memilih aktivitas.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Peserta yang tidak bisa ikut aktivitas fisik tetap bisa ikut outing kantor — asalkan programnya dirancang dengan peran alternatif.",
+      "Kumpulkan info kondisi kesehatan lewat formulir pendaftaran secara tertutup, bukan diumumkan di grup.",
+      "Siapkan peran yang tetap bermakna: strategist tim, juri, pencatat skor, atau dokumentasi — bukan sekadar 'duduk di pinggir'.",
+      "Campur aktivitas fisik dengan aktivitas berbasis strategi dan komunikasi supaya semua orang punya momen berkontribusi."
+    ],
+    heroImage: IMAGES.offroad3,
+    publishDate: "2026-11-25",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Tetap ajak mereka. Peserta outing kantor yang tidak kuat aktivitas fisik — karena hamil, cedera, kondisi medis, usia, atau sekadar tidak nyaman — bukan alasan untuk absen. Yang perlu diubah adalah desain programnya, supaya ada peran yang tetap seru dan bermakna untuk semua orang."
+        ]
+      },
+      {
+        "heading": "Langkah yang kami sarankan",
+        "paragraphs": [],
+        "numbered": [
+          "Tambahkan pertanyaan kesehatan di formulir pendaftaran: kondisi medis, cedera, kehamilan, obat rutin, dan alergi. Sampaikan bahwa datanya hanya dipakai panitia dan tim fasilitator.",
+          "Bagikan gambaran aktivitas sebelum acara, supaya peserta bisa menilai sendiri bagian mana yang nyaman untuk diikuti.",
+          "Minta fasilitator menyiapkan peran alternatif di setiap aktivitas, lalu jelaskan di briefing bahwa memilih peran itu hal biasa.",
+          "Pastikan ada area teduh, tempat duduk, air minum, dan petugas yang tahu kondisi peserta tersebut.",
+          "Untuk perjalanan, pikirkan juga jarak jalan kaki dari parkir ke lokasi dan akses tangga."
+        ]
+      },
+      {
+        "heading": "Peran alternatif yang tetap seru",
+        "paragraphs": [
+          "Kesalahan yang sering terjadi: peserta yang tidak ikut aktivitas fisik hanya jadi penonton. Lebih baik beri mereka peran yang memengaruhi hasil tim."
+        ],
+        "bullets": [
+          "Strategist atau navigator — menyusun rencana dan memberi arahan ke anggota tim yang bergerak.",
+          "Juri atau pencatat skor — memegang aturan main dan menentukan pemenang.",
+          "Pemegang 'kunci' teka-teki — menyimpan informasi yang dibutuhkan tim untuk menyelesaikan misi.",
+          "Tim dokumentasi — merekam momen untuk recap acara."
+        ]
+      },
+      {
+        "heading": "Pilih campuran aktivitas yang seimbang",
+        "paragraphs": [
+          "Tidak semua team building harus lari-lari dan basah-basahan. Campurkan aktivitas fisik dengan games berbasis strategi, komunikasi, kreativitas, atau memasak bersama. Dengan begitu, peserta yang kuat fisik dan yang tidak sama-sama punya momen untuk bersinar — dan tim belajar saling mengandalkan.",
+          "Kalau komposisi tim Anda beragam, ceritakan saat brief ke vendor. Kami akan menyusun program yang bisa diikuti semua orang tanpa terasa ada yang 'dikecualikan'."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/team-building-bandung",
+        "label": "Team Building Bandung",
+        "description": "Program team building dengan peran yang bisa diikuti semua peserta."
+      },
+      {
+        "href": "/outbound-perusahaan-bandung",
+        "label": "Outbound Perusahaan Bandung",
+        "description": "Outbound dengan pilihan tingkat aktivitas sesuai kondisi tim."
+      }
+    ],
+    relatedSlugs: ["games-team-building-indoor", "cross-generational-team-building", "indoor-vs-outdoor-corporate-outing"],
+  },
+
+  "family-day-perusahaan": {
+    slug: "family-day-perusahaan",
+    title: "Family Day Perusahaan: Konsep, Rundown & Tips Seru",
+    excerpt: "Family day perusahaan itu bukan sekadar outing kantor plus anak-anak. Pesertanya beragam umur, kebutuhannya beda-beda, dan ekspektasinya tinggi. Ini cara menyusun konsep dan rundown yang bikin semua anggota keluarga betah.",
+    metaDescription: "Panduan family day perusahaan: pilihan konsep, contoh rundown 1 hari, aktivitas untuk anak & dewasa, keamanan, dan hal yang wajib disiapkan panitia.",
+    category: "Planning Guide",
+    tldr: [
+      "Family day perusahaan melibatkan karyawan beserta pasangan dan anak, jadi programnya harus jalan paralel: aktivitas anak, aktivitas dewasa, dan momen bersama.",
+      "Rundown ideal tidak terlalu padat dan memperhitungkan jam tidur siang anak, waktu makan, dan perjalanan pulang yang tidak kemalaman.",
+      "Prioritas teknis: kids zone yang diawasi, petugas medis, menu ramah anak, dan sistem penjemputan anak yang jelas.",
+      "Umumkan aturan peserta sejak awal: siapa saja yang boleh ikut dan apakah ada biaya tambahan untuk anggota keluarga."
+    ],
+    heroImage: IMAGES.packageAnnualGathering,
+    publishDate: "2026-11-26",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "paragraphs": [
+          "Family day perusahaan punya satu keunggulan yang tidak dimiliki outing biasa: keluarga karyawan ikut merasakan tempat kerja pasangan atau orang tuanya. Buat karyawan, ini cara perusahaan bilang 'kami juga menghargai orang-orang di rumah Anda'. Buat perusahaan, ini momen employer branding yang terasa paling tulus.",
+          "Tapi menyiapkan family day berbeda dari outing kantor. Pesertanya mulai dari balita sampai kakek-nenek, energi tiap kelompok umur berbeda, dan satu anak yang rewel bisa membuat orang tuanya tidak menikmati acara. Panduan ini membahas pilihan konsep, contoh rundown, dan hal teknis yang sering terlupa."
+        ]
+      },
+      {
+        "heading": "Tiga konsep family day yang paling sering dipilih",
+        "paragraphs": [],
+        "numbered": [
+          "Fun day di resort atau taman wisata. Paling populer. Ada area outdoor luas, wahana atau aktivitas untuk anak, dan ruang makan bersama. Cocok untuk jumlah peserta besar.",
+          "Family festival bertema. Satu tema besar (misalnya karnaval, olimpiade keluarga, atau budaya Sunda) yang menyatukan dekorasi, games, kostum, dan pembagian hadiah. Lebih berkesan di foto dan cerita.",
+          "Gathering + family day. Hari pertama khusus karyawan untuk sesi kerja atau team building, hari kedua keluarga menyusul. Pas kalau perusahaan ingin menggabungkan agenda internal dan apresiasi keluarga dalam satu perjalanan."
+        ]
+      },
+      {
+        "heading": "Contoh rundown family day 1 hari",
+        "paragraphs": [
+          "Contoh untuk venue di Bandung dengan peserta yang datang pagi. Geser jamnya kalau rombongan berangkat dari Jakarta."
+        ],
+        "numbered": [
+          "08.00–09.00 — Registrasi keluarga, pembagian gelang atau ID, welcome snack. Anak langsung diarahkan ke kids zone supaya orang tua bisa registrasi dengan tenang.",
+          "09.00–09.30 — Pembukaan singkat dan sambutan pimpinan. Maksimal 10 menit sambutan — anak-anak tidak akan sabar lebih lama.",
+          "09.30–11.30 — Aktivitas paralel: games keluarga di area utama, aktivitas anak di kids zone, dan pilihan aktivitas santai untuk lansia.",
+          "11.30–13.00 — Makan siang keluarga dan ishoma.",
+          "13.00–14.30 — Lomba atau games antar-keluarga (estafet keluarga, tebak-tebakan, lomba kreasi). Waktu santai untuk keluarga dengan balita yang perlu tidur siang.",
+          "14.30–15.30 — Pertunjukan atau hiburan, pembagian hadiah, door prize.",
+          "15.30–16.00 — Foto keluarga dan penutupan. Pulang sebelum sore supaya tidak kemalaman di jalan."
+        ]
+      },
+      {
+        "heading": "Aktivitas untuk tiap kelompok umur",
+        "paragraphs": [
+          "Kunci family day adalah semua kelompok umur punya sesuatu untuk dikerjakan pada waktu yang sama."
+        ],
+        "bullets": [
+          "Balita dan anak kecil: mewarnai, face painting, permainan tradisional sederhana, pertunjukan boneka atau sulap.",
+          "Anak usia sekolah: games kompetisi ringan, mini outbound yang aman, workshop kreasi.",
+          "Remaja: aktivitas yang lebih menantang atau berbasis tim — remaja biasanya enggan ikut games 'anak kecil'.",
+          "Dewasa: games pasangan, lomba antar-divisi, atau sesi santai sambil ngopi.",
+          "Lansia: area duduk yang teduh, aktivitas yang tidak menuntut fisik, dan akses yang mudah dari parkir."
+        ]
+      },
+      {
+        "heading": "Hal teknis yang wajib disiapkan",
+        "paragraphs": [
+          "Bagian ini yang membedakan family day yang lancar dari yang membuat panitia pusing."
+        ],
+        "bullets": [
+          "Kids zone yang diawasi petugas, dengan sistem titip dan jemput anak yang jelas (misalnya gelang bernomor yang cocok dengan kartu orang tua).",
+          "Petugas medis standby yang siap menangani anak-anak.",
+          "Menu ramah anak, pilihan halal, vegetarian, dan penanda alergen di meja makan.",
+          "Ruang menyusui dan area ganti popok.",
+          "Titik kumpul dan prosedur kalau ada anak terpisah dari orang tua — umumkan saat pembukaan.",
+          "Plan B area indoor kalau hujan, terutama untuk acara di musim hujan."
+        ]
+      },
+      {
+        "heading": "Aturan peserta dan biaya",
+        "paragraphs": [
+          "Sebelum undangan disebar, tentukan siapa saja yang termasuk 'keluarga': pasangan dan anak saja, atau orang tua juga boleh ikut? Apakah ada kuota per karyawan? Aturan ini memengaruhi biaya dan kapasitas venue, jadi sebaiknya jelas sejak awal.",
+          "Sebagai patokan, paket Family Day Corporate 1-Day kami mulai dari Rp 1,5 juta per karyawan, dengan biaya anggota keluarga dihitung terpisah. Rincian lengkapnya bisa Anda lihat di halaman transparansi harga."
+        ]
+      },
+      {
+        "heading": "Kesalahan yang sering terjadi",
+        "paragraphs": [],
+        "bullets": [
+          "Sambutan terlalu panjang. Anak-anak mulai gelisah, orang tua sibuk menenangkan, dan pesan pimpinan justru tidak terdengar.",
+          "Semua aktivitas dibuat untuk karyawan. Pasangan dan anak akhirnya hanya menonton dari pinggir.",
+          "Jadwal terlalu padat tanpa jeda. Keluarga dengan balita butuh waktu istirahat, makan, dan ganti baju.",
+          "Hadiah hanya untuk karyawan. Hadiah kecil untuk setiap anak sering jadi bagian yang paling diingat keluarga.",
+          "Pulang terlalu sore. Perjalanan malam dengan anak yang lelah membuat kesan akhir acara jadi kurang menyenangkan."
+        ]
+      },
+      {
+        "heading": "Checklist panitia family day",
+        "paragraphs": [],
+        "bullets": [
+          "Konsep dan tema sudah disepakati",
+          "Aturan peserta (siapa boleh ikut, kuota, biaya) sudah diumumkan",
+          "Formulir pendaftaran mencatat umur anak, alergi, dan kebutuhan khusus",
+          "Kids zone, petugas medis, dan ruang menyusui sudah dikonfirmasi venue",
+          "Rundown memberi jeda untuk anak kecil dan pulang tidak kemalaman",
+          "Hadiah dan door prize cukup untuk anak-anak, bukan hanya karyawan",
+          "Plan B hujan dan prosedur anak terpisah sudah disiapkan"
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Family day yang berhasil biasanya terlihat dari hal sederhana: anak-anak pulang tertidur kelelahan di mobil, dan orang tuanya masih membicarakan acaranya keesokan harinya di kantor.",
+          "Kalau Anda sedang merencanakan family day perusahaan di Bandung, ceritakan jumlah karyawan dan perkiraan anggota keluarganya. Tim kami susun konsep, rundown, dan proposal lengkapnya dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/employee-gathering-bandung",
+        "label": "Employee Gathering Bandung",
+        "description": "Gathering karyawan dan family day dengan program untuk semua umur."
+      },
+      {
+        "href": "/corporate-gathering-bandung",
+        "label": "Corporate Gathering Bandung",
+        "description": "Gathering tahunan yang bisa digabung dengan hari keluarga."
+      },
+      {
+        "href": "/pricing",
+        "label": "Transparansi Harga",
+        "description": "Rincian biaya per tier, termasuk format family day."
+      }
+    ],
+    relatedSlugs: ["outing-kantor-hari-kerja-atau-akhir-pekan", "games-team-building-indoor", "peserta-outing-tidak-kuat-aktivitas-fisik"],
+  },
+
+  "yang-termasuk-paket-outing-kantor": {
+    slug: "yang-termasuk-paket-outing-kantor",
+    title: "Apa Saja yang Sudah Termasuk di Paket Outing Kantor?",
+    excerpt: "Dua penawaran dengan harga per orang yang mirip bisa berisi hal yang sangat berbeda. Ini komponen yang biasanya ada di paket outing kantor, dan yang perlu Anda tanyakan sebelum membandingkan harga.",
+    metaDescription: "Apa saja yang termasuk di paket outing kantor: venue, makan, transport, fasilitator, dokumentasi, dan biaya yang sering muncul di luar paket.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Paket outing kantor umumnya mencakup venue, makan, program atau fasilitator, dan tim pelaksana — tapi detailnya beda di setiap vendor.",
+      "Transportasi, penginapan, dokumentasi, dan merchandise sering jadi pembeda harga antar-penawaran.",
+      "Tanyakan biaya yang sering ada di luar paket: tiket masuk tambahan, overtime, tips kru, dan pengeluaran pribadi.",
+      "Bandingkan penawaran per komponen, bukan hanya harga per orang."
+    ],
+    heroImage: IMAGES.caseStudyLarge,
+    publishDate: "2026-11-27",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Isi paket outing kantor berbeda-beda di setiap vendor, dan di situlah jebakannya. Penawaran A dan B bisa sama-sama tertulis 'per orang', tapi yang satu sudah termasuk bus dan dokumentasi, yang lain belum. Karena itu, sebelum membandingkan harga, samakan dulu isi paketnya."
+        ]
+      },
+      {
+        "heading": "Komponen yang biasanya ada di paket",
+        "paragraphs": [],
+        "bullets": [
+          "Venue atau lokasi aktivitas, termasuk tiket masuk area utama.",
+          "Makan dan snack sesuai jumlah sesi (misalnya makan siang plus dua kali coffee break).",
+          "Program: fasilitator, peralatan games atau outbound, dan sound system dasar.",
+          "Tim pelaksana: project manager dan koordinator lapangan.",
+          "Untuk acara menginap: kamar sesuai pembagian yang disepakati."
+        ]
+      },
+      {
+        "heading": "Komponen yang sering jadi pembeda harga",
+        "paragraphs": [
+          "Bagian ini yang perlu Anda cek satu per satu di setiap penawaran:"
+        ],
+        "bullets": [
+          "Transportasi pulang-pergi — bus, elf, atau peserta datang sendiri?",
+          "Dokumentasi — foto saja, atau juga video recap dan drone?",
+          "Merchandise dan atribut — kaos, ID card, banner.",
+          "Asuransi perjalanan atau kegiatan.",
+          "MC, hiburan, atau pertunjukan malam.",
+          "Laporan pasca-acara."
+        ]
+      },
+      {
+        "heading": "Biaya yang sering muncul di luar paket",
+        "paragraphs": [],
+        "numbered": [
+          "Tiket wahana atau atraksi tambahan di luar program utama.",
+          "Overtime kalau acara molor dari jadwal yang disepakati.",
+          "Tol, parkir, dan makan sopir — pastikan sudah termasuk atau belum.",
+          "Tips untuk kru atau guide, kalau budaya kantor Anda biasa memberi.",
+          "Pengeluaran pribadi peserta: minibar, laundry, belanja oleh-oleh."
+        ]
+      },
+      {
+        "heading": "Cara membandingkan penawaran",
+        "paragraphs": [
+          "Minta setiap vendor mengirim rincian per komponen, lalu taruh berdampingan dalam satu tabel. Penawaran termurah belum tentu paling hemat kalau banyak komponen penting yang belum masuk.",
+          "Di proposal kami, setiap komponen ditulis terpisah — mana yang termasuk, mana yang opsional. Lihat contoh paketnya di halaman packages, atau minta proposal lengkap dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/packages",
+        "label": "Paket Corporate Outing",
+        "description": "Contoh paket lengkap dengan daftar inklusi per format."
+      },
+      {
+        "href": "/pricing",
+        "label": "Transparansi Harga",
+        "description": "Rincian 4 tier harga dan apa yang membedakannya."
+      },
+      {
+        "href": "/proposal/sample",
+        "label": "Contoh Proposal",
+        "description": "Lihat format proposal dengan rincian per komponen."
+      }
+    ],
+    relatedSlugs: ["biaya-team-building-bandung", "berapa-dp-outing-kantor", "jumlah-peserta-outing-berubah-setelah-dp"],
   },
 
 };
