@@ -57,7 +57,7 @@ Urutan disesuaikan musim: akhir tahun, musim hujan, dan kick-off Januari.
 | W44 · 27–30 Okt | ✅ Rundown Gathering 2 Hari 1 Malam — Template | ✅ Cara Bikin Proposal Outing ke Direksi (+ template) | corporate-gathering, villa-gathering, /proposal/sample |
 | W45 · 3–6 Nov | ✅ Annual Kick-off Januari: Format & Rundown | ✅ Games Team Building Indoor yang Nggak Cringe | annual-meeting-organizer, team-building |
 | W46 · 10–13 Nov | ✅ Villa untuk Gathering Kantor: Checklist Sebelum DP (tayang 23 Nov) | ✅ Family Day Perusahaan: Konsep & Rundown (tayang 26 Nov) | villa-gathering, employee-gathering |
-| W47 · 17–20 Nov | Outbound Perusahaan: Checklist Keamanan & Asuransi | Glamping untuk Corporate: Kapan Cocok, Kapan Tidak | outbound-perusahaan, glamping-corporate |
+| W47 · 17–20 Nov | ✅ Outbound Perusahaan: Checklist Keamanan & Asuransi (tayang 30 Nov) | ✅ Glamping untuk Corporate: Kapan Cocok, Kapan Tidak (tayang 3 Des) | outbound-perusahaan, glamping-corporate |
 | W48 · 24–27 Nov | Leadership Retreat: Format Sesi yang Dipakai Setelah Pulang | Outing Kantor Ramah Muslim: Ibadah, Halal, Ruang Sholat | leadership-retreat, outing-kantor |
 | W49 · 1–4 Des | Team Building untuk Tim Hybrid/Remote | Rombongan Jakarta–Bandung: Bus, Elf, atau Kereta? | team-building, corporate-outing |
 | W50 · 8–11 Des | Dokumentasi Event Kantor untuk Employer Branding | Awarding Night Karyawan: Ide Kategori & Alur Acara | services (cross-sell 7summits Project), corporate-gathering |
