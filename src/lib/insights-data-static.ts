@@ -1871,7 +1871,8 @@ const INSIGHTS: Record<string, Insight> = {
     ],
     heroImage: IMAGES.caseStudyTeamBuilding,
     publishDate: "2026-05-29",
-    readTimeMin: 5,
+    updatedDate: "2026-12-05",
+    readTimeMin: 7,
     author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
     sections: [
       {
@@ -1967,7 +1968,48 @@ const INSIGHTS: Record<string, Insight> = {
         paragraphs: [
           "Masih bisa, dengan tiga kompromi: pilih venue yang masih tersedia (bukan yang paling diinginkan), pakai format yang sudah teruji alih-alih konsep custom, dan kumpulkan keputusan di satu orang supaya approval tidak bolak-balik.",
           "Yang tidak boleh dipangkas: plan B cuaca, data kebutuhan khusus peserta, dan briefing vendor. Tiga hal ini paling sering bikin masalah di hari-H kalau dilewati.",
-          "Tanggal Anda sudah dekat? Kirim brief singkat — kami bantu cek venue yang masih tersedia dan kirim proposal dalam 24 jam.",
+        ],
+      },
+      {
+        heading: "Contoh: menghitung mundur dari tanggal acara",
+        paragraphs: [
+          "Cara paling gampang memakai timeline ini: mulai dari tanggal acara, lalu hitung mundur. Misalnya Anda merencanakan gathering 2D1N untuk sekitar 80 orang di pertengahan Maret. Hitungannya kira-kira begini:",
+        ],
+        bullets: [
+          "Awal Desember (±14 minggu sebelumnya): brief internal dan pengajuan budget. Ada libur akhir tahun di tengah jalan, jadi mulai lebih awal.",
+          "Awal Januari: venue terkunci dengan DP — sebelum kalender kick-off dan acara kuartal pertama perusahaan lain mengisi tanggal yang sama.",
+          "Akhir Januari: kontrak ditandatangani, draft rundown jadi.",
+          "Februari: konfirmasi peserta, data kebutuhan khusus, transportasi, dan rooming list.",
+          "Akhir Februari sampai awal Maret: headcount final, rundown detail, plan B, pelunasan.",
+          "Seminggu sebelum acara: technical meeting dan info final ke peserta.",
+        ],
+        callout: {
+          label: "Hari libur ikut dihitung",
+          text: "Libur Natal–Tahun Baru, Lebaran, dan cuti bersama membuat approval dan konfirmasi peserta melambat. Kalau ada libur panjang di tengah timeline, tambahkan satu sampai dua minggu.",
+        },
+      },
+      {
+        heading: "Siapa yang memegang timeline?",
+        paragraphs: [
+          "Timeline hanya jalan kalau ada pemiliknya. Di sisi perusahaan, tunjuk satu PIC yang memantau checklist ini dan mengejar keputusan internal. Di sisi vendor, project manager yang memegang progres teknis dan mengingatkan tenggat. Keduanya sebaiknya punya satu dokumen yang sama — bukan versi masing-masing.",
+          "Bagi tugasnya sejak minggu pertama: data peserta, keuangan, dan komunikasi ke karyawan masing-masing punya satu pemegang. Tim kecil pun bisa, asal perannya jelas.",
+        ],
+      },
+      {
+        heading: "FAQ seputar timeline persiapan event kantor",
+        paragraphs: [],
+        bullets: [
+          "Kurang dari 4 minggu, masih bisa? Untuk outing 1 hari dengan format yang sudah teruji, sering kali masih bisa diusahakan — tergantung ketersediaan venue dan kecepatan keputusan internal. Untuk acara menginap di musim ramai, peluangnya jauh lebih kecil.",
+          "Kapan sebaiknya mulai menyiapkan acara akhir tahun atau kick-off Januari? Semakin awal semakin baik, karena di Bandung akhir pekan Desember cepat penuh. Kunci tanggal dan venue lebih dulu, detail acara bisa menyusul.",
+          "Kapan DP dan pelunasan dibayar? DP biasanya untuk mengunci tanggal di minggu 3–6, dan pelunasan menjelang hari H sesuai termin di kontrak. Detailnya kami bahas di artikel tentang DP outing kantor.",
+          "Kapan headcount final dikirim ke vendor? Umumnya sekitar dua minggu sebelum acara, tapi ikuti tanggal yang tertulis di kontrak. Perubahan setelah tanggal itu ruang geraknya makin sempit.",
+          "Apakah site visit wajib? Tidak selalu. Untuk venue yang belum pernah Anda pakai, site visit atau video call walkthrough sangat disarankan — terutama untuk mengecek ruang plan B dan akses kendaraan.",
+        ],
+      },
+      {
+        heading: "Mulai dari mana?",
+        paragraphs: [
+          "Kalau baru punya tanggal kasar dan jumlah peserta, itu sudah cukup untuk mulai. Kirim brief singkat ke kami — tim kami bantu cek venue yang masih tersedia, hitung mundur timeline-nya, dan kirim proposal dalam 24 jam.",
         ],
       },
     ],
@@ -1976,7 +2018,7 @@ const INSIGHTS: Record<string, Insight> = {
       { href: "/corporate-gathering-bandung", label: "Corporate Gathering Bandung", description: "Gathering tahunan dengan gala dan awarding, untuk 50–800 pax." },
       { href: "/proposal/request", label: "Request Proposal", description: "Kirim brief, proposal custom dalam 24 jam." },
     ],
-    relatedSlugs: ["contoh-rundown-outing-kantor-1-hari", "cara-memilih-vendor-corporate-event-bandung", "biaya-team-building-bandung"],
+    relatedSlugs: ["contoh-rundown-outing-kantor-1-hari", "berapa-dp-outing-kantor", "cara-memilih-vendor-corporate-event-bandung"],
   },
   "annual-kick-off-meeting-januari": {
     slug: "annual-kick-off-meeting-januari",
@@ -2948,6 +2990,522 @@ const INSIGHTS: Record<string, Insight> = {
       }
     ],
     relatedSlugs: ["biaya-team-building-bandung", "berapa-dp-outing-kantor", "jumlah-peserta-outing-berubah-setelah-dp"],
+  },
+
+  "outbound-perusahaan-checklist-keamanan": {
+    slug: "outbound-perusahaan-checklist-keamanan",
+    title: "Outbound Perusahaan: Checklist Keamanan & Asuransi",
+    excerpt: "Outbound perusahaan seharusnya bikin tim deg-degan karena tantangannya, bukan karena alatnya meragukan. Ini checklist keamanan dan asuransi yang perlu HR cek sebelum tanda tangan kontrak.",
+    metaDescription: "Checklist keamanan outbound perusahaan: instruktur, alat, briefing, tim medis, asuransi peserta, dan pertanyaan yang wajib diajukan HR ke vendor.",
+    category: "Planning Guide",
+    tldr: [
+      "Keamanan outbound perusahaan ditentukan sebelum hari H: instruktur, kondisi alat, data kesehatan peserta, dan asuransi.",
+      "Minta vendor menunjukkan bukti, bukan janji — sertifikat instruktur, catatan inspeksi alat, dan polis asuransi.",
+      "Asuransi personal accident harus atas nama peserta yang benar-benar ikut, dengan aktivitas outbound tidak masuk pengecualian.",
+      "Sepakati aturan stop: kapan aktivitas dihentikan karena cuaca, kondisi peserta, atau alat yang tidak layak."
+    ],
+    heroImage: IMAGES.offroad1,
+    publishDate: "2026-11-30",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "paragraphs": [
+          "Outbound perusahaan itu paling seru kalau peserta merasa tertantang tapi tetap aman. Flying fox, rafting, atau high rope memang bikin adrenalin naik — dan justru di situ momen tim saling menyemangati muncul. Masalahnya, dari sisi HR, satu insiden kecil saja bisa menghapus semua cerita seru itu.",
+          "Kabar baiknya, sebagian besar risiko outbound bisa dikendalikan jauh sebelum hari H. Artikel ini merangkum checklist keamanan dan asuransi yang kami sarankan untuk dicek panitia sebelum memilih vendor dan menandatangani kontrak."
+        ]
+      },
+      {
+        "heading": "1. Instruktur: siapa yang benar-benar memegang tali",
+        "paragraphs": [
+          "Fasilitator games dan instruktur aktivitas berisiko itu dua peran berbeda. Fasilitator memandu permainan dan debrief, sedangkan instruktur bertanggung jawab atas teknis keselamatan: memasang harness, mengecek simpul, dan memutuskan kapan peserta boleh mulai."
+        ],
+        "bullets": [
+          "Tanyakan sertifikasi instruktur untuk tiap aktivitas (misalnya ketinggian, arus air, atau pertolongan pertama), lalu minta salinannya.",
+          "Tanyakan rasio instruktur per peserta di setiap pos aktivitas, bukan hanya jumlah kru secara total.",
+          "Pastikan ada satu orang yang ditunjuk sebagai safety officer di lokasi, terpisah dari MC atau fasilitator.",
+          "Instruktur sebaiknya orang yang memang rutin bertugas di lokasi itu, sehingga paham medan dan kondisi alatnya."
+        ]
+      },
+      {
+        "heading": "2. Alat dan lokasi: minta bukti, bukan janji",
+        "paragraphs": [
+          "Helm, harness, carabiner, tali, pelampung — semua punya umur pakai. Vendor yang serius biasanya punya catatan inspeksi alat dan tidak keberatan menunjukkannya."
+        ],
+        "numbered": [
+          "Minta catatan inspeksi alat terakhir dan tanyakan seberapa sering alat diperiksa.",
+          "Pastikan ukuran helm, harness, dan pelampung tersedia untuk semua postur peserta.",
+          "Cek apakah lokasi punya jalur evakuasi yang bisa dilalui kendaraan.",
+          "Tanyakan rumah sakit atau klinik terdekat dari lokasi dan berapa lama perjalanannya.",
+          "Untuk aktivitas air, tanyakan bagaimana kondisi arus dipantau di hari H."
+        ]
+      },
+      {
+        "heading": "3. Data kesehatan peserta",
+        "paragraphs": [
+          "Instruktur hanya bisa menjaga peserta kalau tahu kondisinya. Tambahkan pertanyaan kesehatan di formulir pendaftaran — riwayat jantung, asma, cedera, kehamilan, alergi, dan obat rutin — lalu bagikan secara tertutup hanya ke tim medis dan instruktur.",
+          "Dari data itu, vendor bisa menyiapkan pilihan tingkat aktivitas. Peserta yang tidak ikut aktivitas berat tetap bisa mengambil peran lain, jadi tidak ada yang merasa ditinggal."
+        ]
+      },
+      {
+        "heading": "4. Tim medis dan briefing keselamatan",
+        "paragraphs": [],
+        "bullets": [
+          "Petugas medis standby di lokasi selama aktivitas berlangsung, lengkap dengan kotak P3K yang memadai.",
+          "Kendaraan yang siap dipakai untuk evakuasi kalau dibutuhkan.",
+          "Briefing keselamatan sebelum setiap aktivitas: cara memakai alat, aba-aba, dan apa yang dilakukan kalau peserta panik.",
+          "Larangan ikut aktivitas berisiko setelah minum alkohol atau kalau kurang tidur — sampaikan sejak malam sebelumnya."
+        ]
+      },
+      {
+        "heading": "5. Asuransi peserta: yang perlu dibaca di polis",
+        "paragraphs": [
+          "Banyak penawaran menulis 'termasuk asuransi', tapi detailnya jarang ditanyakan. Padahal di situlah bedanya. Ini yang sebaiknya Anda cek:"
+        ],
+        "numbered": [
+          "Jenis asuransinya: umumnya personal accident yang menanggung kecelakaan selama kegiatan.",
+          "Siapa tertanggungnya. Asuransi biasanya didaftarkan per nama, jadi vendor butuh data peserta final sebelum acara. Peserta pengganti yang mendadak ikut perlu didaftarkan juga.",
+          "Periode perlindungan: hanya saat aktivitas, atau termasuk perjalanan berangkat dan pulang?",
+          "Pengecualian. Beberapa polis mengecualikan aktivitas tertentu. Pastikan aktivitas di rundown Anda tidak termasuk di dalamnya.",
+          "Prosedur klaim: siapa yang mengurus, dokumen apa yang perlu disiapkan, dan siapa yang menalangi biaya awal di rumah sakit."
+        ],
+        "callout": {
+          "label": "Tips",
+          "text": "Minta salinan polis atau sertifikat asuransi beserta daftar nama tertanggung beberapa hari sebelum acara. Kalau vendor tidak bisa menunjukkannya, anggap asuransinya belum ada."
+        }
+      },
+      {
+        "heading": "6. Aturan stop yang disepakati di awal",
+        "paragraphs": [
+          "Keputusan menghentikan aktivitas sebaiknya tidak diambil sambil berdebat di lapangan. Sepakati sejak awal bahwa instruktur berhak menunda atau membatalkan aktivitas kalau hujan deras, petir, arus sungai naik, atau ada peserta yang kondisinya tidak memungkinkan — dan bahwa plan B sudah disiapkan, bukan dikarang di tempat.",
+          "Di Bandung, musim hujan membuat aturan ini makin penting untuk acara outdoor. Pastikan rundown punya alternatif aktivitas di area tertutup."
+        ]
+      },
+      {
+        "heading": "7. Peran panitia internal di hari H",
+        "paragraphs": [
+          "Vendor memegang teknis keselamatan, tapi panitia internal tetap punya peran penting. Tunjuk satu orang yang memegang daftar peserta lengkap dengan kontak darurat dan catatan kesehatan, dan pastikan dia selalu bisa dihubungi tim medis.",
+          "Panitia juga perlu memastikan peserta datang dengan persiapan yang benar: sepatu yang layak, pakaian ganti, obat pribadi, dan cukup tidur. Kirim pengingat ini sehari sebelum berangkat, jangan hanya di awal pendaftaran."
+        ],
+        "bullets": [
+          "Pegang daftar peserta, kontak darurat keluarga, dan catatan kesehatan dalam satu dokumen.",
+          "Cek kehadiran setiap selesai pindah pos atau pindah lokasi.",
+          "Jangan menekan peserta yang ragu untuk tetap ikut aktivitas berisiko demi 'kekompakan'.",
+          "Catat kejadian kecil sekalipun, supaya bisa dilaporkan ke vendor dan asuransi kalau dibutuhkan."
+        ]
+      },
+      {
+        "heading": "Checklist singkat sebelum tanda tangan kontrak",
+        "paragraphs": [],
+        "bullets": [
+          "Sertifikat instruktur per aktivitas sudah diterima",
+          "Rasio instruktur per peserta di tiap pos sudah jelas",
+          "Catatan inspeksi alat sudah dilihat",
+          "Petugas medis, kendaraan evakuasi, dan rumah sakit terdekat sudah tercatat",
+          "Formulir kesehatan peserta sudah disiapkan",
+          "Polis asuransi: jenis, periode, pengecualian, dan prosedur klaim sudah dibaca",
+          "Aturan stop dan plan B cuaca tertulis di rundown"
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Outbound yang aman bukan berarti outbound yang membosankan. Justru ketika peserta percaya pada instruktur dan alatnya, mereka lebih berani mencoba — dan cerita serunya jadi bahan obrolan di kantor berminggu-minggu.",
+          "Sedang menyiapkan outbound perusahaan di Bandung? Ceritakan jumlah peserta dan aktivitas yang Anda incar. Tim kami susun program, detail keselamatan, dan rincian asuransinya dalam proposal 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/outbound-perusahaan-bandung",
+        "label": "Outbound Perusahaan Bandung",
+        "description": "Program outbound dengan standar keselamatan, instruktur, dan asuransi peserta."
+      },
+      {
+        "href": "/team-building-bandung",
+        "label": "Team Building Bandung",
+        "description": "Alternatif team building dengan tingkat aktivitas yang bisa disesuaikan."
+      },
+      {
+        "href": "/pricing",
+        "label": "Transparansi Harga",
+        "description": "Lihat komponen biaya per tier, termasuk asuransi."
+      }
+    ],
+    relatedSlugs: ["peserta-outing-tidak-kuat-aktivitas-fisik", "force-majeure-contingency-corporate-outing", "cara-memilih-vendor-corporate-event-bandung"],
+  },
+
+  "karyawan-tidak-mau-ikut-outing-kantor": {
+    slug: "karyawan-tidak-mau-ikut-outing-kantor",
+    title: "Karyawan Tidak Mau Ikut Outing Kantor, Harus Gimana?",
+    excerpt: "Undangan sudah disebar, tapi ada karyawan yang terang-terangan bilang malas ikut. Sebelum buru-buru mewajibkan, coba cari tahu dulu alasannya — sering kali jawabannya ada di desain acara.",
+    metaDescription: "Karyawan tidak mau ikut outing kantor? Cari tahu alasannya, sesuaikan acaranya, dan cara mengajak tanpa memaksa supaya outing tetap seru untuk semua.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Karyawan yang enggan ikut outing kantor biasanya punya alasan konkret: urusan keluarga, takut aktivitas fisik, acara di hari libur, atau pengalaman outing sebelumnya yang membosankan.",
+      "Tanyakan alasannya lewat survei singkat sebelum acara, bukan menebak-nebak.",
+      "Banyak penolakan bisa diselesaikan lewat desain acara: jadwal, pilihan aktivitas, dan durasi.",
+      "Mewajibkan boleh saja sesuai kebijakan perusahaan, tapi acara yang dirancang dengan baik membuat orang ingin datang, bukan merasa terpaksa."
+    ],
+    heroImage: IMAGES.offroad2,
+    publishDate: "2026-12-01",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Jangan langsung dipaksa, jangan juga langsung dibiarkan. Karyawan yang tidak mau ikut outing kantor hampir selalu punya alasan, dan alasan itu sering bisa diatasi. Langkah pertama: cari tahu kenapa."
+        ]
+      },
+      {
+        "heading": "Alasan yang paling sering muncul",
+        "paragraphs": [],
+        "bullets": [
+          "Acara di akhir pekan, padahal itu satu-satunya waktu bersama keluarga.",
+          "Takut atau tidak nyaman dengan aktivitas fisik, ketinggian, atau air.",
+          "Acara menginap, sementara ada anak kecil atau orang tua yang harus diurus.",
+          "Pengalaman outing sebelumnya: games yang memalukan, sambutan panjang, atau acara malam yang terlalu larut.",
+          "Merasa tidak dekat dengan rekan kerja, terutama karyawan baru atau yang biasa bekerja remote.",
+          "Pekerjaan menumpuk dan khawatir tertinggal setelah pulang."
+        ]
+      },
+      {
+        "heading": "Yang bisa dilakukan panitia",
+        "paragraphs": [],
+        "numbered": [
+          "Kirim survei singkat sebelum menentukan konsep: pilihan tanggal, preferensi aktivitas, dan kendala untuk ikut. Bisa anonim supaya jawabannya jujur.",
+          "Kalau banyak yang keberatan dengan akhir pekan, pertimbangkan acara di hari kerja.",
+          "Sediakan pilihan aktivitas dengan tingkat intensitas berbeda, dan sampaikan sejak awal bahwa semua orang boleh memilih peran.",
+          "Bagikan gambaran rundown sebelum acara. Ketidakjelasan sering membuat orang memilih tidak ikut.",
+          "Minta atasan langsung ikut mengajak timnya — ajakan personal biasanya lebih didengar daripada pengumuman di grup.",
+          "Atur supaya pekerjaan mendesak ditangani sebelum acara, sehingga peserta bisa benar-benar hadir."
+        ]
+      },
+      {
+        "heading": "Perlu diwajibkan atau tidak?",
+        "paragraphs": [
+          "Itu keputusan kebijakan internal perusahaan, dan sebaiknya dikonsultasikan dengan HR atau pimpinan, terutama kalau acaranya di luar jam kerja. Yang kami lihat di lapangan: acara yang dirancang dengan mendengarkan peserta jarang perlu dipaksa. Orang datang karena memang ingin.",
+          "Kalau tetap ada yang tidak bisa ikut karena alasan pribadi, hormati keputusannya. Satu atau dua orang absen tidak membuat acara gagal — yang membuat gagal adalah peserta yang hadir tapi merasa terpaksa."
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Sedang merancang outing kantor dan ingin semua orang antusias ikut? Ceritakan komposisi tim Anda. Kami bantu susun konsep dan rundown yang ramah untuk berbagai tipe karyawan, lengkap dalam proposal 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/outing-kantor-bandung",
+        "label": "Outing Kantor Bandung",
+        "description": "Outing kantor dengan pilihan aktivitas untuk berbagai tipe peserta."
+      },
+      {
+        "href": "/employee-gathering-bandung",
+        "label": "Employee Gathering Bandung",
+        "description": "Gathering karyawan yang dirancang supaya semua orang mau datang."
+      }
+    ],
+    relatedSlugs: ["outing-kantor-hari-kerja-atau-akhir-pekan", "peserta-outing-tidak-kuat-aktivitas-fisik", "games-team-building-indoor"],
+  },
+
+  "mc-outing-kantor-vendor-atau-internal": {
+    slug: "mc-outing-kantor-vendor-atau-internal",
+    title: "MC Outing Kantor: Pakai MC Vendor atau Karyawan Sendiri?",
+    excerpt: "Ada karyawan yang jago ngomong dan sudah biasa jadi MC acara kantor. Perlu tetap pakai MC dari vendor? Jawabannya tergantung format acara dan peran yang mau Anda berikan ke karyawan itu.",
+    metaDescription: "MC outing kantor sebaiknya dari vendor atau karyawan sendiri? Kelebihan masing-masing, kapan perlu MC profesional, dan cara menggabungkan keduanya.",
+    category: "Tanya Jawab",
+    tldr: [
+      "MC internal unggul di kedekatan: tahu nama orang, inside joke, dan budaya kantor.",
+      "MC dari vendor unggul di kendali acara: menjaga waktu, membaca suasana, dan berkoordinasi dengan kru teknis.",
+      "Untuk acara besar, menginap, atau ada awarding, kombinasi keduanya sering jadi pilihan paling aman.",
+      "Apa pun pilihannya, MC harus ikut technical meeting dan memegang rundown terbaru."
+    ],
+    heroImage: IMAGES.groupShot1,
+    publishDate: "2026-12-02",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Dua-duanya bisa. MC outing kantor dari karyawan sendiri bikin suasana cair karena semua orang sudah kenal. MC dari vendor bikin acara lebih terkendali karena dia fokus penuh pada alur acara. Pilihan terbaik bergantung pada skala acara dan seberapa banyak bagian teknisnya."
+        ]
+      },
+      {
+        "heading": "Kapan MC internal sudah cukup",
+        "paragraphs": [],
+        "bullets": [
+          "Acara setengah hari atau satu hari dengan rundown sederhana.",
+          "Peserta tidak terlalu banyak dan sudah saling kenal.",
+          "Ada karyawan yang memang nyaman di depan banyak orang dan mau menyiapkan diri.",
+          "Sesi games dan aktivitas dipandu fasilitator, jadi MC hanya membuka, menutup, dan menghubungkan sesi."
+        ]
+      },
+      {
+        "heading": "Kapan sebaiknya pakai MC dari vendor",
+        "paragraphs": [],
+        "bullets": [
+          "Acara menginap dengan banyak sesi, perpindahan lokasi, dan acara malam.",
+          "Ada awarding, sambutan direksi, atau tamu penting yang urutannya harus rapi.",
+          "Banyak elemen teknis: musik, video, lighting, dan hiburan yang harus pas waktunya.",
+          "Anda ingin semua karyawan, termasuk yang biasa jadi MC, ikut menikmati acara sebagai peserta."
+        ]
+      },
+      {
+        "heading": "Opsi tengah: duet MC",
+        "paragraphs": [
+          "Banyak perusahaan memilih kombinasi. MC dari vendor memegang alur dan waktu, sementara karyawan menjadi co-host yang membawakan bagian yang butuh sentuhan internal — memperkenalkan divisi, membacakan nominasi, atau memandu kuis tentang kantor. Hasilnya acara tetap rapi, tapi rasanya tetap 'acara kita'."
+        ]
+      },
+      {
+        "heading": "Yang perlu disiapkan, siapa pun MC-nya",
+        "paragraphs": [],
+        "numbered": [
+          "Rundown terbaru dengan durasi tiap sesi dan nama penanggung jawabnya.",
+          "Daftar nama dan jabatan yang akan disebut, termasuk cara pengucapan yang benar.",
+          "Ikut technical meeting bersama vendor sebelum acara.",
+          "Kesepakatan soal batasan candaan — hindari humor yang menyinggung fisik, agama, atau jabatan.",
+          "Rencana cadangan kalau sesi molor: bagian mana yang bisa dipersingkat."
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Belum yakin perlu MC dari vendor atau tidak? Ceritakan format acaranya, dan kami sarankan susunan MC dan fasilitator yang paling pas — termasuk opsi duet dengan karyawan Anda. Proposal lengkap dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/corporate-gathering-bandung",
+        "label": "Corporate Gathering Bandung",
+        "description": "Gathering dengan MC, hiburan, dan alur acara yang rapi."
+      },
+      {
+        "href": "/employee-gathering-bandung",
+        "label": "Employee Gathering Bandung",
+        "description": "Acara karyawan yang terasa dekat dan tetap terkendali."
+      }
+    ],
+    relatedSlugs: ["yang-termasuk-paket-outing-kantor", "annual-kick-off-meeting-januari", "games-team-building-indoor"],
+  },
+
+  "glamping-corporate-kapan-cocok": {
+    slug: "glamping-corporate-kapan-cocok",
+    title: "Glamping Corporate: Kapan Cocok, Kapan Tidak?",
+    excerpt: "Tenda safari, api unggun, dan kabut pagi memang menggoda. Tapi glamping corporate tidak cocok untuk semua acara kantor. Ini cara menilai apakah glamping pas untuk tim Anda — sebelum terlanjur jatuh cinta pada fotonya.",
+    metaDescription: "Glamping corporate cocok untuk acara apa, dan kapan sebaiknya pilih villa atau hotel? Cek ukuran tim, profil peserta, fasilitas, dan pertanyaan ke venue.",
+    category: "Venue Guide",
+    tldr: [
+      "Glamping corporate paling cocok untuk tim kecil sampai menengah yang ingin bonding lebih dekat: leadership retreat, apresiasi tim, atau gathering yang ingin terasa beda.",
+      "Kurang cocok untuk acara besar dengan panggung, awarding formal, atau sesi kerja panjang yang butuh ruang meeting lengkap.",
+      "Profil peserta menentukan: lansia, peserta dengan keterbatasan gerak, atau yang tidak nyaman dengan udara dingin perlu dipertimbangkan.",
+      "Sebelum DP, cek kamar mandi, suhu malam, akses kendaraan, area tertutup untuk hujan, dan aturan api unggun."
+    ],
+    heroImage: IMAGES.packageGlamping,
+    publishDate: "2026-12-03",
+    readTimeMin: 5,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "paragraphs": [
+          "Glamping corporate sedang jadi incaran banyak HR. Alasannya masuk akal: tim tidur di tenda yang nyaman, makan malam di sekitar api unggun, lalu bangun dengan pemandangan pegunungan. Suasananya beda dari hotel atau villa, dan percakapan yang terjadi di sekitar api unggun sering lebih jujur daripada di ruang meeting.",
+          "Tapi glamping bukan jawaban untuk semua acara kantor. Ada format yang justru jadi repot kalau dipaksakan ke glamping. Panduan ini membantu Anda menilai kapan glamping corporate cocok, kapan tidak, dan apa yang perlu dicek sebelum membayar DP."
+        ]
+      },
+      {
+        "heading": "Kapan glamping corporate cocok",
+        "paragraphs": [],
+        "bullets": [
+          "Tim kecil sampai menengah. Paket glamping kami dirancang untuk sekitar 30–80 peserta — skala yang membuat semua orang masih bisa berkumpul di satu api unggun.",
+          "Tujuan acaranya bonding dan refleksi, bukan presentasi. Leadership retreat, apresiasi tim yang baru menyelesaikan proyek besar, atau penyatuan tim baru.",
+          "Tim yang sudah sering ke hotel atau villa dan ingin pengalaman berbeda.",
+          "Acara menginap satu malam dengan rundown santai: sore aktivitas, malam api unggun, pagi sesi refleksi atau memasak bersama.",
+          "Peserta umumnya nyaman dengan suasana alam dan udara dingin pegunungan."
+        ]
+      },
+      {
+        "heading": "Kapan sebaiknya pilih villa, resort, atau hotel",
+        "paragraphs": [],
+        "bullets": [
+          "Peserta sangat banyak. Area glamping umumnya terbatas, sehingga rombongan besar bisa terpencar atau butuh beberapa lokasi.",
+          "Ada awarding formal, panggung besar, atau produksi acara dengan sound dan lighting lengkap.",
+          "Agendanya didominasi sesi kerja panjang yang butuh ruang meeting, proyektor, dan koneksi internet stabil.",
+          "Banyak peserta lansia, peserta dengan keterbatasan gerak, atau keluarga dengan balita — jalan setapak dan jarak antar-tenda bisa merepotkan.",
+          "Acara jatuh di puncak musim hujan dan lokasi tidak punya area tertutup yang cukup untuk semua peserta."
+        ]
+      },
+      {
+        "heading": "Hal yang sering luput saat memilih glamping",
+        "paragraphs": [
+          "Foto glamping di media sosial biasanya diambil saat cuaca cerah. Hari H tidak selalu begitu. Beberapa hal yang sebaiknya dipikirkan dari awal:"
+        ],
+        "numbered": [
+          "Suhu malam. Kawasan glamping di dataran tinggi sekitar Bandung bisa cukup dingin di malam hari. Ingatkan peserta membawa jaket, dan tanyakan apakah tenda punya selimut tebal atau pemanas.",
+          "Kamar mandi. Ada di dalam tenda, atau kamar mandi bersama? Ini sering jadi keluhan nomor satu kalau tidak dijelaskan sejak awal.",
+          "Pembagian tenda. Berapa orang per tenda, dan bagaimana pembagian untuk peserta pria dan wanita, atasan dan staf.",
+          "Akses kendaraan. Apakah bus besar bisa sampai ke lokasi, atau perlu pindah ke kendaraan kecil? Berapa jauh berjalan kaki dengan membawa barang?",
+          "Listrik dan sinyal. Colokan di tenda, dan apakah sinyal cukup untuk peserta yang tetap harus siaga pekerjaan.",
+          "Aturan api unggun dan suara. Beberapa lokasi membatasi jam api unggun atau musik di malam hari."
+        ]
+      },
+      {
+        "heading": "Rundown glamping yang biasanya berhasil",
+        "paragraphs": [
+          "Glamping paling terasa manfaatnya kalau rundown-nya tidak terlalu padat. Pola yang sering kami pakai:"
+        ],
+        "bullets": [
+          "Siang: tiba, check-in tenda, makan siang, lalu aktivitas tim ringan di sekitar area.",
+          "Sore: sesi team building atau outdoor cooking competition.",
+          "Malam: makan malam dan sesi api unggun — momen sharing, apresiasi, atau cerita perjalanan tim.",
+          "Pagi: sesi refleksi saat matahari terbit, sarapan, lalu satu sesi penutup sebelum pulang."
+        ],
+        "callout": {
+          "label": "Tips",
+          "text": "Jangan isi malam api unggun dengan presentasi slide. Momen terbaik glamping justru muncul saat agenda formal dikurangi dan orang punya waktu ngobrol."
+        }
+      },
+      {
+        "heading": "Glamping atau villa? Perbandingan singkat",
+        "paragraphs": [
+          "Dua opsi ini paling sering dibandingkan untuk acara menginap. Bukan soal mana yang lebih bagus, tapi mana yang lebih pas dengan tujuan acara Anda."
+        ],
+        "bullets": [
+          "Suasana: glamping menawarkan pengalaman alam yang lebih terasa; villa lebih privat dan terasa seperti 'rumah bersama'.",
+          "Kenyamanan: villa umumnya lebih mudah untuk peserta yang butuh kamar tertutup, kamar mandi pribadi, dan dapur.",
+          "Sesi kerja: villa lebih fleksibel untuk ruang meeting dadakan; glamping lebih cocok untuk sesi santai dan refleksi.",
+          "Cuaca: villa lebih aman di musim hujan karena aktivitas mudah dipindah ke dalam ruangan.",
+          "Kesan: glamping biasanya lebih 'beda' untuk tim yang sudah sering gathering di villa atau hotel."
+        ]
+      },
+      {
+        "heading": "Plan B kalau hujan",
+        "paragraphs": [
+          "Musim hujan di Bandung biasanya berlangsung sekitar Oktober sampai April, jadi plan B wajib ada untuk glamping di periode itu. Pastikan lokasi punya area tertutup yang muat untuk semua peserta — untuk makan, sesi, dan api unggun pengganti. Susun juga dua versi rundown: versi cerah dan versi hujan, supaya keputusan di hari H tinggal memilih, bukan menyusun ulang."
+        ]
+      },
+      {
+        "heading": "Pertanyaan yang wajib diajukan ke venue sebelum DP",
+        "paragraphs": [],
+        "bullets": [
+          "Berapa kapasitas maksimal, dan berapa orang per tenda?",
+          "Kamar mandi di dalam tenda atau bersama? Ada air panas?",
+          "Fasilitas penghangat apa yang tersedia di tenda?",
+          "Area tertutup untuk hujan muat berapa orang?",
+          "Kendaraan apa yang bisa masuk sampai area parkir?",
+          "Jam berapa api unggun dan musik harus selesai?",
+          "Bisa menyediakan menu halal dan vegetarian?"
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Glamping corporate bisa jadi acara yang paling diingat tim Anda — asalkan formatnya cocok dan detailnya disiapkan. Kalau ragu memilih antara glamping dan villa, ceritakan jumlah peserta, tujuan acara, dan profil tim Anda. Kami bandingkan opsinya dan kirim proposal dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/glamping-corporate-bandung",
+        "label": "Glamping Corporate Bandung",
+        "description": "Glamping untuk team bonding, leadership retreat, dan apresiasi tim."
+      },
+      {
+        "href": "/villa-gathering-bandung",
+        "label": "Villa Gathering Bandung",
+        "description": "Alternatif menginap untuk rombongan yang lebih besar."
+      },
+      {
+        "href": "/packages",
+        "label": "Paket Corporate Outing",
+        "description": "Lihat paket Glamping 1D2N beserta inklusinya."
+      }
+    ],
+    relatedSlugs: ["checklist-villa-gathering-kantor", "indoor-vs-outdoor-corporate-outing", "outing-lembang-vs-ciwidey"],
+  },
+
+  "panitia-internal-outing-kantor": {
+    slug: "panitia-internal-outing-kantor",
+    title: "Panitia Internal Outing Kantor: Perlu Berapa Orang?",
+    excerpt: "Sudah pakai vendor, masih perlu bentuk panitia internal? Perlu — tapi tidak harus besar. Yang penting setiap peran jelas siapa pemegangnya.",
+    metaDescription: "Panitia internal outing kantor perlu berapa orang? Peran yang wajib ada, pembagian tugas dengan vendor, dan cara supaya panitia tetap bisa menikmati acara.",
+    category: "Tanya Jawab",
+    tldr: [
+      "Meski sudah memakai vendor, panitia internal outing kantor tetap dibutuhkan untuk keputusan, data peserta, dan komunikasi ke karyawan.",
+      "Jumlahnya tidak perlu banyak. Yang penting peran inti terisi: ketua atau PIC, pemegang data peserta, keuangan, dan komunikasi.",
+      "Satu PIC tunggal sebagai penghubung ke vendor mencegah instruksi yang saling bertabrakan.",
+      "Serahkan urusan teknis lapangan ke vendor supaya panitia juga bisa ikut menikmati acara."
+    ],
+    heroImage: IMAGES.caseStudyExecutive,
+    publishDate: "2026-12-04",
+    readTimeMin: 3,
+    author: { name: "Senior Planning Team", role: "TourBandung Corporate", initials: "TC" },
+    sections: [
+      {
+        "heading": "Jawaban singkat",
+        "paragraphs": [
+          "Tidak ada angka baku. Panitia internal outing kantor bisa cukup beberapa orang saja, asal setiap peran inti punya satu pemegang yang jelas. Kalau vendor sudah menangani teknis lapangan, panitia yang terlalu besar justru sering membuat keputusan jadi lambat."
+        ]
+      },
+      {
+        "heading": "Peran inti yang wajib ada",
+        "paragraphs": [],
+        "numbered": [
+          "Ketua atau PIC utama — satu-satunya penghubung resmi ke vendor dan pengambil keputusan harian.",
+          "Pemegang data peserta — mengelola pendaftaran, ukuran kaos, kebutuhan makan, kondisi kesehatan, pembagian kamar dan kendaraan.",
+          "Keuangan — mengurus approval budget, termin pembayaran, dan dokumen tagihan.",
+          "Komunikasi — mengirim pengumuman, pengingat, dan info final ke peserta.",
+          "Opsional: koordinator acara yang menyiapkan sambutan pimpinan, awarding, atau hadiah."
+        ],
+        "callout": {
+          "label": "Catatan",
+          "text": "Untuk tim kecil, satu orang bisa memegang dua peran sekaligus. Yang penting jangan ada peran yang tidak jelas pemiliknya."
+        }
+      },
+      {
+        "heading": "Pembagian tugas dengan vendor",
+        "paragraphs": [
+          "Supaya tidak ada pekerjaan dobel, sepakati sejak awal siapa mengurus apa. Umumnya:"
+        ],
+        "bullets": [
+          "Panitia internal: tujuan acara, approval budget, data peserta, undangan, dan bagian acara yang melibatkan pimpinan.",
+          "Vendor: venue, transportasi, konsumsi, program dan fasilitator, rundown teknis, serta koordinasi kru di hari H.",
+          "Bersama: rundown final, plan B, dan technical meeting sebelum acara."
+        ]
+      },
+      {
+        "heading": "Kesalahan yang sering terjadi",
+        "paragraphs": [],
+        "bullets": [
+          "Vendor menerima revisi dari beberapa orang panitia yang berbeda — akhirnya bingung mana yang final.",
+          "Daftar peserta tersebar di beberapa file dan grup chat.",
+          "Panitia sibuk mengurus teknis di hari H sampai tidak sempat ikut acara sama sekali.",
+          "Keputusan penting menunggu rapat panitia yang susah dijadwalkan."
+        ]
+      },
+      {
+        "heading": "Penutup",
+        "paragraphs": [
+          "Panitia yang ramping dan jelas perannya membuat persiapan lebih cepat dan hari H lebih santai. Kalau Anda sedang membentuk panitia outing kantor, kami bisa bantu memetakan pembagian tugas dengan tim kami — dan menyiapkan proposal lengkapnya dalam 24 jam."
+        ]
+      }
+    ],
+    internalLinks: [
+      {
+        "href": "/outing-kantor-bandung",
+        "label": "Outing Kantor Bandung",
+        "description": "Vendor yang memegang teknis lapangan, panitia tinggal memutuskan."
+      },
+      {
+        "href": "/proposal/request",
+        "label": "Request Proposal",
+        "description": "Kirim brief singkat, proposal custom dalam 24 jam."
+      }
+    ],
+    relatedSlugs: ["jumlah-peserta-outing-berubah-setelah-dp", "corporate-event-timeline-planning-checklist", "cara-memilih-vendor-corporate-event-bandung"],
   },
 
 };
